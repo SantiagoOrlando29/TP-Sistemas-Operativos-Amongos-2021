@@ -16,6 +16,6 @@ t_config* leer_config(void);
 int crear_conexion(char *ip, char* puerto);
 void enviar_mensaje(char* mensaje, int socket_cliente);
 void liberar_conexion(int socket_cliente);
-void terminar_discordiador(int,int,t_log*,t_config*);
+void terminar_discordiador(int,int,t_log*,t_config*,t_paquete*);
 
 #endif /*DISCORDIADOR_H_*/

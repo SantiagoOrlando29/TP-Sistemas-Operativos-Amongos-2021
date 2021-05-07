@@ -44,44 +44,7 @@ int crear_conexion(char *ip, char* puerto)
 
 	return socket_cliente;
 }
-/*
-void enviar_mensaje(char* mensaje, int socket_cliente)
-{
 
-	t_paquete* paquete;
-	void* mensajeSerializado;
-
-
-	switch (*mensaje){
-		case INICIAR_PATOTA:
-			paquete = crear_paquete(INICIAR_PATOTA);
-			nuevoTripulante* tripulante = crearNuevoTripulante(1,0,0,1);
-			mensajeSerializado = serializar_paquete(tripulante);
-			agregar_a_paquete(paquete, mensajeSerializado, tamanioTripulante(tripulante));
-
-			break;
-		case MensajeDos:
-			break;
-
-		default:
-			break;
-	}
-
-	paquete->buffer = malloc(sizeof(t_buffer));
-	paquete->buffer->size = strlen(mensaje) + 1;
-	paquete->buffer->stream = malloc(paquete->buffer->size);
-	memcpy(paquete->buffer->stream, mensaje, paquete->buffer->size);
-
-	int bytes = paquete->buffer->size + 2*sizeof(int);
-
-	void* a_enviar = serializar_paquete(paquete, bytes);
-
-	send(socket_cliente, a_enviar, bytes, 0);
-
-	free(a_enviar);
-	eliminar_paquete(paquete);
-}
-*/
 
 void crear_buffer(t_paquete* paquete)
 {
@@ -143,5 +106,18 @@ void liberar_conexion(int socket_cliente)
 size_t tamanioTripulante (nuevoTripulante* tripulante){
 	size_t tamanio = sizeof(uint32_t)*4;
 	return tamanio;
+}
+
+int codigoOperacion (const char* string){
+	for(int j=0; j < sizeof(conversionProceso)/sizeof(conversionProceso[0]);j++){
+		if(!strcmp(string, conversionProceso[j].string)){
+			return conversionProceso[j].valor;
+		}
+	}
+	return -1;
+}
+
+void mensajeError () {
+	printf("Error, no existe tal proceso");
 }
 

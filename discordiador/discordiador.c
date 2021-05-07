@@ -1,7 +1,11 @@
 #include"discordiador.h"
 
 
-int main(void) {
+int main(int argc, char* argv[]) {
+
+	t_log* logger;
+
+	logger = log_create("discordiador.log","discordiador",1,LOG_LEVEL_INFO);
 
 	t_config* configuracion;
 
@@ -15,7 +19,7 @@ int main(void) {
 			config_get_string_value(configuracion, "IP_I_MONGO_STORE"),
 			config_get_string_value(configuracion, "PUERTO_I_MONGO_STORE")
 	);
-	t_log* logger;
+
 
 	//char* mensajeUno = "MensajeUno";
 	//char* mensajeDos = "MensajeDos";
@@ -27,8 +31,7 @@ int main(void) {
 
 
 
-
-	terminar_discordiador(conexionMiRam, conexionMongoStore, logger, configuracion);
+	terminar_discordiador(conexionMiRam, conexionMongoStore, logger, configuracion, paquete);
 
 
 	return 0;
@@ -42,12 +45,19 @@ t_paquete* armar_paquete() {
 
 	char* leido = readline("");
 
-	if(strcmp(leido,"INICIAR_PATOTA")==0){
-		tipo = INICIAR_PATOTA;
-		paquete = crear_paquete(tipo);
-		nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,7);
-		agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
+	switch (codigoOperacion(leido)){
+		case INICIAR_PATOTA:
+			tipo = INICIAR_PATOTA;
+			paquete = crear_paquete(tipo);
+			nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,7);
+			agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
+			break;
+		default:
+			mensajeError();
+			getchar();
 	}
+
+
 
 	free(leido);
 	return paquete;
@@ -57,10 +67,11 @@ t_config* leer_config(void){
 	return config_create("discordiador.config");
 }
 
-void terminar_discordiador (int conexionMiRam, int conexionMongoStore, t_log* logger, t_config* configuracion ){
+void terminar_discordiador (int conexionMiRam, int conexionMongoStore, t_log* logger, t_config* configuracion, t_paquete* paquete){
 
 	log_destroy(logger);
 	liberar_conexion(conexionMiRam);
 	liberar_conexion(conexionMongoStore);
+	eliminar_paquete(paquete);
 }
 

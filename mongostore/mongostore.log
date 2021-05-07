@@ -1,0 +1,15 @@
+[INFO] 00:05:08:155 mongostore/(4117:4117): Mongo listo para recibir ordenes desde Discordiador
+[INFO] 00:05:20:935 mongostore/(4117:4117): Recibi un mensaje desde Discordiador
+[ERROR] 00:05:26:606 mongostore/(4117:4117): el cliente se desconecto. Terminando servidor
+[INFO] 00:10:02:367 mongostore/(5015:5015): Mongo listo para recibir ordenes desde Discordiador
+[INFO] 00:10:07:131 mongostore/(5015:5015): Recibi un mensaje desde Discordiador
+[ERROR] 00:10:09:831 mongostore/(5015:5015): el cliente se desconecto. Terminando servidor
+[INFO] 00:11:47:544 mongostore/(5328:5328): Mongo listo para recibir ordenes desde Discordiador
+[INFO] 00:11:53:787 mongostore/(5328:5328): Recibi un mensaje desde Discordiador
+[ERROR] 00:11:55:361 mongostore/(5328:5328): el cliente se desconecto. Terminando servidor
+[INFO] 00:13:42:164 mongostore/(5650:5650): Mongo listo para recibir ordenes desde Discordiador
+[INFO] 00:13:48:422 mongostore/(5650:5650): Recibi un mensaje desde Discordiador
+[ERROR] 00:13:55:86 mongostore/(5650:5650): el cliente se desconecto. Terminando servidor
+[INFO] 00:14:07:488 mongostore/(5731:5731): Mongo listo para recibir ordenes desde Discordiador
+[INFO] 00:14:14:348 mongostore/(5731:5731): Recibi un mensaje desde Discordiador
+[ERROR] 00:14:23:156 mongostore/(5731:5731): el cliente se desconecto. Terminando servidor
