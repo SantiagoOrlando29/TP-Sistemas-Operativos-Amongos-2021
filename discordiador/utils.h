@@ -61,6 +61,19 @@ const static struct {
 		{FIN, "FIN"}
 };
 
+typedef struct{
+	char* ip_miram;
+	char* puerto_miram;
+	char* ip_mongostore;
+	char* puerto_mongostore;
+	int grado_multitarea;
+	char* algoritmo;
+	int quantum;
+	int duracion_sabotaje;
+	int retardo_cpu;
+}config_struct;
+
+void leer_config();
 int crear_conexion(char* ip, char* puerto);
 t_paquete* crear_paquete(tipoMensaje tipo);
 t_paquete* crear_super_paquete(void);
