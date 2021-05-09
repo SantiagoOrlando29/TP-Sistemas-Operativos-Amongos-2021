@@ -109,8 +109,10 @@ size_t tamanioTripulante (nuevoTripulante* tripulante){
 }
 
 int codigoOperacion (const char* string){
+	char** codigo = string_split(string," ");
+
 	for(int j=0; j < sizeof(conversionProceso)/sizeof(conversionProceso[0]);j++){
-		if(!strcmp(string, conversionProceso[j].string)){
+		if(!strcmp(codigo[0], conversionProceso[j].string)){
 			return conversionProceso[j].valor;
 		}
 	}
@@ -118,6 +120,6 @@ int codigoOperacion (const char* string){
 }
 
 void mensajeError () {
-	printf("Error, no existe tal proceso");
+	printf("Error, no existe tal proceso\n");
 }
 

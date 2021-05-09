@@ -30,6 +30,7 @@ typedef enum
 	INICIAR_PLANIFICACION,
 	PAUSAR_PLANIFICACION,
 	OBTENER_BITACORA,
+	FIN
 }tipoMensaje;
 
 typedef struct
@@ -56,18 +57,18 @@ const static struct {
 	uint32_t valor;
 	const char *string;
 }conversionProceso [] = {
-		{0, "INICIAR_PATOTA"}
+		{INICIAR_PATOTA, "INICIAR_PATOTA"},
+		{FIN, "FIN"}
 };
 
 int crear_conexion(char* ip, char* puerto);
-void enviar_mensaje(char* mensaje, int socket_cliente);
 t_paquete* crear_paquete(tipoMensaje tipo);
 t_paquete* crear_super_paquete(void);
 void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
-t_paquete* armar_paquete();
+void armar_paquete(int conexMiRam, int conexMongoStore);
 size_t tamanioTripulante (nuevoTripulante* tripulante);
 nuevoTripulante* crearNuevoTripulante(uint32_t id ,uint32_t posicionX, uint32_t posicionY, uint32_t numeroPatota);
 
