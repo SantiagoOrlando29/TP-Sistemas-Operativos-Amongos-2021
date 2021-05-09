@@ -10,6 +10,7 @@
 #include<netdb.h>
 #include<commons/log.h>
 #include<commons/collections/list.h>
+#include <commons/config.h>
 #include<string.h>
 
 #define IP "127.0.0.1"
@@ -29,15 +30,28 @@ typedef enum
 	OBTENER_BITACORA,
 }tipoMensaje;
 
+typedef struct{
+	char* ip_miram;
+	char* puerto_miram;
+	char* ip_mongostore;
+	char* puerto_mongostore;
+	//int grado_multitarea;
+	//char* algoritmo;
+	//int quantum;
+	//int duracion_sabotaje;
+	//int retardo_cpu;
+}config_struct;
+
 t_log* logger;
 
 void* recibir_buffer(int*, int);
-
-int iniciar_servidor(void);
+int iniciar_servidor(char* , char*);
+int iniciar_servidor(char*, char*);
 int esperar_cliente(int);
 t_list* recibir_paquete(int);
 void recibir_mensaje(int);
 int recibir_operacion(int);
+void leer_config();
 
 #endif /* CONEXIONES_H_ */
 

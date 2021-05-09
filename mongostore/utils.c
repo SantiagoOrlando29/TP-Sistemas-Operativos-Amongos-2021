@@ -1,6 +1,6 @@
 #include"utils.h"
 
-int iniciar_servidor(void)
+int iniciar_servidor(char* ip_mongostore, char* puerto_mongostore)
 {
 	int socket_servidor;
 
@@ -11,7 +11,7 @@ int iniciar_servidor(void)
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
-    getaddrinfo(IP, PUERTO, &hints, &servinfo);
+    getaddrinfo(ip_mongostore, puerto_mongostore, &hints, &servinfo);
 
     for (p=servinfo; p != NULL; p = p->ai_next)
     {
