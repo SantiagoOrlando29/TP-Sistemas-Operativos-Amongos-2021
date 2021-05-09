@@ -5,7 +5,8 @@
 #include<stdlib.h>
 #include<string.h>
 #include<commons/log.h>
-#include "utils.h"
+
+#include "utils_miram.h"
 
 
 #endif /* MIRAM_H_ */

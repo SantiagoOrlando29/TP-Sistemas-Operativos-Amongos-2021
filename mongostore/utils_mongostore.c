@@ -1,6 +1,6 @@
-#include"utils.h"
+#include "utils_mongostore.h"
 
-int iniciar_servidor(char* ip_miram, char* puerto_miram)
+int iniciar_servidor(char* ip_mongostore, char* puerto_mongostore)
 {
 	int socket_servidor;
 
@@ -11,7 +11,7 @@ int iniciar_servidor(char* ip_miram, char* puerto_miram)
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
-    getaddrinfo(ip_miram, puerto_miram, &hints, &servinfo);
+    getaddrinfo(ip_mongostore, puerto_mongostore, &hints, &servinfo);
 
     for (p=servinfo; p != NULL; p = p->ai_next)
     {
@@ -29,7 +29,7 @@ int iniciar_servidor(char* ip_miram, char* puerto_miram)
 
     freeaddrinfo(servinfo);
 
-    log_trace(logger, "Servidor MiRam encendido");
+    log_trace(logger, "Servidor Mongo encendido");
 
     return socket_servidor;
 }

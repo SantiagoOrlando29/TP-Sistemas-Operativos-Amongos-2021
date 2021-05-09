@@ -5,8 +5,8 @@
  *      Author: utnso
  */
 
-#ifndef UTILS_H_
-#define UTILS_H_
+#ifndef UTILS_DISCORDIADOR_H_
+#define UTILS_DISCORDIADOR_H_
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -85,4 +85,4 @@ void armar_paquete(int conexMiRam, int conexMongoStore);
 size_t tamanioTripulante (nuevoTripulante* tripulante);
 nuevoTripulante* crearNuevoTripulante(uint32_t id ,uint32_t posicionX, uint32_t posicionY, uint32_t numeroPatota);
 
-#endif /* UTILS_H_ */
+#endif /* UTILS_DISCORDIADOR_H_ */

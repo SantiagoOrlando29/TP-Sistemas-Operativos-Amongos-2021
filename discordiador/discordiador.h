@@ -7,8 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include "utils.h"
 #include "readline/readline.h"
+#include "utils_discordiador.h"
 
 
 

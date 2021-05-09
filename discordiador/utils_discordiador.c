@@ -5,7 +5,7 @@
  *      Author: utnso
  */
 
-#include "utils.h"
+#include "utils_discordiador.h"
 
 
 void* serializar_paquete(t_paquete* paquete, int bytes)
