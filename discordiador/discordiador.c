@@ -1,23 +1,23 @@
 #include"discordiador.h"
 
-#define END 1
-
-int estado = 0;
-
 config_struct configuracion;
 
 int main(int argc, char* argv[]) {
 
 	t_log* logger;
 
+	//Reinicio el anterior y arranco uno nuevo
+	FILE* archivo = fopen("discordiador.log","w");
+	fclose(archivo);
 	logger = log_create("discordiador.log","discordiador",1,LOG_LEVEL_INFO);
 
-	leer_config();
 
+
+	leer_config();
 	int conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	int conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
 
-	armar_paquete(conexionMiRam, conexionMongoStore);
+	menu_discordiador(conexionMiRam, conexionMongoStore,logger);
 
 	terminar_discordiador(conexionMiRam, conexionMongoStore, logger);
 
@@ -27,43 +27,38 @@ int main(int argc, char* argv[]) {
 
 }
 
-
-void armar_paquete(int conexMiRam, int conexMongoStore) {
-	tipoMensaje tipo;
+int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
 	t_paquete* paquete = NULL;
-
-	t_log* logger;
-
-	logger = log_create("discordiador.log","discordiador",1,LOG_LEVEL_INFO);
-
+	int tipoMensaje = -1;
+	nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,7);
 
 	char* leido = "";
 
-	//Hay que solucionar que lea codigoOperacion solo la primer parte
 
-	while(estado != END){
+	while(1){
 		leido = readline("");
 		switch (codigoOperacion(leido)){
 			case INICIAR_PATOTA:
-				tipo = INICIAR_PATOTA;
-				paquete = crear_paquete(tipo);
+				paquete = crear_paquete(INICIAR_PATOTA);
 				char** parametros = string_split(leido, " ");
 				log_info(logger,parametros[1]);
-				nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,7);
 				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
-				enviar_paquete(paquete, conexMiRam);
+				enviar_paquete(paquete, conexionMiRam);
+				break;
+			case LISTAR_TRIPULANTES:
+				paquete = crear_paquete(LISTAR_TRIPULANTES);
+				enviar_paquete(paquete, conexionMiRam);
+				tipoMensaje = recibir_operacion(conexionMiRam);
+				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
 				break;
 			case FIN:
-				estado = END;
-				break;
+				return EXIT_FAILURE;
 			default:
-				mensajeError();
+				mensajeError(logger);
 		}
 
 	}
-
-
-
+	free(tripulante);
 	free(leido);
 	eliminar_paquete(paquete);
 }

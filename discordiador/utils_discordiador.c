@@ -1,10 +1,3 @@
-/*
- * conexiones.c
- *
- *  Created on: 2 mar. 2019
- *      Author: utnso
- */
-
 #include "utils_discordiador.h"
 
 
@@ -103,10 +96,6 @@ void liberar_conexion(int socket_cliente)
 	close(socket_cliente);
 }
 
-size_t tamanioTripulante (nuevoTripulante* tripulante){
-	size_t tamanio = sizeof(uint32_t)*4;
-	return tamanio;
-}
 
 int codigoOperacion (const char* string){
 	char** codigo = string_split(string," ");
@@ -119,7 +108,89 @@ int codigoOperacion (const char* string){
 	return -1;
 }
 
-void mensajeError () {
+void mensajeError (t_log* logger) {
 	printf("Error, no existe tal proceso\n");
+	log_error(logger, "Error en la operacion");
 }
+
+/*Operaciones para recibir mensajes*/
+
+
+int recibir_operacion(int socket_cliente)
+{
+	int tipoMensaje;
+	if(recv(socket_cliente, &tipoMensaje, sizeof(int), MSG_WAITALL) != 0)
+		return tipoMensaje;
+	else
+	{
+		close(socket_cliente);
+		return -1;
+	}
+}
+
+void* recibir_buffer(int* size, int socket_cliente)
+{
+	void * buffer;
+
+	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
+	buffer = malloc(*size);
+	recv(socket_cliente, buffer, *size, MSG_WAITALL);
+
+	return buffer;
+}
+
+
+//podemos usar la lista de valores para poder hablar del for y de como recorrer la lista
+t_list* recibir_paquete(int socket_cliente)
+{
+	int size;
+	int desplazamiento = 0;
+	void * buffer;
+	t_list* valores = list_create();
+	int tamanio;
+
+	buffer = recibir_buffer(&size, socket_cliente);
+	while(desplazamiento < size)
+	{
+		memcpy(&tamanio, buffer + desplazamiento, sizeof(int));
+		desplazamiento+=sizeof(int);
+		char* valor = malloc(tamanio);
+		memcpy(valor, buffer+desplazamiento, tamanio);
+		desplazamiento+=tamanio;
+		list_add(valores, valor);
+	}
+	free(buffer);
+	return valores;
+	return NULL;
+}
+
+/*Operaciciones para mostrar en discordiador*/
+
+
+void recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* logger){
+	t_list* lista;
+	nuevoTripulante* tripulante = malloc(sizeof(nuevoTripulante));
+
+
+	if (tipoMensaje == 1){
+		printf("recibi el paquete indicado");
+		lista = recibir_paquete(conexionMiRam);
+		tripulante = (nuevoTripulante*)list_get(lista, 0);
+		printf("\n ID: %d \n", tripulante->id );
+		printf("Posicion X: %d \n", tripulante->posicionX );
+		printf("Posicion Y: %d \n", tripulante->posicionY );
+		printf("Pertenece a Patota: %d \n", tripulante->numeroPatota );
+	}else {
+		mensajeError(logger);
+	}
+
+	free(tripulante);
+}
+
+/*TAMAÑO DE LAS DIFERENTES ESTRUCTURAS*/
+size_t tamanioTripulante (nuevoTripulante* tripulante){
+	size_t tamanio = sizeof(uint32_t)*4;
+	return tamanio;
+}
+
 
