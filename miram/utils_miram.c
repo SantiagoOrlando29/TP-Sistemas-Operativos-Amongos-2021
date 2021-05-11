@@ -176,6 +176,7 @@ size_t tamanioTripulante (nuevoTripulante* tripulante){
 }
 
 
-void mensajeError () {
+void mensajeError (t_log* logger) {
 	printf("Error, no existe tal proceso\n");
+	log_error(logger, "Error en la operacion");
 }

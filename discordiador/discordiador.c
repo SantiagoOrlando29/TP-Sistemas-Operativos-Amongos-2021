@@ -1,23 +1,23 @@
 #include"discordiador.h"
 
-#define END 1
-
-int estado = 0;
-
 config_struct configuracion;
 
 int main(int argc, char* argv[]) {
 
 	t_log* logger;
 
+	//Reinicio el anterior y arranco uno nuevo
+	FILE* archivo = fopen("discordiador.log","w");
+	fclose(archivo);
 	logger = log_create("discordiador.log","discordiador",1,LOG_LEVEL_INFO);
 
-	leer_config();
 
+
+	leer_config();
 	int conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	int conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
 
-	armar_paquete(conexionMiRam, conexionMongoStore);
+	menu_discordiador(conexionMiRam, conexionMongoStore,logger);
 
 	terminar_discordiador(conexionMiRam, conexionMongoStore, logger);
 
@@ -27,61 +27,38 @@ int main(int argc, char* argv[]) {
 
 }
 
-
-void armar_paquete(int conexMiRam, int conexMongoStore) {
-	tipoMensaje tipo;
+int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
 	t_paquete* paquete = NULL;
 	int tipoMensaje = -1;
-	t_log* logger;
-	t_list* lista;
-
-
-	logger = log_create("discordiador.log","discordiador",1,LOG_LEVEL_INFO);
-
+	nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,7);
 
 	char* leido = "";
 
 
-	while(estado != END){
+	while(1){
 		leido = readline("");
 		switch (codigoOperacion(leido)){
 			case INICIAR_PATOTA:
-				tipo = INICIAR_PATOTA;
-				paquete = crear_paquete(tipo);
+				paquete = crear_paquete(INICIAR_PATOTA);
 				char** parametros = string_split(leido, " ");
 				log_info(logger,parametros[1]);
-				nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,7);
 				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
-				enviar_paquete(paquete, conexMiRam);
+				enviar_paquete(paquete, conexionMiRam);
 				break;
 			case LISTAR_TRIPULANTES:
-				tipo = LISTAR_TRIPULANTES;
-				paquete = crear_paquete(tipo);
-				enviar_paquete(paquete, conexMiRam);
-				tipoMensaje = recibir_operacion(conexMiRam);
-				if (tipoMensaje == 1){
-					printf("recibi el paquete indicado");
-					lista = recibir_paquete(conexMiRam);
-					/*casteo porque lo que recibo de get es un (void*) con eso lo guardo en la nueva estructura*/
-					tripulante = (nuevoTripulante*)list_get(lista, 0);
-					printf("\n ID: %d \n", tripulante->id );
-					printf("Posicion X: %d \n", tripulante->posicionX );
-					printf("Posicion Y: %d \n", tripulante->posicionY );
-					printf("Pertenece a Patota: %d \n", tripulante->numeroPatota );
-					free(list_get(lista,0));
-				}
+				paquete = crear_paquete(LISTAR_TRIPULANTES);
+				enviar_paquete(paquete, conexionMiRam);
+				tipoMensaje = recibir_operacion(conexionMiRam);
+				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
 				break;
 			case FIN:
-				estado = END;
-				break;
+				return EXIT_FAILURE;
 			default:
-				mensajeError();
+				mensajeError(logger);
 		}
 
 	}
-
-
-
+	free(tripulante);
 	free(leido);
 	eliminar_paquete(paquete);
 }

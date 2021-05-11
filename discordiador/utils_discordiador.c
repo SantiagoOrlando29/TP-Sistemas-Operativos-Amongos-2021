@@ -1,10 +1,3 @@
-/*
- * conexiones.c
- *
- *  Created on: 2 mar. 2019
- *      Author: utnso
- */
-
 #include "utils_discordiador.h"
 
 
@@ -103,10 +96,6 @@ void liberar_conexion(int socket_cliente)
 	close(socket_cliente);
 }
 
-size_t tamanioTripulante (nuevoTripulante* tripulante){
-	size_t tamanio = sizeof(uint32_t)*4;
-	return tamanio;
-}
 
 int codigoOperacion (const char* string){
 	char** codigo = string_split(string," ");
@@ -119,11 +108,12 @@ int codigoOperacion (const char* string){
 	return -1;
 }
 
-void mensajeError () {
+void mensajeError (t_log* logger) {
 	printf("Error, no existe tal proceso\n");
+	log_error(logger, "Error en la operacion");
 }
 
-// recibir un mensaje
+/*Operaciones para recibir mensajes*/
 
 
 int recibir_operacion(int socket_cliente)
@@ -173,4 +163,34 @@ t_list* recibir_paquete(int socket_cliente)
 	return valores;
 	return NULL;
 }
+
+/*Operaciciones para mostrar en discordiador*/
+
+
+void recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* logger){
+	t_list* lista;
+	nuevoTripulante* tripulante = malloc(sizeof(nuevoTripulante));
+
+
+	if (tipoMensaje == 1){
+		printf("recibi el paquete indicado");
+		lista = recibir_paquete(conexionMiRam);
+		tripulante = (nuevoTripulante*)list_get(lista, 0);
+		printf("\n ID: %d \n", tripulante->id );
+		printf("Posicion X: %d \n", tripulante->posicionX );
+		printf("Posicion Y: %d \n", tripulante->posicionY );
+		printf("Pertenece a Patota: %d \n", tripulante->numeroPatota );
+	}else {
+		mensajeError(logger);
+	}
+
+	free(tripulante);
+}
+
+/*TAMAÑO DE LAS DIFERENTES ESTRUCTURAS*/
+size_t tamanioTripulante (nuevoTripulante* tripulante){
+	size_t tamanio = sizeof(uint32_t)*4;
+	return tamanio;
+}
+
 

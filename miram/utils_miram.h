@@ -62,7 +62,6 @@ typedef struct{
 }config_struct;
 
 void* recibir_buffer(int*, int);
-
 int iniciar_servidor(char*, char*);
 int esperar_cliente(int);
 t_list* recibir_paquete(int);
@@ -70,14 +69,21 @@ void recibir_mensaje(int);
 int recibir_operacion(int);
 void leer_config();
 
-// enviar mensajes
-
+/*Operaciones para enviar mensajes desde miram a discordiador*/
 t_paquete* crear_paquete(tipoMensaje tipo);
 void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
+/*FINALIZACION*/
+
+
+/*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanioTripulante (nuevoTripulante* tripulante);
-nuevoTripulante* crearNuevoTripulante(uint32_t id ,uint32_t posicionX, uint32_t posicionY, uint32_t numeroPatota);
+/*FINALIZACION*/
+
+/*crear la estructura de un nuevo tripulante*/
+nuevoTripulante* crearNuevoTripulante(uint32_t ,uint32_t , uint32_t , uint32_t);
+
 
 #endif /* CONEXIONES_H_ */
 

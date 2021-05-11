@@ -42,10 +42,10 @@ int main(void)
 
 		case LISTAR_TRIPULANTES:
 			paquete = crear_paquete(tipoMensaje);
+			//se harcodea uno para mostrar en discordiador
 			tripulante = crearNuevoTripulante(1,5,6,7);
 			agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
 			enviar_paquete(paquete, cliente_fd);
-
 			break;
 
 		case -1:
