@@ -21,6 +21,7 @@ int main(void)
 	int cliente_fd = esperar_cliente(server_fd);
 	nuevoTripulante* tripulante = malloc (sizeof(nuevoTripulante));
 	tripulante = NULL;
+	t_paquete* paquete = NULL;
 	t_list* lista;
 	while(1)
 	{
@@ -36,6 +37,14 @@ int main(void)
 			printf("Posicion Y: %d \n", tripulante->posicionY );
 			printf("Pertenece a Patota: %d \n", tripulante->numeroPatota );
 			free(list_get(lista,0));
+
+			break;
+
+		case LISTAR_TRIPULANTES:
+			paquete = crear_paquete(tipoMensaje);
+			tripulante = crearNuevoTripulante(1,5,6,7);
+			agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
+			enviar_paquete(paquete, cliente_fd);
 
 			break;
 

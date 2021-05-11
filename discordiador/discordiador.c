@@ -31,15 +31,16 @@ int main(int argc, char* argv[]) {
 void armar_paquete(int conexMiRam, int conexMongoStore) {
 	tipoMensaje tipo;
 	t_paquete* paquete = NULL;
-
+	int tipoMensaje = -1;
 	t_log* logger;
+	t_list* lista;
+
 
 	logger = log_create("discordiador.log","discordiador",1,LOG_LEVEL_INFO);
 
 
 	char* leido = "";
 
-	//Hay que solucionar que lea codigoOperacion solo la primer parte
 
 	while(estado != END){
 		leido = readline("");
@@ -52,6 +53,23 @@ void armar_paquete(int conexMiRam, int conexMongoStore) {
 				nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,7);
 				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
 				enviar_paquete(paquete, conexMiRam);
+				break;
+			case LISTAR_TRIPULANTES:
+				tipo = LISTAR_TRIPULANTES;
+				paquete = crear_paquete(tipo);
+				enviar_paquete(paquete, conexMiRam);
+				tipoMensaje = recibir_operacion(conexMiRam);
+				if (tipoMensaje == 1){
+					printf("recibi el paquete indicado");
+					lista = recibir_paquete(conexMiRam);
+					/*casteo porque lo que recibo de get es un (void*) con eso lo guardo en la nueva estructura*/
+					tripulante = (nuevoTripulante*)list_get(lista, 0);
+					printf("\n ID: %d \n", tripulante->id );
+					printf("Posicion X: %d \n", tripulante->posicionX );
+					printf("Posicion Y: %d \n", tripulante->posicionY );
+					printf("Pertenece a Patota: %d \n", tripulante->numeroPatota );
+					free(list_get(lista,0));
+				}
 				break;
 			case FIN:
 				estado = END;

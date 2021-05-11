@@ -17,14 +17,26 @@
 
 typedef enum
 {
-	//
 	INICIAR_PATOTA,
 	LISTAR_TRIPULANTES,
 	EXPULSAR_TRIPULANTE,
 	INICIAR_PLANIFICACION,
 	PAUSAR_PLANIFICACION,
 	OBTENER_BITACORA,
-}tipoMensaje;
+} tipoMensaje;
+
+typedef struct
+{
+	int size;
+	void* stream;
+} t_buffer;
+
+typedef struct
+{
+	tipoMensaje mensajeOperacion;
+	t_buffer* buffer;
+}t_paquete;
+
 
 typedef struct {
 	uint32_t id;
@@ -35,8 +47,6 @@ typedef struct {
 } nuevoTripulante;
 
 t_log* logger;
-
-
 
 
 typedef struct{
@@ -59,6 +69,15 @@ t_list* recibir_paquete(int);
 void recibir_mensaje(int);
 int recibir_operacion(int);
 void leer_config();
+
+// enviar mensajes
+
+t_paquete* crear_paquete(tipoMensaje tipo);
+void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
+void enviar_paquete(t_paquete* paquete, int socket_cliente);
+void eliminar_paquete(t_paquete* paquete);
+size_t tamanioTripulante (nuevoTripulante* tripulante);
+nuevoTripulante* crearNuevoTripulante(uint32_t id ,uint32_t posicionX, uint32_t posicionY, uint32_t numeroPatota);
 
 #endif /* CONEXIONES_H_ */
 

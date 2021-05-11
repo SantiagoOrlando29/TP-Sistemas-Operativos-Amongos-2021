@@ -1,2 +1,10 @@
 [INFO] 11:35:01:413 mongostore/(32520:32520): Mongo listo para recibir ordenes desde Discordiador
 [INFO] 11:35:11:347 mongostore/(32520:32520): Recibi un mensaje desde Discordiador
+[INFO] 23:02:27:547 mongostore/(23800:23800): Mongo listo para recibir ordenes desde Discordiador
+[INFO] 23:02:44:280 mongostore/(23800:23800): Recibi un mensaje desde Discordiador
+[ERROR] 23:03:07:23 mongostore/(23800:23800): el cliente se desconecto. Terminando servidor
+[INFO] 23:03:39:918 mongostore/(23875:23875): Mongo listo para recibir ordenes desde Discordiador
+[INFO] 23:03:45:142 mongostore/(23875:23875): Recibi un mensaje desde Discordiador
+[ERROR] 23:04:46:934 mongostore/(23875:23875): el cliente se desconecto. Terminando servidor
+[INFO] 23:05:36:662 mongostore/(23979:23979): Mongo listo para recibir ordenes desde Discordiador
+[INFO] 23:05:41:925 mongostore/(23979:23979): Recibi un mensaje desde Discordiador

@@ -10,10 +10,12 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<signal.h>
-#include<unistd.h>
 #include<sys/socket.h>
+#include<unistd.h>
 #include<netdb.h>
+#include<commons/log.h>
+#include<commons/collections/list.h>
+#include <commons/config.h>
 #include<string.h>
 
 /**
@@ -58,6 +60,7 @@ const static struct {
 	const char *string;
 }conversionProceso [] = {
 		{INICIAR_PATOTA, "INICIAR_PATOTA"},
+		{LISTAR_TRIPULANTES, "LISTAR_TRIPULANTES"},
 		{FIN, "FIN"}
 };
 
@@ -76,7 +79,6 @@ typedef struct{
 void leer_config();
 int crear_conexion(char* ip, char* puerto);
 t_paquete* crear_paquete(tipoMensaje tipo);
-t_paquete* crear_super_paquete(void);
 void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void liberar_conexion(int socket_cliente);
@@ -84,5 +86,15 @@ void eliminar_paquete(t_paquete* paquete);
 void armar_paquete(int conexMiRam, int conexMongoStore);
 size_t tamanioTripulante (nuevoTripulante* tripulante);
 nuevoTripulante* crearNuevoTripulante(uint32_t id ,uint32_t posicionX, uint32_t posicionY, uint32_t numeroPatota);
+
+// recibir
+
+int iniciar_servidor(char*, char*);
+int esperar_cliente(int);
+t_list* recibir_paquete(int);
+void recibir_mensaje(int);
+int recibir_operacion(int);
+void leer_config();
+
 
 #endif /* UTILS_DISCORDIADOR_H_ */
