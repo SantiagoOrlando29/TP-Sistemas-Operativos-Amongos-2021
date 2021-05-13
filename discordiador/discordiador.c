@@ -43,6 +43,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				enviar_paquete(paquete, conexionMiRam);
 				eliminar_paquete(paquete);
 				break;
+
 			case LISTAR_TRIPULANTES:
 				paquete = crear_paquete(LISTAR_TRIPULANTES);
 				enviar_paquete(paquete, conexionMiRam);
@@ -50,8 +51,25 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
 				eliminar_paquete(paquete);
 				break;
+
+			case OBTENER_BITACORA:
+				paquete = crear_paquete(OBTENER_BITACORA);
+				enviar_paquete(paquete, conexionMongoStore);
+				tipoMensaje = recibir_operacion(conexionMongoStore);
+				t_list* lista = recibir_paquete(conexionMongoStore);
+				char* mensaje = (char*)list_get(lista, 0);
+				log_info(logger, mensaje);
+				eliminar_paquete(paquete);
+				list_destroy(lista);
+				break;
+
 			case FIN:
+				paquete = crear_paquete(FIN);
+				enviar_paquete(paquete, conexionMiRam);
+				enviar_paquete(paquete, conexionMongoStore);
+				eliminar_paquete(paquete);
 				return EXIT_FAILURE;
+
 			default:
 				mensajeError(logger);
 				break;

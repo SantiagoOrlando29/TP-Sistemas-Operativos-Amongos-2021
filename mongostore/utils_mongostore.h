@@ -18,17 +18,28 @@
 
 typedef enum
 {
-	// Se prueba con dos mensajes
-	MensajeUno,
-	MensajeDos,
-	//
+	PRUEBA,
 	INICIAR_PATOTA,
 	LISTAR_TRIPULANTES,
 	EXPULSAR_TRIPULANTE,
 	INICIAR_PLANIFICACION,
 	PAUSAR_PLANIFICACION,
 	OBTENER_BITACORA,
+	FIN
 }tipoMensaje;
+
+typedef struct
+{
+	int size;
+	void* stream;
+} t_buffer;
+
+typedef struct
+{
+	tipoMensaje mensajeOperacion;
+	t_buffer* buffer;
+}t_paquete;
+
 
 typedef struct{
 	char* ip_miram;
@@ -52,6 +63,13 @@ t_list* recibir_paquete(int);
 void recibir_mensaje(int);
 int recibir_operacion(int);
 void leer_config();
+
+/*Operaciones para enviar mensajes desde mongostore a discordiador*/
+t_paquete* crear_paquete(tipoMensaje tipo);
+void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
+void enviar_paquete(t_paquete* paquete, int socket_cliente);
+void eliminar_paquete(t_paquete* paquete);
+/*FINALIZACION*/
 
 #endif /* CONEXIONES_H_ */
 

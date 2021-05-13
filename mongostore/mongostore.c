@@ -21,24 +21,40 @@ int main(void)
 	t_list* lista;
 	while(1)
 	{
+		t_paquete* paquete;
 		int tipoMensaje = recibir_operacion(cliente_fd);
-		switch(tipoMensaje)
-		{
-		case MensajeDos:
-			recibir_mensaje(cliente_fd);
-			break;
-		/*case PAQUETE:
-			lista = recibir_paquete(cliente_fd);
-			printf("Me llegaron los siguientes valores:\n");
-			list_iterate(lista, (void*) iterator);
-			break;
-		*/
-		case -1:
-			log_error(logger, "el cliente se desconecto. Terminando servidor");
-			return EXIT_FAILURE;
-		default:
-			log_warning(logger, "Operacion desconocida. No quieras meter la pata");
-			break;
+		if(tipoMensaje > 0){
+			switch(tipoMensaje)
+			{
+			/*case MensajeDos:
+				recibir_mensaje(cliente_fd);
+				break;
+			*/
+			/*case PAQUETE:
+				lista = recibir_paquete(cliente_fd);
+				printf("Me llegaron los siguientes valores:\n");
+				list_iterate(lista, (void*) iterator);
+				break;
+			*/
+			case OBTENER_BITACORA:
+				paquete = crear_paquete(OBTENER_BITACORA);
+				char* mensaje = "bitacora";
+				agregar_a_paquete(paquete, mensaje, strlen(mensaje) +1);
+				enviar_paquete(paquete, cliente_fd);
+				eliminar_paquete(paquete);
+				break;
+
+			case FIN:
+				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
+				return EXIT_FAILURE;
+
+			case -1:
+				log_error(logger, "el cliente se desconecto. Terminando servidor");
+				return EXIT_FAILURE;
+			default:
+				log_warning(logger, "Operacion desconocida. No quieras meter la pata");
+				break;
+			}
 		}
 	}
 	return EXIT_SUCCESS;
