@@ -26,6 +26,7 @@
 
 typedef enum
 {
+	PRUEBA,
 	INICIAR_PATOTA,
 	LISTAR_TRIPULANTES,
 	EXPULSAR_TRIPULANTE,
@@ -59,6 +60,7 @@ const static struct {
 	uint32_t valor;
 	const char *string;
 }conversionProceso [] = {
+		{PRUEBA, "PRUEBA"},
 		{INICIAR_PATOTA, "INICIAR_PATOTA"},
 		{LISTAR_TRIPULANTES, "LISTAR_TRIPULANTES"},
 		{FIN, "FIN"}

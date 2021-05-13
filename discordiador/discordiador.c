@@ -28,15 +28,12 @@ int main(int argc, char* argv[]) {
 }
 
 int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
-	t_paquete* paquete = NULL;
 	int tipoMensaje = -1;
-	nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,7);
-
-	char* leido = "";
-
 
 	while(1){
-		leido = readline("");
+		nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,7);
+		t_paquete* paquete;
+		char* leido = readline("");
 		switch (codigoOperacion(leido)){
 			case INICIAR_PATOTA:
 				paquete = crear_paquete(INICIAR_PATOTA);
@@ -44,23 +41,24 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				log_info(logger,parametros[1]);
 				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
 				enviar_paquete(paquete, conexionMiRam);
+				eliminar_paquete(paquete);
 				break;
 			case LISTAR_TRIPULANTES:
 				paquete = crear_paquete(LISTAR_TRIPULANTES);
 				enviar_paquete(paquete, conexionMiRam);
 				tipoMensaje = recibir_operacion(conexionMiRam);
 				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
+				eliminar_paquete(paquete);
 				break;
 			case FIN:
 				return EXIT_FAILURE;
 			default:
 				mensajeError(logger);
+				break;
 		}
-
+		free(leido);
+		free(tripulante);
 	}
-	free(tripulante);
-	free(leido);
-	eliminar_paquete(paquete);
 }
 
 void leer_config(void){
