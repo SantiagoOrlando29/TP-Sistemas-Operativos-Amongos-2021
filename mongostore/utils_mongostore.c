@@ -41,7 +41,7 @@ int esperar_cliente(int socket_servidor)
 
 	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
 
-	log_info(logger, "Recibi un mensaje desde Discordiador");
+	log_info(logger, "Estableciendo conexion con Discordiador");
 
 	return socket_cliente;
 }

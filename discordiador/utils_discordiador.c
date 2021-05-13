@@ -168,11 +168,11 @@ t_list* recibir_paquete(int socket_cliente)
 
 
 void recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* logger){
-	t_list* lista;
+	t_list* lista=list_create();
 	nuevoTripulante* tripulante = malloc(sizeof(nuevoTripulante));
 
 
-	if (tipoMensaje == 1){
+	if (tipoMensaje == 2){
 		printf("recibi el paquete indicado");
 		lista = recibir_paquete(conexionMiRam);
 		tripulante = (nuevoTripulante*)list_get(lista, 0);
@@ -180,10 +180,10 @@ void recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* logger
 		printf("Posicion X: %d \n", tripulante->posicionX );
 		printf("Posicion Y: %d \n", tripulante->posicionY );
 		printf("Pertenece a Patota: %d \n", tripulante->numeroPatota );
+		list_destroy(lista);
 	}else {
 		mensajeError(logger);
 	}
-
 	free(tripulante);
 }
 
