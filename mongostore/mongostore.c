@@ -18,12 +18,10 @@ int main(void)
 	log_info(logger, "Mongo listo para recibir ordenes desde Discordiador");
 	int cliente_fd = esperar_cliente(server_fd);
 
-	t_list* lista;
 	while(1)
 	{
 		t_paquete* paquete;
 		int tipoMensaje = recibir_operacion(cliente_fd);
-		if(tipoMensaje > 0){
 			switch(tipoMensaje)
 			{
 			/*case MensajeDos:
@@ -55,7 +53,7 @@ int main(void)
 				log_warning(logger, "Operacion desconocida. No quieras meter la pata");
 				break;
 			}
-		}
+
 	}
 	return EXIT_SUCCESS;
 }

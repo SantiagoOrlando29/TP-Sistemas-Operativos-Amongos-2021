@@ -45,21 +45,17 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				break;
 
 			case LISTAR_TRIPULANTES:
-				paquete = crear_paquete(LISTAR_TRIPULANTES);
-				enviar_paquete(paquete, conexionMiRam);
+				enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
 				tipoMensaje = recibir_operacion(conexionMiRam);
 				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
-				eliminar_paquete(paquete);
 				break;
 
 			case OBTENER_BITACORA:
-				paquete = crear_paquete(OBTENER_BITACORA);
-				enviar_paquete(paquete, conexionMongoStore);
+				enviar_header(OBTENER_BITACORA, conexionMongoStore);
 				tipoMensaje = recibir_operacion(conexionMongoStore);
 				t_list* lista = recibir_paquete(conexionMongoStore);
 				char* mensaje = (char*)list_get(lista, 0);
 				log_info(logger, mensaje);
-				eliminar_paquete(paquete);
 				list_destroy(lista);
 				break;
 

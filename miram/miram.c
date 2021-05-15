@@ -25,8 +25,6 @@ int main(void)
 		nuevoTripulante* tripulante;
 		t_paquete* paquete;
 		tipoMensaje = recibir_operacion(discordiador);
-
-		if(tipoMensaje > 0){
 			switch(tipoMensaje)
 			{
 			case INICIAR_PATOTA:
@@ -46,6 +44,11 @@ int main(void)
 				enviar_paquete(paquete, discordiador);
 				eliminar_paquete(paquete);
 				break;
+
+			case FIN:
+				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
+				return EXIT_FAILURE;
+
 			case -1:
 				log_error(logger, "el cliente se desconecto. Terminando servidor");
 				return EXIT_FAILURE;
@@ -54,10 +57,7 @@ int main(void)
 				break;
 			}
 			free(tripulante);
-
 			list_destroy(lista);
-		}
-
 
 	}
 	return EXIT_SUCCESS;
