@@ -95,6 +95,7 @@ void eliminar_paquete(t_paquete* paquete);
 int menu_discordiador(int , int, t_log* );
 nuevoTripulante* crearNuevoTripulante(uint32_t id ,uint32_t posicionX, uint32_t posicionY, uint32_t numeroPatota);
 int codigoOperacion (const char*);
+void enviar_header(tipoMensaje tipo, int socket_cliente);
 
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/

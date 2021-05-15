@@ -55,6 +55,7 @@ t_paquete* crear_paquete(tipoMensaje tipo)
 	return paquete;
 }
 
+
 nuevoTripulante* crearNuevoTripulante(uint32_t id ,uint32_t posicionX, uint32_t posicionY, uint32_t numeroPatota){
 	nuevoTripulante* tripulante = malloc(sizeof(nuevoTripulante));
 	tripulante->id = id;
@@ -83,6 +84,21 @@ void enviar_paquete(t_paquete* paquete, int socket_cliente)
 
 	free(a_enviar);
 }
+
+
+void enviar_header(tipoMensaje tipo, int socket_cliente)
+{
+	t_paquete* paquete = malloc(sizeof(t_paquete));
+	paquete->mensajeOperacion = tipo;
+
+	void * magic = malloc(sizeof(paquete->mensajeOperacion));
+	memcpy(magic, &(paquete->mensajeOperacion), sizeof(int));
+
+	send(socket_cliente, magic, sizeof(paquete->mensajeOperacion), 0);
+
+	free(magic);
+}
+
 
 void eliminar_paquete(t_paquete* paquete)
 {
