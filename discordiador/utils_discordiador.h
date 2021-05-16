@@ -82,6 +82,24 @@ typedef struct{
 	int retardo_cpu;
 }config_struct;
 
+typedef enum
+{
+	GENERAR_OXIGENO,
+	CONSUMIR_OXIGENO,
+	GENERAR_COMIDA,
+	CONSUMIR_COMIDA,
+	GENERAR_BASURA,
+	DESCARTAR_BASURA,
+}tarea_tripulante;
+
+typedef struct{
+	tarea_tripulante tarea;
+	int parametro;
+	int pos_x;
+	int pos_y;
+	int tiempo;
+}tarea;
+
 
 /*FINALIZACION DE ESCTRUCTURAS PARA DISCORDIADOR*/
 
@@ -96,6 +114,9 @@ int menu_discordiador(int , int, t_log* );
 nuevoTripulante* crearNuevoTripulante(uint32_t id ,uint32_t posicionX, uint32_t posicionY, uint32_t numeroPatota);
 int codigoOperacion (const char*);
 void enviar_header(tipoMensaje tipo, int socket_cliente);
+void imprimirTarea(tarea*);
+tarea_tripulante codigoTarea(char*);
+void leer_tareas(char*);
 
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/

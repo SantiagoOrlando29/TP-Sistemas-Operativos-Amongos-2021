@@ -14,6 +14,7 @@ int main(int argc, char* argv[]) {
 
 
 	leer_config();
+	leer_tareas("tareas.txt");
 	int conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	int conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
 
@@ -95,4 +96,5 @@ void terminar_discordiador (int conexionMiRam, int conexionMongoStore, t_log* lo
 	liberar_conexion(conexionMiRam);
 	liberar_conexion(conexionMongoStore);
 }
+
 

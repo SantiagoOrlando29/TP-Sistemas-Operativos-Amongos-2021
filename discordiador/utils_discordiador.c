@@ -209,4 +209,67 @@ size_t tamanioTripulante (nuevoTripulante* tripulante){
 	return tamanio;
 }
 
+void leer_tareas(char* archTarea){
+	   FILE *fp;
+	   char *item;
+	   char linea[200];
+	   fp = fopen(archTarea, "r");
+	   if (fp == NULL)
+	     {
+	        perror("Error al abrir el archivo.\n");
+	        exit(EXIT_FAILURE);
+	     }
+	   tarea* leida=malloc(sizeof(tarea));
+	   while (fgets(linea, sizeof(linea), fp)){
+		   int codTarea;
+		   if(linea[0]=='D'){    //A corregir
+			   codTarea = codigoTarea(strtok(linea,";"));
+			   leida->tarea=codTarea;
+			   leida->parametro=0;
+
+		   }else{
+		   codTarea = codigoTarea(strtok(linea," "));
+
+		   leida->tarea = codTarea;
+           item = strtok(NULL,";");
+		   leida->parametro=atoi(item);
+		   }
+		   item = strtok(NULL,";");
+		   leida->pos_x=atoi(item);
+		   item = strtok(NULL,";");
+		   leida->pos_y=atoi(item);
+		   item = strtok(NULL,"\n");
+		   leida->tiempo=atoi(item);
+		   imprimirTarea(leida);
+		   }
+
+		}
+
+
+tarea_tripulante codigoTarea(char *nombretarea){
+	if(strcmp(nombretarea,"GENERAR_OXIGENO")==0)
+		return GENERAR_OXIGENO;
+	else if(strcmp(nombretarea,"GENERAR_COMIDA")==0)
+			return GENERAR_COMIDA;
+	else if(strcmp(nombretarea,"CONSUMIR_COMIDA")==0)
+			return CONSUMIR_COMIDA;
+	else if(strcmp(nombretarea,"CONSUMIR_OXIGENO")==0)
+			return CONSUMIR_OXIGENO;
+	else if(strcmp(nombretarea,"GENERAR_BASURA")==0)
+			return GENERAR_BASURA;
+	else if(strcmp(nombretarea,"DESCARTAR_BASURA")==0)
+			return DESCARTAR_BASURA;
+	else
+		return 6;
+
+}
+
+void imprimirTarea(tarea* aimprimir){
+	printf("%d", aimprimir->tarea);
+	printf("%i", aimprimir->parametro);
+	printf("%d", aimprimir->pos_x);
+	printf("%d", aimprimir->pos_y);
+	printf("%d\n", aimprimir->tiempo);
+
+}
 
