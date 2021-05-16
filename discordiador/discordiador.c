@@ -6,7 +6,6 @@ int main(int argc, char* argv[]) {
 
 	t_log* logger;
 
-	//Probando branch
 
 	//Reinicio el anterior y arranco uno nuevo
 	FILE* archivo = fopen("discordiador.log","w");
