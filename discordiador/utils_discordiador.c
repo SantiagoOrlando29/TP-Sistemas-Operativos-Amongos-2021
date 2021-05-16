@@ -209,4 +209,3 @@ size_t tamanioTripulante (nuevoTripulante* tripulante){
 	return tamanio;
 }
 
-

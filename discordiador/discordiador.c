@@ -41,6 +41,9 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				paquete = crear_paquete(INICIAR_PATOTA);
 				char** parametros = string_split(leido, " ");
 				log_info(logger,parametros[1]);
+				for(int i = 0; i < atoi(parametros[i]); i++){
+					log_info(logger,"Hola");
+				}
 				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
 				enviar_paquete(paquete, conexionMiRam);
 				eliminar_paquete(paquete);
