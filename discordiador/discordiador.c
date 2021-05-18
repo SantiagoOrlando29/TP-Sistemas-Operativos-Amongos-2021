@@ -1,6 +1,8 @@
-#include"discordiador.h"
+#include "discordiador.h"
 
 config_struct configuracion;
+
+
 
 int main(int argc, char* argv[]) {
 
@@ -27,28 +29,57 @@ int main(int argc, char* argv[]) {
 
 }
 
+void Trabajar (int *numeroId){
+	int numero = 0;
+	while(numero <= 10){
+	printf("hola soy el hilo %d, estoy trabajando",*numeroId);
+	numero ++;
+	}
+}
+
+
+
 int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
+
+	 /*Hacer una funcion que cree las diferetnes listas*/
+	t_list* lista_tripulantes_ready = list_create();
+	t_list* lista_tripulantes_bloqueado = list_create();
+	t_list* lista_tripulantes_trabajando = list_create();
+	t_list* listaTripulantes;
 	int tipoMensaje = -1;
+	char* nombreThread = "";
 
 	while(1){
-		nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,7);
+
+		nuevoTripulante* tripulante = malloc(sizeof(nuevoTripulante));
 		t_paquete* paquete;
+		char* nombreHilo = "";
 		char* leido = readline("");
 		switch (codigoOperacion(leido)){
 			case INICIAR_PATOTA:
-				paquete = crear_paquete(INICIAR_PATOTA);
-				char** parametros = string_split(leido, " ");
-				log_info(logger,parametros[1]);
-				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
-				enviar_paquete(paquete, conexionMiRam);
-				eliminar_paquete(paquete);
+				/*Solo para probar que funciona pero esto debe ser un paquete*/
+				enviar_header(INICIAR_PATOTA, conexionMiRam);
+				tipoMensaje = recibir_operacion(conexionMiRam);
+				//funciona mal
+			//	recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger,lista_tripulantes_ready);
+				lista_tripulantes_ready = recibir_paquete(conexionMiRam);
+
 				break;
 
 			case LISTAR_TRIPULANTES:
-				enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
+				/*enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
 				tipoMensaje = recibir_operacion(conexionMiRam);
-				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
+				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);*/
 				break;
+
+			case INICIAR_PLANIFICACION:
+				tripulante=(nuevoTripulante*)list_get(lista_tripulantes_ready, 0);
+				printf("%d",tripulante->id);
+				pthread_t nombreHilo = *(char*)(tripulante->id);
+				pthread_create(&nombreHilo,NULL,(void*)Trabajar,tripulante->id);
+				free(tripulante);
+				break;
+
 
 			case OBTENER_BITACORA:
 				enviar_header(OBTENER_BITACORA, conexionMongoStore);
@@ -71,7 +102,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				break;
 		}
 		free(leido);
-		free(tripulante);
+
 	}
 }
 

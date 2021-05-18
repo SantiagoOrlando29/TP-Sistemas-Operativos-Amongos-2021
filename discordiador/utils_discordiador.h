@@ -17,6 +17,7 @@
 #include<commons/collections/list.h>
 #include <commons/config.h>
 #include<string.h>
+#include<pthread.h>
 
 /*Estructuras necesarias para discordiador*/
 
@@ -116,7 +117,7 @@ void leer_config();
  * Pre: Recibo el tipo de mensaje y la conexion de donde lo recibo
  * Post: Muestro por pantalla la informacion dada de la lista de los tripulantes
  * */
-void recibir_lista_tripulantes(int , int, t_log*);
+void recibir_lista_tripulantes(int , int, t_log*,t_list*);
 
 /*
  * Pre: Recibo un logger

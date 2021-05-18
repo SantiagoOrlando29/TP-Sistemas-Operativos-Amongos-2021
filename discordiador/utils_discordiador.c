@@ -183,20 +183,18 @@ t_list* recibir_paquete(int socket_cliente)
 /*Operaciciones para mostrar en discordiador*/
 
 
-void recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* logger){
-	t_list* lista=list_create();
+void recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* logger, t_list* lista){
 	nuevoTripulante* tripulante = malloc(sizeof(nuevoTripulante));
 
 
-	if (tipoMensaje == 2){
-		printf("recibi el paquete indicado");
+	if (tipoMensaje == 1){
+		printf("recibi el paquete indicado y se guardara en la lista de ready");
 		lista = recibir_paquete(conexionMiRam);
-		tripulante = (nuevoTripulante*)list_get(lista, 0);
+		/*tripulante = (nuevoTripulante*)list_get(lista, 0);
 		printf("\n ID: %d \n", tripulante->id );
 		printf("Posicion X: %d \n", tripulante->posicionX );
 		printf("Posicion Y: %d \n", tripulante->posicionY );
-		printf("Pertenece a Patota: %d \n", tripulante->numeroPatota );
-		list_destroy(lista);
+		printf("Pertenece a Patota: %d \n", tripulante->numeroPatota );*/
 	}else {
 		mensajeError(logger);
 	}
