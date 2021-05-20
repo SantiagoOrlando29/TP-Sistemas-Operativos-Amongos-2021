@@ -39,6 +39,27 @@ typedef struct
 	t_buffer* buffer;
 }t_paquete;
 
+/*
+typedef enum{
+	N,  // NEW
+	R,	// READY
+	E,	// EXEC
+	B	// BREAK interrumpido
+}estado;
+*/
+typedef struct{
+	uint32_t pid;  // ID PATOTA
+	uint32_t tareas; // DIR. LOGICA INCIO DE TAREAS
+}pcbPatota;
+
+typedef struct{
+	uint32_t tid;
+	char estado;
+	uint32_t posicionX;
+	uint32_t posicionY;
+	uint32_t prox_instruccion; // Identificador de la próxima instrucción a ejecutar
+	uint32_t puntero_pcb; //Dirección lógica del PCB del tripulante
+}tcbTripulante;
 
 typedef struct {
 	uint32_t id;
@@ -54,8 +75,14 @@ t_log* logger;
 typedef struct{
 	char* ip_miram;
 	char* puerto_miram;
-	char* ip_mongostore;
-	char* puerto_mongostore;
+	int tamanio_memoria;
+	char* squema_memoria;
+	int tamanio_pag;
+	int tamanio_swap;
+	char* algoritmo_reemplazo;
+	//lo comentado son los datos de config de discordiador
+	//char* ip_mongostore;
+	//char* puerto_mongostore;
 	//int grado_multitarea;
 	//char* algoritmo;
 	//int quantum;
@@ -78,6 +105,12 @@ void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 /*FINALIZACION*/
 
+//inicializar PCB desde lo mandado
+pcbPatota* crearPCB(nuevoTripulante* tripulanteN);
+//inicializar TCB desde lo mandado
+tcbTripulante* crearTCB(nuevoTripulante* tripulanteN);
+//solo para comprobar que se formaron bien
+void mostrarTripulante(tcbTripulante* tripulante,pcbPatota* patota);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanioTripulante (nuevoTripulante* tripulante);

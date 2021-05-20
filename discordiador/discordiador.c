@@ -1,9 +1,9 @@
 #include"discordiador.h"
 
-config_struct configuracion;
-
+config_discordiador configuracion;
+//config_struct configuracion;
 int main(int argc, char* argv[]) {
-
+	//config_struct configuracion;
 	t_log* logger;
 
 
@@ -33,7 +33,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	int tipoMensaje = -1;
 
 	while(1){
-		nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,7);
+		nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,1);
 		t_paquete* paquete;
 		char* leido = readline("");
 		switch (codigoOperacion(leido)){
@@ -45,6 +45,10 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 					//Creacion de tripulantes
 				//}
 				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
+
+				tripulante = crearNuevoTripulante(2,0,0,2);
+				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
+
 				enviar_paquete(paquete, conexionMiRam);
 				eliminar_paquete(paquete);
 				break;

@@ -19,22 +19,49 @@ int main(void)
 	int server_fd = iniciar_servidor(configuracion.ip_miram,configuracion.puerto_miram);
 	log_info(logger, "MiRam listo para recibir ordenes desde Discordiador");
 	int discordiador = esperar_cliente(server_fd);
+	//por el momento hasta que implementemos la memoria
+	//t_list* tripulantes=list_create();
+	//t_list* patotas=list_create();
+
 	while(1)
 	{
 		t_list* lista = list_create();
 		nuevoTripulante* tripulante;
+		pcbPatota* patota;
+		tcbTripulante* tripulante_tcb;
 		t_paquete* paquete;
 		tipoMensaje = recibir_operacion(discordiador);
 			switch(tipoMensaje)
 			{
 			case INICIAR_PATOTA:
 				lista = recibir_paquete(discordiador);
-				/*casteo porque lo que recibo de get es un (void*) con eso lo guardo en la nueva estructura*/
+				int i=0;
 				tripulante = (nuevoTripulante*)list_get(lista, 0);
-				printf("\n ID: %d \n", tripulante->id );
-				printf("Posicion X: %d \n", tripulante->posicionX );
-				printf("Posicion Y: %d \n", tripulante->posicionY );
-				printf("Pertenece a Patota: %d \n", tripulante->numeroPatota );
+				patota=crearPCB(tripulante);
+				tripulante_tcb=crearTCB(tripulante);
+				mostrarTripulante(tripulante_tcb,patota);
+				printf("\n");
+				//si se mandan mas de 1 tripulantes, solo con le primero se crea la patota
+				for(i=1;i<list_size(lista);i++){
+					tripulante = (nuevoTripulante*)list_get(lista, i);
+					tripulante_tcb=crearTCB(tripulante);
+					mostrarTripulante(tripulante_tcb,patota);
+				}
+				/*casteo porque lo que recibo de get es un (void*) con eso lo guardo en la nueva estructura*/
+				//tripulante = (nuevoTripulante*)list_get(lista, 0);
+				//crear estructuras
+				/*
+				patota=crearPCB(tripulante);
+				tripulante_tcb=crearTCB(tripulante);
+				// ver que llego
+				mostrarTripulante(tripulante_tcb,patota);
+				tripulante = (nuevoTripulante*)list_get(lista, 1);
+				//crear estructuras
+				patota=crearPCB(tripulante);
+				tripulante_tcb=crearTCB(tripulante);
+				// ver que llego
+				mostrarTripulante(tripulante_tcb,patota);
+				*/
 				break;
 
 			case LISTAR_TRIPULANTES:
@@ -56,6 +83,8 @@ int main(void)
 				log_warning(logger, "Operacion desconocida. No quieras meter la pata");
 				break;
 			}
+			free(patota);
+			free(tripulante_tcb);
 			free(tripulante);
 			list_destroy(lista);
 
@@ -71,7 +100,10 @@ void leer_config(){
 
     configuracion.ip_miram = config_get_string_value(archConfig, "IP_MI_RAM_HQ");
     configuracion.puerto_miram = config_get_string_value(archConfig, "PUERTO_MI_RAM_HQ");
-    configuracion.ip_mongostore = config_get_string_value(archConfig, "IP_I_MONGO_STORE");
-    configuracion.puerto_mongostore = config_get_string_value(archConfig, "PUERTO_I_MONGO_STORE");
+
+    //configuracion.tamanio_memoria=config_get_string_value(archConfig,"TAMANIO_MEMORIA");
+
+    //configuracion.ip_mongostore = config_get_string_value(archConfig, "IP_I_MONGO_STORE");
+    //configuracion.puerto_mongostore = config_get_string_value(archConfig, "PUERTO_I_MONGO_STORE");
 
 }

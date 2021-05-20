@@ -80,7 +80,32 @@ typedef struct{
 	int quantum;
 	int duracion_sabotaje;
 	int retardo_cpu;
-}config_struct;
+}config_discordiador;
+
+//Estructuras de tripulantes inicializados
+/*
+typedef enum{
+	N,  // NEW
+	R,	// READY
+	E,	// EXEC
+	B	// BREAK interrumpido
+}estado;
+*/
+typedef struct{
+	uint32_t pid;  // ID PATOTA
+	uint32_t tareas; // DIR. LOGICA INCIO DE TAREAS
+}pcbPatota;
+
+typedef struct{
+	uint32_t tid;
+	char estado;
+	uint32_t posicionX;
+	uint32_t posicionY;
+	uint32_t prox_instruccion; // Identificador de la próxima instrucción a ejecutar
+	uint32_t puntero_pcb; //Dirección lógica del PCB del tripulante
+}tcbTripulante;
+
+// fin estructuras tripulantes
 
 typedef enum
 {
