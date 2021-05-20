@@ -21,20 +21,20 @@ int main(void)
 	int discordiador = esperar_cliente(server_fd);
 	while(1)
 	{
-		t_list* lista = list_create();
+
+		t_list* lista_recibir = list_create();
 		nuevoTripulante* tripulante;
 		t_paquete* paquete;
+		t_list* lista = list_create();
 		tipoMensaje = recibir_operacion(discordiador);
 			switch(tipoMensaje)
 			{
 			case INICIAR_PATOTA:
-				lista = recibir_paquete(discordiador);
-				/*casteo porque lo que recibo de get es un (void*) con eso lo guardo en la nueva estructura*/
-				tripulante = (nuevoTripulante*)list_get(lista, 0);
-				printf("\n ID: %d \n", tripulante->id );
-				printf("Posicion X: %d \n", tripulante->posicionX );
-				printf("Posicion Y: %d \n", tripulante->posicionY );
-				printf("Pertenece a Patota: %d \n", tripulante->numeroPatota );
+				paquete = crear_paquete(INICIAR_PATOTA);
+				tripulante = crearNuevoTripulante(1,5,6,7);
+				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
+				enviar_paquete(paquete, discordiador);
+				eliminar_paquete(paquete);
 				break;
 
 			case LISTAR_TRIPULANTES:
