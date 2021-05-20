@@ -1,10 +1,11 @@
 #include"discordiador.h"
 
-config_struct configuracion;
-
+config_discordiador configuracion;
+//config_struct configuracion;
 int main(int argc, char* argv[]) {
-
+	//config_struct configuracion;
 	t_log* logger;
+
 
 	//Reinicio el anterior y arranco uno nuevo
 	FILE* archivo = fopen("discordiador.log","w");
@@ -14,6 +15,8 @@ int main(int argc, char* argv[]) {
 
 
 	leer_config();
+	//leer numeros random
+	//leer_tareas("tareas.txt");
 	int conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	int conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
 
@@ -31,15 +34,22 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	int tipoMensaje = -1;
 
 	while(1){
-		nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,7);
+		tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
 		t_paquete* paquete;
 		char* leido = readline("");
 		switch (codigoOperacion(leido)){
 			case INICIAR_PATOTA:
 				paquete = crear_paquete(INICIAR_PATOTA);
 				char** parametros = string_split(leido, " ");
-				log_info(logger,parametros[1]);
-				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
+				log_info(logger, (char*)parametros[1]);
+				//for(int i = 0; i < (int)parametros[1]; i++){
+					//Creacion de tripulantes
+				//}
+				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+
+				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+
 				enviar_paquete(paquete, conexionMiRam);
 				eliminar_paquete(paquete);
 				break;
@@ -95,4 +105,5 @@ void terminar_discordiador (int conexionMiRam, int conexionMongoStore, t_log* lo
 	liberar_conexion(conexionMiRam);
 	liberar_conexion(conexionMongoStore);
 }
+
 
