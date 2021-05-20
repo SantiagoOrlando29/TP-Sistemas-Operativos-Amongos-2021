@@ -25,6 +25,8 @@
  * En este enum se agregan todos los distintos tipos de mensajes que van a enviar entre los clientes y servidores
  */
 
+
+
 typedef enum
 {
 	PRUEBA,
@@ -117,7 +119,7 @@ void leer_config();
  * Pre: Recibo el tipo de mensaje y la conexion de donde lo recibo
  * Post: Muestro por pantalla la informacion dada de la lista de los tripulantes
  * */
-void recibir_lista_tripulantes(int , int, t_log*,t_list*);
+t_list* recibir_lista_tripulantes(int , int, t_log*,t_list*);
 
 /*
  * Pre: Recibo un logger

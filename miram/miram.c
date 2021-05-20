@@ -31,7 +31,7 @@ int main(void)
 			{
 			case INICIAR_PATOTA:
 				paquete = crear_paquete(INICIAR_PATOTA);
-				tripulante = crearNuevoTripulante(10,5,6,7);
+				tripulante = crearNuevoTripulante(1,5,6,7);
 				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
 				enviar_paquete(paquete, discordiador);
 				eliminar_paquete(paquete);

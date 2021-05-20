@@ -1,6 +1,12 @@
 #include "discordiador.h"
+#include <semaphore.h>
+
 
 config_struct configuracion;
+
+sem_t INICIAR_TRIPULANTE;
+sem_t TRABAJAR_TRIPULANTE;
+int id_tripulante = 0;
 
 
 
@@ -29,12 +35,18 @@ int main(int argc, char* argv[]) {
 
 }
 
-void Trabajar (int *numeroId){
+void Trabajar (int* numeroId){
 	int numero = 0;
-	while(numero <= 10){
-	printf("hola soy el hilo %d, estoy trabajando",*numeroId);
-	numero ++;
+	sem_wait(&INICIAR_TRIPULANTE);
+
+	while(numero < 10){
+		printf("hola soy el hilo %d, estoy trabajando \n", numeroId);
+		fflush(stdout);
+		numero ++;
+
 	}
+	sem_post(&TRABAJAR_TRIPULANTE);
+
 }
 
 
@@ -42,13 +54,17 @@ void Trabajar (int *numeroId){
 int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
 
 	 /*Hacer una funcion que cree las diferetnes listas*/
+	sem_init(&INICIAR_TRIPULANTE, 0,0);
+	sem_init(&TRABAJAR_TRIPULANTE, 0,1);
+
 	t_list* lista_tripulantes_ready = list_create();
 	t_list* lista_tripulantes_bloqueado = list_create();
 	t_list* lista_tripulantes_trabajando = list_create();
 	t_list* listaTripulantes;
 	int tipoMensaje = -1;
 	char* nombreThread = "";
-
+	int cantidad_tripulantes = 0;
+	int id_prueba=0;
 	while(1){
 
 		nuevoTripulante* tripulante = malloc(sizeof(nuevoTripulante));
@@ -60,10 +76,17 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				/*Solo para probar que funciona pero esto debe ser un paquete*/
 				enviar_header(INICIAR_PATOTA, conexionMiRam);
 				tipoMensaje = recibir_operacion(conexionMiRam);
-				//funciona mal
-			//	recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger,lista_tripulantes_ready);
-				lista_tripulantes_ready = recibir_paquete(conexionMiRam);
-
+				lista_tripulantes_ready=recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger, lista_tripulantes_ready);
+				while(cantidad_tripulantes < 4){
+					cantidad_tripulantes ++;
+					pthread_t nombreHilo = (char*)(cantidad_tripulantes);
+					pthread_create(&nombreHilo,NULL,(void*)Trabajar,cantidad_tripulantes);
+				}
+				cantidad_tripulantes = 0 ;
+				while(cantidad_tripulantes < 4){
+					cantidad_tripulantes ++;
+					pthread_detach(&nombreHilo);
+				}
 				break;
 
 			case LISTAR_TRIPULANTES:
@@ -73,11 +96,25 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				break;
 
 			case INICIAR_PLANIFICACION:
-				tripulante=(nuevoTripulante*)list_get(lista_tripulantes_ready, 0);
-				printf("%d",tripulante->id);
-				pthread_t nombreHilo = *(char*)(tripulante->id);
-				pthread_create(&nombreHilo,NULL,(void*)Trabajar,tripulante->id);
-				free(tripulante);
+				sem_wait(&TRABAJAR_TRIPULANTE);
+				sem_post(&INICIAR_TRIPULANTE);
+				sem_post(&INICIAR_TRIPULANTE);
+				/*if(list_size(lista_tripulantes_ready)!=0){
+					//funcion lista para usar con los hilos
+					id_prueba=(int*)list_get(lista_tripulantes_ready, 0);
+					printf("%d\n", id_prueba);
+					id_prueba=(int*)list_get(lista_tripulantes_ready, 1);
+					printf("%d", id_prueba);
+					printf("Primer Orden", id_prueba);
+
+
+
+				}else{
+					printf("no hay datos capo");
+				}
+
+
+				free(tripulante);*/
 				break;
 
 
@@ -102,6 +139,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				break;
 		}
 		free(leido);
+		pthread_mutex_destroy(&INICIAR_TRIPULANTE);
 
 	}
 }
