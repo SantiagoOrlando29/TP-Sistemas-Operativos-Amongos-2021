@@ -106,18 +106,18 @@ void eliminar_paquete(t_paquete* paquete);
 /*FINALIZACION*/
 
 //inicializar PCB desde lo mandado
-pcbPatota* crearPCB(nuevoTripulante* tripulanteN);
-//inicializar TCB desde lo mandado
-tcbTripulante* crearTCB(nuevoTripulante* tripulanteN);
+tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, uint32_t);
+pcbPatota* crear_patota(uint32_t , uint32_t);
 //solo para comprobar que se formaron bien
 void mostrarTripulante(tcbTripulante* tripulante,pcbPatota* patota);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
-size_t tamanioTripulante (nuevoTripulante* tripulante);
+size_t tamanio_tcb(tcbTripulante*);
+size_t tamanio_pcb(pcbPatota*);
 /*FINALIZACION*/
 
 /*crear la estructura de un nuevo tripulante*/
-nuevoTripulante* crearNuevoTripulante(uint32_t ,uint32_t , uint32_t , uint32_t);
+tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, uint32_t);
 
 
 #endif /* CONEXIONES_H_ */

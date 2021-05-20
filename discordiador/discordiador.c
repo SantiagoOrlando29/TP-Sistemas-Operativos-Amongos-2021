@@ -15,7 +15,8 @@ int main(int argc, char* argv[]) {
 
 
 	leer_config();
-	leer_tareas("tareas.txt");
+	//leer numeros random
+	//leer_tareas("tareas.txt");
 	int conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	int conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
 
@@ -33,7 +34,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	int tipoMensaje = -1;
 
 	while(1){
-		nuevoTripulante* tripulante = crearNuevoTripulante(1,5,6,1);
+		tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
 		t_paquete* paquete;
 		char* leido = readline("");
 		switch (codigoOperacion(leido)){
@@ -44,10 +45,10 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				//for(int i = 0; i < (int)parametros[1]; i++){
 					//Creacion de tripulantes
 				//}
-				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
+				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 
-				tripulante = crearNuevoTripulante(2,0,0,2);
-				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
+				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 
 				enviar_paquete(paquete, conexionMiRam);
 				eliminar_paquete(paquete);

@@ -36,6 +36,8 @@ typedef enum
 	FIN
 }tipoMensaje;
 
+
+
 typedef struct
 {
 	int size;
@@ -136,7 +138,8 @@ void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 int menu_discordiador(int , int, t_log* );
-nuevoTripulante* crearNuevoTripulante(uint32_t id ,uint32_t posicionX, uint32_t posicionY, uint32_t numeroPatota);
+tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, uint32_t);
+pcbPatota* crear_patota(uint32_t , uint32_t);
 int codigoOperacion (const char*);
 void enviar_header(tipoMensaje tipo, int socket_cliente);
 void imprimirTarea(tarea*);
@@ -145,7 +148,8 @@ void leer_tareas(char*);
 
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
-size_t tamanioTripulante (nuevoTripulante* tripulante);
+size_t tamanio_tcb(tcbTripulante*);
+size_t tamanio_pcb(pcbPatota*);
 /*FINALIZACION*/
 
 

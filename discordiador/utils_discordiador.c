@@ -56,13 +56,22 @@ t_paquete* crear_paquete(tipoMensaje tipo)
 }
 
 
-nuevoTripulante* crearNuevoTripulante(uint32_t id ,uint32_t posicionX, uint32_t posicionY, uint32_t numeroPatota){
-	nuevoTripulante* tripulante = malloc(sizeof(nuevoTripulante));
-	tripulante->id = id;
+tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, uint32_t posicionY, uint32_t prox_instruccion, uint32_t puntero_pcb){
+	tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
+	tripulante->tid = tid;
+	tripulante->estado = estado;
 	tripulante->posicionX = posicionX;
 	tripulante->posicionY = posicionY;
-	tripulante->numeroPatota = numeroPatota;
+	tripulante->prox_instruccion = prox_instruccion;
+	tripulante->puntero_pcb = puntero_pcb;
 	return tripulante;
+}
+
+pcbPatota* crear_patota(uint32_t pid, uint32_t tareas){
+	pcbPatota* patota = malloc(sizeof(pcbPatota));
+	patota->pid = pid;
+	patota->tareas = tareas;
+	return patota;
 }
 
 void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio)
@@ -204,8 +213,15 @@ void recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* logger
 }
 
 /*TAMAÑO DE LAS DIFERENTES ESTRUCTURAS*/
-size_t tamanioTripulante (nuevoTripulante* tripulante){
-	size_t tamanio = sizeof(uint32_t)*4;
+
+size_t tamanio_tcb (tcbTripulante* tripulante){
+	size_t tamanio = sizeof(uint32_t)*5;
+	tamanio += sizeof(char);
+	return tamanio;
+}
+
+size_t tamanio_pcb(pcbPatota* patota){
+	size_t tamanio = sizeof(uint32_t)*2;
 	return tamanio;
 }
 

@@ -26,48 +26,20 @@ int main(void)
 	while(1)
 	{
 		t_list* lista = list_create();
-		nuevoTripulante* tripulante;
 		pcbPatota* patota;
-		tcbTripulante* tripulante_tcb;
+		tcbTripulante* tripulante;
 		t_paquete* paquete;
 		tipoMensaje = recibir_operacion(discordiador);
 			switch(tipoMensaje)
 			{
 			case INICIAR_PATOTA:
-				lista = recibir_paquete(discordiador);
-				int i=0;
-				tripulante = (nuevoTripulante*)list_get(lista, 0);
-				patota=crearPCB(tripulante);
-				tripulante_tcb=crearTCB(tripulante);
-				mostrarTripulante(tripulante_tcb,patota);
-				printf("\n");
-				//si se mandan mas de 1 tripulantes, solo con le primero se crea la patota
-				for(i=1;i<list_size(lista);i++){
-					tripulante = (nuevoTripulante*)list_get(lista, i);
-					tripulante_tcb=crearTCB(tripulante);
-					mostrarTripulante(tripulante_tcb,patota);
-				}
-				/*casteo porque lo que recibo de get es un (void*) con eso lo guardo en la nueva estructura*/
-				//tripulante = (nuevoTripulante*)list_get(lista, 0);
-				//crear estructuras
-				/*
-				patota=crearPCB(tripulante);
-				tripulante_tcb=crearTCB(tripulante);
-				// ver que llego
-				mostrarTripulante(tripulante_tcb,patota);
-				tripulante = (nuevoTripulante*)list_get(lista, 1);
-				//crear estructuras
-				patota=crearPCB(tripulante);
-				tripulante_tcb=crearTCB(tripulante);
-				// ver que llego
-				mostrarTripulante(tripulante_tcb,patota);
-				*/
+
 				break;
 
 			case LISTAR_TRIPULANTES:
 				paquete = crear_paquete(LISTAR_TRIPULANTES);
-				tripulante = crearNuevoTripulante(10,5,6,7);
-				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
+				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 				enviar_paquete(paquete, discordiador);
 				eliminar_paquete(paquete);
 				break;
@@ -84,7 +56,6 @@ int main(void)
 				break;
 			}
 			free(patota);
-			free(tripulante_tcb);
 			free(tripulante);
 			list_destroy(lista);
 
