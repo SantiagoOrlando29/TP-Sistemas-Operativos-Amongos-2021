@@ -19,28 +19,27 @@ int main(void)
 	int server_fd = iniciar_servidor(configuracion.ip_miram,configuracion.puerto_miram);
 	log_info(logger, "MiRam listo para recibir ordenes desde Discordiador");
 	int discordiador = esperar_cliente(server_fd);
+
 	while(1)
 	{
 
+		pcbPatota* patota = NULL;
+		tcbTripulante* tripulante = NULL;
+
 		t_list* lista_recibir = list_create();
-		nuevoTripulante* tripulante;
 		t_paquete* paquete;
-		t_list* lista = list_create();
 		tipoMensaje = recibir_operacion(discordiador);
 			switch(tipoMensaje)
 			{
 			case INICIAR_PATOTA:
-				paquete = crear_paquete(INICIAR_PATOTA);
-				tripulante = crearNuevoTripulante(1,5,6,7);
-				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
-				enviar_paquete(paquete, discordiador);
-				eliminar_paquete(paquete);
+
+				enviar_header(INICIAR_PATOTA, discordiador);
 				break;
 
 			case LISTAR_TRIPULANTES:
 				paquete = crear_paquete(LISTAR_TRIPULANTES);
-				tripulante = crearNuevoTripulante(10,5,6,7);
-				agregar_a_paquete(paquete, tripulante, tamanioTripulante(tripulante));
+				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 				enviar_paquete(paquete, discordiador);
 				eliminar_paquete(paquete);
 				break;
@@ -56,8 +55,9 @@ int main(void)
 				log_warning(logger, "Operacion desconocida. No quieras meter la pata");
 				break;
 			}
+			free(patota);
 			free(tripulante);
-			list_destroy(lista);
+			list_destroy(lista_recibir);
 
 	}
 	return EXIT_SUCCESS;
@@ -71,7 +71,10 @@ void leer_config(){
 
     configuracion.ip_miram = config_get_string_value(archConfig, "IP_MI_RAM_HQ");
     configuracion.puerto_miram = config_get_string_value(archConfig, "PUERTO_MI_RAM_HQ");
-    configuracion.ip_mongostore = config_get_string_value(archConfig, "IP_I_MONGO_STORE");
-    configuracion.puerto_mongostore = config_get_string_value(archConfig, "PUERTO_I_MONGO_STORE");
+
+    //configuracion.tamanio_memoria=config_get_string_value(archConfig,"TAMANIO_MEMORIA");
+
+    //configuracion.ip_mongostore = config_get_string_value(archConfig, "IP_I_MONGO_STORE");
+    //configuracion.puerto_mongostore = config_get_string_value(archConfig, "PUERTO_I_MONGO_STORE");
 
 }

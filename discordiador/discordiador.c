@@ -2,17 +2,34 @@
 #include <semaphore.h>
 
 
-config_struct configuracion;
+
+
+config_discordiador configuracion;
+//config_struct configuracion;
 
 sem_t INICIAR_TRIPULANTE;
 sem_t TRABAJAR_TRIPULANTE;
 int id_tripulante = 0;
 
 
+void Trabajar (tcbTripulante* tripulante){
+	int numero = 0;
+	sem_wait(&(tripulante->semaforo_tripulante));
+
+	while(numero < 10){
+		printf("hola soy el hilo %d, estoy trabajando \n", tripulante->tid);
+		fflush(stdout);
+		numero ++;
+
+	}
+	sem_post(&TRABAJAR_TRIPULANTE);
+
+}
 
 int main(int argc, char* argv[]) {
-
+	//config_struct configuracion;
 	t_log* logger;
+
 
 	//Reinicio el anterior y arranco uno nuevo
 	FILE* archivo = fopen("discordiador.log","w");
@@ -22,6 +39,8 @@ int main(int argc, char* argv[]) {
 
 
 	leer_config();
+	//leer numeros random
+	//leer_tareas("tareas.txt");
 	int conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	int conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
 
@@ -34,22 +53,6 @@ int main(int argc, char* argv[]) {
 
 
 }
-
-void Trabajar (int* numeroId){
-	int numero = 0;
-	sem_wait(&INICIAR_TRIPULANTE);
-
-	while(numero < 10){
-		printf("hola soy el hilo %d, estoy trabajando \n", numeroId);
-		fflush(stdout);
-		numero ++;
-
-	}
-	sem_post(&TRABAJAR_TRIPULANTE);
-
-}
-
-
 
 int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
 
@@ -65,24 +68,43 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	char* nombreThread = "";
 	int cantidad_tripulantes = 0;
 	int id_prueba=0;
+	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
+	tcbTripulante* tripulante2= malloc(sizeof(tcbTripulante));
 	while(1){
 
-		nuevoTripulante* tripulante = malloc(sizeof(nuevoTripulante));
+		tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+
+
 		t_paquete* paquete;
 		char* nombreHilo = "";
 		char* leido = readline("");
 		switch (codigoOperacion(leido)){
 			case INICIAR_PATOTA:
-				/*Solo para probar que funciona pero esto debe ser un paquete*/
+
+
+
+				/*paquete = crear_paquete(INICIAR_PATOTA);
+				char** parametros = string_split(leido, " ");
+				log_info(logger, (char*)parametros[1]);
+				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+
+				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+				enviar_paquete(paquete, conexionMiRam);
+				eliminar_paquete(paquete);
+				Solo para probar que funciona pero esto debe ser un paquete*/
 				enviar_header(INICIAR_PATOTA, conexionMiRam);
 				tipoMensaje = recibir_operacion(conexionMiRam);
+				printf("%d", tipoMensaje);
 				lista_tripulantes_ready=recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger, lista_tripulantes_ready);
 				while(cantidad_tripulantes < 4){
 					cantidad_tripulantes ++;
+					tcbTripulante* tripulante=crear_tripulante(cantidad_tripulantes,'N',5,6,1,1);
 					pthread_t nombreHilo = (char*)(cantidad_tripulantes);
-					pthread_create(&nombreHilo,NULL,(void*)Trabajar,cantidad_tripulantes);
+					pthread_create(&nombreHilo,NULL,(void*)Trabajar,tripulante);
+					list_add(lista_tripulantes_ready, cantidad_tripulantes - 1);
 				}
-				cantidad_tripulantes = 0 ;
+				cantidad_tripulantes = 0;
 				while(cantidad_tripulantes < 4){
 					cantidad_tripulantes ++;
 					pthread_detach(&nombreHilo);
@@ -96,9 +118,13 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				break;
 
 			case INICIAR_PLANIFICACION:
+
+				tripulante1=(tcbTripulante*)list_get(lista_tripulantes_ready, 0);
+				tripulante2=(tcbTripulante*)list_get(lista_tripulantes_ready, 1);
+
 				sem_wait(&TRABAJAR_TRIPULANTE);
-				sem_post(&INICIAR_TRIPULANTE);
-				sem_post(&INICIAR_TRIPULANTE);
+				sem_post(&(tripulante1->semaforo_tripulante));
+				sem_post(&(tripulante2->semaforo_tripulante));
 				/*if(list_size(lista_tripulantes_ready)!=0){
 					//funcion lista para usar con los hilos
 					id_prueba=(int*)list_get(lista_tripulantes_ready, 0);
@@ -164,4 +190,5 @@ void terminar_discordiador (int conexionMiRam, int conexionMongoStore, t_log* lo
 	liberar_conexion(conexionMiRam);
 	liberar_conexion(conexionMongoStore);
 }
+
 

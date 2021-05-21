@@ -56,13 +56,24 @@ t_paquete* crear_paquete(tipoMensaje tipo)
 }
 
 
-nuevoTripulante* crearNuevoTripulante(uint32_t id ,uint32_t posicionX, uint32_t posicionY, uint32_t numeroPatota){
-	nuevoTripulante* tripulante = malloc(sizeof(nuevoTripulante));
-	tripulante->id = id;
+
+tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, uint32_t posicionY, uint32_t prox_instruccion, uint32_t puntero_pcb){
+	tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
+	tripulante->tid = tid;
+	tripulante->estado = estado;
 	tripulante->posicionX = posicionX;
 	tripulante->posicionY = posicionY;
-	tripulante->numeroPatota = numeroPatota;
+	tripulante->prox_instruccion = prox_instruccion;
+	tripulante->puntero_pcb = puntero_pcb;
+	sem_init(&(tripulante->semaforo_tripulante),0,0);
 	return tripulante;
+}
+
+pcbPatota* crear_patota(uint32_t pid, uint32_t tareas){
+	pcbPatota* patota = malloc(sizeof(pcbPatota));
+	patota->pid = pid;
+	patota->tareas = tareas;
+	return patota;
 }
 
 void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio)
@@ -184,13 +195,15 @@ t_list* recibir_paquete(int socket_cliente)
 
 
 t_list* recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* logger, t_list* lista){
-	nuevoTripulante* tripulante = malloc(sizeof(nuevoTripulante));
+	tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
 
 
 	if (tipoMensaje == 1){
 		printf("recibi el paquete indicado y se guardara en la lista de ready");
-		list_add(lista, 1);
-		list_add(lista, 2);
+		//list_add(lista, 1);
+		//list_add(lista, 2);
+		//list_add(lista, 3);
+		//list_add(lista, 4);
 		//lista = recibir_paquete(conexionMiRam);
 		/*tripulante = (nuevoTripulante*)list_get(lista, 0);
 		printf("\n ID: %d \n", tripulante->id );
@@ -206,9 +219,81 @@ t_list* recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* log
 }
 
 /*TAMAÑO DE LAS DIFERENTES ESTRUCTURAS*/
-size_t tamanioTripulante (nuevoTripulante* tripulante){
-	size_t tamanio = sizeof(uint32_t)*4;
+
+size_t tamanio_tcb (tcbTripulante* tripulante){
+	size_t tamanio = sizeof(uint32_t)*5;
+	tamanio += sizeof(char);
+	tamanio += sizeof(sem_t);
 	return tamanio;
 }
 
+size_t tamanio_pcb(pcbPatota* patota){
+	size_t tamanio = sizeof(uint32_t)*2;
+	return tamanio;
+}
+
+
+void leer_tareas(char* archTarea){
+	   FILE *fp;
+	   char *item;
+	   char linea[200];
+	   fp = fopen(archTarea, "r");
+	   if (fp == NULL)
+	     {
+	        perror("Error al abrir el archivo.\n");
+	        exit(EXIT_FAILURE);
+	     }
+	   tarea* leida=malloc(sizeof(tarea));
+	   while (fgets(linea, sizeof(linea), fp)){
+		   int codTarea;
+		   if(linea[0]=='D'){    //A corregir
+			   codTarea = codigoTarea(strtok(linea,";"));
+			   leida->tarea=codTarea;
+			   leida->parametro=0;
+
+		   }else{
+		   codTarea = codigoTarea(strtok(linea," "));
+
+		   leida->tarea = codTarea;
+           item = strtok(NULL,";");
+		   leida->parametro=atoi(item);
+		   }
+		   item = strtok(NULL,";");
+		   leida->pos_x=atoi(item);
+		   item = strtok(NULL,";");
+		   leida->pos_y=atoi(item);
+		   item = strtok(NULL,"\n");
+		   leida->tiempo=atoi(item);
+		   imprimirTarea(leida);
+		   }
+
+		}
+
+
+tarea_tripulante codigoTarea(char *nombretarea){
+	if(strcmp(nombretarea,"GENERAR_OXIGENO")==0)
+		return GENERAR_OXIGENO;
+	else if(strcmp(nombretarea,"GENERAR_COMIDA")==0)
+			return GENERAR_COMIDA;
+	else if(strcmp(nombretarea,"CONSUMIR_COMIDA")==0)
+			return CONSUMIR_COMIDA;
+	else if(strcmp(nombretarea,"CONSUMIR_OXIGENO")==0)
+			return CONSUMIR_OXIGENO;
+	else if(strcmp(nombretarea,"GENERAR_BASURA")==0)
+			return GENERAR_BASURA;
+	else if(strcmp(nombretarea,"DESCARTAR_BASURA")==0)
+			return DESCARTAR_BASURA;
+	else
+		return 6;
+
+}
+
+void imprimirTarea(tarea* aimprimir){
+	printf("%d", aimprimir->tarea);
+	printf("%i", aimprimir->parametro);
+	printf("%d", aimprimir->pos_x);
+	printf("%d", aimprimir->pos_y);
+	printf("%d\n", aimprimir->tiempo);
+
+}
 
