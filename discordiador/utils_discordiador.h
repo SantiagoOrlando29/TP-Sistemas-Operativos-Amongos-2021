@@ -17,12 +17,15 @@
 #include<commons/collections/list.h>
 #include <commons/config.h>
 #include<string.h>
+#include<pthread.h>
 
 /*Estructuras necesarias para discordiador*/
 
 /**
  * En este enum se agregan todos los distintos tipos de mensajes que van a enviar entre los clientes y servidores
  */
+
+
 
 typedef enum
 {
@@ -49,14 +52,6 @@ typedef struct
 	tipoMensaje mensajeOperacion;
 	t_buffer* buffer;
 }t_paquete;
-
-typedef struct {
-	uint32_t id;
-	uint32_t posicionX;
-	uint32_t posicionY;
-	uint32_t numeroPatota;
-
-} nuevoTripulante;
 
 const static struct {
 	uint32_t valor;
@@ -166,7 +161,7 @@ void leer_config();
  * Pre: Recibo el tipo de mensaje y la conexion de donde lo recibo
  * Post: Muestro por pantalla la informacion dada de la lista de los tripulantes
  * */
-void recibir_lista_tripulantes(int , int, t_log*);
+t_list* recibir_lista_tripulantes(int , int, t_log*,t_list*);
 
 /*
  * Pre: Recibo un logger

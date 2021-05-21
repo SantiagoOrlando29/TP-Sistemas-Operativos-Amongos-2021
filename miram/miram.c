@@ -19,21 +19,21 @@ int main(void)
 	int server_fd = iniciar_servidor(configuracion.ip_miram,configuracion.puerto_miram);
 	log_info(logger, "MiRam listo para recibir ordenes desde Discordiador");
 	int discordiador = esperar_cliente(server_fd);
-	//por el momento hasta que implementemos la memoria
-	//t_list* tripulantes=list_create();
-	//t_list* patotas=list_create();
 
 	while(1)
 	{
-		t_list* lista = list_create();
-		pcbPatota* patota;
-		tcbTripulante* tripulante;
+
+		pcbPatota* patota = NULL;
+		tcbTripulante* tripulante = NULL;
+
+		t_list* lista_recibir = list_create();
 		t_paquete* paquete;
 		tipoMensaje = recibir_operacion(discordiador);
 			switch(tipoMensaje)
 			{
 			case INICIAR_PATOTA:
 
+				enviar_header(INICIAR_PATOTA, discordiador);
 				break;
 
 			case LISTAR_TRIPULANTES:
@@ -57,7 +57,7 @@ int main(void)
 			}
 			free(patota);
 			free(tripulante);
-			list_destroy(lista);
+			list_destroy(lista_recibir);
 
 	}
 	return EXIT_SUCCESS;
