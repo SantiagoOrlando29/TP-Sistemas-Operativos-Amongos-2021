@@ -56,6 +56,7 @@ t_paquete* crear_paquete(tipoMensaje tipo)
 }
 
 
+
 tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, uint32_t posicionY, uint32_t prox_instruccion, uint32_t puntero_pcb){
 	tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
 	tripulante->tid = tid;
@@ -64,6 +65,7 @@ tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, u
 	tripulante->posicionY = posicionY;
 	tripulante->prox_instruccion = prox_instruccion;
 	tripulante->puntero_pcb = puntero_pcb;
+	sem_init(&(tripulante->semaforo_tripulante),0,0);
 	return tripulante;
 }
 
@@ -198,10 +200,10 @@ t_list* recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* log
 
 	if (tipoMensaje == 1){
 		printf("recibi el paquete indicado y se guardara en la lista de ready");
-		list_add(lista, 1);
-		list_add(lista, 2);
-		list_add(lista, 3);
-		list_add(lista, 4);
+		//list_add(lista, 1);
+		//list_add(lista, 2);
+		//list_add(lista, 3);
+		//list_add(lista, 4);
 		//lista = recibir_paquete(conexionMiRam);
 		/*tripulante = (nuevoTripulante*)list_get(lista, 0);
 		printf("\n ID: %d \n", tripulante->id );
@@ -221,6 +223,7 @@ t_list* recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* log
 size_t tamanio_tcb (tcbTripulante* tripulante){
 	size_t tamanio = sizeof(uint32_t)*5;
 	tamanio += sizeof(char);
+	tamanio += sizeof(sem_t);
 	return tamanio;
 }
 

@@ -3,6 +3,7 @@
 
 
 
+
 config_discordiador configuracion;
 //config_struct configuracion;
 
@@ -11,12 +12,12 @@ sem_t TRABAJAR_TRIPULANTE;
 int id_tripulante = 0;
 
 
-void Trabajar (int* numeroId){
+void Trabajar (tcbTripulante* tripulante){
 	int numero = 0;
-	sem_wait(&INICIAR_TRIPULANTE);
+	sem_wait(&(tripulante->semaforo_tripulante));
 
 	while(numero < 10){
-		printf("hola soy el hilo %d, estoy trabajando \n", numeroId);
+		printf("hola soy el hilo %d, estoy trabajando \n", tripulante->tid);
 		fflush(stdout);
 		numero ++;
 
@@ -67,6 +68,8 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	char* nombreThread = "";
 	int cantidad_tripulantes = 0;
 	int id_prueba=0;
+	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
+	tcbTripulante* tripulante2= malloc(sizeof(tcbTripulante));
 	while(1){
 
 		tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
@@ -77,6 +80,9 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 		char* leido = readline("");
 		switch (codigoOperacion(leido)){
 			case INICIAR_PATOTA:
+
+
+
 				/*paquete = crear_paquete(INICIAR_PATOTA);
 				char** parametros = string_split(leido, " ");
 				log_info(logger, (char*)parametros[1]);
@@ -93,8 +99,10 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				lista_tripulantes_ready=recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger, lista_tripulantes_ready);
 				while(cantidad_tripulantes < 4){
 					cantidad_tripulantes ++;
+					tcbTripulante* tripulante=crear_tripulante(cantidad_tripulantes,'N',5,6,1,1);
 					pthread_t nombreHilo = (char*)(cantidad_tripulantes);
-					pthread_create(&nombreHilo,NULL,(void*)Trabajar,cantidad_tripulantes);
+					pthread_create(&nombreHilo,NULL,(void*)Trabajar,tripulante);
+					list_add(lista_tripulantes_ready, cantidad_tripulantes - 1);
 				}
 				cantidad_tripulantes = 0;
 				while(cantidad_tripulantes < 4){
@@ -110,12 +118,13 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				break;
 
 			case INICIAR_PLANIFICACION:
-				id_prueba=(int*)list_get(lista_tripulantes_ready, 0);
-				id_prueba=(int*)list_get(lista_tripulantes_ready, 1);
+
+				tripulante1=(tcbTripulante*)list_get(lista_tripulantes_ready, 0);
+				tripulante2=(tcbTripulante*)list_get(lista_tripulantes_ready, 1);
 
 				sem_wait(&TRABAJAR_TRIPULANTE);
-				sem_post(&id_prueba);
-				sem_post(&id_prueba);
+				sem_post(&(tripulante1->semaforo_tripulante));
+				sem_post(&(tripulante2->semaforo_tripulante));
 				/*if(list_size(lista_tripulantes_ready)!=0){
 					//funcion lista para usar con los hilos
 					id_prueba=(int*)list_get(lista_tripulantes_ready, 0);
