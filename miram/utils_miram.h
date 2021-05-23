@@ -109,7 +109,7 @@ void eliminar_paquete(t_paquete* paquete);
 tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, uint32_t);
 pcbPatota* crear_patota(uint32_t , uint32_t);
 //solo para comprobar que se formaron bien
-void mostrarTripulante(tcbTripulante* tripulante,pcbPatota* patota);
+void mostrar_tripulante(tcbTripulante* tripulante,pcbPatota* patota);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanio_tcb(tcbTripulante*);

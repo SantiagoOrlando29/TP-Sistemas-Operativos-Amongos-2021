@@ -32,9 +32,9 @@ int main(int argc, char* argv[]) {
 
 int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
 	int tipoMensaje = -1;
-
+	int tid=1;
 	while(1){
-		tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+		tcbTripulante* tripulante = crear_tripulante(tid,'N',5,6,1,1);
 		t_paquete* paquete;
 		char* leido = readline("");
 		switch (codigoOperacion(leido)){
@@ -42,15 +42,19 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				paquete = crear_paquete(INICIAR_PATOTA);
 				char** parametros = string_split(leido, " ");
 				log_info(logger, (char*)parametros[1]);
-				//for(int i = 0; i < (int)parametros[1]; i++){
+				// hay que verificar lo que hay en parametros[1] ,que sea un nro
+				//for(int i = 0; i < atoi(parametros[1]); i++){
 					//Creacion de tripulantes
+					tripulante = crear_tripulante(tid,'N',5,6,1,1);
+					agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+					tid++;
 				//}
-				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+					enviar_paquete(paquete, conexionMiRam);
 
-				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
-				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+				//tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 
-				enviar_paquete(paquete, conexionMiRam);
 				eliminar_paquete(paquete);
 				break;
 

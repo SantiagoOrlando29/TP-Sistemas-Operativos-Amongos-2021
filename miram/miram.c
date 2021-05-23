@@ -22,7 +22,7 @@ int main(void)
 	//por el momento hasta que implementemos la memoria
 	//t_list* tripulantes=list_create();
 	//t_list* patotas=list_create();
-
+	uint32_t pid=1; //ID_PATOTA
 	while(1)
 	{
 		t_list* lista = list_create();
@@ -33,7 +33,16 @@ int main(void)
 			switch(tipoMensaje)
 			{
 			case INICIAR_PATOTA:
+				lista=recibir_paquete(discordiador);
+				patota=crear_patota(pid,0);
+				pid++;
+				int i;
+				for(i=0;i<list_size(lista);i++){
+					tripulante=(tcbTripulante*)list_get(lista,i);
+					mostrar_tripulante(tripulante,patota);
+					printf("\n");
 
+				}
 				break;
 
 			case LISTAR_TRIPULANTES:
