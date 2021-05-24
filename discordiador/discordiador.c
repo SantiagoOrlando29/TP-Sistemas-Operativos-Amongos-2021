@@ -11,44 +11,82 @@ sem_t INICIAR_TRIPULANTE;
 sem_t TRABAJAR_TRIPULANTE;
 sem_t BLOQUEAR_TRIPULANTE;
 sem_t READY_TRIPULANTE;
+sem_t ESPERA_HILO;
+sem_t HABILITA_EJECUTAR;
 int id_tripulante = 0;
+t_list* lista_tripulantes_ready;
+t_list* lista_tripulantes_bloqueado;
+t_list* lista_tripulantes_trabajando;
 
-void Esperar (tcbTripulante* tripulante){
-	int numero = 0;
+
+
+void esperar_cpu (tcbTripulante* tripulante){
+	while(tripulante->estado != 'R'){
+
+	}
+
 	sem_wait(&(tripulante->semaforo_tripulante));
+
+	int numero = 0;
 	while(numero < 5){
-		printf("hola soy el hilo %d, estoy esperando tarea \n", tripulante->tid);
+		printf("hola soy el hilo %d, estoy esperando CPU \n", tripulante->tid);
 		fflush(stdout);
 		numero ++;
 	}
+
 	tripulante->estado = 'E';
-	sem_post(&TRABAJAR_TRIPULANTE);
+	//list_remove(lista_tripulantes_ready, 0);
+	//list_add(lista_tripulantes_trabajando, tripulante);
+	sem_post(&(tripulante->semaforo_tripulante));
 }
 
-void Trabajar (tcbTripulante* tripulante){
-	int numero = 0;
-	//sem_wait(&(tripulante->semaforo_tripulante));
 
+void trabajar (tcbTripulante* tripulante){
+	//sem_post(&ESPERA_HILO);
+
+	sem_wait(&(tripulante->semaforo_tripulante));
+
+	int numero = 0;
 	while(numero < 5){
 		printf("hola soy el hilo %d, estoy trabajando \n", tripulante->tid);
 		fflush(stdout);
 		numero ++;
 	}
-	//sem_post(&TRABAJAR_TRIPULANTE);
+
 	tripulante->estado = 'B';
-	sem_post(&BLOQUEAR_TRIPULANTE);
+	list_remove(lista_tripulantes_trabajando, 0);
+	list_add(lista_tripulantes_bloqueado, tripulante);
+	sem_post(&(tripulante->semaforo_tripulante));
+
+	//int lista_size = list_size(lista_tripulantes_ready);
+	//if (lista_size >0){
+	/*tcbTripulante* tripulanteA = malloc(sizeof(tcbTripulante));
+	tripulanteA = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
+	list_add(lista_tripulantes_trabajando, tripulanteA);
+	sem_post(&(tripulanteA->semaforo_tripulante));*/
+	//}
+	//sem_post(&INICIAR_PLANI);
+	sem_post(&HABILITA_EJECUTAR);
 }
 
 void trabajar_bloqueado (tcbTripulante* tripulante){
-	int numero = 0;
+	while(tripulante->estado != 'B'){
 
+	}
+
+	sem_wait(&(tripulante->semaforo_tripulante));
+
+	int numero = 0;
 	while(numero < 5){
 		printf("hola soy el hilo %d, estoy bloqueado \n", tripulante->tid);
 		fflush(stdout);
 		numero ++;
 	}
+
 	tripulante->estado = 'R';
-	sem_post(&READY_TRIPULANTE);
+	list_remove(lista_tripulantes_bloqueado, 0);
+	//list_add(lista_tripulantes_ready, tripulante);
+	sem_post(&(tripulante->semaforo_tripulante));
 }
 
 
@@ -84,13 +122,18 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 
 	 /*Hacer una funcion que cree las diferetnes listas*/
 	sem_init(&INICIAR_TRIPULANTE, 0,0);
-	sem_init(&TRABAJAR_TRIPULANTE, 0,1);
+	sem_init(&TRABAJAR_TRIPULANTE, 0,0);
 	sem_init(&BLOQUEAR_TRIPULANTE, 0,0);
 	sem_init(&READY_TRIPULANTE, 0,0);
+	sem_init(&ESPERA_HILO, 0,0);
+	sem_init(&HABILITA_EJECUTAR, 0,0);
 
-	t_list* lista_tripulantes_ready = list_create();
-	t_list* lista_tripulantes_bloqueado = list_create();
-	t_list* lista_tripulantes_trabajando = list_create();
+	//t_list* lista_tripulantes_ready = list_create();
+	//t_list* lista_tripulantes_bloqueado = list_create();
+	//t_list* lista_tripulantes_trabajando = list_create();
+	lista_tripulantes_ready = list_create();
+	lista_tripulantes_bloqueado = list_create();
+	lista_tripulantes_trabajando = list_create();
 	t_list* listaTripulantes;
 	int tipoMensaje = -1;
 	char* nombreThread = "";
@@ -128,7 +171,8 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 					cantidad_tripulantes ++;
 					tcbTripulante* tripulante=crear_tripulante(cantidad_tripulantes,'N',5,6,1,1);
 					pthread_t nombreHilo = (char*)(cantidad_tripulantes);
-					pthread_create(&nombreHilo,NULL,(void*)Esperar,tripulante);
+					pthread_create(&nombreHilo,NULL,(void*)trabajar,tripulante);
+					//sem_wait(&ESPERA_HILO);
 					list_add(lista_tripulantes_ready, tripulante);
 				}
 				cantidad_tripulantes = 0;
@@ -145,49 +189,56 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				break;
 
 			case INICIAR_PLANIFICACION:
-				//sem_post(&INICIAR_TRIPULANTE);
-				tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
-				tripulante2 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
-				sem_post(&(tripulante1->semaforo_tripulante));
-				sem_post(&(tripulante2->semaforo_tripulante));
-				list_add(lista_tripulantes_trabajando, tripulante1);
-				list_add(lista_tripulantes_trabajando, tripulante2);
-				sem_wait(&TRABAJAR_TRIPULANTE);
-				sem_wait(&TRABAJAR_TRIPULANTE);
-				Trabajar(tripulante1);
-				Trabajar(tripulante2);
+				sem_post(&INICIAR_TRIPULANTE);
+
+				int lista_size = list_size(lista_tripulantes_ready);
+				if (lista_size >0){
+					tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
+					tripulante2 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
+					tripulante1->estado = 'E';
+					tripulante2->estado = 'E';
+					list_add(lista_tripulantes_trabajando, tripulante1);
+					list_add(lista_tripulantes_trabajando, tripulante2);
+
+					sem_post(&(tripulante1->semaforo_tripulante));
+					sem_post(&(tripulante2->semaforo_tripulante));
+					tcbTripulante* tripulante3 = malloc(sizeof(tcbTripulante));
+					while(list_size(lista_tripulantes_ready) >0){
+						sem_wait(&HABILITA_EJECUTAR);
+						tripulante3 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
+						tripulante3->estado = 'E';
+						list_add(lista_tripulantes_trabajando, tripulante3);
+						sem_post(&(tripulante3->semaforo_tripulante));
+					}
+				//trabajar_bloqueado(tripulante1);
+				//trabajar_bloqueado(tripulante2);
+
+				}
+
+					//sem_wait(&(tripulante1->semaforo_tripulante));
+					//sem_wait(&(tripulante2->semaforo_tripulante));
 
 
-				sem_wait(&BLOQUEAR_TRIPULANTE);
-				sem_wait(&BLOQUEAR_TRIPULANTE);
-				tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_trabajando, 0);
-				list_add(lista_tripulantes_bloqueado, tripulante1);
-				tripulante2 = (tcbTripulante*)list_remove(lista_tripulantes_trabajando, 0);
-				list_add(lista_tripulantes_bloqueado, tripulante2);
-				trabajar_bloqueado (tripulante1);
-				trabajar_bloqueado (tripulante2);
+					/*tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_trabajando, 0);
+					tripulante2 = (tcbTripulante*)list_remove(lista_tripulantes_trabajando, 0);
+					list_add(lista_tripulantes_bloqueado, tripulante1);
+					list_add(lista_tripulantes_bloqueado, tripulante2);*/
 
-				sem_wait(&READY_TRIPULANTE);
-				sem_wait(&READY_TRIPULANTE);
-				tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
-				list_add(lista_tripulantes_ready, tripulante1);
+
+
+
+				/*tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
 				tripulante2 = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
-				list_add(lista_tripulantes_ready, tripulante2);
+				list_add(lista_tripulantes_ready, tripulante1);
+				list_add(lista_tripulantes_ready, tripulante2);*/
+				//esperar_cpu (tripulante1);
+				//esperar_cpu (tripulante2);
 
-				/*Esperar (tripulante1);
-				Esperar (tripulante2);
-				printf("NADA: %d\n", 12);
 
-				sem_post(&(tripulante1->semaforo_tripulante));
-				sem_post(&(tripulante2->semaforo_tripulante));
-				tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
-				tripulante2 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
-				list_add(lista_tripulantes_trabajando, tripulante1);
-				list_add(lista_tripulantes_trabajando, tripulante2);
-				sem_wait(&TRABAJAR_TRIPULANTE);
-				sem_wait(&TRABAJAR_TRIPULANTE);
-				Trabajar(tripulante1);
-				Trabajar(tripulante2);*/
+
+
+
+
 
 				/*if(list_size(lista_tripulantes_ready)!=0){
 					//funcion lista para usar con los hilos
@@ -204,9 +255,9 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				free(tripulante);*/
 				break;
 
-			/*case PAUSAR_PLANIFICACION:
+			case PAUSAR_PLANIFICACION:
 				sem_wait(&INICIAR_TRIPULANTE);
-				break;*/
+				break;
 			case OBTENER_BITACORA:
 				enviar_header(OBTENER_BITACORA, conexionMongoStore);
 				tipoMensaje = recibir_operacion(conexionMongoStore);
