@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
+<<<<<<< HEAD
 		<cconfiguration id="cdt.managedbuild.toolchain.gnu.base.1118876425">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.base.1118876425" moduleId="org.eclipse.cdt.core.settings" name="Default">
+=======
+		<cconfiguration id="cdt.managedbuild.toolchain.gnu.base.1794275516">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.base.1794275516" moduleId="org.eclipse.cdt.core.settings" name="Default">
+>>>>>>> f7e306524c8b0b8f7ec746acb4660ff7cda3077b
 				<externalSettings/>
 				<extensions>
 					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
@@ -14,6 +19,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<<<<<<< HEAD
 				<configuration buildProperties="" id="cdt.managedbuild.toolchain.gnu.base.1118876425" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
 					<folderInfo id="cdt.managedbuild.toolchain.gnu.base.1118876425.1143300491" name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.base.606907823" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.base">
@@ -34,6 +40,19 @@
 							<tool id="cdt.managedbuild.tool.gnu.assembler.base.593447542" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1875979691" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
+=======
+				<configuration buildProperties="" id="cdt.managedbuild.toolchain.gnu.base.1794275516" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
+					<folderInfo id="cdt.managedbuild.toolchain.gnu.base.1794275516.919719508" name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.base.1947208097" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.GNU_ELF" id="cdt.managedbuild.target.gnu.platform.base.1489646193" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
+							<builder id="cdt.managedbuild.target.gnu.builder.base.464314089" managedBuildOn="false" name="Gnu Make Builder.Default" superClass="cdt.managedbuild.target.gnu.builder.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.200027307" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.2064435953" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.845509732" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.1859538865" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.465297982" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.base.319721601" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base"/>
+>>>>>>> f7e306524c8b0b8f7ec746acb4660ff7cda3077b
 						</toolChain>
 					</folderInfo>
 				</configuration>
@@ -45,8 +64,11 @@
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<<<<<<< HEAD
 		<project id="tp-2021-1c-INTratables.null.275870153" name="tp-2021-1c-INTratables"/>
+=======
+		<project id="tp-2021-1c-INTratables.null.1354441508" name="tp-2021-1c-INTratables"/>
+>>>>>>> f7e306524c8b0b8f7ec746acb4660ff7cda3077b
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>

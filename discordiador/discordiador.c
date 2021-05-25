@@ -1,7 +1,91 @@
-#include"discordiador.h"
+#include "discordiador.h"
+#include <semaphore.h>
+
+
+
 
 config_discordiador configuracion;
 //config_struct configuracion;
+sem_t NUEVO_AGREGAR;
+sem_t AGREGAR_NUEVO;
+sem_t INICIAR_TRIPULANTE;
+sem_t NUEVO_READY;
+sem_t TRABAJAR_TRIPULANTE;
+sem_t BLOQUEAR_TRIPULANTE;
+sem_t READY_TRIPULANTE;
+sem_t ESPERA_HILO;
+sem_t HABILITA_EJECUTAR;
+int id_tripulante = 0;
+t_list* lista_tripulantes_nuevo;
+t_list* lista_tripulantes_ready;
+t_list* lista_tripulantes_bloqueado;
+t_list* lista_tripulantes_trabajando;
+
+
+
+void tripulante_hilo (tcbTripulante* tripulante){
+	sem_wait(&(tripulante->semaforo_tripulante));
+	//si funcion tomar tarea != null entonces
+	sem_post(&NUEVO_READY);
+	printf("hola soy el hilo %d, estoy listo para ejecutar \n", tripulante->tid);
+	fflush(stdout);
+	sem_wait(&(tripulante->semaforo_tripulante));
+	int numero = 0;
+	while(numero < 5){
+		printf("hola soy el hilo %d, estoy trabajando \n", tripulante->tid);
+		sleep(3);
+		fflush(stdout);
+		numero ++;
+	}
+
+	tripulante->estado = 'B';
+	list_remove(lista_tripulantes_trabajando, 0);
+	list_add(lista_tripulantes_bloqueado, tripulante);
+	sem_post(&HABILITA_EJECUTAR);
+}
+
+void iniciar_planificacion() {
+	sem_wait(&INICIAR_TRIPULANTE);
+	while(1){
+		tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
+		tcbTripulante* tripulante2 = malloc(sizeof(tcbTripulante));
+		int lista_size = list_size(lista_tripulantes_ready);
+		if (lista_size >0){
+			tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
+			tripulante2 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
+			tripulante1->estado = 'E';
+			tripulante2->estado = 'E';
+			list_add(lista_tripulantes_trabajando, tripulante1);
+			list_add(lista_tripulantes_trabajando, tripulante2);
+			sem_post(&(tripulante1->semaforo_tripulante));
+			sem_post(&(tripulante2->semaforo_tripulante));
+			tcbTripulante* tripulante3 = malloc(sizeof(tcbTripulante));
+			while(list_size(lista_tripulantes_ready) >0){
+				sem_wait(&HABILITA_EJECUTAR);
+				tripulante3 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
+				tripulante3->estado = 'E';
+				list_add(lista_tripulantes_trabajando, tripulante3);
+				sem_post(&(tripulante3->semaforo_tripulante));
+			}
+
+		}
+	}
+}
+
+void nuevo_ready() {
+	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
+	while(1){
+		sem_wait(&AGREGAR_NUEVO);
+		tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_nuevo, 0);
+		sem_post(&(tripulante1->semaforo_tripulante));
+		sem_wait(&NUEVO_READY);
+		list_add(lista_tripulantes_ready, tripulante1);
+		sem_post(&NUEVO_AGREGAR);
+	}
+
+}
+
+
 int main(int argc, char* argv[]) {
 	//config_struct configuracion;
 	t_log* logger;
@@ -31,39 +115,74 @@ int main(int argc, char* argv[]) {
 }
 
 int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
+
+	 /*Hacer una funcion que cree las diferetnes listas*/
+	sem_init(&INICIAR_TRIPULANTE, 0,0);
+	sem_init(&TRABAJAR_TRIPULANTE, 0,0);
+	sem_init(&BLOQUEAR_TRIPULANTE, 0,0);
+	sem_init(&READY_TRIPULANTE, 0,0);
+	sem_init(&ESPERA_HILO, 0,0);
+	sem_init(&HABILITA_EJECUTAR, 0,0);
+	sem_init (&NUEVO_READY, 0,0);
+	sem_init (&AGREGAR_NUEVO, 0,0);
+	sem_init (&NUEVO_AGREGAR, 0,1);
+
+
+
+
+	lista_tripulantes_nuevo = list_create();
+	lista_tripulantes_ready = list_create();
+	lista_tripulantes_bloqueado = list_create();
+	lista_tripulantes_trabajando = list_create();
 	int tipoMensaje = -1;
-	int tid=1;
+	int cantidad_tripulantes;
+	pthread_t lista_ready;
+	pthread_t lista_nuevo;
+
+	pthread_create(&lista_ready,NULL,(void*)iniciar_planificacion,NULL);
+	pthread_detach(&lista_ready);
+	pthread_create(&lista_nuevo,NULL,(void*)nuevo_ready,NULL);
+	pthread_detach(&lista_nuevo);
+
 	while(1){
-		tcbTripulante* tripulante = crear_tripulante(tid,'N',5,6,1,1);
+		tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
 		t_paquete* paquete;
-		char* leido = readline("");
+		char* nombreHilo = "";
+		char* leido = readline("Iniciar consola: ");
+		printf("\n");
 		switch (codigoOperacion(leido)){
 			case INICIAR_PATOTA:
-				paquete = crear_paquete(INICIAR_PATOTA);
-				char** parametros = string_split(leido, " ");
-				log_info(logger, (char*)parametros[1]);
-				// hay que verificar lo que hay en parametros[1] ,que sea un nro
-				//for(int i = 0; i < atoi(parametros[1]); i++){
-					//Creacion de tripulantes
-					tripulante = crear_tripulante(tid,'N',5,6,1,1);
-					agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
-					tid++;
-				//}
-					enviar_paquete(paquete, conexionMiRam);
+				enviar_header(INICIAR_PATOTA, conexionMiRam);
+				tipoMensaje = recibir_operacion(conexionMiRam);
+				lista_tripulantes_ready=recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
+				cantidad_tripulantes = 0;
+				while(cantidad_tripulantes < 5){
+					cantidad_tripulantes ++;
+					tcbTripulante* tripulante=crear_tripulante(cantidad_tripulantes,'N',5,6,1,1);
+					pthread_t nombreHilo = (char*)(cantidad_tripulantes);
+					pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
+					pthread_detach(&nombreHilo);
+					sem_wait(&NUEVO_AGREGAR);
+					list_add(lista_tripulantes_nuevo, tripulante);
+					sem_post(&AGREGAR_NUEVO);
 
-				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
-				//tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
-				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
-
-				eliminar_paquete(paquete);
+				}
 				break;
 
 			case LISTAR_TRIPULANTES:
-				enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
+				/*enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
 				tipoMensaje = recibir_operacion(conexionMiRam);
-				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
+				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);*/
 				break;
 
+			case INICIAR_PLANIFICACION:
+				sem_post(&INICIAR_TRIPULANTE);
+
+				break;
+
+			case PAUSAR_PLANIFICACION:
+				sem_wait(&INICIAR_TRIPULANTE);
+				break;
 			case OBTENER_BITACORA:
 				enviar_header(OBTENER_BITACORA, conexionMongoStore);
 				tipoMensaje = recibir_operacion(conexionMongoStore);
@@ -85,7 +204,8 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				break;
 		}
 		free(leido);
-		free(tripulante);
+		pthread_mutex_destroy(&INICIAR_TRIPULANTE);
+
 	}
 }
 
@@ -109,5 +229,3 @@ void terminar_discordiador (int conexionMiRam, int conexionMongoStore, t_log* lo
 	liberar_conexion(conexionMiRam);
 	liberar_conexion(conexionMongoStore);
 }
-
-
