@@ -15,6 +15,7 @@ sem_t BLOQUEAR_TRIPULANTE;
 sem_t READY_TRIPULANTE;
 sem_t ESPERA_HILO;
 sem_t HABILITA_EJECUTAR;
+sem_t HABILITA_EXEC_SIG;
 int id_tripulante = 0;
 t_list* lista_tripulantes_nuevo;
 t_list* lista_tripulantes_ready;
@@ -26,29 +27,31 @@ t_list* lista_tripulantes_trabajando;
 void tripulante_hilo (tcbTripulante* tripulante){
 	sem_wait(&(tripulante->semaforo_tripulante));
 	//si funcion tomar tarea != null entonces
-	sem_post(&NUEVO_READY);
 	printf("hola soy el hilo %d, estoy listo para ejecutar \n", tripulante->tid);
+	sem_post(&NUEVO_READY);
 	fflush(stdout);
 	sem_wait(&(tripulante->semaforo_tripulante));
 	int numero = 0;
-	while(numero < 5){
+	while(numero < 3){
 		printf("hola soy el hilo %d, estoy trabajando \n", tripulante->tid);
-		sleep(3);
-		fflush(stdout);
+		sleep(2);
 		numero ++;
+		fflush(stdout);
 	}
 
 	tripulante->estado = 'B';
 	list_remove(lista_tripulantes_trabajando, 0);
-	list_add(lista_tripulantes_bloqueado, tripulante);
+	//list_add(lista_tripulantes_bloqueado, tripulante);
+	sem_wait(&HABILITA_EXEC_SIG);
 	sem_post(&HABILITA_EJECUTAR);
 }
 
 void iniciar_planificacion() {
 	sem_wait(&INICIAR_TRIPULANTE);
+	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
+	tcbTripulante* tripulante2 = malloc(sizeof(tcbTripulante));
+	tcbTripulante* tripulante3 = malloc(sizeof(tcbTripulante));
 	while(1){
-		tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
-		tcbTripulante* tripulante2 = malloc(sizeof(tcbTripulante));
 		int lista_size = list_size(lista_tripulantes_ready);
 		if (lista_size >0){
 			tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
@@ -59,17 +62,24 @@ void iniciar_planificacion() {
 			list_add(lista_tripulantes_trabajando, tripulante2);
 			sem_post(&(tripulante1->semaforo_tripulante));
 			sem_post(&(tripulante2->semaforo_tripulante));
-			tcbTripulante* tripulante3 = malloc(sizeof(tcbTripulante));
 			while(list_size(lista_tripulantes_ready) >0){
 				sem_wait(&HABILITA_EJECUTAR);
 				tripulante3 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
 				tripulante3->estado = 'E';
+				printf("\n ID: %d \n", tripulante3->tid );
 				list_add(lista_tripulantes_trabajando, tripulante3);
 				sem_post(&(tripulante3->semaforo_tripulante));
+				sem_post(&HABILITA_EXEC_SIG);
 			}
-
+			sem_post(&HABILITA_EXEC_SIG);
+			sem_post(&HABILITA_EXEC_SIG);
+			sem_wait(&HABILITA_EJECUTAR);
+			sem_wait(&HABILITA_EJECUTAR);
 		}
 	}
+	free(tripulante1);
+	free(tripulante2);
+	free(tripulante3);
 }
 
 void nuevo_ready() {
@@ -81,7 +91,9 @@ void nuevo_ready() {
 		sem_wait(&NUEVO_READY);
 		list_add(lista_tripulantes_ready, tripulante1);
 		sem_post(&NUEVO_AGREGAR);
+
 	}
+	free(tripulante1);
 
 }
 
@@ -126,8 +138,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	sem_init (&NUEVO_READY, 0,0);
 	sem_init (&AGREGAR_NUEVO, 0,0);
 	sem_init (&NUEVO_AGREGAR, 0,1);
-
-
+	sem_init (&HABILITA_EXEC_SIG, 0,1);
 
 
 	lista_tripulantes_nuevo = list_create();
@@ -145,7 +156,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	pthread_detach(&lista_nuevo);
 
 	while(1){
-		tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+		//tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
 		t_paquete* paquete;
 		char* nombreHilo = "";
 		char* leido = readline("Iniciar consola: ");
@@ -154,11 +165,11 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 			case INICIAR_PATOTA:
 				enviar_header(INICIAR_PATOTA, conexionMiRam);
 				tipoMensaje = recibir_operacion(conexionMiRam);
-				lista_tripulantes_ready=recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
+				//lista_tripulantes_ready=recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
 				cantidad_tripulantes = 0;
 				while(cantidad_tripulantes < 5){
 					cantidad_tripulantes ++;
-					tcbTripulante* tripulante=crear_tripulante(cantidad_tripulantes,'N',5,6,1,1);
+					tcbTripulante* tripulante =crear_tripulante(cantidad_tripulantes,'N',5,6,1,1);
 					pthread_t nombreHilo = (char*)(cantidad_tripulantes);
 					pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
 					pthread_detach(&nombreHilo);
