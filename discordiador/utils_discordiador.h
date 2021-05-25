@@ -142,7 +142,9 @@ void enviar_header(tipoMensaje tipo, int socket_cliente);
 void imprimirTarea(tarea*);
 tarea_tripulante codigoTarea(char*);
 void leer_tareas(char*);
-
+tarea* crear_tarea(tarea_tripulante,int,int,int,int);
+tcbTripulante* hacer_tarea(tcbTripulante*,tarea*);
+void ejecutar_tarea(tarea_tripulante,int);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanio_tcb(tcbTripulante*);
