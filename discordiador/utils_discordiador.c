@@ -297,3 +297,55 @@ void imprimirTarea(tarea* aimprimir){
 
 }
 
+
+tarea* crear_tarea(tarea_tripulante cod_tarea,int parametro,int pos_x,int pos_y,int tiempo){
+	tarea* tarea_recibida = malloc(sizeof(tarea));
+	tarea_recibida->tarea=cod_tarea;
+	tarea_recibida->parametro=parametro;
+	tarea_recibida->pos_x=pos_x;
+	tarea_recibida->pos_y=pos_y;
+	tarea_recibida->tiempo=tiempo;
+	return tarea_recibida;
+
+}
+
+tcbTripulante* hacer_tarea(tcbTripulante* tripulante,tarea* tarea_recibida){
+	tripulante->posicionX=tarea_recibida->pos_x;
+	tripulante->posicionY=tarea_recibida->pos_y;
+	ejecutar_tarea(tarea_recibida->tarea,tarea_recibida->parametro);
+	sleep(tarea_recibida->tiempo);
+	return tripulante; //Enviar a MiRam (Actualizar tcb)
+}
+
+void ejecutar_tarea(tarea_tripulante cod_tarea,int parametro){
+
+	switch(cod_tarea){
+
+	case GENERAR_OXIGENO:
+			for(;parametro>0;parametro--){
+				printf("O");
+			}
+			printf("\n");
+			break;
+
+	case GENERAR_COMIDA:
+			for(;parametro>0;parametro--){
+				printf("C");
+			}
+			printf("\n");
+			break;
+
+	case GENERAR_BASURA:
+			for(;parametro>0;parametro--){
+				printf("B");
+			}
+			printf("\n");
+			break;
+
+	default:
+		printf("No existe codigo de tarea\n");
+		break;
+
+	}
+
+}

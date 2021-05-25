@@ -96,6 +96,13 @@ int main(int argc, char* argv[]) {
 	fclose(archivo);
 	logger = log_create("discordiador.log","discordiador",1,LOG_LEVEL_INFO);
 
+	tcbTripulante* tripulante=crear_tripulante(1,'N',5,6,1,1);
+	tarea* tarea_recibida1 = crear_tarea(GENERAR_OXIGENO,5,2,2,5);
+	tarea* tarea_recibida2 = crear_tarea(GENERAR_COMIDA,7,2,2,5);
+	tarea* tarea_recibida3 = crear_tarea(GENERAR_BASURA,9,2,2,5);
+	hacer_tarea(tripulante,tarea_recibida1);
+	hacer_tarea(tripulante,tarea_recibida2);
+	hacer_tarea(tripulante,tarea_recibida3);
 
 
 	leer_config();
