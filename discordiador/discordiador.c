@@ -16,6 +16,7 @@ sem_t READY_TRIPULANTE;
 sem_t ESPERA_HILO;
 sem_t HABILITA_EJECUTAR;
 sem_t HABILITA_EXEC_SIG;
+sem_t HABILITA_DOS;
 int id_tripulante = 0;
 t_list* lista_tripulantes_nuevo;
 t_list* lista_tripulantes_ready;
@@ -31,6 +32,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	sem_post(&NUEVO_READY);
 	fflush(stdout);
 	sem_wait(&(tripulante->semaforo_tripulante));
+	sem_post(&HABILITA_EJECUTAR);
 	int numero = 0;
 	while(numero < 3){
 		printf("hola soy el hilo %d, estoy trabajando \n", tripulante->tid);
@@ -42,8 +44,9 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	tripulante->estado = 'B';
 	list_remove(lista_tripulantes_trabajando, 0);
 	//list_add(lista_tripulantes_bloqueado, tripulante);
-	sem_wait(&HABILITA_EXEC_SIG);
-	sem_post(&HABILITA_EJECUTAR);
+	sem_post(&HABILITA_DOS);
+	//sem_wait(&HABILITA_EXEC_SIG);
+	//sem_post(&HABILITA_EJECUTAR);
 }
 
 void iniciar_planificacion() {
@@ -53,6 +56,18 @@ void iniciar_planificacion() {
 	tcbTripulante* tripulante3 = malloc(sizeof(tcbTripulante));
 	while(1){
 		int lista_size = list_size(lista_tripulantes_ready);
+		if (lista_size >0){
+			sem_wait(&HABILITA_DOS);
+			sem_wait(&HABILITA_EJECUTAR);
+			tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
+			tripulante1->estado = 'E';
+			list_add(lista_tripulantes_trabajando, tripulante1);
+			sem_post(&(tripulante1->semaforo_tripulante));
+			//sem_post(&HABILITA_EXEC_SIG);
+		}
+
+
+		/*int lista_size = list_size(lista_tripulantes_ready);
 		if (lista_size >0){
 			tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
 			tripulante2 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
@@ -74,7 +89,7 @@ void iniciar_planificacion() {
 			sem_post(&HABILITA_EXEC_SIG);
 			sem_wait(&HABILITA_EJECUTAR);
 			sem_wait(&HABILITA_EJECUTAR);
-		}
+		}*/
 	}
 	free(tripulante1);
 	free(tripulante2);
@@ -108,12 +123,12 @@ int main(int argc, char* argv[]) {
 	logger = log_create("discordiador.log","discordiador",1,LOG_LEVEL_INFO);
 
 	tcbTripulante* tripulante=crear_tripulante(1,'N',5,6,1,1);
-	tarea* tarea_recibida1 = crear_tarea(GENERAR_OXIGENO,5,2,2,5);
+	/*tarea* tarea_recibida1 = crear_tarea(GENERAR_OXIGENO,5,2,2,5);
 	tarea* tarea_recibida2 = crear_tarea(GENERAR_COMIDA,7,2,2,5);
 	tarea* tarea_recibida3 = crear_tarea(GENERAR_BASURA,9,2,2,5);
 	hacer_tarea(tripulante,tarea_recibida1);
 	hacer_tarea(tripulante,tarea_recibida2);
-	hacer_tarea(tripulante,tarea_recibida3);
+	hacer_tarea(tripulante,tarea_recibida3);*/
 
 
 	leer_config();
@@ -140,11 +155,12 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	sem_init(&BLOQUEAR_TRIPULANTE, 0,0);
 	sem_init(&READY_TRIPULANTE, 0,0);
 	sem_init(&ESPERA_HILO, 0,0);
-	sem_init(&HABILITA_EJECUTAR, 0,0);
+	sem_init(&HABILITA_EJECUTAR, 0,1);
 	sem_init (&NUEVO_READY, 0,0);
 	sem_init (&AGREGAR_NUEVO, 0,0);
 	sem_init (&NUEVO_AGREGAR, 0,1);
 	sem_init (&HABILITA_EXEC_SIG, 0,1);
+	sem_init(&HABILITA_DOS, 0,2);
 
 
 	lista_tripulantes_nuevo = list_create();
