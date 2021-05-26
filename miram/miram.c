@@ -37,11 +37,11 @@ int main(void)
 				patota=crear_patota(pid,0);
 				pid++;
 				int i;
+				printf("El tamanio de la lista es: %d \n", list_size(lista));
 				for(i=0;i<list_size(lista);i++){
-					tripulante=(tcbTripulante*)list_get(lista,i);
-					mostrar_tripulante(tripulante,patota);
-					printf("\n");
-
+						tripulante=(tcbTripulante*)list_get(lista,i);
+						mostrar_tripulante(tripulante,patota);
+						printf("\n");
 				}
 				break;
 
