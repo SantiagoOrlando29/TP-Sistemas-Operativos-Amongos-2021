@@ -40,16 +40,14 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 		switch (codigoOperacion(leido)){
 			case INICIAR_PATOTA:
 				paquete = crear_paquete(INICIAR_PATOTA);
-				char** parametros = string_split(leido, " ");
-				log_info(logger, (char*)parametros[1]);
-				// hay que verificar lo que hay en parametros[1] ,que sea un nro
-				//for(int i = 0; i < atoi(parametros[1]); i++){
-					//Creacion de tripulantes
+				char** parametros = string_split(leido," ");
+				agregar_a_paquete(paquete,  parametros[2], sizeof(char*));
+				for(int i = 0; i < atoi(parametros[1]); i++){
 					tripulante = crear_tripulante(tid,'N',5,6,1,1);
 					agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 					tid++;
-				//}
-					enviar_paquete(paquete, conexionMiRam);
+				}
+				enviar_paquete(paquete, conexionMiRam);
 
 				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 				//tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
