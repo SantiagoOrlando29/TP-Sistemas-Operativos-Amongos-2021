@@ -18,32 +18,38 @@ t_list* lista_tripulantes_nuevo;
 t_list* lista_tripulantes_ready;
 t_list* lista_tripulantes_bloqueado;
 t_list* lista_tripulantes_trabajando;
+t_list* lista_tripulantes_exit;
 
-tarea* pedir_tarea(){
-	tarea* tarea_recibida2 = crear_tarea(GENERAR_COMIDA,7,2,2,2);
-	return(tarea_recibida2);
+tarea* pedir_tarea(tcbTripulante* tripulante){
+	tarea* tarea_recibida = crear_tarea(GENERAR_COMIDA,7,2,2,2);
+	return(tarea_recibida);
 }
-tarea* pedir_tarea_normal(){
-	tarea* tarea_recibida2 = crear_tarea(GENERAR_OXIGENO,5,2,2,2);
-	return(tarea_recibida2);
+tarea* pedir_tarea_normal(tcbTripulante* tripulante){
+	if(tripulante->tid < 4){ // ESTO ROMPE
+		tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,2);
+		return(tarea_recibida);
+	} else{
+		return NULL;
+	}
 }
 
 void tripulante_hilo (tcbTripulante* tripulante){
 	sem_wait(&(tripulante->semaforo_tripulante));
 	//si funcion tomar tarea != null entonces
-	tarea* tarea_recibida1 = crear_tarea(GENERAR_OXIGENO,5,2,2,2); //TAREA NORMAL
+	tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,2); //TAREA NORMAL
 
 	printf("hola soy el hilo %d, P%d, estoy listo para ejecutar \n", tripulante->tid, tripulante->puntero_pcb);
 	sem_post(&NUEVO_READY);
 	fflush(stdout);
 	sem_wait(&(tripulante->semaforo_tripulante));
 	sem_post(&HABILITA_EJECUTAR);
+
 	while(tripulante->prox_instruccion < 4){
 		printf("hilo %d P%d, me estoy moviendo \n", tripulante->tid, tripulante->puntero_pcb);
-		sleep(tripulante->tid);
+		sleep(tripulante->tid); //o cualquier numero
 		fflush(stdout);
 
-		if(tarea_recibida1->tarea == 2){ //TAREA DE I/O
+		if(tarea_recibida->tarea == 2){ //TAREA DE I/O
 			tripulante->estado = 'B';
 			list_remove(lista_tripulantes_trabajando, 0);
 			list_add(lista_tripulantes_bloqueado, tripulante);
@@ -52,15 +58,23 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			sem_post(&PASA_A_BLOQUEADO);
 			sem_post(&HABILITA_DOS);
 			sem_wait(&(tripulante->semaforo_tripulante));
-			sem_post(&HABILITA_EJECUTAR);
+			if(tripulante->estado != 'X'){ // O SEA Q TIENE MAS TAREAS
+				tarea_recibida = pedir_tarea_normal(tripulante); //esto en realidad no iria, pq se la tiene q pasar el bloq o algo asi
+				sem_post(&HABILITA_EJECUTAR);
+			} else{ // NO TIENE MAS TAREAS
+				tripulante->prox_instruccion = 100;
+			}
 		} else { //TAREA NORMAL
-			sleep(tarea_recibida1->tiempo);
+			sleep(tarea_recibida->tiempo);
+			tarea_recibida = pedir_tarea(tripulante); // I/O
 		}
 
 		tripulante->prox_instruccion++;
-		tarea_recibida1 = pedir_tarea(); // I/O
+		//tarea_recibida1 = pedir_tarea(tripulante); // I/O
 	}
-	sem_post(&HABILITA_DOS);
+	if(tripulante->estado != 'X'){
+		sem_post(&HABILITA_DOS);
+	}
 
 }
 
@@ -100,6 +114,7 @@ void nuevo_ready() {
 
 void bloqueado_ready() {
 	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
+	tarea* tarea_recibida;
 	while(1){
 		sem_wait(&PASA_A_BLOQUEADO);
 		tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
@@ -107,8 +122,16 @@ void bloqueado_ready() {
 		sleep(1);
 		printf("hilo %d P%d, termino I/O \n", tripulante1->tid, tripulante1->puntero_pcb);
 		fflush(stdout);
-		tripulante1->estado = 'R';
-		list_add(lista_tripulantes_ready, tripulante1);
+		tarea_recibida = pedir_tarea_normal(tripulante1);
+		if(tarea_recibida != NULL){ // TIENE MAS TAREAS
+			tripulante1->estado = 'R';
+			list_add(lista_tripulantes_ready, tripulante1);
+		} else{ // NO TIENE MAS TAREAS
+			tripulante1->estado = 'X';
+			list_add(lista_tripulantes_exit, tripulante1);
+			sem_post(&(tripulante1->semaforo_tripulante));
+		}
+
 	}
 	free(tripulante1);
 
@@ -167,6 +190,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	lista_tripulantes_ready = list_create();
 	lista_tripulantes_bloqueado = list_create();
 	lista_tripulantes_trabajando = list_create();
+	lista_tripulantes_exit = list_create();
 	int tipoMensaje = -1;
 	int cantidad_tripulantes;
 	int patota = 0;
