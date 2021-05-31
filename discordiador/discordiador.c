@@ -20,41 +20,75 @@ t_list* lista_tripulantes_bloqueado;
 t_list* lista_tripulantes_trabajando;
 t_list* lista_tripulantes_exit;
 
+
 tarea* pedir_tarea(tcbTripulante* tripulante){
 	tarea* tarea_recibida = crear_tarea(GENERAR_COMIDA,7,2,2,2);
 	return(tarea_recibida);
 }
 tarea* pedir_tarea_normal(tcbTripulante* tripulante){
-	if(tripulante->tid < 4){ // ESTO ROMPE
+	if(tripulante->tid < 4){ // ESTO HACE Q VAYA A EXIT
 		tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,2);
 		return(tarea_recibida);
 	} else{
 		return NULL;
 	}
 }
+bool sigue_ejecutando(int quantums_ejecutados){
+	if(strcmp(configuracion.algoritmo, "FIFO") ==0){
+		return true;
+	}else if(quantums_ejecutados < configuracion.quantum){ //RR
+		return true;
+	}
+	return false;
+}
+
+void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pensar otro nombre para la funcion
+	bool flag_sigue_ejecutando = sigue_ejecutando(*quantums_ejecutados);
+	if(flag_sigue_ejecutando == false ){
+		printf("hilo %d P%d, FIN DE Q \n", tripulante->tid, tripulante->puntero_pcb);
+		list_remove(lista_tripulantes_trabajando, 0);
+		tripulante->estado = 'R';
+		list_add(lista_tripulantes_ready, tripulante);
+		sem_post(&HABILITA_DOS);
+		sem_post(&HABILITA_EJECUTAR);
+		sem_wait(&(tripulante->semaforo_tripulante));
+		*quantums_ejecutados = 0;
+	}
+}
 
 void tripulante_hilo (tcbTripulante* tripulante){
 	sem_wait(&(tripulante->semaforo_tripulante));
 	//si funcion tomar tarea != null entonces
-	tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,2); //TAREA NORMAL
+	tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,4); //TAREA NORMAL
 
 	printf("hola soy el hilo %d, P%d, estoy listo para ejecutar \n", tripulante->tid, tripulante->puntero_pcb);
 	sem_post(&NUEVO_READY);
 	fflush(stdout);
 	sem_wait(&(tripulante->semaforo_tripulante));
 	sem_post(&HABILITA_EJECUTAR);
-
+	int contador_movimientos = 0;
+	int contador_ciclos_trabajando = 0;
+	int quantums_ejecutados = 0;
 	while(tripulante->prox_instruccion < 4){
-		printf("hilo %d P%d, me estoy moviendo \n", tripulante->tid, tripulante->puntero_pcb);
-		sleep(tripulante->tid); //o cualquier numero
-		fflush(stdout);
+		while(contador_movimientos < tarea_recibida->tiempo){
+			printf("hilo %d P%d, me estoy moviendo \n", tripulante->tid, tripulante->puntero_pcb);
+			sleep(1);
+			fflush(stdout);
+			contador_movimientos++;
+			quantums_ejecutados++;
+			termina_quantum(&quantums_ejecutados, tripulante);
+		}
+		contador_movimientos = 0;
 
 		if(tarea_recibida->tarea == 2){ //TAREA DE I/O
-			tripulante->estado = 'B';
+			quantums_ejecutados++;
+			termina_quantum(&quantums_ejecutados, tripulante);
+			sleep(1); // retardo ciclo cpu //sleep para eso de iniciar tarea I/O (simula peticion al SO). Nose si va en esta linea
+			quantums_ejecutados = 0;
 			list_remove(lista_tripulantes_trabajando, 0);
+			tripulante->estado = 'B';
 			list_add(lista_tripulantes_bloqueado, tripulante);
 			printf("hilo %d P%d, me bloquie \n", tripulante->tid, tripulante->puntero_pcb);
-			sleep(1); //sleep para eso de iniciar tarea I/O (simula peticion al SO). Nose si va en esta linea?
 			sem_post(&PASA_A_BLOQUEADO);
 			sem_post(&HABILITA_DOS);
 			sem_wait(&(tripulante->semaforo_tripulante));
@@ -65,16 +99,31 @@ void tripulante_hilo (tcbTripulante* tripulante){
 				tripulante->prox_instruccion = 100;
 			}
 		} else { //TAREA NORMAL
-			sleep(tarea_recibida->tiempo);
-			tarea_recibida = pedir_tarea(tripulante); // I/O
+			while(contador_ciclos_trabajando < tarea_recibida->tiempo){
+				printf("hilo %d P%d, estoy trabajando \n", tripulante->tid, tripulante->puntero_pcb);
+				sleep(1);
+				contador_ciclos_trabajando++;
+				quantums_ejecutados++;
+				if(contador_ciclos_trabajando == tarea_recibida->tiempo){//ESTE IF ESTA PARA QUE SI  YA TERMINO LA TAREA, SE FIJE SI TIENE OTRA MAS
+					tarea_recibida = pedir_tarea(tripulante); // I/O     // Y SI NO LA TIENE QUE VAYA DIRECTO A EXIT SIN BLOQUEARSE POR FIN DE QUANTUM
+					if(tarea_recibida == NULL){ // NO TIENE MAS TAREAS
+						tripulante->prox_instruccion = 200;
+					}else{ //TIENE MAS TAREAS
+						termina_quantum(&quantums_ejecutados, tripulante);
+					}
+				}else{
+					termina_quantum(&quantums_ejecutados, tripulante);
+				}
+			}
+			contador_ciclos_trabajando = 0;
 		}
 
 		tripulante->prox_instruccion++;
-		//tarea_recibida1 = pedir_tarea(tripulante); // I/O
 	}
 	if(tripulante->estado != 'X'){
 		sem_post(&HABILITA_DOS);
 	}
+	printf("hilo %d P%d, EXIT\n", tripulante->tid, tripulante->puntero_pcb);
 
 }
 
@@ -87,7 +136,6 @@ void ready_exec() {
 		if (lista_size >0){
 			sem_wait(&HABILITA_DOS);
 			sem_wait(&HABILITA_EJECUTAR);
-			sleep(0.3);
 			tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
 			tripulante1->estado = 'E';
 			list_add(lista_tripulantes_trabajando, tripulante1);
