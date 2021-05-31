@@ -33,8 +33,11 @@ tarea* pedir_tarea_normal(tcbTripulante* tripulante){
 		return NULL;
 	}
 }
+
 bool sigue_ejecutando(int quantums_ejecutados){
 	if(strcmp(configuracion.algoritmo, "FIFO") ==0){
+		return true;
+	}else if(list_size(lista_tripulantes_ready) == 0){//O SEA QUE HAY 0 EN READY, ENTONCES NO TIENE QUE BLOQUEARSE POR FIN DE QUANTUM
 		return true;
 	}else if(quantums_ejecutados < configuracion.quantum){ //RR
 		return true;
