@@ -127,7 +127,7 @@ typedef struct{
 	int tiempo;
 }tarea;
 
-
+tarea* crearTarea(tarea_tripulante tipo,int parametro,int pos_x,int pos_y,int tiempo);
 /*FINALIZACION DE ESCTRUCTURAS PARA DISCORDIADOR*/
 
 void leer_config();

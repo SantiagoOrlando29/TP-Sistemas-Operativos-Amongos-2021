@@ -40,6 +40,14 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 		t_paquete* paquete;
 		char* leido = readline("");
 		switch (codigoOperacion(leido)){
+			case PRUEBA:
+				paquete = crear_paquete(PRUEBA);
+				//            TAREA_TRIPULANTE PARAMETRO POSX POSY TIEMPO
+				tarea* t_tarea=crearTarea(GENERAR_OXIGENO,5,1,1,5);
+				agregar_a_paquete(paquete,t_tarea, sizeof(tarea));
+				printf("\n Tarea GENERAR OXIGENO \n");
+				enviar_paquete(paquete,conexionMongoStore);
+				break;
 			case INICIAR_PATOTA:
 				paquete = crear_paquete(INICIAR_PATOTA);
 				char** parametros = string_split(leido," ");
