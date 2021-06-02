@@ -13,6 +13,9 @@ sem_t NUEVO_READY;
 sem_t HABILITA_EJECUTAR;
 sem_t HABILITA_DOS;
 sem_t PASA_A_BLOQUEADO;
+sem_t MUTEX_LISTA_READY;
+sem_t MUTEX_LISTA_TRABAJANDO;
+sem_t MUTEX_LISTA_BLOQUEADO;
 int id_tripulante = 0;
 t_list* lista_tripulantes_nuevo;
 t_list* lista_tripulantes_ready;
@@ -49,9 +52,17 @@ void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pen
 	bool flag_sigue_ejecutando = sigue_ejecutando(*quantums_ejecutados);
 	if(flag_sigue_ejecutando == false ){
 		printf("hilo %d P%d, FIN DE Q \n", tripulante->tid, tripulante->puntero_pcb);
+
+		sem_wait(&MUTEX_LISTA_TRABAJANDO);
 		list_remove(lista_tripulantes_trabajando, 0);
+		sem_post(&MUTEX_LISTA_TRABAJANDO);
+
 		tripulante->estado = 'R';
+
+		sem_wait(&MUTEX_LISTA_READY);
 		list_add(lista_tripulantes_ready, tripulante);
+		sem_post(&MUTEX_LISTA_READY);
+
 		sem_post(&HABILITA_DOS);
 		sem_post(&HABILITA_EJECUTAR);
 		sem_wait(&(tripulante->semaforo_tripulante));
@@ -88,9 +99,17 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			termina_quantum(&quantums_ejecutados, tripulante);
 			sleep(1); // retardo ciclo cpu //sleep para eso de iniciar tarea I/O (simula peticion al SO). Nose si va en esta linea
 			quantums_ejecutados = 0;
+
+			sem_wait(&MUTEX_LISTA_TRABAJANDO);
 			list_remove(lista_tripulantes_trabajando, 0);
+			sem_post(&MUTEX_LISTA_TRABAJANDO);
+
 			tripulante->estado = 'B';
+
+			sem_wait(&MUTEX_LISTA_BLOQUEADO);
 			list_add(lista_tripulantes_bloqueado, tripulante);
+			sem_post(&MUTEX_LISTA_BLOQUEADO);
+
 			printf("hilo %d P%d, me bloquie \n", tripulante->tid, tripulante->puntero_pcb);
 			sem_post(&PASA_A_BLOQUEADO);
 			sem_post(&HABILITA_DOS);
@@ -125,6 +144,13 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	}
 	if(tripulante->estado != 'X'){
 		sem_post(&HABILITA_DOS);
+
+		sem_wait(&MUTEX_LISTA_TRABAJANDO);
+		list_remove(lista_tripulantes_trabajando, 0);
+		sem_post(&MUTEX_LISTA_TRABAJANDO);
+
+		tripulante->estado = 'X';
+		list_add(lista_tripulantes_exit, tripulante);
 	}
 	printf("hilo %d P%d, EXIT\n", tripulante->tid, tripulante->puntero_pcb);
 
@@ -141,7 +167,11 @@ void ready_exec() {
 			sem_wait(&HABILITA_EJECUTAR);
 			tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
 			tripulante1->estado = 'E';
+
+			sem_wait(&MUTEX_LISTA_TRABAJANDO);
 			list_add(lista_tripulantes_trabajando, tripulante1);
+			sem_post(&MUTEX_LISTA_TRABAJANDO);
+
 			sem_post(&(tripulante1->semaforo_tripulante));
 		}
 	}
@@ -156,7 +186,11 @@ void nuevo_ready() {
 		sem_post(&(tripulante1->semaforo_tripulante));
 		sem_wait(&NUEVO_READY);
 		tripulante1->estado = 'R';
+
+		sem_wait(&MUTEX_LISTA_READY);
 		list_add(lista_tripulantes_ready, tripulante1);
+		sem_post(&MUTEX_LISTA_READY);
+
 		sem_post(&ESPERA_AGREGAR_NUEVO_A_READY);
 	}
 	free(tripulante1);
@@ -168,15 +202,26 @@ void bloqueado_ready() {
 	tarea* tarea_recibida;
 	while(1){
 		sem_wait(&PASA_A_BLOQUEADO);
-		tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
+
+		sem_wait(&MUTEX_LISTA_BLOQUEADO);
+		tripulante1 = (tcbTripulante*)list_get(lista_tripulantes_bloqueado, 0);
+		sem_post(&MUTEX_LISTA_BLOQUEADO);
+
 		printf("hilo %d P%d, haciendo I/O \n", tripulante1->tid, tripulante1->puntero_pcb);
 		sleep(1);
 		printf("hilo %d P%d, termino I/O \n", tripulante1->tid, tripulante1->puntero_pcb);
 		fflush(stdout);
 		tarea_recibida = pedir_tarea_normal(tripulante1);
+
+		sem_wait(&MUTEX_LISTA_BLOQUEADO);
+		tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
+		sem_post(&MUTEX_LISTA_BLOQUEADO);
+
 		if(tarea_recibida != NULL){ // TIENE MAS TAREAS
 			tripulante1->estado = 'R';
+			sem_wait(&MUTEX_LISTA_READY);
 			list_add(lista_tripulantes_ready, tripulante1);
+			sem_post(&MUTEX_LISTA_READY);
 		} else{ // NO TIENE MAS TAREAS
 			tripulante1->estado = 'X';
 			list_add(lista_tripulantes_exit, tripulante1);
@@ -235,6 +280,9 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	sem_init(&ESPERA_AGREGAR_NUEVO_A_READY, 0,1);
 	sem_init(&HABILITA_DOS, 0,2);
 	sem_init(&PASA_A_BLOQUEADO, 0,0);
+	sem_init(&MUTEX_LISTA_READY, 0,1);
+	sem_init(&MUTEX_LISTA_TRABAJANDO, 0,1);
+	sem_init(&MUTEX_LISTA_BLOQUEADO, 0,1);
 
 
 	lista_tripulantes_nuevo = list_create();
@@ -259,6 +307,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 
 	while(1){
 		t_paquete* paquete;
+		tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
 		//char* nombreHilo = "";
 		char* leido = readline("Iniciar consola: ");
 		printf("\n");
@@ -285,6 +334,29 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				/*enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
 				tipoMensaje = recibir_operacion(conexionMiRam);
 				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);*/
+				//int list_size(t_list *);
+				//void *list_get(t_list *, int index);
+				sem_wait(&MUTEX_LISTA_READY);
+				for(int i=0; i < list_size(lista_tripulantes_ready); i++){
+					tripulante = (tcbTripulante*)list_get(lista_tripulantes_ready, i);
+					printf("Tripulante: %d   Patota: %d   Status: %c\n", tripulante->tid, tripulante->puntero_pcb, tripulante->estado);
+				}
+				sem_post(&MUTEX_LISTA_READY);
+
+				sem_wait(&MUTEX_LISTA_TRABAJANDO);
+				for(int i=0; i < list_size(lista_tripulantes_trabajando); i++){
+					tripulante = (tcbTripulante*)list_get(lista_tripulantes_trabajando, i);
+					printf("Tripulante: %d   Patota: %d   Status: %c\n", tripulante->tid, tripulante->puntero_pcb, tripulante->estado);
+				}
+				sem_post(&MUTEX_LISTA_TRABAJANDO);
+
+				sem_wait(&MUTEX_LISTA_BLOQUEADO);
+				for(int i=0; i < list_size(lista_tripulantes_bloqueado); i++){
+					tripulante = (tcbTripulante*)list_get(lista_tripulantes_bloqueado, i);
+					printf("Tripulante: %d   Patota: %d   Status: %c\n", tripulante->tid, tripulante->puntero_pcb, tripulante->estado);
+				}
+				sem_post(&MUTEX_LISTA_BLOQUEADO);
+
 				break;
 
 			case INICIAR_PLANIFICACION:
