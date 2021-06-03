@@ -281,6 +281,17 @@ tarea_tripulante codigoTarea(char *nombretarea){
 
 }
 
+tarea* crearTarea(tarea_tripulante tipo,int parametro,int pos_x,int pos_y,int tiempo){
+	tarea* tareaA;
+	tareaA->tarea=tipo;
+	tareaA->parametro=parametro;
+	tareaA->pos_x=pos_x;
+	tareaA->pos_y=pos_y;
+	tareaA->tiempo=tiempo;
+
+	return tareaA;
+}
+
 void imprimirTarea(tarea* aimprimir){
 	printf("%d", aimprimir->tarea);
 	printf("%i", aimprimir->parametro);

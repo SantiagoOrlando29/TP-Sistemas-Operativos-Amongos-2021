@@ -35,14 +35,16 @@ int main(void)
 			case INICIAR_PATOTA:
 				lista=recibir_paquete(discordiador);
 				patota=crear_patota(pid,0);
+				char* tarea=(char*)list_get(lista,0);
+				printf("%s\n", tarea);
 				pid++;
-				int i;
-				for(i=0;i<list_size(lista);i++){
-					tripulante=(tcbTripulante*)list_get(lista,i);
-					mostrar_tripulante(tripulante,patota);
-					printf("\n");
-
+				printf("El tamanio de la lista es: %d \n", list_size(lista));
+				for(int i=0;i<list_size(lista)-1;i++){
+						tripulante=(tcbTripulante*)list_get(lista,i);
+						mostrar_tripulante(tripulante,patota);
+						printf("\n");
 				}
+				printf("El mensaje es %s\n",(char*)list_get(lista,(list_size(lista)-1)));
 				break;
 
 			case LISTAR_TRIPULANTES:

@@ -33,23 +33,42 @@ int main(int argc, char* argv[]) {
 int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
 	int tipoMensaje = -1;
 	int tid=1;
+	int posx = 0;
+	int posy = 0;
 	while(1){
 		tcbTripulante* tripulante = crear_tripulante(tid,'N',5,6,1,1);
 		t_paquete* paquete;
 		char* leido = readline("");
 		switch (codigoOperacion(leido)){
+			case PRUEBA:
+				paquete = crear_paquete(PRUEBA);
+				//            TAREA_TRIPULANTE PARAMETRO POSX POSY TIEMPO
+				tarea* t_tarea=crearTarea(GENERAR_OXIGENO,5,1,1,5);
+				agregar_a_paquete(paquete,t_tarea, sizeof(tarea));
+				printf("\n Tarea GENERAR OXIGENO \n");
+				enviar_paquete(paquete,conexionMongoStore);
+				break;
 			case INICIAR_PATOTA:
 				paquete = crear_paquete(INICIAR_PATOTA);
-				char** parametros = string_split(leido, " ");
-				log_info(logger, (char*)parametros[1]);
-				// hay que verificar lo que hay en parametros[1] ,que sea un nro
-				//for(int i = 0; i < atoi(parametros[1]); i++){
-					//Creacion de tripulantes
-					tripulante = crear_tripulante(tid,'N',5,6,1,1);
+				char** parametros = string_split(leido," ");
+				int cantidad_tripulantes  = atoi(parametros[1]);
+				for(int i = 0; i < cantidad_tripulantes ; i++){
+					if(parametros[i+3]){
+						//Si pones INICIAR_PATOTA 3 asd (sin posiciones) rompe en el ultimo ciclo. A revisar
+						printf("Entro aca en %d\n",i);
+						posx = parametros[i+3][0] - 48;
+						posy = parametros[i+3][2] - 48;
+					}
+					printf("El tripulante %d tiene posx %d y posy %d\n", i, posx,posy);
+					tripulante = crear_tripulante(tid,'N',posx,posy,1,1);
+					posx=0;
+					posy=0;
 					agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 					tid++;
-				//}
-					enviar_paquete(paquete, conexionMiRam);
+
+				}
+				agregar_a_paquete(paquete,  "Hola mundo", sizeof(char*));
+				enviar_paquete(paquete, conexionMiRam);
 
 				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 				//tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
