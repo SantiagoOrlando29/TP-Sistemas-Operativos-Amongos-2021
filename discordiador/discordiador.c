@@ -6,7 +6,6 @@
 
 config_discordiador configuracion;
 //config_struct configuracion;
-sem_t ESPERA_AGREGAR_NUEVO_A_READY;
 sem_t AGREGAR_NUEVO_A_READY;
 sem_t NUEVO_READY;
 sem_t HABILITA_EJECUTAR;
@@ -206,8 +205,6 @@ void nuevo_ready() {
 		sem_wait(&MUTEX_LISTA_READY);
 		list_add(lista_tripulantes_ready, tripulante1);
 		sem_post(&MUTEX_LISTA_READY);
-
-		sem_post(&ESPERA_AGREGAR_NUEVO_A_READY);
 	}
 	free(tripulante1);
 
@@ -298,7 +295,6 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	sem_init(&HABILITA_EJECUTAR, 0,1);
 	sem_init(&NUEVO_READY, 0,0);
 	sem_init(&AGREGAR_NUEVO_A_READY, 0,0);
-	sem_init(&ESPERA_AGREGAR_NUEVO_A_READY, 0,1);
 	sem_init(&HABILITA_GRADO_MULTITAREA, 0,configuracion.grado_multitarea);
 	sem_init(&PASA_A_BLOQUEADO, 0,0);
 	sem_init(&MUTEX_LISTA_READY, 0,1);
@@ -347,10 +343,10 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 					pthread_t nombreHilo = (char*)(cantidad_tripulantes);
 					pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
 					pthread_detach(&nombreHilo);
-					sem_wait(&ESPERA_AGREGAR_NUEVO_A_READY);
 					list_add(lista_tripulantes_nuevo, tripulante);
 					sem_post(&AGREGAR_NUEVO_A_READY);
 				}
+
 				break;
 
 			case LISTAR_TRIPULANTES:
