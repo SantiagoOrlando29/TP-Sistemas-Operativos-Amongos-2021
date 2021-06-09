@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
 
 int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
 	int tipoMensaje = -1;
-	int tid=1;
+	int tid =1;
 	int posx = 0;
 	int posy = 0;
 	while(1){
@@ -58,23 +58,27 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				agregar_a_paquete(paquete, tareas, ((sizeof(char)*5) + (sizeof(int)*5))*7); //Revisar tamanio paquete
 				//agregar_a_paquete(paquete, "Hola Mundo", 11);
 /*
-INICIAR_PATOTA 5 tareas.txt 1|2 3|4
+INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
 */
 				int j = 0;
 				for(int i = 0; i < cantidad_tripulantes ; i++){
 					if (j == 0){
 						if (parametros[i+3] == NULL){
 							j=1;
-						}else {
-							posx = parametros[i+3][0] - 48;
-							posy = parametros[i+3][2] - 48;
+						} else {
+							char* posiciones = parametros[i+3];
+							char* item;
+							item = strtok(posiciones,"|");
+							posx = atoi(item);
+							item = strtok(NULL,"");
+							posy = atoi(item);
 						}
 					}
 
 					printf("El tripulante %d tiene posx %d y posy %d\n", i+1, posx,posy);
 					tripulante = crear_tripulante(tid,'N',posx,posy,1,1);
-					posx=0;
-					posy=0;
+					posx =0;
+					posy =0;
 					agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 					tid++;
 
