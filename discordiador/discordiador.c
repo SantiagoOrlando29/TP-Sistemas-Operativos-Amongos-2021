@@ -48,18 +48,30 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				printf("\n Tarea GENERAR OXIGENO \n");
 				enviar_paquete(paquete,conexionMongoStore);
 				break;
+
 			case INICIAR_PATOTA:
 				paquete = crear_paquete(INICIAR_PATOTA);
 				char** parametros = string_split(leido," ");
 				int cantidad_tripulantes  = atoi(parametros[1]);
+				char *tareas = leer_tareas(parametros[2]);
+				printf("Las tareas recibidas por parametro son: %s\n", tareas);
+				agregar_a_paquete(paquete, tareas, ((sizeof(char)*5) + (sizeof(int)*5))*7); //Revisar tamanio paquete
+				//agregar_a_paquete(paquete, "Hola Mundo", 11);
+/*
+INICIAR_PATOTA 5 tareas.txt 1|2 3|4
+*/
+				int j = 0;
 				for(int i = 0; i < cantidad_tripulantes ; i++){
-					if(parametros[i+3]){
-						//Si pones INICIAR_PATOTA 3 asd (sin posiciones) rompe en el ultimo ciclo. A revisar
-						printf("Entro aca en %d\n",i);
-						posx = parametros[i+3][0] - 48;
-						posy = parametros[i+3][2] - 48;
+					if (j == 0){
+						if (parametros[i+3] == NULL){
+							j=1;
+						}else {
+							posx = parametros[i+3][0] - 48;
+							posy = parametros[i+3][2] - 48;
+						}
 					}
-					printf("El tripulante %d tiene posx %d y posy %d\n", i, posx,posy);
+
+					printf("El tripulante %d tiene posx %d y posy %d\n", i+1, posx,posy);
 					tripulante = crear_tripulante(tid,'N',posx,posy,1,1);
 					posx=0;
 					posy=0;
@@ -67,7 +79,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 					tid++;
 
 				}
-				agregar_a_paquete(paquete,  "Hola mundo", sizeof(char*));
+
 				enviar_paquete(paquete, conexionMiRam);
 
 				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));

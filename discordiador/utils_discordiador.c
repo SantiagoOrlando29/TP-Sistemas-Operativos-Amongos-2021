@@ -226,10 +226,13 @@ size_t tamanio_pcb(pcbPatota* patota){
 }
 
 
-void leer_tareas(char* archTarea){
+char* leer_tareas(char* archTarea){
 	   FILE *fp;
 	   char *item;
 	   char linea[200];
+	   //char *tareas = malloc(200); //Reever el tamanio, sizeof(char*)
+	   char *tareas = malloc(((sizeof(char)*5) + (sizeof(int)*5))*7);
+	   strcpy(tareas, "");
 	   fp = fopen(archTarea, "r");
 	   if (fp == NULL)
 	     {
@@ -257,10 +260,15 @@ void leer_tareas(char* archTarea){
 		   leida->pos_y=atoi(item);
 		   item = strtok(NULL,"\n");
 		   leida->tiempo=atoi(item);
-		   imprimirTarea(leida);
-		   }
+		   strcat (tareas, imprimirTarea(leida));
 
-		}
+		   //free(mensaje); Aca liberar ya que antes hice malloc(20)
+	   }
+
+	   printf("Las tareas son %s\n",tareas);
+	   return tareas;
+
+}
 
 
 tarea_tripulante codigoTarea(char *nombretarea){
@@ -292,12 +300,23 @@ tarea* crearTarea(tarea_tripulante tipo,int parametro,int pos_x,int pos_y,int ti
 	return tareaA;
 }
 
-void imprimirTarea(tarea* aimprimir){
-	printf("%d", aimprimir->tarea);
-	printf("%i", aimprimir->parametro);
-	printf("%d", aimprimir->pos_x);
-	printf("%d", aimprimir->pos_y);
-	printf("%d\n", aimprimir->tiempo);
+char* imprimirTarea(tarea* aimprimir){
+
+	char *mensaje = malloc(sizeof(char*)); //20 por las duads. Habitualmente se utilizan 10.
+
+	sprintf(mensaje ,"%d", aimprimir->tarea);
+	strcat (mensaje, "-");
+	sprintf(mensaje  + strlen(mensaje),"%i", aimprimir->parametro);
+	strcat (mensaje, "-");
+	sprintf(mensaje  + strlen(mensaje),"%d", aimprimir->pos_x);
+	strcat (mensaje, "-");
+	sprintf(mensaje  + strlen(mensaje),"%d", aimprimir->pos_y);
+	strcat (mensaje, "-");
+	sprintf(mensaje  + strlen(mensaje),"%d", aimprimir->tiempo);
+	strcat (mensaje, ";");
+	//printf("El mensaje es: %s", mensaje);
+	return mensaje;
+
 
 }
 

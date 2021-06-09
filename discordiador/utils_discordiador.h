@@ -142,9 +142,9 @@ tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, ui
 pcbPatota* crear_patota(uint32_t , uint32_t);
 int codigoOperacion (const char*);
 void enviar_header(tipoMensaje tipo, int socket_cliente);
-void imprimirTarea(tarea*);
+char* imprimirTarea(tarea* );
 tarea_tripulante codigoTarea(char*);
-void leer_tareas(char*);
+char* leer_tareas(char*);
 
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/

@@ -18,7 +18,7 @@ int main(void)
 	int server_fd = iniciar_servidor(configuracion.ip_mongostore, configuracion.puerto_mongostore);
 	log_info(logger, "Mongo listo para recibir ordenes desde Discordiador");
 	int cliente_fd = esperar_cliente(server_fd);
-	printf("\n");
+	/*printf("\n");
 	iniciarFS();
 
 	superBloque sb;
@@ -33,7 +33,7 @@ int main(void)
 	iniciarSuperBloque(sb);
 	iniciarBlocks(sb.block_size*sb.blocks);
 
-	//mapeo();
+	//mapeo();*/
  while(1)
 	{
 		t_paquete* paquete;
