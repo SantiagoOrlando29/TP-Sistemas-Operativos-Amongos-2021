@@ -12,7 +12,25 @@
 #include<commons/collections/list.h>
 #include <commons/config.h>
 #include<string.h>
+#include<pthread.h>
 
+typedef enum
+{
+	GENERAR_OXIGENO,
+	CONSUMIR_OXIGENO,
+	GENERAR_COMIDA,
+	CONSUMIR_COMIDA,
+	GENERAR_BASURA,
+	DESCARTAR_BASURA,
+}tarea_tripulante;
+
+typedef struct{
+	tarea_tripulante tarea;
+	int parametro;
+	int pos_x;
+	int pos_y;
+	int tiempo;
+}tarea;
 
 
 typedef enum
@@ -79,31 +97,52 @@ typedef struct{
 	char* squema_memoria;
 	int tamanio_pag;
 	int tamanio_swap;
+	char* path_swap;
 	char* algoritmo_reemplazo;
-	//lo comentado son los datos de config de discordiador
-	//char* ip_mongostore;
-	//char* puerto_mongostore;
-	//int grado_multitarea;
-	//char* algoritmo;
-	//int quantum;
-	//int duracion_sabotaje;
-	//int retardo_cpu;
+	void* posicion_inicial;
+	int cant_marcos;
+	uint8_t **marcos;
 }config_struct;
 
+
+typedef enum{
+	MEM_PRINCIPAL,
+	MEM_SECUNDARIA,
+}presencia;
+
+typedef struct{
+	int id_patota;
+	presencia ubicacion;
+	t_list* marco_inicial;
+
+}tabla_paginacion;
+
+typedef struct{
+	int id_marco;
+	int control_lru;
+}marco;
+
 void* recibir_buffer(int*, int);
-int iniciar_servidor(char*, char*);
+void iniciar_servidor(config_struct*);
 int esperar_cliente(int);
 t_list* recibir_paquete(int);
 void recibir_mensaje(int);
 int recibir_operacion(int);
 void leer_config();
+tarea* crear_tarea(tarea_tripulante,int,int,int,int);
 
+
+//Funciones memoria
+void iniciar_miram(config_struct* config);
+void agregar_memoria_aux(t_list* tabla_aux);
+void imprimir_memoria(t_list* tabla_aux);
 /*Operaciones para enviar mensajes desde miram a discordiador*/
 t_paquete* crear_paquete(tipoMensaje tipo);
 void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 void enviar_header(tipoMensaje , int );
+int funcion_cliente(int*);
 
 /*FINALIZACION*/
 
@@ -111,7 +150,7 @@ void enviar_header(tipoMensaje , int );
 tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, uint32_t);
 pcbPatota* crear_patota(uint32_t , uint32_t);
 //solo para comprobar que se formaron bien
-void mostrar_tripulante(tcbTripulante* tripulante,pcbPatota* patota);
+void mostrarTripulante(tcbTripulante* tripulante,pcbPatota* patota);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanio_tcb(tcbTripulante*);

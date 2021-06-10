@@ -1,7 +1,12 @@
 #include "utils_miram.h"
 
-int iniciar_servidor(char* ip_miram, char* puerto_miram)
+
+void iniciar_servidor(config_struct* config_servidor)
 {
+	t_log* logg;
+	logg = log_create("MiRam1.log", "MiRam1", 1, LOG_LEVEL_DEBUG);
+	log_info(logg, "Servidor iniciando");
+
 	int socket_servidor;
 
     struct addrinfo hints, *servinfo, *p;
@@ -11,7 +16,7 @@ int iniciar_servidor(char* ip_miram, char* puerto_miram)
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
-    getaddrinfo(ip_miram, puerto_miram, &hints, &servinfo);
+    getaddrinfo(config_servidor->ip_miram, config_servidor->puerto_miram, &hints, &servinfo);
 
     for (p=servinfo; p != NULL; p = p->ai_next)
     {
@@ -27,32 +32,94 @@ int iniciar_servidor(char* ip_miram, char* puerto_miram)
 
 	listen(socket_servidor, SOMAXCONN);
 
-    freeaddrinfo(servinfo);
+	    freeaddrinfo(servinfo);
 
-    log_trace(logger, "Servidor MiRam encendido");
+	    log_info(logg, "Servidor MiRam encendido");
 
-    return socket_servidor;
+
+		struct sockaddr_in dir_cliente;
+		int tam_direccion = sizeof(struct sockaddr_in);
+		int socket_cliente;
+
+		printf("Llegue");
+
+	while(1){
+
+
+
+		socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
+
+		if(socket_cliente>0){
+			log_info(logg, "Estableciendo conexión desde %d", dir_cliente.sin_port);
+			log_info(logg, "Creando hilo");
+
+			pthread_t hilo_cliente;
+			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente , (void*)socket_cliente);
+			pthread_detach(hilo_cliente);
+		}
+
+
+	}
+
 }
 
-int esperar_cliente(int socket_servidor)
-{
-	struct sockaddr_in dir_cliente;
-	int tam_direccion = sizeof(struct sockaddr_in);
 
-	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
+int funcion_cliente(int* socket_cliente){
 
-	log_info(logger, "Estableciendo conexion desde discordiador");
+	int tipoMensajeRecibido = -1;
+	while(1){
 
-	return socket_cliente;
+		int tipoMensajeRecibido = recibir_operacion((int)socket_cliente);
+		switch(tipoMensajeRecibido)
+					{
+					case INICIAR_PATOTA:
+						log_info(logger, "Respondiendo");
+						enviar_header(INICIAR_PATOTA, (int)socket_cliente);
+						break;
+
+					case LISTAR_TRIPULANTES:;
+						t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
+						tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+						agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+						enviar_paquete(paquete,(int)socket_cliente);
+						eliminar_paquete(paquete);
+						break;
+
+
+					case INICIAR_PLANIFICACION:
+						log_info(logger, "Iniciando planificacion");
+						t_paquete* tarea_a_enviar;
+						tarea* tarea1 = crear_tarea(GENERAR_OXIGENO,5,2,2,5);
+						agregar_a_paquete(tarea_a_enviar, tarea1, sizeof(tarea));
+						enviar_paquete(tarea_a_enviar,(int)socket_cliente);
+						eliminar_paquete(tarea_a_enviar);
+						break;
+
+					case FIN:
+						log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
+						return EXIT_FAILURE;
+
+					case -1:
+						log_error(logger, "el cliente se desconecto. Terminando servidor");
+						return EXIT_FAILURE;
+					default:
+						log_warning(logger, "Operacion desconocida. No quieras meter la pata");
+						break;
+
+					}
+		}
 }
+
+
 
 int recibir_operacion(int socket_cliente)
 {
-	int tipoMensaje;
-	if(recv(socket_cliente, &tipoMensaje, sizeof(int), MSG_WAITALL) != 0)
-		return tipoMensaje;
-	else
-	{
+	int cod_op;
+	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) !=0 ){
+		printf("%d", cod_op);
+		return cod_op;
+	}
+	else{
 		close(socket_cliente);
 		return -1;
 	}
@@ -212,8 +279,70 @@ size_t tamanio_pcb(pcbPatota* patota){
 	return tamanio;
 }
 
-
 void mensajeError (t_log* logger) {
 	printf("Error, no existe tal proceso\n");
 	log_error(logger, "Error en la operacion");
 }
+
+tarea* crear_tarea(tarea_tripulante cod_tarea,int parametro,int pos_x,int pos_y,int tiempo){
+	tarea* tarea_recibida = malloc(sizeof(tarea));
+	tarea_recibida->tarea=cod_tarea;
+	tarea_recibida->parametro=parametro;
+	tarea_recibida->pos_x=pos_x;
+	tarea_recibida->pos_y=pos_y;
+	tarea_recibida->tiempo=tiempo;
+	return tarea_recibida;
+
+}
+/*
+
+void iniciar_miram(config_struct* config_servidor){
+
+	config_servidor->posicion_inicial= malloc(config_servidor->tamanio_memoria);
+
+	if(strcmp(config_servidor->squema_memoria,"PAGINACION")==0){
+
+		config_servidor->cant_marcos=atoi(config_servidor->tamanio_memoria)/atoi(config_servidor->tamanio_pag);
+		config_servidor->marcos= malloc(config_servidor->cant_marcos);
+
+		//Inicializo el array en 0, me indica la ocupacion de los marcos
+		for(int i=0; i<config_servidor->cant_marcos;i++){
+			config_servidor->marcos[i]=malloc(sizeof(int));
+			config_servidor->marcos[i]= 0;
+		}
+
+
+	}else{
+		//Inicializo Segmentacion
+	}
+}
+
+/*
+void agregar_memoria_aux(t_list* tabla_aux){
+
+	tabla_paginacion* tabla1;
+	marco* marco1,marco2,marco3,marco4;
+	marco2->id_marco=2;
+	marco3->id_marco=3;
+	marco4->id_marco=4;
+	tabla1->id_patota =1;
+	tabla1->ubicacion = MEM_PRINCIPAL;
+	list_add(tabla1->marco_inicial, marco2);
+	list_add(tabla1->marco_inicial, marco3);
+	list_add(tabla1->marco_inicial, marco4);
+	list_add(tabla_aux, tabla1);
+
+}
+
+void imprimir_memoria(t_list* tabla_aux){
+	for(int i=0; i<list_size(tabla_aux);i++){
+		tabla_paginacion auxiliar=(tabla_paginacion*)list_get(tabla_aux,i);
+		printf("Proceso correspondiente a patota %d", auxiliar->id_patota);
+		for(int j=0;j<list_size(auxiliar->marco_inicial);j++){
+			marco marco_leido=(marco*)list_get(auxiliar->marco_inicial,j);
+			printf("Marco en uso %d", marco_leido->id_marco);
+		}
+	}
+
+}
+*/

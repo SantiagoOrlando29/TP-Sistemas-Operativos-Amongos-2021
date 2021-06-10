@@ -6,61 +6,38 @@ t_log* logger;
 
 int main(void)
 {
+
 	leer_config();
+	/*
+	iniciar_miram(&configuracion);
+	t_list * memoria_aux;
+	memoria_aux=list_create();
 
-	void iterator(char* value)
-	{
-		printf("%s\n", value);
+	for(int i=0; i<(configuracion.cant_marcos);i++){
+		printf("%d\n",configuracion.marcos[i]);
 	}
 
-
+	agregar_memoria_aux(memoria_aux);
+	imprimir_memoria(memoria_aux);
+    */
+	t_list* lista_recibir = list_create();
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
-	int tipoMensaje;
-	int server_fd = iniciar_servidor(configuracion.ip_miram,configuracion.puerto_miram);
-	log_info(logger, "MiRam listo para recibir ordenes desde Discordiador");
-	int discordiador = esperar_cliente(server_fd);
+	pthread_t servidor;
+	//iniciar_servidor(&configuracion);
+	int hilo_servidor = 1;
+	pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion);
+	//pthread_join(servidor,NULL);
+	pthread_detach(servidor);
+	if(hilo_servidor != 0 )
+		log_info(logger, "Falla al crearse el hilo");
+	else
+		log_info(logger, "Hilo creado correctamente");
 
-	while(1)
-	{
 
-		pcbPatota* patota = NULL;
-		tcbTripulante* tripulante = NULL;
 
-		t_list* lista_recibir = list_create();
-		t_paquete* paquete;
-		tipoMensaje = recibir_operacion(discordiador);
-			switch(tipoMensaje)
-			{
-			case INICIAR_PATOTA:
+	list_destroy(lista_recibir);
 
-				enviar_header(INICIAR_PATOTA, discordiador);
-				break;
-
-			case LISTAR_TRIPULANTES:
-				paquete = crear_paquete(LISTAR_TRIPULANTES);
-				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
-				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
-				enviar_paquete(paquete, discordiador);
-				eliminar_paquete(paquete);
-				break;
-
-			case FIN:
-				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
-				return EXIT_FAILURE;
-
-			case -1:
-				log_error(logger, "el cliente se desconecto. Terminando servidor");
-				return EXIT_FAILURE;
-			default:
-				log_warning(logger, "Operacion desconocida. No quieras meter la pata");
-				break;
-			}
-			free(patota);
-			free(tripulante);
-			list_destroy(lista_recibir);
-
-	}
-	return EXIT_SUCCESS;
+	return 0;
 }
 
 
@@ -71,10 +48,14 @@ void leer_config(){
 
     configuracion.ip_miram = config_get_string_value(archConfig, "IP_MI_RAM_HQ");
     configuracion.puerto_miram = config_get_string_value(archConfig, "PUERTO_MI_RAM_HQ");
+    configuracion.tamanio_memoria = (int)config_get_string_value(archConfig, "TAMANIO_MEMORIA");
+    configuracion.squema_memoria = config_get_string_value(archConfig, "ESQUEMA_MEMORIA");
+    configuracion.tamanio_pag =(int)config_get_string_value(archConfig, "TAMANIO_PAG");
+    configuracion.tamanio_swap =(int)config_get_string_value(archConfig, "TAMANIO_SWAP");
+    configuracion.path_swap = config_get_string_value(archConfig, "PATH_SWAP");
+    configuracion.algoritmo_reemplazo = config_get_string_value(archConfig, "ALGORITMO_REEMPLAZO");
+    //Parametros utiles (No obtenidos del archivo de configuracion)
+    configuracion.cant_marcos=0;
 
-    //configuracion.tamanio_memoria=config_get_string_value(archConfig,"TAMANIO_MEMORIA");
-
-    //configuracion.ip_mongostore = config_get_string_value(archConfig, "IP_I_MONGO_STORE");
-    //configuracion.puerto_mongostore = config_get_string_value(archConfig, "PUERTO_I_MONGO_STORE");
 
 }
