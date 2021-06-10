@@ -53,18 +53,22 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				paquete = crear_paquete(INICIAR_PATOTA);
 				char** parametros = string_split(leido," ");
 				int cantidad_tripulantes  = atoi(parametros[1]);
-				char *tareas = leer_tareas(parametros[2]);
+
+				char* tareas = malloc(sizeof(char));
+				leer_tareas(parametros[2], &tareas);
+
 				printf("Las tareas recibidas por parametro son: %s\n", tareas);
-				agregar_a_paquete(paquete, tareas, ((sizeof(char)*5) + (sizeof(int)*5))*7); //Revisar tamanio paquete
+				agregar_a_paquete(paquete, tareas, strlen(tareas)+1);
 				//agregar_a_paquete(paquete, "Hola Mundo", 11);
+				free(tareas);
 /*
 INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
 */
-				int j = 0;
+				bool hay_mas_parametros = true;
 				for(int i = 0; i < cantidad_tripulantes ; i++){
-					if (j == 0){
+					if (hay_mas_parametros == true){
 						if (parametros[i+3] == NULL){
-							j=1;
+							hay_mas_parametros=false;
 						} else {
 							char* posiciones = parametros[i+3];
 							char* item;

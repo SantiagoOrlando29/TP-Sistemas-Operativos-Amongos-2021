@@ -144,7 +144,7 @@ int codigoOperacion (const char*);
 void enviar_header(tipoMensaje tipo, int socket_cliente);
 char* imprimirTarea(tarea* );
 tarea_tripulante codigoTarea(char*);
-char* leer_tareas(char*);
+void leer_tareas(char* archTarea, char* *tareas);
 
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/

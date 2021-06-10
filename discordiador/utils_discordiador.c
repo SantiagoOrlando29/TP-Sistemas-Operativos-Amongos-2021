@@ -226,20 +226,19 @@ size_t tamanio_pcb(pcbPatota* patota){
 }
 
 
-char* leer_tareas(char* archTarea){
+void leer_tareas(char* archTarea, char* *tareas){
 	   FILE *fp;
 	   char *item;
-	   char linea[200];
-	   //char *tareas = malloc(200); //Reever el tamanio, sizeof(char*)
-	   char *tareas = malloc(((sizeof(char)*5) + (sizeof(int)*5))*7);
-	   strcpy(tareas, "");
+	   char linea[200]; //reever este 200
+	   strcpy(*tareas, "");
 	   fp = fopen(archTarea, "r");
 	   if (fp == NULL)
 	     {
 	        perror("Error al abrir el archivo.\n");
 	        exit(EXIT_FAILURE);
 	     }
-	   tarea* leida=malloc(sizeof(tarea));
+	   tarea* leida = malloc(sizeof(tarea));
+	   int contador_tareas =1;
 	   while (fgets(linea, sizeof(linea), fp)){
 		   int codTarea;
 		   if(linea[0]=='D'){    //A corregir
@@ -260,13 +259,16 @@ char* leer_tareas(char* archTarea){
 		   leida->pos_y=atoi(item);
 		   item = strtok(NULL,"\n");
 		   leida->tiempo=atoi(item);
-		   strcat (tareas, imprimirTarea(leida));
 
+		   char* string_tarea = imprimirTarea(leida);
+		   *tareas = realloc(*tareas, (strlen(string_tarea)*contador_tareas)+1);
+		   strcat (*tareas, string_tarea);
+
+		   contador_tareas++;
 		   //free(mensaje); Aca liberar ya que antes hice malloc(20)
 	   }
 
-	   printf("Las tareas son %s\n",tareas);
-	   return tareas;
+	   printf("Las tareas son %s\n",*tareas);
 
 }
 
