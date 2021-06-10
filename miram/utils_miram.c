@@ -69,7 +69,7 @@ int funcion_cliente(int* socket_cliente){
 	int tipoMensajeRecibido = -1;
 	while(1){
 
-		int tipoMensajeRecibido = recibir_operacion((int)socket_cliente);
+		int tipoMensajeRecibido = recibir_operacion((void*)socket_cliente);
 		switch(tipoMensajeRecibido)
 					{
 					case INICIAR_PATOTA:
