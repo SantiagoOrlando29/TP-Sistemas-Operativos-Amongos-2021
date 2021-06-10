@@ -32,6 +32,11 @@ typedef struct{
 	int tiempo;
 }tarea;
 
+typedef struct{
+	int salida;
+	int socket;
+}prueba;
+
 
 typedef enum
 {

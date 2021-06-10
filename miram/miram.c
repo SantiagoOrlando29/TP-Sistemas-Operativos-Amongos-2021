@@ -25,15 +25,10 @@ int main(void)
 	pthread_t servidor;
 	//iniciar_servidor(&configuracion);
 	int hilo_servidor = 1;
-	pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion);
-	//pthread_join(servidor,NULL);
-	pthread_detach(servidor);
-	if(hilo_servidor != 0 )
+	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){
 		log_info(logger, "Falla al crearse el hilo");
-	else
-		log_info(logger, "Hilo creado correctamente");
-
-
+	}
+	pthread_join(servidor,NULL);
 
 	list_destroy(lista_recibir);
 

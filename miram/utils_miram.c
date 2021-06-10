@@ -32,18 +32,20 @@ void iniciar_servidor(config_struct* config_servidor)
 
 	listen(socket_servidor, SOMAXCONN);
 
-	    freeaddrinfo(servinfo);
+	freeaddrinfo(servinfo);
 
-	    log_info(logg, "Servidor MiRam encendido");
+	log_info(logg, "Servidor MiRam encendido");
 
 
-		struct sockaddr_in dir_cliente;
-		int tam_direccion = sizeof(struct sockaddr_in);
-		int socket_cliente;
+	struct sockaddr_in dir_cliente;
+	int tam_direccion = sizeof(struct sockaddr_in);
+	int socket_cliente = 0;
 
-		printf("Llegue");
+	printf("Llegue");
 
-	while(1){
+
+
+	while(socket_cliente != 10){
 
 
 
@@ -54,34 +56,36 @@ void iniciar_servidor(config_struct* config_servidor)
 			log_info(logg, "Creando hilo");
 
 			pthread_t hilo_cliente;
-			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente , (void*)socket_cliente);
-			pthread_detach(hilo_cliente);
+			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente ,&socket_cliente);
+			pthread_join(hilo_cliente,NULL);
 		}
 
 
 	}
 
+	printf("Me fui");
+
+
 }
 
 
 int funcion_cliente(int* socket_cliente){
-
 	int tipoMensajeRecibido = -1;
 	while(1){
 
-		int tipoMensajeRecibido = recibir_operacion((void*)socket_cliente);
+		int tipoMensajeRecibido = recibir_operacion(*socket_cliente);
 		switch(tipoMensajeRecibido)
 					{
 					case INICIAR_PATOTA:
 						log_info(logger, "Respondiendo");
-						enviar_header(INICIAR_PATOTA, (int)socket_cliente);
+						enviar_header(INICIAR_PATOTA, *socket_cliente);
 						break;
 
 					case LISTAR_TRIPULANTES:;
 						t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
 						tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
 						agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
-						enviar_paquete(paquete,(int)socket_cliente);
+						enviar_paquete(paquete,*socket_cliente);
 						eliminar_paquete(paquete);
 						break;
 
@@ -91,13 +95,13 @@ int funcion_cliente(int* socket_cliente){
 						t_paquete* tarea_a_enviar;
 						tarea* tarea1 = crear_tarea(GENERAR_OXIGENO,5,2,2,5);
 						agregar_a_paquete(tarea_a_enviar, tarea1, sizeof(tarea));
-						enviar_paquete(tarea_a_enviar,(int)socket_cliente);
+						enviar_paquete(tarea_a_enviar,*socket_cliente);
 						eliminar_paquete(tarea_a_enviar);
 						break;
 
 					case FIN:
 						log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
-						return EXIT_FAILURE;
+						return *socket_cliente=10;
 
 					case -1:
 						log_error(logger, "el cliente se desconecto. Terminando servidor");
