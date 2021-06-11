@@ -1,6 +1,6 @@
 #include "utils_miram.h"
 
-int variable_servidor = 1;
+int variable_servidor = -1;
 
 void iniciar_servidor(config_struct* config_servidor)
 {
@@ -57,7 +57,7 @@ void iniciar_servidor(config_struct* config_servidor)
 			log_info(logg, "Creando hilo");
 
 			pthread_t hilo_cliente=(char)hilo;
-			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente ,&socket_cliente);
+			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente ,(void*)socket_cliente);
 			pthread_detach(hilo_cliente);
 		}
 	}
@@ -68,22 +68,22 @@ void iniciar_servidor(config_struct* config_servidor)
 }
 
 
-int funcion_cliente(int* socket_cliente){
+int funcion_cliente(int socket_cliente){
 	int tipoMensajeRecibido = -1;
-	printf("Se conecto este socket a mi %d",*socket_cliente);
+	printf("Se conecto este socket a mi %d\n",socket_cliente);
     while(1){
-		tipoMensajeRecibido = recibir_operacion(*socket_cliente);
+		tipoMensajeRecibido = recibir_operacion(socket_cliente);
 		switch(tipoMensajeRecibido){
 					case INICIAR_PATOTA:
 						log_info(logger, "Respondiendo");
-						enviar_header(INICIAR_PATOTA, *socket_cliente);
+						enviar_header(INICIAR_PATOTA, socket_cliente);
 						break;
 
 					case LISTAR_TRIPULANTES:;
 						t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
 						tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
 						agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
-						enviar_paquete(paquete,*socket_cliente);
+						enviar_paquete(paquete,socket_cliente);
 						eliminar_paquete(paquete);
 						break;
 
@@ -93,13 +93,20 @@ int funcion_cliente(int* socket_cliente){
 						t_paquete* tarea_a_enviar;
 						tarea* tarea1 = crear_tarea(GENERAR_OXIGENO,5,2,2,5);
 						agregar_a_paquete(tarea_a_enviar, tarea1, sizeof(tarea));
-						enviar_paquete(tarea_a_enviar,*socket_cliente);
+						enviar_paquete(tarea_a_enviar,socket_cliente);
 						eliminar_paquete(tarea_a_enviar);
 						break;
 
+					case PEDIR_TAREA:
+						log_info(logger, "Tripulante quiere tarea");
+						enviar_header(PEDIR_TAREA, socket_cliente);
+
+						return 0;
+
 					case FIN:
 						log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
-						return variable_servidor = 0;
+						variable_servidor = 0;
+						return EXIT_FAILURE;
 
 					case -1:
 						log_error(logger, "el cliente se desconecto. Terminando servidor");

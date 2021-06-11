@@ -47,7 +47,8 @@ typedef enum
 	INICIAR_PLANIFICACION,
 	PAUSAR_PLANIFICACION,
 	OBTENER_BITACORA,
-	FIN
+	FIN,
+	PEDIR_TAREA
 }tipoMensaje;
 
 typedef struct
@@ -147,7 +148,7 @@ void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 void enviar_header(tipoMensaje , int );
-int funcion_cliente(int*);
+int funcion_cliente(int);
 
 /*FINALIZACION*/
 

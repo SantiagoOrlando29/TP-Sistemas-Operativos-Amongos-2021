@@ -76,6 +76,13 @@ void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pen
 void tripulante_hilo (tcbTripulante* tripulante){
 	sem_wait(&(tripulante->semaforo_tripulante));
 	//si funcion tomar tarea != null entonces
+
+	int conexion_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
+	enviar_header(PEDIR_TAREA, conexion_miram);
+	int tipo_mensaje = recibir_operacion(conexion_miram);
+	printf("tipo_mensaje %d\n", tipo_mensaje);
+	close(conexion_miram);
+
 	tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,4); //TAREA NORMAL
 
 	printf("hola soy el hilo %d, P%d, estoy listo para ejecutar \n", tripulante->tid, tripulante->puntero_pcb);
@@ -276,6 +283,7 @@ int main(int argc, char* argv[]) {
 	leer_config();
 	//leer numeros random
 	//leer_tareas("tareas.txt");
+
 	int conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	int conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
 
@@ -337,7 +345,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				//lista_tripulantes_ready=recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
 				cantidad_tripulantes = 0;
 				patota++;
-				while(cantidad_tripulantes < 5){
+				while(cantidad_tripulantes < 3){
 					cantidad_tripulantes ++;
 					tcbTripulante* tripulante =crear_tripulante(cantidad_tripulantes,'N',5,6,1,patota);
 					pthread_t nombreHilo = (char*)(cantidad_tripulantes);
