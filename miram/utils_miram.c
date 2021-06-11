@@ -1,5 +1,6 @@
 #include "utils_miram.h"
 
+int variable_servidor = 1;
 
 void iniciar_servidor(config_struct* config_servidor)
 {
@@ -44,23 +45,21 @@ void iniciar_servidor(config_struct* config_servidor)
 	printf("Llegue");
 
 
+	int hilo;
+	while(variable_servidor != 0){
 
-	while(socket_cliente != 10){
 
-
-
-		socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
+		socket_cliente = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
 
 		if(socket_cliente>0){
+			hilo ++ ;
 			log_info(logg, "Estableciendo conexión desde %d", dir_cliente.sin_port);
 			log_info(logg, "Creando hilo");
 
-			pthread_t hilo_cliente;
+			pthread_t hilo_cliente=(char)hilo;
 			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente ,&socket_cliente);
-			pthread_join(hilo_cliente,NULL);
+			pthread_detach(hilo_cliente);
 		}
-
-
 	}
 
 	printf("Me fui");
@@ -71,11 +70,10 @@ void iniciar_servidor(config_struct* config_servidor)
 
 int funcion_cliente(int* socket_cliente){
 	int tipoMensajeRecibido = -1;
-	while(1){
-
-		int tipoMensajeRecibido = recibir_operacion(*socket_cliente);
-		switch(tipoMensajeRecibido)
-					{
+	printf("Se conecto este socket a mi %d",*socket_cliente);
+    while(1){
+		tipoMensajeRecibido = recibir_operacion(*socket_cliente);
+		switch(tipoMensajeRecibido){
 					case INICIAR_PATOTA:
 						log_info(logger, "Respondiendo");
 						enviar_header(INICIAR_PATOTA, *socket_cliente);
@@ -101,7 +99,7 @@ int funcion_cliente(int* socket_cliente){
 
 					case FIN:
 						log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
-						return *socket_cliente=10;
+						return variable_servidor = 0;
 
 					case -1:
 						log_error(logger, "el cliente se desconecto. Terminando servidor");
@@ -109,9 +107,9 @@ int funcion_cliente(int* socket_cliente){
 					default:
 						log_warning(logger, "Operacion desconocida. No quieras meter la pata");
 						break;
-
-					}
 		}
+    }
+
 }
 
 
