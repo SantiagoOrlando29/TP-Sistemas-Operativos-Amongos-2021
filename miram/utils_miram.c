@@ -69,7 +69,7 @@ int funcion_cliente(int* socket_cliente){
 	int tipoMensajeRecibido = -1;
 	while(1){
 
-		int tipoMensajeRecibido = recibir_operacion((void*)socket_cliente);
+		int tipoMensajeRecibido = recibir_operacion((int)socket_cliente);
 		switch(tipoMensajeRecibido)
 					{
 					case INICIAR_PATOTA:
@@ -294,11 +294,11 @@ tarea* crear_tarea(tarea_tripulante cod_tarea,int parametro,int pos_x,int pos_y,
 	return tarea_recibida;
 
 }
-/*
+
 
 void iniciar_miram(config_struct* config_servidor){
 
-	config_servidor->posicion_inicial= malloc(config_servidor->tamanio_memoria);
+	config_servidor->posicion_inicial= malloc(sizeof(atoi(config_servidor->tamanio_memoria)));
 
 	if(strcmp(config_servidor->squema_memoria,"PAGINACION")==0){
 
@@ -317,32 +317,69 @@ void iniciar_miram(config_struct* config_servidor){
 	}
 }
 
-/*
-void agregar_memoria_aux(t_list* tabla_aux){
 
-	tabla_paginacion* tabla1;
-	marco* marco1,marco2,marco3,marco4;
-	marco2->id_marco=2;
-	marco3->id_marco=3;
-	marco4->id_marco=4;
+void agregar_memoria_aux(t_list* lista_aux_memoria,config_struct* config_servidor ){
+
+	tabla_paginacion* tabla1=malloc(sizeof(tabla_paginacion));
+	tabla_paginacion* tabla2=malloc(sizeof(tabla_paginacion));
+	marco* marco1= malloc(sizeof(marco));
+	marco* marco2= malloc(sizeof(marco));
+	marco* marco3= malloc(sizeof(marco));
+	marco* marco4= malloc(sizeof(marco));
+	marco1->id_marco=posicion_marco(config_servidor);
+	marco2->id_marco=posicion_marco(config_servidor);
+	marco3->id_marco=posicion_marco(config_servidor);
+	marco4->id_marco=posicion_marco(config_servidor);
 	tabla1->id_patota =1;
+	tabla2->id_patota =2;
 	tabla1->ubicacion = MEM_PRINCIPAL;
+	tabla1->marco_inicial=list_create();
+	tabla2->marco_inicial=list_create();
+	list_add(tabla1->marco_inicial, marco1);
 	list_add(tabla1->marco_inicial, marco2);
 	list_add(tabla1->marco_inicial, marco3);
-	list_add(tabla1->marco_inicial, marco4);
-	list_add(tabla_aux, tabla1);
+	list_add(tabla2->marco_inicial, marco4);
+	list_add(lista_aux_memoria, tabla1);
+	list_add(lista_aux_memoria, tabla2);
 
 }
 
 void imprimir_memoria(t_list* tabla_aux){
+	tabla_paginacion* auxiliar = malloc(sizeof(tabla_paginacion));
 	for(int i=0; i<list_size(tabla_aux);i++){
-		tabla_paginacion auxiliar=(tabla_paginacion*)list_get(tabla_aux,i);
-		printf("Proceso correspondiente a patota %d", auxiliar->id_patota);
+		auxiliar=(tabla_paginacion*)list_get(tabla_aux,i);
+		printf("Tabla paginacion correspondiente a patota %d\n", auxiliar->id_patota);
+		marco* marco_leido=malloc(sizeof(marco));
 		for(int j=0;j<list_size(auxiliar->marco_inicial);j++){
-			marco marco_leido=(marco*)list_get(auxiliar->marco_inicial,j);
-			printf("Marco en uso %d", marco_leido->id_marco);
+			marco_leido=list_get(auxiliar->marco_inicial,j);
+			printf("Marco en uso %d\n", marco_leido->id_marco);
+
 		}
+		free(marco_leido);
+
 	}
+	free(auxiliar);
 
 }
-*/
+
+int posicion_marco(config_struct* config_servidor){
+	for(int i=0;i<config_servidor->cant_marcos;i++){
+		if(config_servidor->marcos[i]==0){
+			config_servidor->marcos[i]=(void*)1;
+			return i;
+		}
+
+	}
+	return -1;
+}
+
+void imprimir_ocupacion_marcos(config_struct configuracion){
+	printf("Marcos ocupados:\n");
+	for(int i=0; i<(configuracion.cant_marcos);i++){
+			printf("%d",(int)configuracion.marcos[i]);
+		}
+		printf("\n");
+}
+
+
+

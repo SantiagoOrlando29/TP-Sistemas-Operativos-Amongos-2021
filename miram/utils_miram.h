@@ -93,10 +93,10 @@ t_log* logger;
 typedef struct{
 	char* ip_miram;
 	char* puerto_miram;
-	int tamanio_memoria;
+	char* tamanio_memoria;
 	char* squema_memoria;
-	int tamanio_pag;
-	int tamanio_swap;
+	char* tamanio_pag;
+	char* tamanio_swap;
 	char* path_swap;
 	char* algoritmo_reemplazo;
 	void* posicion_inicial;
@@ -134,8 +134,11 @@ tarea* crear_tarea(tarea_tripulante,int,int,int,int);
 
 //Funciones memoria
 void iniciar_miram(config_struct* config);
-void agregar_memoria_aux(t_list* tabla_aux);
+void agregar_memoria_aux(t_list* tabla_aux, config_struct* config);
 void imprimir_memoria(t_list* tabla_aux);
+int posicion_marco(config_struct*);
+void imprimir_ocupacion_marcos(config_struct configuracion);
+
 /*Operaciones para enviar mensajes desde miram a discordiador*/
 t_paquete* crear_paquete(tipoMensaje tipo);
 void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
