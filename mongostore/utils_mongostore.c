@@ -1,4 +1,5 @@
 #include "utils_mongostore.h"
+#include <commons/string.h>
 
 int iniciar_servidor(char* ip_mongostore, char* puerto_mongostore)
 {

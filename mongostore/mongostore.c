@@ -122,9 +122,9 @@ void iniciarBlocks(int tamanio){
 	//struct stat stat_file;
 	char* addr;
 	int fd;
-	fd=open("/home/utnso/polus/Blocks.ims",O_CREAT|O_RDWR);
+	fd = open("/home/utnso/polus/Blocks.ims", O_CREAT|O_RDWR, S_IRWXU);
 	if(fd == -1){
-				printf("\nEl objeto no pudo ser creado\n");
+		printf("\nEl objeto no pudo ser creado\n");
 	}
 	if(0<=fd){
 		printf("\nSe creo correctamente\n");
