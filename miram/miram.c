@@ -10,46 +10,49 @@ int main(void)
 	leer_config();
 
 	iniciar_miram(&configuracion);
+
+	/*
 	t_list * memoria_aux;
 	memoria_aux=list_create();
 
 	imprimir_ocupacion_marcos(configuracion);
 
+	printf("%s\n",temporal_get_string_time("%H:%M:%S:%MS"));
+
+	//posicion_patota(2,memoria_aux);
 
 	agregar_memoria_aux(memoria_aux,&configuracion);
+	//printf("Posicion de patota buscada es %d\n",posicion_patota(2,memoria_aux));
+
 	imprimir_memoria(memoria_aux);
+	printf("Posicion de patota buscada es %d\n",posicion_patota(1,memoria_aux));
+	printf("Posicion de patota buscada es %d\n",posicion_patota(2,memoria_aux));
+	printf("Posicion de patota buscada es %d\n",posicion_patota(1,memoria_aux));
+	printf("Posicion de patota buscada es %d\n",posicion_patota(2,memoria_aux));
+	printf("Posicion de patota buscada es %d\n",posicion_patota(1,memoria_aux));
 
 	imprimir_ocupacion_marcos(configuracion);
 
+
+
 	int destino;
+*/
+	int numero=1234;
 
-	memcpy((configuracion.posicion_inicial), "mar1", 5);
-	memcpy((configuracion.posicion_inicial+1*atoi(configuracion.tamanio_pag)), "mar2", 5);
-	memcpy((configuracion.posicion_inicial+2*atoi(configuracion.tamanio_pag)), "mar3", 5);
-	memcpy((configuracion.posicion_inicial+3*atoi(configuracion.tamanio_pag)), "mar4", 5);
-	memcpy((configuracion.posicion_inicial+4*atoi(configuracion.tamanio_pag)), "mar5", 5);
-	memcpy((configuracion.posicion_inicial+5*atoi(configuracion.tamanio_pag)), "mar6", 5);
-	memcpy((configuracion.posicion_inicial+6*atoi(configuracion.tamanio_pag)), "mar7", 5);
-	memcpy((configuracion.posicion_inicial+7*atoi(configuracion.tamanio_pag)), "mar8", 5);
-	memcpy((configuracion.posicion_inicial+8*atoi(configuracion.tamanio_pag)), "mar9", 5);
-	memcpy((configuracion.posicion_inicial+9*atoi(configuracion.tamanio_pag)), "mar10", 5);
-	memcpy((configuracion.posicion_inicial+2000*atoi(configuracion.tamanio_pag)), "mar10", 5);
+	printf("COpy");
+	memcpy(&(configuracion.posicion_inicial), &numero, sizeof(int));
+	printf("Lo leido es %d\n",(int)(configuracion.posicion_inicial));
 
 
+	printf("COpy");
+	memcpy((&(configuracion.posicion_inicial)+20), "mar1", 5);
+	printf("Lo leido es %s\n",(configuracion.posicion_inicial)+20);
+	int a, b;
+	memcpy(&a, &numero, sizeof(a));
+	memcpy(&b, (int*)&numero + 1, sizeof(b));
 
-	printf("Lo leido es %s\n",(configuracion.posicion_inicial));
-	printf("Lo leido es %s\n",(configuracion.posicion_inicial+1*atoi(configuracion.tamanio_pag)));
-	printf("Lo leido es %s\n",(configuracion.posicion_inicial+2*atoi(configuracion.tamanio_pag)));
-	printf("Lo leido es %s\n",(configuracion.posicion_inicial+3*atoi(configuracion.tamanio_pag)));
-	printf("Lo leido es %s\n",(configuracion.posicion_inicial+4*atoi(configuracion.tamanio_pag)));
-	printf("Lo leido es %s\n",(configuracion.posicion_inicial+5*atoi(configuracion.tamanio_pag)));
-	printf("Lo leido es %s\n",(configuracion.posicion_inicial+6*atoi(configuracion.tamanio_pag)));
-	printf("Lo leido es %s\n",(configuracion.posicion_inicial+7*atoi(configuracion.tamanio_pag)));
-	printf("Lo leido es %s\n",(configuracion.posicion_inicial+8*atoi(configuracion.tamanio_pag)));
-	printf("Lo leido es %s\n",(configuracion.posicion_inicial+9*atoi(configuracion.tamanio_pag)));
-	printf("Lo leido es %s\n",(configuracion.posicion_inicial+2000*atoi(configuracion.tamanio_pag)));
-
-
+	//printf("Lo leido es %d\n",a);
+	//printf("Lo leido es %d\n",b);
 
 /*
 	t_list* lista_recibir = list_create();

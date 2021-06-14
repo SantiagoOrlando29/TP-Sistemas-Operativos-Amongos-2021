@@ -14,6 +14,17 @@
 #include<string.h>
 #include<pthread.h>
 
+#define tamanio_PCB;
+#define tamanio_tarea;
+
+
+
+typedef struct{
+	int patota_id;
+	int cant_tareas;
+	int cant_tripulantes;
+}patota_aux;
+
 typedef enum
 {
 	GENERAR_OXIGENO,
@@ -120,6 +131,7 @@ typedef struct{
 typedef struct{
 	int id_marco;
 	int control_lru;
+	int clock;
 }marco;
 
 void* recibir_buffer(int*, int);
@@ -138,6 +150,9 @@ void agregar_memoria_aux(t_list* tabla_aux, config_struct* config);
 void imprimir_memoria(t_list* tabla_aux);
 int posicion_marco(config_struct*);
 void imprimir_ocupacion_marcos(config_struct configuracion);
+int posicion_patota(int id_buscado,t_list* tabla_aux);
+void finalizar_miram(config_struct* config_servidor);
+int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco);
 
 /*Operaciones para enviar mensajes desde miram a discordiador*/
 t_paquete* crear_paquete(tipoMensaje tipo);

@@ -299,6 +299,8 @@ tarea* crear_tarea(tarea_tripulante cod_tarea,int parametro,int pos_x,int pos_y,
 void iniciar_miram(config_struct* config_servidor){
 
 	config_servidor->posicion_inicial= malloc(sizeof(atoi(config_servidor->tamanio_memoria)));
+	printf("%d\n",atoi(config_servidor->tamanio_memoria));
+	printf("Pos inicial %d\n", (int)config_servidor->posicion_inicial);
 
 	if(strcmp(config_servidor->squema_memoria,"PAGINACION")==0){
 
@@ -312,11 +314,18 @@ void iniciar_miram(config_struct* config_servidor){
 		}
 
 
+
 	}else{
 		//Inicializo Segmentacion
 	}
 }
 
+void finalizar_miram(config_struct* config_servidor){
+	free(config_servidor->posicion_inicial);
+	for(int i=0; i<config_servidor->cant_marcos;i++){
+				free(config_servidor->marcos[i]);
+			}
+}
 
 void agregar_memoria_aux(t_list* lista_aux_memoria,config_struct* config_servidor ){
 
@@ -345,21 +354,14 @@ void agregar_memoria_aux(t_list* lista_aux_memoria,config_struct* config_servido
 }
 
 void imprimir_memoria(t_list* tabla_aux){
-	tabla_paginacion* auxiliar = malloc(sizeof(tabla_paginacion));
 	for(int i=0; i<list_size(tabla_aux);i++){
-		auxiliar=(tabla_paginacion*)list_get(tabla_aux,i);
+		tabla_paginacion* auxiliar = (tabla_paginacion*)list_get(tabla_aux,i);
 		printf("Tabla paginacion correspondiente a patota %d\n", auxiliar->id_patota);
-		marco* marco_leido=malloc(sizeof(marco));
 		for(int j=0;j<list_size(auxiliar->marco_inicial);j++){
-			marco_leido=list_get(auxiliar->marco_inicial,j);
+			marco* marco_leido=list_get(auxiliar->marco_inicial,j);
 			printf("Marco en uso %d\n", marco_leido->id_marco);
-
 		}
-		free(marco_leido);
-
 	}
-	free(auxiliar);
-
 }
 
 int posicion_marco(config_struct* config_servidor){
@@ -381,5 +383,28 @@ void imprimir_ocupacion_marcos(config_struct configuracion){
 		printf("\n");
 }
 
+int posicion_patota(int id_buscado,t_list* tabla_aux){
+	for(int i=0; i<list_size(tabla_aux);i++){
+		tabla_paginacion* auxiliar= (tabla_paginacion*)list_get(tabla_aux, i);
+		if(auxiliar->id_patota==id_buscado){
+			return i;
+		}
+	}
+	return -1;
+
+	}
+
+int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco){
+	tabla_paginacion* auxiliar= (tabla_paginacion*)list_get(tabla_aux, posicion_patota);
+    marco* marco_leido=list_get(auxiliar->marco_inicial,nro_marco-1);
+	return marco_leido->id_marco;
+
+}
 
 
+/*
+void imprimir_tarea(int marco){
+
+printf("Lo leido es %s\n",(configuracion.posicion_inicial+marco*atoi(configuracion.tamanio_pag)));
+
+};*/
