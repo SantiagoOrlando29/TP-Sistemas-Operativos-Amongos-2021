@@ -1,6 +1,7 @@
 #include "utils_miram.h"
 
 int variable_servidor = -1;
+int socket_servidor;
 
 void iniciar_servidor(config_struct* config_servidor)
 {
@@ -8,7 +9,7 @@ void iniciar_servidor(config_struct* config_servidor)
 	logg = log_create("MiRam1.log", "MiRam1", 1, LOG_LEVEL_DEBUG);
 	log_info(logg, "Servidor iniciando");
 
-	int socket_servidor;
+	//int socket_servidor;
 
     struct addrinfo hints, *servinfo, *p;
 
@@ -48,7 +49,6 @@ void iniciar_servidor(config_struct* config_servidor)
 	int hilo;
 	while(variable_servidor != 0){
 
-
 		socket_cliente = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
 
 		if(socket_cliente>0){
@@ -62,7 +62,7 @@ void iniciar_servidor(config_struct* config_servidor)
 		}
 	}
 
-	printf("Me fui");
+	printf("Me fui\n");
 
 
 }
@@ -106,6 +106,8 @@ int funcion_cliente(int socket_cliente){
 					case FIN:
 						log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
 						variable_servidor = 0;
+						shutdown(socket_servidor, SHUT_RD);
+						close(socket_cliente);
 						return EXIT_FAILURE;
 
 					case -1:
