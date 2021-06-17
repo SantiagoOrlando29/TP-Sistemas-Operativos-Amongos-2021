@@ -305,7 +305,7 @@ tarea* crear_tarea(tarea_tripulante cod_tarea,int parametro,int pos_x,int pos_y,
 	return tarea_recibida;
 
 }
-/*
+
 
 void iniciar_miram(config_struct* config_servidor){
 

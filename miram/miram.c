@@ -8,8 +8,9 @@ int main(void)
 {
 
 	leer_config();
-	/*
+
 	iniciar_miram(&configuracion);
+	/*
 	t_list * memoria_aux;
 	memoria_aux=list_create();
 
@@ -20,6 +21,43 @@ int main(void)
 	agregar_memoria_aux(memoria_aux);
 	imprimir_memoria(memoria_aux);
     */
+
+	tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+	// donde arranco 134529280 -> marco 0
+	printf("Posicion Inicial %d \n",&(configuracion.posicion_inicial));
+	int offset = 0 ;
+
+	memcpy((configuracion.posicion_inicial)+offset,&tripulante->tid,sizeof(int));
+	offset += sizeof(int);
+	memcpy((configuracion.posicion_inicial)+offset,&tripulante->estado,sizeof(char));
+	offset += sizeof(char);
+	memcpy((configuracion.posicion_inicial)+offset,&tripulante->posicionX,sizeof(int));
+
+
+	// deserealizamos
+
+	int size;
+	int desplazamiento = 0;
+	int id_patota = -1;
+	char estado = "";
+	int posicion = 0;
+    memcpy(&id_patota, configuracion.posicion_inicial+desplazamiento, sizeof(int));
+    printf("el numero del tripulante es: %d \n",id_patota);
+    desplazamiento += sizeof(int);
+    memcpy(&estado, configuracion.posicion_inicial+desplazamiento, sizeof(char));
+    printf("el numero del tripulante es: %c\n",estado);
+    desplazamiento += sizeof(char);
+    memcpy(&posicion, configuracion.posicion_inicial+desplazamiento, sizeof(int));
+    printf("el numero de la posicion en x es: %d\n",posicion);
+
+
+
+
+
+
+
+
+
 	t_list* lista_recibir = list_create();
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
 	pthread_t servidor;
