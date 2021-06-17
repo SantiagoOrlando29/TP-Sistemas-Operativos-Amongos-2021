@@ -563,3 +563,13 @@ void imprimir_tarea(int marco){
 printf("Lo leido es %s\n",(configuracion.posicion_inicial+marco*atoi(configuracion.tamanio_pag)));
 
 };*/
+
+pcbPatota* crear_pcb(uint32_t numero_patota){
+	pcbPatota* pcb = malloc(sizeof(pcbPatota));
+	pcb->pid = numero_patota;
+	//pcb->tareas = NULL;
+
+	return pcb;
+}
+
+

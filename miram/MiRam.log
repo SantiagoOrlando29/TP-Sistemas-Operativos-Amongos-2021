@@ -1,1 +1,7 @@
 [INFO] 12:11:28:726 MiRam/(16140:16140): Falla al crearse el hilo
+[DEBUG] 19:08:16:261 MiRam/(20318:20318): First fit
+[INFO] 19:08:16:262 MiRam/(20318:20318): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[DEBUG] 19:08:55:975 MiRam/(20336:20336): First fit
+[INFO] 19:08:55:975 MiRam/(20336:20336): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[DEBUG] 19:09:10:658 MiRam/(20351:20351): First fit
+[INFO] 19:09:10:658 MiRam/(20351:20351): Se encontro espacio de memoria libre con suficiente espacio (base: 0)

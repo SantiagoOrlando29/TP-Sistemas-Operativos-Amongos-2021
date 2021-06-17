@@ -114,6 +114,7 @@ typedef struct{
 	void* posicion_inicial;
 	int cant_marcos;
 	uint8_t **marcos;
+	char* criterio_seleccion;
 }config_struct;
 
 
@@ -138,15 +139,23 @@ typedef struct{
 
 
 typedef struct{
+	int base;
+	int tamanio;
+}segmento;
+
+typedef struct{
 	int id_patota;
 	t_list* segmento_inicial;
 
 }tabla_segmentacion;
 
 typedef struct{
-	int base;
-	int tamanio;
-}segmento;
+    int base;
+    int tam;
+    bool libre;
+}espacio_de_memoria;
+
+t_list* tabla_espacios_de_memoria;
 
 void* recibir_buffer(int*, int);
 void iniciar_servidor(config_struct*);
@@ -182,6 +191,18 @@ void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 void enviar_header(tipoMensaje , int );
 int funcion_cliente(int*);
+
+//SEGMENTACION
+espacio_de_memoria* crear_espacio_de_memoria(int base, int tam, bool libre);
+void imprimir_tabla_espacios_de_memoria();
+void eliminar_espacio_de_memoria(int base);
+espacio_de_memoria* buscar_espacio_de_memoria_libre(int tam);
+espacio_de_memoria* busqueda_first_fit(int tam);
+espacio_de_memoria* busqueda_best_fit(int tam);
+espacio_de_memoria* asignar_espacio_de_memoria(size_t tam);
+
+pcbPatota* crear_pcb(uint32_t numero_patota);
+
 
 /*FINALIZACION*/
 

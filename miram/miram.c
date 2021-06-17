@@ -3,12 +3,12 @@ config_struct configuracion;
 t_log* logger;
 
 
-
 int main(void)
 {
 
 	leer_config();
-
+	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
+/*
 	iniciar_miram(&configuracion);
 
 	t_list* memoria_aux=list_create();
@@ -30,7 +30,7 @@ int main(void)
 
 	printf("Tripulante Exitoso Leido marco%d, %c, %d, %d, %d", tripulante3->tid, tripulante3->estado, tripulante3->posicionX, tripulante3->posicionY, tripulante3->tid);
 	//tcbTripulante* tripulante5 = obtener_tripulante(configuracion.posicion_inicial + 2*configuracion.tamanio_pag);
-
+*/
 
 	/*
 	tarea* prueba=malloc(sizeof(tarea));
@@ -138,10 +138,167 @@ int main(void)
 
 	list_destroy(lista_recibir);
 */
+
+	tabla_espacios_de_memoria = list_create();
+	espacio_de_memoria* memoria_principal = crear_espacio_de_memoria(0, atoi(configuracion.tamanio_memoria), true);
+	list_add(tabla_espacios_de_memoria, memoria_principal);
+	imprimir_tabla_espacios_de_memoria();
+
+
+	uint32_t numero_patota;
+
+	numero_patota = 1;
+
+	pcbPatota* pcb_patota1 = crear_pcb(numero_patota);
+
+
+	tcbTripulante* tripulante_1 = crear_tripulante(1,'N',5,6,1,1);
+	tcbTripulante* tripulante_2 = crear_tripulante(2,'N',7,8,1,1);
+
+	char* tarea_prueba = malloc(24);
+	tarea_prueba = "GENERAR_OXIGENO 1;4;4;1";
+
+	espacio_de_memoria* espacio_de_memoria_pcb_patota1 = asignar_espacio_de_memoria(tamanio_pcb(pcb_patota1));
+	imprimir_tabla_espacios_de_memoria();
+
+	/*tabla_segmentacion* tabla_segmentos_patota1;
+	tabla_segmentos_patota1->id_patota = 1;
+	tabla_segmentos_patota1->segmento_inicial = list_create();
+	list_add(tabla_segmentos_patota1->segmento_inicial, pcb_patota1);
+	list_add(tabla_segmentos_patota1->segmento_inicial, tripulante_1);
+	list_add(tabla_segmentos_patota1->segmento_inicial, tripulante_2);
+	list_add(tabla_segmentos_patota1->segmento_inicial, tarea_prueba);*/
+
 	return 0;
 }
 
+espacio_de_memoria* crear_espacio_de_memoria(int base, int tam, bool libre){
+	espacio_de_memoria* nuevo_espacio_de_memoria = malloc(sizeof(espacio_de_memoria));
 
+	nuevo_espacio_de_memoria->base = base;
+	nuevo_espacio_de_memoria->tam = tam;
+	nuevo_espacio_de_memoria->libre = libre;
+
+    return nuevo_espacio_de_memoria;
+}
+
+void imprimir_tabla_espacios_de_memoria(){
+    int size = list_size(tabla_espacios_de_memoria);
+    printf("<--------------------------------------------\n");
+
+    for(int i=0; i < size; i++) {
+    	espacio_de_memoria *espacio = list_get(tabla_espacios_de_memoria, i);
+        printf("base: %d, tam: %d, is_free: %s \n", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
+    }
+    printf("-------------------------------------------->\n");
+}
+
+void eliminar_espacio_de_memoria(int base){
+    for(int i = 0; i < list_size(tabla_espacios_de_memoria); i++){
+    	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
+
+    	if(espacio->base == base){
+            espacio->libre = true;
+            log_info(logger, "Se libera el espacio de memoria con base %d", espacio->base);
+        }
+    }
+}
+
+espacio_de_memoria* buscar_espacio_de_memoria_libre(int tam){
+
+	if (strcmp(configuracion.criterio_seleccion, "FF") == 0) {
+        log_debug(logger, "First fit");
+        return busqueda_first_fit(tam);
+
+    } else if (strcmp(configuracion.criterio_seleccion, "BF") == 0) {
+        log_debug(logger, "Best fit");
+        return busqueda_best_fit(tam);
+
+    } else {
+        log_error(logger, "No se encontro el algoritmo pedido");
+        exit(EXIT_FAILURE);
+    }
+}
+
+espacio_de_memoria* busqueda_first_fit(int tam){
+    int size = list_size(tabla_espacios_de_memoria);
+
+    for(int i=0; i < size; i++){
+    	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
+        if(espacio->libre == true && tam <= espacio->tam){
+            log_info(logger, "Se encontro espacio de memoria libre con suficiente espacio (base: %d)", espacio->base);
+            return espacio;
+        }
+    }
+    log_warning(logger, "No hay espacios de memoria libres");
+    return NULL;
+}
+
+espacio_de_memoria* busqueda_best_fit(int tam){
+    int size = list_size(tabla_espacios_de_memoria);
+    t_list* espacios_libres = list_create();
+
+    for(int i=0; i < size; i++){
+    	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
+
+    	if(espacio->libre == true && tam <= espacio->tam){
+            log_info(logger, "Se encontro espacio de memoria libre con suficiente espacio (base: %d)", espacio->base);
+
+            if(tam == espacio->tam){
+            	log_info(logger, "Se encontro el espacio de memoria con Best Fit (base:%d)", espacio->base);
+            	return espacio;
+            }
+            list_add(espacios_libres, espacio);
+        }
+    }
+
+    log_debug(logger, "Buscando el espacio de memoria con Best Fit");
+    int espacios_libres_size = list_size(espacios_libres);
+
+    if(espacios_libres_size != 0){
+    	espacio_de_memoria* espacio_best_fit;
+        int best_fit_diff = 999999; //revisar esto
+
+        for(int i=0; i < espacios_libres_size; i++){
+        	espacio_de_memoria* y = list_get(espacios_libres, i);
+            int diff = y->tam - tam;
+
+            if(best_fit_diff > diff){
+                best_fit_diff = diff;
+                espacio_best_fit = y;
+            }
+        }
+        log_info(logger, "El espacio de memoria encontrado con Best Fit (base:%d)", espacio_best_fit->base);
+        return espacio_best_fit;
+    }else{
+        log_warning(logger, "No hay espacios de memoria libres");
+        return NULL;
+    }
+}
+
+espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) { //falta
+	espacio_de_memoria *espacio_libre = buscar_espacio_de_memoria_libre(tam);
+	if (espacio_libre != NULL) {
+        //Si la particion libre encontrada es de igual tamanio a la particion a alojar no es necesario ordenar
+        if (espacio_libre->tam == tam) {
+        	espacio_libre->libre = false;
+            //log_info(logger, "Espacio de memoria asignado(base: %d)", espacio_libre->base);
+            return espacio_libre;
+        } else {
+        //Si no es de igual tamano, debo crear una nueva particion con base en la libre y reacomodar la base y tamanio de la libre.
+            espacio_de_memoria* nuevo_espacio_de_memoria = crear_espacio_de_memoria(espacio_libre->base, tam, false);
+            list_add(tabla_espacios_de_memoria, nuevo_espacio_de_memoria);
+            //actualizo base y tamanio de particion libre.
+           // espacio_libre->base += tam;
+           // espacio_libre->tam -= tam;
+            return nuevo_espacio_de_memoria;
+        }
+
+    } else {
+        log_warning(logger, "It was not possible to assign partition!");
+        return NULL;
+    }
+}
 
 void leer_config(){
 
@@ -155,6 +312,7 @@ void leer_config(){
     configuracion.tamanio_swap =config_get_string_value(archConfig, "TAMANIO_SWAP");
     configuracion.path_swap = config_get_string_value(archConfig, "PATH_SWAP");
     configuracion.algoritmo_reemplazo = config_get_string_value(archConfig, "ALGORITMO_REEMPLAZO");
+    configuracion.criterio_seleccion = config_get_string_value(archConfig, "CRITERIO_SELECCION");
     //Parametros utiles (No obtenidos del archivo de configuracion)
     configuracion.cant_marcos=0;
 
