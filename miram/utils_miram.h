@@ -14,8 +14,9 @@
 #include<string.h>
 #include<pthread.h>
 
-#define tamanio_PCB;
-#define tamanio_tarea;
+#define tamanio_PCB  8
+#define tamanio_tarea 10
+#define tamanio_TCB  21
 
 
 
@@ -132,7 +133,20 @@ typedef struct{
 	int id_marco;
 	int control_lru;
 	int clock;
+	int libre;
 }marco;
+
+
+typedef struct{
+	int id_patota;
+	t_list* segmento_inicial;
+
+}tabla_segmentacion;
+
+typedef struct{
+	int base;
+	int tamanio;
+}segmento;
 
 void* recibir_buffer(int*, int);
 void iniciar_servidor(config_struct*);
@@ -148,11 +162,18 @@ tarea* crear_tarea(tarea_tripulante,int,int,int,int);
 void iniciar_miram(config_struct* config);
 void agregar_memoria_aux(t_list* tabla_aux, config_struct* config);
 void imprimir_memoria(t_list* tabla_aux);
+void imprimir_seg(t_list* tabla_aux);
+void agregar_segmentos(t_list* lista_aux_seg);
 int posicion_marco(config_struct*);
 void imprimir_ocupacion_marcos(config_struct configuracion);
 int posicion_patota(int id_buscado,t_list* tabla_aux);
 void finalizar_miram(config_struct* config_servidor);
 int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco);
+void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* tabla_aux, config_struct* configuracion);
+
+void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial);
+
+tcbTripulante* obtener_tripulante(void* inicio_tripulantes);
 
 /*Operaciones para enviar mensajes desde miram a discordiador*/
 t_paquete* crear_paquete(tipoMensaje tipo);
@@ -178,6 +199,9 @@ size_t tamanio_pcb(pcbPatota*);
 /*crear la estructura de un nuevo tripulante*/
 tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, uint32_t);
 
+
+char* string_nombre_tarea(int);
+char* tarea_a_string(tarea* t);
 
 #endif /* CONEXIONES_H_ */
 

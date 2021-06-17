@@ -11,7 +11,33 @@ int main(void)
 
 	iniciar_miram(&configuracion);
 
+	t_list* memoria_aux=list_create();
+	agregar_memoria_aux(memoria_aux,&configuracion);
+
+
+	tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+
+	escribir_tripulante(tripulante,configuracion.posicion_inicial);
+
+	tcbTripulante* tripulante2 = obtener_tripulante(configuracion.posicion_inicial);
+
+	printf("Tripulante Exitoso %d, %c, %d, %d, %d", tripulante2->tid, tripulante2->estado, tripulante2->posicionX, tripulante2->posicionY, tripulante2->tid);
+
+	agregar_tripulante_marco(tripulante2, 1,memoria_aux, &configuracion);
+
+	tcbTripulante* tripulante3 = obtener_tripulante(configuracion.posicion_inicial + 2* atoi(configuracion.tamanio_pag));
+	//tcbTripulante* tripulante4 = obtener_tripulante(configuracion.posicion_inicial + 1*configuracion.tamanio_pag);
+
+	printf("Tripulante Exitoso Leido marco%d, %c, %d, %d, %d", tripulante3->tid, tripulante3->estado, tripulante3->posicionX, tripulante3->posicionY, tripulante3->tid);
+	//tcbTripulante* tripulante5 = obtener_tripulante(configuracion.posicion_inicial + 2*configuracion.tamanio_pag);
+
+
 	/*
+	tarea* prueba=malloc(sizeof(tarea));
+	prueba=crear_tarea(1,2,3,4,5);
+	//printf("%s",tarea_a_string(prueba));
+
+
 	t_list * memoria_aux;
 	memoria_aux=list_create();
 
@@ -34,9 +60,49 @@ int main(void)
 	imprimir_ocupacion_marcos(configuracion);
 
 
+	int numero=1234;
 
+	int offset = 0 ;
+
+	printf("Copy %d\n",&(configuracion.posicion_inicial) );
+	memcpy((configuracion.posicion_inicial)+offset,&numero, sizeof(int));
+
+	offset+= sizeof(int);
+
+	char* pruebaString = "mar1 ";
+	memcpy((configuracion.posicion_inicial)+offset,pruebaString, sizeof(char*));
+	offset+= sizeof(char*);
+	//tcbTripulante* tripulante =crear_tripulante(1,'N',5,6,1,1);
+	//memcpy((configuracion.posicion_inicial)+offset,tripulante, sizeof(tamanio_tcb));
+
+
+
+
+	int size;
+	int desplazamiento = 0;
+	void * buffer=configuracion.posicion_inicial ;
+	int tamanio=2379;
+
+	memcpy(buffer + desplazamiento,"HOla",5);
+	printf("Copy1 %s\n",(buffer + desplazamiento));
+
+	desplazamiento+=5;
+
+	//char* valor = malloc(sizeof(char*));
+	memcpy(buffer+desplazamiento, &tamanio, sizeof(tamanio));
+
+	printf("Copy 2%d\n",*(buffer+desplazamiento));
+	/*
+	desplazamiento+=sizeof(char*);
+	tcbTripulante* tripulantePrueba =crear_tripulante(1,'N',5,6,1,1);
+	desplazamiento+=sizeof(tcbTripulante);
+	memcpy(buffer+desplazamiento,tripulantePrueba ,sizeof(tamanio_tcb));
+	printf("%d", tripulantePrueba->tid);
+	*/
+
+/*
 	int destino;
-*/
+
 	int numero=1234;
 
 	printf("COpy");
@@ -50,7 +116,7 @@ int main(void)
 	int a, b;
 	memcpy(&a, &numero, sizeof(a));
 	memcpy(&b, (int*)&numero + 1, sizeof(b));
-
+*/
 	//printf("Lo leido es %d\n",a);
 	//printf("Lo leido es %d\n",b);
 
