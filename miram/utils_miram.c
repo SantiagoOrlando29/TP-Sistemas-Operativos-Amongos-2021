@@ -83,7 +83,8 @@ int funcion_cliente(int socket_cliente){
 			case PRUEBA:
 				lista=recibir_paquete(socket_cliente);
 
-				uint32_t pid = (uint32_t*)atoi(list_get(lista,0));
+				uint32_t pid = (char*)atoi(list_get(lista,0));
+				printf("el numero de la patota es %d", pid);
 				patota = crear_patota(pid,0);
 
 				uint32_t cantidad_tripulantes = (uint32_t*)atoi(list_get(lista,1));
@@ -125,6 +126,9 @@ int funcion_cliente(int socket_cliente){
 
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
+				variable_servidor = 0;
+				shutdown(socket_servidor, SHUT_RD);
+				close(socket_cliente);
 				return EXIT_FAILURE;
 
 			case -1:
