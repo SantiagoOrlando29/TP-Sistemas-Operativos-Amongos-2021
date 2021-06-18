@@ -5,3 +5,5 @@
 [INFO] 19:08:55:975 MiRam/(20336:20336): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
 [DEBUG] 19:09:10:658 MiRam/(20351:20351): First fit
 [INFO] 19:09:10:658 MiRam/(20351:20351): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[DEBUG] 20:16:14:63 MiRam/(15660:15660): First fit
+[INFO] 20:16:14:63 MiRam/(15660:15660): Se encontro espacio de memoria libre con suficiente espacio (base: 0)

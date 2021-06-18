@@ -8,11 +8,52 @@ int main(void)
 
 	leer_config();
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
-/*
 	iniciar_miram(&configuracion);
 
 	t_list* memoria_aux=list_create();
 	agregar_memoria_aux(memoria_aux,&configuracion);
+
+ /*	crear_marcos(cuantostripulantes,+strlen(tarea)+1);
+
+
+	crear_marcos(size(patota)+size(tripulante)*N+strlen(tarea)+1){
+		int tamaño_marco = leerarhivoconfiguracion;
+
+
+		if(tamaño_marco - = pid <0);
+		if(tamaño_marco - = puntero_tareas<0);
+
+		for(int i i< N i++)
+		if(tamaño_marco - = tid <0)
+			cuantos_marcos ++;
+		tamaño_marco = leerarchivoconfiguracion;
+		if(tamaño_marco - = estado<0);
+		if(tamaño_marco - = posicionx <0);
+		if(tamaño_marco - = posiciony<0);
+		if(tamaño_marco - = proximainstruc<0);
+		if(tamaño_marco - = punteropcb<0);
+
+
+		while(hasta que me de menor a 0)
+
+		tamaño_marco -= strlen(tarea)+1 <0
+				cuantos_marcos++;
+				tamaño_marco = leerarchivoconfiguracion;
+
+
+	return cuantos_marcos;
+
+	patota=listget(mensajeRecibido);
+	cuantostripulantes=listget(mensajerecibido)
+	tarea=listget(mensajerecibido)
+
+	cuantosMarcos=cuantos_marcos(cuantostripulante,tarea)
+
+	tabla=crear_tabla(cuantosMarcos,tabla)
+	add(lista_tablas,tabla);
+
+	}
+ */
 
 
 	tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
@@ -25,14 +66,20 @@ int main(void)
 
 	agregar_tripulante_marco(tripulante2, 1,memoria_aux, &configuracion);
 
-	tcbTripulante* tripulante3 = obtener_tripulante(configuracion.posicion_inicial + 2* atoi(configuracion.tamanio_pag));
+	tcbTripulante* tripulante3 = obtener_tripulante(configuracion.posicion_inicial + 0* atoi(configuracion.tamanio_pag));
 	//tcbTripulante* tripulante4 = obtener_tripulante(configuracion.posicion_inicial + 1*configuracion.tamanio_pag);
 
 	printf("Tripulante Exitoso Leido marco%d, %c, %d, %d, %d", tripulante3->tid, tripulante3->estado, tripulante3->posicionX, tripulante3->posicionY, tripulante3->tid);
 	//tcbTripulante* tripulante5 = obtener_tripulante(configuracion.posicion_inicial + 2*configuracion.tamanio_pag);
-*/
 
-	/*
+
+
+	int cuantos_marcos_necesito = cuantos_marcos(5,15,&configuracion);
+
+	printf("cuantos marcos necesito %d", cuantos_marcos_necesito);
+
+
+/*
 	tarea* prueba=malloc(sizeof(tarea));
 	prueba=crear_tarea(1,2,3,4,5);
 	//printf("%s",tarea_a_string(prueba));
@@ -98,9 +145,8 @@ int main(void)
 	desplazamiento+=sizeof(tcbTripulante);
 	memcpy(buffer+desplazamiento,tripulantePrueba ,sizeof(tamanio_tcb));
 	printf("%d", tripulantePrueba->tid);
-	*/
 
-/*
+
 	int destino;
 
 	int numero=1234;
@@ -116,11 +162,11 @@ int main(void)
 	int a, b;
 	memcpy(&a, &numero, sizeof(a));
 	memcpy(&b, (int*)&numero + 1, sizeof(b));
-*/
+
 	//printf("Lo leido es %d\n",a);
 	//printf("Lo leido es %d\n",b);
 
-/*
+
 	t_list* lista_recibir = list_create();
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
 	pthread_t servidor;
@@ -137,7 +183,6 @@ int main(void)
 
 
 	list_destroy(lista_recibir);
-*/
 
 	tabla_espacios_de_memoria = list_create();
 	espacio_de_memoria* memoria_principal = crear_espacio_de_memoria(0, atoi(configuracion.tamanio_memoria), true);
@@ -167,7 +212,8 @@ int main(void)
 	list_add(tabla_segmentos_patota1->segmento_inicial, pcb_patota1);
 	list_add(tabla_segmentos_patota1->segmento_inicial, tripulante_1);
 	list_add(tabla_segmentos_patota1->segmento_inicial, tripulante_2);
-	list_add(tabla_segmentos_patota1->segmento_inicial, tarea_prueba);*/
+	list_add(tabla_segmentos_patota1->segmento_inicial, tarea_prueba);
+	*/
 
 	return 0;
 }

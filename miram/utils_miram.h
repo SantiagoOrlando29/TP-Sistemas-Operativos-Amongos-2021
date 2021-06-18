@@ -13,6 +13,7 @@
 #include <commons/config.h>
 #include<string.h>
 #include<pthread.h>
+#include<stdbool.h>
 
 #define tamanio_PCB  8
 #define tamanio_tarea 10
@@ -179,6 +180,7 @@ int posicion_patota(int id_buscado,t_list* tabla_aux);
 void finalizar_miram(config_struct* config_servidor);
 int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco);
 void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* tabla_aux, config_struct* configuracion);
+int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* config_servidor);
 
 void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial);
 

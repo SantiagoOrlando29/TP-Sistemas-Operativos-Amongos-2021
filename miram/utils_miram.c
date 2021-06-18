@@ -358,6 +358,7 @@ void agregar_segmentos(t_list* lista_aux_seg){
 }
 
 
+
 void agregar_memoria_aux(t_list* lista_aux_memoria,config_struct* config_servidor ){
 
 	tabla_paginacion* tabla1=malloc(sizeof(tabla_paginacion));
@@ -390,19 +391,25 @@ void agregar_memoria_aux(t_list* lista_aux_memoria,config_struct* config_servido
 
 void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* tabla_aux, config_struct* configuracion){
 
-	tabla_paginacion* auxiliar = (tabla_paginacion*)list_get(tabla_aux, posicion_patota(id_patota, tabla_aux));
-	for(int j=0;j<list_size(auxiliar->marco_inicial);j++){
-		marco* marco_leido=list_get(auxiliar->marco_inicial,j);
-	    if(marco_leido->libre){
-	    	escribir_tripulante(tripulante, (marco_leido->id_marco)*(atoi(configuracion->tamanio_pag)) +  (configuracion->posicion_inicial));
-	    }
-	    else{
-	    	printf("No se pudo escribir");
-	    }
+	tabla_paginacion* una_tabla = (tabla_paginacion*)list_get(tabla_aux, posicion_patota(id_patota, tabla_aux));
+	int contador_tablas= 0;
+	int marco_disponible = 0;
 
+	while(contador_tablas<list_size(una_tabla->marco_inicial) && marco_disponible != 1){
+		marco* marco_leido = list_get(una_tabla->marco_inicial,contador_tablas);
+		if(marco_leido->libre == 0){
+			printf("hay lugares libres");
+			escribir_tripulante(tripulante, (marco_leido->id_marco)*(atoi(configuracion->tamanio_pag)) +  (configuracion->posicion_inicial));
+			marco_disponible = 1;
+		}
+		contador_tablas++;
+	}
+	if (marco_disponible == 0){
+		printf("No hay lugares en los marcos");
+	}
 
 }
-}
+
 
 void imprimir_memoria(t_list* tabla_aux){
 	for(int i=0; i<list_size(tabla_aux);i++){
@@ -573,3 +580,48 @@ pcbPatota* crear_pcb(uint32_t numero_patota){
 }
 
 
+int por_atributo(int nuevo_marco,int *tamanio_marco, int tipo_dato, int cantidad_marcos){
+
+
+	*tamanio_marco = *tamanio_marco - tipo_dato;
+
+	while(*tamanio_marco<0){
+		cantidad_marcos++;
+		*tamanio_marco = nuevo_marco;
+		*tamanio_marco = *tamanio_marco - tipo_dato;
+	}
+	return cantidad_marcos;
+}
+
+int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* config_servidor){
+
+	int tamanio_marco = atoi( config_servidor->tamanio_pag);
+	int nuevo_marco  = tamanio_marco;
+
+	int cantidad_marcos = 1;
+
+	cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+	cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+	for(int i=0; i < cuantos_tripulantes; i++){
+
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(char), cantidad_marcos);
+
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+	}
+
+
+	cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, longitud_tarea, cantidad_marcos);
+
+    return cantidad_marcos;
+}
