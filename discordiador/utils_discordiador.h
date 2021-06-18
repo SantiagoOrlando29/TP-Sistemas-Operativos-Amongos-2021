@@ -131,6 +131,7 @@ void leer_config();
 int crear_conexion(char* ip, char* puerto);
 t_paquete* crear_paquete(tipoMensaje tipo);
 void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
+void agregar_entero_a_paquete(t_paquete* paquete, uint32_t valor, int tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);

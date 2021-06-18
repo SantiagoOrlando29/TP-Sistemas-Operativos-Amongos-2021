@@ -82,11 +82,11 @@ int funcion_cliente(int socket_cliente){
 		{
 			case PRUEBA:
 				lista=recibir_paquete(socket_cliente);
-				uint32_t pid = (uint32_t*)list_get(lista,0);
-				printf("pid %d\n", pid);
+
+				uint32_t pid = (uint32_t*)atoi(list_get(lista,0));
 				patota = crear_patota(pid,0);
 
-				uint32_t cantidad_tripulantes = (uint32_t*)list_get(lista,1);
+				uint32_t cantidad_tripulantes = (uint32_t*)atoi(list_get(lista,1));
 				printf("cant tripu %d\n", cantidad_tripulantes);
 
 				for(int i=2; i < cantidad_tripulantes +2; i++){
@@ -95,7 +95,7 @@ int funcion_cliente(int socket_cliente){
 					printf("\n");
 				}
 
-				char* tarea=(char*)list_get(lista,cantidad_tripulantes+3);
+				char* tarea=(char*)list_get(lista, cantidad_tripulantes+2);
 				printf("Las tareas serializadas son: %s \n", tarea);
 
 				break;

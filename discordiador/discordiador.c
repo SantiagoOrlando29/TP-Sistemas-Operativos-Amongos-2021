@@ -337,11 +337,19 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 			case PRUEBA:
 				paquete = crear_paquete(PRUEBA);
 				numero_patota++;
-				agregar_a_paquete(paquete, numero_patota, sizeof(uint32_t));
+
+				//agregar_entero_a_paquete(paquete, numero_patota, sizeof(uint32_t));
+				char* numero_patota_char = malloc(sizeof(char));
+				sprintf(numero_patota_char, "%d", numero_patota);
+				agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
 
 				char** parametros = string_split(leido," ");
 				uint32_t cantidad_tripulantes  = atoi(parametros[1]);
-				agregar_a_paquete(paquete, cantidad_tripulantes, sizeof(uint32_t));
+
+				char* cantidad_tripulantes_char = malloc(sizeof(char));
+				sprintf(cantidad_tripulantes_char, "%d", cantidad_tripulantes);
+				//agregar_entero_a_paquete(paquete, cantidad_tripulantes, sizeof(uint32_t));
+				agregar_a_paquete(paquete, cantidad_tripulantes_char, strlen(cantidad_tripulantes_char)+1);
 
 				char* tareas = malloc(sizeof(char));
 				leer_tareas(parametros[2], &tareas);
