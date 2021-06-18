@@ -383,6 +383,9 @@ PRUEBA 5 tareas.txt 300|4 10|20 4|500
 
 				}
 
+				char* largo_tarea = malloc(sizeof(char));
+				sprintf(largo_tarea, "%d", strlen(tareas)+1);
+				agregar_a_paquete(paquete, largo_tarea, strlen(largo_tarea)+1);
 				agregar_a_paquete(paquete, tareas, strlen(tareas)+1);
 				//agregar_a_paquete(paquete, "Hola Mundo", 11);
 				free(tareas);

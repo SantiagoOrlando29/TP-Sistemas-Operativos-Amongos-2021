@@ -83,7 +83,7 @@ int funcion_cliente(int socket_cliente){
 			case PRUEBA:
 				lista=recibir_paquete(socket_cliente);
 
-				uint32_t pid = (char*)atoi(list_get(lista,0));
+				uint32_t pid = (uint32_t*)atoi(list_get(lista,0));
 				printf("el numero de la patota es %d", pid);
 				patota = crear_patota(pid,0);
 
@@ -96,8 +96,61 @@ int funcion_cliente(int socket_cliente){
 					printf("\n");
 				}
 
-				char* tarea=(char*)list_get(lista, cantidad_tripulantes+2);
+				char* tarea = malloc((uint32_t*)atoi(list_get(lista, cantidad_tripulantes+2)));
+				tarea=(char*)list_get(lista, cantidad_tripulantes+3);
 				printf("Las tareas serializadas son: %s \n", tarea);
+
+				//---------------------------SEGMENTACION--------------------------------------------------
+				/*pcbPatota* pcb_patota = crear_pcb(pid);
+
+				for(int i=2; i < cantidad_tripulantes +2; i++){
+					tripulante=(tcbTripulante*)list_get(lista,i);
+				}
+
+				tcbTripulante* tripulante_1 = crear_tripulante(1,'N',5,6,1,1);
+				tcbTripulante* tripulante_2 = crear_tripulante(2,'N',7,8,1,1);
+
+				char* tarea_prueba = malloc(24);
+				tarea_prueba = "GENERAR_OXIGENO 1;4;4;1";
+
+				espacio_de_memoria* espacio_de_memoria_pcb_patota = asignar_espacio_de_memoria(tamanio_pcb(pcb_patota));
+				espacio_de_memoria* espacio_de_memoria_tcb_tripulante1 = asignar_espacio_de_memoria(tamanio_tcb(tripulante_1));
+				espacio_de_memoria* espacio_de_memoria_tcb_tripulante2 = asignar_espacio_de_memoria(tamanio_tcb(tripulante_2));
+				espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea_prueba)+1);
+
+				pcb_patota->tareas = espacio_de_memoria_tareas->base;
+
+				imprimir_tabla_espacios_de_memoria();
+
+
+				segmento* segmento_pcb = malloc(sizeof(segmento));
+				segmento* segmento_tcb_1 = malloc(sizeof(segmento));
+				segmento* segmento_tcb_2 = malloc(sizeof(segmento));
+				segmento* segmento_tareas = malloc(sizeof(segmento));
+
+				segmento_pcb->base = espacio_de_memoria_pcb_patota->base;
+				segmento_pcb->tamanio = espacio_de_memoria_pcb_patota->tam;
+
+				segmento_tcb_1->base = espacio_de_memoria_tcb_tripulante1->base;
+				segmento_tcb_1->tamanio = espacio_de_memoria_tcb_tripulante1->tam;
+
+				segmento_tcb_2->base = espacio_de_memoria_tcb_tripulante2->base;
+				segmento_tcb_2->tamanio = espacio_de_memoria_tcb_tripulante2->tam;
+
+				segmento_tareas->base = espacio_de_memoria_tareas->base;
+				segmento_tareas->tamanio = espacio_de_memoria_tareas->tam;
+
+
+				tabla_segmentacion* tabla_segmentos_patota;
+
+				tabla_segmentos_patota->id_patota = 1;
+				tabla_segmentos_patota->segmento_inicial = list_create();
+
+				list_add(tabla_segmentos_patota->segmento_inicial, segmento_pcb);
+				list_add(tabla_segmentos_patota->segmento_inicial, segmento_tcb_1);
+				list_add(tabla_segmentos_patota->segmento_inicial, segmento_tcb_2);
+				list_add(tabla_segmentos_patota->segmento_inicial, segmento_tareas);
+*/
 
 				break;
 
@@ -345,10 +398,11 @@ void iniciar_miram(config_struct* config_servidor){
 			config_servidor->marcos[i]= 0;
 		}
 
-
-
 	}else{
-		//Inicializo Segmentacion
+		tabla_espacios_de_memoria = list_create();
+		espacio_de_memoria* memoria_principal = crear_espacio_de_memoria(0, atoi(config_servidor->tamanio_memoria), true);
+		list_add(tabla_espacios_de_memoria, memoria_principal);
+		imprimir_tabla_espacios_de_memoria();
 	}
 }
 

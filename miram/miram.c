@@ -167,6 +167,7 @@ int main(void)
 	//printf("Lo leido es %d\n",b);
 
 */
+
 	t_list* lista_recibir = list_create();
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
 	pthread_t servidor;
@@ -180,19 +181,16 @@ int main(void)
 	list_destroy(lista_recibir);
 
 
-/*
-	tabla_espacios_de_memoria = list_create();
+
+/*	tabla_espacios_de_memoria = list_create();
 	espacio_de_memoria* memoria_principal = crear_espacio_de_memoria(0, atoi(configuracion.tamanio_memoria), true);
 	list_add(tabla_espacios_de_memoria, memoria_principal);
 	imprimir_tabla_espacios_de_memoria();
-
-
+*/
+/*
 	uint32_t numero_patota;
-
 	numero_patota = 1;
-
-	pcbPatota* pcb_patota1 = crear_pcb(numero_patota);
-
+	pcbPatota* pcb_patota = crear_pcb(numero_patota);
 
 	tcbTripulante* tripulante_1 = crear_tripulante(1,'N',5,6,1,1);
 	tcbTripulante* tripulante_2 = crear_tripulante(2,'N',7,8,1,1);
@@ -200,16 +198,52 @@ int main(void)
 	char* tarea_prueba = malloc(24);
 	tarea_prueba = "GENERAR_OXIGENO 1;4;4;1";
 
-	espacio_de_memoria* espacio_de_memoria_pcb_patota1 = asignar_espacio_de_memoria(tamanio_pcb(pcb_patota1));
+	espacio_de_memoria* espacio_de_memoria_pcb_patota = asignar_espacio_de_memoria(tamanio_pcb(pcb_patota));
+	espacio_de_memoria* espacio_de_memoria_tcb_tripulante1 = asignar_espacio_de_memoria(tamanio_tcb(tripulante_1));
+	espacio_de_memoria* espacio_de_memoria_tcb_tripulante2 = asignar_espacio_de_memoria(tamanio_tcb(tripulante_2));
+	espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea_prueba)+1);
+
+	pcb_patota->tareas = espacio_de_memoria_tareas->base;
+
 	imprimir_tabla_espacios_de_memoria();
 
-	/*tabla_segmentacion* tabla_segmentos_patota1;
-	tabla_segmentos_patota1->id_patota = 1;
-	tabla_segmentos_patota1->segmento_inicial = list_create();
-	list_add(tabla_segmentos_patota1->segmento_inicial, pcb_patota1);
-	list_add(tabla_segmentos_patota1->segmento_inicial, tripulante_1);
-	list_add(tabla_segmentos_patota1->segmento_inicial, tripulante_2);
-	list_add(tabla_segmentos_patota1->segmento_inicial, tarea_prueba);
+
+	segmento* segmento_pcb = malloc(sizeof(segmento));
+	segmento* segmento_tcb_1 = malloc(sizeof(segmento));
+	segmento* segmento_tcb_2 = malloc(sizeof(segmento));
+	segmento* segmento_tareas = malloc(sizeof(segmento));
+
+	segmento_pcb->base = espacio_de_memoria_pcb_patota->base;
+	segmento_pcb->tamanio = espacio_de_memoria_pcb_patota->tam;
+
+	segmento_tcb_1->base = espacio_de_memoria_tcb_tripulante1->base;
+	segmento_tcb_1->tamanio = espacio_de_memoria_tcb_tripulante1->tam;
+
+	segmento_tcb_2->base = espacio_de_memoria_tcb_tripulante2->base;
+	segmento_tcb_2->tamanio = espacio_de_memoria_tcb_tripulante2->tam;
+
+	segmento_tareas->base = espacio_de_memoria_tareas->base;
+	segmento_tareas->tamanio = espacio_de_memoria_tareas->tam;
+
+
+	tabla_segmentacion* tabla_segmentos_patota;
+
+	tabla_segmentos_patota->id_patota = 1;
+	tabla_segmentos_patota->segmento_inicial = list_create();
+
+	list_add(tabla_segmentos_patota->segmento_inicial, segmento_pcb);
+	list_add(tabla_segmentos_patota->segmento_inicial, segmento_tcb_1);
+	list_add(tabla_segmentos_patota->segmento_inicial, segmento_tcb_2);
+	list_add(tabla_segmentos_patota->segmento_inicial, segmento_tareas);
+
+	//imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
+	printf("Tabla de segmentos correspondiente a patota %d\n", tabla_segmentos_patota->id_patota);//ROMPE SI CONMENTO ESTAS 4 LINEAS
+	for(int j=0; j < list_size(tabla_segmentos_patota->segmento_inicial); j++){
+		segmento* segmento_leido = list_get(tabla_segmentos_patota->segmento_inicial, j);
+		printf("Base %d   Tamanio %d\n", segmento_leido->base, segmento_leido->tamanio);
+		free(segmento_leido);
+	}
+
 */
 
 	return 0;
@@ -231,10 +265,21 @@ void imprimir_tabla_espacios_de_memoria(){
 
     for(int i=0; i < size; i++) {
     	espacio_de_memoria *espacio = list_get(tabla_espacios_de_memoria, i);
-        printf("base: %d, tam: %d, is_free: %s \n", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
+        printf("base: %d, tam: %d, libre: %s \n", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
     }
     printf("-------------------------------------------->\n");
 }
+
+void imprimir_tabla_segmentos_patota(tabla_segmentacion* tabla_segmentos_patota){
+	printf("Tabla de segmentos correspondiente a patota %d\n", tabla_segmentos_patota->id_patota);
+
+	for(int j=0; j < list_size(tabla_segmentos_patota->segmento_inicial); j++){
+		segmento* segmento_leido = list_get(tabla_segmentos_patota->segmento_inicial, j);
+		printf("Base %d   Tamanio %d\n", segmento_leido->base, segmento_leido->tamanio);
+		free(segmento_leido);
+	}
+}
+
 
 void eliminar_espacio_de_memoria(int base){
     for(int i = 0; i < list_size(tabla_espacios_de_memoria); i++){
@@ -242,7 +287,11 @@ void eliminar_espacio_de_memoria(int base){
 
     	if(espacio->base == base){
             espacio->libre = true;
+            list_remove(tabla_espacios_de_memoria, i);
             log_info(logger, "Se libera el espacio de memoria con base %d", espacio->base);
+            espacio_de_memoria* espacio_libre = crear_espacio_de_memoria(base, espacio->tam, true);
+            list_add(tabla_espacios_de_memoria, espacio_libre);
+            //TENDRIA QUE ORDENAR
         }
     }
 }
@@ -250,11 +299,11 @@ void eliminar_espacio_de_memoria(int base){
 espacio_de_memoria* buscar_espacio_de_memoria_libre(int tam){
 
 	if (strcmp(configuracion.criterio_seleccion, "FF") == 0) {
-        log_debug(logger, "First fit");
+        //log_info(logger, "First fit");
         return busqueda_first_fit(tam);
 
     } else if (strcmp(configuracion.criterio_seleccion, "BF") == 0) {
-        log_debug(logger, "Best fit");
+        //log_info(logger, "Best fit");
         return busqueda_best_fit(tam);
 
     } else {
@@ -322,23 +371,21 @@ espacio_de_memoria* busqueda_best_fit(int tam){
 espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) { //falta
 	espacio_de_memoria *espacio_libre = buscar_espacio_de_memoria_libre(tam);
 	if (espacio_libre != NULL) {
-        //Si la particion libre encontrada es de igual tamanio a la particion a alojar no es necesario ordenar
-        if (espacio_libre->tam == tam) {
+        if (espacio_libre->tam == tam) {//Si el espacio libre encontrado es de igual tamanio al segmento a alojar no es necesario ordenar. CAPAZ NO HACE FALTA
         	espacio_libre->libre = false;
             //log_info(logger, "Espacio de memoria asignado(base: %d)", espacio_libre->base);
             return espacio_libre;
-        } else {
-        //Si no es de igual tamano, debo crear una nueva particion con base en la libre y reacomodar la base y tamanio de la libre.
+        } else { //Si no es de igual tamanio, debo crear un nuevo espacio con base en el libre y reacomodar la base y tamanio del libre.
             espacio_de_memoria* nuevo_espacio_de_memoria = crear_espacio_de_memoria(espacio_libre->base, tam, false);
             list_add(tabla_espacios_de_memoria, nuevo_espacio_de_memoria);
             //actualizo base y tamanio de particion libre.
-           // espacio_libre->base += tam;
-           // espacio_libre->tam -= tam;
+            espacio_libre->base += tam; //NO ENTIENDO COMO FUNCIONA SI ESPACIO_LIBRE ES LOCAL
+            espacio_libre->tam -= tam;
             return nuevo_espacio_de_memoria;
         }
 
     } else {
-        log_warning(logger, "It was not possible to assign partition!");
+        log_warning(logger, "No se pudo asignar espacio de memoria");
         return NULL;
     }
 }
