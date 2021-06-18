@@ -81,7 +81,7 @@ void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio)
 	paquete->buffer->stream = realloc(paquete->buffer->stream, paquete->buffer->size + tamanio + sizeof(int));
 
 	memcpy(paquete->buffer->stream + paquete->buffer->size, &tamanio, sizeof(int));
-	memcpy(paquete->buffer->stream + paquete->buffer->size + sizeof(int), valor, tamanio);
+	memcpy(paquete->buffer->stream + paquete->buffer->size + sizeof(int), &valor, tamanio);
 
 	paquete->buffer->size += tamanio + sizeof(int);
 }
@@ -233,17 +233,19 @@ size_t tamanio_pcb(pcbPatota* patota){
 }
 
 
-void leer_tareas(char* archTarea){
+void leer_tareas(char* archTarea, char* *tareas){
 	   FILE *fp;
 	   char *item;
-	   char linea[200];
+	   char linea[200]; //reever este 200
+	   strcpy(*tareas, "");
 	   fp = fopen(archTarea, "r");
 	   if (fp == NULL)
 	     {
 	        perror("Error al abrir el archivo.\n");
 	        exit(EXIT_FAILURE);
 	     }
-	   tarea* leida=malloc(sizeof(tarea));
+	   tarea* leida = malloc(sizeof(tarea));
+	   int contador_tareas =1;
 	   while (fgets(linea, sizeof(linea), fp)){
 		   int codTarea;
 		   if(linea[0]=='D'){    //A corregir
@@ -264,11 +266,18 @@ void leer_tareas(char* archTarea){
 		   leida->pos_y=atoi(item);
 		   item = strtok(NULL,"\n");
 		   leida->tiempo=atoi(item);
-		   imprimirTarea(leida);
-		   }
 
-		}
+		   char* string_tarea = imprimirTarea(leida);
+		   *tareas = realloc(*tareas, (strlen(string_tarea)*contador_tareas)+1);
+		   strcat (*tareas, string_tarea);
 
+		   contador_tareas++;
+		   //free(mensaje); Aca liberar ya que antes hice malloc(20)
+	   }
+
+	   printf("Las tareas son %s\n",*tareas);
+
+}
 
 tarea_tripulante codigoTarea(char *nombretarea){
 	if(strcmp(nombretarea,"GENERAR_OXIGENO")==0)
@@ -288,12 +297,23 @@ tarea_tripulante codigoTarea(char *nombretarea){
 
 }
 
-void imprimirTarea(tarea* aimprimir){
-	printf("%d", aimprimir->tarea);
-	printf("%i", aimprimir->parametro);
-	printf("%d", aimprimir->pos_x);
-	printf("%d", aimprimir->pos_y);
-	printf("%d\n", aimprimir->tiempo);
+char* imprimirTarea(tarea* aimprimir){
+
+	char *mensaje = malloc(sizeof(char*)); //20 por las duads. Habitualmente se utilizan 10.
+
+	sprintf(mensaje ,"%d", aimprimir->tarea);
+	strcat (mensaje, "-");
+	sprintf(mensaje  + strlen(mensaje),"%i", aimprimir->parametro);
+	strcat (mensaje, "-");
+	sprintf(mensaje  + strlen(mensaje),"%d", aimprimir->pos_x);
+	strcat (mensaje, "-");
+	sprintf(mensaje  + strlen(mensaje),"%d", aimprimir->pos_y);
+	strcat (mensaje, "-");
+	sprintf(mensaje  + strlen(mensaje),"%d", aimprimir->tiempo);
+	strcat (mensaje, ";");
+	//printf("El mensaje es: %s", mensaje);
+	return mensaje;
+
 
 }
 

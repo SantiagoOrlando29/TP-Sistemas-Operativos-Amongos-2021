@@ -255,7 +255,7 @@ void bloqueado_ready() {
 
 int main(int argc, char* argv[]) {
 	//config_struct configuracion;
-	t_log* logger;
+	//t_log* logger;
 
 
 	//Reinicio el anterior y arranco uno nuevo
@@ -310,8 +310,8 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	lista_tripulantes_exit = list_create();
 	int tipoMensaje = -1;
 	bool pausar_planificacion_activado = false;
-	int cantidad_tripulantes;
-	int patota = 0;
+	//uint32_t cantidad_tripulantes;
+	uint32_t numero_patota = 0;
 
 	pthread_t ready;
 	pthread_t nuevo;
@@ -323,6 +323,9 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	pthread_create(&bloqueado,NULL,(void*)bloqueado_ready,NULL);
 	pthread_detach(&bloqueado);
 
+	uint32_t tid =1;
+	uint32_t posx = 0;
+	uint32_t posy = 0;
 
 	while(1){
 		t_paquete* paquete;
@@ -331,15 +334,69 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 		char* leido = readline("Iniciar consola: ");
 		printf("\n");
 		switch (codigoOperacion(leido)){
+			case PRUEBA:
+				paquete = crear_paquete(PRUEBA);
+				numero_patota++;
+				agregar_a_paquete(paquete, numero_patota, sizeof(uint32_t));
+
+				char** parametros = string_split(leido," ");
+				uint32_t cantidad_tripulantes  = atoi(parametros[1]);
+				agregar_a_paquete(paquete, cantidad_tripulantes, sizeof(uint32_t));
+
+				char* tareas = malloc(sizeof(char));
+				leer_tareas(parametros[2], &tareas);
+				printf("Las tareas recibidas por parametro son: %s\n", tareas);
+
+/*
+INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
+PRUEBA 5 tareas.txt 300|4 10|20 4|500
+*/
+				bool hay_mas_parametros = true;
+				for(int i = 0; i < cantidad_tripulantes ; i++){
+					if (hay_mas_parametros == true){
+						if (parametros[i+3] == NULL){
+							hay_mas_parametros = false;
+						} else {
+							char* posiciones = parametros[i+3];
+							char* item;
+							item = strtok(posiciones,"|");
+							posx = atoi(item);
+							item = strtok(NULL,"");
+							posy = atoi(item);
+						}
+					}
+
+					printf("El tripulante %d tiene posx %d y posy %d\n", i+1, posx,posy);
+					tripulante = crear_tripulante(tid,'N',posx,posy,1,1);
+					posx =0;
+					posy =0;
+					agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+					tid++;
+
+				}
+
+				agregar_a_paquete(paquete, tareas, strlen(tareas)+1);
+				//agregar_a_paquete(paquete, "Hola Mundo", 11);
+				free(tareas);
+
+				enviar_paquete(paquete, conexionMiRam);
+
+				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+				//tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+
+				eliminar_paquete(paquete);
+				break;
+
 			case INICIAR_PATOTA:
 				enviar_header(INICIAR_PATOTA, conexionMiRam);
 				tipoMensaje = recibir_operacion(conexionMiRam);
 				//lista_tripulantes_ready=recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
 				cantidad_tripulantes = 0;
-				patota++;
+				numero_patota++;
 				while(cantidad_tripulantes < 5){
 					cantidad_tripulantes ++;
-					tcbTripulante* tripulante =crear_tripulante(cantidad_tripulantes,'N',5,6,1,patota);
+					tcbTripulante* tripulante =crear_tripulante(cantidad_tripulantes,'N',5,6,1,numero_patota);
 					pthread_t nombreHilo = (char*)(cantidad_tripulantes);
 					pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
 					pthread_detach(&nombreHilo);

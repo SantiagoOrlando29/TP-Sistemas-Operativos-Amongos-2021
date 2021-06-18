@@ -7,3 +7,42 @@
 [INFO] 19:09:10:658 MiRam/(20351:20351): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
 [DEBUG] 20:16:14:63 MiRam/(15660:15660): First fit
 [INFO] 20:16:14:63 MiRam/(15660:15660): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[ERROR] 10:56:55:541 MiRam/(21755:21962): el cliente se desconecto. Terminando servidor
+[ERROR] 11:00:05:387 MiRam/(22000:22014): el cliente se desconecto. Terminando servidor
+[INFO] 11:03:11:808 MiRam/(22063:22075): Respondiendo
+[ERROR] 11:03:14:608 MiRam/(22063:22075): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 11:03:48:071 MiRam/(22087:22100): el cliente se desconecto. Terminando servidor
+[ERROR] 11:06:24:451 MiRam/(22145:22162): el cliente se desconecto. Terminando servidor
+[ERROR] 11:09:37:070 MiRam/(22196:22219): el cliente se desconecto. Terminando servidor
+[ERROR] 11:10:20:525 MiRam/(22233:22260): el cliente se desconecto. Terminando servidor
+[ERROR] 11:12:08:801 MiRam/(22313:22326): el cliente se desconecto. Terminando servidor
+[ERROR] 11:12:58:655 MiRam/(22342:22364): el cliente se desconecto. Terminando servidor
+[ERROR] 11:13:49:541 MiRam/(22384:22407): el cliente se desconecto. Terminando servidor
+[ERROR] 11:15:33:459 MiRam/(22434:22456): el cliente se desconecto. Terminando servidor
+[ERROR] 11:16:31:238 MiRam/(22484:22498): el cliente se desconecto. Terminando servidor
+[ERROR] 11:17:51:349 MiRam/(22531:22545): el cliente se desconecto. Terminando servidor
+[ERROR] 11:19:45:800 MiRam/(22574:22602): el cliente se desconecto. Terminando servidor
+[ERROR] 11:20:15:376 MiRam/(22610:22633): el cliente se desconecto. Terminando servidor
+[ERROR] 11:22:13:235 MiRam/(22647:22669): el cliente se desconecto. Terminando servidor
+[ERROR] 11:24:41:370 MiRam/(22696:22728): el cliente se desconecto. Terminando servidor
+[ERROR] 11:25:20:209 MiRam/(22742:22767): el cliente se desconecto. Terminando servidor
+[ERROR] 11:27:00:589 MiRam/(22788:22811): el cliente se desconecto. Terminando servidor
+[ERROR] 11:33:06:474 MiRam/(23196:23309): el cliente se desconecto. Terminando servidor
+[ERROR] 11:36:02:768 MiRam/(23340:23365): el cliente se desconecto. Terminando servidor
+[ERROR] 11:38:40:820 MiRam/(23386:23416): el cliente se desconecto. Terminando servidor
+[ERROR] 11:40:18:822 MiRam/(23442:23469): el cliente se desconecto. Terminando servidor
+[ERROR] 11:41:27:630 MiRam/(23498:23515): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 11:44:01:543 MiRam/(23567:23588): el cliente se desconecto. Terminando servidor
+[ERROR] 11:44:46:134 MiRam/(23602:23624): el cliente se desconecto. Terminando servidor
+[ERROR] 11:46:07:349 MiRam/(23649:23672): el cliente se desconecto. Terminando servidor
+[ERROR] 11:49:00:546 MiRam/(23741:23764): el cliente se desconecto. Terminando servidor
+[ERROR] 11:50:18:651 MiRam/(23784:23808): el cliente se desconecto. Terminando servidor
+[ERROR] 11:51:12:712 MiRam/(23841:23864): el cliente se desconecto. Terminando servidor
+[ERROR] 11:51:31:639 MiRam/(23872:23894): el cliente se desconecto. Terminando servidor
+[ERROR] 11:52:16:860 MiRam/(23903:23925): el cliente se desconecto. Terminando servidor
+[ERROR] 11:54:44:373 MiRam/(23944:23976): el cliente se desconecto. Terminando servidor
+[ERROR] 11:56:34:391 MiRam/(24013:24051): el cliente se desconecto. Terminando servidor
+[ERROR] 11:57:23:355 MiRam/(24062:24085): el cliente se desconecto. Terminando servidor
+[ERROR] 12:26:11:910 MiRam/(24824:24837): el cliente se desconecto. Terminando servidor
+[ERROR] 12:28:58:557 MiRam/(24880:24893): el cliente se desconecto. Terminando servidor
+[ERROR] 12:32:13:292 MiRam/(25017:25042): el cliente se desconecto. Terminando servidor

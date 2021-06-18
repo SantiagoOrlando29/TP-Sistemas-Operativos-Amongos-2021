@@ -192,7 +192,7 @@ void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 void enviar_header(tipoMensaje , int );
-int funcion_cliente(int*);
+int funcion_cliente(int);
 
 //SEGMENTACION
 espacio_de_memoria* crear_espacio_de_memoria(int base, int tam, bool libre);
@@ -212,7 +212,7 @@ pcbPatota* crear_pcb(uint32_t numero_patota);
 tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, uint32_t);
 pcbPatota* crear_patota(uint32_t , uint32_t);
 //solo para comprobar que se formaron bien
-void mostrarTripulante(tcbTripulante* tripulante,pcbPatota* patota);
+void mostrarTripulante(tcbTripulante*,pcbPatota*);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanio_tcb(tcbTripulante*);

@@ -55,7 +55,7 @@ int main(void)
 	}
  */
 
-
+/*
 	tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
 
 	escribir_tripulante(tripulante,configuracion.posicion_inicial);
@@ -77,7 +77,7 @@ int main(void)
 	int cuantos_marcos_necesito = cuantos_marcos(5,15,&configuracion);
 
 	printf("cuantos marcos necesito %d", cuantos_marcos_necesito);
-
+*/
 
 /*
 	tarea* prueba=malloc(sizeof(tarea));
@@ -166,24 +166,21 @@ int main(void)
 	//printf("Lo leido es %d\n",a);
 	//printf("Lo leido es %d\n",b);
 
-
+*/
 	t_list* lista_recibir = list_create();
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
 	pthread_t servidor;
 	//iniciar_servidor(&configuracion);
 	int hilo_servidor = 1;
-	pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion);
-	pthread_join(servidor,NULL);
-	//pthread_detach(servidor);
-	if(hilo_servidor != 0 )
+	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){
 		log_info(logger, "Falla al crearse el hilo");
-	else
-		log_info(logger, "Hilo creado correctamente");
-
-
+	}
+	pthread_join(servidor,NULL);
 
 	list_destroy(lista_recibir);
 
+
+/*
 	tabla_espacios_de_memoria = list_create();
 	espacio_de_memoria* memoria_principal = crear_espacio_de_memoria(0, atoi(configuracion.tamanio_memoria), true);
 	list_add(tabla_espacios_de_memoria, memoria_principal);
@@ -213,7 +210,7 @@ int main(void)
 	list_add(tabla_segmentos_patota1->segmento_inicial, tripulante_1);
 	list_add(tabla_segmentos_patota1->segmento_inicial, tripulante_2);
 	list_add(tabla_segmentos_patota1->segmento_inicial, tarea_prueba);
-	*/
+*/
 
 	return 0;
 }

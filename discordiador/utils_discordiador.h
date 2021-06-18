@@ -26,7 +26,7 @@
  * En este enum se agregan todos los distintos tipos de mensajes que van a enviar entre los clientes y servidores
  */
 
-
+t_log* logger;
 
 typedef enum
 {
@@ -139,9 +139,9 @@ tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, ui
 pcbPatota* crear_patota(uint32_t , uint32_t);
 int codigoOperacion (const char*);
 void enviar_header(tipoMensaje tipo, int socket_cliente);
-void imprimirTarea(tarea*);
+char* imprimirTarea(tarea*);
 tarea_tripulante codigoTarea(char*);
-void leer_tareas(char*);
+void leer_tareas(char* archTarea, char* *tareas);
 tarea* crear_tarea(tarea_tripulante,int,int,int,int);
 tcbTripulante* hacer_tarea(tcbTripulante*,tarea*);
 void ejecutar_tarea(tarea_tripulante,int);
