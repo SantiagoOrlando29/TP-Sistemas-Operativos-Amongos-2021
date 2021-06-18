@@ -377,3 +377,57 @@
 [INFO] 17:57:57:556 MiRam/(31374:31374): Se encontro espacio de memoria libre con suficiente espacio (base: 29)
 [INFO] 17:57:57:556 MiRam/(31374:31374): Se encontro espacio de memoria libre con suficiente espacio (base: 50)
 [ERROR] 18:05:16:930 MiRam/(31458:31474): el discordiador finalizo el programa. Terminando servidor
+[INFO] 18:16:29:070 MiRam/(31782:31795): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 18:16:29:083 MiRam/(31782:31795): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 18:17:48:256 MiRam/(31826:31838): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 18:17:48:256 MiRam/(31826:31838): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 18:17:48:256 MiRam/(31826:31838): aaaaaaa
+[INFO] 18:18:38:038 MiRam/(31861:31874): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 18:18:38:038 MiRam/(31861:31874): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 18:18:38:038 MiRam/(31861:31874): aaaaaaa
+[INFO] 18:18:38:038 MiRam/(31861:31874): FFFFFFFFF
+[INFO] 18:19:39:250 MiRam/(31892:31905): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 18:19:39:251 MiRam/(31892:31905): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 18:19:39:251 MiRam/(31892:31905): FFFFFFFFF
+[INFO] 18:19:39:251 MiRam/(31892:31905): GGGGG
+[INFO] 18:20:10:663 MiRam/(31920:31933): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 18:20:10:663 MiRam/(31920:31933): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 18:20:10:663 MiRam/(31920:31933): GGGGG
+[INFO] 18:20:46:386 MiRam/(31948:31961): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 18:20:46:386 MiRam/(31948:31961): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 18:20:46:386 MiRam/(31948:31961): GGGGG
+[INFO] 18:21:39:863 MiRam/(31981:31997): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 18:21:39:863 MiRam/(31981:31997): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 18:21:39:864 MiRam/(31981:31997): GGGGG
+[INFO] 18:22:01:499 MiRam/(32012:32027): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 18:22:01:499 MiRam/(32012:32027): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 18:22:01:499 MiRam/(32012:32027): GGGGG
+[INFO] 18:24:11:120 MiRam/(32060:32073): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 18:24:11:120 MiRam/(32060:32073): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 18:24:11:120 MiRam/(32060:32073): GGGGG
+[INFO] 18:24:11:120 MiRam/(32060:32073): AAAAAAAA
+[INFO] 18:24:12:120 MiRam/(32060:32073): HHHHH
+[INFO] 18:24:12:121 MiRam/(32060:32073): TTTTTTT
+[INFO] 18:24:12:121 MiRam/(32060:32073): bbbbb
+[INFO] 18:24:12:121 MiRam/(32060:32073): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 18:24:12:121 MiRam/(32060:32073): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 18:24:12:121 MiRam/(32060:32073): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 18:24:12:121 MiRam/(32060:32073): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 18:24:12:121 MiRam/(32060:32073): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[ERROR] 18:24:12:348 MiRam/(32060:32073): el discordiador finalizo el programa. Terminando servidor
+[INFO] 18:24:53:446 MiRam/(32086:32099): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 18:24:53:446 MiRam/(32086:32099): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 18:24:53:446 MiRam/(32086:32099): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 18:24:53:447 MiRam/(32086:32099): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 18:24:53:447 MiRam/(32086:32099): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 18:24:53:447 MiRam/(32086:32099): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 18:24:53:447 MiRam/(32086:32099): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[ERROR] 18:24:55:075 MiRam/(32086:32099): el discordiador finalizo el programa. Terminando servidor
+[INFO] 18:29:53:379 MiRam/(32157:32170): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 18:29:53:379 MiRam/(32157:32170): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 18:29:53:379 MiRam/(32157:32170): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 18:29:53:379 MiRam/(32157:32170): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 18:29:53:379 MiRam/(32157:32170): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 18:29:53:379 MiRam/(32157:32170): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 18:29:53:379 MiRam/(32157:32170): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[ERROR] 18:29:55:027 MiRam/(32157:32170): el discordiador finalizo el programa. Terminando servidor

@@ -102,56 +102,47 @@ int funcion_cliente(int socket_cliente){
 
 				//---------------------------SEGMENTACION--------------------------------------------------
 				/*pcbPatota* pcb_patota = crear_pcb(pid);
-
-				for(int i=2; i < cantidad_tripulantes +2; i++){
-					tripulante=(tcbTripulante*)list_get(lista,i);
-				}
-
-				tcbTripulante* tripulante_1 = crear_tripulante(1,'N',5,6,1,1);
-				tcbTripulante* tripulante_2 = crear_tripulante(2,'N',7,8,1,1);
-
-				char* tarea_prueba = malloc(24);
-				tarea_prueba = "GENERAR_OXIGENO 1;4;4;1";
-
 				espacio_de_memoria* espacio_de_memoria_pcb_patota = asignar_espacio_de_memoria(tamanio_pcb(pcb_patota));
-				espacio_de_memoria* espacio_de_memoria_tcb_tripulante1 = asignar_espacio_de_memoria(tamanio_tcb(tripulante_1));
-				espacio_de_memoria* espacio_de_memoria_tcb_tripulante2 = asignar_espacio_de_memoria(tamanio_tcb(tripulante_2));
-				espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea_prueba)+1);
 
+				espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea)+1);
 				pcb_patota->tareas = espacio_de_memoria_tareas->base;
 
-				imprimir_tabla_espacios_de_memoria();
-
-
 				segmento* segmento_pcb = malloc(sizeof(segmento));
-				segmento* segmento_tcb_1 = malloc(sizeof(segmento));
-				segmento* segmento_tcb_2 = malloc(sizeof(segmento));
 				segmento* segmento_tareas = malloc(sizeof(segmento));
 
 				segmento_pcb->base = espacio_de_memoria_pcb_patota->base;
 				segmento_pcb->tamanio = espacio_de_memoria_pcb_patota->tam;
 
-				segmento_tcb_1->base = espacio_de_memoria_tcb_tripulante1->base;
-				segmento_tcb_1->tamanio = espacio_de_memoria_tcb_tripulante1->tam;
-
-				segmento_tcb_2->base = espacio_de_memoria_tcb_tripulante2->base;
-				segmento_tcb_2->tamanio = espacio_de_memoria_tcb_tripulante2->tam;
-
 				segmento_tareas->base = espacio_de_memoria_tareas->base;
 				segmento_tareas->tamanio = espacio_de_memoria_tareas->tam;
 
-
-				tabla_segmentacion* tabla_segmentos_patota;
+				tabla_segmentacion* tabla_segmentos_patota = malloc(sizeof(tabla_segmentacion));
 
 				tabla_segmentos_patota->id_patota = 1;
 				tabla_segmentos_patota->segmento_inicial = list_create();
 
 				list_add(tabla_segmentos_patota->segmento_inicial, segmento_pcb);
-				list_add(tabla_segmentos_patota->segmento_inicial, segmento_tcb_1);
-				list_add(tabla_segmentos_patota->segmento_inicial, segmento_tcb_2);
 				list_add(tabla_segmentos_patota->segmento_inicial, segmento_tareas);
-*/
 
+				for(int i=2; i < cantidad_tripulantes +2; i++){
+					tripulante=(tcbTripulante*)list_get(lista,i);
+
+					espacio_de_memoria* espacio_de_memoria_tcb_tripulante = asignar_espacio_de_memoria(tamanio_tcb(tripulante));
+
+					segmento* segmento_tcb = malloc(sizeof(segmento));
+					segmento_tcb->base = espacio_de_memoria_tcb_tripulante->base;
+					segmento_tcb->tamanio = espacio_de_memoria_tcb_tripulante->tam;
+
+					list_add(tabla_segmentos_patota->segmento_inicial, segmento_tcb);
+				}
+
+				tcbTripulante* tripulante_1 = crear_tripulante(1,'N',5,6,1,1);
+
+				imprimir_tabla_espacios_de_memoria();
+
+				imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
+
+*/
 				break;
 
 			case INICIAR_PATOTA:
