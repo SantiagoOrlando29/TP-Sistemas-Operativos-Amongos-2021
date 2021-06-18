@@ -431,3 +431,275 @@
 [INFO] 18:29:53:379 MiRam/(32157:32170): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
 [INFO] 18:29:53:379 MiRam/(32157:32170): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
 [ERROR] 18:29:55:027 MiRam/(32157:32170): el discordiador finalizo el programa. Terminando servidor
+[INFO] 19:11:44:882 MiRam/(32427:32443): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:11:44:884 MiRam/(32427:32443): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:11:44:884 MiRam/(32427:32443): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:11:44:884 MiRam/(32427:32443): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:11:44:884 MiRam/(32427:32443): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:11:44:884 MiRam/(32427:32443): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:11:44:884 MiRam/(32427:32443): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[ERROR] 19:11:49:232 MiRam/(32427:32443): el discordiador finalizo el programa. Terminando servidor
+[INFO] 19:19:57:595 MiRam/(32601:32617): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:19:57:596 MiRam/(32601:32617): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:19:57:597 MiRam/(32601:32617): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:19:57:597 MiRam/(32601:32617): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:19:57:597 MiRam/(32601:32617): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:19:57:597 MiRam/(32601:32617): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:19:57:597 MiRam/(32601:32617): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 19:19:57:597 MiRam/(32601:32617): elimino
+[ERROR] 19:20:07:627 MiRam/(32601:32617): el discordiador finalizo el programa. Terminando servidor
+[INFO] 19:22:18:337 MiRam/(32655:32671): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:22:18:339 MiRam/(32655:32671): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:22:18:339 MiRam/(32655:32671): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:22:18:339 MiRam/(32655:32671): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:22:18:340 MiRam/(32655:32671): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:22:18:340 MiRam/(32655:32671): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:22:18:340 MiRam/(32655:32671): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 19:22:18:340 MiRam/(32655:32671): elimino
+[ERROR] 19:22:20:341 MiRam/(32655:32671): el discordiador finalizo el programa. Terminando servidor
+[INFO] 19:25:49:556 MiRam/(32726:32751): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:25:49:557 MiRam/(32726:32751): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:25:49:557 MiRam/(32726:32751): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:25:49:557 MiRam/(32726:32751): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:25:49:557 MiRam/(32726:32751): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:25:49:557 MiRam/(32726:32751): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:25:49:557 MiRam/(32726:32751): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 19:25:49:558 MiRam/(32726:32751): Se libera el espacio de memoria con base 121
+[INFO] 19:25:49:558 MiRam/(32726:32751): Se libera el espacio de memoria con base 121
+[INFO] 19:25:49:558 MiRam/(32726:32751): elimino
+[INFO] 19:26:29:738 MiRam/(301:320): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:26:29:739 MiRam/(301:320): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:26:29:739 MiRam/(301:320): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:26:29:740 MiRam/(301:320): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:26:29:740 MiRam/(301:320): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:26:29:740 MiRam/(301:320): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:26:29:740 MiRam/(301:320): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 19:26:31:740 MiRam/(301:320): Se libera el espacio de memoria con base 121
+[INFO] 19:26:31:741 MiRam/(301:320): Se libera el espacio de memoria con base 121
+[INFO] 19:26:31:741 MiRam/(301:320): elimino
+[INFO] 19:28:13:641 MiRam/(343:368): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:28:13:643 MiRam/(343:368): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:28:13:643 MiRam/(343:368): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:28:13:643 MiRam/(343:368): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:28:13:643 MiRam/(343:368): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:28:13:643 MiRam/(343:368): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:28:13:643 MiRam/(343:368): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 19:28:13:644 MiRam/(343:368): elimino
+[ERROR] 19:28:18:462 MiRam/(343:368): el discordiador finalizo el programa. Terminando servidor
+[INFO] 19:30:45:036 MiRam/(397:421): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:30:45:037 MiRam/(397:421): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:30:45:037 MiRam/(397:421): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:30:45:037 MiRam/(397:421): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:30:45:037 MiRam/(397:421): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:30:45:038 MiRam/(397:421): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:30:45:038 MiRam/(397:421): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 19:30:45:038 MiRam/(397:421): elimino
+[INFO] 19:30:47:039 MiRam/(397:421): Se libera el espacio de memoria con base 121
+[INFO] 19:30:47:039 MiRam/(397:421): Se libera el espacio de memoria con base 121
+[ERROR] 19:31:00:629 MiRam/(397:421): el discordiador finalizo el programa. Terminando servidor
+[INFO] 19:31:18:748 MiRam/(443:462): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:31:18:749 MiRam/(443:462): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:31:18:749 MiRam/(443:462): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:31:18:749 MiRam/(443:462): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:31:18:750 MiRam/(443:462): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:31:18:750 MiRam/(443:462): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:31:18:750 MiRam/(443:462): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 19:31:18:750 MiRam/(443:462): elimino
+[INFO] 19:31:20:751 MiRam/(443:462): Se libera el espacio de memoria con base 121
+[INFO] 19:31:20:751 MiRam/(443:462): Se libera el espacio de memoria con base 121
+[INFO] 19:32:40:231 MiRam/(481:495): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:32:40:232 MiRam/(481:495): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:32:40:232 MiRam/(481:495): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:32:40:232 MiRam/(481:495): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:32:40:232 MiRam/(481:495): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:32:40:232 MiRam/(481:495): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:32:40:232 MiRam/(481:495): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 19:32:40:232 MiRam/(481:495): elimino
+[INFO] 19:32:42:233 MiRam/(481:495): Se libera el espacio de memoria con base 121
+[INFO] 19:32:42:233 MiRam/(481:495): Se libera el espacio de memoria con base 121
+[WARNING] 19:34:53:813 MiRam/(534:546): No hay espacios de memoria libres
+[WARNING] 19:34:53:814 MiRam/(534:546): No se pudo asignar espacio de memoria
+[WARNING] 19:34:53:814 MiRam/(534:546): No hay espacios de memoria libres
+[WARNING] 19:34:53:814 MiRam/(534:546): No se pudo asignar espacio de memoria
+[WARNING] 19:35:49:594 MiRam/(561:575): No hay espacios de memoria libres
+[WARNING] 19:35:49:595 MiRam/(561:575): No se pudo asignar espacio de memoria
+[WARNING] 19:35:49:595 MiRam/(561:575): No hay espacios de memoria libres
+[WARNING] 19:35:49:595 MiRam/(561:575): No se pudo asignar espacio de memoria
+[WARNING] 19:36:59:164 MiRam/(622:635): No hay espacios de memoria libres
+[WARNING] 19:36:59:171 MiRam/(622:635): No se pudo asignar espacio de memoria
+[WARNING] 19:36:59:171 MiRam/(622:635): No hay espacios de memoria libres
+[WARNING] 19:36:59:171 MiRam/(622:635): No se pudo asignar espacio de memoria
+[INFO] 19:37:43:107 MiRam/(657:670): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:37:43:107 MiRam/(657:670): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:37:43:107 MiRam/(657:670): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:37:43:107 MiRam/(657:670): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:37:43:107 MiRam/(657:670): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:37:43:107 MiRam/(657:670): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:37:43:107 MiRam/(657:670): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 19:37:43:107 MiRam/(657:670): elimino
+[INFO] 19:37:45:108 MiRam/(657:670): Se libera el espacio de memoria con base 121
+[INFO] 19:37:45:108 MiRam/(657:670): Se libera el espacio de memoria con base 121
+[ERROR] 19:37:52:420 MiRam/(657:670): el discordiador finalizo el programa. Terminando servidor
+[INFO] 19:38:17:230 MiRam/(689:704): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:38:17:230 MiRam/(689:704): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:38:17:231 MiRam/(689:704): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:38:17:231 MiRam/(689:704): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:38:17:231 MiRam/(689:704): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:38:17:231 MiRam/(689:704): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:38:17:231 MiRam/(689:704): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 19:38:17:231 MiRam/(689:704): elimino
+[INFO] 19:38:19:232 MiRam/(689:704): Se libera el espacio de memoria con base 121
+[INFO] 19:38:19:232 MiRam/(689:704): Se libera el espacio de memoria con base 121
+[ERROR] 19:38:31:307 MiRam/(689:704): el discordiador finalizo el programa. Terminando servidor
+[INFO] 19:41:15:935 MiRam/(787:803): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:41:15:936 MiRam/(787:803): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:41:15:936 MiRam/(787:803): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:41:15:936 MiRam/(787:803): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:41:15:936 MiRam/(787:803): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:41:15:936 MiRam/(787:803): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:41:15:936 MiRam/(787:803): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 19:41:15:936 MiRam/(787:803): elimino
+[INFO] 19:41:17:937 MiRam/(787:803): Se libera el espacio de memoria con base 142
+[INFO] 19:41:17:938 MiRam/(787:803): Se libera el espacio de memoria con base 142
+[ERROR] 19:41:26:377 MiRam/(787:803): el discordiador finalizo el programa. Terminando servidor
+[INFO] 19:42:05:225 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 19:42:05:226 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 19:42:05:227 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 19:42:05:227 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 19:42:05:227 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 19:42:05:227 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 19:42:05:227 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 19:42:05:227 MiRam/(830:843): elimino
+[INFO] 19:42:05:227 MiRam/(830:843): Se libera el espacio de memoria con base 142
+[INFO] 19:42:05:227 MiRam/(830:843): Se libera el espacio de memoria con base 142
+[INFO] 19:42:42:750 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 184)
+[INFO] 19:42:42:750 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 192)
+[INFO] 19:42:42:750 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 263)
+[INFO] 19:42:42:750 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 284)
+[INFO] 19:42:42:750 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 305)
+[INFO] 19:42:42:750 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 326)
+[INFO] 19:42:42:750 MiRam/(830:843): Se encontro espacio de memoria libre con suficiente espacio (base: 347)
+[INFO] 19:42:42:751 MiRam/(830:843): elimino
+[INFO] 19:42:42:751 MiRam/(830:843): Se libera el espacio de memoria con base 326
+[INFO] 19:42:42:751 MiRam/(830:843): Se libera el espacio de memoria con base 326
+[ERROR] 19:44:05:640 MiRam/(830:843): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:11:07:319 MiRam/(1123:1140): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 20:11:07:320 MiRam/(1123:1140): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 20:11:07:320 MiRam/(1123:1140): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 20:11:07:320 MiRam/(1123:1140): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 20:11:07:320 MiRam/(1123:1140): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 20:11:07:320 MiRam/(1123:1140): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 20:11:07:320 MiRam/(1123:1140): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 20:11:07:320 MiRam/(1123:1140): elimino
+[INFO] 20:11:07:320 MiRam/(1123:1140): Se libera el espacio de memoria con base 142
+[INFO] 20:11:07:321 MiRam/(1123:1140): Se libera el espacio de memoria con base 142
+[ERROR] 20:11:42:185 MiRam/(1123:1140): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:12:06:065 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 0)
+[INFO] 20:12:06:067 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 8)
+[INFO] 20:12:06:067 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 79)
+[INFO] 20:12:06:067 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 100)
+[INFO] 20:12:06:067 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 121)
+[INFO] 20:12:06:067 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 20:12:06:067 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 163)
+[INFO] 20:12:06:067 MiRam/(1159:1175): elimino
+[INFO] 20:12:06:067 MiRam/(1159:1175): Se libera el espacio de memoria con base 142
+[INFO] 20:12:06:067 MiRam/(1159:1175): Se libera el espacio de memoria con base 142
+[INFO] 20:12:22:131 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 142)
+[INFO] 20:12:22:131 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 184)
+[INFO] 20:12:22:131 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 255)
+[INFO] 20:12:22:131 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 276)
+[INFO] 20:12:22:131 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 297)
+[INFO] 20:12:22:131 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 318)
+[INFO] 20:12:22:131 MiRam/(1159:1175): Se encontro espacio de memoria libre con suficiente espacio (base: 339)
+[INFO] 20:12:22:132 MiRam/(1159:1175): elimino
+[INFO] 20:12:22:132 MiRam/(1159:1175): Se libera el espacio de memoria con base 318
+[INFO] 20:12:22:132 MiRam/(1159:1175): Se libera el espacio de memoria con base 318
+[ERROR] 20:13:28:268 MiRam/(1159:1175): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:18:24:117 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:0)
+[INFO] 20:18:24:118 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:8)
+[INFO] 20:18:24:118 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:79)
+[INFO] 20:18:24:118 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:100)
+[INFO] 20:18:24:118 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:121)
+[INFO] 20:18:24:118 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:142)
+[INFO] 20:18:24:118 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:163)
+[INFO] 20:18:24:119 MiRam/(1267:1283): elimino
+[INFO] 20:18:49:548 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:142)
+[INFO] 20:18:49:548 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:184)
+[INFO] 20:18:49:548 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:255)
+[INFO] 20:18:49:548 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:276)
+[INFO] 20:18:49:548 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:297)
+[INFO] 20:18:49:548 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:318)
+[INFO] 20:18:49:548 MiRam/(1267:1283): El espacio de memoria encontrado con Best Fit (base:339)
+[INFO] 20:18:49:549 MiRam/(1267:1283): elimino
+[ERROR] 20:18:53:559 MiRam/(1267:1283): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:20:26:468 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:0)
+[INFO] 20:20:26:471 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:8)
+[INFO] 20:20:26:471 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:79)
+[INFO] 20:20:26:471 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:100)
+[INFO] 20:20:26:471 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:121)
+[INFO] 20:20:26:471 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:142)
+[INFO] 20:20:26:471 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:163)
+[INFO] 20:20:26:472 MiRam/(1305:1321): elimino
+[INFO] 20:20:27:985 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:142)
+[INFO] 20:20:27:985 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:184)
+[INFO] 20:20:27:985 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:255)
+[INFO] 20:20:27:985 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:276)
+[INFO] 20:20:27:985 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:297)
+[INFO] 20:20:27:985 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:318)
+[INFO] 20:20:27:985 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:339)
+[INFO] 20:20:27:985 MiRam/(1305:1321): elimino
+[INFO] 20:20:30:138 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:150)
+[INFO] 20:20:30:139 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:360)
+[INFO] 20:20:30:139 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:431)
+[INFO] 20:20:30:139 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:452)
+[INFO] 20:20:30:139 MiRam/(1305:1321): El espacio de memoria encontrado con Best Fit (base:473)
+[WARNING] 20:20:30:139 MiRam/(1305:1321): No hay espacios de memoria libres
+[WARNING] 20:20:30:139 MiRam/(1305:1321): No se pudo asignar espacio de memoria
+[INFO] 20:21:22:051 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:0)
+[INFO] 20:21:22:052 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:8)
+[INFO] 20:21:22:052 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:79)
+[INFO] 20:21:22:052 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:100)
+[INFO] 20:21:22:052 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:121)
+[INFO] 20:21:22:052 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:142)
+[INFO] 20:21:22:053 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:163)
+[INFO] 20:21:22:053 MiRam/(1334:1355): elimino
+[INFO] 20:21:23:281 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:142)
+[INFO] 20:21:23:281 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:184)
+[INFO] 20:21:23:282 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:255)
+[INFO] 20:21:23:282 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:276)
+[INFO] 20:21:23:282 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:297)
+[INFO] 20:21:23:282 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:318)
+[INFO] 20:21:23:282 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:339)
+[INFO] 20:21:23:282 MiRam/(1334:1355): elimino
+[INFO] 20:21:34:259 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:150)
+[INFO] 20:21:34:259 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:360)
+[INFO] 20:21:34:259 MiRam/(1334:1355): El espacio de memoria encontrado con Best Fit (base:431)
+[INFO] 20:21:34:260 MiRam/(1334:1355): elimino
+[ERROR] 20:23:06:099 MiRam/(1334:1355): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:23:17:169 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:0)
+[INFO] 20:23:17:171 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:8)
+[INFO] 20:23:17:171 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:79)
+[INFO] 20:23:17:171 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:100)
+[INFO] 20:23:17:171 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:121)
+[INFO] 20:23:17:171 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:142)
+[INFO] 20:23:17:171 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:163)
+[INFO] 20:23:17:171 MiRam/(1372:1394): elimino
+[INFO] 20:23:18:126 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:142)
+[INFO] 20:23:18:126 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:184)
+[INFO] 20:23:18:126 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:255)
+[INFO] 20:23:18:126 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:276)
+[INFO] 20:23:18:126 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:297)
+[INFO] 20:23:18:126 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:318)
+[INFO] 20:23:18:126 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:339)
+[INFO] 20:23:18:126 MiRam/(1372:1394): elimino
+[INFO] 20:23:26:236 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:150)
+[INFO] 20:23:26:237 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:360)
+[INFO] 20:23:26:237 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:431)
+[INFO] 20:23:26:237 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:452)
+[INFO] 20:23:26:237 MiRam/(1372:1394): El espacio de memoria encontrado con Best Fit (base:473)
+[INFO] 20:23:26:237 MiRam/(1372:1394): elimino
+[ERROR] 20:23:52:075 MiRam/(1372:1394): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:32:32:151 MiRam/(1544:1560): elimino
+[INFO] 20:32:33:406 MiRam/(1544:1560): elimino
+[INFO] 20:32:37:855 MiRam/(1544:1560): elimino
+[ERROR] 20:32:40:170 MiRam/(1544:1560): el discordiador finalizo el programa. Terminando servidor

@@ -140,6 +140,7 @@ typedef struct{
 
 
 typedef struct{
+	int numero_segmento;
 	int base;
 	int tamanio;
 }segmento;
@@ -203,6 +204,8 @@ espacio_de_memoria* busqueda_first_fit(int tam);
 espacio_de_memoria* busqueda_best_fit(int tam);
 espacio_de_memoria* asignar_espacio_de_memoria(size_t tam);
 void imprimir_tabla_segmentos_patota(tabla_segmentacion* tabla_segmentos_patota);
+void eliminar_segmento(int nro_segmento, tabla_segmentacion* tabla_segmentos_patota);
+void ordenar_memoria();
 
 pcbPatota* crear_pcb(uint32_t numero_patota);
 

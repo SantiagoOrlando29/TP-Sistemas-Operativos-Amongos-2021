@@ -101,7 +101,8 @@ int funcion_cliente(int socket_cliente){
 				printf("Las tareas serializadas son: %s \n", tarea);
 
 				//---------------------------SEGMENTACION--------------------------------------------------
-				/*pcbPatota* pcb_patota = crear_pcb(pid);
+				/*
+				pcbPatota* pcb_patota = crear_pcb(pid);
 				espacio_de_memoria* espacio_de_memoria_pcb_patota = asignar_espacio_de_memoria(tamanio_pcb(pcb_patota));
 
 				espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea)+1);
@@ -110,9 +111,11 @@ int funcion_cliente(int socket_cliente){
 				segmento* segmento_pcb = malloc(sizeof(segmento));
 				segmento* segmento_tareas = malloc(sizeof(segmento));
 
+				segmento_pcb->numero_segmento = 0;
 				segmento_pcb->base = espacio_de_memoria_pcb_patota->base;
 				segmento_pcb->tamanio = espacio_de_memoria_pcb_patota->tam;
 
+				segmento_tareas->numero_segmento = 1;
 				segmento_tareas->base = espacio_de_memoria_tareas->base;
 				segmento_tareas->tamanio = espacio_de_memoria_tareas->tam;
 
@@ -130,19 +133,25 @@ int funcion_cliente(int socket_cliente){
 					espacio_de_memoria* espacio_de_memoria_tcb_tripulante = asignar_espacio_de_memoria(tamanio_tcb(tripulante));
 
 					segmento* segmento_tcb = malloc(sizeof(segmento));
+					segmento_tcb->numero_segmento = i;
 					segmento_tcb->base = espacio_de_memoria_tcb_tripulante->base;
 					segmento_tcb->tamanio = espacio_de_memoria_tcb_tripulante->tam;
 
 					list_add(tabla_segmentos_patota->segmento_inicial, segmento_tcb);
 				}
 
-				tcbTripulante* tripulante_1 = crear_tripulante(1,'N',5,6,1,1);
+				imprimir_tabla_espacios_de_memoria();
+
+				imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
+
+				log_info(logger, "elimino");
+				eliminar_segmento(5, tabla_segmentos_patota);
 
 				imprimir_tabla_espacios_de_memoria();
 
 				imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
 
-*/
+				*/
 				break;
 
 			case INICIAR_PATOTA:

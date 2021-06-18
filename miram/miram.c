@@ -197,13 +197,14 @@ espacio_de_memoria* crear_espacio_de_memoria(int base, int tam, bool libre){
 
 void imprimir_tabla_espacios_de_memoria(){
     int size = list_size(tabla_espacios_de_memoria);
-    printf("<--------------------------------------------\n");
+    printf("<--------  MEMORIA  --------------------\n");
 
     for(int i=0; i < size; i++) {
     	espacio_de_memoria *espacio = list_get(tabla_espacios_de_memoria, i);
         printf("base: %d, tam: %d, libre: %s \n", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
+        //free(espacio);
     }
-    printf("-------------------------------------------->\n");
+    printf("--------------------------------------->\n");
 }
 
 void imprimir_tabla_segmentos_patota(tabla_segmentacion* tabla_segmentos_patota){
@@ -212,8 +213,9 @@ void imprimir_tabla_segmentos_patota(tabla_segmentacion* tabla_segmentos_patota)
 	for(int j=0; j < list_size(tabla_segmentos_patota->segmento_inicial); j++){
 		segmento* segmento_leido = list_get(tabla_segmentos_patota->segmento_inicial, j);
 		printf("Base %d   Tamanio %d\n", segmento_leido->base, segmento_leido->tamanio);
-		free(segmento_leido);
+		//free(segmento_leido);
 	}
+	printf("---------------------------------------\n");
 }
 
 
@@ -224,22 +226,41 @@ void eliminar_espacio_de_memoria(int base){
     	if(espacio->base == base){
             espacio->libre = true;
             list_remove(tabla_espacios_de_memoria, i);
-            log_info(logger, "Se libera el espacio de memoria con base %d", espacio->base);
             espacio_de_memoria* espacio_libre = crear_espacio_de_memoria(base, espacio->tam, true);
             list_add(tabla_espacios_de_memoria, espacio_libre);
-            //TENDRIA QUE ORDENAR
+            //free(espacio_libre);
         }
+    	//free(espacio);
     }
+    ordenar_memoria();
+}
+
+void ordenar_memoria(){
+    bool espacio_anterior(espacio_de_memoria* espacio_menor, espacio_de_memoria* espacio_mayor) {
+        return espacio_menor->base < espacio_mayor->base;
+    }
+
+    list_sort(tabla_espacios_de_memoria, (void*) espacio_anterior);
+}
+
+void eliminar_segmento(int nro_segmento, tabla_segmentacion* tabla_segmentos_patota){
+	for(int i = 0; i < list_size(tabla_segmentos_patota->segmento_inicial); i++){
+		segmento* segmento = list_get(tabla_segmentos_patota->segmento_inicial, i);
+
+		if(segmento->numero_segmento == nro_segmento){
+			list_remove(tabla_segmentos_patota->segmento_inicial, i);
+			//list_remove_and_destroy_element(t_list *, int index, void(*element_destroyer)(void*));
+			eliminar_espacio_de_memoria(segmento->base);
+		}
+	}
 }
 
 espacio_de_memoria* buscar_espacio_de_memoria_libre(int tam){
 
 	if (strcmp(configuracion.criterio_seleccion, "FF") == 0) {
-        //log_info(logger, "First fit");
         return busqueda_first_fit(tam);
 
     } else if (strcmp(configuracion.criterio_seleccion, "BF") == 0) {
-        //log_info(logger, "Best fit");
         return busqueda_best_fit(tam);
 
     } else {
@@ -249,12 +270,9 @@ espacio_de_memoria* buscar_espacio_de_memoria_libre(int tam){
 }
 
 espacio_de_memoria* busqueda_first_fit(int tam){
-    int size = list_size(tabla_espacios_de_memoria);
-
-    for(int i=0; i < size; i++){
+    for(int i=0; i < list_size(tabla_espacios_de_memoria); i++){
     	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
         if(espacio->libre == true && tam <= espacio->tam){
-            log_info(logger, "Se encontro espacio de memoria libre con suficiente espacio (base: %d)", espacio->base);
             return espacio;
         }
     }
@@ -270,21 +288,18 @@ espacio_de_memoria* busqueda_best_fit(int tam){
     	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
 
     	if(espacio->libre == true && tam <= espacio->tam){
-            log_info(logger, "Se encontro espacio de memoria libre con suficiente espacio (base: %d)", espacio->base);
 
-            if(tam == espacio->tam){
-            	log_info(logger, "Se encontro el espacio de memoria con Best Fit (base:%d)", espacio->base);
+            if(tam == espacio->tam){ //si encuentra uno justo de su tamanio
             	return espacio;
             }
             list_add(espacios_libres, espacio);
         }
     }
 
-    log_debug(logger, "Buscando el espacio de memoria con Best Fit");
     int espacios_libres_size = list_size(espacios_libres);
 
     if(espacios_libres_size != 0){
-    	espacio_de_memoria* espacio_best_fit;
+    	/*espacio_de_memoria* espacio_best_fit;
         int best_fit_diff = 999999; //revisar esto
 
         for(int i=0; i < espacios_libres_size; i++){
@@ -295,9 +310,19 @@ espacio_de_memoria* busqueda_best_fit(int tam){
                 best_fit_diff = diff;
                 espacio_best_fit = y;
             }
-        }
-        log_info(logger, "El espacio de memoria encontrado con Best Fit (base:%d)", espacio_best_fit->base);
+        }*/
+    	espacio_de_memoria* espacio_best_fit = list_get(espacios_libres, 0);
+    	for(int i=1; i < espacios_libres_size; i++){
+			espacio_de_memoria* espacio_a_comparar = list_get(espacios_libres, i);
+
+			if(espacio_a_comparar->tam  <  espacio_best_fit->tam){
+				espacio_best_fit = espacio_a_comparar;
+			}
+		}
+
+        //log_info(logger, "El espacio de memoria encontrado con Best Fit (base:%d)", espacio_best_fit->base);
         return espacio_best_fit;
+
     }else{
         log_warning(logger, "No hay espacios de memoria libres");
         return NULL;
@@ -307,16 +332,20 @@ espacio_de_memoria* busqueda_best_fit(int tam){
 espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) { //falta
 	espacio_de_memoria *espacio_libre = buscar_espacio_de_memoria_libre(tam);
 	if (espacio_libre != NULL) {
-        if (espacio_libre->tam == tam) {//Si el espacio libre encontrado es de igual tamanio al segmento a alojar no es necesario ordenar. CAPAZ NO HACE FALTA
+
+		if (espacio_libre->tam == tam) {//Si el espacio libre encontrado es de igual tamanio al segmento a alojar no es necesario ordenar. CAPAZ NO HACE FALTA
         	espacio_libre->libre = false;
-            //log_info(logger, "Espacio de memoria asignado(base: %d)", espacio_libre->base);
             return espacio_libre;
         } else { //Si no es de igual tamanio, debo crear un nuevo espacio con base en el libre y reacomodar la base y tamanio del libre.
             espacio_de_memoria* nuevo_espacio_de_memoria = crear_espacio_de_memoria(espacio_libre->base, tam, false);
             list_add(tabla_espacios_de_memoria, nuevo_espacio_de_memoria);
-            //actualizo base y tamanio de particion libre.
+
+            //actualizo base y tamanio del espacio libre
             espacio_libre->base += tam; //NO ENTIENDO COMO FUNCIONA SI ESPACIO_LIBRE ES LOCAL
             espacio_libre->tam -= tam;
+
+            ordenar_memoria();
+
             return nuevo_espacio_de_memoria;
         }
 
