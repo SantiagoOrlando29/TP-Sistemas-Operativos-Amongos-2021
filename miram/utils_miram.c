@@ -118,8 +118,15 @@ int funcion_cliente(int socket_cliente){
 					fflush(stdout);
 					//ack a discordiador
 				}else{
+					int posicion_libre = -1;
 					printf("Guardando info.....");
 					tabla_paginacion* una_tabla=malloc(sizeof(tabla_paginacion));
+					una_tabla->id_patota = pid;
+					for(int i=0 ; i<cuantos_marcos_necesito; i++){
+						posicion_libre = posicion_marco(&configuracion);
+						marco* marco_nuevo = malloc (sizeof(marco));
+						list_add(una_tabla->marco_inicial,marco_nuevo);
+					}
 					almacenar_informacion(&configuracion, una_tabla, lista);
 					fflush(stdout);
 				}
@@ -421,14 +428,14 @@ void agregar_memoria_aux(t_list* lista_aux_memoria,config_struct* config_servido
 	marco* marco2= malloc(sizeof(marco));
 	marco* marco3= malloc(sizeof(marco));
 	marco* marco4= malloc(sizeof(marco));
-	marco1->libre=0;
-	marco2->libre=0;
+	marco1->libre=1;
+	marco2->libre=1;
 	marco3->libre=1;
 	marco4->libre=1;
-	marco1->id_marco=posicion_marco(config_servidor);
+	/*marco1->id_marco=posicion_marco(config_servidor);
 	marco2->id_marco=posicion_marco(config_servidor);
 	marco3->id_marco=posicion_marco(config_servidor);
-	marco4->id_marco=posicion_marco(config_servidor);
+	marco4->id_marco=posicion_marco(config_servidor);*/
 	tabla1->id_patota =1;
 	tabla2->id_patota =2;
 	tabla1->ubicacion = MEM_PRINCIPAL;
@@ -487,14 +494,15 @@ void imprimir_seg(t_list* tabla_aux){
 		}
 	}
 }
-/*
+
 void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista){
 	char* pid = (char*)(list_get(lista,0));
 
 
 
+
 }
-*/
+
 int posicion_marco(config_struct* config_servidor){
 	for(int i=0;i<config_servidor->cant_marcos;i++){
 		if(config_servidor->marcos[i]==0){
