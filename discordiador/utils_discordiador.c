@@ -85,24 +85,6 @@ void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio)
 
 	paquete->buffer->size += tamanio + sizeof(int);
 }
-void agregar_entero_a_paquete(t_paquete* paquete, uint32_t valor, int tamanio)
-{
-	int i = valor;
-	int *p = malloc(sizeof(uint32_t));
-	p = i;
-	//*p = i;
-
-	paquete->buffer->stream = realloc(paquete->buffer->stream, paquete->buffer->size + tamanio + sizeof(int));
-
-	memcpy(paquete->buffer->stream + paquete->buffer->size, &tamanio, sizeof(int));
-	log_info(logger,"aaaaaaa");
-	memcpy(paquete->buffer->stream + paquete->buffer->size + sizeof(int), &p, tamanio);
-	log_info(logger,"bbbbbbbb");
-	//log_info(logger, "paquete %d", p);
-	//log_info(logger, "paquete %d", &p);
-
-	paquete->buffer->size += tamanio + sizeof(int);
-}
 
 void enviar_paquete(t_paquete* paquete, int socket_cliente)
 {

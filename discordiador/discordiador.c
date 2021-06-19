@@ -78,6 +78,12 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	//si funcion tomar tarea != null entonces
 	tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,4); //TAREA NORMAL
 
+	/*	int conexion_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
+	enviar_header(PEDIR_TAREA, conexion_miram);
+	int tipo_mensaje = recibir_operacion(conexion_miram);
+	printf("tipo_mensaje %d\n", tipo_mensaje);
+	close(conexion_miram);*/
+
 	printf("hola soy el hilo %d, P%d, estoy listo para ejecutar \n", tripulante->tid, tripulante->puntero_pcb);
 	sem_post(&NUEVO_READY);
 	fflush(stdout);
@@ -421,28 +427,6 @@ PRUEBA 5 tareas.txt 300|4 10|20 4|500
 				/*enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
 				tipoMensaje = recibir_operacion(conexionMiRam);
 				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);*/
-				//int list_size(t_list *);
-				//void *list_get(t_list *, int index);
-				/*sem_wait(&MUTEX_LISTA_READY);
-				for(int i=0; i < list_size(lista_tripulantes_ready); i++){
-					tripulante = (tcbTripulante*)list_get(lista_tripulantes_ready, i);
-					printf("Tripulante: %d   Patota: %d   Status: %c\n", tripulante->tid, tripulante->puntero_pcb, tripulante->estado);
-				}
-				sem_post(&MUTEX_LISTA_READY);
-
-				sem_wait(&MUTEX_LISTA_TRABAJANDO);
-				for(int i=0; i < list_size(lista_tripulantes_trabajando); i++){
-					tripulante = (tcbTripulante*)list_get(lista_tripulantes_trabajando, i);
-					printf("Tripulante: %d   Patota: %d   Status: %c\n", tripulante->tid, tripulante->puntero_pcb, tripulante->estado);
-				}
-				sem_post(&MUTEX_LISTA_TRABAJANDO);
-
-				sem_wait(&MUTEX_LISTA_BLOQUEADO);
-				for(int i=0; i < list_size(lista_tripulantes_bloqueado); i++){
-					tripulante = (tcbTripulante*)list_get(lista_tripulantes_bloqueado, i);
-					printf("Tripulante: %d   Patota: %d   Status: %c\n", tripulante->tid, tripulante->puntero_pcb, tripulante->estado);
-				}
-				sem_post(&MUTEX_LISTA_BLOQUEADO);*/
 
 				break;
 
@@ -469,6 +453,15 @@ PRUEBA 5 tareas.txt 300|4 10|20 4|500
 				char* mensaje = (char*)list_get(lista, 0);
 				log_info(logger, mensaje);
 				list_destroy(lista);
+				break;
+
+			case EXPULSAR_TRIPULANTE:
+				paquete = crear_paquete(EXPULSAR_TRIPULANTE);
+				char** parametro = string_split(leido," ");
+				//uint32_t cantidad_tripulantes  = atoi(parametros[1]);
+				char* tripulante_id = parametro[1];
+				agregar_a_paquete(paquete, tripulante_id, strlen(tripulante_id)+1);
+
 				break;
 
 			case FIN:

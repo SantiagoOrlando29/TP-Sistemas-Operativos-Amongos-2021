@@ -159,6 +159,8 @@ typedef struct{
 
 t_list* tabla_espacios_de_memoria;
 
+t_list* lista_tablas_segmentos;//VER
+
 void* recibir_buffer(int*, int);
 void iniciar_servidor(config_struct*);
 int esperar_cliente(int);
@@ -196,15 +198,15 @@ void enviar_header(tipoMensaje , int );
 int funcion_cliente(int);
 
 //SEGMENTACION
-espacio_de_memoria* crear_espacio_de_memoria(int base, int tam, bool libre);
+espacio_de_memoria* crear_espacio_de_memoria(int, int, bool);
 void imprimir_tabla_espacios_de_memoria();
-void eliminar_espacio_de_memoria(int base);
-espacio_de_memoria* buscar_espacio_de_memoria_libre(int tam);
-espacio_de_memoria* busqueda_first_fit(int tam);
-espacio_de_memoria* busqueda_best_fit(int tam);
-espacio_de_memoria* asignar_espacio_de_memoria(size_t tam);
-void imprimir_tabla_segmentos_patota(tabla_segmentacion* tabla_segmentos_patota);
-void eliminar_segmento(int nro_segmento, tabla_segmentacion* tabla_segmentos_patota);
+void eliminar_espacio_de_memoria(int);
+espacio_de_memoria* buscar_espacio_de_memoria_libre(int);
+espacio_de_memoria* busqueda_first_fit(int);
+espacio_de_memoria* busqueda_best_fit(int);
+espacio_de_memoria* asignar_espacio_de_memoria(size_t);
+void imprimir_tabla_segmentos_patota(tabla_segmentacion*);
+void eliminar_segmento(int, tabla_segmentacion*);
 void ordenar_memoria();
 
 pcbPatota* crear_pcb(uint32_t numero_patota);

@@ -81,7 +81,7 @@ int funcion_cliente(int socket_cliente){
 		switch(tipoMensajeRecibido)
 		{
 			case PRUEBA:
-				lista=recibir_paquete(socket_cliente);
+				lista = recibir_paquete(socket_cliente);
 
 				uint32_t pid = (uint32_t*)atoi(list_get(lista,0));
 				printf("el numero de la patota es %d", pid);
@@ -101,12 +101,12 @@ int funcion_cliente(int socket_cliente){
 				printf("Las tareas serializadas son: %s \n", tarea);
 
 				//---------------------------SEGMENTACION--------------------------------------------------
-				/*
+
 				pcbPatota* pcb_patota = crear_pcb(pid);
 				espacio_de_memoria* espacio_de_memoria_pcb_patota = asignar_espacio_de_memoria(tamanio_pcb(pcb_patota));
 
 				espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea)+1);
-				pcb_patota->tareas = espacio_de_memoria_tareas->base;
+				pcb_patota->tareas = espacio_de_memoria_tareas->base;//CREO QUE ESTA MAL ESTO. PQ TIENE LA DIR FISICA, NO LA LOGICA
 
 				segmento* segmento_pcb = malloc(sizeof(segmento));
 				segmento* segmento_tareas = malloc(sizeof(segmento));
@@ -121,7 +121,7 @@ int funcion_cliente(int socket_cliente){
 
 				tabla_segmentacion* tabla_segmentos_patota = malloc(sizeof(tabla_segmentacion));
 
-				tabla_segmentos_patota->id_patota = 1;
+				tabla_segmentos_patota->id_patota = pid;
 				tabla_segmentos_patota->segmento_inicial = list_create();
 
 				list_add(tabla_segmentos_patota->segmento_inicial, segmento_pcb);
@@ -151,7 +151,7 @@ int funcion_cliente(int socket_cliente){
 
 				imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
 
-				*/
+
 				break;
 
 			case INICIAR_PATOTA:
@@ -177,6 +177,16 @@ int funcion_cliente(int socket_cliente){
 				eliminar_paquete(tarea_a_enviar);
 				break;*/
 
+			case EXPULSAR_TRIPULANTE:
+				lista = recibir_paquete(socket_cliente);
+
+				uint32_t tripulante_id = (uint32_t*)atoi(list_get(lista,0));
+
+				eliminar_segmento(tripulante_id +2, tabla_segmentos_patota);//+2 porque los 2 primeros segmentos son de pcb y tareas.
+
+
+				break;
+
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
 				variable_servidor = 0;
@@ -194,7 +204,6 @@ int funcion_cliente(int socket_cliente){
 		}
 	}
 }
-
 
 
 int recibir_operacion(int socket_cliente)
@@ -711,3 +720,160 @@ int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* co
 
     return cantidad_marcos;
 }
+
+espacio_de_memoria* crear_espacio_de_memoria(int base, int tam, bool libre){
+	espacio_de_memoria* nuevo_espacio_de_memoria = malloc(sizeof(espacio_de_memoria));
+
+	nuevo_espacio_de_memoria->base = base;
+	nuevo_espacio_de_memoria->tam = tam;
+	nuevo_espacio_de_memoria->libre = libre;
+
+    return nuevo_espacio_de_memoria;
+}
+
+void imprimir_tabla_espacios_de_memoria(){
+    int size = list_size(tabla_espacios_de_memoria);
+    printf("<--------  MEMORIA  --------------------\n");
+
+    for(int i=0; i < size; i++) {
+    	espacio_de_memoria *espacio = list_get(tabla_espacios_de_memoria, i);
+        printf("base: %d, tam: %d, libre: %s \n", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
+        //free(espacio);
+    }
+    printf("--------------------------------------->\n");
+}
+
+void imprimir_tabla_segmentos_patota(tabla_segmentacion* tabla_segmentos_patota){
+	printf("Tabla de segmentos correspondiente a patota %d\n", tabla_segmentos_patota->id_patota);
+
+	for(int j=0; j < list_size(tabla_segmentos_patota->segmento_inicial); j++){
+		segmento* segmento_leido = list_get(tabla_segmentos_patota->segmento_inicial, j);
+		printf("Base %d   Tamanio %d\n", segmento_leido->base, segmento_leido->tamanio);
+		//free(segmento_leido);
+	}
+	printf("---------------------------------------\n");
+}
+
+
+void eliminar_espacio_de_memoria(int base){
+    for(int i = 0; i < list_size(tabla_espacios_de_memoria); i++){
+    	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
+
+    	if(espacio->base == base){
+            espacio->libre = true;
+            list_remove(tabla_espacios_de_memoria, i);
+            espacio_de_memoria* espacio_libre = crear_espacio_de_memoria(base, espacio->tam, true);
+            list_add(tabla_espacios_de_memoria, espacio_libre);
+            //free(espacio_libre);
+        }
+    	//free(espacio);
+    }
+    ordenar_memoria();
+}
+
+void ordenar_memoria(){
+    bool espacio_anterior(espacio_de_memoria* espacio_menor, espacio_de_memoria* espacio_mayor) {
+        return espacio_menor->base < espacio_mayor->base;
+    }
+
+    list_sort(tabla_espacios_de_memoria, (void*) espacio_anterior);
+}
+
+void eliminar_segmento(int nro_segmento, tabla_segmentacion* tabla_segmentos_patota){
+	for(int i = 0; i < list_size(tabla_segmentos_patota->segmento_inicial); i++){
+		segmento* segmento = list_get(tabla_segmentos_patota->segmento_inicial, i);
+
+		if(segmento->numero_segmento == nro_segmento){
+			list_remove(tabla_segmentos_patota->segmento_inicial, i);
+			//list_remove_and_destroy_element(t_list *, int index, void(*element_destroyer)(void*));
+			eliminar_espacio_de_memoria(segmento->base);
+		}
+	}
+}
+
+espacio_de_memoria* busqueda_first_fit(int tam){
+    for(int i=0; i < list_size(tabla_espacios_de_memoria); i++){
+    	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
+        if(espacio->libre == true && tam <= espacio->tam){
+            return espacio;
+        }
+    }
+    log_warning(logger, "No hay espacios de memoria libres");
+    return NULL;
+}
+
+espacio_de_memoria* busqueda_best_fit(int tam){
+    int size = list_size(tabla_espacios_de_memoria);
+    t_list* espacios_libres = list_create();
+
+    for(int i=0; i < size; i++){
+    	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
+
+    	if(espacio->libre == true && tam <= espacio->tam){
+
+            if(tam == espacio->tam){ //si encuentra uno justo de su tamanio
+            	return espacio;
+            }
+            list_add(espacios_libres, espacio);
+        }
+    }
+
+    int espacios_libres_size = list_size(espacios_libres);
+
+    if(espacios_libres_size != 0){
+    	/*espacio_de_memoria* espacio_best_fit;
+        int best_fit_diff = 999999; //revisar esto
+
+        for(int i=0; i < espacios_libres_size; i++){
+        	espacio_de_memoria* y = list_get(espacios_libres, i);
+            int diff = y->tam - tam;
+
+            if(best_fit_diff > diff){
+                best_fit_diff = diff;
+                espacio_best_fit = y;
+            }
+        }*/
+    	espacio_de_memoria* espacio_best_fit = list_get(espacios_libres, 0);
+    	for(int i=1; i < espacios_libres_size; i++){
+			espacio_de_memoria* espacio_a_comparar = list_get(espacios_libres, i);
+
+			if(espacio_a_comparar->tam  <  espacio_best_fit->tam){
+				espacio_best_fit = espacio_a_comparar;
+			}
+		}
+
+        //log_info(logger, "El espacio de memoria encontrado con Best Fit (base:%d)", espacio_best_fit->base);
+        return espacio_best_fit;
+
+    }else{
+        log_warning(logger, "No hay espacios de memoria libres");
+        return NULL;
+    }
+}
+
+espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) { //falta
+	espacio_de_memoria *espacio_libre = buscar_espacio_de_memoria_libre(tam);
+	if (espacio_libre != NULL) {
+
+		if (espacio_libre->tam == tam) {//Si el espacio libre encontrado es de igual tamanio al segmento a alojar no es necesario ordenar. CAPAZ NO HACE FALTA
+        	espacio_libre->libre = false;
+            return espacio_libre;
+        } else { //Si no es de igual tamanio, debo crear un nuevo espacio con base en el libre y reacomodar la base y tamanio del libre.
+            espacio_de_memoria* nuevo_espacio_de_memoria = crear_espacio_de_memoria(espacio_libre->base, tam, false);
+            list_add(tabla_espacios_de_memoria, nuevo_espacio_de_memoria);
+
+            //actualizo base y tamanio del espacio libre
+            espacio_libre->base += tam; //NO ENTIENDO COMO FUNCIONA SI ESPACIO_LIBRE ES LOCAL
+            espacio_libre->tam -= tam;
+
+            ordenar_memoria();
+
+            return nuevo_espacio_de_memoria;
+        }
+
+    } else {
+        log_warning(logger, "No se pudo asignar espacio de memoria");
+        return NULL;
+    }
+}
+
