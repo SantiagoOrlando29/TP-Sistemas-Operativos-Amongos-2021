@@ -209,6 +209,7 @@ espacio_de_memoria* asignar_espacio_de_memoria(size_t);
 void imprimir_tabla_segmentos_patota(tabla_segmentacion*);
 void eliminar_segmento(int, tabla_segmentacion*);
 void ordenar_memoria();
+void patota_segmentacion(uint32_t, uint32_t, char*, t_list*);
 
 pcbPatota* crear_pcb(uint32_t numero_patota);
 
@@ -219,7 +220,7 @@ pcbPatota* crear_pcb(uint32_t numero_patota);
 tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, uint32_t);
 pcbPatota* crear_patota(uint32_t , uint32_t);
 //solo para comprobar que se formaron bien
-void mostrarTripulante(tcbTripulante*,pcbPatota*);
+void mostrar_tripulante(tcbTripulante* tripulante, pcbPatota* patota);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanio_tcb(tcbTripulante*);

@@ -83,74 +83,26 @@ int funcion_cliente(int socket_cliente){
 			case PRUEBA:
 				lista = recibir_paquete(socket_cliente);
 
-				uint32_t pid = (uint32_t*)atoi(list_get(lista,0));
+				uint32_t pid = (uint32_t)atoi(list_get(lista,0));
 				printf("el numero de la patota es %d", pid);
 				patota = crear_patota(pid,0);
 
-				uint32_t cantidad_tripulantes = (uint32_t*)atoi(list_get(lista,1));
+				uint32_t cantidad_tripulantes = (uint32_t)atoi(list_get(lista,1));
 				printf("cant tripu %d\n", cantidad_tripulantes);
 
 				for(int i=2; i < cantidad_tripulantes +2; i++){
 					tripulante=(tcbTripulante*)list_get(lista,i);
-					mostrar_tripulante(tripulante,patota);
+					mostrar_tripulante(tripulante, patota);
 					printf("\n");
 				}
 
-				char* tarea = malloc((uint32_t*)atoi(list_get(lista, cantidad_tripulantes+2)));
+				char* tarea = malloc((uint32_t)atoi(list_get(lista, cantidad_tripulantes+2)));
 				tarea=(char*)list_get(lista, cantidad_tripulantes+3);
 				printf("Las tareas serializadas son: %s \n", tarea);
 
 				//---------------------------SEGMENTACION--------------------------------------------------
 
-				pcbPatota* pcb_patota = crear_pcb(pid);
-				espacio_de_memoria* espacio_de_memoria_pcb_patota = asignar_espacio_de_memoria(tamanio_pcb(pcb_patota));
-
-				espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea)+1);
-				pcb_patota->tareas = espacio_de_memoria_tareas->base;//CREO QUE ESTA MAL ESTO. PQ TIENE LA DIR FISICA, NO LA LOGICA
-
-				segmento* segmento_pcb = malloc(sizeof(segmento));
-				segmento* segmento_tareas = malloc(sizeof(segmento));
-
-				segmento_pcb->numero_segmento = 0;
-				segmento_pcb->base = espacio_de_memoria_pcb_patota->base;
-				segmento_pcb->tamanio = espacio_de_memoria_pcb_patota->tam;
-
-				segmento_tareas->numero_segmento = 1;
-				segmento_tareas->base = espacio_de_memoria_tareas->base;
-				segmento_tareas->tamanio = espacio_de_memoria_tareas->tam;
-
-				tabla_segmentacion* tabla_segmentos_patota = malloc(sizeof(tabla_segmentacion));
-
-				tabla_segmentos_patota->id_patota = pid;
-				tabla_segmentos_patota->segmento_inicial = list_create();
-
-				list_add(tabla_segmentos_patota->segmento_inicial, segmento_pcb);
-				list_add(tabla_segmentos_patota->segmento_inicial, segmento_tareas);
-
-				for(int i=2; i < cantidad_tripulantes +2; i++){
-					tripulante=(tcbTripulante*)list_get(lista,i);
-
-					espacio_de_memoria* espacio_de_memoria_tcb_tripulante = asignar_espacio_de_memoria(tamanio_tcb(tripulante));
-
-					segmento* segmento_tcb = malloc(sizeof(segmento));
-					segmento_tcb->numero_segmento = i;
-					segmento_tcb->base = espacio_de_memoria_tcb_tripulante->base;
-					segmento_tcb->tamanio = espacio_de_memoria_tcb_tripulante->tam;
-
-					list_add(tabla_segmentos_patota->segmento_inicial, segmento_tcb);
-				}
-
-				imprimir_tabla_espacios_de_memoria();
-
-				imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
-
-				log_info(logger, "elimino");
-				eliminar_segmento(5, tabla_segmentos_patota);
-
-				imprimir_tabla_espacios_de_memoria();
-
-				imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
-
+				patota_segmentacion(pid, cantidad_tripulantes, tarea, lista);
 
 				break;
 
@@ -168,24 +120,14 @@ int funcion_cliente(int socket_cliente){
 				break;*/
 
 
-			/*case INICIAR_PLANIFICACION:
-				log_info(logger, "Iniciando planificacion");
-				t_paquete* tarea_a_enviar;
-				tarea* tarea1 = crear_tarea(GENERAR_OXIGENO,5,2,2,5);
-				agregar_a_paquete(tarea_a_enviar, tarea1, sizeof(tarea));
-				enviar_paquete(tarea_a_enviar,socket_cliente);
-				eliminar_paquete(tarea_a_enviar);
-				break;*/
-
-			case EXPULSAR_TRIPULANTE:
+			/*case EXPULSAR_TRIPULANTE:
 				lista = recibir_paquete(socket_cliente);
 
 				uint32_t tripulante_id = (uint32_t*)atoi(list_get(lista,0));
 
 				eliminar_segmento(tripulante_id +2, tabla_segmentos_patota);//+2 porque los 2 primeros segmentos son de pcb y tareas.
 
-
-				break;
+				break;*/
 
 			/*case PEDIR_TAREA:
 				log_info(logger, "Tripulante quiere tarea");
@@ -202,7 +144,11 @@ int funcion_cliente(int socket_cliente){
 
 			case -1:
 				log_error(logger, "el cliente se desconecto. Terminando servidor");
+				variable_servidor = 0;
+				shutdown(socket_servidor, SHUT_RD);
+				close(socket_cliente);
 				return EXIT_FAILURE;
+
 			default:
 				log_warning(logger, "Operacion desconocida. No quieras meter la pata");
 				break;
@@ -210,6 +156,7 @@ int funcion_cliente(int socket_cliente){
 		}
 	}
 }
+
 
 
 int recibir_operacion(int socket_cliente)
@@ -319,7 +266,7 @@ pcbPatota* crear_patota(uint32_t pid, uint32_t tareas){
 	return patota;
 }
 
-void mostrar_tripulante(tcbTripulante* tripulante,pcbPatota* patota){
+void mostrar_tripulante(tcbTripulante* tripulante, pcbPatota* patota){
 	printf("ID %d \n",tripulante->tid);
 	printf("posicion x: %d \n",tripulante->posicionX);
 	printf("posicion y: %d \n",tripulante->posicionY);
@@ -881,5 +828,59 @@ espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) { //falta
         log_warning(logger, "No se pudo asignar espacio de memoria");
         return NULL;
     }
+}
+
+void patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tarea, t_list* lista){
+	pcbPatota* pcb_patota = crear_pcb(pid);
+	espacio_de_memoria* espacio_de_memoria_pcb_patota = asignar_espacio_de_memoria(tamanio_pcb(pcb_patota));
+
+	espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea)+1);
+	pcb_patota->tareas = espacio_de_memoria_tareas->base;//CREO QUE ESTA MAL ESTO. PQ TIENE LA DIR FISICA, NO LA LOGICA.
+	//TENDRIA QUE SER ALGO COMO 1 0 PQ LAS TAREAS ESTAN EN SEGMENTO 1 DESP 0
+
+	segmento* segmento_pcb = malloc(sizeof(segmento));
+	segmento* segmento_tareas = malloc(sizeof(segmento));
+
+	segmento_pcb->numero_segmento = 0;
+	segmento_pcb->base = espacio_de_memoria_pcb_patota->base;
+	segmento_pcb->tamanio = espacio_de_memoria_pcb_patota->tam;
+
+	segmento_tareas->numero_segmento = 1;
+	segmento_tareas->base = espacio_de_memoria_tareas->base;
+	segmento_tareas->tamanio = espacio_de_memoria_tareas->tam;
+
+	tabla_segmentacion* tabla_segmentos_patota = malloc(sizeof(tabla_segmentacion));
+
+	tabla_segmentos_patota->id_patota = pid;
+	tabla_segmentos_patota->segmento_inicial = list_create();
+
+	list_add(tabla_segmentos_patota->segmento_inicial, segmento_pcb);
+	list_add(tabla_segmentos_patota->segmento_inicial, segmento_tareas);
+
+	tcbTripulante* tripulante = malloc(tamanio_TCB);
+	for(int i=2; i < cantidad_tripulantes +2; i++){
+		tripulante=(tcbTripulante*)list_get(lista,i);
+
+		espacio_de_memoria* espacio_de_memoria_tcb_tripulante = asignar_espacio_de_memoria(tamanio_tcb(tripulante));
+
+		segmento* segmento_tcb = malloc(sizeof(segmento));
+		segmento_tcb->numero_segmento = i;
+		segmento_tcb->base = espacio_de_memoria_tcb_tripulante->base;
+		segmento_tcb->tamanio = espacio_de_memoria_tcb_tripulante->tam;
+
+		list_add(tabla_segmentos_patota->segmento_inicial, segmento_tcb);
+	}
+
+	imprimir_tabla_espacios_de_memoria();
+
+	imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
+
+	log_info(logger, "elimino");
+	eliminar_segmento(5, tabla_segmentos_patota);
+
+	imprimir_tabla_espacios_de_memoria();
+
+	imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
+
 }
 

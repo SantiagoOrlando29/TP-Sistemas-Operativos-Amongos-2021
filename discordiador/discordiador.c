@@ -479,7 +479,6 @@ Mover el tripulante de NEW a READY,*/
 			case EXPULSAR_TRIPULANTE:
 				paquete = crear_paquete(EXPULSAR_TRIPULANTE);
 				char** parametro = string_split(leido," ");
-				//uint32_t cantidad_tripulantes  = atoi(parametros[1]);
 				char* tripulante_id = parametro[1];
 				agregar_a_paquete(paquete, tripulante_id, strlen(tripulante_id)+1);
 
