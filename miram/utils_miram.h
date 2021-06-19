@@ -181,6 +181,10 @@ void finalizar_miram(config_struct* config_servidor);
 int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco);
 void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* tabla_aux, config_struct* configuracion);
 int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* config_servidor);
+void mostrar_tripulante(tcbTripulante* tripulante,pcbPatota* patota);
+int cuantos_marcos_libres(config_struct* config_servidor);
+void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista);
+
 
 void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial);
 
@@ -202,6 +206,7 @@ espacio_de_memoria* buscar_espacio_de_memoria_libre(int tam);
 espacio_de_memoria* busqueda_first_fit(int tam);
 espacio_de_memoria* busqueda_best_fit(int tam);
 espacio_de_memoria* asignar_espacio_de_memoria(size_t tam);
+
 
 pcbPatota* crear_pcb(uint32_t numero_patota);
 

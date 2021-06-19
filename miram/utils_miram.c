@@ -1,4 +1,6 @@
 #include "utils_miram.h"
+config_struct configuracion;
+
 
 int variable_servidor = -1;
 int socket_servidor;
@@ -53,9 +55,9 @@ void iniciar_servidor(config_struct* config_servidor)
 
 		if(socket_cliente>0){
 			hilo ++ ;
-			log_info(logg, "Estableciendo conexión desde %d", dir_cliente.sin_port);
+			log_info(logg, "Estableciendo conexión desde %d\n", dir_cliente.sin_port);
 			log_info(logg, "Creando hilo");
-
+			fflush(stdout);
 			pthread_t hilo_cliente=(char)hilo;
 			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente ,(void*)socket_cliente);
 			pthread_detach(hilo_cliente);
@@ -75,6 +77,8 @@ int funcion_cliente(int socket_cliente){
 	t_paquete* paquete;
 	int tipoMensajeRecibido = -1;
 	printf("Se conecto este socket a mi %d\n",socket_cliente);
+	fflush(stdout);
+
 	while(1){
 
 		tipoMensajeRecibido = recibir_operacion(socket_cliente);
@@ -83,21 +87,43 @@ int funcion_cliente(int socket_cliente){
 			case PRUEBA:
 				lista=recibir_paquete(socket_cliente);
 
-				uint32_t pid = (char*)atoi(list_get(lista,0));
-				printf("el numero de la patota es %d", pid);
+				int pid = (int)atoi(list_get(lista,0));
+				printf("el numero de la patota es %d\n", pid);
 				patota = crear_patota(pid,0);
 
-				uint32_t cantidad_tripulantes = (uint32_t*)atoi(list_get(lista,1));
+				int cantidad_tripulantes = (int)atoi((list_get(lista,1)));
 				printf("cant tripu %d\n", cantidad_tripulantes);
+				fflush(stdout);
 
-				for(int i=2; i < cantidad_tripulantes +2; i++){
+
+
+			/*	for(int i=2; i < cantidad_tripulantes +2; i++){
 					tripulante=(tcbTripulante*)list_get(lista,i);
 					mostrar_tripulante(tripulante,patota);
 					printf("\n");
-				}
+					fflush(stdin);
+				}*/
 
 				char* tarea=(char*)list_get(lista, cantidad_tripulantes+2);
 				printf("Las tareas serializadas son: %s \n", tarea);
+				fflush(stdout);
+				int cuantos_marcos_necesito = cuantos_marcos(cantidad_tripulantes,strlen(tarea)+1,&configuracion);
+				fflush(stdout);
+				printf("\n Necesito estos marcos pablin %d", cuantos_marcos_necesito);
+				fflush(stdout);
+				printf("\n Marcos sin un carajo: %d \n", cuantos_marcos_libres(&configuracion));
+				fflush(stdout);
+				if(cuantos_marcos_necesito>cuantos_marcos_libres(&configuracion)){
+					printf(" \n No vas a poder poner un choto\n");
+					fflush(stdout);
+					//ack a discordiador
+				}else{
+					printf("Guardando info.....");
+					tabla_paginacion* una_tabla=malloc(sizeof(tabla_paginacion));
+					almacenar_informacion(&configuracion, una_tabla, lista);
+					fflush(stdout);
+				}
+
 
 				break;
 
@@ -331,8 +357,6 @@ tarea* crear_tarea(tarea_tripulante cod_tarea,int parametro,int pos_x,int pos_y,
 void iniciar_miram(config_struct* config_servidor){
 
 	config_servidor->posicion_inicial= malloc(sizeof(atoi(config_servidor->tamanio_memoria)));
-	printf("%d\n",atoi(config_servidor->tamanio_memoria));
-	printf("Pos inicial %d\n", (int)config_servidor->posicion_inicial);
 
 	if(strcmp(config_servidor->squema_memoria,"PAGINACION")==0){
 
@@ -344,8 +368,6 @@ void iniciar_miram(config_struct* config_servidor){
 			config_servidor->marcos[i]=malloc(sizeof(int));
 			config_servidor->marcos[i]= 0;
 		}
-
-
 
 	}else{
 		//Inicializo Segmentacion
@@ -465,7 +487,14 @@ void imprimir_seg(t_list* tabla_aux){
 		}
 	}
 }
+/*
+void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista){
+	char* pid = (char*)(list_get(lista,0));
 
+
+
+}
+*/
 int posicion_marco(config_struct* config_servidor){
 	for(int i=0;i<config_servidor->cant_marcos;i++){
 		if(config_servidor->marcos[i]==0){
@@ -475,6 +504,17 @@ int posicion_marco(config_struct* config_servidor){
 
 	}
 	return -1;
+}
+
+int cuantos_marcos_libres(config_struct* config_servidor){
+	int contador_marcos = 0;
+	for(int i=0;i<config_servidor->cant_marcos;i++){
+		if(config_servidor->marcos[i]==0){
+			contador_marcos++;
+		}
+
+	}
+	return contador_marcos;
 }
 
 void imprimir_ocupacion_marcos(config_struct configuracion){
@@ -652,8 +692,11 @@ int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* co
 
 	}
 
+	for(int i=0; i < longitud_tarea; i++){
 
-	cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, longitud_tarea, cantidad_marcos);
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(char), cantidad_marcos);
+
+	}
 
     return cantidad_marcos;
 }
