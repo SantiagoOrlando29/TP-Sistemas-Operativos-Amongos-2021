@@ -387,6 +387,29 @@ PRUEBA 5 tareas.txt 300|4 10|20 4|500
 					agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 					tid++;
 
+					/*
+					tcbTripulante* tripulante =crear_tripulante(tid,'N',5,6,1,numero_patota);
+					//esta bien que al tripulante lo cree aca o lo tiene que crear miram?
+					//puntero a pcb y a prox instruccion obvio que no los tendria, pero aca en discordiador hace falta que los tenga?
+					//es mas, capaz en vez de usar la struct tcbTripulante podria crear una nueva q solo tenga tid, estado, posx, posy, nro_patota. no?
+					pthread_t nombreHilo = (char*)(tid);
+					pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
+					//y en la funcion tripulante_hilo los conectaria a memoria. esta bien que lo haga ahi?
+					pthread_detach(&nombreHilo);
+					list_add(lista_tripulantes_nuevo, tripulante);
+					sem_post(&AGREGAR_NUEVO_A_READY);
+					*/
+/*1.- iniciar una patota lo cual conlleva:
+
+Pedirle a Mi-RAM HQ que cree las estructuras (que desde discordiador no te importa cuales ni como las crea)
+Enviarle el contenido del archivo de tareas
+Crear los threads de los tripulantes y conectarlos a la memoria.
+
+2.- Una vez que hiciste el paso 1 si tenes habilitada la planificación tenes que:
+
+Solicitarle desde el tripulante a Mi-RAM HQ la próxima tarea.
+Mover el tripulante de NEW a READY,*/
+
 				}
 
 				char* largo_tarea = malloc(sizeof(char));
@@ -398,11 +421,9 @@ PRUEBA 5 tareas.txt 300|4 10|20 4|500
 
 				enviar_paquete(paquete, conexionMiRam);
 
-				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
-				//tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
-				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
-
 				eliminar_paquete(paquete);
+
+
 				break;
 
 			case INICIAR_PATOTA:

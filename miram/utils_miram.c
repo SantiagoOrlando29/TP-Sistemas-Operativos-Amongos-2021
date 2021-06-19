@@ -159,13 +159,13 @@ int funcion_cliente(int socket_cliente){
 				enviar_header(INICIAR_PATOTA, socket_cliente);
 				break;
 
-			case LISTAR_TRIPULANTES:;
+			/*case LISTAR_TRIPULANTES:
 				t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
 				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
 				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 				enviar_paquete(paquete,socket_cliente);
 				eliminar_paquete(paquete);
-				break;
+				break;*/
 
 
 			/*case INICIAR_PLANIFICACION:

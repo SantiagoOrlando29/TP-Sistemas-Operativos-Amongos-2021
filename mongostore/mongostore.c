@@ -34,6 +34,7 @@ int main(void)
 	iniciarBlocks(sb.block_size*sb.blocks);
 
 	//mapeo();
+/*
  while(1)
 	{
 		t_paquete* paquete;
@@ -64,7 +65,7 @@ int main(void)
 				break;
 			}
 
-	}
+	}*/
 	return EXIT_SUCCESS;
 }
 

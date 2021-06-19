@@ -103,8 +103,8 @@ typedef struct{
 	uint32_t posicionX;
 	uint32_t posicionY;
 	uint32_t prox_instruccion; // Identificador de la próxima instrucción a ejecutar
-	uint32_t puntero_pcb;
-	sem_t semaforo_tripulante;//Dirección lógica del PCB del tripulante
+	uint32_t puntero_pcb; //Dirección lógica del PCB del tripulante
+	sem_t semaforo_tripulante;
 }tcbTripulante;
 
 // fin estructuras tripulantes
