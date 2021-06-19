@@ -55,7 +55,8 @@ typedef enum
 	INICIAR_PLANIFICACION,
 	PAUSAR_PLANIFICACION,
 	OBTENER_BITACORA,
-	FIN
+	FIN,
+	PEDIR_TAREA
 }tipoMensaje;
 
 typedef struct

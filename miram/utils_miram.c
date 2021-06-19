@@ -187,6 +187,12 @@ int funcion_cliente(int socket_cliente){
 
 				break;
 
+			/*case PEDIR_TAREA:
+				log_info(logger, "Tripulante quiere tarea");
+				enviar_header(PEDIR_TAREA, socket_cliente);
+
+				return 0;*/
+
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
 				variable_servidor = 0;
