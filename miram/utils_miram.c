@@ -793,6 +793,23 @@ void ordenar_memoria(){
     list_sort(tabla_espacios_de_memoria, (void*) espacio_anterior);
 }
 
+void unir_espacios_contiguos_libres(){
+    int size = list_size(tabla_espacios_de_memoria);
+
+    for(int i=0; i < size-1; i++){
+    	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
+    	espacio_de_memoria* siguiente_espacio = list_get(tabla_espacios_de_memoria, i + 1);
+
+        if (espacio->libre && siguiente_espacio->libre){
+            espacio->tam += siguiente_espacio->tam;
+            list_remove(tabla_espacios_de_memoria, i+1);
+            free(siguiente_espacio);
+            size = list_size(tabla_espacios_de_memoria);
+            i = 0; //CREO QUE CON i-- ESTARIA BIEN
+        }
+    }
+}
+
 void eliminar_segmento(int nro_segmento, tabla_segmentacion* tabla_segmentos_patota){
 	for(int i = 0; i < list_size(tabla_segmentos_patota->segmento_inicial); i++){
 		segmento* segmento = list_get(tabla_segmentos_patota->segmento_inicial, i);
@@ -881,6 +898,7 @@ espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) { //falta
             espacio_libre->tam -= tam;
 
             ordenar_memoria();
+            unir_espacios_contiguos_libres();
 
             return nuevo_espacio_de_memoria;
         }
@@ -975,6 +993,7 @@ bool funcion_expulsar_tripulante(uint32_t tripulante_id){
 					eliminar_segmento(segmento->numero_segmento, tabla_segmentos);
 					log_info(logger, "Se expulso segmento %d", segmento->numero_segmento);
 
+					unir_espacios_contiguos_libres();
 					imprimir_tabla_espacios_de_memoria();
 					imprimir_tabla_segmentos_patota(tabla_segmentos);
 

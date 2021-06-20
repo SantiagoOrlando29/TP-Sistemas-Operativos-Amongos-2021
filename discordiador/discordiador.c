@@ -73,6 +73,12 @@ void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pen
 	}
 }
 
+/*tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
+	t_paquete* paquete = crear_paquete(PEDIR_TAREA);
+	agregar_a_paquete(paquete, tripulante, tamanio_TCB);
+	enviar_paquete(paquete, conexion_miram);
+}*/
+
 void tripulante_hilo (tcbTripulante* tripulante){
 	sem_wait(&(tripulante->semaforo_tripulante));
 

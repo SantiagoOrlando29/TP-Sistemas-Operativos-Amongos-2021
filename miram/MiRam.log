@@ -1071,3 +1071,85 @@
 [ERROR] 19:56:36:757 MiRam/(15543:15578): el cliente se desconecto. Terminando servidor
 [ERROR] 19:56:36:757 MiRam/(15543:15577): el cliente se desconecto. Terminando servidor
 [ERROR] 19:56:36:757 MiRam/(15543:15576): el cliente se desconecto. Terminando servidor
+[INFO] 20:40:09:246 MiRam/(16396:16412): Se asigno espacio de memoria a todo
+[INFO] 20:40:11:246 MiRam/(16396:16412): Se asigno espacio de memoria a todo
+[INFO] 20:40:33:949 MiRam/(16396:16412): Se expulso segmento 4
+[INFO] 20:40:38:487 MiRam/(16396:16412): Se expulso segmento 5
+[ERROR] 20:42:00:191 MiRam/(16396:16412): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:42:00:192 MiRam/(16396:16435): el cliente se desconecto. Terminando servidor
+[ERROR] 20:42:00:192 MiRam/(16396:16434): el cliente se desconecto. Terminando servidor
+[ERROR] 20:42:00:192 MiRam/(16396:16433): el cliente se desconecto. Terminando servidor
+[ERROR] 20:42:00:192 MiRam/(16396:16432): el cliente se desconecto. Terminando servidor
+[ERROR] 20:42:00:192 MiRam/(16396:16431): el cliente se desconecto. Terminando servidor
+[ERROR] 20:42:00:192 MiRam/(16396:16425): el cliente se desconecto. Terminando servidor
+[ERROR] 20:42:00:192 MiRam/(16396:16424): el cliente se desconecto. Terminando servidor
+[ERROR] 20:42:00:192 MiRam/(16396:16423): el cliente se desconecto. Terminando servidor
+[ERROR] 20:42:00:192 MiRam/(16396:16422): el cliente se desconecto. Terminando servidor
+[ERROR] 20:42:00:192 MiRam/(16396:16421): el cliente se desconecto. Terminando servidor
+[INFO] 20:42:17:630 MiRam/(16458:16471): Se asigno espacio de memoria a todo
+[INFO] 20:42:19:725 MiRam/(16458:16471): Se asigno espacio de memoria a todo
+[INFO] 20:42:29:658 MiRam/(16458:16471): Se expulso segmento 4
+[INFO] 20:42:31:952 MiRam/(16458:16471): Se expulso segmento 5
+[ERROR] 20:45:23:137 MiRam/(16458:16471): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:45:23:138 MiRam/(16458:16494): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:23:138 MiRam/(16458:16493): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:23:138 MiRam/(16458:16492): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:23:138 MiRam/(16458:16491): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:23:138 MiRam/(16458:16490): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:23:138 MiRam/(16458:16484): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:23:138 MiRam/(16458:16483): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:23:138 MiRam/(16458:16482): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:23:138 MiRam/(16458:16481): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:23:138 MiRam/(16458:16480): el cliente se desconecto. Terminando servidor
+[INFO] 20:45:39:692 MiRam/(16539:16552): Se asigno espacio de memoria a todo
+[INFO] 20:45:49:195 MiRam/(16539:16552): Se expulso segmento 4
+[INFO] 20:45:51:601 MiRam/(16539:16552): Se expulso segmento 5
+[INFO] 20:45:51:601 MiRam/(16539:16552): entreeeee
+[ERROR] 20:46:04:550 MiRam/(16539:16552): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:46:04:550 MiRam/(16539:16565): el cliente se desconecto. Terminando servidor
+[ERROR] 20:46:04:550 MiRam/(16539:16564): el cliente se desconecto. Terminando servidor
+[ERROR] 20:46:04:550 MiRam/(16539:16563): el cliente se desconecto. Terminando servidor
+[ERROR] 20:46:04:550 MiRam/(16539:16562): el cliente se desconecto. Terminando servidor
+[ERROR] 20:46:04:550 MiRam/(16539:16561): el cliente se desconecto. Terminando servidor
+[ERROR] 20:46:15:381 MiRam/(16572:16584): el cliente se desconecto. Terminando servidor
+[INFO] 20:47:25:734 MiRam/(16589:16634): Se asigno espacio de memoria a todo
+[INFO] 20:47:27:873 MiRam/(16589:16634): Se asigno espacio de memoria a todo
+[INFO] 20:47:44:230 MiRam/(16589:16634): Se expulso segmento 4
+[INFO] 20:47:45:994 MiRam/(16589:16634): Se expulso segmento 5
+[INFO] 20:47:45:995 MiRam/(16589:16634): entreeeee
+[INFO] 20:48:10:335 MiRam/(16589:16634): Se asigno espacio de memoria a todo
+[ERROR] 20:48:34:789 MiRam/(16589:16634): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:48:34:790 MiRam/(16589:16657): el cliente se desconecto. Terminando servidor
+[ERROR] 20:48:34:790 MiRam/(16589:16656): el cliente se desconecto. Terminando servidor
+[ERROR] 20:48:34:790 MiRam/(16589:16655): el cliente se desconecto. Terminando servidor
+[ERROR] 20:48:34:790 MiRam/(16589:16654): el cliente se desconecto. Terminando servidor
+[ERROR] 20:48:34:790 MiRam/(16589:16653): el cliente se desconecto. Terminando servidor
+[ERROR] 20:48:34:790 MiRam/(16589:16647): el cliente se desconecto. Terminando servidor
+[ERROR] 20:48:34:790 MiRam/(16589:16646): el cliente se desconecto. Terminando servidor
+[ERROR] 20:48:34:790 MiRam/(16589:16645): el cliente se desconecto. Terminando servidor
+[ERROR] 20:48:34:790 MiRam/(16589:16644): el cliente se desconecto. Terminando servidor
+[ERROR] 20:48:34:790 MiRam/(16589:16643): el cliente se desconecto. Terminando servidor
+[INFO] 20:48:58:226 MiRam/(16680:16693): Se asigno espacio de memoria a todo
+[INFO] 20:48:59:670 MiRam/(16680:16693): Se asigno espacio de memoria a todo
+[INFO] 20:49:13:300 MiRam/(16680:16693): Se expulso segmento 4
+[INFO] 20:49:16:696 MiRam/(16680:16693): Se expulso segmento 6
+[INFO] 20:49:26:101 MiRam/(16680:16693): Se expulso segmento 5
+[ERROR] 20:49:36:508 MiRam/(16680:16693): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:49:36:509 MiRam/(16680:16716): el cliente se desconecto. Terminando servidor
+[ERROR] 20:49:36:509 MiRam/(16680:16716): el cliente se desconecto. Terminando servidor
+[ERROR] 20:49:36:509 MiRam/(16680:16715): el cliente se desconecto. Terminando servidor
+[ERROR] 20:49:36:509 MiRam/(16680:16714): el cliente se desconecto. Terminando servidor
+[ERROR] 20:49:36:509 MiRam/(16680:16713): el cliente se desconecto. Terminando servidor
+[ERROR] 20:49:36:509 MiRam/(16680:16712): el cliente se desconecto. Terminando servidor
+[ERROR] 20:49:36:509 MiRam/(16680:16706): el cliente se desconecto. Terminando servidor
+[ERROR] 20:49:36:509 MiRam/(16680:16705): el cliente se desconecto. Terminando servidor
+[ERROR] 20:49:36:509 MiRam/(16680:16704): el cliente se desconecto. Terminando servidor
+[ERROR] 20:49:36:509 MiRam/(16680:16703): el cliente se desconecto. Terminando servidor
+[ERROR] 20:49:36:509 MiRam/(16680:16702): el cliente se desconecto. Terminando servidor
+[INFO] 20:55:22:406 MiRam/(16867:16882): Se asigno espacio de memoria a todo
+[ERROR] 20:55:29:292 MiRam/(16867:16882): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:55:29:293 MiRam/(16867:16897): el cliente se desconecto. Terminando servidor
+[ERROR] 20:55:29:293 MiRam/(16867:16896): el cliente se desconecto. Terminando servidor
+[ERROR] 20:55:29:293 MiRam/(16867:16895): el cliente se desconecto. Terminando servidor
+[ERROR] 20:55:29:293 MiRam/(16867:16894): el cliente se desconecto. Terminando servidor
+[ERROR] 20:55:29:293 MiRam/(16867:16893): el cliente se desconecto. Terminando servidor

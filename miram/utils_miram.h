@@ -213,6 +213,7 @@ espacio_de_memoria* asignar_espacio_de_memoria(size_t);
 void imprimir_tabla_segmentos_patota(tabla_segmentacion*);
 void eliminar_segmento(int, tabla_segmentacion*);
 void ordenar_memoria();
+void unir_espacios_contiguos_libres();
 bool patota_segmentacion(uint32_t, uint32_t, char*, t_list*);
 bool funcion_expulsar_tripulante(uint32_t tripulante_id);
 
