@@ -149,7 +149,6 @@ typedef struct{
 typedef struct{
 	int id_patota;
 	t_list* segmento_inicial;
-
 }tabla_segmentacion;
 
 typedef struct{
@@ -170,6 +169,8 @@ void recibir_mensaje(int);
 int recibir_operacion(int);
 void leer_config();
 tarea* crear_tarea(tarea_tripulante,int,int,int,int);
+void enviar_mensaje(char* mensaje, int socket_cliente);
+void* serializar_paquete(t_paquete* paquete, int bytes);
 
 
 //Funciones memoria
@@ -209,7 +210,7 @@ espacio_de_memoria* asignar_espacio_de_memoria(size_t);
 void imprimir_tabla_segmentos_patota(tabla_segmentacion*);
 void eliminar_segmento(int, tabla_segmentacion*);
 void ordenar_memoria();
-void patota_segmentacion(uint32_t, uint32_t, char*, t_list*);
+bool patota_segmentacion(uint32_t, uint32_t, char*, t_list*);
 
 pcbPatota* crear_pcb(uint32_t numero_patota);
 

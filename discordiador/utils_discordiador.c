@@ -191,6 +191,14 @@ t_list* recibir_paquete(int socket_cliente)
 	return NULL;
 }
 
+char* recibir_mensaje(int socket_cliente)
+{
+	int size;
+	char* buffer = recibir_buffer(&size, socket_cliente);
+	//free(buffer);
+	return buffer;
+}
+
 /*Operaciciones para mostrar en discordiador*/
 
 

@@ -137,6 +137,8 @@ void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
+char* recibir_mensaje(int socket_cliente);
+
 int menu_discordiador(int , int, t_log* );
 tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, uint32_t);
 pcbPatota* crear_patota(uint32_t , uint32_t);

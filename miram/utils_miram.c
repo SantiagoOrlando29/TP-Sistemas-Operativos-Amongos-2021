@@ -102,7 +102,14 @@ int funcion_cliente(int socket_cliente){
 
 				//---------------------------SEGMENTACION--------------------------------------------------
 
-				patota_segmentacion(pid, cantidad_tripulantes, tarea, lista);
+				bool todo_ok = patota_segmentacion(pid, cantidad_tripulantes, tarea, lista);
+				if (todo_ok == false){
+					log_warning(logger, "no se puedo asignar espacio de memoria a todo");
+				} else {
+					char* mensaje = malloc(17);
+					mensaje = "memoria asignada";
+					enviar_mensaje(mensaje, socket_cliente);
+				}
 
 				break;
 
@@ -129,11 +136,11 @@ int funcion_cliente(int socket_cliente){
 
 				break;*/
 
-			/*case PEDIR_TAREA:
+			case PEDIR_TAREA:
 				log_info(logger, "Tripulante quiere tarea");
 				enviar_header(PEDIR_TAREA, socket_cliente);
 
-				return 0;*/
+				return 0;
 
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
@@ -215,7 +222,30 @@ t_list* recibir_paquete(int socket_cliente)
 	return NULL;
 }
 
-// enviar mensajes
+
+void enviar_mensaje(char* mensaje, int socket_cliente)
+{
+	t_paquete* paquete = malloc(sizeof(t_paquete));
+
+	paquete->buffer = malloc(sizeof(t_buffer));
+	paquete->buffer->size = strlen(mensaje) + 1;
+	paquete->buffer->stream = malloc(paquete->buffer->size);
+	memcpy(paquete->buffer->stream, mensaje, paquete->buffer->size);
+
+	int bytes = paquete->buffer->size + sizeof(int);
+
+	void* a_enviar = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(a_enviar + desplazamiento, &(paquete->buffer->size), sizeof(int));
+	desplazamiento+= sizeof(int);
+	memcpy(a_enviar + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
+
+	send(socket_cliente, a_enviar, bytes, 0);
+
+	free(a_enviar);
+	eliminar_paquete(paquete);
+}
 
 void* serializar_paquete(t_paquete* paquete, int bytes)
 {
@@ -830,11 +860,17 @@ espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) { //falta
     }
 }
 
-void patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tarea, t_list* lista){
+bool patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tarea, t_list* lista){
 	pcbPatota* pcb_patota = crear_pcb(pid);
 	espacio_de_memoria* espacio_de_memoria_pcb_patota = asignar_espacio_de_memoria(tamanio_pcb(pcb_patota));
+	if (espacio_de_memoria_pcb_patota == NULL){
+		return false;
+	}
 
 	espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea)+1);
+	if (espacio_de_memoria_tareas == NULL){
+		return false;
+	}
 	pcb_patota->tareas = espacio_de_memoria_tareas->base;//CREO QUE ESTA MAL ESTO. PQ TIENE LA DIR FISICA, NO LA LOGICA.
 	//TENDRIA QUE SER ALGO COMO 1 0 PQ LAS TAREAS ESTAN EN SEGMENTO 1 DESP 0
 
@@ -862,6 +898,9 @@ void patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tare
 		tripulante=(tcbTripulante*)list_get(lista,i);
 
 		espacio_de_memoria* espacio_de_memoria_tcb_tripulante = asignar_espacio_de_memoria(tamanio_tcb(tripulante));
+		if (espacio_de_memoria_tcb_tripulante == NULL){
+			return false;
+		}
 
 		segmento* segmento_tcb = malloc(sizeof(segmento));
 		segmento_tcb->numero_segmento = i;
@@ -882,5 +921,6 @@ void patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tare
 
 	imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
 
+	return true;
 }
 

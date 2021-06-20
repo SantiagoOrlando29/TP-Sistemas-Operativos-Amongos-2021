@@ -731,3 +731,103 @@
 [ERROR] 12:36:22:237 MiRam/(6684:6706): el discordiador finalizo el programa. Terminando servidor
 [INFO] 12:36:36:351 MiRam/(6711:6724): elimino
 [ERROR] 12:36:38:116 MiRam/(6711:6724): el cliente se desconecto. Terminando servidor
+[INFO] 13:48:56:144 MiRam/(7742:7766): Respondiendo
+[ERROR] 13:49:03:488 MiRam/(7742:7766): el discordiador finalizo el programa. Terminando servidor
+[INFO] 13:49:34:036 MiRam/(7782:7804): Respondiendo
+[INFO] 13:49:45:006 MiRam/(7782:7804): Respondiendo
+[ERROR] 13:49:49:895 MiRam/(7782:7804): el discordiador finalizo el programa. Terminando servidor
+[INFO] 14:30:20:044 MiRam/(8458:8484): elimino
+[INFO] 14:30:21:220 MiRam/(8458:8484): elimino
+[WARNING] 14:30:26:368 MiRam/(8458:8484): No hay espacios de memoria libres
+[WARNING] 14:30:26:369 MiRam/(8458:8484): No se pudo asignar espacio de memoria
+[ERROR] 14:30:37:997 MiRam/(8458:8484): el discordiador finalizo el programa. Terminando servidor
+[INFO] 14:51:12:117 MiRam/(8897:8938): elimino
+[INFO] 14:51:22:876 MiRam/(8897:8938): elimino
+[ERROR] 14:51:35:710 MiRam/(8897:8938): el discordiador finalizo el programa. Terminando servidor
+[INFO] 14:52:37:396 MiRam/(8953:8992): elimino
+[INFO] 14:52:45:351 MiRam/(8953:8992): elimino
+[ERROR] 14:52:53:546 MiRam/(8953:8992): el discordiador finalizo el programa. Terminando servidor
+[INFO] 14:57:03:950 MiRam/(9049:9092): elimino
+[INFO] 14:57:06:999 MiRam/(9049:9092): elimino
+[ERROR] 14:57:20:310 MiRam/(9049:9092): el discordiador finalizo el programa. Terminando servidor
+[INFO] 14:59:56:328 MiRam/(9118:9152): elimino
+[ERROR] 15:00:01:714 MiRam/(9118:9152): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:01:39:962 MiRam/(9209:9226): elimino
+[ERROR] 15:01:44:216 MiRam/(9209:9226): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:07:22:589 MiRam/(9375:9400): elimino
+[INFO] 15:07:31:731 MiRam/(9375:9400): elimino
+[ERROR] 15:08:26:309 MiRam/(9375:9400): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:10:42:691 MiRam/(9460:9483): elimino
+[INFO] 15:10:45:800 MiRam/(9460:9483): elimino
+[ERROR] 15:10:54:653 MiRam/(9460:9483): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:12:27:088 MiRam/(9531:9557): elimino
+[ERROR] 15:12:31:245 MiRam/(9531:9557): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:12:58:456 MiRam/(9571:9602): elimino
+[ERROR] 15:13:01:879 MiRam/(9571:9602): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:25:10:129 MiRam/(10103:10129): elimino
+[ERROR] 15:25:19:885 MiRam/(10103:10129): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:26:41:094 MiRam/(10136:10161): elimino
+[ERROR] 15:26:41:812 MiRam/(10136:10161): el cliente se desconecto. Terminando servidor
+[INFO] 15:27:51:376 MiRam/(10211:10229): elimino
+[ERROR] 15:27:52:042 MiRam/(10211:10229): el cliente se desconecto. Terminando servidor
+[INFO] 15:29:48:481 MiRam/(10293:10326): elimino
+[ERROR] 15:29:49:201 MiRam/(10293:10326): el cliente se desconecto. Terminando servidor
+[INFO] 15:31:03:707 MiRam/(10335:10384): elimino
+[ERROR] 15:31:04:227 MiRam/(10335:10384): el cliente se desconecto. Terminando servidor
+[INFO] 15:32:16:785 MiRam/(10399:10424): elimino
+[ERROR] 15:32:17:261 MiRam/(10399:10424): el cliente se desconecto. Terminando servidor
+[INFO] 15:33:32:176 MiRam/(10434:10464): elimino
+[ERROR] 15:33:33:179 MiRam/(10434:10464): el cliente se desconecto. Terminando servidor
+[INFO] 15:34:42:151 MiRam/(10478:10503): elimino
+[ERROR] 15:34:42:875 MiRam/(10478:10503): el cliente se desconecto. Terminando servidor
+[INFO] 15:37:37:716 MiRam/(10533:10555): elimino
+[ERROR] 15:37:38:563 MiRam/(10533:10555): el cliente se desconecto. Terminando servidor
+[INFO] 15:38:51:371 MiRam/(10581:10608): elimino
+[ERROR] 15:38:51:919 MiRam/(10581:10608): el cliente se desconecto. Terminando servidor
+[INFO] 15:40:22:594 MiRam/(10624:10650): elimino
+[ERROR] 15:41:17:372 MiRam/(10624:10650): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:44:34:410 MiRam/(10675:10699): elimino
+[ERROR] 15:44:35:272 MiRam/(10675:10699): el cliente se desconecto. Terminando servidor
+[INFO] 15:52:54:429 MiRam/(10775:10802): elimino
+[ERROR] 15:52:55:161 MiRam/(10775:10802): el cliente se desconecto. Terminando servidor
+[ERROR] 15:55:24:178 MiRam/(10834:10854): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:55:40:134 MiRam/(10856:10885): elimino
+[ERROR] 15:55:41:422 MiRam/(10856:10885): el cliente se desconecto. Terminando servidor
+[INFO] 15:57:19:891 MiRam/(10910:10934): elimino
+[ERROR] 15:57:20:382 MiRam/(10910:10934): el cliente se desconecto. Terminando servidor
+[INFO] 15:58:50:120 MiRam/(10950:10981): elimino
+[ERROR] 15:58:50:796 MiRam/(10950:10981): el cliente se desconecto. Terminando servidor
+[INFO] 16:00:19:478 MiRam/(10996:11021): elimino
+[ERROR] 16:00:19:861 MiRam/(10996:11021): el cliente se desconecto. Terminando servidor
+[INFO] 16:01:32:365 MiRam/(11044:11069): elimino
+[ERROR] 16:01:32:914 MiRam/(11044:11069): el cliente se desconecto. Terminando servidor
+[INFO] 16:02:43:345 MiRam/(11079:11118): elimino
+[ERROR] 16:02:43:914 MiRam/(11079:11118): el cliente se desconecto. Terminando servidor
+[INFO] 16:05:54:747 MiRam/(11162:11187): elimino
+[ERROR] 16:05:55:425 MiRam/(11162:11187): el cliente se desconecto. Terminando servidor
+[INFO] 16:07:02:999 MiRam/(11210:11241): elimino
+[ERROR] 16:07:03:338 MiRam/(11210:11241): el cliente se desconecto. Terminando servidor
+[INFO] 16:09:14:550 MiRam/(11272:11298): elimino
+[ERROR] 16:09:14:927 MiRam/(11272:11298): el cliente se desconecto. Terminando servidor
+[ERROR] 16:10:44:014 MiRam/(11309:11347): el cliente se desconecto. Terminando servidor
+[ERROR] 16:13:21:409 MiRam/(11371:11396): el cliente se desconecto. Terminando servidor
+[INFO] 16:14:32:076 MiRam/(11407:11444): elimino
+[ERROR] 16:14:32:496 MiRam/(11407:11444): el cliente se desconecto. Terminando servidor
+[INFO] 16:15:46:044 MiRam/(11454:11490): elimino
+[INFO] 16:16:59:623 MiRam/(11454:11490): elimino
+[WARNING] 16:17:04:156 MiRam/(11454:11490): No hay espacios de memoria libres
+[WARNING] 16:17:04:156 MiRam/(11454:11490): No se pudo asignar espacio de memoria
+[WARNING] 16:17:04:156 MiRam/(11454:11490): no se puedo asignar espacio de memoria a todo
+[INFO] 16:21:22:309 MiRam/(11540:11565): elimino
+[INFO] 16:21:30:956 MiRam/(11540:11565): elimino
+[INFO] 16:21:42:313 MiRam/(11540:11565): elimino
+[WARNING] 16:21:59:543 MiRam/(11540:11565): No hay espacios de memoria libres
+[WARNING] 16:21:59:543 MiRam/(11540:11565): No se pudo asignar espacio de memoria
+[WARNING] 16:21:59:543 MiRam/(11540:11565): no se puedo asignar espacio de memoria a todo
+[INFO] 16:25:36:307 MiRam/(11649:11679): elimino
+[INFO] 16:25:36:325 MiRam/(11649:11685): Tripulante quiere tarea
+[INFO] 16:25:36:330 MiRam/(11649:11686): Tripulante quiere tarea
+[INFO] 16:25:36:334 MiRam/(11649:11687): Tripulante quiere tarea
+[INFO] 16:25:36:335 MiRam/(11649:11688): Tripulante quiere tarea
+[INFO] 16:25:36:336 MiRam/(11649:11689): Tripulante quiere tarea
+[ERROR] 16:26:26:908 MiRam/(11649:11679): el discordiador finalizo el programa. Terminando servidor

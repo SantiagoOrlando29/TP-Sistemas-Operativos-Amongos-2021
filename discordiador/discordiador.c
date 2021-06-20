@@ -78,11 +78,11 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	//si funcion tomar tarea != null entonces
 	tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,4); //TAREA NORMAL
 
-	/*	int conexion_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
+	int conexion_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	enviar_header(PEDIR_TAREA, conexion_miram);
 	int tipo_mensaje = recibir_operacion(conexion_miram);
 	printf("tipo_mensaje %d\n", tipo_mensaje);
-	close(conexion_miram);*/
+	close(conexion_miram);
 
 	printf("hola soy el hilo %d, P%d, estoy listo para ejecutar \n", tripulante->tid, tripulante->puntero_pcb);
 	sem_post(&NUEVO_READY);
@@ -332,6 +332,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	uint32_t tid =1;
 	uint32_t posx = 0;
 	uint32_t posy = 0;
+	int numero_tripulantess = 0;
 
 	while(1){
 		t_paquete* paquete;
@@ -372,44 +373,29 @@ PRUEBA 5 tareas.txt 300|4 10|20 4|500
 							hay_mas_parametros = false;
 						} else {
 							char* posiciones = parametros[i+3];
+							char nuevo [8];
 							char* item;
 							item = strtok(posiciones,"|");
 							posx = atoi(item);
+							strcpy(nuevo,item);
+
 							item = strtok(NULL,"");
 							posy = atoi(item);
+
+							strcat(nuevo,"|");
+							strcat(nuevo,item);
+
+							strcpy(parametros[i+3],nuevo);
+
 						}
 					}
 
-					printf("El tripulante %d tiene posx %d y posy %d\n", i+1, posx,posy);
-					tripulante = crear_tripulante(tid,'N',posx,posy,1,1);
+					printf("El tripulante %d tiene posx %d y posy %d\n", tid, posx,posy);
+					tripulante = crear_tripulante(tid,'N',posx,posy,0,numero_patota);
 					posx =0;
 					posy =0;
 					agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 					tid++;
-
-					/*
-					tcbTripulante* tripulante =crear_tripulante(tid,'N',5,6,1,numero_patota);
-					//esta bien que al tripulante lo cree aca o lo tiene que crear miram?
-					//puntero a pcb y a prox instruccion obvio que no los tendria, pero aca en discordiador hace falta que los tenga?
-					//es mas, capaz en vez de usar la struct tcbTripulante podria crear una nueva q solo tenga tid, estado, posx, posy, nro_patota. no?
-					pthread_t nombreHilo = (char*)(tid);
-					pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
-					//y en la funcion tripulante_hilo los conectaria a memoria. esta bien que lo haga ahi?
-					pthread_detach(&nombreHilo);
-					list_add(lista_tripulantes_nuevo, tripulante);
-					sem_post(&AGREGAR_NUEVO_A_READY);
-					*/
-/*1.- iniciar una patota lo cual conlleva:
-
-Pedirle a Mi-RAM HQ que cree las estructuras (que desde discordiador no te importa cuales ni como las crea)
-Enviarle el contenido del archivo de tareas
-Crear los threads de los tripulantes y conectarlos a la memoria.
-
-2.- Una vez que hiciste el paso 1 si tenes habilitada la planificación tenes que:
-
-Solicitarle desde el tripulante a Mi-RAM HQ la próxima tarea.
-Mover el tripulante de NEW a READY,*/
-
 				}
 
 				char* largo_tarea = malloc(sizeof(char));
@@ -421,8 +407,45 @@ Mover el tripulante de NEW a READY,*/
 
 				enviar_paquete(paquete, conexionMiRam);
 
-				eliminar_paquete(paquete);
 
+				//recibe confirmacion de miram de que esta todo bien
+				char* mensaje_recibido = malloc(17);
+				mensaje_recibido = recibir_mensaje(conexionMiRam);
+				log_info(logger, mensaje_recibido);
+
+				if(strcmp(mensaje_recibido, "memoria asignada") ==0){//VER SI HAY OTRA MANERA DE CREAR TRIPULANTES PARA NO REPETIR LO DE ARRIBA
+					hay_mas_parametros = true;
+					tid -= cantidad_tripulantes;
+					for(int i = 0; i < cantidad_tripulantes ; i++){
+						if (hay_mas_parametros == true){
+							if (parametros[i+3] == NULL){
+								hay_mas_parametros = false;
+							} else {
+								char* posiciones = parametros[i+3];
+								char* item;
+								item = strtok(posiciones,"|");
+								posx = atoi(item);
+								item = strtok(NULL,"");
+								posy = atoi(item);
+							}
+						}
+
+						//printf("El tripulante %d tiene posx %d y posy %d\n", tid, posx,posy);
+						tripulante = crear_tripulante(tid,'N',posx,posy,0,numero_patota);
+						pthread_t nombreHilo = (char*)(tid);
+						pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
+						pthread_detach(&nombreHilo);
+						list_add(lista_tripulantes_nuevo, tripulante);
+						sem_post(&AGREGAR_NUEVO_A_READY);
+
+						posx =0;
+						posy =0;
+						tid++;
+					}
+				}
+
+
+				eliminar_paquete(paquete);
 
 				break;
 
@@ -434,8 +457,9 @@ Mover el tripulante de NEW a READY,*/
 				numero_patota++;
 				while(cantidad_tripulantes < 5){
 					cantidad_tripulantes ++;
-					tcbTripulante* tripulante =crear_tripulante(cantidad_tripulantes,'N',5,6,1,numero_patota);
-					pthread_t nombreHilo = (char*)(cantidad_tripulantes);
+					numero_tripulantess++;
+					tcbTripulante* tripulante =crear_tripulante(numero_tripulantess,'N',5,6,1,numero_patota);
+					pthread_t nombreHilo = (char*)(numero_tripulantess);
 					pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
 					pthread_detach(&nombreHilo);
 					list_add(lista_tripulantes_nuevo, tripulante);
