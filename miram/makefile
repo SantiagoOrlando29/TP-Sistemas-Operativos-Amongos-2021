@@ -1,2 +1,2 @@
 server: miram.c utils_miram.c
-		gcc  miram.c utils_miram.c -o miram -lcommons
+		gcc -g  miram.c utils_miram.c -o miram -lcommons -lpthread

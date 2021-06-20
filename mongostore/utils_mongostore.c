@@ -187,20 +187,11 @@ void crearDireccion(char* direccion){
 		printf("\nDireccion ya existente...\n");
 	}
 }
+
+
 void eliminarDirectorio(char* path){
 	rmdir(path);
 }
 //uint32_t size,uint32_t block_count,char* blocks,char caracter_llenado,char* md5,
-void crearRecursoMetadata(uint32_t size,uint32_t block_count,char* blocks,char caracter_llenado,char* md5,char* path){
-	FILE* archivo;
-	//config_metadata metadata;
-	archivo=fopen(path,"at+");
 
-	fputs(string_from_format("SIZE=%d\n",size),archivo);
-	fputs(string_from_format("BLOCK_COUNT=%d\n",block_count),archivo);
-	fputs(string_from_format("BLOCKS=%s\n",blocks),archivo);
-	fputs(string_from_format("CARACTER_LLENADO=%c\n",caracter_llenado),archivo);
-	fputs(string_from_format("MD5_ARCHIVO=%s\n",md5),archivo);
 
-	fclose(archivo);
-}

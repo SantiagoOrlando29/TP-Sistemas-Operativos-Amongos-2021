@@ -1,8 +1,15 @@
 #include "utils_miram.h"
 
-int iniciar_servidor(char* ip_miram, char* puerto_miram)
+int variable_servidor = -1;
+int socket_servidor;
+
+void iniciar_servidor(config_struct* config_servidor)
 {
-	int socket_servidor;
+	t_log* logg;
+	logg = log_create("MiRam1.log", "MiRam1", 1, LOG_LEVEL_DEBUG);
+	log_info(logg, "Servidor iniciando");
+
+	//int socket_servidor;
 
     struct addrinfo hints, *servinfo, *p;
 
@@ -11,7 +18,7 @@ int iniciar_servidor(char* ip_miram, char* puerto_miram)
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
-    getaddrinfo(ip_miram, puerto_miram, &hints, &servinfo);
+    getaddrinfo(config_servidor->ip_miram, config_servidor->puerto_miram, &hints, &servinfo);
 
     for (p=servinfo; p != NULL; p = p->ai_next)
     {
@@ -27,32 +34,139 @@ int iniciar_servidor(char* ip_miram, char* puerto_miram)
 
 	listen(socket_servidor, SOMAXCONN);
 
-    freeaddrinfo(servinfo);
+	freeaddrinfo(servinfo);
 
-    log_trace(logger, "Servidor MiRam encendido");
+	log_info(logg, "Servidor MiRam encendido");
 
-    return socket_servidor;
-}
 
-int esperar_cliente(int socket_servidor)
-{
 	struct sockaddr_in dir_cliente;
 	int tam_direccion = sizeof(struct sockaddr_in);
+	int socket_cliente = 0;
 
-	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
+	printf("Llegue");
 
-	log_info(logger, "Estableciendo conexion desde discordiador");
 
-	return socket_cliente;
+	int hilo;
+	while(variable_servidor != 0){
+
+		socket_cliente = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
+
+		if(socket_cliente>0){
+			hilo ++ ;
+			log_info(logg, "Estableciendo conexión desde %d", dir_cliente.sin_port);
+			log_info(logg, "Creando hilo");
+
+			pthread_t hilo_cliente=(char)hilo;
+			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente ,(void*)socket_cliente);
+			pthread_detach(hilo_cliente);
+		}
+	}
+
+	printf("Me fui\n");
+
+
 }
+
+
+int funcion_cliente(int socket_cliente){
+	t_list* lista = list_create();
+	pcbPatota* patota;
+	tcbTripulante* tripulante;
+	t_paquete* paquete;
+	int tipoMensajeRecibido = -1;
+	printf("Se conecto este socket a mi %d\n",socket_cliente);
+	while(1){
+
+		tipoMensajeRecibido = recibir_operacion(socket_cliente);
+		switch(tipoMensajeRecibido)
+		{
+			case PRUEBA:
+				lista = recibir_paquete(socket_cliente);
+
+				uint32_t pid = (uint32_t)atoi(list_get(lista,0));
+				printf("el numero de la patota es %d", pid);
+				patota = crear_patota(pid,0);
+
+				uint32_t cantidad_tripulantes = (uint32_t)atoi(list_get(lista,1));
+				printf("cant tripu %d\n", cantidad_tripulantes);
+
+				for(int i=2; i < cantidad_tripulantes +2; i++){
+					tripulante=(tcbTripulante*)list_get(lista,i);
+					mostrar_tripulante(tripulante, patota);
+					printf("\n");
+				}
+
+				char* tarea = malloc((uint32_t)atoi(list_get(lista, cantidad_tripulantes+2)));
+				tarea=(char*)list_get(lista, cantidad_tripulantes+3);
+				printf("Las tareas serializadas son: %s \n", tarea);
+
+				//---------------------------SEGMENTACION--------------------------------------------------
+
+				patota_segmentacion(pid, cantidad_tripulantes, tarea, lista);
+
+				break;
+
+			case INICIAR_PATOTA:
+				log_info(logger, "Respondiendo");
+				enviar_header(INICIAR_PATOTA, socket_cliente);
+				break;
+
+			/*case LISTAR_TRIPULANTES:
+				t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
+				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
+				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+				enviar_paquete(paquete,socket_cliente);
+				eliminar_paquete(paquete);
+				break;*/
+
+
+			/*case EXPULSAR_TRIPULANTE:
+				lista = recibir_paquete(socket_cliente);
+
+				uint32_t tripulante_id = (uint32_t*)atoi(list_get(lista,0));
+
+				eliminar_segmento(tripulante_id +2, tabla_segmentos_patota);//+2 porque los 2 primeros segmentos son de pcb y tareas.
+
+				break;*/
+
+			/*case PEDIR_TAREA:
+				log_info(logger, "Tripulante quiere tarea");
+				enviar_header(PEDIR_TAREA, socket_cliente);
+
+				return 0;*/
+
+			case FIN:
+				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
+				variable_servidor = 0;
+				shutdown(socket_servidor, SHUT_RD);
+				close(socket_cliente);
+				return EXIT_FAILURE;
+
+			case -1:
+				log_error(logger, "el cliente se desconecto. Terminando servidor");
+				variable_servidor = 0;
+				shutdown(socket_servidor, SHUT_RD);
+				close(socket_cliente);
+				return EXIT_FAILURE;
+
+			default:
+				log_warning(logger, "Operacion desconocida. No quieras meter la pata");
+				break;
+
+		}
+	}
+}
+
+
 
 int recibir_operacion(int socket_cliente)
 {
-	int tipoMensaje;
-	if(recv(socket_cliente, &tipoMensaje, sizeof(int), MSG_WAITALL) != 0)
-		return tipoMensaje;
-	else
-	{
+	int cod_op;
+	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) !=0 ){
+		printf("%d", cod_op);
+		return cod_op;
+	}
+	else{
 		close(socket_cliente);
 		return -1;
 	}
@@ -152,7 +266,7 @@ pcbPatota* crear_patota(uint32_t pid, uint32_t tareas){
 	return patota;
 }
 
-void mostrar_tripulante(tcbTripulante* tripulante,pcbPatota* patota){
+void mostrar_tripulante(tcbTripulante* tripulante, pcbPatota* patota){
 	printf("ID %d \n",tripulante->tid);
 	printf("posicion x: %d \n",tripulante->posicionX);
 	printf("posicion y: %d \n",tripulante->posicionY);
@@ -181,6 +295,19 @@ void enviar_paquete(t_paquete* paquete, int socket_cliente)
 	free(a_enviar);
 }
 
+void enviar_header(tipoMensaje tipo, int socket_cliente)
+{
+	t_paquete* paquete = malloc(sizeof(t_paquete));
+	paquete->mensajeOperacion = tipo;
+
+	void * magic = malloc(sizeof(paquete->mensajeOperacion));
+	memcpy(magic, &(paquete->mensajeOperacion), sizeof(int));
+
+	send(socket_cliente, magic, sizeof(paquete->mensajeOperacion), 0);
+
+	free(magic);
+}
+
 void eliminar_paquete(t_paquete* paquete)
 {
 	free(paquete->buffer->stream);
@@ -199,8 +326,561 @@ size_t tamanio_pcb(pcbPatota* patota){
 	return tamanio;
 }
 
-
 void mensajeError (t_log* logger) {
 	printf("Error, no existe tal proceso\n");
 	log_error(logger, "Error en la operacion");
 }
+
+tarea* crear_tarea(tarea_tripulante cod_tarea,int parametro,int pos_x,int pos_y,int tiempo){
+	tarea* tarea_recibida = malloc(sizeof(tarea));
+	tarea_recibida->tarea=cod_tarea;
+	tarea_recibida->parametro=parametro;
+	tarea_recibida->pos_x=pos_x;
+	tarea_recibida->pos_y=pos_y;
+	tarea_recibida->tiempo=tiempo;
+	return tarea_recibida;
+
+}
+
+
+void iniciar_miram(config_struct* config_servidor){
+
+	config_servidor->posicion_inicial= malloc(sizeof(atoi(config_servidor->tamanio_memoria)));
+	printf("%d\n",atoi(config_servidor->tamanio_memoria));
+	printf("Pos inicial %d\n", (int)config_servidor->posicion_inicial);
+
+	if(strcmp(config_servidor->squema_memoria,"PAGINACION")==0){
+
+		config_servidor->cant_marcos=atoi(config_servidor->tamanio_memoria)/atoi(config_servidor->tamanio_pag);
+		config_servidor->marcos= malloc(config_servidor->cant_marcos);
+
+		//Inicializo el array en 0, me indica la ocupacion de los marcos
+		for(int i=0; i<config_servidor->cant_marcos;i++){
+			config_servidor->marcos[i]=malloc(sizeof(int));
+			config_servidor->marcos[i]= 0;
+		}
+
+	}else{
+		tabla_espacios_de_memoria = list_create();
+		espacio_de_memoria* memoria_principal = crear_espacio_de_memoria(0, atoi(config_servidor->tamanio_memoria), true);
+		list_add(tabla_espacios_de_memoria, memoria_principal);
+		imprimir_tabla_espacios_de_memoria();
+	}
+}
+
+void finalizar_miram(config_struct* config_servidor){
+	free(config_servidor->posicion_inicial);
+	for(int i=0; i<config_servidor->cant_marcos;i++){
+				free(config_servidor->marcos[i]);
+			}
+}
+
+
+void agregar_segmentos(t_list* lista_aux_seg){
+
+	tabla_segmentacion* tabla1= malloc(sizeof(tabla_segmentacion));
+	tabla_segmentacion* tabla2= malloc(sizeof(tabla_segmentacion));
+
+	segmento* segmento1= malloc(sizeof(segmento));
+	segmento* segmento2= malloc(sizeof(segmento));
+
+	tabla1->id_patota =1;
+	tabla2->id_patota =2;
+
+	segmento1->base=100;
+	segmento1->tamanio=200;
+
+	segmento2->base=300;
+	segmento2->tamanio=400;
+
+	tabla1->segmento_inicial=list_create();
+	tabla2->segmento_inicial=list_create();
+
+	list_add(tabla1->segmento_inicial, segmento1);
+	list_add(tabla2->segmento_inicial, segmento2);
+
+	list_add(lista_aux_seg, tabla1);
+	list_add(lista_aux_seg, tabla2);
+
+
+}
+
+
+
+void agregar_memoria_aux(t_list* lista_aux_memoria,config_struct* config_servidor ){
+
+	tabla_paginacion* tabla1=malloc(sizeof(tabla_paginacion));
+	tabla_paginacion* tabla2=malloc(sizeof(tabla_paginacion));
+	marco* marco1= malloc(sizeof(marco));
+	marco* marco2= malloc(sizeof(marco));
+	marco* marco3= malloc(sizeof(marco));
+	marco* marco4= malloc(sizeof(marco));
+	marco1->libre=0;
+	marco2->libre=0;
+	marco3->libre=1;
+	marco4->libre=1;
+	marco1->id_marco=posicion_marco(config_servidor);
+	marco2->id_marco=posicion_marco(config_servidor);
+	marco3->id_marco=posicion_marco(config_servidor);
+	marco4->id_marco=posicion_marco(config_servidor);
+	tabla1->id_patota =1;
+	tabla2->id_patota =2;
+	tabla1->ubicacion = MEM_PRINCIPAL;
+	tabla1->marco_inicial=list_create();
+	tabla2->marco_inicial=list_create();
+	list_add(tabla1->marco_inicial, marco1);
+	list_add(tabla1->marco_inicial, marco2);
+	list_add(tabla1->marco_inicial, marco3);
+	list_add(tabla2->marco_inicial, marco4);
+	list_add(lista_aux_memoria, tabla1);
+	list_add(lista_aux_memoria, tabla2);
+
+}
+
+void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* tabla_aux, config_struct* configuracion){
+
+	tabla_paginacion* una_tabla = (tabla_paginacion*)list_get(tabla_aux, posicion_patota(id_patota, tabla_aux));
+	int contador_tablas= 0;
+	int marco_disponible = 0;
+
+	while(contador_tablas<list_size(una_tabla->marco_inicial) && marco_disponible != 1){
+		marco* marco_leido = list_get(una_tabla->marco_inicial,contador_tablas);
+		if(marco_leido->libre == 0){
+			printf("hay lugares libres");
+			escribir_tripulante(tripulante, (marco_leido->id_marco)*(atoi(configuracion->tamanio_pag)) +  (configuracion->posicion_inicial));
+			marco_disponible = 1;
+		}
+		contador_tablas++;
+	}
+	if (marco_disponible == 0){
+		printf("No hay lugares en los marcos");
+	}
+
+}
+
+
+void imprimir_memoria(t_list* tabla_aux){
+	for(int i=0; i<list_size(tabla_aux);i++){
+		tabla_paginacion* auxiliar = (tabla_paginacion*)list_get(tabla_aux,i);
+		printf("Tabla paginacion correspondiente a patota %d\n", auxiliar->id_patota);
+		for(int j=0;j<list_size(auxiliar->marco_inicial);j++){
+			marco* marco_leido=list_get(auxiliar->marco_inicial,j);
+			printf("Marco en uso %d\n", marco_leido->id_marco);
+		}
+	}
+}
+
+void imprimir_seg(t_list* tabla_aux){
+	for(int i=0; i<list_size(tabla_aux);i++){
+		tabla_segmentacion* auxiliar = list_get(tabla_aux,i);
+		printf("Tabla segmentacion correspondiente a patota %d\n", auxiliar->id_patota);
+		for(int j=0;j<list_size(auxiliar->segmento_inicial);j++){
+			segmento* segmento_leido=list_get(auxiliar->segmento_inicial,j);
+			printf("Base %d\n", segmento_leido->base);
+			printf("Tamanio %d\n", segmento_leido->tamanio);
+		}
+	}
+}
+
+int posicion_marco(config_struct* config_servidor){
+	for(int i=0;i<config_servidor->cant_marcos;i++){
+		if(config_servidor->marcos[i]==0){
+			config_servidor->marcos[i]=(void*)1;
+			return i;
+		}
+
+	}
+	return -1;
+}
+
+void imprimir_ocupacion_marcos(config_struct configuracion){
+	printf("Marcos ocupados:\n");
+	for(int i=0; i<(configuracion.cant_marcos);i++){
+			printf("%d",(int)configuracion.marcos[i]);
+		}
+		printf("\n");
+}
+
+int posicion_patota(int id_buscado,t_list* tabla_aux){
+	for(int i=0; i<list_size(tabla_aux);i++){
+		tabla_paginacion* auxiliar= (tabla_paginacion*)list_get(tabla_aux, i);
+		if(auxiliar->id_patota==id_buscado){
+			return i;
+		}
+	}
+	return -1;
+
+	}
+
+int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco){
+	tabla_paginacion* auxiliar= (tabla_paginacion*)list_get(tabla_aux, posicion_patota);
+    marco* marco_leido=list_get(auxiliar->marco_inicial,nro_marco-1);
+	return marco_leido->id_marco;
+
+}
+
+
+void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial){
+	int offset = 0 ;
+	memcpy((posicion_inicial)+offset,&tripulante->tid,sizeof(int));
+	offset += sizeof(int);
+	memcpy((posicion_inicial)+offset,&tripulante->estado,sizeof(char));
+	offset += sizeof(char);
+	memcpy((posicion_inicial)+offset,&tripulante->posicionX,sizeof(int));
+	offset += sizeof(int);
+	memcpy((posicion_inicial)+offset,&tripulante->posicionY,sizeof(int));
+	offset += sizeof(int);
+	memcpy((posicion_inicial)+offset,&tripulante->prox_instruccion,sizeof(int));
+	offset += sizeof(int);
+	memcpy((posicion_inicial)+offset,&tripulante->puntero_pcb,sizeof(int));
+
+}
+
+
+// deserealizamos
+
+tcbTripulante* obtener_tripulante(void* inicio_tripulantes){
+	tcbTripulante* auxiliar=malloc(sizeof(tcbTripulante));
+	int desplazamiento = 0;
+	memcpy(&(auxiliar->tid), inicio_tripulantes+desplazamiento, sizeof(int));
+	desplazamiento += sizeof(int);
+	memcpy(&(auxiliar->estado), inicio_tripulantes+desplazamiento, sizeof(char));
+	desplazamiento += sizeof(char);
+	memcpy(&(auxiliar->posicionX), inicio_tripulantes+desplazamiento, sizeof(int));
+	desplazamiento += sizeof(int);
+	memcpy(&(auxiliar->posicionY), inicio_tripulantes+desplazamiento, sizeof(int));
+	desplazamiento += sizeof(int);
+	memcpy(&(auxiliar->prox_instruccion), inicio_tripulantes+desplazamiento, sizeof(int));
+	desplazamiento += sizeof(int);
+	memcpy(&(auxiliar->puntero_pcb), inicio_tripulantes+desplazamiento, sizeof(int));
+
+	return auxiliar;
+}
+
+/*
+pcbPatota* obtenerPCB(int id_patota){           //Recibe ID de patota y devuelve PCB alojado en memoria
+	pcbPatota* leida = malloc(sizeof(pcbPatota));
+	memcpy(&leida, marco_tarea(posicion_patota(id_patota)),sizeof(leida));
+
+	return leida;
+}
+
+
+
+
+}
+
+void ubicarTarea (patota_aux estructura_a,int n_tarea){
+
+}
+
+
+char* tarea_a_string(tarea* t){
+	char* tarea_s =string_nombre_tarea(t->tarea);
+	char* buffer;
+	char buffer_c[50];
+	char tarea[50];
+	sprintf(buffer_c," %d;%d;%d;%d|",t->parametro,t->pos_x,t->pos_y,t->tiempo );
+
+	size_t n = strlen(tarea_s) + 1;
+
+	char *s = malloc(n );
+	strcpy(s,tarea_s);
+	strcat(s,buffer_c);
+	return s;
+
+
+
+}
+/*
+
+void escribirTripulante(tripulante, tamanio_pag-ocupacion){
+	if(tamanio_pag-ocupacion>tamanio_id)
+	copiar_id;
+	ocupado++=copiar_id
+    if(tamanio_pag-ocupado>tamanio_id)
+	copiar_posicionx;
+	if(....)
+	copiar_posiciony;
+
+	else{
+	get_marco_vacio();
+	ocupacion=0;
+	}
+
+}
+
+
+*/
+/*
+void imprimir_tarea(int marco){
+
+printf("Lo leido es %s\n",(configuracion.posicion_inicial+marco*atoi(configuracion.tamanio_pag)));
+
+};*/
+
+pcbPatota* crear_pcb(uint32_t numero_patota){
+	pcbPatota* pcb = malloc(sizeof(pcbPatota));
+	pcb->pid = numero_patota;
+	//pcb->tareas = NULL;
+
+	return pcb;
+}
+
+
+int por_atributo(int nuevo_marco,int *tamanio_marco, int tipo_dato, int cantidad_marcos){
+
+
+	*tamanio_marco = *tamanio_marco - tipo_dato;
+
+	while(*tamanio_marco<0){
+		cantidad_marcos++;
+		*tamanio_marco = nuevo_marco;
+		*tamanio_marco = *tamanio_marco - tipo_dato;
+	}
+	return cantidad_marcos;
+}
+
+int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* config_servidor){
+
+	int tamanio_marco = atoi( config_servidor->tamanio_pag);
+	int nuevo_marco  = tamanio_marco;
+
+	int cantidad_marcos = 1;
+
+	cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+	cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+	for(int i=0; i < cuantos_tripulantes; i++){
+
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(char), cantidad_marcos);
+
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+		cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, sizeof(uint32_t), cantidad_marcos);
+
+	}
+
+
+	cantidad_marcos=por_atributo(nuevo_marco ,&tamanio_marco, longitud_tarea, cantidad_marcos);
+
+    return cantidad_marcos;
+}
+
+espacio_de_memoria* crear_espacio_de_memoria(int base, int tam, bool libre){
+	espacio_de_memoria* nuevo_espacio_de_memoria = malloc(sizeof(espacio_de_memoria));
+
+	nuevo_espacio_de_memoria->base = base;
+	nuevo_espacio_de_memoria->tam = tam;
+	nuevo_espacio_de_memoria->libre = libre;
+
+    return nuevo_espacio_de_memoria;
+}
+
+void imprimir_tabla_espacios_de_memoria(){
+    int size = list_size(tabla_espacios_de_memoria);
+    printf("<--------  MEMORIA  --------------------\n");
+
+    for(int i=0; i < size; i++) {
+    	espacio_de_memoria *espacio = list_get(tabla_espacios_de_memoria, i);
+        printf("base: %d, tam: %d, libre: %s \n", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
+        //free(espacio);
+    }
+    printf("--------------------------------------->\n");
+}
+
+void imprimir_tabla_segmentos_patota(tabla_segmentacion* tabla_segmentos_patota){
+	printf("Tabla de segmentos correspondiente a patota %d\n", tabla_segmentos_patota->id_patota);
+
+	for(int j=0; j < list_size(tabla_segmentos_patota->segmento_inicial); j++){
+		segmento* segmento_leido = list_get(tabla_segmentos_patota->segmento_inicial, j);
+		printf("Base %d   Tamanio %d\n", segmento_leido->base, segmento_leido->tamanio);
+		//free(segmento_leido);
+	}
+	printf("---------------------------------------\n");
+}
+
+
+void eliminar_espacio_de_memoria(int base){
+    for(int i = 0; i < list_size(tabla_espacios_de_memoria); i++){
+    	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
+
+    	if(espacio->base == base){
+            espacio->libre = true;
+            list_remove(tabla_espacios_de_memoria, i);
+            espacio_de_memoria* espacio_libre = crear_espacio_de_memoria(base, espacio->tam, true);
+            list_add(tabla_espacios_de_memoria, espacio_libre);
+            //free(espacio_libre);
+        }
+    	//free(espacio);
+    }
+    ordenar_memoria();
+}
+
+void ordenar_memoria(){
+    bool espacio_anterior(espacio_de_memoria* espacio_menor, espacio_de_memoria* espacio_mayor) {
+        return espacio_menor->base < espacio_mayor->base;
+    }
+
+    list_sort(tabla_espacios_de_memoria, (void*) espacio_anterior);
+}
+
+void eliminar_segmento(int nro_segmento, tabla_segmentacion* tabla_segmentos_patota){
+	for(int i = 0; i < list_size(tabla_segmentos_patota->segmento_inicial); i++){
+		segmento* segmento = list_get(tabla_segmentos_patota->segmento_inicial, i);
+
+		if(segmento->numero_segmento == nro_segmento){
+			list_remove(tabla_segmentos_patota->segmento_inicial, i);
+			//list_remove_and_destroy_element(t_list *, int index, void(*element_destroyer)(void*));
+			eliminar_espacio_de_memoria(segmento->base);
+		}
+	}
+}
+
+espacio_de_memoria* busqueda_first_fit(int tam){
+    for(int i=0; i < list_size(tabla_espacios_de_memoria); i++){
+    	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
+        if(espacio->libre == true && tam <= espacio->tam){
+            return espacio;
+        }
+    }
+    log_warning(logger, "No hay espacios de memoria libres");
+    return NULL;
+}
+
+espacio_de_memoria* busqueda_best_fit(int tam){
+    int size = list_size(tabla_espacios_de_memoria);
+    t_list* espacios_libres = list_create();
+
+    for(int i=0; i < size; i++){
+    	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
+
+    	if(espacio->libre == true && tam <= espacio->tam){
+
+            if(tam == espacio->tam){ //si encuentra uno justo de su tamanio
+            	return espacio;
+            }
+            list_add(espacios_libres, espacio);
+        }
+    }
+
+    int espacios_libres_size = list_size(espacios_libres);
+
+    if(espacios_libres_size != 0){
+    	/*espacio_de_memoria* espacio_best_fit;
+        int best_fit_diff = 999999; //revisar esto
+
+        for(int i=0; i < espacios_libres_size; i++){
+        	espacio_de_memoria* y = list_get(espacios_libres, i);
+            int diff = y->tam - tam;
+
+            if(best_fit_diff > diff){
+                best_fit_diff = diff;
+                espacio_best_fit = y;
+            }
+        }*/
+    	espacio_de_memoria* espacio_best_fit = list_get(espacios_libres, 0);
+    	for(int i=1; i < espacios_libres_size; i++){
+			espacio_de_memoria* espacio_a_comparar = list_get(espacios_libres, i);
+
+			if(espacio_a_comparar->tam  <  espacio_best_fit->tam){
+				espacio_best_fit = espacio_a_comparar;
+			}
+		}
+
+        //log_info(logger, "El espacio de memoria encontrado con Best Fit (base:%d)", espacio_best_fit->base);
+        return espacio_best_fit;
+
+    }else{
+        log_warning(logger, "No hay espacios de memoria libres");
+        return NULL;
+    }
+}
+
+espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) { //falta
+	espacio_de_memoria *espacio_libre = buscar_espacio_de_memoria_libre(tam);
+	if (espacio_libre != NULL) {
+
+		if (espacio_libre->tam == tam) {//Si el espacio libre encontrado es de igual tamanio al segmento a alojar no es necesario ordenar. CAPAZ NO HACE FALTA
+        	espacio_libre->libre = false;
+            return espacio_libre;
+        } else { //Si no es de igual tamanio, debo crear un nuevo espacio con base en el libre y reacomodar la base y tamanio del libre.
+            espacio_de_memoria* nuevo_espacio_de_memoria = crear_espacio_de_memoria(espacio_libre->base, tam, false);
+            list_add(tabla_espacios_de_memoria, nuevo_espacio_de_memoria);
+
+            //actualizo base y tamanio del espacio libre
+            espacio_libre->base += tam; //NO ENTIENDO COMO FUNCIONA SI ESPACIO_LIBRE ES LOCAL
+            espacio_libre->tam -= tam;
+
+            ordenar_memoria();
+
+            return nuevo_espacio_de_memoria;
+        }
+
+    } else {
+        log_warning(logger, "No se pudo asignar espacio de memoria");
+        return NULL;
+    }
+}
+
+void patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tarea, t_list* lista){
+	pcbPatota* pcb_patota = crear_pcb(pid);
+	espacio_de_memoria* espacio_de_memoria_pcb_patota = asignar_espacio_de_memoria(tamanio_pcb(pcb_patota));
+
+	espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea)+1);
+	pcb_patota->tareas = espacio_de_memoria_tareas->base;//CREO QUE ESTA MAL ESTO. PQ TIENE LA DIR FISICA, NO LA LOGICA.
+	//TENDRIA QUE SER ALGO COMO 1 0 PQ LAS TAREAS ESTAN EN SEGMENTO 1 DESP 0
+
+	segmento* segmento_pcb = malloc(sizeof(segmento));
+	segmento* segmento_tareas = malloc(sizeof(segmento));
+
+	segmento_pcb->numero_segmento = 0;
+	segmento_pcb->base = espacio_de_memoria_pcb_patota->base;
+	segmento_pcb->tamanio = espacio_de_memoria_pcb_patota->tam;
+
+	segmento_tareas->numero_segmento = 1;
+	segmento_tareas->base = espacio_de_memoria_tareas->base;
+	segmento_tareas->tamanio = espacio_de_memoria_tareas->tam;
+
+	tabla_segmentacion* tabla_segmentos_patota = malloc(sizeof(tabla_segmentacion));
+
+	tabla_segmentos_patota->id_patota = pid;
+	tabla_segmentos_patota->segmento_inicial = list_create();
+
+	list_add(tabla_segmentos_patota->segmento_inicial, segmento_pcb);
+	list_add(tabla_segmentos_patota->segmento_inicial, segmento_tareas);
+
+	tcbTripulante* tripulante = malloc(tamanio_TCB);
+	for(int i=2; i < cantidad_tripulantes +2; i++){
+		tripulante=(tcbTripulante*)list_get(lista,i);
+
+		espacio_de_memoria* espacio_de_memoria_tcb_tripulante = asignar_espacio_de_memoria(tamanio_tcb(tripulante));
+
+		segmento* segmento_tcb = malloc(sizeof(segmento));
+		segmento_tcb->numero_segmento = i;
+		segmento_tcb->base = espacio_de_memoria_tcb_tripulante->base;
+		segmento_tcb->tamanio = espacio_de_memoria_tcb_tripulante->tam;
+
+		list_add(tabla_segmentos_patota->segmento_inicial, segmento_tcb);
+	}
+
+	imprimir_tabla_espacios_de_memoria();
+
+	imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
+
+	log_info(logger, "elimino");
+	eliminar_segmento(5, tabla_segmentos_patota);
+
+	imprimir_tabla_espacios_de_memoria();
+
+	imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
+
+}
+

@@ -17,12 +17,17 @@
 #include<commons/collections/list.h>
 #include <commons/config.h>
 #include<string.h>
+#include<pthread.h>
+#include <semaphore.h>
+#include<stdbool.h>
 
 /*Estructuras necesarias para discordiador*/
 
 /**
  * En este enum se agregan todos los distintos tipos de mensajes que van a enviar entre los clientes y servidores
  */
+
+t_log* logger;
 
 typedef enum
 {
@@ -33,7 +38,8 @@ typedef enum
 	INICIAR_PLANIFICACION,
 	PAUSAR_PLANIFICACION,
 	OBTENER_BITACORA,
-	FIN
+	FIN,
+	PEDIR_TAREA
 }tipoMensaje;
 
 
@@ -50,14 +56,6 @@ typedef struct
 	t_buffer* buffer;
 }t_paquete;
 
-typedef struct {
-	uint32_t id;
-	uint32_t posicionX;
-	uint32_t posicionY;
-	uint32_t numeroPatota;
-
-} nuevoTripulante;
-
 const static struct {
 	uint32_t valor;
 	const char *string;
@@ -69,7 +67,8 @@ const static struct {
 		{INICIAR_PLANIFICACION, "INICIAR_PLANIFICACION"},
 		{PAUSAR_PLANIFICACION, "PAUSAR_PLANIFICACION"},
 		{OBTENER_BITACORA, "OBTENER_BITACORA"},
-		{FIN, "FIN"}
+		{FIN, "FIN"},
+		{PEDIR_TAREA, "PEDIR_TAREA"}
 };
 
 typedef struct{
@@ -105,6 +104,7 @@ typedef struct{
 	uint32_t posicionY;
 	uint32_t prox_instruccion; // Identificador de la próxima instrucción a ejecutar
 	uint32_t puntero_pcb; //Dirección lógica del PCB del tripulante
+	sem_t semaforo_tripulante;
 }tcbTripulante;
 
 // fin estructuras tripulantes
@@ -127,7 +127,7 @@ typedef struct{
 	int tiempo;
 }tarea;
 
-tarea* crearTarea(tarea_tripulante tipo,int parametro,int pos_x,int pos_y,int tiempo);
+
 /*FINALIZACION DE ESCTRUCTURAS PARA DISCORDIADOR*/
 
 void leer_config();
@@ -142,10 +142,12 @@ tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, ui
 pcbPatota* crear_patota(uint32_t , uint32_t);
 int codigoOperacion (const char*);
 void enviar_header(tipoMensaje tipo, int socket_cliente);
-void imprimirTarea(tarea*);
+char* imprimirTarea(tarea*);
 tarea_tripulante codigoTarea(char*);
-void leer_tareas(char*);
-
+void leer_tareas(char* archTarea, char* *tareas);
+tarea* crear_tarea(tarea_tripulante,int,int,int,int);
+tcbTripulante* hacer_tarea(tcbTripulante*,tarea*);
+void ejecutar_tarea(tarea_tripulante,int);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanio_tcb(tcbTripulante*);
@@ -166,7 +168,7 @@ void leer_config();
  * Pre: Recibo el tipo de mensaje y la conexion de donde lo recibo
  * Post: Muestro por pantalla la informacion dada de la lista de los tripulantes
  * */
-void recibir_lista_tripulantes(int , int, t_log*);
+t_list* recibir_lista_tripulantes(int , int, t_log*);
 
 /*
  * Pre: Recibo un logger

@@ -1,10 +1,267 @@
-#include"discordiador.h"
+#include "discordiador.h"
+#include <semaphore.h>
+
+
+
 
 config_discordiador configuracion;
 //config_struct configuracion;
+sem_t AGREGAR_NUEVO_A_READY;
+sem_t NUEVO_READY;
+sem_t HABILITA_EJECUTAR;
+sem_t HABILITA_GRADO_MULTITAREA;
+sem_t PASA_A_BLOQUEADO;
+sem_t MUTEX_LISTA_READY;
+sem_t MUTEX_LISTA_TRABAJANDO;
+sem_t MUTEX_LISTA_BLOQUEADO;
+sem_t CONTINUAR_PLANIFICACION;
+int id_tripulante = 0;
+t_list* lista_tripulantes_nuevo;
+t_list* lista_tripulantes_ready;
+t_list* lista_tripulantes_bloqueado;
+t_list* lista_tripulantes_trabajando;
+t_list* lista_tripulantes_exit;
+
+
+tarea* pedir_tarea(tcbTripulante* tripulante){
+	tarea* tarea_recibida = crear_tarea(GENERAR_COMIDA,7,2,2,2);
+	return(tarea_recibida);
+}
+tarea* pedir_tarea_normal(tcbTripulante* tripulante){
+	if(tripulante->tid < 4){ // ESTO HACE Q VAYA A EXIT
+		tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,2);
+		return(tarea_recibida);
+	} else{
+		return NULL;
+	}
+}
+
+bool sigue_ejecutando(int quantums_ejecutados){
+	if(strcmp(configuracion.algoritmo, "FIFO") ==0){
+		return true;
+	}else if(list_size(lista_tripulantes_ready) == 0){//O SEA QUE HAY 0 EN READY, ENTONCES NO TIENE QUE BLOQUEARSE POR FIN DE QUANTUM
+		return true;
+	}else if(quantums_ejecutados < configuracion.quantum){ //RR
+		return true;
+	}
+	return false;
+}
+
+void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pensar otro nombre para la funcion
+	bool flag_sigue_ejecutando = sigue_ejecutando(*quantums_ejecutados);
+	if(flag_sigue_ejecutando == false ){
+		sem_wait(&CONTINUAR_PLANIFICACION);
+		sem_post(&CONTINUAR_PLANIFICACION);
+		printf("hilo %d P%d, FIN DE Q \n", tripulante->tid, tripulante->puntero_pcb);
+
+		sem_wait(&CONTINUAR_PLANIFICACION);
+		sem_post(&CONTINUAR_PLANIFICACION);
+		sem_wait(&MUTEX_LISTA_TRABAJANDO);
+		list_remove(lista_tripulantes_trabajando, 0);
+		sem_post(&MUTEX_LISTA_TRABAJANDO);
+
+		tripulante->estado = 'R';
+
+		sem_wait(&MUTEX_LISTA_READY);
+		list_add(lista_tripulantes_ready, tripulante);
+		sem_post(&MUTEX_LISTA_READY);
+
+		sem_post(&HABILITA_GRADO_MULTITAREA);
+		sem_post(&HABILITA_EJECUTAR);
+		sem_wait(&(tripulante->semaforo_tripulante));
+		*quantums_ejecutados = 0;
+	}
+}
+
+void tripulante_hilo (tcbTripulante* tripulante){
+	sem_wait(&(tripulante->semaforo_tripulante));
+	//si funcion tomar tarea != null entonces
+	tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,4); //TAREA NORMAL
+
+	/*	int conexion_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
+	enviar_header(PEDIR_TAREA, conexion_miram);
+	int tipo_mensaje = recibir_operacion(conexion_miram);
+	printf("tipo_mensaje %d\n", tipo_mensaje);
+	close(conexion_miram);*/
+
+	printf("hola soy el hilo %d, P%d, estoy listo para ejecutar \n", tripulante->tid, tripulante->puntero_pcb);
+	sem_post(&NUEVO_READY);
+	fflush(stdout);
+	sem_wait(&(tripulante->semaforo_tripulante));
+	sem_post(&HABILITA_EJECUTAR);
+	int contador_movimientos = 0;
+	int contador_ciclos_trabajando = 0;
+	int quantums_ejecutados = 0;
+	while(tripulante->prox_instruccion < 4){
+		while(contador_movimientos < tarea_recibida->tiempo){
+			sem_wait(&CONTINUAR_PLANIFICACION);
+			sem_post(&CONTINUAR_PLANIFICACION);
+			printf("hilo %d P%d, me estoy moviendo \n", tripulante->tid, tripulante->puntero_pcb);
+			sleep(1); // retardo ciclo cpu VA?  EN TODOS LOS SLEEP IRIA ESO?
+			fflush(stdout);
+			contador_movimientos++;
+			quantums_ejecutados++;
+			termina_quantum(&quantums_ejecutados, tripulante);
+		}
+		contador_movimientos = 0;
+
+		if(tarea_recibida->tarea == 2){ //TAREA DE I/O
+			quantums_ejecutados++;
+			termina_quantum(&quantums_ejecutados, tripulante);
+			sleep(1); // retardo ciclo cpu //sleep para eso de iniciar tarea I/O (simula peticion al SO). Nose si va en esta linea
+			quantums_ejecutados = 0;
+
+			sem_wait(&CONTINUAR_PLANIFICACION);
+			sem_post(&CONTINUAR_PLANIFICACION);
+			sem_wait(&MUTEX_LISTA_TRABAJANDO);
+			list_remove(lista_tripulantes_trabajando, 0);
+			sem_post(&MUTEX_LISTA_TRABAJANDO);
+
+			tripulante->estado = 'B';
+
+			sem_wait(&MUTEX_LISTA_BLOQUEADO);
+			list_add(lista_tripulantes_bloqueado, tripulante);
+			sem_post(&MUTEX_LISTA_BLOQUEADO);
+
+			printf("hilo %d P%d, me bloquie \n", tripulante->tid, tripulante->puntero_pcb);
+			sem_post(&PASA_A_BLOQUEADO);
+			sem_post(&HABILITA_GRADO_MULTITAREA);
+			sem_wait(&(tripulante->semaforo_tripulante));
+			if(tripulante->estado != 'X'){ // O SEA Q TIENE MAS TAREAS
+				tarea_recibida = pedir_tarea_normal(tripulante); //esto en realidad no iria, pq se la tiene q pasar el bloq o algo asi
+				sem_post(&HABILITA_EJECUTAR);
+			} else{ // NO TIENE MAS TAREAS
+				tripulante->prox_instruccion = 100;
+			}
+		} else { //TAREA NORMAL
+			while(contador_ciclos_trabajando < tarea_recibida->tiempo){
+				sem_wait(&CONTINUAR_PLANIFICACION);
+				sem_post(&CONTINUAR_PLANIFICACION);
+				printf("hilo %d P%d, estoy trabajando \n", tripulante->tid, tripulante->puntero_pcb);
+				sleep(1);
+				contador_ciclos_trabajando++;
+				quantums_ejecutados++;
+				if(contador_ciclos_trabajando == tarea_recibida->tiempo){//ESTE IF ESTA PARA QUE SI  YA TERMINO LA TAREA, SE FIJE SI TIENE OTRA MAS
+					tarea_recibida = pedir_tarea(tripulante); // I/O     // Y SI NO LA TIENE QUE VAYA DIRECTO A EXIT SIN BLOQUEARSE POR FIN DE QUANTUM
+					if(tarea_recibida == NULL){ // NO TIENE MAS TAREAS
+						tripulante->prox_instruccion = 200;
+					}else{ //TIENE MAS TAREAS
+						termina_quantum(&quantums_ejecutados, tripulante);
+					}
+				}else{
+					termina_quantum(&quantums_ejecutados, tripulante);
+				}
+			}
+			contador_ciclos_trabajando = 0;
+		}
+
+		tripulante->prox_instruccion++;
+	}
+	if(tripulante->estado != 'X'){
+		sem_post(&HABILITA_GRADO_MULTITAREA);
+
+		sem_wait(&CONTINUAR_PLANIFICACION);
+		sem_post(&CONTINUAR_PLANIFICACION);
+		sem_wait(&MUTEX_LISTA_TRABAJANDO);
+		list_remove(lista_tripulantes_trabajando, 0);
+		sem_post(&MUTEX_LISTA_TRABAJANDO);
+
+		tripulante->estado = 'X';
+		list_add(lista_tripulantes_exit, tripulante);
+	}
+	printf("hilo %d P%d, EXIT\n", tripulante->tid, tripulante->puntero_pcb);
+
+}
+
+void ready_exec() {
+	//sem_wait(&INICIAR_TRIPULANTE);
+	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
+	int lista_size;
+	while(1){
+		lista_size = list_size(lista_tripulantes_ready);
+		if (lista_size >0){
+			sem_wait(&HABILITA_GRADO_MULTITAREA);
+			sem_wait(&HABILITA_EJECUTAR);
+			sem_wait(&CONTINUAR_PLANIFICACION);
+			sem_post(&CONTINUAR_PLANIFICACION);
+			tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
+			tripulante1->estado = 'E';
+
+			sem_wait(&MUTEX_LISTA_TRABAJANDO);
+			list_add(lista_tripulantes_trabajando, tripulante1);
+			sem_post(&MUTEX_LISTA_TRABAJANDO);
+
+			sem_post(&(tripulante1->semaforo_tripulante));
+		}
+	}
+	free(tripulante1);
+}
+
+void nuevo_ready() {
+	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
+	while(1){
+		sem_wait(&AGREGAR_NUEVO_A_READY);
+		sem_wait(&CONTINUAR_PLANIFICACION);
+		sem_post(&CONTINUAR_PLANIFICACION);
+		tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_nuevo, 0);
+		sem_post(&(tripulante1->semaforo_tripulante));
+		sem_wait(&NUEVO_READY);
+		tripulante1->estado = 'R';
+
+		sem_wait(&MUTEX_LISTA_READY);
+		list_add(lista_tripulantes_ready, tripulante1);
+		sem_post(&MUTEX_LISTA_READY);
+	}
+	free(tripulante1);
+
+}
+
+void bloqueado_ready() {
+	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
+	tarea* tarea_recibida;
+	while(1){
+		sem_wait(&PASA_A_BLOQUEADO);
+
+		sem_wait(&MUTEX_LISTA_BLOQUEADO);
+		tripulante1 = (tcbTripulante*)list_get(lista_tripulantes_bloqueado, 0);
+		sem_post(&MUTEX_LISTA_BLOQUEADO);
+
+		sem_wait(&CONTINUAR_PLANIFICACION);
+		sem_post(&CONTINUAR_PLANIFICACION);
+		printf("hilo %d P%d, haciendo I/O \n", tripulante1->tid, tripulante1->puntero_pcb);
+		sleep(1);
+		sem_wait(&CONTINUAR_PLANIFICACION);
+		sem_post(&CONTINUAR_PLANIFICACION);
+		printf("hilo %d P%d, termino I/O \n", tripulante1->tid, tripulante1->puntero_pcb);
+		fflush(stdout);
+		tarea_recibida = pedir_tarea_normal(tripulante1);
+
+		sem_wait(&CONTINUAR_PLANIFICACION);
+		sem_post(&CONTINUAR_PLANIFICACION);
+		sem_wait(&MUTEX_LISTA_BLOQUEADO);
+		tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
+		sem_post(&MUTEX_LISTA_BLOQUEADO);
+
+		if(tarea_recibida != NULL){ // TIENE MAS TAREAS
+			tripulante1->estado = 'R';
+			sem_wait(&MUTEX_LISTA_READY);
+			list_add(lista_tripulantes_ready, tripulante1);
+			sem_post(&MUTEX_LISTA_READY);
+		} else{ // NO TIENE MAS TAREAS
+			tripulante1->estado = 'X';
+			list_add(lista_tripulantes_exit, tripulante1);
+			sem_post(&(tripulante1->semaforo_tripulante));
+		}
+
+	}
+	free(tripulante1);
+
+}
+
+
 int main(int argc, char* argv[]) {
 	//config_struct configuracion;
-	t_log* logger;
+	//t_log* logger;
 
 
 	//Reinicio el anterior y arranco uno nuevo
@@ -12,6 +269,14 @@ int main(int argc, char* argv[]) {
 	fclose(archivo);
 	logger = log_create("discordiador.log","discordiador",1,LOG_LEVEL_INFO);
 
+	/*char* archTarea = "tareas.txt";
+	leer_tareas(archTarea);
+	tarea* tarea_recibida1 = crear_tarea(GENERAR_OXIGENO,5,2,2,5);
+	tarea* tarea_recibida2 = crear_tarea(GENERAR_COMIDA,7,2,2,5);
+	tarea* tarea_recibida3 = crear_tarea(GENERAR_BASURA,9,2,2,5);
+	hacer_tarea(tripulante,tarea_recibida1);
+	hacer_tarea(tripulante,tarea_recibida2);
+	hacer_tarea(tripulante,tarea_recibida3);*/
 
 
 	leer_config();
@@ -31,56 +296,175 @@ int main(int argc, char* argv[]) {
 }
 
 int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
+
+	 /*Hacer una funcion que cree las diferetnes listas*/
+	sem_init(&HABILITA_EJECUTAR, 0,1);
+	sem_init(&NUEVO_READY, 0,0);
+	sem_init(&AGREGAR_NUEVO_A_READY, 0,0);
+	sem_init(&HABILITA_GRADO_MULTITAREA, 0,configuracion.grado_multitarea);
+	sem_init(&PASA_A_BLOQUEADO, 0,0);
+	sem_init(&MUTEX_LISTA_READY, 0,1);
+	sem_init(&MUTEX_LISTA_TRABAJANDO, 0,1);
+	sem_init(&MUTEX_LISTA_BLOQUEADO, 0,1);
+	sem_init(&CONTINUAR_PLANIFICACION, 0,1);
+
+
+	lista_tripulantes_nuevo = list_create();
+	lista_tripulantes_ready = list_create();
+	lista_tripulantes_bloqueado = list_create();
+	lista_tripulantes_trabajando = list_create();
+	lista_tripulantes_exit = list_create();
 	int tipoMensaje = -1;
-	int tid=1;
-	int posx = 0;
-	int posy = 0;
+	bool pausar_planificacion_activado = false;
+	//uint32_t cantidad_tripulantes;
+	uint32_t numero_patota = 0;
+
+	pthread_t ready;
+	pthread_t nuevo;
+	pthread_t bloqueado;
+	pthread_create(&ready,NULL,(void*)ready_exec,NULL);
+	pthread_detach(&ready);
+	pthread_create(&nuevo,NULL,(void*)nuevo_ready,NULL);
+	pthread_detach(&nuevo);
+	pthread_create(&bloqueado,NULL,(void*)bloqueado_ready,NULL);
+	pthread_detach(&bloqueado);
+
+	uint32_t tid =1;
+	uint32_t posx = 0;
+	uint32_t posy = 0;
+
 	while(1){
-		tcbTripulante* tripulante = crear_tripulante(tid,'N',5,6,1,1);
 		t_paquete* paquete;
-		char* leido = readline("");
+		tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
+		//char* nombreHilo = "";
+		char* leido = readline("Iniciar consola: ");
+		printf("\n");
 		switch (codigoOperacion(leido)){
 			case PRUEBA:
 				paquete = crear_paquete(PRUEBA);
-				//            TAREA_TRIPULANTE PARAMETRO POSX POSY TIEMPO
-				tarea* t_tarea=crearTarea(GENERAR_OXIGENO,5,1,1,5);
-				agregar_a_paquete(paquete,t_tarea, sizeof(tarea));
-				printf("\n Tarea GENERAR OXIGENO \n");
-				enviar_paquete(paquete,conexionMongoStore);
-				break;
-			case INICIAR_PATOTA:
-				paquete = crear_paquete(INICIAR_PATOTA);
+				numero_patota++;
+
+				//agregar_entero_a_paquete(paquete, numero_patota, sizeof(uint32_t));
+				char* numero_patota_char = malloc(sizeof(char));
+				sprintf(numero_patota_char, "%d", numero_patota);
+				agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
+
 				char** parametros = string_split(leido," ");
-				int cantidad_tripulantes  = atoi(parametros[1]);
+				uint32_t cantidad_tripulantes  = atoi(parametros[1]);
+
+				char* cantidad_tripulantes_char = malloc(sizeof(char));
+				sprintf(cantidad_tripulantes_char, "%d", cantidad_tripulantes);
+				//agregar_entero_a_paquete(paquete, cantidad_tripulantes, sizeof(uint32_t));
+				agregar_a_paquete(paquete, cantidad_tripulantes_char, strlen(cantidad_tripulantes_char)+1);
+
+				char* tareas = malloc(sizeof(char));
+				leer_tareas(parametros[2], &tareas);
+				printf("Las tareas recibidas por parametro son: %s\n", tareas);
+
+/*
+INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
+PRUEBA 5 tareas.txt 300|4 10|20 4|500
+*/
+				bool hay_mas_parametros = true;
 				for(int i = 0; i < cantidad_tripulantes ; i++){
-					if(parametros[i+3]){
-						//Si pones INICIAR_PATOTA 3 asd (sin posiciones) rompe en el ultimo ciclo. A revisar
-						printf("Entro aca en %d\n",i);
-						posx = parametros[i+3][0] - 48;
-						posy = parametros[i+3][2] - 48;
+					if (hay_mas_parametros == true){
+						if (parametros[i+3] == NULL){
+							hay_mas_parametros = false;
+						} else {
+							char* posiciones = parametros[i+3];
+							char* item;
+							item = strtok(posiciones,"|");
+							posx = atoi(item);
+							item = strtok(NULL,"");
+							posy = atoi(item);
+						}
 					}
-					printf("El tripulante %d tiene posx %d y posy %d\n", i, posx,posy);
+
+					printf("El tripulante %d tiene posx %d y posy %d\n", i+1, posx,posy);
 					tripulante = crear_tripulante(tid,'N',posx,posy,1,1);
-					posx=0;
-					posy=0;
+					posx =0;
+					posy =0;
 					agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 					tid++;
 
+					/*
+					tcbTripulante* tripulante =crear_tripulante(tid,'N',5,6,1,numero_patota);
+					//esta bien que al tripulante lo cree aca o lo tiene que crear miram?
+					//puntero a pcb y a prox instruccion obvio que no los tendria, pero aca en discordiador hace falta que los tenga?
+					//es mas, capaz en vez de usar la struct tcbTripulante podria crear una nueva q solo tenga tid, estado, posx, posy, nro_patota. no?
+					pthread_t nombreHilo = (char*)(tid);
+					pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
+					//y en la funcion tripulante_hilo los conectaria a memoria. esta bien que lo haga ahi?
+					pthread_detach(&nombreHilo);
+					list_add(lista_tripulantes_nuevo, tripulante);
+					sem_post(&AGREGAR_NUEVO_A_READY);
+					*/
+/*1.- iniciar una patota lo cual conlleva:
+
+Pedirle a Mi-RAM HQ que cree las estructuras (que desde discordiador no te importa cuales ni como las crea)
+Enviarle el contenido del archivo de tareas
+Crear los threads de los tripulantes y conectarlos a la memoria.
+
+2.- Una vez que hiciste el paso 1 si tenes habilitada la planificación tenes que:
+
+Solicitarle desde el tripulante a Mi-RAM HQ la próxima tarea.
+Mover el tripulante de NEW a READY,*/
+
 				}
-				agregar_a_paquete(paquete,  "Hola mundo", sizeof(char*));
+
+				char* largo_tarea = malloc(sizeof(char));
+				sprintf(largo_tarea, "%d", strlen(tareas)+1);
+				agregar_a_paquete(paquete, largo_tarea, strlen(largo_tarea)+1);
+				agregar_a_paquete(paquete, tareas, strlen(tareas)+1);
+				//agregar_a_paquete(paquete, "Hola Mundo", 11);
+				free(tareas);
+
 				enviar_paquete(paquete, conexionMiRam);
 
-				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
-				//tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
-				//agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
-
 				eliminar_paquete(paquete);
+
+
+				break;
+
+			case INICIAR_PATOTA:
+				enviar_header(INICIAR_PATOTA, conexionMiRam);
+				tipoMensaje = recibir_operacion(conexionMiRam);
+				//lista_tripulantes_ready=recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
+				cantidad_tripulantes = 0;
+				numero_patota++;
+				while(cantidad_tripulantes < 5){
+					cantidad_tripulantes ++;
+					tcbTripulante* tripulante =crear_tripulante(cantidad_tripulantes,'N',5,6,1,numero_patota);
+					pthread_t nombreHilo = (char*)(cantidad_tripulantes);
+					pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
+					pthread_detach(&nombreHilo);
+					list_add(lista_tripulantes_nuevo, tripulante);
+					sem_post(&AGREGAR_NUEVO_A_READY);
+				}
+
 				break;
 
 			case LISTAR_TRIPULANTES:
-				enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
+				/*enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
 				tipoMensaje = recibir_operacion(conexionMiRam);
-				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
+				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);*/
+
+				break;
+
+			case INICIAR_PLANIFICACION:
+				if (pausar_planificacion_activado == true){ //PARA QUE NO HAGA NADA SI NO PAUSE PLANIFICACION ANTES
+					sem_post(&CONTINUAR_PLANIFICACION);
+					pausar_planificacion_activado = false;
+				}
+
+				break;
+
+			case PAUSAR_PLANIFICACION:
+				if (pausar_planificacion_activado == false){ //PARA QUE NO PUEDA HACER DOS PAUSAR_PLANIFICACION SEGUIDOS SIN HACER UN INICIAR_PLANIFICACION
+					sem_wait(&CONTINUAR_PLANIFICACION);
+					pausar_planificacion_activado = true;
+				}
+
 				break;
 
 			case OBTENER_BITACORA:
@@ -90,6 +474,14 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				char* mensaje = (char*)list_get(lista, 0);
 				log_info(logger, mensaje);
 				list_destroy(lista);
+				break;
+
+			case EXPULSAR_TRIPULANTE:
+				paquete = crear_paquete(EXPULSAR_TRIPULANTE);
+				char** parametro = string_split(leido," ");
+				char* tripulante_id = parametro[1];
+				agregar_a_paquete(paquete, tripulante_id, strlen(tripulante_id)+1);
+
 				break;
 
 			case FIN:
@@ -104,7 +496,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				break;
 		}
 		free(leido);
-		free(tripulante);
+
 	}
 }
 
@@ -128,5 +520,3 @@ void terminar_discordiador (int conexionMiRam, int conexionMongoStore, t_log* lo
 	liberar_conexion(conexionMiRam);
 	liberar_conexion(conexionMongoStore);
 }
-
-

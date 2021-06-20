@@ -56,6 +56,7 @@ t_paquete* crear_paquete(tipoMensaje tipo)
 }
 
 
+
 tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, uint32_t posicionY, uint32_t prox_instruccion, uint32_t puntero_pcb){
 	tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
 	tripulante->tid = tid;
@@ -64,6 +65,7 @@ tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, u
 	tripulante->posicionY = posicionY;
 	tripulante->prox_instruccion = prox_instruccion;
 	tripulante->puntero_pcb = puntero_pcb;
+	sem_init(&(tripulante->semaforo_tripulante),0,0);
 	return tripulante;
 }
 
@@ -192,24 +194,28 @@ t_list* recibir_paquete(int socket_cliente)
 /*Operaciciones para mostrar en discordiador*/
 
 
-void recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* logger){
-	t_list* lista=list_create();
-	nuevoTripulante* tripulante = malloc(sizeof(nuevoTripulante));
+t_list* recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* logger){
+	tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
+	t_list* lista;
 
-
-	if (tipoMensaje == 2){
-		printf("recibi el paquete indicado");
-		lista = recibir_paquete(conexionMiRam);
-		tripulante = (nuevoTripulante*)list_get(lista, 0);
+	if (tipoMensaje == 1){
+		printf("recibi el paquete indicado y se guardara en la lista de ready");
+		//list_add(lista, 1);
+		//list_add(lista, 2);
+		//list_add(lista, 3);
+		//list_add(lista, 4);
+		//lista = recibir_paquete(conexionMiRam);
+		/*tripulante = (nuevoTripulante*)list_get(lista, 0);
 		printf("\n ID: %d \n", tripulante->id );
 		printf("Posicion X: %d \n", tripulante->posicionX );
 		printf("Posicion Y: %d \n", tripulante->posicionY );
-		printf("Pertenece a Patota: %d \n", tripulante->numeroPatota );
-		list_destroy(lista);
+		printf("Pertenece a Patota: %d \n", tripulante->numeroPatota );*/
+		printf("\n");
 	}else {
 		mensajeError(logger);
 	}
 	free(tripulante);
+	return lista;
 }
 
 /*TAMAÑO DE LAS DIFERENTES ESTRUCTURAS*/
@@ -217,6 +223,7 @@ void recibir_lista_tripulantes(int tipoMensaje, int conexionMiRam, t_log* logger
 size_t tamanio_tcb (tcbTripulante* tripulante){
 	size_t tamanio = sizeof(uint32_t)*5;
 	tamanio += sizeof(char);
+	tamanio += sizeof(sem_t);
 	return tamanio;
 }
 
@@ -226,17 +233,19 @@ size_t tamanio_pcb(pcbPatota* patota){
 }
 
 
-void leer_tareas(char* archTarea){
+void leer_tareas(char* archTarea, char* *tareas){
 	   FILE *fp;
 	   char *item;
-	   char linea[200];
+	   char linea[200]; //reever este 200
+	   strcpy(*tareas, "");
 	   fp = fopen(archTarea, "r");
 	   if (fp == NULL)
 	     {
 	        perror("Error al abrir el archivo.\n");
 	        exit(EXIT_FAILURE);
 	     }
-	   tarea* leida=malloc(sizeof(tarea));
+	   tarea* leida = malloc(sizeof(tarea));
+	   int contador_tareas =1;
 	   while (fgets(linea, sizeof(linea), fp)){
 		   int codTarea;
 		   if(linea[0]=='D'){    //A corregir
@@ -257,11 +266,18 @@ void leer_tareas(char* archTarea){
 		   leida->pos_y=atoi(item);
 		   item = strtok(NULL,"\n");
 		   leida->tiempo=atoi(item);
-		   imprimirTarea(leida);
-		   }
 
-		}
+		   char* string_tarea = imprimirTarea(leida);
+		   *tareas = realloc(*tareas, (strlen(string_tarea)*contador_tareas)+1);
+		   strcat (*tareas, string_tarea);
 
+		   contador_tareas++;
+		   //free(mensaje); Aca liberar ya que antes hice malloc(20)
+	   }
+
+	   printf("Las tareas son %s\n",*tareas);
+
+}
 
 tarea_tripulante codigoTarea(char *nombretarea){
 	if(strcmp(nombretarea,"GENERAR_OXIGENO")==0)
@@ -281,23 +297,75 @@ tarea_tripulante codigoTarea(char *nombretarea){
 
 }
 
-tarea* crearTarea(tarea_tripulante tipo,int parametro,int pos_x,int pos_y,int tiempo){
-	tarea* tareaA;
-	tareaA->tarea=tipo;
-	tareaA->parametro=parametro;
-	tareaA->pos_x=pos_x;
-	tareaA->pos_y=pos_y;
-	tareaA->tiempo=tiempo;
+char* imprimirTarea(tarea* aimprimir){
 
-	return tareaA;
+	char *mensaje = malloc(sizeof(char*)); //20 por las duads. Habitualmente se utilizan 10.
+
+	sprintf(mensaje ,"%d", aimprimir->tarea);
+	strcat (mensaje, "-");
+	sprintf(mensaje  + strlen(mensaje),"%i", aimprimir->parametro);
+	strcat (mensaje, "-");
+	sprintf(mensaje  + strlen(mensaje),"%d", aimprimir->pos_x);
+	strcat (mensaje, "-");
+	sprintf(mensaje  + strlen(mensaje),"%d", aimprimir->pos_y);
+	strcat (mensaje, "-");
+	sprintf(mensaje  + strlen(mensaje),"%d", aimprimir->tiempo);
+	strcat (mensaje, ";");
+	//printf("El mensaje es: %s", mensaje);
+	return mensaje;
+
+
 }
 
-void imprimirTarea(tarea* aimprimir){
-	printf("%d", aimprimir->tarea);
-	printf("%i", aimprimir->parametro);
-	printf("%d", aimprimir->pos_x);
-	printf("%d", aimprimir->pos_y);
-	printf("%d\n", aimprimir->tiempo);
+
+tarea* crear_tarea(tarea_tripulante cod_tarea,int parametro,int pos_x,int pos_y,int tiempo){
+	tarea* tarea_recibida = malloc(sizeof(tarea));
+	tarea_recibida->tarea=cod_tarea;
+	tarea_recibida->parametro=parametro;
+	tarea_recibida->pos_x=pos_x;
+	tarea_recibida->pos_y=pos_y;
+	tarea_recibida->tiempo=tiempo;
+	return tarea_recibida;
 
 }
 
+tcbTripulante* hacer_tarea(tcbTripulante* tripulante,tarea* tarea_recibida){
+	tripulante->posicionX=tarea_recibida->pos_x;
+	tripulante->posicionY=tarea_recibida->pos_y;
+	ejecutar_tarea(tarea_recibida->tarea,tarea_recibida->parametro);
+	sleep(tarea_recibida->tiempo);
+	return tripulante; //Enviar a MiRam (Actualizar tcb)
+}
+
+void ejecutar_tarea(tarea_tripulante cod_tarea,int parametro){
+
+	switch(cod_tarea){
+
+	case GENERAR_OXIGENO:
+			for(;parametro>0;parametro--){
+				printf("O");
+			}
+			printf("\n");
+			break;
+
+	case GENERAR_COMIDA:
+			for(;parametro>0;parametro--){
+				printf("C");
+			}
+			printf("\n");
+			break;
+
+	case GENERAR_BASURA:
+			for(;parametro>0;parametro--){
+				printf("B");
+			}
+			printf("\n");
+			break;
+
+	default:
+		printf("No existe codigo de tarea\n");
+		break;
+
+	}
+
+}
