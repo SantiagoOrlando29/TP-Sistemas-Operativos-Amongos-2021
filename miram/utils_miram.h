@@ -148,6 +148,8 @@ typedef struct{
 
 typedef struct{
 	int id_patota;
+	int primer_tripulante;
+	int ultimo_tripulante;
 	t_list* segmento_inicial;
 }tabla_segmentacion;
 
@@ -155,11 +157,12 @@ typedef struct{
     int base;
     int tam;
     bool libre;
+    void* contenido;
 }espacio_de_memoria;
 
 t_list* tabla_espacios_de_memoria;
 
-t_list* lista_tablas_segmentos;//VER
+t_list* lista_tablas_segmentos;
 
 void* recibir_buffer(int*, int);
 void iniciar_servidor(config_struct*);
@@ -211,6 +214,7 @@ void imprimir_tabla_segmentos_patota(tabla_segmentacion*);
 void eliminar_segmento(int, tabla_segmentacion*);
 void ordenar_memoria();
 bool patota_segmentacion(uint32_t, uint32_t, char*, t_list*);
+bool funcion_expulsar_tripulante(uint32_t tripulante_id);
 
 pcbPatota* crear_pcb(uint32_t numero_patota);
 

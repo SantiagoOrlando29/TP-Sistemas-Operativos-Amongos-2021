@@ -168,7 +168,6 @@ int main(void)
 
 */
 
-	t_list* lista_recibir = list_create();
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
 	pthread_t servidor;
 	//iniciar_servidor(&configuracion);
@@ -178,7 +177,6 @@ int main(void)
 	}
 	pthread_join(servidor,NULL);
 
-	list_destroy(lista_recibir);
 
 
 

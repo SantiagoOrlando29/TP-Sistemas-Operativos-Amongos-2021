@@ -23,7 +23,7 @@ t_list* lista_tripulantes_trabajando;
 t_list* lista_tripulantes_exit;
 
 
-tarea* pedir_tarea(tcbTripulante* tripulante){
+tarea* pedir_tarea_IO(tcbTripulante* tripulante){
 	tarea* tarea_recibida = crear_tarea(GENERAR_COMIDA,7,2,2,2);
 	return(tarea_recibida);
 }
@@ -75,7 +75,7 @@ void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pen
 
 void tripulante_hilo (tcbTripulante* tripulante){
 	sem_wait(&(tripulante->semaforo_tripulante));
-	//si funcion tomar tarea != null entonces
+
 	tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,4); //TAREA NORMAL
 
 	int conexion_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
@@ -142,7 +142,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 				contador_ciclos_trabajando++;
 				quantums_ejecutados++;
 				if(contador_ciclos_trabajando == tarea_recibida->tiempo){//ESTE IF ESTA PARA QUE SI  YA TERMINO LA TAREA, SE FIJE SI TIENE OTRA MAS
-					tarea_recibida = pedir_tarea(tripulante); // I/O     // Y SI NO LA TIENE QUE VAYA DIRECTO A EXIT SIN BLOQUEARSE POR FIN DE QUANTUM
+					tarea_recibida = pedir_tarea_IO(tripulante); // I/O     // Y SI NO LA TIENE QUE VAYA DIRECTO A EXIT SIN BLOQUEARSE POR FIN DE QUANTUM
 					if(tarea_recibida == NULL){ // NO TIENE MAS TAREAS
 						tripulante->prox_instruccion = 200;
 					}else{ //TIENE MAS TAREAS
@@ -314,7 +314,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	lista_tripulantes_bloqueado = list_create();
 	lista_tripulantes_trabajando = list_create();
 	lista_tripulantes_exit = list_create();
-	int tipoMensaje = -1;
+	//int tipoMensaje = -1;
 	bool pausar_planificacion_activado = false;
 	//uint32_t cantidad_tripulantes;
 	uint32_t numero_patota = 0;
@@ -332,7 +332,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	uint32_t tid =1;
 	uint32_t posx = 0;
 	uint32_t posy = 0;
-	int numero_tripulantess = 0;
+
 
 	while(1){
 		t_paquete* paquete;
@@ -341,8 +341,8 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 		char* leido = readline("Iniciar consola: ");
 		printf("\n");
 		switch (codigoOperacion(leido)){
-			case PRUEBA:
-				paquete = crear_paquete(PRUEBA);
+			case INICIAR_PATOTA:
+				paquete = crear_paquete(INICIAR_PATOTA);
 				numero_patota++;
 
 				//agregar_entero_a_paquete(paquete, numero_patota, sizeof(uint32_t));
@@ -364,7 +364,6 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 
 /*
 INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
-PRUEBA 5 tareas.txt 300|4 10|20 4|500
 */
 				bool hay_mas_parametros = true;
 				for(int i = 0; i < cantidad_tripulantes ; i++){
@@ -449,7 +448,7 @@ PRUEBA 5 tareas.txt 300|4 10|20 4|500
 
 				break;
 
-			case INICIAR_PATOTA:
+			/*case INICIAR_PATOTA:
 				enviar_header(INICIAR_PATOTA, conexionMiRam);
 				tipoMensaje = recibir_operacion(conexionMiRam);
 				//lista_tripulantes_ready=recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
@@ -467,11 +466,11 @@ PRUEBA 5 tareas.txt 300|4 10|20 4|500
 				}
 
 				break;
-
+			 */
 			case LISTAR_TRIPULANTES:
-				/*enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
-				tipoMensaje = recibir_operacion(conexionMiRam);
-				recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);*/
+				enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
+				//tipoMensaje = recibir_operacion(conexionMiRam);
+				//recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
 
 				break;
 
@@ -493,7 +492,8 @@ PRUEBA 5 tareas.txt 300|4 10|20 4|500
 
 			case OBTENER_BITACORA:
 				enviar_header(OBTENER_BITACORA, conexionMongoStore);
-				tipoMensaje = recibir_operacion(conexionMongoStore);
+				int tipoMensaje = recibir_operacion(conexionMongoStore);
+				log_info(logger, "tipoMensaje %d", tipoMensaje);
 				t_list* lista = recibir_paquete(conexionMongoStore);
 				char* mensaje = (char*)list_get(lista, 0);
 				log_info(logger, mensaje);
@@ -505,7 +505,8 @@ PRUEBA 5 tareas.txt 300|4 10|20 4|500
 				char** parametro = string_split(leido," ");
 				char* tripulante_id = parametro[1];
 				agregar_a_paquete(paquete, tripulante_id, strlen(tripulante_id)+1);
-
+				enviar_paquete(paquete, conexionMiRam);
+				eliminar_paquete(paquete);
 				break;
 
 			case FIN:

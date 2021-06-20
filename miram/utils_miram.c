@@ -76,11 +76,11 @@ int funcion_cliente(int socket_cliente){
 	int tipoMensajeRecibido = -1;
 	printf("Se conecto este socket a mi %d\n",socket_cliente);
 	while(1){
-
 		tipoMensajeRecibido = recibir_operacion(socket_cliente);
+
 		switch(tipoMensajeRecibido)
 		{
-			case PRUEBA:
+			case INICIAR_PATOTA:
 				lista = recibir_paquete(socket_cliente);
 
 				uint32_t pid = (uint32_t)atoi(list_get(lista,0));
@@ -106,35 +106,52 @@ int funcion_cliente(int socket_cliente){
 				if (todo_ok == false){
 					log_warning(logger, "no se puedo asignar espacio de memoria a todo");
 				} else {
+					log_info(logger, "Se asigno espacio de memoria a todo");
 					char* mensaje = malloc(17);
 					mensaje = "memoria asignada";
 					enviar_mensaje(mensaje, socket_cliente);
 				}
-
 				break;
 
-			case INICIAR_PATOTA:
-				log_info(logger, "Respondiendo");
-				enviar_header(INICIAR_PATOTA, socket_cliente);
-				break;
 
-			/*case LISTAR_TRIPULANTES:
-				t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
+			case LISTAR_TRIPULANTES:
+				for(int i=0; i < list_size(lista_tablas_segmentos); i++){
+					tabla_segmentacion* tabla_segmentos = (tabla_segmentacion*)list_get(lista_tablas_segmentos, i);
+					int pid = tabla_segmentos->id_patota;
+
+					for(int j=2; j < list_size(tabla_segmentos->segmento_inicial); j++){
+						segmento* segmento = list_get(tabla_segmentos->segmento_inicial, j);
+
+						for(int k=0; k < list_size(tabla_espacios_de_memoria); k++){
+							espacio_de_memoria* espacio = (espacio_de_memoria*)list_get(tabla_espacios_de_memoria, k);
+							if(espacio->base == segmento->base){
+								tcbTripulante* tripulante = espacio->contenido;
+								printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, pid, tripulante->estado);
+								k = list_size(tabla_espacios_de_memoria); //para que corte
+							}
+						}
+					}
+				}
+
+
+				/*t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
 				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
 				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 				enviar_paquete(paquete,socket_cliente);
-				eliminar_paquete(paquete);
-				break;*/
+				eliminar_paquete(paquete);*/
+				break;
 
 
-			/*case EXPULSAR_TRIPULANTE:
+			case EXPULSAR_TRIPULANTE:
 				lista = recibir_paquete(socket_cliente);
+				uint32_t tripulante_id = (uint32_t)atoi(list_get(lista,0));
 
-				uint32_t tripulante_id = (uint32_t*)atoi(list_get(lista,0));
+				bool tripulante_expulsado_con_exito = funcion_expulsar_tripulante(tripulante_id);
+				if(tripulante_expulsado_con_exito == false){
+					log_warning(logger, "No se pudo eliminar ese tripulante");
+				}
 
-				eliminar_segmento(tripulante_id +2, tabla_segmentos_patota);//+2 porque los 2 primeros segmentos son de pcb y tareas.
-
-				break;*/
+				break;
 
 			case PEDIR_TAREA:
 				log_info(logger, "Tripulante quiere tarea");
@@ -395,6 +412,7 @@ void iniciar_miram(config_struct* config_servidor){
 		espacio_de_memoria* memoria_principal = crear_espacio_de_memoria(0, atoi(config_servidor->tamanio_memoria), true);
 		list_add(tabla_espacios_de_memoria, memoria_principal);
 		imprimir_tabla_espacios_de_memoria();
+		lista_tablas_segmentos = list_create();
 	}
 }
 
@@ -704,6 +722,8 @@ int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* co
     return cantidad_marcos;
 }
 
+
+
 espacio_de_memoria* crear_espacio_de_memoria(int base, int tam, bool libre){
 	espacio_de_memoria* nuevo_espacio_de_memoria = malloc(sizeof(espacio_de_memoria));
 
@@ -871,8 +891,11 @@ bool patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tare
 	if (espacio_de_memoria_tareas == NULL){
 		return false;
 	}
+	espacio_de_memoria_tareas->contenido = tarea;
+
 	pcb_patota->tareas = espacio_de_memoria_tareas->base;//CREO QUE ESTA MAL ESTO. PQ TIENE LA DIR FISICA, NO LA LOGICA.
 	//TENDRIA QUE SER ALGO COMO 1 0 PQ LAS TAREAS ESTAN EN SEGMENTO 1 DESP 0
+	espacio_de_memoria_pcb_patota->contenido = pcb_patota;
 
 	segmento* segmento_pcb = malloc(sizeof(segmento));
 	segmento* segmento_tareas = malloc(sizeof(segmento));
@@ -897,10 +920,16 @@ bool patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tare
 	for(int i=2; i < cantidad_tripulantes +2; i++){
 		tripulante=(tcbTripulante*)list_get(lista,i);
 
+		if(i == 2){//es el primer tripulante de la lista
+			tabla_segmentos_patota->primer_tripulante = tripulante->tid;
+		}
+
 		espacio_de_memoria* espacio_de_memoria_tcb_tripulante = asignar_espacio_de_memoria(tamanio_tcb(tripulante));
 		if (espacio_de_memoria_tcb_tripulante == NULL){
 			return false;
 		}
+		//PONERLE LA DIR LOGICA DEL PCB AL TCB
+		espacio_de_memoria_tcb_tripulante->contenido = tripulante;
 
 		segmento* segmento_tcb = malloc(sizeof(segmento));
 		segmento_tcb->numero_segmento = i;
@@ -908,19 +937,41 @@ bool patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tare
 		segmento_tcb->tamanio = espacio_de_memoria_tcb_tripulante->tam;
 
 		list_add(tabla_segmentos_patota->segmento_inicial, segmento_tcb);
+
+		if(i == cantidad_tripulantes +2 -1){ //es el ultimo tripulante de la lista
+			tabla_segmentos_patota->ultimo_tripulante = tripulante->tid;
+		}
 	}
 
 	imprimir_tabla_espacios_de_memoria();
 
 	imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
 
-	log_info(logger, "elimino");
-	eliminar_segmento(5, tabla_segmentos_patota);
-
-	imprimir_tabla_espacios_de_memoria();
-
-	imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
+	list_add(lista_tablas_segmentos, tabla_segmentos_patota);
 
 	return true;
+}
+
+bool funcion_expulsar_tripulante(uint32_t tripulante_id){
+	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
+		tabla_segmentacion* tabla_segmentos = (tabla_segmentacion*)list_get(lista_tablas_segmentos, i);
+
+		if(tripulante_id <= tabla_segmentos->ultimo_tripulante){
+			for(int j=2; j < list_size(tabla_segmentos->segmento_inicial); j++){
+				segmento* segmento = list_get(tabla_segmentos->segmento_inicial, j);
+
+				if(segmento->numero_segmento -2 == (tripulante_id - tabla_segmentos->primer_tripulante)){
+					eliminar_segmento(segmento->numero_segmento, tabla_segmentos);
+					log_info(logger, "Se expulso segmento %d", segmento->numero_segmento);
+
+					imprimir_tabla_espacios_de_memoria();
+					imprimir_tabla_segmentos_patota(tabla_segmentos);
+
+					return true;
+				}
+			}
+		}
+	}
+	return false;
 }
 
