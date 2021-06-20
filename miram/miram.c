@@ -1,6 +1,6 @@
 #include "miram.h"
-config_struct configuracion;
-t_log* logger;
+//config_struct configuracion;
+//t_log* logger;
 
 
 int main(void)

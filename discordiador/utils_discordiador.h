@@ -27,6 +27,9 @@
  * En este enum se agregan todos los distintos tipos de mensajes que van a enviar entre los clientes y servidores
  */
 
+#define tamanio_PCB  8
+#define tamanio_TCB  21
+
 t_log* logger;
 
 typedef enum

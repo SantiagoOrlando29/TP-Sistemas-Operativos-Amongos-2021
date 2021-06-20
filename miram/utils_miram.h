@@ -101,8 +101,6 @@ typedef struct {
 
 } nuevoTripulante;
 
-t_log* logger;
-
 
 typedef struct{
 	char* ip_miram;
@@ -119,6 +117,8 @@ typedef struct{
 	char* criterio_seleccion;
 }config_struct;
 
+config_struct configuracion;
+t_log* logger;
 
 typedef enum{
 	MEM_PRINCIPAL,

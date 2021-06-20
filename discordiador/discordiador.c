@@ -79,10 +79,14 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,4); //TAREA NORMAL
 
 	int conexion_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
-	enviar_header(PEDIR_TAREA, conexion_miram);
-	int tipo_mensaje = recibir_operacion(conexion_miram);
-	printf("tipo_mensaje %d\n", tipo_mensaje);
-	close(conexion_miram);
+	t_paquete* paquete = crear_paquete(PEDIR_TAREA);
+	agregar_a_paquete(paquete, tripulante, tamanio_TCB);
+	enviar_paquete(paquete, conexion_miram);
+
+	//enviar_header(PEDIR_TAREA, conexion_miram);
+	//int tipo_mensaje = recibir_operacion(conexion_miram);
+	//printf("tipo_mensaje %d\n", tipo_mensaje);
+	//close(conexion_miram);
 
 	printf("hola soy el hilo %d, P%d, estoy listo para ejecutar \n", tripulante->tid, tripulante->puntero_pcb);
 	sem_post(&NUEVO_READY);
@@ -170,12 +174,12 @@ void tripulante_hilo (tcbTripulante* tripulante){
 		list_add(lista_tripulantes_exit, tripulante);
 	}
 	printf("hilo %d P%d, EXIT\n", tripulante->tid, tripulante->puntero_pcb);
-
+	close(conexion_miram);
 }
 
 void ready_exec() {
 	//sem_wait(&INICIAR_TRIPULANTE);
-	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
+	tcbTripulante* tripulante1 = malloc(tamanio_TCB);
 	int lista_size;
 	while(1){
 		lista_size = list_size(lista_tripulantes_ready);
@@ -198,7 +202,7 @@ void ready_exec() {
 }
 
 void nuevo_ready() {
-	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
+	tcbTripulante* tripulante1 = malloc(tamanio_TCB);
 	while(1){
 		sem_wait(&AGREGAR_NUEVO_A_READY);
 		sem_wait(&CONTINUAR_PLANIFICACION);
@@ -217,7 +221,7 @@ void nuevo_ready() {
 }
 
 void bloqueado_ready() {
-	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
+	tcbTripulante* tripulante1 = malloc(tamanio_TCB);
 	tarea* tarea_recibida;
 	while(1){
 		sem_wait(&PASA_A_BLOQUEADO);
@@ -261,7 +265,6 @@ void bloqueado_ready() {
 
 int main(int argc, char* argv[]) {
 	//config_struct configuracion;
-	//t_log* logger;
 
 
 	//Reinicio el anterior y arranco uno nuevo
@@ -297,7 +300,6 @@ int main(int argc, char* argv[]) {
 
 int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
 
-	 /*Hacer una funcion que cree las diferetnes listas*/
 	sem_init(&HABILITA_EJECUTAR, 0,1);
 	sem_init(&NUEVO_READY, 0,0);
 	sem_init(&AGREGAR_NUEVO_A_READY, 0,0);
@@ -314,9 +316,8 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	lista_tripulantes_bloqueado = list_create();
 	lista_tripulantes_trabajando = list_create();
 	lista_tripulantes_exit = list_create();
-	//int tipoMensaje = -1;
+
 	bool pausar_planificacion_activado = false;
-	//uint32_t cantidad_tripulantes;
 	uint32_t numero_patota = 0;
 
 	pthread_t ready;
@@ -393,7 +394,7 @@ INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
 					tripulante = crear_tripulante(tid,'N',posx,posy,0,numero_patota);
 					posx =0;
 					posy =0;
-					agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
+					agregar_a_paquete(paquete, tripulante, tamanio_TCB);
 					tid++;
 				}
 
@@ -412,7 +413,7 @@ INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
 				mensaje_recibido = recibir_mensaje(conexionMiRam);
 				log_info(logger, mensaje_recibido);
 
-				if(strcmp(mensaje_recibido, "memoria asignada") ==0){//VER SI HAY OTRA MANERA DE CREAR TRIPULANTES PARA NO REPETIR LO DE ARRIBA
+				if(strcmp(mensaje_recibido, "Memoria asignada") ==0){//VER SI HAY OTRA MANERA DE CREAR TRIPULANTES PARA NO REPETIR LO DE ARRIBA
 					hay_mas_parametros = true;
 					tid -= cantidad_tripulantes;
 					for(int i = 0; i < cantidad_tripulantes ; i++){
@@ -441,6 +442,8 @@ INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
 						posy =0;
 						tid++;
 					}
+				} else {
+					log_warning(logger, "no se q tiene q pasar cuando miram no asigna memoria, pero no empieza x ahora");
 				}
 
 
@@ -448,25 +451,6 @@ INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
 
 				break;
 
-			/*case INICIAR_PATOTA:
-				enviar_header(INICIAR_PATOTA, conexionMiRam);
-				tipoMensaje = recibir_operacion(conexionMiRam);
-				//lista_tripulantes_ready=recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
-				cantidad_tripulantes = 0;
-				numero_patota++;
-				while(cantidad_tripulantes < 5){
-					cantidad_tripulantes ++;
-					numero_tripulantess++;
-					tcbTripulante* tripulante =crear_tripulante(numero_tripulantess,'N',5,6,1,numero_patota);
-					pthread_t nombreHilo = (char*)(numero_tripulantess);
-					pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
-					pthread_detach(&nombreHilo);
-					list_add(lista_tripulantes_nuevo, tripulante);
-					sem_post(&AGREGAR_NUEVO_A_READY);
-				}
-
-				break;
-			 */
 			case LISTAR_TRIPULANTES:
 				enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
 				//tipoMensaje = recibir_operacion(conexionMiRam);

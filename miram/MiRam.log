@@ -1027,3 +1027,47 @@
 [INFO] 19:05:44:556 MiRam/(14578:14622): Tripulante quiere tarea
 [INFO] 19:05:44:557 MiRam/(14578:14623): Tripulante quiere tarea
 [ERROR] 19:06:25:928 MiRam/(14578:14603): el discordiador finalizo el programa. Terminando servidor
+[INFO] 19:14:37:175 MiRam/(14855:14870): Se asigno espacio de memoria a todo
+[INFO] 19:14:37:196 MiRam/(14855:14879): Tripulante quiere tarea
+[INFO] 19:14:37:198 MiRam/(14855:14880): Tripulante quiere tarea
+[INFO] 19:14:37:200 MiRam/(14855:14881): Tripulante quiere tarea
+[INFO] 19:14:37:202 MiRam/(14855:14882): Tripulante quiere tarea
+[INFO] 19:14:37:203 MiRam/(14855:14883): Tripulante quiere tarea
+[INFO] 19:14:38:225 MiRam/(14855:14870): Se asigno espacio de memoria a todo
+[INFO] 19:14:38:232 MiRam/(14855:14889): Tripulante quiere tarea
+[INFO] 19:14:38:234 MiRam/(14855:14890): Tripulante quiere tarea
+[INFO] 19:14:38:240 MiRam/(14855:14891): Tripulante quiere tarea
+[INFO] 19:14:38:244 MiRam/(14855:14892): Tripulante quiere tarea
+[INFO] 19:14:38:247 MiRam/(14855:14893): Tripulante quiere tarea
+[INFO] 19:15:26:178 MiRam/(14855:14870): Se expulso segmento 5
+[ERROR] 19:15:40:501 MiRam/(14855:14870): el discordiador finalizo el programa. Terminando servidor
+[INFO] 19:41:06:154 MiRam/(15114:15250): Se asigno espacio de memoria a todo
+[ERROR] 19:41:45:157 MiRam/(15114:15250): el discordiador finalizo el programa. Terminando servidor
+[INFO] 19:41:54:926 MiRam/(15328:15351): Se asigno espacio de memoria a todo
+[INFO] 19:42:05:140 MiRam/(15328:15351): Se asigno espacio de memoria a todo
+[INFO] 19:43:21:078 MiRam/(15328:15351): Se expulso segmento 6
+[INFO] 19:43:23:110 MiRam/(15328:15351): Se expulso segmento 5
+[ERROR] 19:43:42:740 MiRam/(15328:15351): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:43:42:740 MiRam/(15328:15376): el cliente se desconecto. Terminando servidor
+[ERROR] 19:43:42:740 MiRam/(15328:15375): el cliente se desconecto. Terminando servidor
+[ERROR] 19:43:42:740 MiRam/(15328:15374): el cliente se desconecto. Terminando servidor
+[ERROR] 19:43:42:740 MiRam/(15328:15373): el cliente se desconecto. Terminando servidor
+[ERROR] 19:43:42:741 MiRam/(15328:15372): el cliente se desconecto. Terminando servidor
+[ERROR] 19:43:42:741 MiRam/(15328:15364): el cliente se desconecto. Terminando servidor
+[ERROR] 19:43:42:741 MiRam/(15328:15363): el cliente se desconecto. Terminando servidor
+[ERROR] 19:43:42:741 MiRam/(15328:15362): el cliente se desconecto. Terminando servidor
+[ERROR] 19:43:42:741 MiRam/(15328:15361): el cliente se desconecto. Terminando servidor
+[ERROR] 19:43:42:741 MiRam/(15328:15360): el cliente se desconecto. Terminando servidor
+[INFO] 19:56:19:439 MiRam/(15543:15567): Se asigno espacio de memoria a todo
+[INFO] 19:56:19:452 MiRam/(15543:15578): Tripulante quiere tarea
+[INFO] 19:56:19:452 MiRam/(15543:15577): Tripulante quiere tarea
+[INFO] 19:56:19:453 MiRam/(15543:15579): Tripulante quiere tarea
+[INFO] 19:56:19:453 MiRam/(15543:15576): Tripulante quiere tarea
+[INFO] 19:56:19:453 MiRam/(15543:15580): Tripulante quiere tarea
+[ERROR] 19:56:36:757 MiRam/(15543:15567): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:56:36:757 MiRam/(15543:15580): el cliente se desconecto. Terminando servidor
+[ERROR] 19:56:36:757 MiRam/(15543:15579): el cliente se desconecto. Terminando servidor
+[ERROR] 19:56:36:757 MiRam/(15543:15579): el cliente se desconecto. Terminando servidor
+[ERROR] 19:56:36:757 MiRam/(15543:15578): el cliente se desconecto. Terminando servidor
+[ERROR] 19:56:36:757 MiRam/(15543:15577): el cliente se desconecto. Terminando servidor
+[ERROR] 19:56:36:757 MiRam/(15543:15576): el cliente se desconecto. Terminando servidor
