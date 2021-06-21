@@ -1,71 +1,32 @@
 #include "mongostore.h"
-config_struct configuracion;
-t_log* logger;
+#include<openssl/md5.h>
+pthread_mutex_t mutex_blocks;
+
+int blocks_size=8; //acepta 8 caracteres de char
+int blocks=2;
+
+superBloque* superbloque;
+char* bloques_copia;
 
 int main(void)
 {
-
 	leer_config();
-
-
-	void iterator(char* value)
-	{
-		printf("%s\n", value);
-	}
-
 	logger = log_create("mongostore.log", "mongostore", 1, LOG_LEVEL_DEBUG);
 
-	int server_fd = iniciar_servidor(configuracion.ip_mongostore, configuracion.puerto_mongostore);
-	log_info(logger, "Mongo listo para recibir ordenes desde Discordiador");
-	int cliente_fd = esperar_cliente(server_fd);
-	printf("\n");
+
 	iniciarFS();
 
-	superBloque sb;
-	sb.block_size=8;
-	sb.blocks=2;
-	for(int i=0;i<sb.blocks;i++){
-		sb.bitmap[i]='0';
+	pthread_t servidor;
+	int hilo_servidor = 1;
+	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){
+		log_info(logger, "Falla al crearse el hilo");
 	}
-	//puts(sb.bitmap);
-	printf("\n");
+	pthread_join(servidor,NULL);
 
-	iniciarSuperBloque(sb);
-	iniciarBlocks(sb.block_size*sb.blocks);
+
 
 	//mapeo();
-/*
- while(1)
-	{
-		t_paquete* paquete;
-		int tipoMensaje = recibir_operacion(cliente_fd);
-			switch(tipoMensaje)
-			{
-			case PRUEBA:
-				printf("\nPRODUCCE OXIGENO\n");
-				eliminar_paquete(paquete);
-				break;
-			case OBTENER_BITACORA:
-				paquete = crear_paquete(OBTENER_BITACORA);
-				char* mensaje = "bitacora";
-				agregar_a_paquete(paquete, mensaje, strlen(mensaje) +1);
-				enviar_paquete(paquete, cliente_fd);
-				eliminar_paquete(paquete);
-				break;
 
-			case FIN:
-				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
-				return EXIT_FAILURE;
-
-			case -1:
-				log_error(logger, "el cliente se desconecto. Terminando servidor");
-				return EXIT_FAILURE;
-			default:
-				log_warning(logger, "Operacion desconocida. No quieras meter la pata");
-				break;
-			}
-
-	}*/
 	return EXIT_SUCCESS;
 }
 
@@ -80,47 +41,191 @@ void leer_config(){
     configuracion.posiciones_sabotaje=config_get_array_value(archConfig,"POSICIONES_SABOTAJE");
 
 }
+
+void escribirArchivoSuperBloque(char* bitmap){
+
+		FILE* archivo;
+
+		archivo=fopen("/home/utnso/polus/SuperBloque.ims","wt");
+		fputs(string_from_format("BLOCK_SIZE=%d\n",blocks_size),archivo);
+		fputs(string_from_format("BLOCKS=%d\n",blocks),archivo);
+		fputs(string_from_format("BITMAP=%s\n",bitmap),archivo);
+
+		fclose(archivo);
+}
+
+void crearSuperBloque(){
+		t_config* archivo=config_create("SuperBloque.ims");
+		printf("1b\n");
+		fflush(stdout);
+		superbloque->block_size=config_get_int_value(archivo,"BLOCK_SIZE");
+		printf("2b\n");
+		fflush(stdout);
+		superbloque->blocks=config_get_int_value(archivo,"BLOCKS");
+		printf("3b\n");
+		fflush(stdout);
+		superbloque->bitmap="00";
+		printf("4b\n");
+		fflush(stdout);
+}
+
+void generar_oxigeno(int cant,char* bloques){
+		// size de archivo en bytes
+		// char = 1 bytes
+		bloques_recurso* oxigeno=asignarBloques(cant,superbloque,'O',bloques);
+		crearRecursoMetadata(oxigeno,"0xMD5oxigeno","/home/utnso/polus/Files/Oxigeno.ims");
+}
+void generar_comida(int cant,char* bloques){
+		// size de archivo en bytes
+		// char = 1 bytes
+		bloques_recurso* comida=asignarBloques(cant,superbloque,'C',bloques);
+		crearRecursoMetadata(comida,"0xMD5oxigeno","/home/utnso/polus/Files/Comida.ims");
+}
+
+void generar_basura(int cant,char* bloques){
+	// size de archivo en bytes
+	// char = 1 bytes
+	bloques_recurso* basura=asignarBloques(cant,superbloque,'B',bloques);
+	crearRecursoMetadata(basura,"0xMD5oxigeno","/home/utnso/polus/Files/Basura.ims");
+}
+
+bloques_recurso* recuperarValores(char* path){
+	bloques_recurso* recurso;
+	t_config* archivo=config_create(path);
+	recurso->size=config_get_int_value(archivo,"SIZE");
+	recurso->block_count=config_get_int_value(archivo,"BLOCK_COUNT");
+	recurso->blocks=config_get_string_value(archivo,"BLOCKS");
+	//recurso->caracter_llenado=config_get_string_value(archivo,"CARACTER_LLENADO"); TIRA ERROR
+	recurso->caracter_llenado='0';
+
+	return recurso;
+}
+
+/*falta contemplar el caso donde se sobrepasa la cantidad de bloques*/
+/* Tambien se escribe en bloques  los recursos y bitmap es modificado */
+bloques_recurso* asignarBloques(int cant,superBloque* sb,char caracter,char* bloques){
+	bloques_recurso* recurso;
+	char* bloques_asignados="[";
+	int i=0;
+	int inicio=0;
+	int aux_cant=cant;
+	recurso->block_count=0;
+
+	pthread_mutex_lock(&mutex_blocks); //sector critica poruqe se usa superBloque  y bloques
+
+	if(sb->bitmap[i]=='0'){
+		string_append_with_format(&bloques_asignados,"%s",i);
+		for(size_t cont=0;cont<sb->block_size;cont++){
+			if(cont < cant ){
+				bloques[inicio+cont]=caracter;
+				aux_cant= aux_cant - 1;
+			}
+		}
+		sb->bitmap[i]='1';
+		recurso->block_count++;
+		cant= cant-aux_cant; // vemos si basta con solo un bloque
+	}
+	else{
+		/*
+		 * Vimos que esta ocupado
+		 * Vemos si esta ocupado con los mismos recursos que generaremos
+		 * Solo vemos si el primer byte es del mismo caracter recurso
+		 */
+		if(sb->bitmap[i]=='1' && bloques[inicio]==caracter){
+			string_append_with_format(&bloques_asignados,"%s",i);
+		}
+	}
+
+
+	if(cant > 0){ //Si basta con  el primer bloeque vacio o necesitamos mas bloques o el primer bloque esta ocupado
+		for(i=1;i<sb->blocks;i++){ //recorremos el bitmap
+			inicio=i*sb->block_size; //definimos el inicio del bloque
+			if(sb->bitmap[i]=='0'){ //vemos si esta libre
+				string_append_with_format(&bloques_asignados,",%s",i);
+				for(size_t cont=0;cont<sb->block_size;cont++){
+					if(cont < cant){
+						bloques[inicio + cont]=caracter;
+						aux_cant= aux_cant - 1;
+					}
+				}
+				sb->bitmap[i]='1';
+				recurso->block_count++;
+			}
+			else{
+				if(sb->bitmap[i]=='1' && bloques[inicio]==caracter){
+					string_append_with_format(&bloques_asignados,",%s",i);
+				}
+			}
+		}
+	}
+	/*poner en una funcion sincronizacion
+		 * escribe en el archivo el cambio del bitmap
+		 */
+		//escribirArchivoSuperBloque(sb.bitmap);
+
+		pthread_mutex_unlock(&mutex_blocks);
+		string_append(&bloques_asignados,"]");
+
+		recurso->blocks=bloques_asignados;
+		recurso->caracter_llenado=caracter;
+		recurso->size=cant; // char = 1 byte
+		return recurso; // un string de donde se han guardado
+	}
+
+void crearRecursoMetadata(bloques_recurso* recurso,char* md5,char* path){
+	FILE* archivo;
+
+
+	archivo=fopen(path,"wt");
+
+	fputs(string_from_format("SIZE=%d\n",recurso->size),archivo);
+	fputs(string_from_format("BLOCK_COUNT=%d\n",recurso->block_count),archivo);
+	fputs(string_from_format("BLOCKS=%s\n",recurso->blocks),archivo);
+	fputs(string_from_format("CARACTER_LLENADO=%c\n",recurso->caracter_llenado),archivo);
+	fputs(string_from_format("MD5_ARCHIVO=%s\n",md5),archivo);
+
+	fclose(archivo);
+}
+
 void iniciarFS(){
 	crearDireccion("/home/utnso/polus");
 	crearDireccion("/home/utnso/polus/Files");
-
-	crearRecursoMetadata(133,3,"[1,2,3]",'O',"0123","/home/utnso/polus/Files/Oxigeno.ims");
-	crearRecursoMetadata(32,2,"[4,5]",'C',"0123","/home/utnso/polus/Files/Comida.ims");
-	crearRecursoMetadata(64,1,"[6]",'B',"0132465","/home/utnso/polus/Files/Basura.ims");
-
 	crearDireccion("/home/utnso/polus/Files/Bitacoras");
+	printf("Directorios OK\n");
+/*verificar si ya existe superbloque.ims*/
+	if(archivoExiste("/home/utnso/polus/SuperBloque.ims")==0){
+		printf("NO Existe super bloque\n");
+		escribirArchivoSuperBloque(string_repeat('0',blocks));
+		printf("1\n");
+		fflush(stdout);
+		bloques_copia=string_repeat('0',blocks);
+		printf("2\n");
+		fflush(stdout);
+		crearSuperBloque();
+		printf("3\n");
+		fflush(stdout);
+		if(archivoExiste("/home/utnso/polus/Blocks.ims")==0){ //tampoco existe el bloques.ims
+			printf("NO Existe blocks\n");
+			fflush(stdout);
+			iniciarBlocks((int)superbloque->block_size * (int)superbloque->blocks);
+		}
+	}
+	else{ //existe superbloque
+		if(archivoExiste("/home/utnso/polus/Blocks.ims")==0){ //preguntar existe el bloques.ims
+			printf("NO EXISTE Blocks \n");
+			iniciarBlocks((int)superbloque->block_size * (int)superbloque->blocks);
+		}
+	}
+
+	printf("Salgo de FS\n");
+
 }
 
-void iniciarSuperBloque(superBloque sb){
-
-	/*
-	superBloque sb;
-	sb.blocks=count;
-	sb.block_size=size;
-	for(int i=0;i<sb.blocks;i++){ //tamaño del bitmap, cant de bloques
-		sb.bitmap[i]=LIBRE; //estado del bloque
-	}
-	*/
-	FILE* archivo;
-	archivo=fopen("/home/utnso/polus/SuperBloque.ims","at+");
-	fputs(string_from_format("BLOCK_SIZE=%d\n",sb.block_size),archivo);
-	fputs(string_from_format("BLOCKS=%d\n",sb.blocks),archivo);
-	/* REVEER
-	fputs("BITMAP=",archivo);
-	for(int i=0;i<strlen(sb.bitmap);i++){
-		fputs(string_from_format("%c",sb.bitmap[i]),archivo);
-	}
-	*/
-	//fputs("\n",archivo);
-	fputs("BITMAP=000\n",archivo);
-	fclose(archivo);
-
-	//return sb;
-}
 
 void iniciarBlocks(int tamanio){
 	//printf("\n -------- \n");
 	//struct stat stat_file;
+	printf("ENTRO A INICIAR BLOCKS\n");
 	char* addr;
 	int fd;
 	fd = open("/home/utnso/polus/Blocks.ims", O_CREAT|O_RDWR, S_IRWXU);
@@ -130,7 +235,7 @@ void iniciarBlocks(int tamanio){
 	if(0<=fd){
 		printf("\nSe creo correctamente\n");
 	}
-	if(0 == ftruncate(fd,tamanio)){ // sedefine el tamanio
+	if(0 == ftruncate(fd,tamanio)){ // se define el tamanio
 				printf("\n Se le pudo asignar tamaño\n");
 				//exit(-1);
 	}
@@ -143,3 +248,9 @@ void iniciarBlocks(int tamanio){
 
 	close(fd);
 }
+/*
+crearRecursoMetadata(133,3,"[1,2,3]",'O',"0123","/home/utnso/polus/Files/Oxigeno.ims");
+crearRecursoMetadata(32,2,"[4,5]",'C',"0123","/home/utnso/polus/Files/Comida.ims");
+crearRecursoMetadata(64,1,"[6]",'B',"0132465","/home/utnso/polus/Files/Basura.ims");
+*/
+

@@ -20,6 +20,7 @@
 #include<assert.h>
 #include<sys/mman.h>
 #include<commons/collections/queue.h>
+#include<commons/string.h>
 #include<pthread.h>
 //#include<messages_lib/messages_lib.h>
 #include<stdbool.h>
@@ -69,7 +70,7 @@ typedef struct{
 typedef struct{
 	uint32_t size;
 	uint32_t block_count;
-	char* blocks; // [1,2,3]
+	t_list* blocks; // [1,2,3]
 	char caracter_llenado;
 	char* md5_archivo;
 }config_metadata;
@@ -85,6 +86,17 @@ typedef enum{
 }tipoMetadata;
 
 typedef struct{
+	int parte_entera;
+	int bytes_usados;
+}bloque_usado;
+
+typedef struct{
+	uint32_t size;
+	uint32_t block_count;
+	char* blocks; // [1,2,3]
+	char caracter_llenado;
+}bloques_recurso; //al momento de generar recurso
+typedef struct{
 	uint32_t block_size; //
 	uint32_t blocks;	//
 	char* bitmap; //lista de estados de bloques
@@ -94,6 +106,7 @@ typedef struct{
 	uint32_t size;
 	t_list* blocks; // [bloques utilizados]
 }bitacora;
+
 typedef enum
 {
 	GENERAR_OXIGENO,
@@ -112,15 +125,15 @@ typedef struct{
 	int tiempo;
 }tarea;
 
-struct nodoArbolDirectorio{
-
-};
 
 t_log* logger;
+config_struct configuracion;
 
 void* recibir_buffer(int*, int);
-int iniciar_servidor(char* , char*);
-int iniciar_servidor(char*, char*);
+//int iniciar_servidor(char* , char*);
+//int iniciar_servidor(char*, char*);
+void iniciar_servidor(config_struct*);
+int funcion_cliente(int);
 int esperar_cliente(int);
 t_list* recibir_paquete(int);
 void recibir_mensaje(int);
@@ -143,11 +156,18 @@ int archivoExiste(char* path);
 void crearDireccion(char* direccion);
 void eliminarDirectorio(char* path);
 
-// uint32_t size,uint32_t block_count,int* blocks,char caracter_llenado,char* md5,
-void crearRecursoMetadata(uint32_t size,uint32_t block_count,char* blocks,char caracter_llenado,char* md5,char* path);
-//void crearRecursoMetadata(char* path;
+
+void escribirArchivoSuperBloque(char*);
+void crearSuperBloque();
+void generar_oxigeno(int ,char*);
+void generar_comida(int,char*);
+void generar_basura(int,char*);
+bloques_recurso* recuperarValores(char*);
+bloques_recurso* asignarBloques(int,superBloque*,char,char*);
+void crearRecursoMetadata(bloques_recurso*,char*,char*);
 void iniciarFS();
 void iniciarBlocks(int);
-void iniciarSuperBloque(superBloque );
+
+
 
 #endif /* CONEXIONES_H_ */

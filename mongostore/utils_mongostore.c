@@ -1,7 +1,10 @@
 #include "utils_mongostore.h"
 #include <commons/string.h>
 
-int iniciar_servidor(char* ip_mongostore, char* puerto_mongostore)
+int socket_servidor;
+int variable_servidor = -1;
+
+int iniciar_servidor2(char* ip_mongostore, char* puerto_mongostore) //Viejo inicio
 {
 	int socket_servidor;
 
@@ -34,6 +37,100 @@ int iniciar_servidor(char* ip_mongostore, char* puerto_mongostore)
 
     return socket_servidor;
 }
+
+void iniciar_servidor(config_struct* config_servidor)
+{
+	t_log* logg;
+	logg = log_create("Mongo1.log", "Mongo1", 1, LOG_LEVEL_DEBUG);
+	log_info(logg, "Servidor MongoStore iniciando");
+
+	//int socket_servidor;
+
+    struct addrinfo hints, *servinfo, *p;
+
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_family = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_flags = AI_PASSIVE;
+
+    getaddrinfo(config_servidor->ip_mongostore, config_servidor->puerto_mongostore, &hints, &servinfo);
+
+    for (p=servinfo; p != NULL; p = p->ai_next)
+    {
+        if ((socket_servidor = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1)
+            continue;
+
+        if (bind(socket_servidor, p->ai_addr, p->ai_addrlen) == -1) {
+            close(socket_servidor);
+            continue;
+        }
+        break;
+    }
+
+	listen(socket_servidor, SOMAXCONN);
+
+	freeaddrinfo(servinfo);
+
+	log_info(logg, "Servidor MongoStore encendido");
+
+
+	struct sockaddr_in dir_cliente;
+	int tam_direccion = sizeof(struct sockaddr_in);
+	int socket_cliente = 0;
+
+	printf("Llegue");
+
+
+	int hilo;
+	while(variable_servidor != 0){
+
+		socket_cliente = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
+
+		if(socket_cliente>0){
+			hilo ++ ;
+			log_info(logg, "Estableciendo conexión desde %d", dir_cliente.sin_port);
+			log_info(logg, "Creando hilo");
+
+			pthread_t hilo_cliente=(char)hilo;
+			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente ,(void*)socket_cliente);
+			pthread_detach(hilo_cliente);
+		}
+	}
+
+	printf("Me fui\n");
+
+}
+
+int funcion_cliente(int socket_cliente){ //Funciones de prueba, hay que ver que queremos recibir
+	int tipoMensajeRecibido = -1;
+	printf("Se conecto este socket a mi %d\n",socket_cliente);
+	while(1){
+		tipoMensajeRecibido = recibir_operacion(socket_cliente);
+
+		switch(tipoMensajeRecibido)
+		{
+			case FIN:
+				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
+				variable_servidor = 0;
+				shutdown(socket_servidor, SHUT_RD);
+				close(socket_cliente);
+				return EXIT_FAILURE;
+
+			case -1:
+				log_error(logger, "el cliente se desconecto. Terminando servidor");
+				variable_servidor = 0;
+				shutdown(socket_servidor, SHUT_RD);
+				close(socket_cliente);
+				return EXIT_FAILURE;
+
+			default:
+				log_warning(logger, "Operacion desconocida. No quieras meter la pata");
+				break;
+
+		}
+	}
+}
+
 
 int esperar_cliente(int socket_servidor)
 {
@@ -190,17 +287,4 @@ void crearDireccion(char* direccion){
 void eliminarDirectorio(char* path){
 	rmdir(path);
 }
-//uint32_t size,uint32_t block_count,char* blocks,char caracter_llenado,char* md5,
-void crearRecursoMetadata(uint32_t size,uint32_t block_count,char* blocks,char caracter_llenado,char* md5,char* path){
-	FILE* archivo;
-	//config_metadata metadata;
-	archivo=fopen(path,"at+");
 
-	fputs(string_from_format("SIZE=%d\n",size),archivo);
-	fputs(string_from_format("BLOCK_COUNT=%d\n",block_count),archivo);
-	fputs(string_from_format("BLOCKS=%s\n",blocks),archivo);
-	fputs(string_from_format("CARACTER_LLENADO=%c\n",caracter_llenado),archivo);
-	fputs(string_from_format("MD5_ARCHIVO=%s\n",md5),archivo);
-
-	fclose(archivo);
-}
