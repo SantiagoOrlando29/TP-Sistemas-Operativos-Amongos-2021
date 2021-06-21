@@ -108,7 +108,7 @@ typedef struct{
 	char* puerto_miram;
 	char* tamanio_memoria;
 	char* squema_memoria;
-	char* tamanio_pag;
+	int tamanio_pag;
 	char* tamanio_swap;
 	char* path_swap;
 	char* algoritmo_reemplazo;
@@ -175,7 +175,11 @@ void imprimir_memoria(t_list* tabla_aux);
 void imprimir_seg(t_list* tabla_aux);
 void agregar_segmentos(t_list* lista_aux_seg);
 int posicion_marco(config_struct*);
-void imprimir_ocupacion_marcos(config_struct configuracion);
+marco* siguiente_marco(int id_patota, int id_marco,tabla_paginacion* tabla_aux);
+int escribir_atributo(void* dato, int offset, int nro_marco, config_struct* config_s, int tipo_dato);
+int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato);
+marco* incrementar_marco(int* indice,int* offset, int tamanio_marco, int tipo_dato, tabla_paginacion* auxiliar, config_struct* config_servidor);
+void imprimir_ocupacion_marcos(config_struct* configuracion);
 int posicion_patota(int id_buscado,t_list* tabla_aux);
 void finalizar_miram(config_struct* config_servidor);
 int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco);
@@ -184,6 +188,7 @@ int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* co
 void mostrar_tripulante(tcbTripulante* tripulante,pcbPatota* patota);
 int cuantos_marcos_libres(config_struct* config_servidor);
 void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista);
+void reservar_marco(int cantidad_marcos, config_struct* configuracion, tabla_paginacion* tabla_aux, int pid );
 
 
 void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial);

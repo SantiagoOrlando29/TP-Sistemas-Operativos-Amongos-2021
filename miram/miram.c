@@ -11,7 +11,27 @@ int main(void)
 	iniciar_miram(&configuracion);
 
 	t_list* memoria_aux=list_create();
-	agregar_memoria_aux(memoria_aux,&configuracion);
+	//agregar_memoria_aux(memoria_aux,&configuracion);
+
+	imprimir_ocupacion_marcos(&configuracion);
+
+	int marcos = cuantos_marcos(15,10,&configuracion);
+
+
+
+	printf("Cantidad utilizados: %d\n", marcos);
+
+	reservar_marco(6,&configuracion, memoria_aux, 1);
+
+	reservar_marco(8,&configuracion,memoria_aux, 2);
+
+	reservar_marco(2,&configuracion, memoria_aux, 3);
+
+	imprimir_memoria(memoria_aux);
+
+
+
+	imprimir_ocupacion_marcos(&configuracion);
 
  /*	crear_marcos(cuantostripulantes,+strlen(tarea)+1);
 
@@ -166,7 +186,7 @@ int main(void)
 	//printf("Lo leido es %d\n",a);
 	//printf("Lo leido es %d\n",b);
 
-*/
+
 	t_list* lista_recibir = list_create();
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
 	pthread_t servidor;
