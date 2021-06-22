@@ -14,12 +14,13 @@
 #include<string.h>
 #include<pthread.h>
 #include<stdbool.h>
+#include <semaphore.h>
 
 #define tamanio_PCB  8
 #define tamanio_tarea 10
 #define tamanio_TCB  21
 
-
+sem_t MUTEX_PEDIR_TAREA;
 
 typedef struct{
 	int patota_id;
@@ -150,7 +151,7 @@ typedef struct{
 	int id_patota;
 	int primer_tripulante;
 	int ultimo_tripulante;
-	t_list* segmento_inicial;
+	t_list* segmento_inicial;//CAMBIAR NOMBRE
 }tabla_segmentacion;
 
 typedef struct{

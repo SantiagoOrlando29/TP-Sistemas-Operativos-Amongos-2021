@@ -87,6 +87,10 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	int conexion_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	t_paquete* paquete = crear_paquete(PEDIR_TAREA);
 	agregar_a_paquete(paquete, tripulante, tamanio_TCB);
+	char* numero_patota_char = malloc(sizeof(char));
+	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
+	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
+	log_info(logger, "patota %d", tripulante->puntero_pcb);
 	enviar_paquete(paquete, conexion_miram);
 
 	//enviar_header(PEDIR_TAREA, conexion_miram);

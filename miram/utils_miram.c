@@ -1,5 +1,6 @@
 #include "utils_miram.h"
 
+
 int variable_servidor = -1;
 int socket_servidor;
 
@@ -161,10 +162,41 @@ int funcion_cliente(int socket_cliente){
 				break;
 
 			case PEDIR_TAREA:
-				lista = recibir_paquete(socket_cliente);
-				tcbTripulante* tripulante = (tcbTripulante*)list_get(lista,0);
-				printf("tripulante %d quiere tarea \n", tripulante->tid);
+				log_info(logger, "PEDIR_TAREA");//PONGO ESTA LINEA PQ SI NO LA PONGO TIRA ERROR. CORREGIR.
+				t_list* lista_tripulante = recibir_paquete(socket_cliente);
+				tcbTripulante* tripulante = (tcbTripulante*)list_get(lista_tripulante,0);
+				log_info(logger, "tripulante %d quiere tarea", tripulante->tid);
+				int numero_patota = (int)atoi(list_get(lista_tripulante,1));
+				log_info(logger, "tripu patota %d", numero_patota);
 
+				sem_wait(&MUTEX_PEDIR_TAREA);
+				for(int i=0; i < list_size(lista_tablas_segmentos); i++){
+					tabla_segmentacion* tabla_segmentos = list_get(lista_tablas_segmentos, i);
+
+					if(tabla_segmentos->id_patota == numero_patota){ //suponiendo que el punteropcb es numero de patota
+						segmento* segmento = list_get(tabla_segmentos->segmento_inicial, 1); // 1 es el segmento de tareas
+
+						//HACER FUNCION BUSCAR ESPACIO DE MEMORIA
+						for(int j=0; j < list_size(tabla_espacios_de_memoria); j++){
+							espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, j);
+
+							if(espacio->base == segmento->base){ //encontro la base en memoria de las tareas
+								//buscar_tarea();
+								log_info(logger, "tripu %d    contenido %s", tripulante->tid ,espacio->contenido);
+
+
+
+								break;
+							}
+						}
+
+					}
+
+				}
+				log_info(logger, "tripu %d VA A HACER EL POST", tripulante->tid);
+				sem_post(&MUTEX_PEDIR_TAREA);
+
+				//espacio_de_memoria_tareas->contenido = tarea;
 
 				//enviar_header(PEDIR_TAREA, socket_cliente);
 

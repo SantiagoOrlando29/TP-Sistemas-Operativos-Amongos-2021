@@ -1612,3 +1612,498 @@
 [ERROR] 15:38:08:858 MiRam/(20967:20998): el cliente se desconecto. Terminando servidor
 [ERROR] 15:38:08:858 MiRam/(20967:20997): el cliente se desconecto. Terminando servidor
 [ERROR] 15:38:08:858 MiRam/(20967:20996): el cliente se desconecto. Terminando servidor
+[INFO] 18:17:53:506 MiRam/(21572:21589): Se asigno espacio de memoria a todo
+[INFO] 18:17:53:524 MiRam/(21572:21598): contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[ERROR] 18:18:19:058 MiRam/(21572:21589): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 18:18:19:059 MiRam/(21572:21602): el cliente se desconecto. Terminando servidor
+[ERROR] 18:18:19:059 MiRam/(21572:21601): el cliente se desconecto. Terminando servidor
+[ERROR] 18:18:19:059 MiRam/(21572:21600): el cliente se desconecto. Terminando servidor
+[ERROR] 18:18:19:059 MiRam/(21572:21599): el cliente se desconecto. Terminando servidor
+[ERROR] 18:18:19:059 MiRam/(21572:21598): el cliente se desconecto. Terminando servidor
+[INFO] 18:19:19:228 MiRam/(21632:21649): Se asigno espacio de memoria a todo
+[INFO] 18:19:19:244 MiRam/(21632:21658): entre for 1
+[INFO] 18:19:19:244 MiRam/(21632:21658): entre if 1
+[INFO] 18:19:19:244 MiRam/(21632:21658): entre for 2
+[INFO] 18:19:19:244 MiRam/(21632:21658): entre for 2
+[INFO] 18:19:19:244 MiRam/(21632:21658): contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 18:19:19:244 MiRam/(21632:21658): entre for 2
+[INFO] 18:19:19:244 MiRam/(21632:21658): entre for 2
+[INFO] 18:19:19:245 MiRam/(21632:21658): entre for 2
+[INFO] 18:19:19:245 MiRam/(21632:21658): entre for 2
+[INFO] 18:19:19:245 MiRam/(21632:21658): entre for 2
+[INFO] 18:19:19:245 MiRam/(21632:21658): entre for 2
+[INFO] 18:19:19:245 MiRam/(21632:21659): entre for 1
+[INFO] 18:19:19:245 MiRam/(21632:21657): entre for 1
+[INFO] 18:19:19:245 MiRam/(21632:21660): entre for 1
+[INFO] 18:19:19:246 MiRam/(21632:21656): entre for 1
+[INFO] 18:19:19:246 MiRam/(21632:21656): entre if 1
+[INFO] 18:19:19:246 MiRam/(21632:21656): entre for 2
+[INFO] 18:19:19:246 MiRam/(21632:21656): entre for 2
+[INFO] 18:19:19:246 MiRam/(21632:21656): contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 18:19:19:246 MiRam/(21632:21656): entre for 2
+[INFO] 18:19:19:246 MiRam/(21632:21656): entre for 2
+[INFO] 18:19:19:246 MiRam/(21632:21656): entre for 2
+[INFO] 18:19:19:246 MiRam/(21632:21656): entre for 2
+[INFO] 18:19:19:246 MiRam/(21632:21656): entre for 2
+[INFO] 18:19:19:246 MiRam/(21632:21656): entre for 2
+[ERROR] 18:20:24:725 MiRam/(21632:21649): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 18:20:24:726 MiRam/(21632:21660): el cliente se desconecto. Terminando servidor
+[ERROR] 18:20:24:726 MiRam/(21632:21659): el cliente se desconecto. Terminando servidor
+[ERROR] 18:20:24:726 MiRam/(21632:21658): el cliente se desconecto. Terminando servidor
+[ERROR] 18:20:24:726 MiRam/(21632:21657): el cliente se desconecto. Terminando servidor
+[ERROR] 18:20:24:727 MiRam/(21632:21656): el cliente se desconecto. Terminando servidor
+[INFO] 18:28:11:233 MiRam/(21753:21767): Se asigno espacio de memoria a todo
+[INFO] 18:28:11:249 MiRam/(21753:21778): entre for 1
+[INFO] 18:28:11:249 MiRam/(21753:21778): entre if 1
+[INFO] 18:28:11:249 MiRam/(21753:21778): entre for 2
+[INFO] 18:28:11:249 MiRam/(21753:21778): entre for 2
+[INFO] 18:28:11:249 MiRam/(21753:21778): contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 18:28:11:249 MiRam/(21753:21778): entre for 2
+[INFO] 18:28:11:250 MiRam/(21753:21778): entre for 2
+[INFO] 18:28:11:250 MiRam/(21753:21778): entre for 2
+[INFO] 18:28:11:250 MiRam/(21753:21778): entre for 2
+[INFO] 18:28:11:250 MiRam/(21753:21778): entre for 2
+[INFO] 18:28:11:250 MiRam/(21753:21778): entre for 2
+[INFO] 18:28:11:250 MiRam/(21753:21781): entre for 1
+[INFO] 18:28:11:250 MiRam/(21753:21780): entre for 1
+[INFO] 18:28:11:250 MiRam/(21753:21779): entre for 1
+[INFO] 18:28:11:251 MiRam/(21753:21777): entre for 1
+[INFO] 18:28:11:251 MiRam/(21753:21777): entre if 1
+[INFO] 18:28:11:251 MiRam/(21753:21777): entre for 2
+[INFO] 18:28:11:251 MiRam/(21753:21777): entre for 2
+[INFO] 18:28:11:251 MiRam/(21753:21777): contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 18:28:11:251 MiRam/(21753:21777): entre for 2
+[INFO] 18:28:11:251 MiRam/(21753:21777): entre for 2
+[INFO] 18:28:11:251 MiRam/(21753:21777): entre for 2
+[INFO] 18:28:11:251 MiRam/(21753:21777): entre for 2
+[INFO] 18:28:11:251 MiRam/(21753:21777): entre for 2
+[INFO] 18:28:11:251 MiRam/(21753:21777): entre for 2
+[ERROR] 18:28:22:884 MiRam/(21753:21781): el cliente se desconecto. Terminando servidor
+[ERROR] 18:28:22:885 MiRam/(21753:21780): el cliente se desconecto. Terminando servidor
+[ERROR] 18:28:22:885 MiRam/(21753:21779): el cliente se desconecto. Terminando servidor
+[ERROR] 18:28:22:885 MiRam/(21753:21778): el cliente se desconecto. Terminando servidor
+[ERROR] 18:28:22:885 MiRam/(21753:21777): el cliente se desconecto. Terminando servidor
+[ERROR] 18:28:22:885 MiRam/(21753:21767): el discordiador finalizo el programa. Terminando servidor
+[INFO] 18:31:30:100 MiRam/(22166:22184): Se asigno espacio de memoria a todo
+[INFO] 18:31:30:121 MiRam/(22166:22194): tripu 2    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[ERROR] 18:31:55:129 MiRam/(22166:22184): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 18:31:55:130 MiRam/(22166:22197): el cliente se desconecto. Terminando servidor
+[ERROR] 18:31:55:130 MiRam/(22166:22196): el cliente se desconecto. Terminando servidor
+[ERROR] 18:31:55:130 MiRam/(22166:22195): el cliente se desconecto. Terminando servidor
+[ERROR] 18:31:55:130 MiRam/(22166:22194): el cliente se desconecto. Terminando servidor
+[ERROR] 18:31:55:130 MiRam/(22166:22193): el cliente se desconecto. Terminando servidor
+[INFO] 18:33:16:054 MiRam/(22217:22234): Se asigno espacio de memoria a todo
+[INFO] 18:33:16:073 MiRam/(22217:22244): tripu 3   entre for 1
+[INFO] 18:33:16:074 MiRam/(22217:22244): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 18:33:16:074 MiRam/(22217:22245): tripu 4   entre for 1
+[INFO] 18:33:16:074 MiRam/(22217:22242): tripu 1   entre for 1
+[INFO] 18:33:16:074 MiRam/(22217:22246): tripu 5   entre for 1
+[INFO] 18:33:16:074 MiRam/(22217:22243): tripu 2   entre for 1
+[INFO] 18:33:16:074 MiRam/(22217:22243): tripu 2    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[ERROR] 18:33:44:087 MiRam/(22217:22245): el cliente se desconecto. Terminando servidor
+[ERROR] 18:35:36:997 MiRam/(22331:22345): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 18:35:57:899 MiRam/(22351:22368): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 18:37:16:607 MiRam/(22487:22509): el discordiador finalizo el programa. Terminando servidor
+[INFO] 18:37:52:287 MiRam/(22631:22643): Se asigno espacio de memoria a todo
+[ERROR] 18:38:20:332 MiRam/(22631:22657): el cliente se desconecto. Terminando servidor
+[INFO] 18:39:53:631 MiRam/(22815:22830): Se asigno espacio de memoria a todo
+[ERROR] 18:40:56:321 MiRam/(22815:22830): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 18:40:56:321 MiRam/(22815:22846): el cliente se desconecto. Terminando servidor
+[ERROR] 18:40:56:321 MiRam/(22815:22845): el cliente se desconecto. Terminando servidor
+[ERROR] 18:40:56:321 MiRam/(22815:22844): el cliente se desconecto. Terminando servidor
+[ERROR] 18:40:56:321 MiRam/(22815:22843): el cliente se desconecto. Terminando servidor
+[ERROR] 18:40:56:321 MiRam/(22815:22842): el cliente se desconecto. Terminando servidor
+[INFO] 18:41:16:845 MiRam/(22870:22884): Se asigno espacio de memoria a todo
+[INFO] 18:41:16:858 MiRam/(22870:22896): tripu 3   entre for 1
+[INFO] 18:41:16:858 MiRam/(22870:22896): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 18:41:16:858 MiRam/(22870:22898): tripu 5   entre for 1
+[INFO] 18:41:16:858 MiRam/(22870:22897): tripu 4   entre for 1
+[INFO] 18:41:16:859 MiRam/(22870:22895): tripu 2   entre for 1
+[INFO] 18:41:16:859 MiRam/(22870:22895): tripu 2    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 18:41:16:859 MiRam/(22870:22894): tripu 1   entre for 1
+[ERROR] 18:43:02:690 MiRam/(22870:22884): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 18:43:02:690 MiRam/(22870:22898): el cliente se desconecto. Terminando servidor
+[INFO] 18:44:41:203 MiRam/(23007:23019): Se asigno espacio de memoria a todo
+[ERROR] 18:45:09:917 MiRam/(23007:23019): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 18:45:09:918 MiRam/(23007:23033): el cliente se desconecto. Terminando servidor
+[ERROR] 18:45:09:918 MiRam/(23007:23032): el cliente se desconecto. Terminando servidor
+[ERROR] 18:45:09:918 MiRam/(23007:23030): el cliente se desconecto. Terminando servidor
+[ERROR] 18:45:09:918 MiRam/(23007:23029): el cliente se desconecto. Terminando servidor
+[ERROR] 18:45:09:918 MiRam/(23007:23031): el cliente se desconecto. Terminando servidor
+[ERROR] 18:45:23:036 MiRam/(23039:23053): el discordiador finalizo el programa. Terminando servidor
+[INFO] 18:46:33:434 MiRam/(23075:23090): Se asigno espacio de memoria a todo
+[INFO] 18:46:33:450 MiRam/(23075:23102): tripu 3   entre for 1
+[INFO] 18:46:33:450 MiRam/(23075:23102): tripu 3   entre for 2
+[INFO] 18:46:33:450 MiRam/(23075:23102): tripu 3   entre for 2
+[INFO] 18:46:33:450 MiRam/(23075:23102): tripu 3   entre IF 2
+[INFO] 18:46:33:450 MiRam/(23075:23102): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 18:46:33:451 MiRam/(23075:23101): tripu 2   entre for 1
+[INFO] 18:46:33:451 MiRam/(23075:23104): tripu 5   entre for 1
+[INFO] 18:46:33:451 MiRam/(23075:23103): tripu 4   entre for 1
+[INFO] 18:46:33:451 MiRam/(23075:23100): tripu 1   entre for 1
+[ERROR] 18:47:52:808 MiRam/(23075:23090): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 18:47:52:809 MiRam/(23075:23104): el cliente se desconecto. Terminando servidor
+[ERROR] 18:47:52:809 MiRam/(23075:23103): el cliente se desconecto. Terminando servidor
+[ERROR] 18:47:52:809 MiRam/(23075:23102): el cliente se desconecto. Terminando servidor
+[ERROR] 18:47:52:809 MiRam/(23075:23101): el cliente se desconecto. Terminando servidor
+[ERROR] 18:47:52:809 MiRam/(23075:23100): el cliente se desconecto. Terminando servidor
+[INFO] 18:51:24:796 MiRam/(23156:23170): Se asigno espacio de memoria a todo
+[INFO] 18:51:24:802 MiRam/(23156:23182): tripu 3   entre for 1
+[INFO] 18:51:24:802 MiRam/(23156:23182): tripu 3   entre for 2
+[INFO] 18:51:24:802 MiRam/(23156:23182): tripu 3   entre for 2
+[INFO] 18:51:24:802 MiRam/(23156:23182): tripu 3   entre IF 2
+[INFO] 18:51:24:802 MiRam/(23156:23182): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 18:51:24:802 MiRam/(23156:23182): tripu 3 VA A HACER EL POST
+[INFO] 18:51:24:802 MiRam/(23156:23181): tripu 2   entre for 1
+[INFO] 18:51:24:803 MiRam/(23156:23181): tripu 2 VA A HACER EL POST
+[INFO] 18:51:24:803 MiRam/(23156:23183): tripu 4   entre for 1
+[INFO] 18:51:24:803 MiRam/(23156:23183): tripu 4 VA A HACER EL POST
+[INFO] 18:51:24:803 MiRam/(23156:23184): tripu 5   entre for 1
+[INFO] 18:51:24:803 MiRam/(23156:23184): tripu 5 VA A HACER EL POST
+[INFO] 18:51:24:803 MiRam/(23156:23180): tripu 1   entre for 1
+[INFO] 18:51:24:803 MiRam/(23156:23180): tripu 1 VA A HACER EL POST
+[ERROR] 18:52:39:866 MiRam/(23156:23170): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 18:52:39:866 MiRam/(23156:23184): el cliente se desconecto. Terminando servidor
+[ERROR] 18:52:39:866 MiRam/(23156:23183): el cliente se desconecto. Terminando servidor
+[ERROR] 18:52:39:866 MiRam/(23156:23182): el cliente se desconecto. Terminando servidor
+[ERROR] 18:52:39:866 MiRam/(23156:23181): el cliente se desconecto. Terminando servidor
+[ERROR] 18:52:39:866 MiRam/(23156:23180): el cliente se desconecto. Terminando servidor
+[INFO] 18:52:50:292 MiRam/(23207:23219): Se asigno espacio de memoria a todo
+[INFO] 18:52:50:301 MiRam/(23207:23231): tripu 3   entre for 1
+[INFO] 18:52:50:301 MiRam/(23207:23231): tripu 3   entre IF 1
+[INFO] 18:52:50:301 MiRam/(23207:23231): tripu 3   entre for 2
+[INFO] 18:52:50:301 MiRam/(23207:23231): tripu 3   entre for 2
+[INFO] 18:52:50:301 MiRam/(23207:23231): tripu 3   entre IF 2
+[INFO] 18:52:50:301 MiRam/(23207:23231): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 18:52:50:301 MiRam/(23207:23231): tripu 3 VA A HACER EL POST
+[INFO] 18:52:50:303 MiRam/(23207:23233): tripu 5   entre for 1
+[INFO] 18:52:50:303 MiRam/(23207:23233): tripu 5 VA A HACER EL POST
+[INFO] 18:52:50:303 MiRam/(23207:23232): tripu 4   entre for 1
+[INFO] 18:52:50:303 MiRam/(23207:23232): tripu 4 VA A HACER EL POST
+[INFO] 18:52:50:304 MiRam/(23207:23230): tripu 2   entre for 1
+[INFO] 18:52:50:304 MiRam/(23207:23230): tripu 2 VA A HACER EL POST
+[INFO] 18:52:50:304 MiRam/(23207:23229): tripu 1   entre for 1
+[INFO] 18:52:50:304 MiRam/(23207:23229): tripu 1 VA A HACER EL POST
+[ERROR] 18:53:12:931 MiRam/(23207:23219): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 18:53:12:932 MiRam/(23207:23233): el cliente se desconecto. Terminando servidor
+[ERROR] 18:53:12:932 MiRam/(23207:23232): el cliente se desconecto. Terminando servidor
+[ERROR] 18:53:12:932 MiRam/(23207:23231): el cliente se desconecto. Terminando servidor
+[ERROR] 18:53:12:932 MiRam/(23207:23230): el cliente se desconecto. Terminando servidor
+[ERROR] 18:53:12:932 MiRam/(23207:23229): el cliente se desconecto. Terminando servidor
+[INFO] 18:55:52:081 MiRam/(23279:23295): Se asigno espacio de memoria a todo
+[INFO] 18:55:52:093 MiRam/(23279:23307): tripu patota 1
+[INFO] 18:55:52:093 MiRam/(23279:23307): tripu 3   entre for 1
+[INFO] 18:55:52:093 MiRam/(23279:23307): i 0
+[INFO] 18:55:52:094 MiRam/(23279:23307): tripu 3   entre IF 1
+[INFO] 18:55:52:094 MiRam/(23279:23307): tripu 3   entre for 2
+[INFO] 18:55:52:094 MiRam/(23279:23307): tripu 3   entre for 2
+[INFO] 18:55:52:094 MiRam/(23279:23307): tripu 3   entre IF 2
+[INFO] 18:55:52:094 MiRam/(23279:23307): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 18:55:52:094 MiRam/(23279:23307): tripu 3 VA A HACER EL POST
+[INFO] 18:55:52:094 MiRam/(23279:23309): tripu patota 1868767233
+[INFO] 18:55:52:094 MiRam/(23279:23309): tripu 5   entre for 1
+[INFO] 18:55:52:094 MiRam/(23279:23309): i 0
+[INFO] 18:55:52:094 MiRam/(23279:23309): tripu 5 VA A HACER EL POST
+[INFO] 18:55:52:095 MiRam/(23279:23306): tripu patota 1330651137
+[INFO] 18:55:52:095 MiRam/(23279:23306): tripu 2   entre for 1
+[INFO] 18:55:52:095 MiRam/(23279:23306): i 0
+[INFO] 18:55:52:095 MiRam/(23279:23306): tripu 2 VA A HACER EL POST
+[INFO] 18:55:52:095 MiRam/(23279:23308): tripu patota 1667330049
+[INFO] 18:55:52:095 MiRam/(23279:23308): tripu 4   entre for 1
+[INFO] 18:55:52:095 MiRam/(23279:23308): i 0
+[INFO] 18:55:52:095 MiRam/(23279:23308): tripu 4 VA A HACER EL POST
+[INFO] 18:55:52:095 MiRam/(23279:23305): tripu patota 1948279041
+[INFO] 18:55:52:095 MiRam/(23279:23305): tripu 1   entre for 1
+[INFO] 18:55:52:095 MiRam/(23279:23305): i 0
+[INFO] 18:55:52:096 MiRam/(23279:23305): tripu 1 VA A HACER EL POST
+[ERROR] 18:57:33:271 MiRam/(23279:23295): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 18:57:33:272 MiRam/(23279:23309): el cliente se desconecto. Terminando servidor
+[ERROR] 18:57:33:272 MiRam/(23279:23308): el cliente se desconecto. Terminando servidor
+[ERROR] 18:57:33:272 MiRam/(23279:23307): el cliente se desconecto. Terminando servidor
+[ERROR] 18:57:33:272 MiRam/(23279:23306): el cliente se desconecto. Terminando servidor
+[ERROR] 18:57:33:272 MiRam/(23279:23305): el cliente se desconecto. Terminando servidor
+[INFO] 18:59:34:024 MiRam/(23365:23391): Se asigno espacio de memoria a todo
+[INFO] 18:59:34:033 MiRam/(23365:23403): tripu patota 1
+[INFO] 18:59:34:033 MiRam/(23365:23403): tripu 3   entre for 1
+[INFO] 18:59:34:033 MiRam/(23365:23403): tripu 3   entre IF 1
+[INFO] 18:59:34:033 MiRam/(23365:23403): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 18:59:34:033 MiRam/(23365:23403): tripu 3 VA A HACER EL POST
+[INFO] 18:59:34:033 MiRam/(23365:23405): tripu patota 1868767233
+[INFO] 18:59:34:033 MiRam/(23365:23405): tripu 5   entre for 1
+[INFO] 18:59:34:038 MiRam/(23365:23405): tripu 5 VA A HACER EL POST
+[INFO] 18:59:34:038 MiRam/(23365:23404): tripu patota 1667330049
+[INFO] 18:59:34:038 MiRam/(23365:23404): tripu 4   entre for 1
+[INFO] 18:59:34:038 MiRam/(23365:23404): tripu 4 VA A HACER EL POST
+[INFO] 18:59:34:038 MiRam/(23365:23402): tripu patota 1330651137
+[INFO] 18:59:34:038 MiRam/(23365:23402): tripu 2   entre for 1
+[INFO] 18:59:34:038 MiRam/(23365:23402): tripu 2 VA A HACER EL POST
+[INFO] 18:59:34:039 MiRam/(23365:23401): tripu patota 1948279041
+[INFO] 18:59:34:039 MiRam/(23365:23401): tripu 1   entre for 1
+[INFO] 18:59:34:039 MiRam/(23365:23401): tripu 1 VA A HACER EL POST
+[ERROR] 19:00:13:563 MiRam/(23365:23391): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:00:13:564 MiRam/(23365:23405): el cliente se desconecto. Terminando servidor
+[ERROR] 19:00:13:564 MiRam/(23365:23404): el cliente se desconecto. Terminando servidor
+[ERROR] 19:00:13:564 MiRam/(23365:23403): el cliente se desconecto. Terminando servidor
+[ERROR] 19:00:13:564 MiRam/(23365:23402): el cliente se desconecto. Terminando servidor
+[ERROR] 19:00:13:564 MiRam/(23365:23401): el cliente se desconecto. Terminando servidor
+[INFO] 19:04:36:566 MiRam/(23450:23476): Se asigno espacio de memoria a todo
+[INFO] 19:04:36:585 MiRam/(23450:23488): tripu patota 1
+[INFO] 19:04:36:585 MiRam/(23450:23488): tripu 3   entre for 1
+[INFO] 19:04:36:585 MiRam/(23450:23488): tripu 3   entre IF 1
+[INFO] 19:04:36:585 MiRam/(23450:23488): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:04:36:585 MiRam/(23450:23488): tripu 3 VA A HACER EL POST
+[INFO] 19:04:36:585 MiRam/(23450:23490): tripu patota 1868767233
+[INFO] 19:04:36:585 MiRam/(23450:23490): tripu 5   entre for 1
+[INFO] 19:04:36:585 MiRam/(23450:23490): tripu 5 VA A HACER EL POST
+[INFO] 19:04:36:586 MiRam/(23450:23487): tripu patota 1330651137
+[INFO] 19:04:36:586 MiRam/(23450:23487): tripu 2   entre for 1
+[INFO] 19:04:36:586 MiRam/(23450:23487): tripu 2 VA A HACER EL POST
+[INFO] 19:04:36:586 MiRam/(23450:23489): tripu patota 1667330049
+[INFO] 19:04:36:586 MiRam/(23450:23489): tripu 4   entre for 1
+[INFO] 19:04:36:586 MiRam/(23450:23489): tripu 4 VA A HACER EL POST
+[INFO] 19:04:36:586 MiRam/(23450:23486): tripu patota 1948279041
+[INFO] 19:04:36:586 MiRam/(23450:23486): tripu 1   entre for 1
+[INFO] 19:04:36:586 MiRam/(23450:23486): tripu 1 VA A HACER EL POST
+[ERROR] 19:05:20:387 MiRam/(23450:23476): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:05:20:387 MiRam/(23450:23490): el cliente se desconecto. Terminando servidor
+[ERROR] 19:05:20:387 MiRam/(23450:23489): el cliente se desconecto. Terminando servidor
+[ERROR] 19:05:20:387 MiRam/(23450:23488): el cliente se desconecto. Terminando servidor
+[ERROR] 19:05:20:388 MiRam/(23450:23487): el cliente se desconecto. Terminando servidor
+[ERROR] 19:05:20:388 MiRam/(23450:23486): el cliente se desconecto. Terminando servidor
+[INFO] 19:12:23:795 MiRam/(23604:23633): Se asigno espacio de memoria a todo
+[INFO] 19:12:23:808 MiRam/(23604:23646): tripu patota 1
+[INFO] 19:12:23:808 MiRam/(23604:23646): tripu 3   entre for 1
+[INFO] 19:12:23:808 MiRam/(23604:23646): tripu 3   entre IF 1
+[INFO] 19:12:23:809 MiRam/(23604:23646): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:12:23:809 MiRam/(23604:23646): tripu 3 VA A HACER EL POST
+[INFO] 19:12:23:809 MiRam/(23604:23645): tripu patota 1330651137
+[INFO] 19:12:23:809 MiRam/(23604:23645): tripu 2   entre for 1
+[INFO] 19:12:23:809 MiRam/(23604:23645): tripu 2 VA A HACER EL POST
+[INFO] 19:12:23:809 MiRam/(23604:23648): tripu patota 1868767233
+[INFO] 19:12:23:809 MiRam/(23604:23648): tripu 5   entre for 1
+[INFO] 19:12:23:809 MiRam/(23604:23648): tripu 5 VA A HACER EL POST
+[INFO] 19:12:23:809 MiRam/(23604:23647): tripu patota 1667330049
+[INFO] 19:12:23:810 MiRam/(23604:23647): tripu 4   entre for 1
+[INFO] 19:12:23:810 MiRam/(23604:23647): tripu 4 VA A HACER EL POST
+[INFO] 19:12:23:810 MiRam/(23604:23644): tripu patota 1948279041
+[INFO] 19:12:23:810 MiRam/(23604:23644): tripu 1   entre for 1
+[INFO] 19:12:23:810 MiRam/(23604:23644): tripu 1 VA A HACER EL POST
+[ERROR] 19:12:54:867 MiRam/(23604:23633): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:12:54:868 MiRam/(23604:23648): el cliente se desconecto. Terminando servidor
+[ERROR] 19:12:54:868 MiRam/(23604:23647): el cliente se desconecto. Terminando servidor
+[ERROR] 19:12:54:868 MiRam/(23604:23646): el cliente se desconecto. Terminando servidor
+[ERROR] 19:12:54:868 MiRam/(23604:23645): el cliente se desconecto. Terminando servidor
+[ERROR] 19:12:54:868 MiRam/(23604:23644): el cliente se desconecto. Terminando servidor
+[INFO] 19:17:36:261 MiRam/(23734:23762): Se asigno espacio de memoria a todo
+[INFO] 19:17:36:268 MiRam/(23734:23776): PEDIR_TAREA
+[INFO] 19:17:36:268 MiRam/(23734:23776): tripu patota 1
+[INFO] 19:17:36:268 MiRam/(23734:23776): tripu 3   entre for 1
+[INFO] 19:17:36:268 MiRam/(23734:23776): tripu 3   entre IF 1
+[INFO] 19:17:36:268 MiRam/(23734:23776): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:17:36:269 MiRam/(23734:23776): tripu 3 VA A HACER EL POST
+[INFO] 19:17:36:269 MiRam/(23734:23778): PEDIR_TAREA
+[INFO] 19:17:36:269 MiRam/(23734:23778): tripu patota 2561
+[INFO] 19:17:36:269 MiRam/(23734:23778): tripu 5   entre for 1
+[INFO] 19:17:36:269 MiRam/(23734:23778): tripu 5 VA A HACER EL POST
+[INFO] 19:17:36:269 MiRam/(23734:23777): PEDIR_TAREA
+[INFO] 19:17:36:269 MiRam/(23734:23777): tripu patota 128257
+[INFO] 19:17:36:269 MiRam/(23734:23777): tripu 4   entre for 1
+[INFO] 19:17:36:269 MiRam/(23734:23777): tripu 4 VA A HACER EL POST
+[INFO] 19:17:36:270 MiRam/(23734:23775): PEDIR_TAREA
+[INFO] 19:17:36:270 MiRam/(23734:23775): tripu patota 1330651137
+[INFO] 19:17:36:270 MiRam/(23734:23775): tripu 2   entre for 1
+[INFO] 19:17:36:270 MiRam/(23734:23775): tripu 2 VA A HACER EL POST
+[INFO] 19:17:36:270 MiRam/(23734:23774): PEDIR_TAREA
+[INFO] 19:17:36:270 MiRam/(23734:23774): tripu patota 1095245825
+[INFO] 19:17:36:270 MiRam/(23734:23774): tripu 1   entre for 1
+[INFO] 19:17:36:270 MiRam/(23734:23774): tripu 1 VA A HACER EL POST
+[ERROR] 19:18:28:146 MiRam/(23734:23762): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:18:28:146 MiRam/(23734:23778): el cliente se desconecto. Terminando servidor
+[ERROR] 19:18:28:146 MiRam/(23734:23777): el cliente se desconecto. Terminando servidor
+[ERROR] 19:18:28:146 MiRam/(23734:23776): el cliente se desconecto. Terminando servidor
+[ERROR] 19:18:28:146 MiRam/(23734:23775): el cliente se desconecto. Terminando servidor
+[ERROR] 19:18:28:147 MiRam/(23734:23774): el cliente se desconecto. Terminando servidor
+[INFO] 19:18:40:234 MiRam/(23800:23816): Se asigno espacio de memoria a todo
+[INFO] 19:18:40:249 MiRam/(23800:23828): PEDIR_TAREA
+[INFO] 19:18:40:249 MiRam/(23800:23828): tripulante 3 quiere tarea 
+
+[INFO] 19:18:40:249 MiRam/(23800:23828): tripu patota 1
+[INFO] 19:18:40:249 MiRam/(23800:23828): tripu 3   entre for 1
+[INFO] 19:18:40:250 MiRam/(23800:23828): tripu 3   entre IF 1
+[INFO] 19:18:40:250 MiRam/(23800:23828): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:18:40:250 MiRam/(23800:23828): tripu 3 VA A HACER EL POST
+[INFO] 19:18:40:250 MiRam/(23800:23829): PEDIR_TAREA
+[INFO] 19:18:40:250 MiRam/(23800:23829): tripulante 4 quiere tarea 
+
+[INFO] 19:18:40:250 MiRam/(23800:23829): tripu patota 128257
+[INFO] 19:18:40:250 MiRam/(23800:23829): tripu 4   entre for 1
+[INFO] 19:18:40:250 MiRam/(23800:23829): tripu 4 VA A HACER EL POST
+[INFO] 19:18:40:250 MiRam/(23800:23830): PEDIR_TAREA
+[INFO] 19:18:40:250 MiRam/(23800:23830): tripulante 5 quiere tarea 
+
+[INFO] 19:18:40:251 MiRam/(23800:23830): tripu patota 2561
+[INFO] 19:18:40:251 MiRam/(23800:23830): tripu 5   entre for 1
+[INFO] 19:18:40:251 MiRam/(23800:23830): tripu 5 VA A HACER EL POST
+[INFO] 19:18:40:251 MiRam/(23800:23827): PEDIR_TAREA
+[INFO] 19:18:40:251 MiRam/(23800:23827): tripulante 2 quiere tarea 
+
+[INFO] 19:18:40:251 MiRam/(23800:23827): tripu patota 1330651137
+[INFO] 19:18:40:251 MiRam/(23800:23827): tripu 2   entre for 1
+[INFO] 19:18:40:251 MiRam/(23800:23827): tripu 2 VA A HACER EL POST
+[INFO] 19:18:40:251 MiRam/(23800:23826): PEDIR_TAREA
+[INFO] 19:18:40:251 MiRam/(23800:23826): tripulante 1 quiere tarea 
+
+[INFO] 19:18:40:251 MiRam/(23800:23826): tripu patota 1095245825
+[INFO] 19:18:40:251 MiRam/(23800:23826): tripu 1   entre for 1
+[INFO] 19:18:40:252 MiRam/(23800:23826): tripu 1 VA A HACER EL POST
+[ERROR] 19:19:22:391 MiRam/(23800:23816): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:19:22:391 MiRam/(23800:23830): el cliente se desconecto. Terminando servidor
+[ERROR] 19:19:22:391 MiRam/(23800:23829): el cliente se desconecto. Terminando servidor
+[ERROR] 19:19:22:391 MiRam/(23800:23828): el cliente se desconecto. Terminando servidor
+[ERROR] 19:19:22:391 MiRam/(23800:23827): el cliente se desconecto. Terminando servidor
+[ERROR] 19:19:22:391 MiRam/(23800:23826): el cliente se desconecto. Terminando servidor
+[INFO] 19:21:59:205 MiRam/(23874:23895): Se asigno espacio de memoria a todo
+[INFO] 19:21:59:223 MiRam/(23874:23903): PEDIR_TAREA
+[INFO] 19:21:59:223 MiRam/(23874:23903): tripulante 2 quiere tarea
+[INFO] 19:21:59:223 MiRam/(23874:23903): tripu patota 1
+[INFO] 19:21:59:223 MiRam/(23874:23903): tripu 2   entre for 1
+[INFO] 19:21:59:223 MiRam/(23874:23903): tripu 2   entre IF 1
+[INFO] 19:21:59:223 MiRam/(23874:23903): tripu 2    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:21:59:223 MiRam/(23874:23903): tripu 2 VA A HACER EL POST
+[INFO] 19:21:59:223 MiRam/(23874:23904): PEDIR_TAREA
+[INFO] 19:21:59:223 MiRam/(23874:23904): tripulante 3 quiere tarea
+[INFO] 19:21:59:223 MiRam/(23874:23904): tripu patota 1701650433
+[INFO] 19:21:59:224 MiRam/(23874:23904): tripu 3   entre for 1
+[INFO] 19:21:59:224 MiRam/(23874:23904): tripu 3 VA A HACER EL POST
+[INFO] 19:21:59:224 MiRam/(23874:23902): PEDIR_TAREA
+[INFO] 19:21:59:224 MiRam/(23874:23902): tripulante 1 quiere tarea
+[INFO] 19:21:59:224 MiRam/(23874:23902): tripu patota 824204545
+[INFO] 19:21:59:224 MiRam/(23874:23902): tripu 1   entre for 1
+[INFO] 19:21:59:224 MiRam/(23874:23902): tripu 1 VA A HACER EL POST
+[INFO] 19:21:59:224 MiRam/(23874:23906): PEDIR_TAREA
+[INFO] 19:21:59:224 MiRam/(23874:23906): tripulante 5 quiere tarea
+[INFO] 19:21:59:224 MiRam/(23874:23906): tripu patota 1330651137
+[INFO] 19:21:59:224 MiRam/(23874:23906): tripu 5   entre for 1
+[INFO] 19:21:59:225 MiRam/(23874:23906): tripu 5 VA A HACER EL POST
+[INFO] 19:21:59:225 MiRam/(23874:23905): PEDIR_TAREA
+[INFO] 19:21:59:225 MiRam/(23874:23905): tripulante 4 quiere tarea
+[INFO] 19:21:59:225 MiRam/(23874:23905): tripu patota 2561
+[INFO] 19:21:59:225 MiRam/(23874:23905): tripu 4   entre for 1
+[INFO] 19:21:59:225 MiRam/(23874:23905): tripu 4 VA A HACER EL POST
+[ERROR] 19:22:14:344 MiRam/(23874:23895): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:22:14:344 MiRam/(23874:23906): el cliente se desconecto. Terminando servidor
+[ERROR] 19:22:14:344 MiRam/(23874:23905): el cliente se desconecto. Terminando servidor
+[ERROR] 19:22:14:344 MiRam/(23874:23904): el cliente se desconecto. Terminando servidor
+[ERROR] 19:22:14:344 MiRam/(23874:23903): el cliente se desconecto. Terminando servidor
+[ERROR] 19:22:14:344 MiRam/(23874:23902): el cliente se desconecto. Terminando servidor
+[INFO] 19:24:26:858 MiRam/(23978:24004): Se asigno espacio de memoria a todo
+[ERROR] 19:24:27:251 MiRam/(23978:24016): el cliente se desconecto. Terminando servidor
+[ERROR] 19:24:27:251 MiRam/(23978:24004): el cliente se desconecto. Terminando servidor
+[INFO] 19:28:39:129 MiRam/(24256:24274): Se asigno espacio de memoria a todo
+[INFO] 19:28:39:141 MiRam/(24256:24286): PEDIR_TAREA
+[INFO] 19:28:39:141 MiRam/(24256:24286): tripulante 3 quiere tarea
+[INFO] 19:28:39:141 MiRam/(24256:24286): tripu patota 1
+[INFO] 19:28:39:141 MiRam/(24256:24286): tripu 3   entre for 1
+[INFO] 19:28:39:141 MiRam/(24256:24286): tripu 3   entre IF 1
+[INFO] 19:28:39:141 MiRam/(24256:24286): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:28:39:141 MiRam/(24256:24286): tripu 3 VA A HACER EL POST
+[INFO] 19:28:39:141 MiRam/(24256:24287): PEDIR_TAREA
+[INFO] 19:28:39:142 MiRam/(24256:24287): tripulante 4 quiere tarea
+[INFO] 19:28:39:142 MiRam/(24256:24287): tripu patota 1632790785
+[INFO] 19:28:39:142 MiRam/(24256:24287): tripu 4   entre for 1
+[INFO] 19:28:39:142 MiRam/(24256:24287): tripu 4 VA A HACER EL POST
+[INFO] 19:28:39:142 MiRam/(24256:24285): PEDIR_TAREA
+[INFO] 19:28:39:142 MiRam/(24256:24285): tripulante 2 quiere tarea
+[INFO] 19:28:39:142 MiRam/(24256:24285): tripu patota 1330651137
+[INFO] 19:28:39:142 MiRam/(24256:24284): PEDIR_TAREA
+[INFO] 19:28:39:142 MiRam/(24256:24288): PEDIR_TAREA
+[INFO] 19:28:39:142 MiRam/(24256:24285): tripu 2   entre for 1
+[INFO] 19:28:39:142 MiRam/(24256:24285): tripu 2 VA A HACER EL POST
+[INFO] 19:28:39:142 MiRam/(24256:24288): tripulante 5 quiere tarea
+[INFO] 19:28:39:143 MiRam/(24256:24288): tripu patota 2561
+[INFO] 19:28:39:143 MiRam/(24256:24288): tripu 5   entre for 1
+[INFO] 19:28:39:143 MiRam/(24256:24288): tripu 5 VA A HACER EL POST
+[INFO] 19:28:39:143 MiRam/(24256:24284): tripulante 1 quiere tarea
+[INFO] 19:28:39:143 MiRam/(24256:24284): tripu patota -1239416831
+[INFO] 19:28:39:143 MiRam/(24256:24284): tripu 1   entre for 1
+[INFO] 19:28:39:143 MiRam/(24256:24284): tripu 1 VA A HACER EL POST
+[ERROR] 19:29:20:565 MiRam/(24256:24274): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:29:20:566 MiRam/(24256:24288): el cliente se desconecto. Terminando servidor
+[ERROR] 19:29:20:566 MiRam/(24256:24287): el cliente se desconecto. Terminando servidor
+[ERROR] 19:29:20:566 MiRam/(24256:24286): el cliente se desconecto. Terminando servidor
+[ERROR] 19:29:20:566 MiRam/(24256:24285): el cliente se desconecto. Terminando servidor
+[ERROR] 19:29:20:566 MiRam/(24256:24284): el cliente se desconecto. Terminando servidor
+[INFO] 19:30:51:517 MiRam/(24351:24377): Se asigno espacio de memoria a todo
+[INFO] 19:30:51:526 MiRam/(24351:24392): PEDIR_TAREA
+[INFO] 19:30:51:526 MiRam/(24351:24392): tripulante 3 quiere tarea
+[INFO] 19:30:51:526 MiRam/(24351:24392): tripu patota 149895320
+[INFO] 19:30:51:526 MiRam/(24351:24392): tripu 3   entre for 1
+[INFO] 19:30:51:526 MiRam/(24351:24392): tripu 3 VA A HACER EL POST
+[INFO] 19:30:51:526 MiRam/(24351:24393): PEDIR_TAREA
+[INFO] 19:30:51:526 MiRam/(24351:24393): tripulante 4 quiere tarea
+[INFO] 19:30:51:527 MiRam/(24351:24394): PEDIR_TAREA
+[INFO] 19:30:51:527 MiRam/(24351:24393): tripu patota -1239414312
+[INFO] 19:30:51:528 MiRam/(24351:24393): tripu 4   entre for 1
+[INFO] 19:30:51:528 MiRam/(24351:24393): tripu 4 VA A HACER EL POST
+[INFO] 19:30:51:528 MiRam/(24351:24394): tripulante 5 quiere tarea
+[INFO] 19:30:51:528 MiRam/(24351:24394): tripu patota -1228925000
+[INFO] 19:30:51:529 MiRam/(24351:24394): tripu 5   entre for 1
+[INFO] 19:30:51:529 MiRam/(24351:24394): tripu 5 VA A HACER EL POST
+[INFO] 19:30:51:529 MiRam/(24351:24391): PEDIR_TAREA
+[INFO] 19:30:51:529 MiRam/(24351:24391): tripulante 2 quiere tarea
+[INFO] 19:30:51:529 MiRam/(24351:24391): tripu patota 149895728
+[INFO] 19:30:51:529 MiRam/(24351:24391): tripu 2   entre for 1
+[INFO] 19:30:51:529 MiRam/(24351:24391): tripu 2 VA A HACER EL POST
+[INFO] 19:30:51:529 MiRam/(24351:24390): PEDIR_TAREA
+[INFO] 19:30:51:529 MiRam/(24351:24390): tripulante 1 quiere tarea
+[INFO] 19:30:51:529 MiRam/(24351:24390): tripu patota -1239414232
+[INFO] 19:30:51:529 MiRam/(24351:24390): tripu 1   entre for 1
+[INFO] 19:30:51:530 MiRam/(24351:24390): tripu 1 VA A HACER EL POST
+[ERROR] 19:32:06:676 MiRam/(24351:24377): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:32:06:676 MiRam/(24351:24394): el cliente se desconecto. Terminando servidor
+[ERROR] 19:32:06:676 MiRam/(24351:24393): el cliente se desconecto. Terminando servidor
+[ERROR] 19:32:06:676 MiRam/(24351:24392): el cliente se desconecto. Terminando servidor
+[ERROR] 19:32:06:676 MiRam/(24351:24391): el cliente se desconecto. Terminando servidor
+[ERROR] 19:32:06:676 MiRam/(24351:24390): el cliente se desconecto. Terminando servidor
+[INFO] 19:32:18:779 MiRam/(24426:24442): Se asigno espacio de memoria a todo
+[INFO] 19:32:18:789 MiRam/(24426:24454): PEDIR_TAREA
+[INFO] 19:32:18:790 MiRam/(24426:24454): tripulante 3 quiere tarea
+[INFO] 19:32:18:790 MiRam/(24426:24454): tripu patota 1
+[INFO] 19:32:18:790 MiRam/(24426:24454): tripu 3   entre for 1
+[INFO] 19:32:18:791 MiRam/(24426:24454): tripu 3   entre IF 1
+[INFO] 19:32:18:791 MiRam/(24426:24454): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:32:18:791 MiRam/(24426:24454): tripu 3 VA A HACER EL POST
+[INFO] 19:32:18:791 MiRam/(24426:24455): PEDIR_TAREA
+[INFO] 19:32:18:791 MiRam/(24426:24455): tripulante 4 quiere tarea
+[INFO] 19:32:18:791 MiRam/(24426:24455): tripu patota 1
+[INFO] 19:32:18:791 MiRam/(24426:24455): tripu 4   entre for 1
+[INFO] 19:32:18:791 MiRam/(24426:24455): tripu 4   entre IF 1
+[INFO] 19:32:18:791 MiRam/(24426:24455): tripu 4    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:32:18:791 MiRam/(24426:24455): tripu 4 VA A HACER EL POST
+[INFO] 19:32:18:791 MiRam/(24426:24453): PEDIR_TAREA
+[INFO] 19:32:18:792 MiRam/(24426:24453): tripulante 2 quiere tarea
+[INFO] 19:32:18:792 MiRam/(24426:24453): tripu patota 1
+[INFO] 19:32:18:792 MiRam/(24426:24453): tripu 2   entre for 1
+[INFO] 19:32:18:792 MiRam/(24426:24453): tripu 2   entre IF 1
+[INFO] 19:32:18:792 MiRam/(24426:24453): tripu 2    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:32:18:792 MiRam/(24426:24453): tripu 2 VA A HACER EL POST
+[INFO] 19:32:18:792 MiRam/(24426:24452): PEDIR_TAREA
+[INFO] 19:32:18:792 MiRam/(24426:24452): tripulante 1 quiere tarea
+[INFO] 19:32:18:792 MiRam/(24426:24452): tripu patota 1
+[INFO] 19:32:18:793 MiRam/(24426:24452): tripu 1   entre for 1
+[INFO] 19:32:18:793 MiRam/(24426:24452): tripu 1   entre IF 1
+[INFO] 19:32:18:793 MiRam/(24426:24452): tripu 1    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:32:18:793 MiRam/(24426:24452): tripu 1 VA A HACER EL POST
+[INFO] 19:32:18:793 MiRam/(24426:24456): PEDIR_TAREA
+[INFO] 19:32:18:793 MiRam/(24426:24456): tripulante 5 quiere tarea
+[INFO] 19:32:18:793 MiRam/(24426:24456): tripu patota 1
+[INFO] 19:32:18:793 MiRam/(24426:24456): tripu 5   entre for 1
+[INFO] 19:32:18:793 MiRam/(24426:24456): tripu 5   entre IF 1
+[INFO] 19:32:18:793 MiRam/(24426:24456): tripu 5    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:32:18:794 MiRam/(24426:24456): tripu 5 VA A HACER EL POST
+[ERROR] 19:32:40:097 MiRam/(24426:24442): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:32:40:097 MiRam/(24426:24456): el cliente se desconecto. Terminando servidor
+[ERROR] 19:32:40:098 MiRam/(24426:24455): el cliente se desconecto. Terminando servidor
+[ERROR] 19:32:40:098 MiRam/(24426:24454): el cliente se desconecto. Terminando servidor
+[ERROR] 19:32:40:098 MiRam/(24426:24453): el cliente se desconecto. Terminando servidor
+[ERROR] 19:32:40:098 MiRam/(24426:24452): el cliente se desconecto. Terminando servidor

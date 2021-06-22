@@ -10,6 +10,8 @@ int main(void)
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
 	iniciar_miram(&configuracion);
 
+	sem_init(&MUTEX_PEDIR_TAREA, 0,1);
+
 	t_list* memoria_aux=list_create();
 	agregar_memoria_aux(memoria_aux,&configuracion);
 
