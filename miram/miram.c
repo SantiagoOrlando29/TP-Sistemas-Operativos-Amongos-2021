@@ -10,29 +10,41 @@ int main(void)
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
 	iniciar_miram(&configuracion);
 
-	t_list* memoria_aux=list_create();
+	//t_list* memoria_aux=list_create();
 	//agregar_memoria_aux(memoria_aux,&configuracion);
+
+	pthread_t servidor;
+	iniciar_servidor(&configuracion);
+	int hilo_servidor = 1;
+	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){
+		log_info(logger, "Falla al crearse el hilo");
+	}
+	pthread_join(servidor,NULL);
+
+	/*
 
 	imprimir_ocupacion_marcos(&configuracion);
 
-	int marcos = cuantos_marcos(15,10,&configuracion);
+	int marcos = cuantos_marcos(1,10,&configuracion);
 
 
 
 	printf("Cantidad utilizados: %d\n", marcos);
 
-	reservar_marco(6,&configuracion, memoria_aux, 1);
+	reservar_marco(5,&configuracion, memoria_aux, 1);
 
 	reservar_marco(8,&configuracion,memoria_aux, 2);
 
 	reservar_marco(2,&configuracion, memoria_aux, 3);
+
+	reservar_marco(6,&configuracion, memoria_aux, 4);
 
 	imprimir_memoria(memoria_aux);
 
 
 
 	imprimir_ocupacion_marcos(&configuracion);
-
+*/
  /*	crear_marcos(cuantostripulantes,+strlen(tarea)+1);
 
 
@@ -189,13 +201,7 @@ int main(void)
 
 	t_list* lista_recibir = list_create();
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
-	pthread_t servidor;
-	//iniciar_servidor(&configuracion);
-	int hilo_servidor = 1;
-	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){
-		log_info(logger, "Falla al crearse el hilo");
-	}
-	pthread_join(servidor,NULL);
+
 
 	list_destroy(lista_recibir);
 
@@ -232,6 +238,8 @@ int main(void)
 	list_add(tabla_segmentos_patota1->segmento_inicial, tarea_prueba);
 */
 
+
+	//imprimir_memoria(memoria_aux);
 	return 0;
 }
 
@@ -369,9 +377,9 @@ void leer_config(){
 
     configuracion.ip_miram = config_get_string_value(archConfig, "IP_MI_RAM_HQ");
     configuracion.puerto_miram = config_get_string_value(archConfig, "PUERTO_MI_RAM_HQ");
-    configuracion.tamanio_memoria = config_get_string_value(archConfig, "TAMANIO_MEMORIA");
+    configuracion.tamanio_memoria = config_get_int_value(archConfig, "TAMANIO_MEMORIA");
     configuracion.squema_memoria = config_get_string_value(archConfig, "ESQUEMA_MEMORIA");
-    configuracion.tamanio_pag =config_get_string_value(archConfig, "TAMANIO_PAG");
+    configuracion.tamanio_pag =config_get_int_value(archConfig, "TAMANIO_PAG");
     configuracion.tamanio_swap =config_get_string_value(archConfig, "TAMANIO_SWAP");
     configuracion.path_swap = config_get_string_value(archConfig, "PATH_SWAP");
     configuracion.algoritmo_reemplazo = config_get_string_value(archConfig, "ALGORITMO_REEMPLAZO");

@@ -1,7 +1,7 @@
 #include "utils_miram.h"
 config_struct configuracion;
 
-
+t_list* memoria_aux;
 int variable_servidor = -1;
 int socket_servidor;
 
@@ -72,6 +72,7 @@ void iniciar_servidor(config_struct* config_servidor)
 
 int funcion_cliente(int socket_cliente){
 	t_list* lista = list_create();
+	memoria_aux=list_create();
 	pcbPatota* patota;
 	tcbTripulante* tripulante;
 	t_paquete* paquete;
@@ -122,9 +123,12 @@ int funcion_cliente(int socket_cliente){
 					printf("Guardando info.....");
 					tabla_paginacion* una_tabla=malloc(sizeof(tabla_paginacion));
 					una_tabla->id_patota = pid;
+					una_tabla->marco_inicial=list_create();
+					list_add(memoria_aux, una_tabla);
 					for(int i=0 ; i<cuantos_marcos_necesito; i++){
 						posicion_libre = posicion_marco(&configuracion);
 						marco* marco_nuevo = malloc (sizeof(marco));
+						marco_nuevo->id_marco=posicion_libre;
 						list_add(una_tabla->marco_inicial,marco_nuevo);
 					}
 					almacenar_informacion(&configuracion, una_tabla, lista);
@@ -363,17 +367,29 @@ tarea* crear_tarea(tarea_tripulante cod_tarea,int parametro,int pos_x,int pos_y,
 
 void iniciar_miram(config_struct* config_servidor){
 
-	config_servidor->posicion_inicial= malloc(sizeof(atoi(config_servidor->tamanio_memoria)));
+
+
+	config_servidor->posicion_inicial= malloc(sizeof(config_servidor->tamanio_memoria));
 
 	if(strcmp(config_servidor->squema_memoria,"PAGINACION")==0){
 
-		config_servidor->cant_marcos=atoi(config_servidor->tamanio_memoria)/atoi(config_servidor->tamanio_pag);
-		config_servidor->marcos= malloc(config_servidor->cant_marcos);
+		config_servidor->marcos_libres=list_create();
+
+		int nro_marcos =(config_servidor->tamanio_memoria)/(config_servidor->tamanio_pag);
+		config_servidor->cant_marcos = nro_marcos;
+		//printf("H");
+
+		//config_servidor->marcos= malloc(sizeof(int));
 		//Inicializo el array en 0, me indica la ocupacion de los marcos
-		for(int i=0; i<config_servidor->cant_marcos;i++){
-			config_servidor->marcos[i]=malloc(sizeof(int));
-			config_servidor->marcos[i]= 0;
+		for(int i=0; i<nro_marcos;i++){
+			int vacio=0;
+			list_add(config_servidor->marcos_libres,(void*)vacio);
 		}
+		for(int i=0; i<nro_marcos;i++){
+			printf("En lista %d\n",(int)list_get(config_servidor->marcos_libres,i));
+
+		}
+
 
 	}else{
 		//Inicializo Segmentacion
@@ -457,7 +473,7 @@ void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* 
 		marco* marco_leido = list_get(una_tabla->marco_inicial,contador_tablas);
 		if(marco_leido->libre == 0){
 			printf("hay lugares libres");
-			escribir_tripulante(tripulante, (marco_leido->id_marco)*(atoi(configuracion->tamanio_pag)) +  (configuracion->posicion_inicial));
+			escribir_tripulante(tripulante, (marco_leido->id_marco)*(configuracion->tamanio_pag) +  (configuracion->posicion_inicial));
 			marco_disponible = 1;
 		}
 		contador_tablas++;
@@ -492,7 +508,7 @@ void imprimir_seg(t_list* tabla_aux){
 	}
 }
 
-void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista ){
+void almacenar_informacion(config_struct* config_servidor, t_list* una_tabla, t_list* lista ){
 
 	int offset = 0;
 	int indice_marco=0;
@@ -505,7 +521,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 	int puntero_tarea = 0;
 	int offset_pcb = offset;
-	indice_marco += alcanza_espacio(&offset, atoi(config_servidor->tamanio_pag), sizeof(int));
+	indice_marco += alcanza_espacio(&offset, config_servidor->tamanio_pag, sizeof(int));
 	marco = list_get(auxiliar->marco_inicial,indice_marco);
 	int marco_pcb = indice_marco;
 	offset +=escribir_atributo(&puntero_tarea,offset,marco->id_marco, config_servidor, sizeof(int));
@@ -514,36 +530,45 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 	char* tarea=(char*)list_get(lista, cantidad_tripulantes+2);
 
-	for(int i =0; i<cantidad_tripulantes;i++){
+	for(int i =2; i<cantidad_tripulantes+2;i++){
 		tcbTripulante* tripulante= (tcbTripulante*) list_get(lista,i);
 		int tid = tripulante->tid;
-
-		indice_marco += alcanza_espacio(&offset, atoi(config_servidor->tamanio_pag), sizeof(int));
+		printf("TID %d",tid);
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 		marco = list_get(auxiliar->marco_inicial,indice_marco);
 		offset +=escribir_atributo(&tid,offset,marco->id_marco, config_servidor, sizeof(int));
 
-		char* estado = tripulante->estado;
-		indice_marco += alcanza_espacio(&offset, atoi(config_servidor->tamanio_pag), sizeof(char));
+		char estado = tripulante->estado;
+		printf("Estado %c", estado);
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		marco = list_get(auxiliar->marco_inicial,indice_marco);
 		offset +=escribir_atributo(&estado,offset,marco->id_marco, config_servidor, sizeof(char));
 
 		int pos_x = tripulante->posicionX;
-		indice_marco += alcanza_espacio(&offset, atoi(config_servidor->tamanio_pag), sizeof(int));
+		printf("Pos x %d",pos_x);
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 		marco = list_get(auxiliar->marco_inicial,indice_marco);
 		offset +=escribir_atributo(&pos_x,offset,marco->id_marco, config_servidor, sizeof(int));
 
+
 		int pos_y = tripulante->posicionY;
-		indice_marco += alcanza_espacio(&offset, atoi(config_servidor->tamanio_pag), sizeof(int));
+		printf("Pos y %d",pos_y);
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 		marco = list_get(auxiliar->marco_inicial,indice_marco);
 		offset +=escribir_atributo(&pos_y,offset,marco->id_marco, config_servidor, sizeof(int));
 
+
 		int prox_i = tripulante->prox_instruccion;
-		indice_marco += alcanza_espacio(&offset, atoi(config_servidor->tamanio_pag), sizeof(int));
+
+		printf("Prox i %d", prox_i);
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 		marco = list_get(auxiliar->marco_inicial,indice_marco);
 		offset +=escribir_atributo(&prox_i,offset,marco->id_marco, config_servidor, sizeof(int));
 
+		printf("PCB  %d",prox_i);
+
 		int p_pcb = tripulante->puntero_pcb;
-		indice_marco += alcanza_espacio(&offset, atoi(config_servidor->tamanio_pag), sizeof(int));
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 		marco = list_get(auxiliar->marco_inicial,indice_marco);
 	    offset +=escribir_atributo(&p_pcb,offset,marco->id_marco, config_servidor, sizeof(int));
 
@@ -572,14 +597,16 @@ void buscar_tripulante(int id_patota, int nro_tripulante, tabla_paginacion tabla
 
 }
 
-*/
+
 
 marco* incrementar_marco(int* indice,int* offset, int tamanio_marco, int tipo_dato, tabla_paginacion* auxiliar, config_struct* config_servidor){
-	(*indice) += alcanza_espacio(offset, atoi(config_servidor->tamanio_pag),tipo_dato);
+	(*indice) += alcanza_espacio(offset, (config_servidor->tamanio_pag),tipo_dato);
 	marco* marco_actual = list_get(auxiliar->marco_inicial,indice);
 
 	return marco_actual;
 }
+
+*/
 int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato){
 	if(tamanio_marco > (*offset)+tipo_dato){
 
@@ -592,10 +619,11 @@ int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato){
 
 
 int escribir_atributo(void* dato, int offset, int nro_marco, config_struct* config_s, int tipo_dato){
-	memcpy((config_s->posicion_inicial)+nro_marco*atoi(config_s->tamanio_pag)+offset,dato,tipo_dato);
+	memcpy((config_s->posicion_inicial)+nro_marco*(config_s->tamanio_pag)+offset,dato,tipo_dato);
 	return sizeof(int);
 }
 
+/*
 marco* siguiente_marco(int id_patota, int id_marco,tabla_paginacion* tabla_aux){
 	tabla_paginacion* auxiliar = (tabla_paginacion*)list_get(tabla_aux, posicion_patota(id_patota, tabla_aux));
 	for(int j=0;j<list_size(auxiliar->marco_inicial);j++){
@@ -609,7 +637,7 @@ marco* siguiente_marco(int id_patota, int id_marco,tabla_paginacion* tabla_aux){
 	}return -1;
 }
 
-
+*/
 
 int posicion_marco(config_struct* config_servidor){
 	for(int i=0;i<config_servidor->cant_marcos;i++){
@@ -625,7 +653,7 @@ int posicion_marco(config_struct* config_servidor){
 int cuantos_marcos_libres(config_struct* config_servidor){
 	int contador_marcos = 0;
 	for(int i=0;i<config_servidor->cant_marcos;i++){
-		if(config_servidor->marcos[i]==0){
+		if((int)list_get(config_servidor->marcos_libres, i)==0){
 			contador_marcos++;
 		}
 
@@ -636,7 +664,7 @@ int cuantos_marcos_libres(config_struct* config_servidor){
 void imprimir_ocupacion_marcos(config_struct* configuracion){
 	printf("Marcos ocupados:\n");
 	for(int i=0; i<(configuracion->cant_marcos);i++){
-			printf("Valor %d\n",(int)configuracion->marcos[i]);
+			printf("|%d|",(int) list_get(configuracion->marcos_libres,i));
 		}
 		printf("\n");
 }
@@ -783,7 +811,7 @@ int por_atributo(int nuevo_marco,int *tamanio_marco, int tipo_dato, int cantidad
 
 int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* config_servidor){
 
-	int tamanio_marco =  atoi(config_servidor->tamanio_pag);
+	int tamanio_marco =  config_servidor->tamanio_pag;
 	int nuevo_marco  = tamanio_marco ;
 
 	int cantidad_marcos = 1;
@@ -817,17 +845,17 @@ int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* co
     return cantidad_marcos;
 }
 
-void reservar_marco(int cantidad_marcos, config_struct* configuracion, tabla_paginacion* tabla_aux, int pid ){
+void reservar_marco(int cantidad_marcos, config_struct* configuracion, t_list* tabla_aux, int pid ){
 
 
 
 	int ref = cantidad_marcos;
 	for(int i=0; i<configuracion->cant_marcos; i++){
-		if(configuracion->marcos[i]==0 && ref>0){
+		if(list_get(configuracion->marcos_libres,i)==0 && ref>0){
 			ref--;
 		}
 
-}
+	}
 	if (ref==0){ //Alcanzan los marcos para almacenar la patota
 
 		tabla_paginacion* tabla=malloc(sizeof(tabla_paginacion));
@@ -838,12 +866,12 @@ void reservar_marco(int cantidad_marcos, config_struct* configuracion, tabla_pag
 
 		printf("Hay espacio, asignado memoria\n");
 		for(int i=0; i<configuracion->cant_marcos; i++){
-				if(configuracion->marcos[i]==0 && cantidad_marcos>0){
+				if(list_get(configuracion->marcos_libres,i)==0 && cantidad_marcos>0){
 					marco* marco=malloc(sizeof(marco));
 					marco->id_marco=i;
 					tabla_paginacion* auxiliar = list_get(tabla_aux, posicion_patota(pid, tabla_aux));
 					list_add(auxiliar->marco_inicial,marco);
-					configuracion->marcos[i]=(int)1;
+					list_add_in_index(configuracion->marcos_libres, i, (void*)1);
 					cantidad_marcos--;
 				}
 
@@ -856,4 +884,16 @@ void reservar_marco(int cantidad_marcos, config_struct* configuracion, tabla_pag
 }
 
 
+void eliminar_estructura_memoria(t_list* tabla_aux){
+	for(int i=0; i<list_size(tabla_aux);i++){
+		tabla_paginacion* auxiliar = (tabla_paginacion*)list_get(tabla_aux,i);
+		for(int j=0;j<list_size(auxiliar->marco_inicial);j++){
+			list_remove(auxiliar->marco_inicial,j);
 
+		}
+	}
+	for(int i=0; i<list_size(tabla_aux);i++){
+		list_remove(tabla_aux,i);
+}
+
+}

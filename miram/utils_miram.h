@@ -106,7 +106,7 @@ t_log* logger;
 typedef struct{
 	char* ip_miram;
 	char* puerto_miram;
-	char* tamanio_memoria;
+	int tamanio_memoria;
 	char* squema_memoria;
 	int tamanio_pag;
 	char* tamanio_swap;
@@ -114,8 +114,9 @@ typedef struct{
 	char* algoritmo_reemplazo;
 	void* posicion_inicial;
 	int cant_marcos;
-	uint8_t **marcos;
+	int **marcos;
 	char* criterio_seleccion;
+	t_list* marcos_libres;
 }config_struct;
 
 
@@ -187,8 +188,9 @@ void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* 
 int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* config_servidor);
 void mostrar_tripulante(tcbTripulante* tripulante,pcbPatota* patota);
 int cuantos_marcos_libres(config_struct* config_servidor);
-void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista);
-void reservar_marco(int cantidad_marcos, config_struct* configuracion, tabla_paginacion* tabla_aux, int pid );
+void almacenar_informacion(config_struct* config_servidor, t_list* una_tabla, t_list* lista);
+void reservar_marco(int cantidad_marcos, config_struct* configuracion, t_list* tabla_aux, int pid );
+void eliminar_estructura_memoria(t_list* tabla_aux);
 
 
 void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial);
