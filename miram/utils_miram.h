@@ -216,6 +216,7 @@ void ordenar_memoria();
 void unir_espacios_contiguos_libres();
 bool patota_segmentacion(uint32_t, uint32_t, char*, t_list*);
 bool funcion_expulsar_tripulante(uint32_t tripulante_id);
+void compactar_memoria();
 
 pcbPatota* crear_pcb(uint32_t numero_patota);
 

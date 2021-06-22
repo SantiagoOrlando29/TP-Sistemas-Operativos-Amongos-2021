@@ -1153,3 +1153,462 @@
 [ERROR] 20:55:29:293 MiRam/(16867:16895): el cliente se desconecto. Terminando servidor
 [ERROR] 20:55:29:293 MiRam/(16867:16894): el cliente se desconecto. Terminando servidor
 [ERROR] 20:55:29:293 MiRam/(16867:16893): el cliente se desconecto. Terminando servidor
+[INFO] 11:18:20:284 MiRam/(17614:17626): Se asigno espacio de memoria a todo
+[ERROR] 11:18:33:397 MiRam/(17614:17626): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 11:18:33:398 MiRam/(17614:17642): el cliente se desconecto. Terminando servidor
+[ERROR] 11:18:33:398 MiRam/(17614:17641): el cliente se desconecto. Terminando servidor
+[ERROR] 11:18:33:398 MiRam/(17614:17640): el cliente se desconecto. Terminando servidor
+[ERROR] 11:18:33:398 MiRam/(17614:17639): el cliente se desconecto. Terminando servidor
+[ERROR] 11:18:33:398 MiRam/(17614:17638): el cliente se desconecto. Terminando servidor
+[INFO] 11:26:17:796 MiRam/(17731:17756): Se asigno espacio de memoria a todo
+[ERROR] 11:26:20:635 MiRam/(17731:17756): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 11:26:20:636 MiRam/(17731:17770): el cliente se desconecto. Terminando servidor
+[ERROR] 11:26:20:636 MiRam/(17731:17769): el cliente se desconecto. Terminando servidor
+[ERROR] 11:26:20:636 MiRam/(17731:17768): el cliente se desconecto. Terminando servidor
+[ERROR] 11:26:20:636 MiRam/(17731:17767): el cliente se desconecto. Terminando servidor
+[ERROR] 11:26:20:636 MiRam/(17731:17766): el cliente se desconecto. Terminando servidor
+[INFO] 11:32:43:468 MiRam/(17831:17846): Se asigno espacio de memoria a todo
+[ERROR] 11:32:57:043 MiRam/(17831:17860): el cliente se desconecto. Terminando servidor
+[ERROR] 11:32:57:043 MiRam/(17831:17859): el cliente se desconecto. Terminando servidor
+[ERROR] 11:32:57:043 MiRam/(17831:17858): el cliente se desconecto. Terminando servidor
+[ERROR] 11:32:57:043 MiRam/(17831:17857): el cliente se desconecto. Terminando servidor
+[ERROR] 11:32:57:043 MiRam/(17831:17856): el cliente se desconecto. Terminando servidor
+[ERROR] 11:32:57:044 MiRam/(17831:17846): el cliente se desconecto. Terminando servidor
+[INFO] 11:33:16:255 MiRam/(17867:17883): Se asigno espacio de memoria a todo
+[INFO] 11:33:26:025 MiRam/(17867:17883): Se expulso segmento 3
+[INFO] 11:33:43:032 MiRam/(17867:17883): Se expulso segmento 4
+[ERROR] 11:33:51:244 MiRam/(17867:17883): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 11:33:51:245 MiRam/(17867:17898): el cliente se desconecto. Terminando servidor
+[ERROR] 11:33:51:245 MiRam/(17867:17897): el cliente se desconecto. Terminando servidor
+[ERROR] 11:33:51:245 MiRam/(17867:17896): el cliente se desconecto. Terminando servidor
+[ERROR] 11:33:51:245 MiRam/(17867:17895): el cliente se desconecto. Terminando servidor
+[ERROR] 11:33:51:245 MiRam/(17867:17894): el cliente se desconecto. Terminando servidor
+[INFO] 11:34:26:347 MiRam/(17920:17934): Se asigno espacio de memoria a todo
+[INFO] 11:34:37:653 MiRam/(17920:17934): Se expulso segmento 3
+[INFO] 11:34:58:985 MiRam/(17920:17934): Se expulso segmento 4
+[ERROR] 11:35:12:519 MiRam/(17920:17934): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 11:35:12:521 MiRam/(17920:17948): el cliente se desconecto. Terminando servidor
+[ERROR] 11:35:12:521 MiRam/(17920:17947): el cliente se desconecto. Terminando servidor
+[ERROR] 11:35:12:521 MiRam/(17920:17946): el cliente se desconecto. Terminando servidor
+[ERROR] 11:35:12:521 MiRam/(17920:17945): el cliente se desconecto. Terminando servidor
+[ERROR] 11:35:12:521 MiRam/(17920:17944): el cliente se desconecto. Terminando servidor
+[INFO] 13:00:30:472 MiRam/(18925:18944): Se asigno espacio de memoria a todo
+[INFO] 13:00:42:270 MiRam/(18925:18944): Se expulso segmento 3
+[INFO] 13:01:34:097 MiRam/(18925:18944): Se expulso segmento 5
+[ERROR] 13:02:16:168 MiRam/(18925:18944): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 13:02:16:169 MiRam/(18925:18956): el cliente se desconecto. Terminando servidor
+[ERROR] 13:02:16:169 MiRam/(18925:18956): el cliente se desconecto. Terminando servidor
+[ERROR] 13:02:16:169 MiRam/(18925:18955): el cliente se desconecto. Terminando servidor
+[ERROR] 13:02:16:169 MiRam/(18925:18954): el cliente se desconecto. Terminando servidor
+[ERROR] 13:02:16:169 MiRam/(18925:18953): el cliente se desconecto. Terminando servidor
+[ERROR] 13:02:16:169 MiRam/(18925:18952): el cliente se desconecto. Terminando servidor
+[INFO] 13:02:49:972 MiRam/(18979:18993): Se asigno espacio de memoria a todo
+[INFO] 13:02:58:490 MiRam/(18979:18993): Se expulso segmento 3
+[INFO] 13:02:58:490 MiRam/(18979:18993): Se compacta la memoria
+[ERROR] 13:07:35:460 MiRam/(18979:18993): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 13:07:35:460 MiRam/(18979:19013): el cliente se desconecto. Terminando servidor
+[ERROR] 13:07:35:460 MiRam/(18979:19012): el cliente se desconecto. Terminando servidor
+[ERROR] 13:07:35:460 MiRam/(18979:19011): el cliente se desconecto. Terminando servidor
+[ERROR] 13:07:35:460 MiRam/(18979:19010): el cliente se desconecto. Terminando servidor
+[ERROR] 13:07:35:460 MiRam/(18979:19009): el cliente se desconecto. Terminando servidor
+[INFO] 13:07:47:474 MiRam/(19062:19088): Se asigno espacio de memoria a todo
+[INFO] 13:07:57:641 MiRam/(19062:19088): Se expulso segmento 3
+[INFO] 13:07:57:641 MiRam/(19062:19088): Se compacta la memoria
+[INFO] 13:07:57:641 MiRam/(19062:19088): espacio econtrado 100
+[ERROR] 13:09:43:934 MiRam/(19062:19088): el discordiador finalizo el programa. Terminando servidor
+[INFO] 13:12:50:422 MiRam/(19165:19183): Se asigno espacio de memoria a todo
+[INFO] 13:13:02:597 MiRam/(19165:19183): Se expulso segmento 3
+[INFO] 13:13:02:597 MiRam/(19165:19183): Se compacta la memoria
+[INFO] 13:13:02:597 MiRam/(19165:19183): espacio econtrado 100
+[ERROR] 13:16:45:061 MiRam/(19165:19183): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 13:16:45:062 MiRam/(19165:19194): el cliente se desconecto. Terminando servidor
+[ERROR] 13:16:45:062 MiRam/(19165:19193): el cliente se desconecto. Terminando servidor
+[ERROR] 13:16:45:062 MiRam/(19165:19192): el cliente se desconecto. Terminando servidor
+[ERROR] 13:16:45:062 MiRam/(19165:19191): el cliente se desconecto. Terminando servidor
+[ERROR] 13:16:45:062 MiRam/(19165:19190): el cliente se desconecto. Terminando servidor
+[INFO] 13:16:58:450 MiRam/(19232:19248): Se asigno espacio de memoria a todo
+[INFO] 13:17:09:158 MiRam/(19232:19248): Se expulso segmento 3
+[INFO] 13:17:09:159 MiRam/(19232:19248): Se compacta la memoria
+[INFO] 13:17:09:159 MiRam/(19232:19248): espacio econtrado 100
+[ERROR] 13:17:39:822 MiRam/(19232:19248): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 13:17:39:822 MiRam/(19232:19260): el cliente se desconecto. Terminando servidor
+[ERROR] 13:17:39:822 MiRam/(19232:19259): el cliente se desconecto. Terminando servidor
+[ERROR] 13:17:39:822 MiRam/(19232:19258): el cliente se desconecto. Terminando servidor
+[ERROR] 13:17:39:822 MiRam/(19232:19257): el cliente se desconecto. Terminando servidor
+[ERROR] 13:17:39:822 MiRam/(19232:19256): el cliente se desconecto. Terminando servidor
+[INFO] 13:18:13:400 MiRam/(19290:19305): Se asigno espacio de memoria a todo
+[INFO] 13:18:21:743 MiRam/(19290:19305): Se expulso segmento 3
+[INFO] 13:18:21:743 MiRam/(19290:19305): Se compacta la memoria
+[INFO] 13:18:21:744 MiRam/(19290:19305): espacio econtrado 100
+[INFO] 13:18:23:744 MiRam/(19290:19305): j 3
+[INFO] 13:18:23:744 MiRam/(19290:19305): j 4
+[INFO] 13:18:23:744 MiRam/(19290:19305): j 5
+[INFO] 13:18:23:744 MiRam/(19290:19305): j 6
+[INFO] 13:18:23:744 MiRam/(19290:19305): j 7
+[ERROR] 13:19:25:333 MiRam/(19290:19305): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 13:19:25:334 MiRam/(19290:19321): el cliente se desconecto. Terminando servidor
+[ERROR] 13:19:25:334 MiRam/(19290:19320): el cliente se desconecto. Terminando servidor
+[ERROR] 13:19:25:334 MiRam/(19290:19319): el cliente se desconecto. Terminando servidor
+[ERROR] 13:19:25:334 MiRam/(19290:19318): el cliente se desconecto. Terminando servidor
+[ERROR] 13:19:25:334 MiRam/(19290:19317): el cliente se desconecto. Terminando servidor
+[INFO] 13:20:41:261 MiRam/(19370:19387): Se asigno espacio de memoria a todo
+[INFO] 13:20:49:801 MiRam/(19370:19387): Se expulso segmento 3
+[INFO] 13:20:49:802 MiRam/(19370:19387): Se compacta la memoria
+[INFO] 13:20:49:802 MiRam/(19370:19387): espacio econtrado 100
+[INFO] 13:20:51:802 MiRam/(19370:19387): j 3
+[INFO] 13:20:51:802 MiRam/(19370:19387): base 100
+[INFO] 13:20:51:802 MiRam/(19370:19387): j 4
+[INFO] 13:20:51:802 MiRam/(19370:19387): base 79
+[INFO] 13:20:51:803 MiRam/(19370:19387): j 5
+[INFO] 13:20:51:803 MiRam/(19370:19387): base 58
+[INFO] 13:20:51:803 MiRam/(19370:19387): j 6
+[INFO] 13:20:51:803 MiRam/(19370:19387): base 37
+[INFO] 13:20:51:803 MiRam/(19370:19387): j 7
+[INFO] 13:20:51:803 MiRam/(19370:19387): base 16
+[ERROR] 13:22:28:810 MiRam/(19370:19387): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 13:22:28:810 MiRam/(19370:19398): el cliente se desconecto. Terminando servidor
+[ERROR] 13:22:28:811 MiRam/(19370:19397): el cliente se desconecto. Terminando servidor
+[ERROR] 13:22:28:811 MiRam/(19370:19396): el cliente se desconecto. Terminando servidor
+[ERROR] 13:22:28:811 MiRam/(19370:19395): el cliente se desconecto. Terminando servidor
+[ERROR] 13:22:28:811 MiRam/(19370:19394): el cliente se desconecto. Terminando servidor
+[INFO] 13:22:43:019 MiRam/(19420:19434): Se asigno espacio de memoria a todo
+[INFO] 13:22:55:350 MiRam/(19420:19434): Se expulso segmento 3
+[INFO] 13:22:55:350 MiRam/(19420:19434): Se compacta la memoria
+[INFO] 13:22:55:350 MiRam/(19420:19434): espacio econtrado 100
+[INFO] 13:22:57:351 MiRam/(19420:19434): j 3
+[INFO] 13:22:57:351 MiRam/(19420:19434): base 100
+[INFO] 13:22:57:351 MiRam/(19420:19434): j 4
+[INFO] 13:22:57:351 MiRam/(19420:19434): base 79
+[INFO] 13:22:57:351 MiRam/(19420:19434): j 5
+[INFO] 13:22:57:351 MiRam/(19420:19434): base 58
+[INFO] 13:22:57:351 MiRam/(19420:19434): j 6
+[INFO] 13:22:57:351 MiRam/(19420:19434): base 37
+[INFO] 13:22:57:351 MiRam/(19420:19434): j 7
+[INFO] 13:22:57:351 MiRam/(19420:19434): base 16
+[ERROR] 13:26:29:900 MiRam/(19420:19434): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 13:26:29:901 MiRam/(19420:19448): el cliente se desconecto. Terminando servidor
+[ERROR] 13:26:29:901 MiRam/(19420:19447): el cliente se desconecto. Terminando servidor
+[ERROR] 13:26:29:901 MiRam/(19420:19446): el cliente se desconecto. Terminando servidor
+[ERROR] 13:26:29:901 MiRam/(19420:19445): el cliente se desconecto. Terminando servidor
+[ERROR] 13:26:29:901 MiRam/(19420:19444): el cliente se desconecto. Terminando servidor
+[INFO] 14:28:02:229 MiRam/(19698:19717): Se asigno espacio de memoria a todo
+[INFO] 14:28:11:127 MiRam/(19698:19717): Se expulso segmento 3
+[INFO] 14:28:11:128 MiRam/(19698:19717): Se compacta la memoria
+[INFO] 14:28:11:128 MiRam/(19698:19717): espacio econtrado 100
+[INFO] 14:28:13:129 MiRam/(19698:19717): j 3
+[INFO] 14:28:13:129 MiRam/(19698:19717): base 100
+[INFO] 14:28:13:129 MiRam/(19698:19717): j 4
+[INFO] 14:28:13:129 MiRam/(19698:19717): base 79
+[INFO] 14:28:13:129 MiRam/(19698:19717): j 5
+[INFO] 14:28:13:129 MiRam/(19698:19717): base 58
+[INFO] 14:28:13:129 MiRam/(19698:19717): j 6
+[INFO] 14:28:13:129 MiRam/(19698:19717): base 37
+[INFO] 14:28:13:129 MiRam/(19698:19717): j 7
+[INFO] 14:28:13:129 MiRam/(19698:19717): base 16
+[ERROR] 14:28:42:986 MiRam/(19698:19717): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 14:28:42:988 MiRam/(19698:19727): el cliente se desconecto. Terminando servidor
+[ERROR] 14:28:42:988 MiRam/(19698:19726): el cliente se desconecto. Terminando servidor
+[ERROR] 14:28:42:988 MiRam/(19698:19725): el cliente se desconecto. Terminando servidor
+[ERROR] 14:28:42:988 MiRam/(19698:19724): el cliente se desconecto. Terminando servidor
+[ERROR] 14:28:42:988 MiRam/(19698:19723): el cliente se desconecto. Terminando servidor
+[INFO] 14:31:36:615 MiRam/(19778:19795): Se asigno espacio de memoria a todo
+[INFO] 14:31:46:082 MiRam/(19778:19795): Se expulso segmento 3
+[INFO] 14:31:46:082 MiRam/(19778:19795): Se compacta la memoria
+[INFO] 14:31:46:082 MiRam/(19778:19795): espacio econtrado 100
+[INFO] 14:31:48:083 MiRam/(19778:19795): j 4
+[INFO] 14:31:48:083 MiRam/(19778:19795): base 100
+[INFO] 14:31:48:083 MiRam/(19778:19795): j 5
+[INFO] 14:31:48:083 MiRam/(19778:19795): base 79
+[INFO] 14:31:48:083 MiRam/(19778:19795): j 6
+[INFO] 14:31:48:083 MiRam/(19778:19795): base 58
+[INFO] 14:31:48:083 MiRam/(19778:19795): j 7
+[INFO] 14:31:48:083 MiRam/(19778:19795): base 37
+[ERROR] 14:32:21:599 MiRam/(19778:19795): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 14:32:21:600 MiRam/(19778:19806): el cliente se desconecto. Terminando servidor
+[ERROR] 14:32:21:600 MiRam/(19778:19805): el cliente se desconecto. Terminando servidor
+[ERROR] 14:32:21:600 MiRam/(19778:19804): el cliente se desconecto. Terminando servidor
+[ERROR] 14:32:21:600 MiRam/(19778:19803): el cliente se desconecto. Terminando servidor
+[ERROR] 14:32:21:600 MiRam/(19778:19802): el cliente se desconecto. Terminando servidor
+[INFO] 14:33:29:144 MiRam/(19834:19852): Se asigno espacio de memoria a todo
+[INFO] 14:33:39:101 MiRam/(19834:19852): Se expulso segmento 3
+[INFO] 14:33:39:102 MiRam/(19834:19852): Se compacta la memoria
+[INFO] 14:33:39:102 MiRam/(19834:19852): espacio econtrado 100
+[INFO] 14:33:41:107 MiRam/(19834:19852): j 4
+[INFO] 14:33:41:107 MiRam/(19834:19852): base 121
+[INFO] 14:33:41:107 MiRam/(19834:19852): j 5
+[INFO] 14:33:41:107 MiRam/(19834:19852): base 100
+[INFO] 14:33:41:108 MiRam/(19834:19852): j 6
+[INFO] 14:33:41:108 MiRam/(19834:19852): base 79
+[INFO] 14:33:41:108 MiRam/(19834:19852): j 7
+[INFO] 14:33:41:108 MiRam/(19834:19852): base 58
+[ERROR] 14:35:13:278 MiRam/(19834:19852): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 14:35:13:279 MiRam/(19834:19862): el cliente se desconecto. Terminando servidor
+[ERROR] 14:35:13:279 MiRam/(19834:19861): el cliente se desconecto. Terminando servidor
+[ERROR] 14:35:13:279 MiRam/(19834:19860): el cliente se desconecto. Terminando servidor
+[ERROR] 14:35:13:279 MiRam/(19834:19859): el cliente se desconecto. Terminando servidor
+[ERROR] 14:35:13:280 MiRam/(19834:19858): el cliente se desconecto. Terminando servidor
+[INFO] 14:35:27:822 MiRam/(19900:19915): Se asigno espacio de memoria a todo
+[INFO] 14:35:40:114 MiRam/(19900:19915): Se expulso segmento 3
+[INFO] 14:35:40:114 MiRam/(19900:19915): Se compacta la memoria
+[INFO] 14:35:40:114 MiRam/(19900:19915): espacio econtrado 100
+[INFO] 14:35:42:115 MiRam/(19900:19915): j 3
+[INFO] 14:35:42:115 MiRam/(19900:19915): base 100
+[INFO] 14:35:42:115 MiRam/(19900:19915): j 4
+[INFO] 14:35:42:115 MiRam/(19900:19915): base 121
+[INFO] 14:35:42:115 MiRam/(19900:19915): j 5
+[INFO] 14:35:42:116 MiRam/(19900:19915): base 142
+[INFO] 14:35:42:116 MiRam/(19900:19915): j 6
+[INFO] 14:35:42:116 MiRam/(19900:19915): base 163
+[INFO] 14:35:42:116 MiRam/(19900:19915): j 7
+[INFO] 14:37:11:376 MiRam/(19955:19969): Se asigno espacio de memoria a todo
+[INFO] 14:37:21:493 MiRam/(19955:19969): Se expulso segmento 3
+[INFO] 14:37:21:494 MiRam/(19955:19969): Se compacta la memoria
+[INFO] 14:37:21:494 MiRam/(19955:19969): espacio econtrado 100
+[INFO] 14:37:23:495 MiRam/(19955:19969): j 3
+[INFO] 14:37:23:495 MiRam/(19955:19969): base 100
+[INFO] 14:37:23:495 MiRam/(19955:19969): j 4
+[INFO] 14:37:23:495 MiRam/(19955:19969): base 121
+[INFO] 14:37:23:495 MiRam/(19955:19969): j 5
+[INFO] 14:37:23:495 MiRam/(19955:19969): base 142
+[INFO] 14:37:23:495 MiRam/(19955:19969): j 6
+[INFO] 14:37:23:495 MiRam/(19955:19969): base 163
+[INFO] 14:37:23:495 MiRam/(19955:19969): espacio econtrado 163
+[INFO] 14:40:07:308 MiRam/(20023:20040): Se asigno espacio de memoria a todo
+[INFO] 14:40:15:740 MiRam/(20023:20040): Se expulso segmento 3
+[INFO] 14:40:15:740 MiRam/(20023:20040): Se compacta la memoria
+[INFO] 14:40:15:740 MiRam/(20023:20040): espacio econtrado 100
+[INFO] 14:40:17:741 MiRam/(20023:20040): j 3
+[INFO] 14:40:17:741 MiRam/(20023:20040): base 100
+[INFO] 14:40:17:741 MiRam/(20023:20040): j 4
+[INFO] 14:40:17:741 MiRam/(20023:20040): base 121
+[INFO] 14:40:17:741 MiRam/(20023:20040): j 5
+[INFO] 14:40:17:741 MiRam/(20023:20040): base 142
+[INFO] 14:40:17:741 MiRam/(20023:20040): j 6
+[INFO] 14:40:17:741 MiRam/(20023:20040): base 163
+[INFO] 14:40:17:742 MiRam/(20023:20040): espacio econtrado 163
+[INFO] 14:47:14:416 MiRam/(20150:20167): Se asigno espacio de memoria a todo
+[INFO] 14:47:29:814 MiRam/(20150:20167): Se expulso segmento 3
+[INFO] 14:47:29:815 MiRam/(20150:20167): Se compacta la memoria
+[INFO] 14:47:29:815 MiRam/(20150:20167): espacio econtrado 100
+[INFO] 14:47:31:816 MiRam/(20150:20167): j 3
+[INFO] 14:47:31:816 MiRam/(20150:20167): base 100
+[INFO] 14:47:31:816 MiRam/(20150:20167): j 4
+[INFO] 14:47:31:816 MiRam/(20150:20167): base 121
+[INFO] 14:47:31:816 MiRam/(20150:20167): j 5
+[INFO] 14:47:31:817 MiRam/(20150:20167): base 142
+[INFO] 14:47:31:817 MiRam/(20150:20167): j 6
+[INFO] 14:47:31:817 MiRam/(20150:20167): base 163
+[INFO] 14:47:51:793 MiRam/(20150:20167): Se expulso segmento 5
+[INFO] 14:47:51:794 MiRam/(20150:20167): Se compacta la memoria
+[ERROR] 14:48:06:250 MiRam/(20150:20167): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 14:48:06:251 MiRam/(20150:20181): el cliente se desconecto. Terminando servidor
+[ERROR] 14:48:06:251 MiRam/(20150:20180): el cliente se desconecto. Terminando servidor
+[ERROR] 14:48:06:251 MiRam/(20150:20179): el cliente se desconecto. Terminando servidor
+[ERROR] 14:48:06:251 MiRam/(20150:20178): el cliente se desconecto. Terminando servidor
+[ERROR] 14:48:06:251 MiRam/(20150:20177): el cliente se desconecto. Terminando servidor
+[INFO] 14:50:52:834 MiRam/(20219:20236): Se asigno espacio de memoria a todo
+[INFO] 14:51:04:932 MiRam/(20219:20236): Se expulso segmento 3
+[INFO] 14:51:04:932 MiRam/(20219:20236): Se compacta la memoria
+[INFO] 14:51:04:932 MiRam/(20219:20236): espacio econtrado 100
+[INFO] 14:51:06:934 MiRam/(20219:20236): j 3
+[INFO] 14:51:06:934 MiRam/(20219:20236): base 100
+[INFO] 14:51:06:934 MiRam/(20219:20236): j 4
+[INFO] 14:51:06:934 MiRam/(20219:20236): base 121
+[INFO] 14:51:06:934 MiRam/(20219:20236): j 5
+[INFO] 14:51:06:934 MiRam/(20219:20236): base 142
+[INFO] 14:51:06:934 MiRam/(20219:20236): ultimoo
+[INFO] 14:51:06:934 MiRam/(20219:20236): j 6
+[INFO] 14:51:06:934 MiRam/(20219:20236): base 163
+[INFO] 14:51:06:934 MiRam/(20219:20236): termino compactacion
+[ERROR] 14:52:14:442 MiRam/(20219:20236): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 14:52:14:444 MiRam/(20219:20247): el cliente se desconecto. Terminando servidor
+[ERROR] 14:52:14:444 MiRam/(20219:20246): el cliente se desconecto. Terminando servidor
+[ERROR] 14:52:14:444 MiRam/(20219:20245): el cliente se desconecto. Terminando servidor
+[ERROR] 14:52:14:444 MiRam/(20219:20244): el cliente se desconecto. Terminando servidor
+[ERROR] 14:52:14:444 MiRam/(20219:20243): el cliente se desconecto. Terminando servidor
+[INFO] 14:52:35:729 MiRam/(20270:20286): Se asigno espacio de memoria a todo
+[INFO] 14:52:44:436 MiRam/(20270:20286): Se expulso segmento 3
+[INFO] 14:52:44:436 MiRam/(20270:20286): Se compacta la memoria
+[INFO] 14:52:44:436 MiRam/(20270:20286): espacio econtrado 100
+[INFO] 14:52:46:437 MiRam/(20270:20286): j 3
+[INFO] 14:52:46:437 MiRam/(20270:20286): base 100
+[INFO] 14:52:46:437 MiRam/(20270:20286): j 4
+[INFO] 14:52:46:437 MiRam/(20270:20286): base 121
+[INFO] 14:52:46:437 MiRam/(20270:20286): j 5
+[INFO] 14:52:46:437 MiRam/(20270:20286): base 142
+[INFO] 14:52:46:438 MiRam/(20270:20286): j 6
+[INFO] 14:52:46:438 MiRam/(20270:20286): base 163
+[INFO] 14:52:46:438 MiRam/(20270:20286): ultimoo
+[INFO] 14:52:46:438 MiRam/(20270:20286): termino compactacion
+[INFO] 14:52:59:386 MiRam/(20270:20286): Se expulso segmento 5
+[INFO] 14:52:59:387 MiRam/(20270:20286): Se compacta la memoria
+[INFO] 14:52:59:387 MiRam/(20270:20286): termino compactacion
+[ERROR] 14:53:36:133 MiRam/(20270:20286): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 14:53:36:135 MiRam/(20270:20296): el cliente se desconecto. Terminando servidor
+[ERROR] 14:53:36:135 MiRam/(20270:20295): el cliente se desconecto. Terminando servidor
+[ERROR] 14:53:36:135 MiRam/(20270:20294): el cliente se desconecto. Terminando servidor
+[ERROR] 14:53:36:135 MiRam/(20270:20293): el cliente se desconecto. Terminando servidor
+[ERROR] 14:53:36:135 MiRam/(20270:20292): el cliente se desconecto. Terminando servidor
+[INFO] 14:54:53:617 MiRam/(20323:20342): Se asigno espacio de memoria a todo
+[INFO] 14:55:02:449 MiRam/(20323:20342): Se expulso segmento 3
+[INFO] 14:55:02:450 MiRam/(20323:20342): Se compacta la memoria
+[INFO] 14:55:02:450 MiRam/(20323:20342): entre for 1
+[INFO] 14:55:02:450 MiRam/(20323:20342): entre for 1
+[INFO] 14:55:02:450 MiRam/(20323:20342): entre for 1
+[INFO] 14:55:02:450 MiRam/(20323:20342): entre for 1
+[INFO] 14:55:02:450 MiRam/(20323:20342): entre if 1
+[INFO] 14:55:02:450 MiRam/(20323:20342): espacio econtrado 100
+[INFO] 14:55:04:452 MiRam/(20323:20342): entre for 2
+[INFO] 14:55:04:453 MiRam/(20323:20342): j 3
+[INFO] 14:55:04:453 MiRam/(20323:20342): base 100
+[INFO] 14:55:04:453 MiRam/(20323:20342): entre for 2
+[INFO] 14:55:04:453 MiRam/(20323:20342): j 4
+[INFO] 14:55:04:453 MiRam/(20323:20342): base 121
+[INFO] 14:55:04:453 MiRam/(20323:20342): entre for 2
+[INFO] 14:55:04:453 MiRam/(20323:20342): j 5
+[INFO] 14:55:04:453 MiRam/(20323:20342): base 142
+[INFO] 14:55:04:453 MiRam/(20323:20342): entre for 2
+[INFO] 14:55:04:453 MiRam/(20323:20342): j 6
+[INFO] 14:55:04:453 MiRam/(20323:20342): base 163
+[INFO] 14:55:04:453 MiRam/(20323:20342): ultimoo
+[INFO] 14:55:04:453 MiRam/(20323:20342): entre for 1
+[INFO] 14:55:04:454 MiRam/(20323:20342): entre for 1
+[INFO] 14:55:04:454 MiRam/(20323:20342): termino compactacion
+[INFO] 14:55:13:541 MiRam/(20323:20342): Se expulso segmento 5
+[INFO] 14:55:13:541 MiRam/(20323:20342): Se compacta la memoria
+[INFO] 14:55:13:541 MiRam/(20323:20342): entre for 1
+[INFO] 14:55:13:541 MiRam/(20323:20342): entre for 1
+[INFO] 14:55:13:542 MiRam/(20323:20342): entre for 1
+[INFO] 14:55:13:542 MiRam/(20323:20342): entre for 1
+[INFO] 14:55:13:542 MiRam/(20323:20342): entre for 1
+[INFO] 14:55:13:542 MiRam/(20323:20342): termino compactacion
+[ERROR] 14:55:58:378 MiRam/(20323:20342): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 14:55:58:379 MiRam/(20323:20352): el cliente se desconecto. Terminando servidor
+[ERROR] 14:55:58:379 MiRam/(20323:20351): el cliente se desconecto. Terminando servidor
+[ERROR] 14:55:58:379 MiRam/(20323:20350): el cliente se desconecto. Terminando servidor
+[ERROR] 14:55:58:379 MiRam/(20323:20349): el cliente se desconecto. Terminando servidor
+[ERROR] 14:55:58:379 MiRam/(20323:20348): el cliente se desconecto. Terminando servidor
+[INFO] 15:15:54:920 MiRam/(20607:20625): Se asigno espacio de memoria a todo
+[INFO] 15:16:04:484 MiRam/(20607:20625): Se expulso segmento 3
+[INFO] 15:16:04:484 MiRam/(20607:20625): Se compacta la memoria
+[INFO] 15:16:04:484 MiRam/(20607:20625): entre for 1
+[INFO] 15:16:04:484 MiRam/(20607:20625): entre for 1
+[INFO] 15:16:04:485 MiRam/(20607:20625): entre for 1
+[INFO] 15:16:04:485 MiRam/(20607:20625): entre for 1
+[INFO] 15:16:04:485 MiRam/(20607:20625): espacio econtrado 100
+[INFO] 15:16:06:485 MiRam/(20607:20625): j 3
+[INFO] 15:16:06:486 MiRam/(20607:20625): base 100
+[INFO] 15:16:06:486 MiRam/(20607:20625): j 4
+[INFO] 15:16:06:486 MiRam/(20607:20625): base 121
+[INFO] 15:16:06:486 MiRam/(20607:20625): j 5
+[INFO] 15:16:06:486 MiRam/(20607:20625): base 142
+[INFO] 15:16:06:486 MiRam/(20607:20625): j 6
+[INFO] 15:16:06:486 MiRam/(20607:20625): base 163
+[INFO] 15:16:06:486 MiRam/(20607:20625): ultimoo
+[INFO] 15:16:06:487 MiRam/(20607:20625): entre for 1
+[INFO] 15:16:06:487 MiRam/(20607:20625): entre for 1
+[INFO] 15:16:06:487 MiRam/(20607:20625): termino compactacion
+[INFO] 15:16:53:454 MiRam/(20607:20625): Se expulso segmento 5
+[INFO] 15:16:53:455 MiRam/(20607:20625): Se compacta la memoria
+[INFO] 15:16:53:455 MiRam/(20607:20625): entre for 1
+[INFO] 15:16:53:455 MiRam/(20607:20625): entre for 1
+[INFO] 15:16:53:455 MiRam/(20607:20625): entre for 1
+[INFO] 15:16:53:455 MiRam/(20607:20625): entre for 1
+[INFO] 15:16:53:455 MiRam/(20607:20625): entre for 1
+[INFO] 15:16:53:455 MiRam/(20607:20625): espacio econtrado 121
+[INFO] 15:16:55:455 MiRam/(20607:20625): j 4
+[INFO] 15:16:55:456 MiRam/(20607:20625): base 121
+[INFO] 15:16:55:456 MiRam/(20607:20625): j 5
+[INFO] 15:16:55:456 MiRam/(20607:20625): base 142
+[INFO] 15:16:55:456 MiRam/(20607:20625): ultimoo
+[INFO] 15:16:55:456 MiRam/(20607:20625): termino compactacion
+[INFO] 15:18:47:259 MiRam/(20607:20625): Se expulso segmento 4
+[INFO] 15:18:47:259 MiRam/(20607:20625): Se compacta la memoria
+[INFO] 15:18:47:259 MiRam/(20607:20625): entre for 1
+[INFO] 15:18:47:259 MiRam/(20607:20625): entre for 1
+[INFO] 15:18:47:259 MiRam/(20607:20625): entre for 1
+[INFO] 15:18:47:259 MiRam/(20607:20625): entre for 1
+[INFO] 15:18:47:260 MiRam/(20607:20625): espacio econtrado 100
+[INFO] 15:18:49:260 MiRam/(20607:20625): j 3
+[INFO] 15:18:49:260 MiRam/(20607:20625): base 100
+[INFO] 15:18:49:260 MiRam/(20607:20625): j 4
+[INFO] 15:18:49:260 MiRam/(20607:20625): base 121
+[INFO] 15:18:49:260 MiRam/(20607:20625): ultimoo
+[INFO] 15:18:49:260 MiRam/(20607:20625): termino compactacion
+[ERROR] 15:19:21:750 MiRam/(20607:20625): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 15:19:21:751 MiRam/(20607:20635): el cliente se desconecto. Terminando servidor
+[ERROR] 15:19:21:751 MiRam/(20607:20634): el cliente se desconecto. Terminando servidor
+[ERROR] 15:19:21:751 MiRam/(20607:20633): el cliente se desconecto. Terminando servidor
+[ERROR] 15:19:21:751 MiRam/(20607:20632): el cliente se desconecto. Terminando servidor
+[ERROR] 15:19:21:751 MiRam/(20607:20631): el cliente se desconecto. Terminando servidor
+[INFO] 15:23:10:235 MiRam/(20692:20710): Se asigno espacio de memoria a todo
+[INFO] 15:23:20:361 MiRam/(20692:20710): Se expulso segmento 3
+[INFO] 15:23:30:473 MiRam/(20692:20710): Se expulso segmento 5
+[INFO] 15:23:48:879 MiRam/(20692:20710): Se compacta la memoria
+[INFO] 15:23:48:879 MiRam/(20692:20710): espacio libre econtrado 100
+[INFO] 15:23:50:880 MiRam/(20692:20710): ultimoo
+[INFO] 15:23:50:880 MiRam/(20692:20710): espacio libre econtrado 121
+[INFO] 15:23:52:881 MiRam/(20692:20710): ultimoo
+[INFO] 15:23:52:881 MiRam/(20692:20710): termino compactacion
+[ERROR] 15:26:01:511 MiRam/(20692:20710): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 15:26:01:512 MiRam/(20692:20720): el cliente se desconecto. Terminando servidor
+[ERROR] 15:26:01:512 MiRam/(20692:20719): el cliente se desconecto. Terminando servidor
+[ERROR] 15:26:01:512 MiRam/(20692:20718): el cliente se desconecto. Terminando servidor
+[ERROR] 15:26:01:512 MiRam/(20692:20717): el cliente se desconecto. Terminando servidor
+[ERROR] 15:26:01:512 MiRam/(20692:20716): el cliente se desconecto. Terminando servidor
+[INFO] 15:28:35:674 MiRam/(20785:20802): Se asigno espacio de memoria a todo
+[INFO] 15:28:44:360 MiRam/(20785:20802): Se expulso segmento 3
+[INFO] 15:28:47:452 MiRam/(20785:20802): Se expulso segmento 5
+[INFO] 15:28:55:610 MiRam/(20785:20802): Se compacta la memoria
+[INFO] 15:28:55:610 MiRam/(20785:20802): espacio libre econtrado 100
+[INFO] 15:28:55:610 MiRam/(20785:20802): espacio libre econtrado 121
+[INFO] 15:28:55:611 MiRam/(20785:20802): termino compactacion
+[ERROR] 15:29:53:337 MiRam/(20785:20802): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 15:29:53:338 MiRam/(20785:20813): el cliente se desconecto. Terminando servidor
+[ERROR] 15:29:53:338 MiRam/(20785:20812): el cliente se desconecto. Terminando servidor
+[ERROR] 15:29:53:338 MiRam/(20785:20811): el cliente se desconecto. Terminando servidor
+[ERROR] 15:29:53:338 MiRam/(20785:20810): el cliente se desconecto. Terminando servidor
+[ERROR] 15:29:53:338 MiRam/(20785:20809): el cliente se desconecto. Terminando servidor
+[INFO] 15:30:12:786 MiRam/(20823:20845): Se asigno espacio de memoria a todo
+[INFO] 15:30:29:719 MiRam/(20823:20845): Se expulso segmento 4
+[INFO] 15:30:31:643 MiRam/(20823:20845): Se expulso segmento 6
+[INFO] 15:30:37:987 MiRam/(20823:20845): Se compacta la memoria
+[INFO] 15:30:37:988 MiRam/(20823:20845): espacio libre econtrado 121
+[INFO] 15:30:37:988 MiRam/(20823:20845): termino compactacion
+[INFO] 15:31:18:086 MiRam/(20823:20845): Se expulso segmento 5
+[INFO] 15:31:24:209 MiRam/(20823:20845): Se compacta la memoria
+[INFO] 15:31:24:209 MiRam/(20823:20845): termino compactacion
+[ERROR] 15:32:48:468 MiRam/(20823:20845): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 15:32:48:469 MiRam/(20823:20856): el cliente se desconecto. Terminando servidor
+[ERROR] 15:32:48:469 MiRam/(20823:20855): el cliente se desconecto. Terminando servidor
+[ERROR] 15:32:48:469 MiRam/(20823:20854): el cliente se desconecto. Terminando servidor
+[ERROR] 15:32:48:469 MiRam/(20823:20853): el cliente se desconecto. Terminando servidor
+[ERROR] 15:32:48:469 MiRam/(20823:20852): el cliente se desconecto. Terminando servidor
+[INFO] 15:35:30:573 MiRam/(20929:20946): Se asigno espacio de memoria a todo
+[INFO] 15:35:40:428 MiRam/(20929:20946): Se expulso segmento 4
+[INFO] 15:35:41:905 MiRam/(20929:20946): Se expulso segmento 6
+[INFO] 15:35:46:982 MiRam/(20929:20946): Se compacta la memoria
+[INFO] 15:35:46:982 MiRam/(20929:20946): espacio libre econtrado 121
+[INFO] 15:35:46:983 MiRam/(20929:20946): termino compactacion
+[INFO] 15:36:25:897 MiRam/(20929:20946): Se expulso segmento 5
+[INFO] 15:36:31:701 MiRam/(20929:20946): Se compacta la memoria
+[INFO] 15:36:31:702 MiRam/(20929:20946): No hay nada para compactar
+[INFO] 15:36:31:702 MiRam/(20929:20946): termino compactacion
+[ERROR] 15:36:42:357 MiRam/(20929:20946): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 15:36:42:357 MiRam/(20929:20957): el cliente se desconecto. Terminando servidor
+[ERROR] 15:36:42:357 MiRam/(20929:20956): el cliente se desconecto. Terminando servidor
+[ERROR] 15:36:42:357 MiRam/(20929:20955): el cliente se desconecto. Terminando servidor
+[ERROR] 15:36:42:357 MiRam/(20929:20954): el cliente se desconecto. Terminando servidor
+[ERROR] 15:36:42:357 MiRam/(20929:20953): el cliente se desconecto. Terminando servidor
+[INFO] 15:37:01:857 MiRam/(20967:20989): Se asigno espacio de memoria a todo
+[INFO] 15:37:21:754 MiRam/(20967:20989): Se expulso segmento 2
+[INFO] 15:37:24:202 MiRam/(20967:20989): Se expulso segmento 3
+[INFO] 15:37:30:916 MiRam/(20967:20989): Se compacta la memoria
+[INFO] 15:37:30:917 MiRam/(20967:20989): espacio libre econtrado 79
+[INFO] 15:37:30:917 MiRam/(20967:20989): termino compactacion
+[ERROR] 15:38:08:858 MiRam/(20967:20989): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 15:38:08:858 MiRam/(20967:21000): el cliente se desconecto. Terminando servidor
+[ERROR] 15:38:08:858 MiRam/(20967:20999): el cliente se desconecto. Terminando servidor
+[ERROR] 15:38:08:858 MiRam/(20967:20998): el cliente se desconecto. Terminando servidor
+[ERROR] 15:38:08:858 MiRam/(20967:20997): el cliente se desconecto. Terminando servidor
+[ERROR] 15:38:08:858 MiRam/(20967:20996): el cliente se desconecto. Terminando servidor

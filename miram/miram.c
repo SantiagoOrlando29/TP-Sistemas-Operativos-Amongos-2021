@@ -184,21 +184,6 @@ int main(void)
 }
 
 
-espacio_de_memoria* buscar_espacio_de_memoria_libre(int tam){
-
-	if (strcmp(configuracion.criterio_seleccion, "FF") == 0) {
-        return busqueda_first_fit(tam);
-
-    } else if (strcmp(configuracion.criterio_seleccion, "BF") == 0) {
-        return busqueda_best_fit(tam);
-
-    } else {
-        log_error(logger, "No se encontro el algoritmo pedido");
-        exit(EXIT_FAILURE);
-    }
-}
-
-
 void leer_config(){
 
     t_config * archConfig = config_create("miram.config");

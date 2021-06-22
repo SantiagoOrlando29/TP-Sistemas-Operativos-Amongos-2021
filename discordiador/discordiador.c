@@ -479,6 +479,9 @@ INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
 				}
 
 				break;
+/*
+INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
+*/
 
 			case OBTENER_BITACORA:
 				enviar_header(OBTENER_BITACORA, conexionMongoStore);

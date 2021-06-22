@@ -131,12 +131,13 @@ int funcion_cliente(int socket_cliente){
 								if(espacio->base == segmento->base){
 									tcbTripulante* tripulante = espacio->contenido;
 									printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, pid, tripulante->estado);
-									k = list_size(tabla_espacios_de_memoria); //para que corte
+									k = list_size(tabla_espacios_de_memoria); //para que corte el for
 								}
 							}
 						}
 					}
 				}
+
 
 				/*t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
 				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
@@ -741,20 +742,21 @@ espacio_de_memoria* crear_espacio_de_memoria(int base, int tam, bool libre){
 	nuevo_espacio_de_memoria->base = base;
 	nuevo_espacio_de_memoria->tam = tam;
 	nuevo_espacio_de_memoria->libre = libre;
+	nuevo_espacio_de_memoria->contenido = NULL; //NO SE SI HACE FALTA
 
     return nuevo_espacio_de_memoria;
 }
 
 void imprimir_tabla_espacios_de_memoria(){
     int size = list_size(tabla_espacios_de_memoria);
-    printf("<--------  MEMORIA  --------------------\n");
+    printf("---------  MEMORIA  --------------------\n");
 
     for(int i=0; i < size; i++) {
     	espacio_de_memoria *espacio = list_get(tabla_espacios_de_memoria, i);
         printf("base: %d, tam: %d, libre: %s \n", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
         //free(espacio);
     }
-    printf("--------------------------------------->\n");
+    printf("----------------------------------------\n");
 }
 
 void imprimir_tabla_segmentos_patota(tabla_segmentacion* tabla_segmentos_patota){
@@ -775,9 +777,10 @@ void eliminar_espacio_de_memoria(int base){
 
     	if(espacio->base == base){
             espacio->libre = true;
-            list_remove(tabla_espacios_de_memoria, i);
-            espacio_de_memoria* espacio_libre = crear_espacio_de_memoria(base, espacio->tam, true);
-            list_add(tabla_espacios_de_memoria, espacio_libre);
+            //list_remove(tabla_espacios_de_memoria, i);
+            //espacio_de_memoria* espacio_libre = crear_espacio_de_memoria(base, espacio->tam, true);
+            //list_add(tabla_espacios_de_memoria, espacio_libre);
+
             //free(espacio_libre);
         }
     	//free(espacio);
@@ -820,6 +823,20 @@ void eliminar_segmento(int nro_segmento, tabla_segmentacion* tabla_segmentos_pat
 			eliminar_espacio_de_memoria(segmento->base);
 		}
 	}
+}
+
+espacio_de_memoria* buscar_espacio_de_memoria_libre(int tam){
+
+	if (strcmp(configuracion.criterio_seleccion, "FF") == 0) {
+        return busqueda_first_fit(tam);
+
+    } else if (strcmp(configuracion.criterio_seleccion, "BF") == 0) {
+        return busqueda_best_fit(tam);
+
+    } else {
+        log_error(logger, "No se encontro el algoritmo pedido");
+        exit(EXIT_FAILURE);
+    }
 }
 
 espacio_de_memoria* busqueda_first_fit(int tam){
@@ -922,8 +939,8 @@ bool patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tare
 	}
 	espacio_de_memoria_tareas->contenido = tarea;
 
-	pcb_patota->tareas = espacio_de_memoria_tareas->base;//CREO QUE ESTA MAL ESTO. PQ TIENE LA DIR FISICA, NO LA LOGICA.
-	//TENDRIA QUE SER ALGO COMO 1 0 PQ LAS TAREAS ESTAN EN SEGMENTO 1 DESP 0
+	pcb_patota->tareas = 1; //direccion logica del inicio de las tareas. Segmento de tareas es el 1
+
 	espacio_de_memoria_pcb_patota->contenido = pcb_patota;
 
 	segmento* segmento_pcb = malloc(sizeof(segmento));
@@ -947,7 +964,7 @@ bool patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tare
 
 	tcbTripulante* tripulante = malloc(tamanio_TCB);
 	for(int i=2; i < cantidad_tripulantes +2; i++){
-		tripulante=(tcbTripulante*)list_get(lista,i);
+		tripulante = (tcbTripulante*)list_get(lista,i);
 
 		if(i == 2){//es el primer tripulante de la lista
 			tabla_segmentos_patota->primer_tripulante = tripulante->tid;
@@ -957,7 +974,9 @@ bool patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tare
 		if (espacio_de_memoria_tcb_tripulante == NULL){
 			return false;
 		}
-		//PONERLE LA DIR LOGICA DEL PCB AL TCB. Y LO DE LA TAREA
+
+		tripulante->puntero_pcb = 0; //direccion logica del pcb. Segmento pcb es el 0
+		tripulante->prox_instruccion = 0;
 		espacio_de_memoria_tcb_tripulante->contenido = tripulante;
 
 		segmento* segmento_tcb = malloc(sizeof(segmento));
@@ -997,11 +1016,68 @@ bool funcion_expulsar_tripulante(uint32_t tripulante_id){
 					imprimir_tabla_espacios_de_memoria();
 					imprimir_tabla_segmentos_patota(tabla_segmentos);
 
+					//compactar_memoria();  //ACA PARA PROBAR NOMAS
+
 					return true;
 				}
 			}
 		}
 	}
 	return false;
+}
+
+void compactar_memoria(){
+    log_info(logger, "Empieza compactacion");
+    ordenar_memoria(); //VER CUANDO ESTE TOODO HECHO SI HACEN FALTA ESTAS 2 LINEAS
+    unir_espacios_contiguos_libres();
+
+    bool compacto_algo = false;
+
+    for(int i=0; i < list_size(tabla_espacios_de_memoria)-1; i++){ //-1 para que no se fije en el ultimo espacio que es el libre
+    	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
+
+        if(espacio->libre == true){
+        	compacto_algo = true;
+        	log_info(logger, "espacio libre econtrado %d", espacio->base);
+
+        	for(int k=0; k < list_size(lista_tablas_segmentos); k++){
+        		tabla_segmentacion* tabla_segmentos = list_remove(lista_tablas_segmentos, k);
+
+        		for(int l=0; l < list_size(tabla_segmentos->segmento_inicial); l++){
+        			segmento* segmento = list_get(tabla_segmentos->segmento_inicial, l);
+
+            		if (segmento->base > espacio->base){
+            			//para segmento->base < espacio->base no hace nada porque significa que la memoria ya los paso y estan antes que el espacio libre
+            			segmento = list_remove(tabla_segmentos->segmento_inicial, l);
+            			segmento->base -= espacio->tam;
+            			list_add_in_index(tabla_segmentos->segmento_inicial, l, segmento);
+            		}
+        		}
+
+        		list_add_in_index(lista_tablas_segmentos, k, tabla_segmentos);
+        	}
+
+        	list_remove(tabla_espacios_de_memoria, i);
+
+        	for(int j = i; j < list_size(tabla_espacios_de_memoria); j++){
+        		espacio_de_memoria* espacio_temp = list_remove(tabla_espacios_de_memoria, j);
+        		espacio_temp->base -= espacio->tam;
+
+        		if(j == list_size(tabla_espacios_de_memoria)){ //esta recorriendo el ultimo espacio de memoria
+        			espacio_temp->tam += espacio->tam; //entonces le amplia el tamanio porque es el espacio libre
+        			list_add_in_index(tabla_espacios_de_memoria, j, espacio_temp);
+        		} else {
+        			list_add_in_index(tabla_espacios_de_memoria, j, espacio_temp);
+        		}
+
+        	}
+            imprimir_tabla_espacios_de_memoria();
+        }
+    }
+    if(compacto_algo == false){
+    	log_info(logger, "No hay nada para compactar");
+    }
+
+    log_info(logger, "Termina compactacion");
 }
 
