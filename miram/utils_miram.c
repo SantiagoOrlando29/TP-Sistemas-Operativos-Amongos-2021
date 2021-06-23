@@ -138,6 +138,7 @@ int funcion_cliente(int socket_cliente){
 						list_add(una_tabla->marco_inicial,marco_nuevo);
 					}
 					almacenar_informacion(&configuracion, una_tabla, lista);
+					leer_informacion(&configuracion,  una_tabla, lista);
 					fflush(stdout);
 				}
 
@@ -513,11 +514,115 @@ void imprimir_seg(t_list* tabla_aux){
 	}
 }
 
+
+
+void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista){
+
+
+	int offset = 0;
+	int indice_marco=0;
+	marco* marco = list_get(una_tabla->marco_inicial,0);
+	int pid = (int) leer_atributo(offset,marco->id_marco, config_servidor, sizeof(int));
+	printf("ID magico %d\n",pid);
+
+	/*
+
+	//tabla_paginacion* una_tabla = list_get(una_tabla,posicion_patota(pid, una_tabla));
+	marco* marco =list_get(una_tabla->marco_inicial,indice_marco);
+
+	offset +=escribir_atributo(&pid,offset,marco->id_marco, config_servidor, sizeof(int)); //Completar con puntero a tareas
+
+	int puntero_tarea = 0;
+	int offset_pcb = offset;
+	indice_marco += alcanza_espacio(&offset, config_servidor->tamanio_pag, sizeof(int));
+	marco = list_get(una_tabla->marco_inicial,indice_marco);
+	int marco_pcb = indice_marco;
+	offset +=escribir_atributo(&puntero_tarea,offset,marco->id_marco, config_servidor, sizeof(int));
+
+	int cantidad_tripulantes = (int)atoi((list_get(lista,1)));
+
+	char* tarea=(char*)list_get(lista, cantidad_tripulantes+2);
+
+	/*	for(int i=2; i < cantidad_tripulantes +2; i++){
+			tripulante=(tcbTripulante*)list_get(lista,i);
+			mostrar_tripulante(tripulante,patota);
+			printf("\n");
+			fflush(stdin);
+		}
+
+	for(int i =2; i<cantidad_tripulantes+2;i++){
+		tcbTripulante* tripulante= (tcbTripulante*) list_get(lista,i);
+		uint32_t tid = tripulante->tid;
+		printf("\n TID %d",tid);
+		fflush(stdout);
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		offset +=escribir_atributo(&tid,offset,marco->id_marco, config_servidor, sizeof(int));
+
+		char estado = tripulante->estado;
+		printf("\n Estado %c", estado);
+		fflush(stdout);
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		offset +=escribir_atributo(&estado,offset,marco->id_marco, config_servidor, sizeof(char));
+
+		uint32_t pos_x = tripulante->posicionX;
+		printf("\n Pos x %d",pos_x);
+		fflush(stdout);
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		offset +=escribir_atributo(&pos_x,offset,marco->id_marco, config_servidor, sizeof(int));
+
+
+		int pos_y =tripulante->posicionY;
+		printf("\n Pos y %d",pos_y);
+		fflush(stdout);
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		offset +=escribir_atributo(&pos_y,offset,marco->id_marco, config_servidor, sizeof(int));
+
+
+		uint32_t prox_i = tripulante->prox_instruccion;
+
+		printf("\nProx instruccion %d", prox_i);
+		fflush(stdout);
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		offset +=escribir_atributo(&prox_i,offset,marco->id_marco, config_servidor, sizeof(int));
+
+		uint32_t p_pcb =tripulante->puntero_pcb;
+		printf("\n Este es el puntero al pcb  %d",p_pcb);
+		fflush(stdout);
+
+
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+	    offset +=escribir_atributo(&p_pcb,offset,marco->id_marco, config_servidor, sizeof(int));
+	}
+
+	indice_marco+=alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
+
+	puntero_tarea=0;
+	//Terminar de escribir patota
+	escribir_atributo(&puntero_tarea,offset_pcb,marco_pcb, config_servidor, sizeof(int));
+
+	for(int i=0;i<strlen(tarea)+1;i++){
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
+		offset +=escribir_atributo(&tarea[i],offset,marco->id_marco, config_servidor,sizeof(char));
+		printf("%c",tarea[i]);
+
+	*/
+
+}
+
+
 void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista ){
 
 	int offset = 0;
 	int indice_marco=0;
-	int pid = (int)atoi(list_get(lista,0));
+	//int pid = (int)atoi(list_get(lista,0));
+
+	int pid = 1010;
 
 	//tabla_paginacion* una_tabla = list_get(una_tabla,posicion_patota(pid, una_tabla));
 	marco* marco =list_get(una_tabla->marco_inicial,indice_marco);
@@ -592,13 +697,20 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 	    offset +=escribir_atributo(&p_pcb,offset,marco->id_marco, config_servidor, sizeof(int));
 	}
 
-	//int direccion_memoria=(configuracion->posicion_inicial)+
+	indice_marco+=alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 
+	puntero_tarea=0;
 	//Terminar de escribir patota
 	escribir_atributo(&puntero_tarea,offset_pcb,marco_pcb, config_servidor, sizeof(int));
 
-}
+	for(int i=0;i<strlen(tarea)+1;i++){
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
+		offset +=escribir_atributo(&tarea[i],offset,marco->id_marco, config_servidor,sizeof(char));
+		printf("%c",tarea[i]);
 
+	}
+
+}
 /*
 void buscar_tripulante(int id_patota, int nro_tripulante, tabla_paginacion tabla_pag, config_struct* config){
   //Leer tripulante de memoria
@@ -640,6 +752,15 @@ int escribir_atributo(void* dato, int offset, int nro_marco, config_struct* conf
 	memcpy((config_s->posicion_inicial)+nro_marco*(config_s->tamanio_pag)+offset,dato,tipo_dato);
 	return sizeof(int);
 }
+
+
+void* leer_atributo(int offset, int nro_marco, config_struct* config_s, int tipo_dato){
+	void* dato =malloc(sizeof(tipo_dato));
+	memcpy(&dato,config_s->posicion_inicial+nro_marco*(config_s->tamanio_pag)+offset,sizeof(tipo_dato));
+	return dato;
+}
+
+
 
 /*
 marco* siguiente_marco(int id_patota, int id_marco,tabla_paginacion* tabla_aux){
