@@ -14,6 +14,8 @@
 #include<string.h>
 #include<pthread.h>
 #include<stdbool.h>
+#include <semaphore.h>
+
 
 #define tamanio_PCB  8
 #define tamanio_tarea 10
@@ -89,7 +91,8 @@ typedef struct{
 	uint32_t posicionX;
 	uint32_t posicionY;
 	uint32_t prox_instruccion; // Identificador de la próxima instrucción a ejecutar
-	uint32_t puntero_pcb; //Dirección lógica del PCB del tripulante
+	uint32_t puntero_pcb;
+	sem_t semaforo_tripulante;//Dirección lógica del PCB del tripulante
 }tcbTripulante;
 
 typedef struct {
@@ -188,7 +191,7 @@ void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* 
 int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* config_servidor);
 void mostrar_tripulante(tcbTripulante* tripulante,pcbPatota* patota);
 int cuantos_marcos_libres(config_struct* config_servidor);
-void almacenar_informacion(config_struct* config_servidor, t_list* una_tabla, t_list* lista);
+void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista);
 void reservar_marco(int cantidad_marcos, config_struct* configuracion, t_list* tabla_aux, int pid );
 void eliminar_estructura_memoria(t_list* tabla_aux);
 
