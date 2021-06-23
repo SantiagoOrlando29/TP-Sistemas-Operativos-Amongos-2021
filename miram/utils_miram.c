@@ -145,6 +145,7 @@ int funcion_cliente(int socket_cliente){
 				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
 				enviar_paquete(paquete,socket_cliente);
 				eliminar_paquete(paquete);*/
+				imprimir_tabla_espacios_de_memoria();
 				break;
 
 
@@ -165,42 +166,12 @@ int funcion_cliente(int socket_cliente){
 				log_info(logger, "PEDIR_TAREA");//PONGO ESTA LINEA PQ SI NO LA PONGO TIRA ERROR. CORREGIR.
 				t_list* lista_tripulante = recibir_paquete(socket_cliente);
 				tcbTripulante* tripulante = (tcbTripulante*)list_get(lista_tripulante,0);
-				log_info(logger, "tripulante %d quiere tarea", tripulante->tid);
 				int numero_patota = (int)atoi(list_get(lista_tripulante,1));
-				log_info(logger, "tripu patota %d", numero_patota);
 
-				sem_wait(&MUTEX_PEDIR_TAREA);
-				for(int i=0; i < list_size(lista_tablas_segmentos); i++){
-					tabla_segmentacion* tabla_segmentos = list_get(lista_tablas_segmentos, i);
+				enviar_tarea_segmentacion(socket_cliente, numero_patota, tripulante);
 
-					if(tabla_segmentos->id_patota == numero_patota){ //suponiendo que el punteropcb es numero de patota
-						segmento* segmento = list_get(tabla_segmentos->segmento_inicial, 1); // 1 es el segmento de tareas
-
-						//HACER FUNCION BUSCAR ESPACIO DE MEMORIA
-						for(int j=0; j < list_size(tabla_espacios_de_memoria); j++){
-							espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, j);
-
-							if(espacio->base == segmento->base){ //encontro la base en memoria de las tareas
-								//buscar_tarea();
-								log_info(logger, "tripu %d    contenido %s", tripulante->tid ,espacio->contenido);
-
-
-
-								break;
-							}
-						}
-
-					}
-
-				}
-				log_info(logger, "tripu %d VA A HACER EL POST", tripulante->tid);
-				sem_post(&MUTEX_PEDIR_TAREA);
-
-				//espacio_de_memoria_tareas->contenido = tarea;
 
 				//enviar_header(PEDIR_TAREA, socket_cliente);
-
-				//return 0;
 				break;
 
 			case FIN:
@@ -1113,3 +1084,65 @@ void compactar_memoria(){
     log_info(logger, "Termina compactacion");
 }
 
+void enviar_tarea_segmentacion(int socket_cliente, int numero_patota, tcbTripulante* tripulante){
+	sem_wait(&MUTEX_PEDIR_TAREA);
+	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
+		tabla_segmentacion* tabla_segmentos = list_get(lista_tablas_segmentos, i);
+
+		if(tabla_segmentos->id_patota == numero_patota){
+			segmento* segmento = list_get(tabla_segmentos->segmento_inicial, 1); // 1 es el segmento de tareas
+			espacio_de_memoria* espacio = buscar_espacio(segmento);
+
+			if(espacio != NULL){ //encontro la base en memoria de las tareas
+				char* una_tarea = buscar_tarea(espacio, tripulante);
+				enviar_mensaje(una_tarea, socket_cliente);
+			}
+
+			for(int k=2; k < list_size(tabla_segmentos->segmento_inicial); k++){//actualizo el prox_instruccion del tripo PERO NOSE PARA QUE PQ NO LO USO CREO
+				segmento = list_get(tabla_segmentos->segmento_inicial, k);
+
+				if(tripulante->tid == segmento->numero_segmento -1){ //CREO QUE ESTA BIEN PERO NO PROBE
+					for(int j=0; j < list_size(tabla_espacios_de_memoria); j++){
+						espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, j);
+
+						if(espacio->base == segmento->base){//encontro la base en memoria del tcb del tripulante
+							list_remove(tabla_espacios_de_memoria, j);
+							tripulante->prox_instruccion++;
+	            			espacio->contenido = tripulante;
+	            			list_add_in_index(tabla_espacios_de_memoria, j, espacio);
+
+	            			j = list_size(tabla_espacios_de_memoria); //para cortar el for
+						}
+					}
+				}
+			}
+		}
+	}
+	sem_post(&MUTEX_PEDIR_TAREA);
+}
+
+espacio_de_memoria* buscar_espacio(segmento* segmento){
+	for(int j=0; j < list_size(tabla_espacios_de_memoria); j++){
+		espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, j);
+
+		if(espacio->base == segmento->base){ //encontro la base del segmento en memoria
+			return espacio;
+		}
+	}
+	return NULL;
+}
+
+char* buscar_tarea(espacio_de_memoria* espacio, tcbTripulante* tripulante){
+	//buscar_tarea();
+	char* una_tarea = malloc(10);
+	char linea[200];//CREO QUE NO HACE FALTA ESTA PARTE Y PUEDO HACER EL STRTOK DIRECTO DE ESPACIO->CONTENIDO. POR EL LIST_GET
+	strcpy(linea, espacio->contenido);
+
+	una_tarea = strtok(linea, ";");
+	for(int k=0; k < tripulante->prox_instruccion; k++){
+		una_tarea = strtok(NULL, ";");
+	}
+	//FALTA HACER EL CASO DE QUE YA NO LE QUEDEN MAS TAREAS
+
+	return una_tarea;
+}

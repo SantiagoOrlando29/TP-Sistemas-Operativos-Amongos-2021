@@ -90,13 +90,11 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	char* numero_patota_char = malloc(sizeof(char));
 	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
 	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
-	log_info(logger, "patota %d", tripulante->puntero_pcb);
 	enviar_paquete(paquete, conexion_miram);
+	char* tarea_recibida_miram = recibir_mensaje(conexion_miram);
+	log_info(logger, "tarea recibida: %s", tarea_recibida_miram);
+	tripulante->prox_instruccion++;
 
-	//enviar_header(PEDIR_TAREA, conexion_miram);
-	//int tipo_mensaje = recibir_operacion(conexion_miram);
-	//printf("tipo_mensaje %d\n", tipo_mensaje);
-	//close(conexion_miram);
 
 	printf("hola soy el hilo %d, P%d, estoy listo para ejecutar \n", tripulante->tid, tripulante->puntero_pcb);
 	sem_post(&NUEVO_READY);

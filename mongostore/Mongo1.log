@@ -256,3 +256,47 @@
 [INFO] 19:32:08:181 Mongo1/(24416:24417): Servidor MongoStore encendido
 [INFO] 19:32:16:014 Mongo1/(24416:24417): Estableciendo conexión desde 46791
 [INFO] 19:32:16:015 Mongo1/(24416:24417): Creando hilo
+[INFO] 19:41:54:940 Mongo1/(24716:24717): Servidor MongoStore iniciando
+[INFO] 19:41:54:940 Mongo1/(24716:24717): Servidor MongoStore encendido
+[INFO] 19:42:00:670 Mongo1/(24716:24717): Estableciendo conexión desde 53959
+[INFO] 19:42:00:670 Mongo1/(24716:24717): Creando hilo
+[INFO] 19:51:48:163 Mongo1/(24838:24839): Servidor MongoStore iniciando
+[INFO] 19:51:48:163 Mongo1/(24838:24839): Servidor MongoStore encendido
+[INFO] 19:51:52:470 Mongo1/(24838:24839): Estableciendo conexión desde 60103
+[INFO] 19:51:52:471 Mongo1/(24838:24839): Creando hilo
+[INFO] 19:54:55:967 Mongo1/(24911:24912): Servidor MongoStore iniciando
+[INFO] 19:54:55:968 Mongo1/(24911:24912): Servidor MongoStore encendido
+[INFO] 19:55:00:322 Mongo1/(24911:24912): Estableciendo conexión desde 64199
+[INFO] 19:55:00:330 Mongo1/(24911:24912): Creando hilo
+[INFO] 20:00:24:043 Mongo1/(25110:25111): Servidor MongoStore iniciando
+[INFO] 20:00:24:043 Mongo1/(25110:25111): Servidor MongoStore encendido
+[INFO] 20:00:29:714 Mongo1/(25110:25111): Estableciendo conexión desde 3784
+[INFO] 20:00:29:716 Mongo1/(25110:25111): Creando hilo
+[INFO] 20:02:19:806 Mongo1/(25213:25214): Servidor MongoStore iniciando
+[INFO] 20:02:19:807 Mongo1/(25213:25214): Servidor MongoStore encendido
+[INFO] 20:02:26:390 Mongo1/(25213:25214): Estableciendo conexión desde 7880
+[INFO] 20:02:26:392 Mongo1/(25213:25214): Creando hilo
+[INFO] 20:33:39:077 Mongo1/(25619:25620): Servidor MongoStore iniciando
+[INFO] 20:33:39:077 Mongo1/(25619:25620): Servidor MongoStore encendido
+[INFO] 20:33:45:150 Mongo1/(25619:25620): Estableciendo conexión desde 19144
+[INFO] 20:33:45:152 Mongo1/(25619:25620): Creando hilo
+[INFO] 20:34:58:817 Mongo1/(25672:25673): Servidor MongoStore iniciando
+[INFO] 20:34:58:817 Mongo1/(25672:25673): Servidor MongoStore encendido
+[INFO] 20:35:06:345 Mongo1/(25672:25673): Estableciendo conexión desde 23240
+[INFO] 20:35:06:346 Mongo1/(25672:25673): Creando hilo
+[INFO] 20:37:50:722 Mongo1/(25750:25751): Servidor MongoStore iniciando
+[INFO] 20:37:50:722 Mongo1/(25750:25751): Servidor MongoStore encendido
+[INFO] 20:37:58:629 Mongo1/(25750:25751): Estableciendo conexión desde 27848
+[INFO] 20:37:58:629 Mongo1/(25750:25751): Creando hilo
+[INFO] 20:45:20:854 Mongo1/(25893:25894): Servidor MongoStore iniciando
+[INFO] 20:45:20:854 Mongo1/(25893:25894): Servidor MongoStore encendido
+[INFO] 20:45:26:247 Mongo1/(25893:25894): Estableciendo conexión desde 32968
+[INFO] 20:45:26:281 Mongo1/(25893:25894): Creando hilo
+[INFO] 20:59:35:163 Mongo1/(26195:26196): Servidor MongoStore iniciando
+[INFO] 20:59:35:163 Mongo1/(26195:26196): Servidor MongoStore encendido
+[INFO] 20:59:42:099 Mongo1/(26195:26196): Estableciendo conexión desde 40136
+[INFO] 20:59:42:100 Mongo1/(26195:26196): Creando hilo
+[INFO] 21:05:51:547 Mongo1/(26358:26359): Servidor MongoStore iniciando
+[INFO] 21:05:51:548 Mongo1/(26358:26359): Servidor MongoStore encendido
+[INFO] 21:05:55:892 Mongo1/(26358:26359): Estableciendo conexión desde 45768
+[INFO] 21:05:55:896 Mongo1/(26358:26359): Creando hilo

@@ -2107,3 +2107,190 @@
 [ERROR] 19:32:40:098 MiRam/(24426:24454): el cliente se desconecto. Terminando servidor
 [ERROR] 19:32:40:098 MiRam/(24426:24453): el cliente se desconecto. Terminando servidor
 [ERROR] 19:32:40:098 MiRam/(24426:24452): el cliente se desconecto. Terminando servidor
+[INFO] 19:42:07:681 MiRam/(24714:24740): Se asigno espacio de memoria a todo
+[INFO] 19:42:07:694 MiRam/(24714:24751): PEDIR_TAREA
+[INFO] 19:42:07:695 MiRam/(24714:24751): tripulante 2 quiere tarea
+[INFO] 19:42:07:695 MiRam/(24714:24751): tripu patota 1
+[INFO] 19:42:07:695 MiRam/(24714:24751): tripu 2    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:42:07:695 MiRam/(24714:24751): tripu 2 VA A HACER EL POST
+[INFO] 19:42:07:695 MiRam/(24714:24753): PEDIR_TAREA
+[INFO] 19:42:07:695 MiRam/(24714:24753): tripulante 4 quiere tarea
+[INFO] 19:42:07:695 MiRam/(24714:24753): tripu patota 1
+[INFO] 19:42:07:695 MiRam/(24714:24753): tripu 4    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:42:07:695 MiRam/(24714:24753): tripu 4 VA A HACER EL POST
+[INFO] 19:42:07:695 MiRam/(24714:24754): PEDIR_TAREA
+[INFO] 19:42:07:696 MiRam/(24714:24754): tripulante 5 quiere tarea
+[INFO] 19:42:07:696 MiRam/(24714:24754): tripu patota 1
+[INFO] 19:42:07:696 MiRam/(24714:24754): tripu 5    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:42:07:696 MiRam/(24714:24754): tripu 5 VA A HACER EL POST
+[INFO] 19:42:07:696 MiRam/(24714:24752): PEDIR_TAREA
+[INFO] 19:42:07:696 MiRam/(24714:24752): tripulante 3 quiere tarea
+[INFO] 19:42:07:696 MiRam/(24714:24752): tripu patota 1
+[INFO] 19:42:07:696 MiRam/(24714:24752): tripu 3    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:42:07:696 MiRam/(24714:24752): tripu 3 VA A HACER EL POST
+[INFO] 19:42:07:701 MiRam/(24714:24750): PEDIR_TAREA
+[INFO] 19:42:07:701 MiRam/(24714:24750): tripulante 1 quiere tarea
+[INFO] 19:42:07:701 MiRam/(24714:24750): tripu patota 1
+[INFO] 19:42:07:701 MiRam/(24714:24750): tripu 1    contenido 6-0-0-0-0;0-1-4-4-1;1-4-2-2-1;2-2-3-3-1;3-1-4-4-1;4-3-5-5-1;5-0-3-1-7;
+[INFO] 19:42:07:701 MiRam/(24714:24750): tripu 1 VA A HACER EL POST
+[ERROR] 19:42:52:519 MiRam/(24714:24740): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:42:52:519 MiRam/(24714:24754): el cliente se desconecto. Terminando servidor
+[ERROR] 19:42:52:520 MiRam/(24714:24753): el cliente se desconecto. Terminando servidor
+[ERROR] 19:42:52:520 MiRam/(24714:24752): el cliente se desconecto. Terminando servidor
+[ERROR] 19:42:52:520 MiRam/(24714:24751): el cliente se desconecto. Terminando servidor
+[ERROR] 19:42:52:520 MiRam/(24714:24750): el cliente se desconecto. Terminando servidor
+[INFO] 19:51:58:070 MiRam/(24836:24852): Se asigno espacio de memoria a todo
+[INFO] 19:51:58:080 MiRam/(24836:24867): PEDIR_TAREA
+[INFO] 19:51:58:080 MiRam/(24836:24867): tripulante 4 quiere tarea
+[INFO] 19:51:58:080 MiRam/(24836:24867): tarea 6-0-0-0-0
+[INFO] 19:51:58:080 MiRam/(24836:24866): PEDIR_TAREA
+[INFO] 19:51:58:080 MiRam/(24836:24866): tripulante 3 quiere tarea
+[INFO] 19:51:58:080 MiRam/(24836:24866): tarea 6-0-0-0-0
+[INFO] 19:51:58:080 MiRam/(24836:24868): PEDIR_TAREA
+[INFO] 19:51:58:080 MiRam/(24836:24868): tripulante 5 quiere tarea
+[INFO] 19:51:58:080 MiRam/(24836:24868): tarea 6-0-0-0-0
+[INFO] 19:51:58:080 MiRam/(24836:24865): PEDIR_TAREA
+[INFO] 19:51:58:080 MiRam/(24836:24865): tripulante 2 quiere tarea
+[INFO] 19:51:58:080 MiRam/(24836:24865): tarea 6-0-0-0-0
+[INFO] 19:51:58:080 MiRam/(24836:24864): PEDIR_TAREA
+[INFO] 19:51:58:080 MiRam/(24836:24864): tripulante 1 quiere tarea
+[INFO] 19:51:58:080 MiRam/(24836:24864): tarea 6-0-0-0-0
+[ERROR] 19:52:11:107 MiRam/(24836:24852): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 19:52:11:108 MiRam/(24836:24868): el cliente se desconecto. Terminando servidor
+[ERROR] 19:52:11:108 MiRam/(24836:24867): el cliente se desconecto. Terminando servidor
+[ERROR] 19:52:11:108 MiRam/(24836:24866): el cliente se desconecto. Terminando servidor
+[ERROR] 19:52:11:108 MiRam/(24836:24865): el cliente se desconecto. Terminando servidor
+[ERROR] 19:52:11:108 MiRam/(24836:24864): el cliente se desconecto. Terminando servidor
+[INFO] 19:55:04:097 MiRam/(24909:24929): Se asigno espacio de memoria a todo
+[INFO] 19:55:04:115 MiRam/(24909:24936): PEDIR_TAREA
+[INFO] 19:55:04:115 MiRam/(24909:24936): tripulante 2 quiere tarea
+[INFO] 19:55:04:115 MiRam/(24909:24936): tareaa 0
+[INFO] 19:55:04:115 MiRam/(24909:24937): PEDIR_TAREA
+[INFO] 19:55:04:115 MiRam/(24909:24937): tripulante 3 quiere tarea
+[INFO] 19:55:04:116 MiRam/(24909:24937): tareaa 0
+[INFO] 19:55:04:116 MiRam/(24909:24938): PEDIR_TAREA
+[INFO] 19:55:04:116 MiRam/(24909:24938): tripulante 4 quiere tarea
+[INFO] 19:55:04:116 MiRam/(24909:24938): tareaa 0
+[INFO] 19:55:04:116 MiRam/(24909:24939): PEDIR_TAREA
+[INFO] 19:55:04:116 MiRam/(24909:24939): tripulante 5 quiere tarea
+[INFO] 19:55:04:116 MiRam/(24909:24939): tareaa 0
+[INFO] 19:55:04:116 MiRam/(24909:24935): PEDIR_TAREA
+[INFO] 19:55:04:116 MiRam/(24909:24935): tripulante 1 quiere tarea
+[INFO] 19:55:04:116 MiRam/(24909:24935): tareaa 0
+[ERROR] 20:00:19:200 MiRam/(24909:24929): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:00:19:201 MiRam/(24909:24939): el cliente se desconecto. Terminando servidor
+[ERROR] 20:00:19:201 MiRam/(24909:24938): el cliente se desconecto. Terminando servidor
+[ERROR] 20:00:19:201 MiRam/(24909:24937): el cliente se desconecto. Terminando servidor
+[ERROR] 20:00:19:201 MiRam/(24909:24936): el cliente se desconecto. Terminando servidor
+[ERROR] 20:00:19:201 MiRam/(24909:24935): el cliente se desconecto. Terminando servidor
+[INFO] 20:00:33:327 MiRam/(25108:25136): Se asigno espacio de memoria a todo
+[INFO] 20:00:33:345 MiRam/(25108:25146): PEDIR_TAREA
+[INFO] 20:00:33:345 MiRam/(25108:25146): tripulante 1 quiere tarea
+[INFO] 20:00:33:346 MiRam/(25108:25147): PEDIR_TAREA
+[INFO] 20:00:33:346 MiRam/(25108:25147): tripulante 2 quiere tarea
+[INFO] 20:00:33:346 MiRam/(25108:25148): PEDIR_TAREA
+[INFO] 20:00:33:346 MiRam/(25108:25148): tripulante 3 quiere tarea
+[INFO] 20:00:33:347 MiRam/(25108:25149): PEDIR_TAREA
+[INFO] 20:00:33:347 MiRam/(25108:25149): tripulante 4 quiere tarea
+[INFO] 20:00:33:347 MiRam/(25108:25150): PEDIR_TAREA
+[INFO] 20:00:33:347 MiRam/(25108:25150): tripulante 5 quiere tarea
+[ERROR] 20:02:15:211 MiRam/(25108:25136): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:02:15:212 MiRam/(25108:25150): el cliente se desconecto. Terminando servidor
+[ERROR] 20:02:15:212 MiRam/(25108:25149): el cliente se desconecto. Terminando servidor
+[ERROR] 20:02:15:212 MiRam/(25108:25148): el cliente se desconecto. Terminando servidor
+[ERROR] 20:02:15:212 MiRam/(25108:25147): el cliente se desconecto. Terminando servidor
+[ERROR] 20:02:15:212 MiRam/(25108:25146): el cliente se desconecto. Terminando servidor
+[INFO] 20:02:28:410 MiRam/(25211:25239): Se asigno espacio de memoria a todo
+[INFO] 20:02:28:427 MiRam/(25211:25247): PEDIR_TAREA
+[INFO] 20:02:28:427 MiRam/(25211:25247): tripulante 1 quiere tarea
+[INFO] 20:02:28:427 MiRam/(25211:25247): entre for
+[INFO] 20:02:28:427 MiRam/(25211:25248): PEDIR_TAREA
+[INFO] 20:02:28:428 MiRam/(25211:25248): tripulante 2 quiere tarea
+[INFO] 20:02:28:428 MiRam/(25211:25248): entre for
+[INFO] 20:02:28:428 MiRam/(25211:25249): PEDIR_TAREA
+[INFO] 20:02:28:428 MiRam/(25211:25249): tripulante 3 quiere tarea
+[INFO] 20:02:28:428 MiRam/(25211:25249): entre for
+[INFO] 20:02:28:429 MiRam/(25211:25250): PEDIR_TAREA
+[INFO] 20:02:28:429 MiRam/(25211:25250): tripulante 4 quiere tarea
+[INFO] 20:02:28:429 MiRam/(25211:25250): entre for
+[INFO] 20:02:28:429 MiRam/(25211:25251): PEDIR_TAREA
+[INFO] 20:02:28:429 MiRam/(25211:25251): tripulante 5 quiere tarea
+[INFO] 20:02:28:429 MiRam/(25211:25251): entre for
+[ERROR] 20:02:48:304 MiRam/(25211:25239): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:02:48:304 MiRam/(25211:25251): el cliente se desconecto. Terminando servidor
+[ERROR] 20:02:48:304 MiRam/(25211:25250): el cliente se desconecto. Terminando servidor
+[ERROR] 20:02:48:305 MiRam/(25211:25249): el cliente se desconecto. Terminando servidor
+[ERROR] 20:02:48:305 MiRam/(25211:25248): el cliente se desconecto. Terminando servidor
+[ERROR] 20:02:48:305 MiRam/(25211:25247): el cliente se desconecto. Terminando servidor
+[INFO] 20:33:47:654 MiRam/(25617:25647): Se asigno espacio de memoria a todo
+[INFO] 20:33:47:678 MiRam/(25617:25653): PEDIR_TAREA
+[INFO] 20:33:47:679 MiRam/(25617:25654): PEDIR_TAREA
+[INFO] 20:33:47:683 MiRam/(25617:25655): PEDIR_TAREA
+[INFO] 20:33:47:688 MiRam/(25617:25656): PEDIR_TAREA
+[INFO] 20:33:47:691 MiRam/(25617:25657): PEDIR_TAREA
+[ERROR] 20:34:56:504 MiRam/(25617:25647): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:34:56:505 MiRam/(25617:25657): el cliente se desconecto. Terminando servidor
+[ERROR] 20:34:56:505 MiRam/(25617:25656): el cliente se desconecto. Terminando servidor
+[ERROR] 20:34:56:505 MiRam/(25617:25655): el cliente se desconecto. Terminando servidor
+[ERROR] 20:34:56:505 MiRam/(25617:25654): el cliente se desconecto. Terminando servidor
+[ERROR] 20:34:56:505 MiRam/(25617:25653): el cliente se desconecto. Terminando servidor
+[INFO] 20:35:08:836 MiRam/(25684:25702): Se asigno espacio de memoria a todo
+[INFO] 20:35:08:849 MiRam/(25684:25708): PEDIR_TAREA
+[INFO] 20:35:08:852 MiRam/(25684:25709): PEDIR_TAREA
+[INFO] 20:35:08:855 MiRam/(25684:25710): PEDIR_TAREA
+[INFO] 20:35:08:856 MiRam/(25684:25711): PEDIR_TAREA
+[INFO] 20:35:08:856 MiRam/(25684:25712): PEDIR_TAREA
+[ERROR] 20:35:33:555 MiRam/(25684:25702): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:35:33:556 MiRam/(25684:25712): el cliente se desconecto. Terminando servidor
+[ERROR] 20:35:33:556 MiRam/(25684:25711): el cliente se desconecto. Terminando servidor
+[ERROR] 20:35:33:556 MiRam/(25684:25710): el cliente se desconecto. Terminando servidor
+[ERROR] 20:35:33:556 MiRam/(25684:25709): el cliente se desconecto. Terminando servidor
+[ERROR] 20:35:33:556 MiRam/(25684:25708): el cliente se desconecto. Terminando servidor
+[INFO] 20:38:00:921 MiRam/(25748:25764): Se asigno espacio de memoria a todo
+[INFO] 20:38:00:938 MiRam/(25748:25776): PEDIR_TAREA
+[INFO] 20:38:00:942 MiRam/(25748:25777): PEDIR_TAREA
+[INFO] 20:38:00:943 MiRam/(25748:25778): PEDIR_TAREA
+[INFO] 20:38:00:943 MiRam/(25748:25779): PEDIR_TAREA
+[INFO] 20:38:00:944 MiRam/(25748:25780): PEDIR_TAREA
+[ERROR] 20:38:23:893 MiRam/(25748:25764): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:38:23:893 MiRam/(25748:25780): el cliente se desconecto. Terminando servidor
+[ERROR] 20:38:23:893 MiRam/(25748:25779): el cliente se desconecto. Terminando servidor
+[ERROR] 20:38:23:893 MiRam/(25748:25778): el cliente se desconecto. Terminando servidor
+[ERROR] 20:38:23:893 MiRam/(25748:25777): el cliente se desconecto. Terminando servidor
+[ERROR] 20:38:23:893 MiRam/(25748:25776): el cliente se desconecto. Terminando servidor
+[INFO] 20:45:30:912 MiRam/(25891:25909): Se asigno espacio de memoria a todo
+[INFO] 20:45:30:931 MiRam/(25891:25915): PEDIR_TAREA
+[INFO] 20:45:30:931 MiRam/(25891:25916): PEDIR_TAREA
+[INFO] 20:45:30:932 MiRam/(25891:25917): PEDIR_TAREA
+[INFO] 20:45:30:932 MiRam/(25891:25918): PEDIR_TAREA
+[INFO] 20:45:30:932 MiRam/(25891:25919): PEDIR_TAREA
+[ERROR] 20:45:37:716 MiRam/(25891:25909): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:45:37:717 MiRam/(25891:25919): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:37:717 MiRam/(25891:25918): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:37:717 MiRam/(25891:25917): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:37:717 MiRam/(25891:25916): el cliente se desconecto. Terminando servidor
+[ERROR] 20:45:37:717 MiRam/(25891:25915): el cliente se desconecto. Terminando servidor
+[INFO] 20:59:44:381 MiRam/(26193:26213): Se asigno espacio de memoria a todo
+[INFO] 20:59:44:402 MiRam/(26193:26219): PEDIR_TAREA
+[INFO] 20:59:44:405 MiRam/(26193:26220): PEDIR_TAREA
+[INFO] 20:59:44:408 MiRam/(26193:26221): PEDIR_TAREA
+[INFO] 20:59:44:409 MiRam/(26193:26222): PEDIR_TAREA
+[INFO] 20:59:44:410 MiRam/(26193:26223): PEDIR_TAREA
+[ERROR] 20:59:59:776 MiRam/(26193:26213): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:59:59:777 MiRam/(26193:26223): el cliente se desconecto. Terminando servidor
+[ERROR] 20:59:59:777 MiRam/(26193:26222): el cliente se desconecto. Terminando servidor
+[ERROR] 20:59:59:777 MiRam/(26193:26221): el cliente se desconecto. Terminando servidor
+[ERROR] 20:59:59:777 MiRam/(26193:26220): el cliente se desconecto. Terminando servidor
+[ERROR] 20:59:59:777 MiRam/(26193:26219): el cliente se desconecto. Terminando servidor
+[INFO] 21:05:59:164 MiRam/(26356:26373): Se asigno espacio de memoria a todo
+[INFO] 21:05:59:179 MiRam/(26356:26380): PEDIR_TAREA
+[INFO] 21:05:59:182 MiRam/(26356:26381): PEDIR_TAREA
+[INFO] 21:05:59:189 MiRam/(26356:26382): PEDIR_TAREA
+[INFO] 21:05:59:193 MiRam/(26356:26383): PEDIR_TAREA
+[INFO] 21:05:59:200 MiRam/(26356:26384): PEDIR_TAREA
+[ERROR] 21:06:12:532 MiRam/(26356:26373): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 21:06:12:533 MiRam/(26356:26384): el cliente se desconecto. Terminando servidor
+[ERROR] 21:06:12:533 MiRam/(26356:26383): el cliente se desconecto. Terminando servidor
+[ERROR] 21:06:12:533 MiRam/(26356:26382): el cliente se desconecto. Terminando servidor
+[ERROR] 21:06:12:533 MiRam/(26356:26381): el cliente se desconecto. Terminando servidor
+[ERROR] 21:06:12:533 MiRam/(26356:26380): el cliente se desconecto. Terminando servidor
