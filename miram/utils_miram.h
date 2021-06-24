@@ -132,6 +132,7 @@ typedef struct{
 	int id_patota;
 	presencia ubicacion;
 	t_list* marco_inicial;
+	int cant_tripulantes;
 
 }tabla_paginacion;
 
@@ -180,7 +181,9 @@ void imprimir_seg(t_list* tabla_aux);
 void agregar_segmentos(t_list* lista_aux_seg);
 int posicion_marco(config_struct*);
 marco* siguiente_marco(int id_patota, int id_marco,tabla_paginacion* tabla_aux);
-int escribir_atributo(void* dato, int offset, int nro_marco, config_struct* config_s, int tipo_dato);
+void* leer_atributo(int offset, int nro_marco, config_struct* config_s);
+void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s);
+int escribir_atributo_char(void* dato, int offset, int nro_marco, config_struct* config_s);
 int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato);
 marco* incrementar_marco(int* indice,int* offset, int tamanio_marco, int tipo_dato, tabla_paginacion* auxiliar, config_struct* config_servidor);
 void imprimir_ocupacion_marcos(config_struct* configuracion);
@@ -195,7 +198,8 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 void reservar_marco(int cantidad_marcos, config_struct* configuracion, t_list* tabla_aux, int pid );
 void eliminar_estructura_memoria(t_list* tabla_aux);
 void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista);
-void* leer_atributo(int offset, int nro_marco, config_struct* config_s, int tipo_dato);
+int escribir_atributo(void* dato, int offset, int nro_marco, config_struct* config_s);
+
 
 void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial);
 

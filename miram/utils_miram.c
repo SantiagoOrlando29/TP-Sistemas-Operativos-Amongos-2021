@@ -87,10 +87,12 @@ int funcion_cliente(int socket_cliente){
 		tipoMensajeRecibido = recibir_operacion(socket_cliente);
 		switch(tipoMensajeRecibido)
 		{
-			case PRUEBA:
-
+			case PRUEBA:;
+				int a1;
+				a1=posicion_marco(&configuracion);
+				int a2;
+				a2=posicion_marco(&configuracion);
 				lista=recibir_paquete(socket_cliente);
-
 				int pid = (int)atoi(list_get(lista,0));
 				printf("el numero de la patota es %d\n", pid);
 				fflush(stdout);
@@ -128,6 +130,7 @@ int funcion_cliente(int socket_cliente){
 					fflush(stdout);
 					tabla_paginacion* una_tabla=malloc(sizeof(tabla_paginacion));
 					una_tabla->id_patota = pid;
+					una_tabla->cant_tripulantes= cantidad_tripulantes;
 					una_tabla->marco_inicial=list_create();
 					list_add(memoria_aux, una_tabla);
 
@@ -521,10 +524,71 @@ void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabl
 
 	int offset = 0;
 	int indice_marco=0;
-	marco* marco = list_get(una_tabla->marco_inicial,0);
-	int pid = (int) leer_atributo(offset,marco->id_marco, config_servidor, sizeof(int));
-	printf("ID magico %d\n",pid);
 
+	marco* marco = list_get(una_tabla->marco_inicial,indice_marco);
+	uint32_t pid = (uint32_t) leer_atributo(offset,marco->id_marco, config_servidor);
+	offset+= sizeof(int);
+	printf("ID magico %d\n",pid);
+	indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
+	marco = list_get(una_tabla->marco_inicial,indice_marco);
+
+	uint32_t puntero_tarea = (uint32_t)leer_atributo(offset,marco->id_marco, config_servidor);
+	offset+=sizeof(int);
+	printf("Puntero magico %d\n",puntero_tarea);
+	fflush(stdout);
+
+
+	for(int i=0; i < una_tabla->cant_tripulantes;i++){
+
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		uint32_t tid = (uint32_t)leer_atributo(offset,marco->id_marco, config_servidor);
+		offset+=sizeof(uint32_t);
+		printf("TID magico %d\n",tid);
+		fflush(stdout);
+
+
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		char estado =(char)leer_atributo_char(offset,marco->id_marco, config_servidor);
+		offset+=sizeof(char);
+        printf("Estado magico %c\n",estado);
+		fflush(stdout);
+
+
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		uint32_t pos_x = (uint32_t)leer_atributo(offset,marco->id_marco, config_servidor);
+		offset+=sizeof(uint32_t);
+
+		printf("Pos x magico %d\n",pos_x);
+		fflush(stdout);
+
+
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		int pos_y = (int)leer_atributo(offset,marco->id_marco, config_servidor);
+		offset+=sizeof(int);
+
+		printf("Pos y magico %d\n",pos_y);
+		fflush(stdout);
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		int puntero_pcb = (int)leer_atributo(offset,marco->id_marco, config_servidor);
+		offset+=sizeof(int);
+
+		printf("Puntero magico  %d\n",puntero_pcb);
+		fflush(stdout);
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		int prox_in = (int)leer_atributo(offset,marco->id_marco, config_servidor);
+		offset+=sizeof(int);
+
+
+		printf("Prox instruccion %d\n",prox_in);
+		fflush(stdout);
+
+	}
 	/*
 
 	//tabla_paginacion* una_tabla = list_get(una_tabla,posicion_patota(pid, una_tabla));
@@ -620,21 +684,21 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 	int offset = 0;
 	int indice_marco=0;
-	//int pid = (int)atoi(list_get(lista,0));
+	int pid = (int)atoi(list_get(lista,0));
 
-	int pid = 1010;
+
 
 	//tabla_paginacion* una_tabla = list_get(una_tabla,posicion_patota(pid, una_tabla));
 	marco* marco =list_get(una_tabla->marco_inicial,indice_marco);
 
-	offset +=escribir_atributo(&pid,offset,marco->id_marco, config_servidor, sizeof(int)); //Completar con puntero a tareas
+	offset +=escribir_atributo(&pid,offset,marco->id_marco, config_servidor); //Completar con puntero a tareas
 
 	int puntero_tarea = 0;
 	int offset_pcb = offset;
 	indice_marco += alcanza_espacio(&offset, config_servidor->tamanio_pag, sizeof(int));
 	marco = list_get(una_tabla->marco_inicial,indice_marco);
 	int marco_pcb = indice_marco;
-	offset +=escribir_atributo(&puntero_tarea,offset,marco->id_marco, config_servidor, sizeof(int));
+	offset +=escribir_atributo(&puntero_tarea,offset,marco->id_marco, config_servidor);
 
 	int cantidad_tripulantes = (int)atoi((list_get(lista,1)));
 
@@ -649,63 +713,68 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 	for(int i =2; i<cantidad_tripulantes+2;i++){
 		tcbTripulante* tripulante= (tcbTripulante*) list_get(lista,i);
+
 		uint32_t tid = tripulante->tid;
 		printf("\n TID %d",tid);
+
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 		marco = list_get(una_tabla->marco_inicial,indice_marco);
-		offset +=escribir_atributo(&tid,offset,marco->id_marco, config_servidor, sizeof(int));
+		offset +=escribir_atributo(&tid,offset,marco->id_marco, config_servidor);
+
 
 		char estado = tripulante->estado;
 		printf("\n Estado %c", estado);
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		marco = list_get(una_tabla->marco_inicial,indice_marco);
-		offset +=escribir_atributo(&estado,offset,marco->id_marco, config_servidor, sizeof(char));
+		offset +=escribir_atributo_char(&estado,offset,marco->id_marco, config_servidor);
+
 
 		uint32_t pos_x = tripulante->posicionX;
 		printf("\n Pos x %d",pos_x);
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 		marco = list_get(una_tabla->marco_inicial,indice_marco);
-		offset +=escribir_atributo(&pos_x,offset,marco->id_marco, config_servidor, sizeof(int));
-
+		offset +=escribir_atributo(&pos_x,offset,marco->id_marco, config_servidor);
 
 		int pos_y =tripulante->posicionY;
 		printf("\n Pos y %d",pos_y);
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 		marco = list_get(una_tabla->marco_inicial,indice_marco);
-		offset +=escribir_atributo(&pos_y,offset,marco->id_marco, config_servidor, sizeof(int));
+		offset +=escribir_atributo(&pos_y,offset,marco->id_marco, config_servidor);
 
 
 		uint32_t prox_i = tripulante->prox_instruccion;
-
 		printf("\nProx instruccion %d", prox_i);
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 		marco = list_get(una_tabla->marco_inicial,indice_marco);
-		offset +=escribir_atributo(&prox_i,offset,marco->id_marco, config_servidor, sizeof(int));
+		offset +=escribir_atributo(&prox_i,offset,marco->id_marco, config_servidor);
 
 		uint32_t p_pcb =tripulante->puntero_pcb;
 		printf("\n Este es el puntero al pcb  %d",p_pcb);
 		fflush(stdout);
-
-
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 		marco = list_get(una_tabla->marco_inicial,indice_marco);
-	    offset +=escribir_atributo(&p_pcb,offset,marco->id_marco, config_servidor, sizeof(int));
+	    offset +=escribir_atributo(&p_pcb,offset,marco->id_marco, config_servidor);
+
+
+
 	}
 
 	indice_marco+=alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 
 	puntero_tarea=0;
 	//Terminar de escribir patota
-	escribir_atributo(&puntero_tarea,offset_pcb,marco_pcb, config_servidor, sizeof(int));
+
+
+	//escribir_atributo(&puntero_tarea,offset_pcb,marco_pcb, config_servidor, sizeof(int));
 
 	for(int i=0;i<strlen(tarea)+1;i++){
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
-		offset +=escribir_atributo(&tarea[i],offset,marco->id_marco, config_servidor,sizeof(char));
+		offset +=escribir_atributo_char(&tarea[i],offset,marco->id_marco, config_servidor);
 		printf("%c",tarea[i]);
 
 	}
@@ -738,7 +807,7 @@ marco* incrementar_marco(int* indice,int* offset, int tamanio_marco, int tipo_da
 
 */
 int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato){
-	if(tamanio_marco > (*offset)+tipo_dato){
+	if(tamanio_marco >= (*offset)+tipo_dato){
 
 		return 0;
 	}
@@ -748,15 +817,36 @@ int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato){
 }
 
 
-int escribir_atributo(void* dato, int offset, int nro_marco, config_struct* config_s, int tipo_dato){
-	memcpy((config_s->posicion_inicial)+nro_marco*(config_s->tamanio_pag)+offset,dato,tipo_dato);
+
+
+int escribir_atributo(void* dato, int offset, int nro_marco, config_struct* config_s){
+	void* p = config_s->posicion_inicial;
+	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
+	memcpy((int*)p+desplazamiento,dato,sizeof(int));
 	return sizeof(int);
 }
 
+void* leer_atributo(int offset, int nro_marco, config_struct* config_s){
+	void* dato =malloc(sizeof(int));
+	void* p = config_s->posicion_inicial;
+	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
+	memcpy(&dato,(int*)p+desplazamiento,sizeof(int));
+	printf("%d", (int)dato);
+	return dato;
+}
 
-void* leer_atributo(int offset, int nro_marco, config_struct* config_s, int tipo_dato){
-	void* dato =malloc(sizeof(tipo_dato));
-	memcpy(&dato,config_s->posicion_inicial+nro_marco*(config_s->tamanio_pag)+offset,sizeof(tipo_dato));
+
+int escribir_atributo_char(void* dato, int offset, int nro_marco, config_struct* config_s){
+	memcpy((config_s->posicion_inicial)+nro_marco*(config_s->tamanio_pag)+offset,dato,sizeof(char));
+	return sizeof(char);
+}
+
+
+
+void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s){
+	char* dato =malloc(sizeof(char));
+	memcpy(&dato,config_s->posicion_inicial+nro_marco*(config_s->tamanio_pag)+offset,sizeof(char));
+	printf("%c", dato);
 	return dato;
 }
 
