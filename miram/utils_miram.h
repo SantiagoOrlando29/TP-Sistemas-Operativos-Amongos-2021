@@ -151,7 +151,7 @@ typedef struct{
 	int id_patota;
 	int primer_tripulante;
 	int ultimo_tripulante;
-	t_list* segmento_inicial;//CAMBIAR NOMBRE
+	t_list* lista_segmentos;//segmento_inicial
 }tabla_segmentacion;
 
 typedef struct{
@@ -182,7 +182,6 @@ void iniciar_miram(config_struct* config);
 void agregar_memoria_aux(t_list* tabla_aux, config_struct* config);
 void imprimir_memoria(t_list* tabla_aux);
 void imprimir_seg(t_list* tabla_aux);
-void agregar_segmentos(t_list* lista_aux_seg);
 int posicion_marco(config_struct*);
 void imprimir_ocupacion_marcos(config_struct configuracion);
 int posicion_patota(int id_buscado,t_list* tabla_aux);

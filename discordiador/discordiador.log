@@ -1,6 +1,14 @@
-[INFO] 21:05:59:165 discordiador/(26365:26365): Memoria asignada
-[INFO] 21:05:59:180 discordiador/(26365:26375): tarea recibida: 6-0-0-0-0
-[INFO] 21:05:59:184 discordiador/(26365:26376): tarea recibida: 6-0-0-0-0
-[INFO] 21:05:59:191 discordiador/(26365:26377): tarea recibida: 6-0-0-0-0
-[INFO] 21:05:59:194 discordiador/(26365:26378): tarea recibida: 6-0-0-0-0
-[INFO] 21:05:59:201 discordiador/(26365:26379): tarea recibida: 6-0-0-0-0
+[INFO] 21:47:44:537 discordiador/(30504:30504): Memoria asignada
+[INFO] 21:47:44:556 discordiador/(30504:30514): tarea recibida: 6-0-0-0-0
+[INFO] 21:47:44:557 discordiador/(30504:30515): tarea recibida: 6-0-0-0-0
+[INFO] 21:47:44:560 discordiador/(30504:30516): tarea recibida: 6-0-0-0-0
+[INFO] 21:47:44:560 discordiador/(30504:30517): tarea recibida: 6-0-0-0-0
+[INFO] 21:47:44:561 discordiador/(30504:30518): tarea recibida: 6-0-0-0-0
+[INFO] 21:47:47:012 discordiador/(30504:30504): Memoria asignada
+[INFO] 21:47:47:016 discordiador/(30504:30524): tarea recibida: 6-0-0-0-0
+[INFO] 21:47:47:018 discordiador/(30504:30525): tarea recibida: 6-0-0-0-0
+[INFO] 21:47:47:019 discordiador/(30504:30526): tarea recibida: 6-0-0-0-0
+[INFO] 21:47:47:020 discordiador/(30504:30527): tarea recibida: 6-0-0-0-0
+[INFO] 21:47:47:024 discordiador/(30504:30528): tarea recibida: 6-0-0-0-0
+[INFO] 21:47:48:331 discordiador/(30504:30504): Memoria NO asignada
+[WARNING] 21:47:48:331 discordiador/(30504:30504): no se q tiene q pasar cuando miram no asigna memoria, pero no empieza x ahora

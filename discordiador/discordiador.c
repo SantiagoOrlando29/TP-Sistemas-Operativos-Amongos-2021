@@ -523,15 +523,15 @@ INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
 void leer_config(void){
 	t_config * archConfig = config_create("discordiador.config");
 
-	    configuracion.ip_miram = config_get_string_value(archConfig, "IP_MI_RAM_HQ");
-	    configuracion.puerto_miram = config_get_string_value(archConfig, "PUERTO_MI_RAM_HQ");
-	    configuracion.ip_mongostore = config_get_string_value(archConfig, "IP_I_MONGO_STORE");
-	    configuracion.puerto_mongostore = config_get_string_value(archConfig, "PUERTO_I_MONGO_STORE");
-	    configuracion.grado_multitarea= config_get_int_value(archConfig, "GRADO_MULTITAREA");
-	    configuracion.algoritmo= config_get_string_value(archConfig, "ALGORITMO");
-	    configuracion.quantum = config_get_int_value(archConfig, "QUANTUM");
-	    configuracion.duracion_sabotaje = config_get_int_value(archConfig, "DURACION_SABOTAJE");
-	    configuracion.retardo_cpu = config_get_int_value(archConfig, "RETARDO_CICLO_CPU");
+	configuracion.ip_miram = config_get_string_value(archConfig, "IP_MI_RAM_HQ");
+	configuracion.puerto_miram = config_get_string_value(archConfig, "PUERTO_MI_RAM_HQ");
+	configuracion.ip_mongostore = config_get_string_value(archConfig, "IP_I_MONGO_STORE");
+	configuracion.puerto_mongostore = config_get_string_value(archConfig, "PUERTO_I_MONGO_STORE");
+	configuracion.grado_multitarea= config_get_int_value(archConfig, "GRADO_MULTITAREA");
+	configuracion.algoritmo= config_get_string_value(archConfig, "ALGORITMO");
+	configuracion.quantum = config_get_int_value(archConfig, "QUANTUM");
+	configuracion.duracion_sabotaje = config_get_int_value(archConfig, "DURACION_SABOTAJE");
+	configuracion.retardo_cpu = config_get_int_value(archConfig, "RETARDO_CICLO_CPU");
 }
 
 void terminar_discordiador (int conexionMiRam, int conexionMongoStore, t_log* logger){

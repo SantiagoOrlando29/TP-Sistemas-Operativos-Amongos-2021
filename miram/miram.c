@@ -1,6 +1,4 @@
 #include "miram.h"
-//config_struct configuracion;
-//t_log* logger;
 
 
 int main(void)
@@ -172,7 +170,6 @@ int main(void)
 
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
 	pthread_t servidor;
-	//iniciar_servidor(&configuracion);
 	int hilo_servidor = 1;
 	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){
 		log_info(logger, "Falla al crearse el hilo");
@@ -201,6 +198,4 @@ void leer_config(){
     configuracion.criterio_seleccion = config_get_string_value(archConfig, "CRITERIO_SELECCION");
     //Parametros utiles (No obtenidos del archivo de configuracion)
     configuracion.cant_marcos=0;
-
-
 }
