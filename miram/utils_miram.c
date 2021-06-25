@@ -131,6 +131,7 @@ int funcion_cliente(int socket_cliente){
 					tabla_paginacion* una_tabla=malloc(sizeof(tabla_paginacion));
 					una_tabla->id_patota = pid;
 					una_tabla->cant_tripulantes= cantidad_tripulantes;
+					una_tabla->long_tareas = strlen(tarea)+1;
 					una_tabla->marco_inicial=list_create();
 					list_add(memoria_aux, una_tabla);
 
@@ -589,6 +590,26 @@ void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabl
 		fflush(stdout);
 
 	}
+
+	printf("Marco %d\n", indice_marco);
+	printf("Marco id %d\n", marco->id_marco);
+	printf("Offset %d\n", marco->id_marco);
+
+
+
+	printf("Debe iterar %d\n", una_tabla->long_tareas);
+
+	for(int j=0; j <(una_tabla->long_tareas);j++){
+
+		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		char valor =*(char*)leer_atributo_char(offset,marco->id_marco, config_servidor);
+		offset+=sizeof(char);
+		printf("%c",valor);
+		fflush(stdout);
+
+	}
+}
 	/*
 
 	//tabla_paginacion* una_tabla = list_get(una_tabla,posicion_patota(pid, una_tabla));
@@ -677,7 +698,7 @@ void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabl
 
 	*/
 
-}
+
 
 
 void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista ){
@@ -754,7 +775,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 		offset +=escribir_atributo(&prox_i,offset,marco->id_marco, config_servidor);
 
 		uint32_t p_pcb =tripulante->puntero_pcb;
-		printf("\n Este es el puntero al pcb  %d",p_pcb);
+		printf("\n Este es el puntero al pcb  %d\n",p_pcb);
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 		marco = list_get(una_tabla->marco_inicial,indice_marco);
@@ -764,20 +785,23 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 	}
 
-	indice_marco+=alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
+	//indice_marco+=alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 
-	puntero_tarea=0;
+	//puntero_tarea=0;
 	//Terminar de escribir patota
 
 
 	//escribir_atributo(&puntero_tarea,offset_pcb,marco_pcb, config_servidor, sizeof(int));
 
-/*	for(int i=0;i<strlen(tarea)+1;i++){
+	for(int i=0;i<strlen(tarea)+1;i++){
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
-		offset +=escribir_atributo_char(&tarea[i],offset,marco->id_marco, config_servidor);
+		marco = list_get(una_tabla->marco_inicial,indice_marco);
+		offset +=escribir_char_tarea(tarea[i],offset,marco->id_marco, config_servidor);
 		printf("%c",tarea[i]);
+		fflush(stdout);
 
-	}*/
+
+}
 
 }
 /*
@@ -850,6 +874,15 @@ int escribir_atributo_char(tcbTripulante* tripulante, int offset, int nro_marco,
 	return sizeof(char);
 }
 
+int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct* config_s){
+	char* valor= malloc(sizeof(char));
+	sprintf(valor,"%c",caracter);
+	void* p = config_s->posicion_inicial;
+	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
+	memcpy((int*)p+desplazamiento,valor,sizeof(char));
+	return sizeof(char);
+}
+
 
 void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s){
 	void* dato =malloc(sizeof(char));
@@ -919,13 +952,14 @@ int posicion_patota(int id_buscado,t_list* tabla_aux){
 
 	}
 
+/*
 int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco){
 	tabla_paginacion* auxiliar= (tabla_paginacion*)list_get(tabla_aux, posicion_patota);
     marco* marco_leido=list_get(auxiliar->marco_inicial,nro_marco-1);
 	return marco_leido->id_marco;
 
 }
-
+*/
 
 void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial){
 	int offset = 0 ;
@@ -1084,6 +1118,10 @@ int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* co
     return cantidad_marcos;
 }
 
+
+
+/*
+
 void reservar_marco(int cantidad_marcos, config_struct* configuracion, t_list* tabla_aux, int pid ){
 
 
@@ -1136,3 +1174,5 @@ void eliminar_estructura_memoria(t_list* tabla_aux){
 }
 
 }
+
+*/

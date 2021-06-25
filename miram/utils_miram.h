@@ -133,6 +133,7 @@ typedef struct{
 	presencia ubicacion;
 	t_list* marco_inicial;
 	int cant_tripulantes;
+	int long_tareas;
 
 }tabla_paginacion;
 
@@ -199,6 +200,7 @@ void reservar_marco(int cantidad_marcos, config_struct* configuracion, t_list* t
 void eliminar_estructura_memoria(t_list* tabla_aux);
 void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista);
 int escribir_atributo(void* dato, int offset, int nro_marco, config_struct* config_s);
+int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct* config_s);
 
 
 void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial);
