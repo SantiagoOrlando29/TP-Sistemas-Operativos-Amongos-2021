@@ -42,7 +42,8 @@ typedef enum
 	PAUSAR_PLANIFICACION,
 	OBTENER_BITACORA,
 	FIN,
-	PEDIR_TAREA
+	PEDIR_TAREA,
+	CAMBIAR_DE_ESTADO
 }tipoMensaje;
 
 
@@ -70,8 +71,7 @@ const static struct {
 		{INICIAR_PLANIFICACION, "INICIAR_PLANIFICACION"},
 		{PAUSAR_PLANIFICACION, "PAUSAR_PLANIFICACION"},
 		{OBTENER_BITACORA, "OBTENER_BITACORA"},
-		{FIN, "FIN"},
-		{PEDIR_TAREA, "PEDIR_TAREA"}
+		{FIN, "FIN"}
 };
 
 typedef struct{
@@ -108,6 +108,7 @@ typedef struct{
 	uint32_t prox_instruccion; // Identificador de la próxima instrucción a ejecutar
 	uint32_t puntero_pcb; //Dirección lógica del PCB del tripulante
 	sem_t semaforo_tripulante;
+	int socket_miram;
 }tcbTripulante;
 
 // fin estructuras tripulantes
@@ -147,12 +148,17 @@ tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, ui
 pcbPatota* crear_patota(uint32_t , uint32_t);
 int codigoOperacion (const char*);
 void enviar_header(tipoMensaje tipo, int socket_cliente);
+
+//TAREAS
 char* imprimirTarea(tarea*);
 tarea_tripulante codigoTarea(char*);
 void leer_tareas(char* archTarea, char* *tareas);
 tarea* crear_tarea(tarea_tripulante,int,int,int,int);
 tcbTripulante* hacer_tarea(tcbTripulante*,tarea*);
 void ejecutar_tarea(tarea_tripulante,int);
+char* pedir_tarea(int conexion_miram, tcbTripulante* tripulante);
+
+void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanio_tcb(tcbTripulante*);

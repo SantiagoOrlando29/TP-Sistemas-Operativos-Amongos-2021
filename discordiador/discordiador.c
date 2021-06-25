@@ -61,6 +61,7 @@ void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pen
 		sem_post(&MUTEX_LISTA_TRABAJANDO);
 
 		tripulante->estado = 'R';
+		cambiar_estado(tripulante->socket_miram, tripulante, 'R');
 
 		sem_wait(&MUTEX_LISTA_READY);
 		list_add(lista_tripulantes_ready, tripulante);
@@ -69,24 +70,14 @@ void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pen
 		sem_post(&HABILITA_GRADO_MULTITAREA);
 		sem_post(&HABILITA_EJECUTAR);
 		sem_wait(&(tripulante->semaforo_tripulante));
+		cambiar_estado(tripulante->socket_miram, tripulante, 'E');
 		*quantums_ejecutados = 0;
 	}
 }
 
-/*tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
+char* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
 	t_paquete* paquete = crear_paquete(PEDIR_TAREA);
-	agregar_a_paquete(paquete, tripulante, tamanio_TCB);
-	enviar_paquete(paquete, conexion_miram);
-}*/
-
-void tripulante_hilo (tcbTripulante* tripulante){
-	sem_wait(&(tripulante->semaforo_tripulante));
-
-	tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,4); //TAREA NORMAL
-
-	int conexion_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
-	t_paquete* paquete = crear_paquete(PEDIR_TAREA);
-	agregar_a_paquete(paquete, tripulante, tamanio_TCB);
+	agregar_a_paquete(paquete, tripulante, tamanio_TCB);//NOSE SI ESTA BIEN MANDARLE TOODO EL TRIPU. SOLO CON TID Y PROX_INSTRUCCION ALCANZARIA.
 	char* numero_patota_char = malloc(sizeof(char));
 	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
 	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
@@ -95,12 +86,47 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	log_info(logger, "tarea recibida: %s", tarea_recibida_miram);
 	tripulante->prox_instruccion++;
 
+	eliminar_paquete(paquete);
+	free(numero_patota_char);
+
+	return tarea_recibida_miram;
+}
+
+void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado){
+	t_paquete* paquete = crear_paquete(CAMBIAR_DE_ESTADO);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* estado_char = malloc(sizeof(char));
+	sprintf(estado_char, "%c", nuevo_estado);
+	agregar_a_paquete(paquete, estado_char, strlen(estado_char)+1);
+
+	char* numero_patota_char = malloc(sizeof(char));
+	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
+	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
+
+	enviar_paquete(paquete, conexion_miram);
+}
+
+void tripulante_hilo (tcbTripulante* tripulante){
+	sem_wait(&(tripulante->semaforo_tripulante));
+
+	tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,4); //TAREA NORMAL
+
+	tripulante->socket_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
+	char* tareaaa = pedir_tarea(tripulante->socket_miram, tripulante);
+
 
 	printf("hola soy el hilo %d, P%d, estoy listo para ejecutar \n", tripulante->tid, tripulante->puntero_pcb);
 	sem_post(&NUEVO_READY);
+
 	fflush(stdout);
 	sem_wait(&(tripulante->semaforo_tripulante));
+	cambiar_estado(tripulante->socket_miram, tripulante, 'E');
 	sem_post(&HABILITA_EJECUTAR);
+
 	int contador_movimientos = 0;
 	int contador_ciclos_trabajando = 0;
 	int quantums_ejecutados = 0;
@@ -136,11 +162,15 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			sem_post(&MUTEX_LISTA_BLOQUEADO);
 
 			printf("hilo %d P%d, me bloquie \n", tripulante->tid, tripulante->puntero_pcb);
+			cambiar_estado(tripulante->socket_miram, tripulante, 'B');
 			sem_post(&PASA_A_BLOQUEADO);
 			sem_post(&HABILITA_GRADO_MULTITAREA);
 			sem_wait(&(tripulante->semaforo_tripulante));
 			if(tripulante->estado != 'X'){ // O SEA Q TIENE MAS TAREAS
 				tarea_recibida = pedir_tarea_normal(tripulante); //esto en realidad no iria, pq se la tiene q pasar el bloq o algo asi
+
+				tareaaa = pedir_tarea(tripulante->socket_miram, tripulante);
+
 				sem_post(&HABILITA_EJECUTAR);
 			} else{ // NO TIENE MAS TAREAS
 				tripulante->prox_instruccion = 100;
@@ -155,6 +185,9 @@ void tripulante_hilo (tcbTripulante* tripulante){
 				quantums_ejecutados++;
 				if(contador_ciclos_trabajando == tarea_recibida->tiempo){//ESTE IF ESTA PARA QUE SI  YA TERMINO LA TAREA, SE FIJE SI TIENE OTRA MAS
 					tarea_recibida = pedir_tarea_IO(tripulante); // I/O     // Y SI NO LA TIENE QUE VAYA DIRECTO A EXIT SIN BLOQUEARSE POR FIN DE QUANTUM
+
+					tareaaa = pedir_tarea(tripulante->socket_miram, tripulante);
+
 					if(tarea_recibida == NULL){ // NO TIENE MAS TAREAS
 						tripulante->prox_instruccion = 200;
 					}else{ //TIENE MAS TAREAS
@@ -167,7 +200,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			contador_ciclos_trabajando = 0;
 		}
 
-		tripulante->prox_instruccion++;
+		//tripulante->prox_instruccion++;
 	}
 	if(tripulante->estado != 'X'){
 		sem_post(&HABILITA_GRADO_MULTITAREA);
@@ -182,7 +215,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 		list_add(lista_tripulantes_exit, tripulante);
 	}
 	printf("hilo %d P%d, EXIT\n", tripulante->tid, tripulante->puntero_pcb);
-	close(conexion_miram);
+	close(tripulante->socket_miram);
 }
 
 void ready_exec() {
@@ -191,7 +224,7 @@ void ready_exec() {
 	int lista_size;
 	while(1){
 		lista_size = list_size(lista_tripulantes_ready);
-		if (lista_size >0){
+		if (lista_size >0){ //PARA QUE NO HAYA ESPERA ACTIVA PODRIA CAMBIAR ESTO POR UN SEMAFORO
 			sem_wait(&HABILITA_GRADO_MULTITAREA);
 			sem_wait(&HABILITA_EJECUTAR);
 			sem_wait(&CONTINUAR_PLANIFICACION);
@@ -229,44 +262,48 @@ void nuevo_ready() {
 }
 
 void bloqueado_ready() {
-	tcbTripulante* tripulante1 = malloc(tamanio_TCB);
+	tcbTripulante* tripulante = malloc(tamanio_TCB);
 	tarea* tarea_recibida;
 	while(1){
 		sem_wait(&PASA_A_BLOQUEADO);
 
 		sem_wait(&MUTEX_LISTA_BLOQUEADO);
-		tripulante1 = (tcbTripulante*)list_get(lista_tripulantes_bloqueado, 0);
+		tripulante = (tcbTripulante*)list_get(lista_tripulantes_bloqueado, 0);
 		sem_post(&MUTEX_LISTA_BLOQUEADO);
 
 		sem_wait(&CONTINUAR_PLANIFICACION);
 		sem_post(&CONTINUAR_PLANIFICACION);
-		printf("hilo %d P%d, haciendo I/O \n", tripulante1->tid, tripulante1->puntero_pcb);
+		printf("hilo %d P%d, haciendo I/O \n", tripulante->tid, tripulante->puntero_pcb);
 		sleep(1);
 		sem_wait(&CONTINUAR_PLANIFICACION);
 		sem_post(&CONTINUAR_PLANIFICACION);
-		printf("hilo %d P%d, termino I/O \n", tripulante1->tid, tripulante1->puntero_pcb);
+		printf("hilo %d P%d, termino I/O \n", tripulante->tid, tripulante->puntero_pcb);
 		fflush(stdout);
-		tarea_recibida = pedir_tarea_normal(tripulante1);
+
+		tarea_recibida = pedir_tarea_normal(tripulante);
+
+		char* tareaaa = pedir_tarea(tripulante->socket_miram, tripulante);
+
 
 		sem_wait(&CONTINUAR_PLANIFICACION);
 		sem_post(&CONTINUAR_PLANIFICACION);
 		sem_wait(&MUTEX_LISTA_BLOQUEADO);
-		tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
+		tripulante = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
 		sem_post(&MUTEX_LISTA_BLOQUEADO);
 
 		if(tarea_recibida != NULL){ // TIENE MAS TAREAS
-			tripulante1->estado = 'R';
+			tripulante->estado = 'R';
 			sem_wait(&MUTEX_LISTA_READY);
-			list_add(lista_tripulantes_ready, tripulante1);
+			list_add(lista_tripulantes_ready, tripulante);
 			sem_post(&MUTEX_LISTA_READY);
 		} else{ // NO TIENE MAS TAREAS
-			tripulante1->estado = 'X';
-			list_add(lista_tripulantes_exit, tripulante1);
-			sem_post(&(tripulante1->semaforo_tripulante));
+			tripulante->estado = 'X';
+			list_add(lista_tripulantes_exit, tripulante);
+			sem_post(&(tripulante->semaforo_tripulante));
 		}
 
 	}
-	free(tripulante1);
+	//free(tripulante);
 
 }
 
@@ -400,9 +437,9 @@ INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
 
 					printf("El tripulante %d tiene posx %d y posy %d\n", tid, posx,posy);
 					tripulante = crear_tripulante(tid,'N',posx,posy,0,numero_patota);
+					agregar_a_paquete(paquete, tripulante, tamanio_TCB);
 					posx =0;
 					posy =0;
-					agregar_a_paquete(paquete, tripulante, tamanio_TCB);
 					tid++;
 				}
 
@@ -410,13 +447,11 @@ INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
 				sprintf(largo_tarea, "%d", strlen(tareas)+1);
 				agregar_a_paquete(paquete, largo_tarea, strlen(largo_tarea)+1);
 				agregar_a_paquete(paquete, tareas, strlen(tareas)+1);
-				//agregar_a_paquete(paquete, "Hola Mundo", 11);
 				free(tareas);
 
 				enviar_paquete(paquete, conexionMiRam);
 
 
-				//recibe confirmacion de miram de que esta todo bien
 				char* mensaje_recibido = malloc(17);
 				mensaje_recibido = recibir_mensaje(conexionMiRam);
 				log_info(logger, mensaje_recibido);

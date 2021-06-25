@@ -16,3 +16,1248 @@
 [WARNING] 13:44:46:136 MiRam/(1125:1150): el cliente se desconecto.
 [WARNING] 13:44:47:137 MiRam/(1125:1151): el cliente se desconecto.
 [ERROR] 13:44:51:090 MiRam/(1125:1139): el discordiador finalizo el programa. Terminando servidor
+[INFO] 14:48:06:067 MiRam/(1948:1975): Se asigno espacio de memoria a todo
+[INFO] 14:49:54:039 MiRam/(2003:2025): Se asigno espacio de memoria a todo
+[INFO] 14:53:45:954 MiRam/(2186:2203): Se asigno espacio de memoria a todo
+[INFO] 14:55:07:500 MiRam/(2291:2312): Se asigno espacio de memoria a todo
+[INFO] 14:56:23:587 MiRam/(2382:2398): Se asigno espacio de memoria a todo
+[INFO] 14:57:42:594 MiRam/(2460:2485): Se asigno espacio de memoria a todo
+[INFO] 14:59:30:134 MiRam/(2641:2655): Se asigno espacio de memoria a todo
+[INFO] 15:01:04:408 MiRam/(2729:2745): Se asigno espacio de memoria a todo
+[INFO] 15:03:57:598 MiRam/(2845:2865): cod_op 1
+[INFO] 15:03:57:599 MiRam/(2845:2865): Se asigno espacio de memoria a todo
+[INFO] 15:03:57:621 MiRam/(2845:2879): cod_op 8
+[INFO] 15:04:02:622 MiRam/(2845:2879): cod_op 8
+[INFO] 15:10:08:226 MiRam/(3020:3036): cod_op 1
+[INFO] 15:10:08:226 MiRam/(3020:3036): Se asigno espacio de memoria a todo
+[INFO] 15:10:08:242 MiRam/(3020:3057): cod_op 8
+[INFO] 15:10:13:242 MiRam/(3020:3057): cod_op 8
+[INFO] 15:10:30:228 MiRam/(3060:3093): cod_op 7
+[ERROR] 15:10:30:228 MiRam/(3060:3093): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:11:48:868 MiRam/(3143:3159): cod_op 1
+[INFO] 15:11:48:869 MiRam/(3143:3159): Se asigno espacio de memoria a todo
+[INFO] 15:11:48:878 MiRam/(3143:3174): cod_op 8
+[INFO] 15:11:48:878 MiRam/(3143:3174): aaaaa
+[INFO] 15:11:48:878 MiRam/(3143:3174): bbbb
+[INFO] 15:11:48:878 MiRam/(3143:3174): cccc
+[INFO] 15:11:53:879 MiRam/(3143:3174): cod_op 8
+[INFO] 15:11:53:879 MiRam/(3143:3174): aaaaa
+[INFO] 15:11:53:879 MiRam/(3143:3174): bbbb
+[INFO] 15:11:53:879 MiRam/(3143:3174): cccc
+[INFO] 15:12:27:828 MiRam/(3189:3203): cod_op 1
+[INFO] 15:12:27:829 MiRam/(3189:3203): Se asigno espacio de memoria a todo
+[INFO] 15:12:27:842 MiRam/(3189:3213): cod_op 8
+[INFO] 15:12:27:842 MiRam/(3189:3213): cccc
+[INFO] 15:12:32:842 MiRam/(3189:3213): cod_op 8
+[INFO] 15:14:23:908 MiRam/(3251:3278): cod_op 1
+[INFO] 15:14:23:909 MiRam/(3251:3278): Se asigno espacio de memoria a todo
+[INFO] 15:14:23:922 MiRam/(3251:3288): cod_op 8
+[INFO] 15:14:23:922 MiRam/(3251:3288): AAAA
+[INFO] 15:14:23:922 MiRam/(3251:3288): BBBBB
+[INFO] 15:14:23:922 MiRam/(3251:3288): DDDD
+[INFO] 15:14:23:922 MiRam/(3251:3288): EEEEEE
+[INFO] 15:14:23:922 MiRam/(3251:3288): EEEEEE
+[INFO] 15:14:23:922 MiRam/(3251:3288): EEEEEE
+[INFO] 15:14:23:922 MiRam/(3251:3288): EEEEEE
+[INFO] 15:14:23:922 MiRam/(3251:3288): EEEEEE
+[INFO] 15:14:23:922 MiRam/(3251:3288): cccc
+[INFO] 15:14:27:922 MiRam/(3251:3288): cod_op 8
+[INFO] 15:14:27:923 MiRam/(3251:3288): AAAA
+[INFO] 15:14:27:923 MiRam/(3251:3288): BBBBB
+[INFO] 15:14:27:923 MiRam/(3251:3288): DDDD
+[INFO] 15:15:45:437 MiRam/(3313:3330): cod_op 1
+[INFO] 15:15:45:438 MiRam/(3313:3330): Se asigno espacio de memoria a todo
+[INFO] 15:15:45:458 MiRam/(3313:3342): cod_op 8
+[INFO] 15:15:45:458 MiRam/(3313:3342): DDDD
+[INFO] 15:15:45:458 MiRam/(3313:3342): SSSSSS
+[INFO] 15:15:45:458 MiRam/(3313:3342): TTTTTTT
+[INFO] 15:15:45:458 MiRam/(3313:3342): RRRRRRRR
+[INFO] 15:15:45:458 MiRam/(3313:3342): WWWWWWW
+[INFO] 15:15:45:458 MiRam/(3313:3342): EEEEEE
+[INFO] 15:15:45:459 MiRam/(3313:3342): EEEEEE
+[INFO] 15:15:45:459 MiRam/(3313:3342): EEEEEE
+[INFO] 15:15:45:459 MiRam/(3313:3342): EEEEEE
+[INFO] 15:15:45:459 MiRam/(3313:3342): EEEEEE
+[INFO] 15:15:45:459 MiRam/(3313:3342): cccc
+[INFO] 15:15:49:460 MiRam/(3313:3342): cod_op 8
+[INFO] 15:15:49:460 MiRam/(3313:3342): DDDD
+[INFO] 15:15:49:460 MiRam/(3313:3342): SSSSSS
+[INFO] 15:15:49:460 MiRam/(3313:3342): TTTTTTT
+[INFO] 15:15:49:460 MiRam/(3313:3342): RRRRRRRR
+[INFO] 15:17:41:259 MiRam/(3365:3379): cod_op 1
+[INFO] 15:17:41:259 MiRam/(3365:3379): Se asigno espacio de memoria a todo
+[INFO] 15:17:41:265 MiRam/(3365:3389): cod_op 8
+[INFO] 15:17:41:265 MiRam/(3365:3389): RRRRRRRR
+[INFO] 15:17:41:265 MiRam/(3365:3389): SSSSSSS
+[INFO] 15:17:41:265 MiRam/(3365:3389): TTTTTTTT
+[INFO] 15:17:41:266 MiRam/(3365:3389): WWWWWWW
+[INFO] 15:17:41:266 MiRam/(3365:3389): EEEEEE
+[INFO] 15:17:41:266 MiRam/(3365:3389): EEEEEE
+[INFO] 15:17:41:266 MiRam/(3365:3389): EEEEEE
+[INFO] 15:17:41:266 MiRam/(3365:3389): EEEEEE
+[INFO] 15:17:41:271 MiRam/(3365:3389): EEEEEE
+[INFO] 15:17:41:271 MiRam/(3365:3389): cccc
+[INFO] 15:17:45:266 MiRam/(3365:3389): cod_op 8
+[INFO] 15:17:45:266 MiRam/(3365:3389): RRRRRRRR
+[INFO] 15:17:45:266 MiRam/(3365:3389): SSSSSSS
+[INFO] 15:20:28:264 MiRam/(3437:3451): cod_op 1
+[INFO] 15:20:28:266 MiRam/(3437:3451): Se asigno espacio de memoria a todo
+[INFO] 15:20:28:266 MiRam/(3437:3451): AAAAAAA
+[INFO] 15:20:28:266 MiRam/(3437:3451): BBBBBBBB
+[INFO] 15:20:28:266 MiRam/(3437:3451): CCCCCC
+[INFO] 15:20:28:266 MiRam/(3437:3451): DDDDDDDDDDD
+[INFO] 15:20:28:276 MiRam/(3437:3461): cod_op 8
+[INFO] 15:20:28:277 MiRam/(3437:3461): TAREA 6-0-0-0-0
+[INFO] 15:20:28:277 MiRam/(3437:3461): AAAAAAA
+[INFO] 15:20:28:277 MiRam/(3437:3461): BBBBBBBB
+[INFO] 15:20:28:277 MiRam/(3437:3461): CCCCCC
+[INFO] 15:20:28:277 MiRam/(3437:3461): DDDDDDDDDDD
+[INFO] 15:20:28:277 MiRam/(3437:3461): TTTTTTTT
+[INFO] 15:20:28:277 MiRam/(3437:3461): WWWWWWW
+[INFO] 15:20:28:277 MiRam/(3437:3461): EEEEEE
+[INFO] 15:20:28:277 MiRam/(3437:3461): EEEEEE
+[INFO] 15:20:28:277 MiRam/(3437:3461): EEEEEE
+[INFO] 15:20:28:277 MiRam/(3437:3461): EEEEEE
+[INFO] 15:20:28:277 MiRam/(3437:3461): EEEEEE
+[INFO] 15:20:28:277 MiRam/(3437:3461): cccc
+[INFO] 15:20:32:278 MiRam/(3437:3461): cod_op 8
+[INFO] 15:20:32:278 MiRam/(3437:3461): TAREA (null)
+[INFO] 15:23:21:581 MiRam/(3506:3521): cod_op 1
+[INFO] 15:23:21:582 MiRam/(3506:3521): Se asigno espacio de memoria a todo
+[INFO] 15:23:21:595 MiRam/(3506:3535): cod_op 8
+[INFO] 15:23:21:595 MiRam/(3506:3535): TAREA 6-0-0-0-0
+[INFO] 15:23:21:595 MiRam/(3506:3535): TTTTTTTT
+[INFO] 15:23:21:595 MiRam/(3506:3535): WWWWWWW
+[INFO] 15:23:21:595 MiRam/(3506:3535): EEEEEE
+[INFO] 15:23:21:595 MiRam/(3506:3535): EEEEEE
+[INFO] 15:23:21:595 MiRam/(3506:3535): EEEEEE
+[INFO] 15:23:21:596 MiRam/(3506:3535): EEEEEE
+[INFO] 15:23:21:596 MiRam/(3506:3535): EEEEEE
+[INFO] 15:23:21:596 MiRam/(3506:3535): cccc
+[INFO] 15:23:25:596 MiRam/(3506:3535): cod_op 8
+[INFO] 15:23:25:596 MiRam/(3506:3535): TAREA (null)
+[INFO] 15:26:00:215 MiRam/(3572:3586): cod_op 1
+[INFO] 15:26:00:216 MiRam/(3572:3586): Se asigno espacio de memoria a todo
+[INFO] 15:26:00:224 MiRam/(3572:3596): cod_op 8
+[INFO] 15:26:00:224 MiRam/(3572:3596): TAREA 6-0-0-0-0
+[INFO] 15:27:36:034 MiRam/(3615:3637): cod_op 1
+[INFO] 15:27:36:035 MiRam/(3615:3637): Se asigno espacio de memoria a todo
+[INFO] 15:27:36:047 MiRam/(3615:3647): cod_op 8
+[INFO] 15:27:36:047 MiRam/(3615:3647): TAREAa 6-0-0-0-0
+[INFO] 15:27:36:047 MiRam/(3615:3647): TTTTTTTT
+[INFO] 15:27:36:047 MiRam/(3615:3647): WWWWWWW
+[INFO] 15:27:36:047 MiRam/(3615:3647): EEEEEE
+[INFO] 15:27:36:048 MiRam/(3615:3647): EEEEEE
+[INFO] 15:27:36:048 MiRam/(3615:3647): EEEEEE
+[INFO] 15:27:36:048 MiRam/(3615:3647): EEEEEE
+[INFO] 15:27:36:048 MiRam/(3615:3647): EEEEEE
+[INFO] 15:27:36:048 MiRam/(3615:3647): cccc
+[INFO] 15:27:40:047 MiRam/(3615:3647): cod_op 8
+[INFO] 15:27:40:048 MiRam/(3615:3647): tarea for @
+[INFO] 15:27:40:048 MiRam/(3615:3647): tarea for (null)
+[INFO] 15:27:40:048 MiRam/(3615:3647): TAREAa (null)
+[INFO] 15:31:13:486 MiRam/(3679:3693): cod_op 1
+[INFO] 15:31:13:487 MiRam/(3679:3693): Se asigno espacio de memoria a todo
+[INFO] 15:31:13:500 MiRam/(3679:3703): cod_op 8
+[INFO] 15:31:13:500 MiRam/(3679:3703): tarea out °o·°o·
+[INFO] 15:31:13:500 MiRam/(3679:3703): TAREAa 6-0-0-0-0
+[INFO] 15:31:13:500 MiRam/(3679:3703): TTTTTTTT
+[INFO] 15:31:13:500 MiRam/(3679:3703): WWWWWWW
+[INFO] 15:31:13:500 MiRam/(3679:3703): EEEEEE
+[INFO] 15:31:13:500 MiRam/(3679:3703): EEEEEE
+[INFO] 15:31:13:500 MiRam/(3679:3703): EEEEEE
+[INFO] 15:31:13:500 MiRam/(3679:3703): EEEEEE
+[INFO] 15:31:13:500 MiRam/(3679:3703): EEEEEE
+[INFO] 15:31:13:501 MiRam/(3679:3703): cccc
+[INFO] 15:31:17:500 MiRam/(3679:3703): cod_op 8
+[INFO] 15:31:17:500 MiRam/(3679:3703): tarea out °o·°o·
+[INFO] 15:31:17:500 MiRam/(3679:3703): tarea for @
+[INFO] 15:31:17:500 MiRam/(3679:3703): tarea for (null)
+[INFO] 15:31:17:501 MiRam/(3679:3703): TAREAa (null)
+[INFO] 15:32:47:254 MiRam/(3732:3747): cod_op 1
+[INFO] 15:32:47:255 MiRam/(3732:3747): Se asigno espacio de memoria a todo
+[INFO] 15:32:47:264 MiRam/(3732:3759): cod_op 8
+[INFO] 15:32:47:264 MiRam/(3732:3759): tarea out 0-êp·
+[INFO] 15:32:47:264 MiRam/(3732:3759): TAREAa 6-0-0-0-0
+[INFO] 15:32:47:264 MiRam/(3732:3759): TTTTTTTT
+[INFO] 15:32:47:265 MiRam/(3732:3759): WWWWWWW
+[INFO] 15:32:47:265 MiRam/(3732:3759): EEEEEE
+[INFO] 15:32:47:265 MiRam/(3732:3759): EEEEEE
+[INFO] 15:32:47:265 MiRam/(3732:3759): EEEEEE
+[INFO] 15:32:47:265 MiRam/(3732:3759): EEEEEE
+[INFO] 15:32:47:265 MiRam/(3732:3759): EEEEEE
+[INFO] 15:32:47:265 MiRam/(3732:3759): cccc
+[INFO] 15:32:51:265 MiRam/(3732:3759): cod_op 8
+[INFO] 15:32:51:265 MiRam/(3732:3759): tarea out 0-êp·
+[INFO] 15:32:51:265 MiRam/(3732:3759): tarea for 6-0-0-0-0
+[INFO] 15:32:51:265 MiRam/(3732:3759): tarea for (null)
+[INFO] 15:32:51:265 MiRam/(3732:3759): TAREAa (null)
+[INFO] 15:38:34:106 MiRam/(3839:3856): cod_op 1
+[INFO] 15:38:34:107 MiRam/(3839:3856): Se asigno espacio de memoria a todo
+[INFO] 15:38:34:118 MiRam/(3839:3863): cod_op 8
+[INFO] 15:38:34:118 MiRam/(3839:3863): TAREA 6-0-0-0-0
+[INFO] 15:38:34:124 MiRam/(3839:3863): TTTTTTTT
+[INFO] 15:38:34:124 MiRam/(3839:3863): WWWWWWW
+[INFO] 15:38:34:124 MiRam/(3839:3863): EEEEEE
+[INFO] 15:38:34:124 MiRam/(3839:3863): EEEEEE
+[INFO] 15:38:34:124 MiRam/(3839:3863): EEEEEE
+[INFO] 15:38:34:125 MiRam/(3839:3863): EEEEEE
+[INFO] 15:38:34:125 MiRam/(3839:3863): EEEEEE
+[INFO] 15:38:34:125 MiRam/(3839:3863): cccc
+[INFO] 15:38:38:123 MiRam/(3839:3863): cod_op 8
+[INFO] 15:38:38:124 MiRam/(3839:3863): TAREA 0-1-4-4-1
+[INFO] 15:38:38:124 MiRam/(3839:3863): TTTTTTTT
+[INFO] 15:38:38:124 MiRam/(3839:3863): WWWWWWW
+[INFO] 15:38:38:124 MiRam/(3839:3863): EEEEEE
+[INFO] 15:38:38:124 MiRam/(3839:3863): EEEEEE
+[INFO] 15:38:38:124 MiRam/(3839:3863): EEEEEE
+[INFO] 15:38:38:124 MiRam/(3839:3863): EEEEEE
+[INFO] 15:38:38:124 MiRam/(3839:3863): EEEEEE
+[INFO] 15:38:38:124 MiRam/(3839:3863): cccc
+[INFO] 15:38:42:128 MiRam/(3839:3864): cod_op 8
+[INFO] 15:38:42:128 MiRam/(3839:3864): TAREA 6-0-0-0-0
+[INFO] 15:38:42:129 MiRam/(3839:3864): TTTTTTTT
+[INFO] 15:38:42:129 MiRam/(3839:3864): WWWWWWW
+[INFO] 15:38:42:129 MiRam/(3839:3864): EEEEEE
+[INFO] 15:38:42:129 MiRam/(3839:3864): EEEEEE
+[INFO] 15:38:42:129 MiRam/(3839:3864): EEEEEE
+[INFO] 15:38:42:129 MiRam/(3839:3864): EEEEEE
+[INFO] 15:38:42:129 MiRam/(3839:3864): EEEEEE
+[INFO] 15:38:42:129 MiRam/(3839:3864): cccc
+[INFO] 15:38:46:129 MiRam/(3839:3864): cod_op 8
+[INFO] 15:38:46:129 MiRam/(3839:3864): TAREA 0-1-4-4-1
+[INFO] 15:38:46:129 MiRam/(3839:3864): TTTTTTTT
+[INFO] 15:38:46:129 MiRam/(3839:3864): WWWWWWW
+[INFO] 15:38:46:129 MiRam/(3839:3864): EEEEEE
+[INFO] 15:38:46:129 MiRam/(3839:3864): EEEEEE
+[INFO] 15:38:46:129 MiRam/(3839:3864): EEEEEE
+[INFO] 15:38:46:129 MiRam/(3839:3864): EEEEEE
+[INFO] 15:38:46:129 MiRam/(3839:3864): EEEEEE
+[INFO] 15:38:46:129 MiRam/(3839:3864): cccc
+[INFO] 15:38:49:675 MiRam/(3839:3856): cod_op 7
+[ERROR] 15:38:49:675 MiRam/(3839:3856): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:40:46:122 MiRam/(3909:3926): cod_op 1
+[INFO] 15:40:46:124 MiRam/(3909:3926): Se asigno espacio de memoria a todo
+[INFO] 15:40:46:135 MiRam/(3909:3935): cod_op 8
+[INFO] 15:40:46:140 MiRam/(3909:3935): cccc
+[INFO] 15:40:50:140 MiRam/(3909:3935): cod_op 8
+[INFO] 15:40:50:140 MiRam/(3909:3935): cccc
+[INFO] 15:40:54:146 MiRam/(3909:3936): cod_op 8
+[INFO] 15:40:54:146 MiRam/(3909:3936): cccc
+[INFO] 15:40:58:146 MiRam/(3909:3936): cod_op 8
+[INFO] 15:40:58:147 MiRam/(3909:3936): cccc
+[INFO] 15:41:02:148 MiRam/(3909:3935): cod_op 8
+[INFO] 15:41:02:148 MiRam/(3909:3935): cccc
+[WARNING] 15:41:02:149 MiRam/(3909:3935): el cliente se desconecto.
+[INFO] 15:41:02:150 MiRam/(3909:3937): cod_op 8
+[INFO] 15:41:02:151 MiRam/(3909:3937): cccc
+[INFO] 15:41:06:151 MiRam/(3909:3937): cod_op 8
+[INFO] 15:41:06:151 MiRam/(3909:3937): cccc
+[INFO] 15:41:10:156 MiRam/(3909:3941): cod_op 8
+[INFO] 15:41:10:156 MiRam/(3909:3941): cccc
+[INFO] 15:41:10:157 MiRam/(3909:3936): cod_op 8
+[INFO] 15:41:10:157 MiRam/(3909:3936): cccc
+[WARNING] 15:41:10:157 MiRam/(3909:3936): el cliente se desconecto.
+[INFO] 15:41:10:184 MiRam/(3909:3926): cod_op 7
+[ERROR] 15:41:10:185 MiRam/(3909:3926): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:41:38:863 MiRam/(3959:3983): cod_op 1
+[INFO] 15:41:38:864 MiRam/(3959:3983): Se asigno espacio de memoria a todo
+[INFO] 15:41:38:872 MiRam/(3959:3995): cod_op 8
+[INFO] 15:41:38:873 MiRam/(3959:3995): cod_op 8
+[INFO] 15:41:38:875 MiRam/(3959:3996): cod_op 8
+[INFO] 15:41:38:875 MiRam/(3959:3996): cod_op 8
+[INFO] 15:41:38:877 MiRam/(3959:3997): cod_op 8
+[INFO] 15:41:38:878 MiRam/(3959:3997): cod_op 8
+[INFO] 15:41:38:878 MiRam/(3959:3998): cod_op 8
+[INFO] 15:41:38:878 MiRam/(3959:3998): cod_op 8
+[INFO] 15:41:38:879 MiRam/(3959:3999): cod_op 8
+[INFO] 15:41:38:879 MiRam/(3959:3999): cod_op 8
+[INFO] 15:41:48:462 MiRam/(3959:3983): cod_op 7
+[WARNING] 15:41:48:462 MiRam/(3959:3999): el cliente se desconecto.
+[WARNING] 15:41:48:462 MiRam/(3959:3998): el cliente se desconecto.
+[WARNING] 15:41:48:462 MiRam/(3959:3997): el cliente se desconecto.
+[WARNING] 15:41:48:462 MiRam/(3959:3996): el cliente se desconecto.
+[WARNING] 15:41:48:462 MiRam/(3959:3995): el cliente se desconecto.
+[ERROR] 15:41:48:463 MiRam/(3959:3983): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:42:39:420 MiRam/(4045:4061): cod_op 1
+[INFO] 15:42:39:422 MiRam/(4045:4061): Se asigno espacio de memoria a todo
+[INFO] 15:42:39:438 MiRam/(4045:4071): cod_op 8
+[INFO] 15:42:39:438 MiRam/(4045:4071): cod_op 8
+[INFO] 15:42:39:438 MiRam/(4045:4072): cod_op 8
+[INFO] 15:42:39:439 MiRam/(4045:4072): cod_op 8
+[INFO] 15:42:39:439 MiRam/(4045:4073): cod_op 8
+[INFO] 15:42:39:439 MiRam/(4045:4073): cod_op 8
+[INFO] 15:42:39:440 MiRam/(4045:4074): cod_op 8
+[INFO] 15:42:39:440 MiRam/(4045:4074): cod_op 8
+[INFO] 15:42:39:440 MiRam/(4045:4075): cod_op 8
+[INFO] 15:42:39:444 MiRam/(4045:4075): cod_op 8
+[INFO] 15:42:45:642 MiRam/(4045:4061): cod_op 7
+[WARNING] 15:42:45:643 MiRam/(4045:4075): el cliente se desconecto.
+[WARNING] 15:42:45:643 MiRam/(4045:4074): el cliente se desconecto.
+[WARNING] 15:42:45:643 MiRam/(4045:4073): el cliente se desconecto.
+[WARNING] 15:42:45:643 MiRam/(4045:4072): el cliente se desconecto.
+[WARNING] 15:42:45:643 MiRam/(4045:4071): el cliente se desconecto.
+[ERROR] 15:42:45:643 MiRam/(4045:4061): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:44:00:422 MiRam/(4109:4133): cod_op 1
+[INFO] 15:44:00:423 MiRam/(4109:4133): Se asigno espacio de memoria a todo
+[INFO] 15:44:00:430 MiRam/(4109:4145): cod_op 8
+[INFO] 15:44:00:431 MiRam/(4109:4146): cod_op 8
+[INFO] 15:44:00:442 MiRam/(4109:4147): cod_op 8
+[INFO] 15:44:00:443 MiRam/(4109:4148): cod_op 8
+[INFO] 15:44:00:443 MiRam/(4109:4149): cod_op 8
+[INFO] 15:44:17:453 MiRam/(4109:4145): cod_op 8
+[INFO] 15:44:17:453 MiRam/(4109:4146): cod_op 8
+[INFO] 15:44:20:455 MiRam/(4109:4147): cod_op 8
+[INFO] 15:44:20:455 MiRam/(4109:4148): cod_op 8
+[INFO] 15:44:23:456 MiRam/(4109:4149): cod_op 8
+[INFO] 15:44:27:458 MiRam/(4109:4146): cod_op 8
+[INFO] 15:44:27:459 MiRam/(4109:4145): cod_op 8
+[INFO] 15:44:27:460 MiRam/(4109:4147): cod_op 8
+[WARNING] 15:44:27:460 MiRam/(4109:4145): el cliente se desconecto.
+[WARNING] 15:44:27:460 MiRam/(4109:4147): el cliente se desconecto.
+[WARNING] 15:44:27:461 MiRam/(4109:4146): el cliente se desconecto.
+[WARNING] 15:44:28:459 MiRam/(4109:4148): el cliente se desconecto.
+[WARNING] 15:44:29:460 MiRam/(4109:4149): el cliente se desconecto.
+[INFO] 15:47:20:465 MiRam/(4109:4133): cod_op 7
+[ERROR] 15:47:20:465 MiRam/(4109:4133): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:48:02:454 MiRam/(4190:4214): cod_op 1
+[INFO] 15:48:02:457 MiRam/(4190:4214): Se asigno espacio de memoria a todo
+[INFO] 15:48:02:468 MiRam/(4190:4228): cod_op 8
+[INFO] 15:48:02:468 MiRam/(4190:4229): cod_op 8
+[INFO] 15:48:02:472 MiRam/(4190:4230): cod_op 8
+[INFO] 15:48:02:472 MiRam/(4190:4231): cod_op 8
+[INFO] 15:48:02:473 MiRam/(4190:4232): cod_op 8
+[INFO] 15:48:19:479 MiRam/(4190:4228): cod_op 8
+[INFO] 15:48:19:479 MiRam/(4190:4229): cod_op 8
+[INFO] 15:48:22:481 MiRam/(4190:4230): cod_op 8
+[INFO] 15:48:22:481 MiRam/(4190:4231): cod_op 8
+[INFO] 15:48:25:483 MiRam/(4190:4232): cod_op 8
+[INFO] 15:48:28:485 MiRam/(4190:4229): cod_op 8
+[WARNING] 15:48:29:486 MiRam/(4190:4231): el cliente se desconecto.
+[INFO] 15:48:31:486 MiRam/(4190:4228): cod_op 8
+[INFO] 15:48:31:487 MiRam/(4190:4230): cod_op 8
+[WARNING] 15:48:32:487 MiRam/(4190:4232): el cliente se desconecto.
+[INFO] 15:48:35:489 MiRam/(4190:4229): cod_op 8
+[INFO] 15:48:35:489 MiRam/(4190:4228): cod_op 8
+[WARNING] 15:48:35:491 MiRam/(4190:4228): el cliente se desconecto.
+[WARNING] 15:48:35:491 MiRam/(4190:4229): el cliente se desconecto.
+[INFO] 15:48:36:492 MiRam/(4190:4230): cod_op 8
+[WARNING] 15:48:36:493 MiRam/(4190:4230): el cliente se desconecto.
+[INFO] 15:48:53:051 MiRam/(4190:4214): cod_op 7
+[ERROR] 15:48:53:051 MiRam/(4190:4214): el discordiador finalizo el programa. Terminando servidor
+[INFO] 15:53:36:092 MiRam/(4441:4474): cod_op 1
+[INFO] 15:53:36:099 MiRam/(4441:4474): Se asigno espacio de memoria a todo
+[INFO] 15:53:36:117 MiRam/(4441:4482): cod_op 8
+[INFO] 15:53:36:120 MiRam/(4441:4483): cod_op 8
+[INFO] 15:53:36:121 MiRam/(4441:4484): cod_op 8
+[INFO] 15:53:36:121 MiRam/(4441:4485): cod_op 8
+[INFO] 15:53:36:122 MiRam/(4441:4486): cod_op 8
+[INFO] 15:53:53:126 MiRam/(4441:4482): cod_op 8
+[INFO] 15:53:53:126 MiRam/(4441:4483): cod_op 8
+[INFO] 15:53:56:127 MiRam/(4441:4484): cod_op 8
+[INFO] 15:53:56:128 MiRam/(4441:4485): cod_op 8
+[INFO] 15:53:59:129 MiRam/(4441:4486): cod_op 8
+[INFO] 15:54:03:132 MiRam/(4441:4483): cod_op 8
+[WARNING] 15:54:03:133 MiRam/(4441:4485): el cliente se desconecto.
+[INFO] 15:54:04:134 MiRam/(4441:4482): cod_op 8
+[WARNING] 15:54:05:135 MiRam/(4441:4486): el cliente se desconecto.
+[INFO] 15:54:06:135 MiRam/(4441:4484): cod_op 8
+[INFO] 15:54:08:137 MiRam/(4441:4483): cod_op 8
+[WARNING] 15:54:08:141 MiRam/(4441:4483): el cliente se desconecto.
+[INFO] 15:54:09:142 MiRam/(4441:4482): cod_op 8
+[WARNING] 15:54:09:143 MiRam/(4441:4482): el cliente se desconecto.
+[INFO] 15:54:10:141 MiRam/(4441:4484): cod_op 8
+[WARNING] 15:54:10:142 MiRam/(4441:4484): el cliente se desconecto.
+[INFO] 15:54:17:336 MiRam/(4441:4474): cod_op 7
+[ERROR] 15:54:17:336 MiRam/(4441:4474): el discordiador finalizo el programa. Terminando servidor
+[INFO] 16:05:34:178 MiRam/(4594:4635): cod_op 1
+[INFO] 16:05:34:180 MiRam/(4594:4635): Se asigno espacio de memoria a todo
+[INFO] 16:05:34:197 MiRam/(4594:4642): cod_op 8
+[INFO] 16:05:34:197 MiRam/(4594:4643): cod_op 8
+[INFO] 16:05:34:201 MiRam/(4594:4644): cod_op 8
+[INFO] 16:05:34:202 MiRam/(4594:4645): cod_op 8
+[INFO] 16:05:34:202 MiRam/(4594:4646): cod_op 8
+[INFO] 16:05:51:208 MiRam/(4594:4642): cod_op 8
+[INFO] 16:05:51:208 MiRam/(4594:4643): cod_op 8
+[INFO] 16:05:54:211 MiRam/(4594:4644): cod_op 8
+[INFO] 16:05:54:211 MiRam/(4594:4645): cod_op 8
+[INFO] 16:05:57:212 MiRam/(4594:4646): cod_op 8
+[WARNING] 16:06:01:215 MiRam/(4594:4645): el cliente se desconecto.
+[INFO] 16:06:01:215 MiRam/(4594:4643): cod_op 8
+[INFO] 16:06:02:217 MiRam/(4594:4642): cod_op 8
+[WARNING] 16:06:03:218 MiRam/(4594:4646): el cliente se desconecto.
+[INFO] 16:06:04:218 MiRam/(4594:4644): cod_op 8
+[INFO] 16:06:06:220 MiRam/(4594:4643): cod_op 8
+[WARNING] 16:06:06:221 MiRam/(4594:4643): el cliente se desconecto.
+[INFO] 16:06:07:222 MiRam/(4594:4642): cod_op 8
+[WARNING] 16:06:07:223 MiRam/(4594:4642): el cliente se desconecto.
+[INFO] 16:06:08:221 MiRam/(4594:4644): cod_op 8
+[WARNING] 16:06:08:221 MiRam/(4594:4644): el cliente se desconecto.
+[INFO] 16:06:14:517 MiRam/(4594:4635): cod_op 7
+[ERROR] 16:06:14:518 MiRam/(4594:4635): el discordiador finalizo el programa. Terminando servidor
+[INFO] 16:21:24:809 MiRam/(5228:5255): cod_op 1
+[INFO] 16:21:24:811 MiRam/(5228:5255): Se asigno espacio de memoria a todo
+[INFO] 16:21:24:827 MiRam/(5228:5266): cod_op 8
+[WARNING] 16:21:25:202 MiRam/(5228:5266): el cliente se desconecto.
+[WARNING] 16:21:25:202 MiRam/(5228:5255): el cliente se desconecto.
+[INFO] 16:23:03:809 MiRam/(5290:5321): cod_op 1
+[INFO] 16:23:03:810 MiRam/(5290:5321): Se asigno espacio de memoria a todo
+[INFO] 16:23:03:826 MiRam/(5290:5330): cod_op 8
+[WARNING] 16:23:04:476 MiRam/(5290:5330): el cliente se desconecto.
+[WARNING] 16:23:04:476 MiRam/(5290:5321): el cliente se desconecto.
+[INFO] 16:23:39:868 MiRam/(5349:5379): cod_op 1
+[INFO] 16:23:39:872 MiRam/(5349:5379): Se asigno espacio de memoria a todo
+[INFO] 16:23:39:889 MiRam/(5349:5388): cod_op 8
+[WARNING] 16:23:40:285 MiRam/(5349:5388): el cliente se desconecto.
+[WARNING] 16:23:40:286 MiRam/(5349:5379): el cliente se desconecto.
+[INFO] 16:24:21:930 MiRam/(5430:5446): cod_op 1
+[INFO] 16:24:21:934 MiRam/(5430:5446): Se asigno espacio de memoria a todo
+[INFO] 16:24:21:950 MiRam/(5430:5456): cod_op 8
+[INFO] 16:24:21:950 MiRam/(5430:5456): cod_op 9
+[INFO] 16:24:21:951 MiRam/(5430:5456): holis
+[INFO] 16:24:21:951 MiRam/(5430:5456): cod_op 20
+[WARNING] 16:24:21:951 MiRam/(5430:5456): Operacion desconocida. No quieras meter la pata
+[INFO] 16:24:21:951 MiRam/(5430:5456): cod_op 4
+[WARNING] 16:24:21:951 MiRam/(5430:5456): Operacion desconocida. No quieras meter la pata
+[INFO] 16:24:21:951 MiRam/(5430:5456): cod_op 1
+[INFO] 16:26:36:270 MiRam/(5497:5521): cod_op 1
+[INFO] 16:26:36:271 MiRam/(5497:5521): Se asigno espacio de memoria a todo
+[INFO] 16:26:36:290 MiRam/(5497:5533): cod_op 8
+[INFO] 16:26:36:293 MiRam/(5497:5533): cod_op 9
+[INFO] 16:26:36:293 MiRam/(5497:5533): holis
+[INFO] 16:26:36:293 MiRam/(5497:5534): cod_op 8
+[INFO] 16:26:36:294 MiRam/(5497:5534): cod_op 9
+[INFO] 16:26:36:294 MiRam/(5497:5534): holis
+[INFO] 16:26:36:299 MiRam/(5497:5535): cod_op 8
+[INFO] 16:26:36:299 MiRam/(5497:5535): cod_op 9
+[INFO] 16:26:36:300 MiRam/(5497:5535): holis
+[INFO] 16:26:36:300 MiRam/(5497:5536): cod_op 8
+[INFO] 16:26:36:300 MiRam/(5497:5536): cod_op 9
+[INFO] 16:26:36:300 MiRam/(5497:5536): holis
+[INFO] 16:26:36:300 MiRam/(5497:5537): cod_op 8
+[INFO] 16:26:36:300 MiRam/(5497:5537): cod_op 9
+[INFO] 16:26:36:300 MiRam/(5497:5537): holis
+[INFO] 16:26:53:301 MiRam/(5497:5533): cod_op 8
+[INFO] 16:26:53:302 MiRam/(5497:5534): cod_op 8
+[INFO] 16:26:56:303 MiRam/(5497:5535): cod_op 8
+[INFO] 16:26:56:303 MiRam/(5497:5536): cod_op 8
+[INFO] 16:26:59:306 MiRam/(5497:5537): cod_op 8
+[INFO] 16:27:01:166 MiRam/(5497:5521): cod_op 7
+[WARNING] 16:27:01:167 MiRam/(5497:5537): el cliente se desconecto.
+[WARNING] 16:27:01:167 MiRam/(5497:5536): el cliente se desconecto.
+[WARNING] 16:27:01:167 MiRam/(5497:5535): el cliente se desconecto.
+[WARNING] 16:27:01:167 MiRam/(5497:5534): el cliente se desconecto.
+[WARNING] 16:27:01:167 MiRam/(5497:5533): el cliente se desconecto.
+[ERROR] 16:27:01:167 MiRam/(5497:5521): el discordiador finalizo el programa. Terminando servidor
+[INFO] 16:30:57:415 MiRam/(5634:5656): cod_op 1
+[INFO] 16:30:57:418 MiRam/(5634:5656): Se asigno espacio de memoria a todo
+[INFO] 16:30:57:437 MiRam/(5634:5662): cod_op 8
+[INFO] 16:30:57:438 MiRam/(5634:5662): cod_op 9
+[INFO] 16:30:57:439 MiRam/(5634:5662): holis
+[INFO] 16:30:57:439 MiRam/(5634:5662): etsado ˜
+[INFO] 16:33:11:045 MiRam/(5709:5726): cod_op 1
+[INFO] 16:33:11:050 MiRam/(5709:5726): Se asigno espacio de memoria a todo
+[INFO] 16:33:11:065 MiRam/(5709:5733): cod_op 8
+[INFO] 16:33:11:066 MiRam/(5709:5733): cod_op 9
+[INFO] 16:33:11:066 MiRam/(5709:5733): holis
+[INFO] 16:33:11:066 MiRam/(5709:5733): estado 1
+[INFO] 16:35:22:522 MiRam/(5768:5786): cod_op 1
+[INFO] 16:35:22:526 MiRam/(5768:5786): Se asigno espacio de memoria a todo
+[INFO] 16:35:22:538 MiRam/(5768:5792): cod_op 8
+[INFO] 16:35:22:540 MiRam/(5768:5792): cod_op 9
+[INFO] 16:35:22:540 MiRam/(5768:5792): holis
+[INFO] 16:35:22:541 MiRam/(5768:5792): estado 1
+[INFO] 16:35:22:541 MiRam/(5768:5792): estado 1
+[INFO] 16:36:54:070 MiRam/(5865:5897): cod_op 1
+[INFO] 16:36:54:072 MiRam/(5865:5897): Se asigno espacio de memoria a todo
+[INFO] 16:36:54:087 MiRam/(5865:5905): cod_op 8
+[INFO] 16:36:54:088 MiRam/(5865:5905): cod_op 9
+[INFO] 16:36:54:088 MiRam/(5865:5905): holis
+[INFO] 16:36:54:089 MiRam/(5865:5905): estado 1
+[INFO] 16:36:54:089 MiRam/(5865:5905): estado 1
+[INFO] 16:38:34:467 MiRam/(5963:5988): cod_op 1
+[INFO] 16:38:34:469 MiRam/(5963:5988): Se asigno espacio de memoria a todo
+[INFO] 16:38:34:489 MiRam/(5963:6001): cod_op 8
+[INFO] 16:38:34:490 MiRam/(5963:6001): cod_op 9
+[INFO] 16:38:34:490 MiRam/(5963:6001): holis
+[INFO] 16:38:34:491 MiRam/(5963:6001): estado B
+[INFO] 16:38:34:491 MiRam/(5963:6001): estado B
+[INFO] 16:38:34:497 MiRam/(5963:6002): cod_op 8
+[INFO] 16:38:34:499 MiRam/(5963:6002): cod_op 9
+[INFO] 16:38:34:499 MiRam/(5963:6002): holis
+[INFO] 16:38:34:499 MiRam/(5963:6002): estado B
+[INFO] 16:38:34:499 MiRam/(5963:6002): estado B
+[INFO] 16:38:34:505 MiRam/(5963:6003): cod_op 8
+[INFO] 16:38:34:506 MiRam/(5963:6003): cod_op 9
+[INFO] 16:38:34:507 MiRam/(5963:6003): holis
+[INFO] 16:38:34:509 MiRam/(5963:6003): estado B
+[INFO] 16:38:34:509 MiRam/(5963:6003): estado B
+[INFO] 16:38:34:510 MiRam/(5963:6004): cod_op 8
+[INFO] 16:38:34:510 MiRam/(5963:6004): cod_op 9
+[INFO] 16:38:34:510 MiRam/(5963:6004): holis
+[INFO] 16:38:34:510 MiRam/(5963:6004): estado B
+[INFO] 16:38:34:510 MiRam/(5963:6004): estado B
+[INFO] 16:38:34:511 MiRam/(5963:6005): cod_op 8
+[INFO] 16:38:34:512 MiRam/(5963:6005): cod_op 9
+[INFO] 16:38:34:512 MiRam/(5963:6005): holis
+[INFO] 16:38:34:512 MiRam/(5963:6005): estado B
+[INFO] 16:38:34:512 MiRam/(5963:6005): estado B
+[INFO] 16:38:45:861 MiRam/(5963:5988): cod_op 7
+[WARNING] 16:38:45:861 MiRam/(5963:6005): el cliente se desconecto.
+[WARNING] 16:38:45:861 MiRam/(5963:6004): el cliente se desconecto.
+[WARNING] 16:38:45:861 MiRam/(5963:6003): el cliente se desconecto.
+[WARNING] 16:38:45:861 MiRam/(5963:6002): el cliente se desconecto.
+[WARNING] 16:38:45:861 MiRam/(5963:6001): el cliente se desconecto.
+[ERROR] 16:38:45:861 MiRam/(5963:5988): el discordiador finalizo el programa. Terminando servidor
+[INFO] 16:55:48:997 MiRam/(6401:6420): cod_op 1
+[INFO] 16:55:48:998 MiRam/(6401:6420): Se asigno espacio de memoria a todo
+[INFO] 16:55:49:016 MiRam/(6401:6427): cod_op 8
+[INFO] 16:55:49:017 MiRam/(6401:6427): cod_op 9
+[INFO] 16:55:49:017 MiRam/(6401:6427): holis
+[INFO] 16:55:49:018 MiRam/(6401:6427): estado B
+[INFO] 16:55:49:018 MiRam/(6401:6428): cod_op 8
+[INFO] 16:55:49:019 MiRam/(6401:6428): cod_op 9
+[INFO] 16:55:49:019 MiRam/(6401:6428): holis
+[INFO] 16:55:49:019 MiRam/(6401:6428): estado B
+[INFO] 16:55:49:022 MiRam/(6401:6429): cod_op 8
+[INFO] 16:55:49:022 MiRam/(6401:6429): cod_op 9
+[INFO] 16:55:49:022 MiRam/(6401:6429): holis
+[INFO] 16:55:49:023 MiRam/(6401:6429): estado B
+[INFO] 16:55:49:023 MiRam/(6401:6430): cod_op 8
+[INFO] 16:55:49:023 MiRam/(6401:6430): cod_op 9
+[INFO] 16:55:49:024 MiRam/(6401:6430): holis
+[INFO] 16:55:49:024 MiRam/(6401:6430): estado B
+[INFO] 16:55:49:026 MiRam/(6401:6431): cod_op 8
+[INFO] 16:55:49:026 MiRam/(6401:6431): cod_op 9
+[INFO] 16:55:49:026 MiRam/(6401:6431): holis
+[INFO] 16:55:49:027 MiRam/(6401:6431): estado B
+[INFO] 16:55:59:823 MiRam/(6401:6420): cod_op 7
+[WARNING] 16:55:59:824 MiRam/(6401:6431): el cliente se desconecto.
+[WARNING] 16:55:59:824 MiRam/(6401:6430): el cliente se desconecto.
+[WARNING] 16:55:59:824 MiRam/(6401:6429): el cliente se desconecto.
+[WARNING] 16:55:59:824 MiRam/(6401:6428): el cliente se desconecto.
+[WARNING] 16:55:59:824 MiRam/(6401:6427): el cliente se desconecto.
+[ERROR] 16:55:59:824 MiRam/(6401:6420): el discordiador finalizo el programa. Terminando servidor
+[INFO] 16:57:23:707 MiRam/(6467:6485): cod_op 1
+[INFO] 16:57:23:709 MiRam/(6467:6485): Se asigno espacio de memoria a todo
+[INFO] 16:57:23:720 MiRam/(6467:6491): cod_op 8
+[INFO] 16:57:23:722 MiRam/(6467:6491): cod_op 9
+[INFO] 16:57:23:722 MiRam/(6467:6491): estado B
+[INFO] 16:57:23:726 MiRam/(6467:6492): cod_op 8
+[INFO] 16:57:23:726 MiRam/(6467:6492): cod_op 9
+[INFO] 16:57:23:727 MiRam/(6467:6492): estado B
+[INFO] 16:57:23:727 MiRam/(6467:6493): cod_op 8
+[INFO] 16:57:23:727 MiRam/(6467:6493): cod_op 9
+[INFO] 16:57:23:727 MiRam/(6467:6493): estado B
+[INFO] 16:57:23:727 MiRam/(6467:6494): cod_op 8
+[INFO] 16:57:23:728 MiRam/(6467:6494): cod_op 9
+[INFO] 16:57:23:728 MiRam/(6467:6494): estado B
+[INFO] 16:57:23:728 MiRam/(6467:6495): cod_op 8
+[INFO] 16:57:23:728 MiRam/(6467:6495): cod_op 9
+[INFO] 16:57:23:729 MiRam/(6467:6495): estado B
+[INFO] 16:57:30:537 MiRam/(6467:6485): cod_op 7
+[WARNING] 16:57:30:538 MiRam/(6467:6495): el cliente se desconecto.
+[WARNING] 16:57:30:538 MiRam/(6467:6494): el cliente se desconecto.
+[WARNING] 16:57:30:538 MiRam/(6467:6493): el cliente se desconecto.
+[WARNING] 16:57:30:538 MiRam/(6467:6492): el cliente se desconecto.
+[WARNING] 16:57:30:538 MiRam/(6467:6491): el cliente se desconecto.
+[ERROR] 16:57:30:538 MiRam/(6467:6485): el discordiador finalizo el programa. Terminando servidor
+[INFO] 16:58:31:613 MiRam/(6513:6531): cod_op 1
+[INFO] 16:58:31:615 MiRam/(6513:6531): Se asigno espacio de memoria a todo
+[INFO] 16:58:31:633 MiRam/(6513:6537): cod_op 8
+[INFO] 16:58:31:634 MiRam/(6513:6537): cod_op 9
+[INFO] 16:58:31:634 MiRam/(6513:6537): estado B
+[INFO] 16:58:31:634 MiRam/(6513:6537): for 1
+[INFO] 16:58:31:635 MiRam/(6513:6537): if 1
+[INFO] 16:58:31:635 MiRam/(6513:6537): for 2
+[INFO] 16:58:31:635 MiRam/(6513:6537): for 2
+[INFO] 16:58:31:635 MiRam/(6513:6537): for 2
+[INFO] 16:58:31:635 MiRam/(6513:6537): for 2
+[INFO] 16:58:31:635 MiRam/(6513:6537): for 2
+[INFO] 16:58:31:635 MiRam/(6513:6538): cod_op 8
+[INFO] 16:58:31:636 MiRam/(6513:6538): cod_op 9
+[INFO] 16:58:31:636 MiRam/(6513:6538): estado B
+[INFO] 16:58:31:636 MiRam/(6513:6538): for 1
+[INFO] 16:58:31:636 MiRam/(6513:6538): if 1
+[INFO] 16:58:31:636 MiRam/(6513:6538): for 2
+[INFO] 16:58:31:636 MiRam/(6513:6538): for 2
+[INFO] 16:58:31:636 MiRam/(6513:6538): for 2
+[INFO] 16:58:31:636 MiRam/(6513:6538): for 2
+[INFO] 16:58:31:636 MiRam/(6513:6538): for 2
+[INFO] 16:58:31:636 MiRam/(6513:6539): cod_op 8
+[INFO] 16:58:31:637 MiRam/(6513:6539): cod_op 9
+[INFO] 16:58:31:637 MiRam/(6513:6539): estado B
+[INFO] 16:58:31:637 MiRam/(6513:6539): for 1
+[INFO] 16:58:31:637 MiRam/(6513:6539): if 1
+[INFO] 16:58:31:637 MiRam/(6513:6539): for 2
+[INFO] 16:58:31:637 MiRam/(6513:6539): for 2
+[INFO] 16:58:31:637 MiRam/(6513:6539): for 2
+[INFO] 16:58:31:637 MiRam/(6513:6539): for 2
+[INFO] 16:58:31:638 MiRam/(6513:6539): for 2
+[INFO] 16:58:31:638 MiRam/(6513:6540): cod_op 8
+[INFO] 16:58:31:639 MiRam/(6513:6540): cod_op 9
+[INFO] 16:58:31:639 MiRam/(6513:6540): estado B
+[INFO] 16:58:31:639 MiRam/(6513:6540): for 1
+[INFO] 16:58:31:639 MiRam/(6513:6540): if 1
+[INFO] 16:58:31:639 MiRam/(6513:6540): for 2
+[INFO] 16:58:31:639 MiRam/(6513:6540): for 2
+[INFO] 16:58:31:639 MiRam/(6513:6540): for 2
+[INFO] 16:58:31:639 MiRam/(6513:6540): for 2
+[INFO] 16:58:31:639 MiRam/(6513:6540): for 2
+[INFO] 16:58:31:640 MiRam/(6513:6541): cod_op 8
+[INFO] 16:58:31:641 MiRam/(6513:6541): cod_op 9
+[INFO] 16:58:31:644 MiRam/(6513:6541): estado B
+[INFO] 16:58:31:644 MiRam/(6513:6541): for 1
+[INFO] 16:58:31:644 MiRam/(6513:6541): if 1
+[INFO] 16:58:31:645 MiRam/(6513:6541): for 2
+[INFO] 16:58:31:645 MiRam/(6513:6541): for 2
+[INFO] 16:58:31:645 MiRam/(6513:6541): for 2
+[INFO] 16:58:31:646 MiRam/(6513:6541): for 2
+[INFO] 16:58:31:649 MiRam/(6513:6541): for 2
+[INFO] 16:58:42:432 MiRam/(6513:6531): cod_op 7
+[WARNING] 16:58:42:433 MiRam/(6513:6541): el cliente se desconecto.
+[ERROR] 16:58:42:433 MiRam/(6513:6531): el discordiador finalizo el programa. Terminando servidor
+[INFO] 17:00:21:141 MiRam/(6566:6584): cod_op 1
+[INFO] 17:00:21:147 MiRam/(6566:6584): Se asigno espacio de memoria a todo
+[INFO] 17:00:21:162 MiRam/(6566:6591): cod_op 8
+[INFO] 17:00:21:165 MiRam/(6566:6591): cod_op 9
+[INFO] 17:00:21:165 MiRam/(6566:6591): estado B
+[INFO] 17:00:21:165 MiRam/(6566:6591): tid 0
+[INFO] 17:00:21:165 MiRam/(6566:6591): for 2
+[INFO] 17:00:21:165 MiRam/(6566:6591): for 2
+[INFO] 17:00:21:165 MiRam/(6566:6591): for 2
+[INFO] 17:00:21:165 MiRam/(6566:6591): for 2
+[INFO] 17:00:21:166 MiRam/(6566:6591): for 2
+[INFO] 17:00:21:166 MiRam/(6566:6592): cod_op 8
+[INFO] 17:00:21:166 MiRam/(6566:6592): cod_op 9
+[INFO] 17:00:21:166 MiRam/(6566:6592): estado B
+[INFO] 17:00:21:166 MiRam/(6566:6592): tid 0
+[INFO] 17:00:21:166 MiRam/(6566:6592): for 2
+[INFO] 17:00:21:167 MiRam/(6566:6592): for 2
+[INFO] 17:00:21:167 MiRam/(6566:6592): for 2
+[INFO] 17:00:21:167 MiRam/(6566:6592): for 2
+[INFO] 17:00:21:167 MiRam/(6566:6592): for 2
+[INFO] 17:00:21:168 MiRam/(6566:6593): cod_op 8
+[INFO] 17:00:21:169 MiRam/(6566:6593): cod_op 9
+[INFO] 17:00:21:169 MiRam/(6566:6593): estado B
+[INFO] 17:00:21:169 MiRam/(6566:6593): tid 0
+[INFO] 17:00:21:169 MiRam/(6566:6593): for 2
+[INFO] 17:00:21:169 MiRam/(6566:6593): for 2
+[INFO] 17:00:21:170 MiRam/(6566:6593): for 2
+[INFO] 17:00:21:170 MiRam/(6566:6593): for 2
+[INFO] 17:00:21:170 MiRam/(6566:6593): for 2
+[INFO] 17:00:21:170 MiRam/(6566:6594): cod_op 8
+[INFO] 17:00:21:171 MiRam/(6566:6594): cod_op 9
+[INFO] 17:00:21:171 MiRam/(6566:6594): estado B
+[INFO] 17:00:21:171 MiRam/(6566:6594): tid 0
+[INFO] 17:00:21:171 MiRam/(6566:6594): for 2
+[INFO] 17:00:21:171 MiRam/(6566:6594): for 2
+[INFO] 17:00:21:171 MiRam/(6566:6594): for 2
+[INFO] 17:00:21:171 MiRam/(6566:6594): for 2
+[INFO] 17:00:21:171 MiRam/(6566:6594): for 2
+[INFO] 17:00:21:172 MiRam/(6566:6595): cod_op 8
+[INFO] 17:00:21:172 MiRam/(6566:6595): cod_op 9
+[INFO] 17:00:21:172 MiRam/(6566:6595): estado B
+[INFO] 17:00:21:172 MiRam/(6566:6595): tid 0
+[INFO] 17:00:21:172 MiRam/(6566:6595): for 2
+[INFO] 17:00:21:172 MiRam/(6566:6595): for 2
+[INFO] 17:00:21:173 MiRam/(6566:6595): for 2
+[INFO] 17:00:21:173 MiRam/(6566:6595): for 2
+[INFO] 17:00:21:173 MiRam/(6566:6595): for 2
+[INFO] 17:00:32:353 MiRam/(6566:6584): cod_op 7
+[WARNING] 17:00:32:353 MiRam/(6566:6595): el cliente se desconecto.
+[WARNING] 17:00:32:354 MiRam/(6566:6594): el cliente se desconecto.
+[WARNING] 17:00:32:354 MiRam/(6566:6593): el cliente se desconecto.
+[ERROR] 17:00:32:354 MiRam/(6566:6584): el discordiador finalizo el programa. Terminando servidor
+[INFO] 17:02:06:371 MiRam/(6634:6662): cod_op 1
+[INFO] 17:02:06:381 MiRam/(6634:6662): Se asigno espacio de memoria a todo
+[INFO] 17:02:06:394 MiRam/(6634:6670): cod_op 8
+[INFO] 17:02:06:395 MiRam/(6634:6670): cod_op 9
+[INFO] 17:02:06:395 MiRam/(6634:6670): tid 0
+[INFO] 17:02:06:395 MiRam/(6634:6670): estado B
+[INFO] 17:02:06:395 MiRam/(6634:6670): tid 0
+[INFO] 17:02:06:395 MiRam/(6634:6670): for 2
+[INFO] 17:02:06:395 MiRam/(6634:6670): for 2
+[INFO] 17:02:06:395 MiRam/(6634:6670): for 2
+[INFO] 17:02:06:395 MiRam/(6634:6670): for 2
+[INFO] 17:02:06:395 MiRam/(6634:6670): for 2
+[INFO] 17:02:06:396 MiRam/(6634:6671): cod_op 8
+[INFO] 17:02:06:399 MiRam/(6634:6671): cod_op 9
+[INFO] 17:02:06:400 MiRam/(6634:6671): tid 0
+[INFO] 17:02:06:400 MiRam/(6634:6671): estado B
+[INFO] 17:02:06:400 MiRam/(6634:6671): tid 0
+[INFO] 17:02:06:400 MiRam/(6634:6671): for 2
+[INFO] 17:02:06:400 MiRam/(6634:6671): for 2
+[INFO] 17:02:06:400 MiRam/(6634:6671): for 2
+[INFO] 17:02:06:401 MiRam/(6634:6671): for 2
+[INFO] 17:02:06:402 MiRam/(6634:6671): for 2
+[INFO] 17:02:06:405 MiRam/(6634:6672): cod_op 8
+[INFO] 17:02:06:405 MiRam/(6634:6672): cod_op 9
+[INFO] 17:02:06:405 MiRam/(6634:6672): tid 0
+[INFO] 17:02:06:405 MiRam/(6634:6672): estado B
+[INFO] 17:02:06:405 MiRam/(6634:6672): tid 0
+[INFO] 17:02:06:406 MiRam/(6634:6672): for 2
+[INFO] 17:02:06:406 MiRam/(6634:6672): for 2
+[INFO] 17:02:06:406 MiRam/(6634:6672): for 2
+[INFO] 17:02:06:408 MiRam/(6634:6672): for 2
+[INFO] 17:02:06:408 MiRam/(6634:6672): for 2
+[INFO] 17:02:06:408 MiRam/(6634:6673): cod_op 8
+[INFO] 17:02:06:409 MiRam/(6634:6673): cod_op 9
+[INFO] 17:02:06:409 MiRam/(6634:6673): tid 0
+[INFO] 17:02:06:409 MiRam/(6634:6673): estado B
+[INFO] 17:02:06:410 MiRam/(6634:6673): tid 0
+[INFO] 17:02:06:410 MiRam/(6634:6673): for 2
+[INFO] 17:02:06:410 MiRam/(6634:6673): for 2
+[INFO] 17:02:06:411 MiRam/(6634:6673): for 2
+[INFO] 17:02:06:411 MiRam/(6634:6673): for 2
+[INFO] 17:02:06:411 MiRam/(6634:6673): for 2
+[INFO] 17:02:06:412 MiRam/(6634:6674): cod_op 8
+[INFO] 17:02:06:412 MiRam/(6634:6674): cod_op 9
+[INFO] 17:02:06:412 MiRam/(6634:6674): tid 0
+[INFO] 17:02:06:412 MiRam/(6634:6674): estado B
+[INFO] 17:02:06:412 MiRam/(6634:6674): tid 0
+[INFO] 17:02:06:412 MiRam/(6634:6674): for 2
+[INFO] 17:02:06:412 MiRam/(6634:6674): for 2
+[INFO] 17:02:06:412 MiRam/(6634:6674): for 2
+[INFO] 17:02:06:413 MiRam/(6634:6674): for 2
+[INFO] 17:02:06:413 MiRam/(6634:6674): for 2
+[INFO] 17:02:23:410 MiRam/(6634:6670): cod_op 8
+[INFO] 17:02:23:410 MiRam/(6634:6671): cod_op 8
+[INFO] 17:02:26:134 MiRam/(6634:6662): cod_op 7
+[WARNING] 17:02:26:135 MiRam/(6634:6674): el cliente se desconecto.
+[WARNING] 17:02:26:135 MiRam/(6634:6673): el cliente se desconecto.
+[WARNING] 17:02:26:135 MiRam/(6634:6672): el cliente se desconecto.
+[WARNING] 17:02:26:135 MiRam/(6634:6671): el cliente se desconecto.
+[WARNING] 17:02:26:135 MiRam/(6634:6670): el cliente se desconecto.
+[ERROR] 17:02:26:135 MiRam/(6634:6662): el discordiador finalizo el programa. Terminando servidor
+[INFO] 17:03:46:836 MiRam/(6734:6765): cod_op 1
+[INFO] 17:03:46:839 MiRam/(6734:6765): Se asigno espacio de memoria a todo
+[INFO] 17:03:46:862 MiRam/(6734:6774): cod_op 8
+[INFO] 17:03:46:867 MiRam/(6734:6774): cod_op 9
+[INFO] 17:03:46:867 MiRam/(6734:6774): tid 1
+[INFO] 17:03:46:868 MiRam/(6734:6774): estado B
+[INFO] 17:03:46:868 MiRam/(6734:6774): tid 1
+[INFO] 17:03:46:868 MiRam/(6734:6774): for 2
+[INFO] 17:03:46:868 MiRam/(6734:6774): if 2
+[INFO] 17:03:46:868 MiRam/(6734:6774): for 2
+[INFO] 17:03:46:868 MiRam/(6734:6774): for 2
+[INFO] 17:03:46:868 MiRam/(6734:6774): for 2
+[INFO] 17:03:46:868 MiRam/(6734:6774): for 2
+[INFO] 17:03:46:869 MiRam/(6734:6775): cod_op 8
+[INFO] 17:03:46:870 MiRam/(6734:6775): cod_op 9
+[INFO] 17:03:46:870 MiRam/(6734:6775): tid 2
+[INFO] 17:03:46:870 MiRam/(6734:6775): estado B
+[INFO] 17:03:46:870 MiRam/(6734:6775): tid 2
+[INFO] 17:03:46:870 MiRam/(6734:6775): for 2
+[INFO] 17:03:46:871 MiRam/(6734:6775): for 2
+[INFO] 17:03:46:871 MiRam/(6734:6775): if 2
+[INFO] 17:03:46:871 MiRam/(6734:6775): for 2
+[INFO] 17:03:46:871 MiRam/(6734:6775): for 2
+[INFO] 17:03:46:871 MiRam/(6734:6775): for 2
+[INFO] 17:03:46:872 MiRam/(6734:6776): cod_op 8
+[INFO] 17:03:46:873 MiRam/(6734:6776): cod_op 9
+[INFO] 17:03:46:873 MiRam/(6734:6776): tid 3
+[INFO] 17:03:46:873 MiRam/(6734:6776): estado B
+[INFO] 17:03:46:873 MiRam/(6734:6776): tid 3
+[INFO] 17:03:46:874 MiRam/(6734:6776): for 2
+[INFO] 17:03:46:874 MiRam/(6734:6776): for 2
+[INFO] 17:03:46:874 MiRam/(6734:6776): for 2
+[INFO] 17:03:46:875 MiRam/(6734:6776): if 2
+[INFO] 17:03:46:875 MiRam/(6734:6776): for 2
+[INFO] 17:03:46:875 MiRam/(6734:6776): for 2
+[INFO] 17:03:46:876 MiRam/(6734:6777): cod_op 8
+[INFO] 17:03:46:877 MiRam/(6734:6777): cod_op 9
+[INFO] 17:03:46:877 MiRam/(6734:6777): tid 4
+[INFO] 17:03:46:878 MiRam/(6734:6777): estado B
+[INFO] 17:03:46:878 MiRam/(6734:6777): tid 4
+[INFO] 17:03:46:878 MiRam/(6734:6777): for 2
+[INFO] 17:03:46:878 MiRam/(6734:6777): for 2
+[INFO] 17:03:46:878 MiRam/(6734:6777): for 2
+[INFO] 17:03:46:878 MiRam/(6734:6777): for 2
+[INFO] 17:03:46:878 MiRam/(6734:6777): if 2
+[INFO] 17:03:46:879 MiRam/(6734:6777): for 2
+[INFO] 17:03:46:879 MiRam/(6734:6778): cod_op 8
+[INFO] 17:03:46:880 MiRam/(6734:6778): cod_op 9
+[INFO] 17:03:46:880 MiRam/(6734:6778): tid 5
+[INFO] 17:03:46:880 MiRam/(6734:6778): estado B
+[INFO] 17:03:46:882 MiRam/(6734:6778): tid 5
+[INFO] 17:03:46:882 MiRam/(6734:6778): for 2
+[INFO] 17:03:46:882 MiRam/(6734:6778): for 2
+[INFO] 17:03:46:884 MiRam/(6734:6778): for 2
+[INFO] 17:03:46:884 MiRam/(6734:6778): for 2
+[INFO] 17:03:46:884 MiRam/(6734:6778): for 2
+[INFO] 17:03:46:884 MiRam/(6734:6778): if 2
+[INFO] 17:03:57:884 MiRam/(6734:6765): cod_op 7
+[WARNING] 17:03:57:885 MiRam/(6734:6778): el cliente se desconecto.
+[WARNING] 17:03:57:885 MiRam/(6734:6777): el cliente se desconecto.
+[WARNING] 17:03:57:885 MiRam/(6734:6776): el cliente se desconecto.
+[WARNING] 17:03:57:885 MiRam/(6734:6775): el cliente se desconecto.
+[WARNING] 17:03:57:885 MiRam/(6734:6774): el cliente se desconecto.
+[ERROR] 17:03:57:885 MiRam/(6734:6765): el discordiador finalizo el programa. Terminando servidor
+[INFO] 17:05:55:443 MiRam/(6838:6860): cod_op 1
+[INFO] 17:05:55:446 MiRam/(6838:6860): Se asigno espacio de memoria a todo
+[INFO] 17:05:55:458 MiRam/(6838:6866): cod_op 8
+[INFO] 17:05:55:462 MiRam/(6838:6866): cod_op 9
+[INFO] 17:05:55:466 MiRam/(6838:6866): estado B
+[INFO] 17:05:55:466 MiRam/(6838:6867): cod_op 8
+[INFO] 17:05:55:467 MiRam/(6838:6867): cod_op 9
+[INFO] 17:05:55:467 MiRam/(6838:6867): estado B
+[INFO] 17:05:55:467 MiRam/(6838:6868): cod_op 8
+[INFO] 17:05:55:467 MiRam/(6838:6868): cod_op 9
+[INFO] 17:05:55:467 MiRam/(6838:6868): estado B
+[INFO] 17:05:55:468 MiRam/(6838:6869): cod_op 8
+[INFO] 17:05:55:468 MiRam/(6838:6869): cod_op 9
+[INFO] 17:05:55:468 MiRam/(6838:6869): estado B
+[INFO] 17:05:55:468 MiRam/(6838:6870): cod_op 8
+[INFO] 17:05:55:469 MiRam/(6838:6870): cod_op 9
+[INFO] 17:05:55:469 MiRam/(6838:6870): estado B
+[INFO] 17:06:04:618 MiRam/(6838:6860): cod_op 7
+[WARNING] 17:06:04:619 MiRam/(6838:6870): el cliente se desconecto.
+[WARNING] 17:06:04:619 MiRam/(6838:6869): el cliente se desconecto.
+[WARNING] 17:06:04:619 MiRam/(6838:6868): el cliente se desconecto.
+[WARNING] 17:06:04:619 MiRam/(6838:6867): el cliente se desconecto.
+[WARNING] 17:06:04:619 MiRam/(6838:6866): el cliente se desconecto.
+[ERROR] 17:06:04:619 MiRam/(6838:6860): el discordiador finalizo el programa. Terminando servidor
+[INFO] 17:26:02:759 MiRam/(7041:7085): cod_op 1
+[INFO] 17:26:02:760 MiRam/(7041:7085): Se asigno espacio de memoria a todo
+[INFO] 17:26:02:769 MiRam/(7041:7091): cod_op 8
+[INFO] 17:26:02:770 MiRam/(7041:7091): cod_op 9
+[INFO] 17:26:02:770 MiRam/(7041:7091): estado E
+[INFO] 17:26:02:773 MiRam/(7041:7092): cod_op 8
+[INFO] 17:26:02:774 MiRam/(7041:7093): cod_op 8
+[INFO] 17:26:02:774 MiRam/(7041:7092): cod_op 9
+[INFO] 17:26:02:774 MiRam/(7041:7092): estado E
+[INFO] 17:26:02:774 MiRam/(7041:7094): cod_op 8
+[INFO] 17:26:02:775 MiRam/(7041:7095): cod_op 8
+[INFO] 17:26:05:771 MiRam/(7041:7093): cod_op 9
+[INFO] 17:26:05:771 MiRam/(7041:7093): estado E
+[INFO] 17:26:05:776 MiRam/(7041:7094): cod_op 9
+[INFO] 17:26:05:776 MiRam/(7041:7094): estado E
+[INFO] 17:26:08:776 MiRam/(7041:7095): cod_op 9
+[INFO] 17:26:08:776 MiRam/(7041:7095): estado E
+[INFO] 17:26:12:660 MiRam/(7041:7085): cod_op 7
+[WARNING] 17:26:12:661 MiRam/(7041:7095): el cliente se desconecto.
+[WARNING] 17:26:12:661 MiRam/(7041:7094): el cliente se desconecto.
+[WARNING] 17:26:12:661 MiRam/(7041:7093): el cliente se desconecto.
+[WARNING] 17:26:12:661 MiRam/(7041:7092): el cliente se desconecto.
+[WARNING] 17:26:12:661 MiRam/(7041:7091): el cliente se desconecto.
+[ERROR] 17:26:12:661 MiRam/(7041:7085): el discordiador finalizo el programa. Terminando servidor
+[INFO] 17:28:33:176 MiRam/(7139:7166): cod_op 1
+[INFO] 17:28:33:178 MiRam/(7139:7166): Se asigno espacio de memoria a todo
+[INFO] 17:28:33:197 MiRam/(7139:7173): cod_op 8
+[INFO] 17:28:33:198 MiRam/(7139:7174): cod_op 8
+[INFO] 17:28:33:199 MiRam/(7139:7173): cod_op 9
+[INFO] 17:28:33:199 MiRam/(7139:7173): estado E
+[INFO] 17:28:33:199 MiRam/(7139:7174): cod_op 9
+[INFO] 17:28:33:199 MiRam/(7139:7174): estado E
+[INFO] 17:28:33:203 MiRam/(7139:7175): cod_op 8
+[INFO] 17:28:33:203 MiRam/(7139:7176): cod_op 8
+[INFO] 17:28:33:204 MiRam/(7139:7177): cod_op 8
+[INFO] 17:28:36:201 MiRam/(7139:7175): cod_op 9
+[INFO] 17:28:36:201 MiRam/(7139:7176): cod_op 9
+[INFO] 17:28:36:201 MiRam/(7139:7175): estado E
+[INFO] 17:28:36:201 MiRam/(7139:7176): estado E
+[INFO] 17:28:38:374 MiRam/(7139:7166): cod_op 7
+[WARNING] 17:28:38:375 MiRam/(7139:7175): el cliente se desconecto.
+[WARNING] 17:28:38:375 MiRam/(7139:7174): el cliente se desconecto.
+[WARNING] 17:28:38:375 MiRam/(7139:7173): el cliente se desconecto.
+[WARNING] 17:28:38:375 MiRam/(7139:7176): el cliente se desconecto.
+[ERROR] 17:28:38:376 MiRam/(7139:7166): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 17:28:38:375 MiRam/(7139:7177): el cliente se desconecto.
+[INFO] 17:44:36:004 MiRam/(7767:7800): cod_op 1
+[INFO] 17:44:36:005 MiRam/(7767:7800): Se asigno espacio de memoria a todo
+[INFO] 17:44:36:026 MiRam/(7767:7807): cod_op 8
+[INFO] 17:44:36:028 MiRam/(7767:7807): cod_op 9
+[INFO] 17:44:36:028 MiRam/(7767:7807): estado E
+[INFO] 17:44:36:031 MiRam/(7767:7808): cod_op 8
+[INFO] 17:44:36:036 MiRam/(7767:7809): cod_op 8
+[INFO] 17:44:36:036 MiRam/(7767:7808): cod_op 9
+[INFO] 17:44:36:036 MiRam/(7767:7808): estado E
+[INFO] 17:44:36:036 MiRam/(7767:7810): cod_op 8
+[INFO] 17:44:36:037 MiRam/(7767:7811): cod_op 8
+[INFO] 17:44:39:029 MiRam/(7767:7809): cod_op 9
+[INFO] 17:44:39:030 MiRam/(7767:7809): estado E
+[INFO] 17:44:39:037 MiRam/(7767:7810): cod_op 9
+[INFO] 17:44:39:038 MiRam/(7767:7810): estado E
+[INFO] 17:44:42:031 MiRam/(7767:7811): cod_op 9
+[INFO] 17:44:42:031 MiRam/(7767:7811): estado E
+[INFO] 17:44:53:036 MiRam/(7767:7807): cod_op 8
+[INFO] 17:44:53:041 MiRam/(7767:7808): cod_op 8
+[INFO] 17:44:56:038 MiRam/(7767:7809): cod_op 8
+[INFO] 17:44:56:043 MiRam/(7767:7810): cod_op 8
+[INFO] 17:44:59:041 MiRam/(7767:7811): cod_op 8
+[INFO] 17:44:59:044 MiRam/(7767:7807): cod_op 9
+[INFO] 17:44:59:044 MiRam/(7767:7807): estado B
+[INFO] 17:45:00:045 MiRam/(7767:7807): cod_op 8
+[INFO] 17:45:01:046 MiRam/(7767:7808): cod_op 9
+[INFO] 17:45:01:047 MiRam/(7767:7808): estado B
+[INFO] 17:45:02:046 MiRam/(7767:7809): cod_op 9
+[INFO] 17:45:02:046 MiRam/(7767:7809): estado B
+[INFO] 17:45:02:047 MiRam/(7767:7808): cod_op 8
+[INFO] 17:45:03:047 MiRam/(7767:7809): cod_op 8
+[INFO] 17:45:03:048 MiRam/(7767:7810): cod_op 9
+[INFO] 17:45:03:048 MiRam/(7767:7807): cod_op 8
+[INFO] 17:45:03:048 MiRam/(7767:7810): estado B
+[INFO] 17:45:03:048 MiRam/(7767:7808): cod_op 8
+[WARNING] 17:45:03:050 MiRam/(7767:7808): el cliente se desconecto.
+[INFO] 17:45:03:050 MiRam/(7767:7809): cod_op 8
+[WARNING] 17:45:03:050 MiRam/(7767:7807): el cliente se desconecto.
+[WARNING] 17:45:03:050 MiRam/(7767:7809): el cliente se desconecto.
+[INFO] 17:45:04:049 MiRam/(7767:7811): cod_op 9
+[INFO] 17:45:04:049 MiRam/(7767:7811): estado B
+[INFO] 17:45:04:050 MiRam/(7767:7810): cod_op 8
+[WARNING] 17:45:04:051 MiRam/(7767:7810): el cliente se desconecto.
+[INFO] 17:45:05:051 MiRam/(7767:7811): cod_op 8
+[WARNING] 17:45:05:051 MiRam/(7767:7811): el cliente se desconecto.
+[INFO] 17:45:28:246 MiRam/(7767:7800): cod_op 7
+[ERROR] 17:45:28:247 MiRam/(7767:7800): el discordiador finalizo el programa. Terminando servidor
+[INFO] 17:46:16:663 MiRam/(7820:7841): cod_op 1
+[INFO] 17:46:16:664 MiRam/(7820:7841): Se asigno espacio de memoria a todo
+[INFO] 17:46:16:686 MiRam/(7820:7847): cod_op 8
+[INFO] 17:46:16:686 MiRam/(7820:7848): cod_op 8
+[INFO] 17:46:16:687 MiRam/(7820:7849): cod_op 8
+[INFO] 17:46:16:688 MiRam/(7820:7847): cod_op 9
+[INFO] 17:46:16:688 MiRam/(7820:7847): estado E
+[INFO] 17:46:16:688 MiRam/(7820:7848): cod_op 9
+[INFO] 17:46:16:688 MiRam/(7820:7848): estado E
+[INFO] 17:46:16:689 MiRam/(7820:7850): cod_op 8
+[INFO] 17:46:16:690 MiRam/(7820:7851): cod_op 8
+[INFO] 17:46:19:689 MiRam/(7820:7849): cod_op 9
+[INFO] 17:46:19:689 MiRam/(7820:7849): estado E
+[INFO] 17:46:19:690 MiRam/(7820:7850): cod_op 9
+[INFO] 17:46:19:690 MiRam/(7820:7850): estado E
+[INFO] 17:46:20:481 MiRam/(7820:7841): cod_op 1
+[INFO] 17:46:20:482 MiRam/(7820:7841): Se asigno espacio de memoria a todo
+[INFO] 17:46:20:486 MiRam/(7820:7857): cod_op 8
+[INFO] 17:46:20:487 MiRam/(7820:7858): cod_op 8
+[INFO] 17:46:20:487 MiRam/(7820:7859): cod_op 8
+[INFO] 17:46:20:488 MiRam/(7820:7860): cod_op 8
+[INFO] 17:46:20:489 MiRam/(7820:7861): cod_op 8
+[INFO] 17:46:22:691 MiRam/(7820:7851): cod_op 9
+[INFO] 17:46:22:692 MiRam/(7820:7851): estado E
+[INFO] 17:46:25:692 MiRam/(7820:7857): cod_op 9
+[INFO] 17:46:25:693 MiRam/(7820:7857): estado E
+[INFO] 17:46:52:535 MiRam/(7820:7841): cod_op 3
+[INFO] 17:46:52:535 MiRam/(7820:7841): Se expulso segmento 3
+[INFO] 17:46:55:225 MiRam/(7820:7841): cod_op 3
+[INFO] 17:46:55:225 MiRam/(7820:7841): Se expulso segmento 5
+[INFO] 17:47:13:406 MiRam/(7820:7841): cod_op 3
+[INFO] 17:47:13:406 MiRam/(7820:7841): Se expulso segmento 6
+[INFO] 17:47:27:019 MiRam/(7820:7841): cod_op 2
+[INFO] 17:49:30:147 MiRam/(7820:7841): cod_op 7
+[ERROR] 17:49:30:147 MiRam/(7820:7841): el discordiador finalizo el programa. Terminando servidor
+[INFO] 17:49:46:345 MiRam/(7893:7908): cod_op 1
+[INFO] 17:49:46:347 MiRam/(7893:7908): Se asigno espacio de memoria a todo
+[INFO] 17:49:46:362 MiRam/(7893:7915): cod_op 8
+[INFO] 17:49:46:367 MiRam/(7893:7915): cod_op 9
+[INFO] 17:49:46:367 MiRam/(7893:7915): estado E
+[INFO] 17:49:46:369 MiRam/(7893:7916): cod_op 8
+[INFO] 17:49:46:370 MiRam/(7893:7917): cod_op 8
+[INFO] 17:49:46:370 MiRam/(7893:7916): cod_op 9
+[INFO] 17:49:46:371 MiRam/(7893:7916): estado E
+[INFO] 17:49:46:371 MiRam/(7893:7918): cod_op 8
+[INFO] 17:49:46:371 MiRam/(7893:7919): cod_op 8
+[INFO] 17:49:47:687 MiRam/(7893:7908): cod_op 1
+[INFO] 17:49:47:688 MiRam/(7893:7908): Se asigno espacio de memoria a todo
+[INFO] 17:49:47:691 MiRam/(7893:7926): cod_op 8
+[INFO] 17:49:47:693 MiRam/(7893:7927): cod_op 8
+[INFO] 17:49:47:695 MiRam/(7893:7928): cod_op 8
+[INFO] 17:49:47:696 MiRam/(7893:7929): cod_op 8
+[INFO] 17:49:47:700 MiRam/(7893:7930): cod_op 8
+[INFO] 17:49:49:369 MiRam/(7893:7917): cod_op 9
+[INFO] 17:49:49:369 MiRam/(7893:7917): estado E
+[INFO] 17:49:49:371 MiRam/(7893:7918): cod_op 9
+[INFO] 17:49:49:371 MiRam/(7893:7918): estado E
+[INFO] 17:49:56:176 MiRam/(7893:7908): cod_op 2
+[INFO] 17:51:29:945 MiRam/(7893:7908): cod_op 7
+[WARNING] 17:51:29:946 MiRam/(7893:7928): el cliente se desconecto.
+[WARNING] 17:51:29:946 MiRam/(7893:7917): el cliente se desconecto.
+[WARNING] 17:51:29:946 MiRam/(7893:7919): el cliente se desconecto.
+[WARNING] 17:51:29:946 MiRam/(7893:7929): el cliente se desconecto.
+[WARNING] 17:51:29:946 MiRam/(7893:7916): el cliente se desconecto.
+[WARNING] 17:51:29:947 MiRam/(7893:7918): el cliente se desconecto.
+[WARNING] 17:51:29:947 MiRam/(7893:7927): el cliente se desconecto.
+[WARNING] 17:51:29:947 MiRam/(7893:7930): el cliente se desconecto.
+[WARNING] 17:51:29:947 MiRam/(7893:7915): el cliente se desconecto.
+[WARNING] 17:51:29:947 MiRam/(7893:7926): el cliente se desconecto.
+[ERROR] 17:51:29:950 MiRam/(7893:7908): el discordiador finalizo el programa. Terminando servidor
+[INFO] 17:51:48:993 MiRam/(7970:7984): cod_op 1
+[INFO] 17:51:48:994 MiRam/(7970:7984): Se asigno espacio de memoria a todo
+[INFO] 17:51:49:010 MiRam/(7970:7994): cod_op 8
+[INFO] 17:51:49:010 MiRam/(7970:7994): tid 1 forrr
+[INFO] 17:51:49:010 MiRam/(7970:7994): tid 1 forrr
+[INFO] 17:51:49:011 MiRam/(7970:7994): tid 1 forrr
+[INFO] 17:51:49:011 MiRam/(7970:7994): tid 1 forrr
+[INFO] 17:51:49:011 MiRam/(7970:7994): tid 1 forrr
+[INFO] 17:51:49:011 MiRam/(7970:7995): cod_op 8
+[INFO] 17:51:49:011 MiRam/(7970:7995): tid 2 forrr
+[INFO] 17:51:49:011 MiRam/(7970:7995): tid 2 forrr
+[INFO] 17:51:49:011 MiRam/(7970:7995): tid 2 forrr
+[INFO] 17:51:49:012 MiRam/(7970:7995): tid 2 forrr
+[INFO] 17:51:49:012 MiRam/(7970:7995): tid 2 forrr
+[INFO] 17:51:49:012 MiRam/(7970:7996): cod_op 8
+[INFO] 17:51:49:012 MiRam/(7970:7996): tid 3 forrr
+[INFO] 17:51:49:012 MiRam/(7970:7996): tid 3 forrr
+[INFO] 17:51:49:012 MiRam/(7970:7996): tid 3 forrr
+[INFO] 17:51:49:012 MiRam/(7970:7996): tid 3 forrr
+[INFO] 17:51:49:012 MiRam/(7970:7996): tid 3 forrr
+[INFO] 17:51:49:013 MiRam/(7970:7997): cod_op 8
+[INFO] 17:51:49:013 MiRam/(7970:7997): tid 4 forrr
+[INFO] 17:51:49:013 MiRam/(7970:7997): tid 4 forrr
+[INFO] 17:51:49:013 MiRam/(7970:7997): tid 4 forrr
+[INFO] 17:51:49:013 MiRam/(7970:7997): tid 4 forrr
+[INFO] 17:51:49:013 MiRam/(7970:7997): tid 4 forrr
+[INFO] 17:51:49:013 MiRam/(7970:7994): cod_op 9
+[INFO] 17:51:49:014 MiRam/(7970:7994): estado E
+[INFO] 17:51:49:014 MiRam/(7970:7995): cod_op 9
+[INFO] 17:51:49:015 MiRam/(7970:7995): estado E
+[INFO] 17:51:49:014 MiRam/(7970:7998): cod_op 8
+[INFO] 17:51:49:015 MiRam/(7970:7998): tid 5 forrr
+[INFO] 17:51:49:016 MiRam/(7970:7998): tid 5 forrr
+[INFO] 17:51:49:016 MiRam/(7970:7998): tid 5 forrr
+[INFO] 17:51:49:016 MiRam/(7970:7998): tid 5 forrr
+[INFO] 17:51:49:016 MiRam/(7970:7998): tid 5 forrr
+[INFO] 17:51:50:205 MiRam/(7970:7984): cod_op 1
+[INFO] 17:51:50:206 MiRam/(7970:7984): Se asigno espacio de memoria a todo
+[INFO] 17:51:50:208 MiRam/(7970:8004): cod_op 8
+[INFO] 17:51:50:208 MiRam/(7970:8004): tid 6 forrr
+[INFO] 17:51:50:208 MiRam/(7970:8004): tid 6 forrr
+[INFO] 17:51:50:208 MiRam/(7970:8004): tid 6 forrr
+[INFO] 17:51:50:209 MiRam/(7970:8004): tid 6 forrr
+[INFO] 17:51:50:209 MiRam/(7970:8004): tid 6 forrr
+[INFO] 17:51:50:209 MiRam/(7970:8005): cod_op 8
+[INFO] 17:51:50:209 MiRam/(7970:8005): tid 7 forrr
+[INFO] 17:51:50:209 MiRam/(7970:8005): tid 7 forrr
+[INFO] 17:51:50:209 MiRam/(7970:8005): tid 7 forrr
+[INFO] 17:51:50:209 MiRam/(7970:8005): tid 7 forrr
+[INFO] 17:51:50:209 MiRam/(7970:8005): tid 7 forrr
+[INFO] 17:51:50:210 MiRam/(7970:8006): cod_op 8
+[INFO] 17:51:50:210 MiRam/(7970:8006): tid 8 forrr
+[INFO] 17:51:50:210 MiRam/(7970:8006): tid 8 forrr
+[INFO] 17:51:50:210 MiRam/(7970:8006): tid 8 forrr
+[INFO] 17:51:50:212 MiRam/(7970:8006): tid 8 forrr
+[INFO] 17:51:50:212 MiRam/(7970:8006): tid 8 forrr
+[INFO] 17:51:50:212 MiRam/(7970:8007): cod_op 8
+[INFO] 17:51:50:214 MiRam/(7970:8007): tid 9 forrr
+[INFO] 17:51:50:214 MiRam/(7970:8007): tid 9 forrr
+[INFO] 17:51:50:214 MiRam/(7970:8007): tid 9 forrr
+[INFO] 17:51:50:214 MiRam/(7970:8007): tid 9 forrr
+[INFO] 17:51:50:217 MiRam/(7970:8007): tid 9 forrr
+[INFO] 17:51:50:220 MiRam/(7970:8008): cod_op 8
+[INFO] 17:51:50:221 MiRam/(7970:8008): tid 10 forrr
+[INFO] 17:51:50:221 MiRam/(7970:8008): tid 10 forrr
+[INFO] 17:51:50:221 MiRam/(7970:8008): tid 10 forrr
+[INFO] 17:51:50:221 MiRam/(7970:8008): tid 10 forrr
+[INFO] 17:51:50:222 MiRam/(7970:8008): tid 10 forrr
+[INFO] 17:51:52:015 MiRam/(7970:7996): cod_op 9
+[INFO] 17:51:52:015 MiRam/(7970:7996): estado E
+[INFO] 17:51:52:015 MiRam/(7970:7997): cod_op 9
+[INFO] 17:51:52:015 MiRam/(7970:7997): estado E
+[INFO] 17:51:58:006 MiRam/(7970:7984): cod_op 2
+[INFO] 17:53:07:878 MiRam/(7970:7984): cod_op 7
+[WARNING] 17:53:07:879 MiRam/(7970:8008): el cliente se desconecto.
+[WARNING] 17:53:07:879 MiRam/(7970:8007): el cliente se desconecto.
+[WARNING] 17:53:07:879 MiRam/(7970:8006): el cliente se desconecto.
+[WARNING] 17:53:07:879 MiRam/(7970:8005): el cliente se desconecto.
+[WARNING] 17:53:07:879 MiRam/(7970:8004): el cliente se desconecto.
+[WARNING] 17:53:07:879 MiRam/(7970:7998): el cliente se desconecto.
+[WARNING] 17:53:07:879 MiRam/(7970:7997): el cliente se desconecto.
+[WARNING] 17:53:07:879 MiRam/(7970:7996): el cliente se desconecto.
+[WARNING] 17:53:07:879 MiRam/(7970:7995): el cliente se desconecto.
+[WARNING] 17:53:07:879 MiRam/(7970:7994): el cliente se desconecto.
+[ERROR] 17:53:07:880 MiRam/(7970:7984): el discordiador finalizo el programa. Terminando servidor
+[INFO] 17:53:21:820 MiRam/(8039:8056): cod_op 1
+[INFO] 17:53:21:824 MiRam/(8039:8056): Se asigno espacio de memoria a todo
+[INFO] 17:53:21:839 MiRam/(8039:8063): cod_op 8
+[INFO] 17:53:21:839 MiRam/(8039:8063): tid 1 IFFFF
+[INFO] 17:53:21:839 MiRam/(8039:8063): tid 1 IF 2222
+[INFO] 17:53:21:840 MiRam/(8039:8064): cod_op 8
+[INFO] 17:53:21:840 MiRam/(8039:8063): cod_op 9
+[INFO] 17:53:21:845 MiRam/(8039:8063): estado E
+[INFO] 17:53:21:845 MiRam/(8039:8064): tid 2 IFFFF
+[INFO] 17:53:21:846 MiRam/(8039:8064): tid 2 IF 2222
+[INFO] 17:53:21:846 MiRam/(8039:8065): cod_op 8
+[INFO] 17:53:21:846 MiRam/(8039:8065): tid 3 IFFFF
+[INFO] 17:53:21:846 MiRam/(8039:8065): tid 3 IF 2222
+[INFO] 17:53:21:846 MiRam/(8039:8064): cod_op 9
+[INFO] 17:53:21:846 MiRam/(8039:8064): estado E
+[INFO] 17:53:21:846 MiRam/(8039:8066): cod_op 8
+[INFO] 17:53:21:847 MiRam/(8039:8066): tid 4 IFFFF
+[INFO] 17:53:21:847 MiRam/(8039:8066): tid 4 IF 2222
+[INFO] 17:53:21:847 MiRam/(8039:8067): cod_op 8
+[INFO] 17:53:21:847 MiRam/(8039:8067): tid 5 IFFFF
+[INFO] 17:53:21:847 MiRam/(8039:8067): tid 5 IF 2222
+[INFO] 17:53:22:919 MiRam/(8039:8056): cod_op 1
+[INFO] 17:53:22:920 MiRam/(8039:8056): Se asigno espacio de memoria a todo
+[INFO] 17:53:22:924 MiRam/(8039:8073): cod_op 8
+[INFO] 17:53:22:925 MiRam/(8039:8074): cod_op 8
+[INFO] 17:53:22:925 MiRam/(8039:8075): cod_op 8
+[INFO] 17:53:22:926 MiRam/(8039:8076): cod_op 8
+[INFO] 17:53:22:933 MiRam/(8039:8077): cod_op 8
+[INFO] 17:53:24:842 MiRam/(8039:8065): cod_op 9
+[INFO] 17:53:24:843 MiRam/(8039:8065): estado E
+[INFO] 17:53:24:847 MiRam/(8039:8066): cod_op 9
+[INFO] 17:53:24:847 MiRam/(8039:8066): estado E
+[INFO] 17:53:30:130 MiRam/(8039:8056): cod_op 2
+[INFO] 17:53:53:621 MiRam/(8039:8056): cod_op 7
+[ERROR] 17:53:53:621 MiRam/(8039:8056): el discordiador finalizo el programa. Terminando servidor
+[INFO] 18:10:37:846 MiRam/(8232:8250): cod_op 1
+[INFO] 18:10:37:847 MiRam/(8232:8250): Se asigno espacio de memoria a todo
+[INFO] 18:10:37:861 MiRam/(8232:8257): cod_op 8
+[INFO] 18:10:37:862 MiRam/(8232:8257): tid 1 NRO SEG %D
+[INFO] 18:10:37:862 MiRam/(8232:8257): tid 1 IFFFF
+[INFO] 18:10:37:862 MiRam/(8232:8257): tid 1 IF 2222
+[INFO] 18:10:37:862 MiRam/(8232:8257): tid 1 NRO SEG %D
+[INFO] 18:10:37:862 MiRam/(8232:8257): tid 1 NRO SEG %D
+[INFO] 18:10:37:862 MiRam/(8232:8257): tid 1 NRO SEG %D
+[INFO] 18:10:37:862 MiRam/(8232:8257): tid 1 NRO SEG %D
+[INFO] 18:10:37:862 MiRam/(8232:8257): cod_op 9
+[INFO] 18:10:37:862 MiRam/(8232:8257): estado E
+[INFO] 18:10:37:865 MiRam/(8232:8258): cod_op 8
+[INFO] 18:10:37:865 MiRam/(8232:8258): tid 2 NRO SEG %D
+[INFO] 18:10:37:865 MiRam/(8232:8258): tid 2 NRO SEG %D
+[INFO] 18:10:37:866 MiRam/(8232:8258): tid 2 IFFFF
+[INFO] 18:10:37:866 MiRam/(8232:8258): tid 2 IF 2222
+[INFO] 18:10:37:866 MiRam/(8232:8258): tid 2 NRO SEG %D
+[INFO] 18:10:37:866 MiRam/(8232:8258): tid 2 NRO SEG %D
+[INFO] 18:10:37:866 MiRam/(8232:8258): tid 2 NRO SEG %D
+[INFO] 18:10:37:866 MiRam/(8232:8259): cod_op 8
+[INFO] 18:10:37:866 MiRam/(8232:8259): tid 3 NRO SEG %D
+[INFO] 18:10:37:866 MiRam/(8232:8259): tid 3 NRO SEG %D
+[INFO] 18:10:37:867 MiRam/(8232:8259): tid 3 NRO SEG %D
+[INFO] 18:10:37:867 MiRam/(8232:8259): tid 3 IFFFF
+[INFO] 18:10:37:867 MiRam/(8232:8259): tid 3 IF 2222
+[INFO] 18:10:37:867 MiRam/(8232:8259): tid 3 NRO SEG %D
+[INFO] 18:10:37:867 MiRam/(8232:8259): tid 3 NRO SEG %D
+[INFO] 18:10:37:867 MiRam/(8232:8258): cod_op 9
+[INFO] 18:10:37:867 MiRam/(8232:8258): estado E
+[INFO] 18:10:37:867 MiRam/(8232:8260): cod_op 8
+[INFO] 18:10:37:868 MiRam/(8232:8260): tid 4 NRO SEG %D
+[INFO] 18:10:37:868 MiRam/(8232:8260): tid 4 NRO SEG %D
+[INFO] 18:10:37:868 MiRam/(8232:8260): tid 4 NRO SEG %D
+[INFO] 18:10:37:868 MiRam/(8232:8260): tid 4 NRO SEG %D
+[INFO] 18:10:37:868 MiRam/(8232:8260): tid 4 IFFFF
+[INFO] 18:10:37:868 MiRam/(8232:8260): tid 4 IF 2222
+[INFO] 18:10:37:868 MiRam/(8232:8260): tid 4 NRO SEG %D
+[INFO] 18:10:37:868 MiRam/(8232:8261): cod_op 8
+[INFO] 18:10:37:868 MiRam/(8232:8261): tid 5 NRO SEG %D
+[INFO] 18:10:37:869 MiRam/(8232:8261): tid 5 NRO SEG %D
+[INFO] 18:10:37:869 MiRam/(8232:8261): tid 5 NRO SEG %D
+[INFO] 18:10:37:869 MiRam/(8232:8261): tid 5 NRO SEG %D
+[INFO] 18:10:37:869 MiRam/(8232:8261): tid 5 NRO SEG %D
+[INFO] 18:10:37:869 MiRam/(8232:8261): tid 5 IFFFF
+[INFO] 18:10:37:869 MiRam/(8232:8261): tid 5 IF 2222
+[INFO] 18:10:39:137 MiRam/(8232:8250): cod_op 1
+[INFO] 18:10:39:138 MiRam/(8232:8250): Se asigno espacio de memoria a todo
+[INFO] 18:10:39:143 MiRam/(8232:8267): cod_op 8
+[INFO] 18:10:39:144 MiRam/(8232:8267): tid 6 NRO SEG %D
+[INFO] 18:10:39:144 MiRam/(8232:8267): tid 6 IFFFF
+[INFO] 18:10:39:144 MiRam/(8232:8267): tid 6 IF 2222
+[INFO] 18:10:39:144 MiRam/(8232:8267): tid 6 NRO SEG %D
+[INFO] 18:10:39:145 MiRam/(8232:8267): tid 6 NRO SEG %D
+[INFO] 18:10:39:145 MiRam/(8232:8267): tid 6 NRO SEG %D
+[INFO] 18:10:39:145 MiRam/(8232:8267): tid 6 NRO SEG %D
+[INFO] 18:10:39:146 MiRam/(8232:8268): cod_op 8
+[INFO] 18:10:39:147 MiRam/(8232:8268): tid 7 NRO SEG %D
+[INFO] 18:10:39:147 MiRam/(8232:8268): tid 7 NRO SEG %D
+[INFO] 18:10:39:147 MiRam/(8232:8268): tid 7 IFFFF
+[INFO] 18:10:39:147 MiRam/(8232:8268): tid 7 IF 2222
+[INFO] 18:10:39:147 MiRam/(8232:8268): tid 7 NRO SEG %D
+[INFO] 18:10:39:148 MiRam/(8232:8268): tid 7 NRO SEG %D
+[INFO] 18:10:39:148 MiRam/(8232:8268): tid 7 NRO SEG %D
+[INFO] 18:10:39:148 MiRam/(8232:8269): cod_op 8
+[INFO] 18:10:39:150 MiRam/(8232:8269): tid 8 NRO SEG %D
+[INFO] 18:10:39:150 MiRam/(8232:8269): tid 8 NRO SEG %D
+[INFO] 18:10:39:150 MiRam/(8232:8269): tid 8 NRO SEG %D
+[INFO] 18:10:39:150 MiRam/(8232:8269): tid 8 IFFFF
+[INFO] 18:10:39:150 MiRam/(8232:8269): tid 8 IF 2222
+[INFO] 18:10:39:150 MiRam/(8232:8269): tid 8 NRO SEG %D
+[INFO] 18:10:39:150 MiRam/(8232:8269): tid 8 NRO SEG %D
+[INFO] 18:10:39:153 MiRam/(8232:8270): cod_op 8
+[INFO] 18:10:39:154 MiRam/(8232:8270): tid 9 NRO SEG %D
+[INFO] 18:10:39:154 MiRam/(8232:8270): tid 9 NRO SEG %D
+[INFO] 18:10:39:155 MiRam/(8232:8270): tid 9 NRO SEG %D
+[INFO] 18:10:39:155 MiRam/(8232:8270): tid 9 NRO SEG %D
+[INFO] 18:10:39:155 MiRam/(8232:8270): tid 9 IFFFF
+[INFO] 18:10:39:155 MiRam/(8232:8270): tid 9 IF 2222
+[INFO] 18:10:39:155 MiRam/(8232:8270): tid 9 NRO SEG %D
+[INFO] 18:10:39:156 MiRam/(8232:8271): cod_op 8
+[INFO] 18:10:39:157 MiRam/(8232:8271): tid 10 NRO SEG %D
+[INFO] 18:10:39:157 MiRam/(8232:8271): tid 10 NRO SEG %D
+[INFO] 18:10:39:157 MiRam/(8232:8271): tid 10 NRO SEG %D
+[INFO] 18:10:39:157 MiRam/(8232:8271): tid 10 NRO SEG %D
+[INFO] 18:10:39:157 MiRam/(8232:8271): tid 10 NRO SEG %D
+[INFO] 18:10:39:158 MiRam/(8232:8271): tid 10 IFFFF
+[INFO] 18:10:39:158 MiRam/(8232:8271): tid 10 IF 2222
+[INFO] 18:10:40:863 MiRam/(8232:8259): cod_op 9
+[INFO] 18:10:40:864 MiRam/(8232:8259): estado E
+[INFO] 18:10:40:868 MiRam/(8232:8260): cod_op 9
+[INFO] 18:10:40:868 MiRam/(8232:8260): estado E
+[INFO] 18:10:43:864 MiRam/(8232:8261): cod_op 9
+[INFO] 18:10:43:864 MiRam/(8232:8261): estado E
+[INFO] 18:10:43:872 MiRam/(8232:8267): cod_op 9
+[INFO] 18:10:43:872 MiRam/(8232:8267): estado E
+[INFO] 18:10:51:971 MiRam/(8232:8250): cod_op 2
+[INFO] 18:11:00:201 MiRam/(8232:8250): cod_op 7
+[ERROR] 18:11:00:202 MiRam/(8232:8250): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 18:11:00:203 MiRam/(8232:8271): el cliente se desconecto.
+[WARNING] 18:11:00:203 MiRam/(8232:8270): el cliente se desconecto.
+[WARNING] 18:11:00:203 MiRam/(8232:8269): el cliente se desconecto.
+[WARNING] 18:11:00:203 MiRam/(8232:8268): el cliente se desconecto.
+[WARNING] 18:11:00:203 MiRam/(8232:8267): el cliente se desconecto.
+[WARNING] 18:11:00:203 MiRam/(8232:8261): el cliente se desconecto.
+[WARNING] 18:11:00:203 MiRam/(8232:8260): el cliente se desconecto.
+[WARNING] 18:11:00:203 MiRam/(8232:8259): el cliente se desconecto.
+[WARNING] 18:11:00:203 MiRam/(8232:8258): el cliente se desconecto.
+[WARNING] 18:11:00:203 MiRam/(8232:8257): el cliente se desconecto.
+[INFO] 18:13:38:132 MiRam/(8348:8375): Se asigno espacio de memoria a todo
+[INFO] 18:13:38:151 MiRam/(8348:8384): estado E
+[INFO] 18:13:38:151 MiRam/(8348:8385): estado E
+[INFO] 18:13:39:398 MiRam/(8348:8375): Se asigno espacio de memoria a todo
+[INFO] 18:13:41:152 MiRam/(8348:8384): estado R
+[INFO] 18:13:41:153 MiRam/(8348:8386): estado E
+[INFO] 18:13:41:153 MiRam/(8348:8385): estado R
+[INFO] 18:13:41:153 MiRam/(8348:8387): estado E
+[INFO] 18:13:44:154 MiRam/(8348:8386): estado R
+[INFO] 18:13:44:154 MiRam/(8348:8388): estado E
+[INFO] 18:13:44:154 MiRam/(8348:8387): estado R
+[INFO] 18:13:44:154 MiRam/(8348:8394): estado E
+[INFO] 18:14:16:876 MiRam/(8348:8388): estado R
+[INFO] 18:14:16:877 MiRam/(8348:8395): estado E
+[INFO] 18:14:16:877 MiRam/(8348:8394): estado R
+[INFO] 18:14:16:877 MiRam/(8348:8396): estado E
+[INFO] 18:14:19:878 MiRam/(8348:8395): estado R
+[INFO] 18:14:19:878 MiRam/(8348:8397): estado E
+[INFO] 18:14:19:878 MiRam/(8348:8396): estado R
+[INFO] 18:14:19:878 MiRam/(8348:8398): estado E
+[INFO] 18:14:22:879 MiRam/(8348:8397): estado R
+[INFO] 18:14:22:880 MiRam/(8348:8398): estado R
+[INFO] 18:14:25:881 MiRam/(8348:8384): estado R
+[INFO] 18:14:25:882 MiRam/(8348:8385): estado R
+[ERROR] 18:15:23:192 MiRam/(8348:8375): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 18:15:23:193 MiRam/(8348:8384): el cliente se desconecto.
+[WARNING] 18:15:23:193 MiRam/(8348:8385): el cliente se desconecto.
+[WARNING] 18:15:23:193 MiRam/(8348:8386): el cliente se desconecto.
+[WARNING] 18:15:23:193 MiRam/(8348:8387): el cliente se desconecto.
+[WARNING] 18:15:23:193 MiRam/(8348:8396): el cliente se desconecto.
+[WARNING] 18:15:23:193 MiRam/(8348:8388): el cliente se desconecto.
+[WARNING] 18:15:23:193 MiRam/(8348:8397): el cliente se desconecto.
+[WARNING] 18:15:23:193 MiRam/(8348:8394): el cliente se desconecto.
+[WARNING] 18:15:23:193 MiRam/(8348:8398): el cliente se desconecto.
+[WARNING] 18:15:23:193 MiRam/(8348:8395): el cliente se desconecto.
+[INFO] 18:16:45:149 MiRam/(8438:8463): Se asigno espacio de memoria a todo
+[INFO] 18:16:46:572 MiRam/(8438:8463): Se asigno espacio de memoria a todo
+[INFO] 18:17:35:229 MiRam/(8438:8463): Se asigno espacio de memoria a todo
+[WARNING] 18:21:02:286 MiRam/(8438:8478): el cliente se desconecto.
+[WARNING] 18:21:03:285 MiRam/(8438:8485): el cliente se desconecto.
+[WARNING] 18:21:04:286 MiRam/(8438:8479): el cliente se desconecto.
+[WARNING] 18:21:05:300 MiRam/(8438:8487): el cliente se desconecto.
+[WARNING] 18:21:06:291 MiRam/(8438:8486): el cliente se desconecto.
+[WARNING] 18:21:09:288 MiRam/(8438:8475): el cliente se desconecto.
+[WARNING] 18:21:09:288 MiRam/(8438:8477): el cliente se desconecto.
+[WARNING] 18:21:09:293 MiRam/(8438:8476): el cliente se desconecto.
+[WARNING] 18:21:10:293 MiRam/(8438:8489): el cliente se desconecto.
+[WARNING] 18:21:11:291 MiRam/(8438:8488): el cliente se desconecto.
+[WARNING] 18:21:12:293 MiRam/(8438:8520): el cliente se desconecto.
+[WARNING] 18:21:13:293 MiRam/(8438:8519): el cliente se desconecto.
+[ERROR] 18:24:57:687 MiRam/(8438:8463): el discordiador finalizo el programa. Terminando servidor

@@ -66,6 +66,7 @@ tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, u
 	tripulante->prox_instruccion = prox_instruccion;
 	tripulante->puntero_pcb = puntero_pcb;
 	sem_init(&(tripulante->semaforo_tripulante),0,0);
+	tripulante->socket_miram = 0;
 	return tripulante;
 }
 

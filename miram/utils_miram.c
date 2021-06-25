@@ -25,6 +25,9 @@ void iniciar_servidor(config_struct* config_servidor)
         if ((socket_servidor = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1)
             continue;
 
+        int activado = 1;
+        setsockopt(socket_servidor, SOL_SOCKET, SO_REUSEADDR, &activado, sizeof(activado)); //para que si se cierra sin el close no haya que esperar
+
         if (bind(socket_servidor, p->ai_addr, p->ai_addrlen) == -1) {
             close(socket_servidor);
             continue;
@@ -166,15 +169,25 @@ int funcion_cliente(int socket_cliente){
 				break;
 
 			case PEDIR_TAREA:;
-				//log_info(logger, "PEDIR_TAREA");//PONGO ESTA LINEA PQ SI NO LA PONGO TIRA ERROR. CORREGIR.
 				t_list* lista_tripulante = recibir_paquete(socket_cliente);
 				tcbTripulante* tripulante = (tcbTripulante*)list_get(lista_tripulante,0);
 				int numero_patota = (int)atoi(list_get(lista_tripulante,1));
 
 				enviar_tarea_segmentacion(socket_cliente, numero_patota, tripulante);
 
+				break;
 
-				//enviar_header(PEDIR_TAREA, socket_cliente);
+			case CAMBIAR_DE_ESTADO:;
+				t_list* lista_recibida = recibir_paquete(socket_cliente);
+				int tid = (int)atoi(list_get(lista_recibida,0));
+
+				char* estado_recibido = list_get(lista_recibida,1);
+				char estado = estado_recibido[0];
+
+				int pid_recibido = (int)atoi(list_get(lista_recibida,2));
+
+				cambiar_estado(pid_recibido, estado, tid);
+
 				break;
 
 			case FIN:
@@ -202,7 +215,7 @@ int recibir_operacion(int socket_cliente)
 {
 	int cod_op;
 	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) !=0 ){
-		printf("%d", cod_op);
+		//log_info(logger, "cod_op %d",cod_op);
 		return cod_op;
 	}
 	else{
@@ -1070,6 +1083,32 @@ void compactar_memoria(){
     log_info(logger, "Termina compactacion");
 }
 
+void cambiar_estado(int numero_patota, char nuevo_estado, int tid){
+	sem_wait(&MUTEX_CAMBIAR_ESTADO);
+
+	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
+		tabla_segmentacion* tabla_segmentos = list_get(lista_tablas_segmentos, i);
+
+		if(tabla_segmentos->id_patota == numero_patota){
+
+			int seg_a_buscar = tid - tabla_segmentos->primer_tripulante;
+			for(int k=2; k < list_size(tabla_segmentos->lista_segmentos); k++){
+				segmento* segmento = list_get(tabla_segmentos->lista_segmentos, k);
+
+				if(seg_a_buscar == segmento->numero_segmento -2){ //CREO QUE ESTA BIEN PERO NO PROBE
+					espacio_de_memoria* espacio = buscar_espacio(segmento); //encontro la base en memoria del tcb del tripulante
+					//list_remove(tabla_espacios_de_memoria, j);
+					tcbTripulante* tripulante = espacio->contenido;
+					tripulante->estado = nuevo_estado;
+					espacio->contenido = tripulante;
+					//list_add_in_index(tabla_espacios_de_memoria, j, espacio);
+				}
+			}
+		}
+	}
+	sem_post(&MUTEX_CAMBIAR_ESTADO);
+}
+
 void enviar_tarea_segmentacion(int socket_cliente, int numero_patota, tcbTripulante* tripulante){
 	sem_wait(&MUTEX_PEDIR_TAREA);
 	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
@@ -1081,19 +1120,24 @@ void enviar_tarea_segmentacion(int socket_cliente, int numero_patota, tcbTripula
 
 			if(espacio != NULL){ //encontro la base en memoria de las tareas
 				char* una_tarea = buscar_tarea(espacio, tripulante);
-				enviar_mensaje(una_tarea, socket_cliente);
-			}
+				//char* una_tarea = malloc(10);
 
-			for(int k=2; k < list_size(tabla_segmentos->lista_segmentos); k++){//actualizo el prox_instruccion del tripo PERO NOSE PARA QUE PQ NO LO USO CREO
+				enviar_mensaje(una_tarea, socket_cliente);
+				//free(una_tarea);
+			}
+			int seg_a_buscar = tripulante->tid - tabla_segmentos->primer_tripulante;
+			for(int k=2; k < list_size(tabla_segmentos->lista_segmentos); k++){//actualizo el prox_instruccion del tripu PERO NOSE PARA QUE PQ NO LO USO CREO
 				segmento = list_get(tabla_segmentos->lista_segmentos, k);
 
-				if(tripulante->tid == segmento->numero_segmento -1){ //CREO QUE ESTA BIEN PERO NO PROBE
+				if(seg_a_buscar == segmento->numero_segmento -2){ //CREO QUE ESTA BIEN PERO NO PROBE
+
 					for(int j=0; j < list_size(tabla_espacios_de_memoria); j++){
 						espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, j);
 
 						if(espacio->base == segmento->base){//encontro la base en memoria del tcb del tripulante
 							//list_remove(tabla_espacios_de_memoria, j);
 							tripulante->prox_instruccion++;
+							tripulante->estado = 'R';
 	            			espacio->contenido = tripulante;
 	            			//list_add_in_index(tabla_espacios_de_memoria, j, espacio);
 
@@ -1124,11 +1168,15 @@ char* buscar_tarea(espacio_de_memoria* espacio, tcbTripulante* tripulante){
 	//strcpy(linea, espacio->contenido);
 
 	//una_tarea = strtok(linea, ";");
-	una_tarea = strtok(espacio->contenido, ";");
+	/*una_tarea = strtok(espacio->contenido, ";");
 	for(int k=0; k < tripulante->prox_instruccion; k++){
 		una_tarea = strtok(NULL, ";");
-	}
+	}*/
+
 	//FALTA HACER EL CASO DE QUE YA NO LE QUEDEN MAS TAREAS
+
+	char** tareas = string_split(espacio->contenido,";");
+	una_tarea = tareas[tripulante->prox_instruccion];
 
 	return una_tarea;
 }

@@ -21,6 +21,7 @@
 #define tamanio_TCB  21
 
 sem_t MUTEX_PEDIR_TAREA;
+sem_t MUTEX_CAMBIAR_ESTADO;
 
 typedef struct{
 	int patota_id;
@@ -57,7 +58,8 @@ typedef enum
 	PAUSAR_PLANIFICACION,
 	OBTENER_BITACORA,
 	FIN,
-	PEDIR_TAREA
+	PEDIR_TAREA,
+	CAMBIAR_DE_ESTADO
 }tipoMensaje;
 
 typedef struct
@@ -220,6 +222,7 @@ void compactar_memoria();
 void enviar_tarea_segmentacion(int socket_cliente, int numero_patota, tcbTripulante* tripulante);
 espacio_de_memoria* buscar_espacio(segmento* segmento);
 char* buscar_tarea(espacio_de_memoria* espacio, tcbTripulante* tripulante);
+void cambiar_estado(int numero_patota, char nuevo_estado, int tid);
 
 pcbPatota* crear_pcb(uint32_t numero_patota);
 
