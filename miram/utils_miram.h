@@ -183,7 +183,7 @@ int posicion_marco(config_struct*);
 marco* siguiente_marco(int id_patota, int id_marco,tabla_paginacion* tabla_aux);
 void* leer_atributo(int offset, int nro_marco, config_struct* config_s);
 void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s);
-int escribir_atributo_char(void* dato, int offset, int nro_marco, config_struct* config_s);
+int escribir_atributo_char(tcbTripulante* tripulante, int offset, int nro_marco, config_struct* config_s);
 int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato);
 marco* incrementar_marco(int* indice,int* offset, int tamanio_marco, int tipo_dato, tabla_paginacion* auxiliar, config_struct* config_servidor);
 void imprimir_ocupacion_marcos(config_struct* configuracion);

@@ -550,7 +550,7 @@ void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabl
 
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		marco = list_get(una_tabla->marco_inicial,indice_marco);
-		char estado =(char)leer_atributo_char(offset,marco->id_marco, config_servidor);
+		char estado =*(char*)leer_atributo_char(offset,marco->id_marco, config_servidor);
 		offset+=sizeof(char);
         printf("Estado magico %c\n",estado);
 		fflush(stdout);
@@ -728,7 +728,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		marco = list_get(una_tabla->marco_inicial,indice_marco);
-		offset +=escribir_atributo_char(&estado,offset,marco->id_marco, config_servidor);
+		offset +=escribir_atributo_char(tripulante,offset,marco->id_marco, config_servidor);
 
 
 		uint32_t pos_x = tripulante->posicionX;
@@ -738,7 +738,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 		marco = list_get(una_tabla->marco_inicial,indice_marco);
 		offset +=escribir_atributo(&pos_x,offset,marco->id_marco, config_servidor);
 
-		int pos_y =tripulante->posicionY;
+		uint32_t pos_y =tripulante->posicionY;
 		printf("\n Pos y %d",pos_y);
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
@@ -772,12 +772,12 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 	//escribir_atributo(&puntero_tarea,offset_pcb,marco_pcb, config_servidor, sizeof(int));
 
-	for(int i=0;i<strlen(tarea)+1;i++){
+/*	for(int i=0;i<strlen(tarea)+1;i++){
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		offset +=escribir_atributo_char(&tarea[i],offset,marco->id_marco, config_servidor);
 		printf("%c",tarea[i]);
 
-	}
+	}*/
 
 }
 /*
@@ -831,22 +831,31 @@ void* leer_atributo(int offset, int nro_marco, config_struct* config_s){
 	void* p = config_s->posicion_inicial;
 	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
 	memcpy(&dato,(int*)p+desplazamiento,sizeof(int));
-	printf("%d", (int)dato);
 	return dato;
 }
 
-
+/*
 int escribir_atributo_char(void* dato, int offset, int nro_marco, config_struct* config_s){
-	memcpy((config_s->posicion_inicial)+nro_marco*(config_s->tamanio_pag)+offset,dato,sizeof(char));
+	memcpy((config_s->posicion_inicial)+nro_marco*(config_s->tamanio_pag)+offset,&dato,sizeof(char));
+	return sizeof(char);
+}
+*/
+
+int escribir_atributo_char(tcbTripulante* tripulante, int offset, int nro_marco, config_struct* config_s){
+	char* estado= malloc(sizeof(char));
+	sprintf(estado,"%c",tripulante->estado);
+	void* p = config_s->posicion_inicial;
+	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
+	memcpy((int*)p+desplazamiento,estado,sizeof(char));
 	return sizeof(char);
 }
 
 
-
 void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s){
-	char* dato =malloc(sizeof(char));
-	memcpy(&dato,config_s->posicion_inicial+nro_marco*(config_s->tamanio_pag)+offset,sizeof(char));
-	printf("%c", dato);
+	void* dato =malloc(sizeof(char));
+	void* p = config_s->posicion_inicial;
+	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
+	memcpy(dato,(int*)p+desplazamiento,sizeof(char));
 	return dato;
 }
 
