@@ -1,2 +1,18 @@
 [INFO] 13:21:32:126 MiRam/(13889:13914): Se asigno espacio de memoria a todo
 [ERROR] 13:22:00:408 MiRam/(13889:13955): el cliente se desconecto. Terminando servidor
+[INFO] 13:37:21:000 MiRam/(928:974): Se asigno espacio de memoria a todo
+[ERROR] 13:37:49:075 MiRam/(928:989): el cliente se desconecto. Terminando servidor
+[INFO] 13:41:57:692 MiRam/(1075:1087): Se asigno espacio de memoria a todo
+[ERROR] 13:42:25:738 MiRam/(1075:1102): el cliente se desconecto.
+[ERROR] 13:42:26:742 MiRam/(1075:1103): el cliente se desconecto.
+[ERROR] 13:42:29:741 MiRam/(1075:1099): el cliente se desconecto.
+[ERROR] 13:42:30:743 MiRam/(1075:1100): el cliente se desconecto.
+[ERROR] 13:42:31:750 MiRam/(1075:1101): el cliente se desconecto.
+[ERROR] 13:42:40:023 MiRam/(1075:1087): el discordiador finalizo el programa. Terminando servidor
+[INFO] 13:44:13:074 MiRam/(1125:1139): Se asigno espacio de memoria a todo
+[WARNING] 13:44:41:130 MiRam/(1125:1152): el cliente se desconecto.
+[WARNING] 13:44:42:130 MiRam/(1125:1153): el cliente se desconecto.
+[WARNING] 13:44:45:134 MiRam/(1125:1149): el cliente se desconecto.
+[WARNING] 13:44:46:136 MiRam/(1125:1150): el cliente se desconecto.
+[WARNING] 13:44:47:137 MiRam/(1125:1151): el cliente se desconecto.
+[ERROR] 13:44:51:090 MiRam/(1125:1139): el discordiador finalizo el programa. Terminando servidor

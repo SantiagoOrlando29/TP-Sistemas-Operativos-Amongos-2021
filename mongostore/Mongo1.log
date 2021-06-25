@@ -1,0 +1,12 @@
+[INFO] 13:37:00:081 Mongo1/(955:956): Servidor MongoStore iniciando
+[INFO] 13:37:00:082 Mongo1/(955:956): Servidor MongoStore encendido
+[INFO] 13:37:09:088 Mongo1/(955:956): Estableciendo conexión desde 7884
+[INFO] 13:37:09:089 Mongo1/(955:956): Creando hilo
+[INFO] 13:41:36:870 Mongo1/(1063:1064): Servidor MongoStore iniciando
+[INFO] 13:41:36:872 Mongo1/(1063:1064): Servidor MongoStore encendido
+[INFO] 13:41:50:856 Mongo1/(1063:1064): Estableciendo conexión desde 26828
+[INFO] 13:41:50:856 Mongo1/(1063:1064): Creando hilo
+[INFO] 13:44:04:888 Mongo1/(1127:1128): Servidor MongoStore iniciando
+[INFO] 13:44:04:889 Mongo1/(1127:1128): Servidor MongoStore encendido
+[INFO] 13:44:11:015 Mongo1/(1127:1128): Estableciendo conexión desde 30924
+[INFO] 13:44:11:016 Mongo1/(1127:1128): Creando hilo

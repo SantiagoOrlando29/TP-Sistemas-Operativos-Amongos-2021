@@ -185,10 +185,7 @@ int funcion_cliente(int socket_cliente){
 				return EXIT_FAILURE;
 
 			case -1:
-				log_error(logger, "el cliente se desconecto. Terminando servidor");
-				variable_servidor = 0;
-				shutdown(socket_servidor, SHUT_RD);
-				close(socket_cliente);
+				log_warning(logger, "el cliente se desconecto.");
 				return EXIT_FAILURE;
 
 			default:
