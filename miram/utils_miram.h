@@ -201,7 +201,8 @@ void eliminar_estructura_memoria(t_list* tabla_aux);
 void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista);
 int escribir_atributo(void* dato, int offset, int nro_marco, config_struct* config_s);
 int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct* config_s);
-
+void dump_memoria();
+void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina);
 
 void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial);
 
