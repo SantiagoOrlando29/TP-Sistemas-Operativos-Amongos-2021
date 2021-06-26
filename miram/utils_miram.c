@@ -808,9 +808,7 @@ void dump_memoria(){
 	dump_file=fopen(namebuff, "w");
 	fflush(stdout);
 	fprintf(dump_file,"Dump: %s\n", buff1);
-	int estado;
-	int proceso;
-	int pagina;
+	int estado,proceso,pagina;
 	for(int k=0;k<configuracion.cant_marcos;k++){
 		buscar_marco(k,&estado,&proceso, &pagina);
 		if(estado==1){
