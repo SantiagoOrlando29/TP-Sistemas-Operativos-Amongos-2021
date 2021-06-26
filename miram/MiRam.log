@@ -1261,3 +1261,581 @@
 [WARNING] 18:21:12:293 MiRam/(8438:8520): el cliente se desconecto.
 [WARNING] 18:21:13:293 MiRam/(8438:8519): el cliente se desconecto.
 [ERROR] 18:24:57:687 MiRam/(8438:8463): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:04:55:610 MiRam/(9822:9849): Se asigno espacio de memoria a todo
+[WARNING] 20:05:22:671 MiRam/(9822:9857): el cliente se desconecto.
+[WARNING] 20:05:22:671 MiRam/(9822:9859): el cliente se desconecto.
+[WARNING] 20:05:22:671 MiRam/(9822:9858): el cliente se desconecto.
+[WARNING] 20:05:23:671 MiRam/(9822:9860): el cliente se desconecto.
+[WARNING] 20:05:24:672 MiRam/(9822:9861): el cliente se desconecto.
+[ERROR] 20:06:36:119 MiRam/(9822:9849): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:13:57:648 MiRam/(9930:10065): Se asigno espacio de memoria a todo
+[WARNING] 20:14:24:714 MiRam/(9930:10072): el cliente se desconecto.
+[WARNING] 20:14:24:714 MiRam/(9930:10073): el cliente se desconecto.
+[WARNING] 20:14:24:714 MiRam/(9930:10075): el cliente se desconecto.
+[WARNING] 20:14:25:716 MiRam/(9930:10074): el cliente se desconecto.
+[WARNING] 20:14:26:717 MiRam/(9930:10076): el cliente se desconecto.
+[INFO] 20:14:57:728 MiRam/(9930:10065): Se asigno espacio de memoria a todo
+[WARNING] 20:15:21:773 MiRam/(9930:10086): el cliente se desconecto.
+[WARNING] 20:15:23:775 MiRam/(9930:10085): el cliente se desconecto.
+[WARNING] 20:15:24:779 MiRam/(9930:10087): el cliente se desconecto.
+[WARNING] 20:15:25:780 MiRam/(9930:10088): el cliente se desconecto.
+[WARNING] 20:15:26:782 MiRam/(9930:10089): el cliente se desconecto.
+[ERROR] 20:18:27:291 MiRam/(9930:10065): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 20:28:14:194 MiRam/(10259:10283): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:31:59:847 MiRam/(10379:10403): Se asigno espacio de memoria a todo
+[INFO] 20:32:26:889 MiRam/(10379:10416): no hay mas tareas
+[WARNING] 20:32:26:893 MiRam/(10379:10416): el cliente se desconecto.
+[ERROR] 20:34:02:623 MiRam/(10379:10403): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:35:24:704 MiRam/(10451:10477): Se asigno espacio de memoria a todo
+[INFO] 20:35:50:763 MiRam/(10451:10488): no hay mas tareas
+[ERROR] 20:40:15:242 MiRam/(10451:10477): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:41:14:153 MiRam/(10533:10558): Se asigno espacio de memoria a todo
+[INFO] 20:41:41:218 MiRam/(10533:10569): no hay mas tareas
+[ERROR] 20:44:56:326 MiRam/(10533:10558): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:45:14:003 MiRam/(10595:10615): Se asigno espacio de memoria a todo
+[WARNING] 20:45:41:064 MiRam/(10595:10625): el cliente se desconecto.
+[WARNING] 20:45:41:064 MiRam/(10595:10626): el cliente se desconecto.
+[WARNING] 20:45:41:065 MiRam/(10595:10627): el cliente se desconecto.
+[WARNING] 20:45:42:066 MiRam/(10595:10628): el cliente se desconecto.
+[WARNING] 20:45:43:067 MiRam/(10595:10629): el cliente se desconecto.
+[ERROR] 20:46:53:100 MiRam/(10595:10615): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:48:01:218 MiRam/(10642:10657): Se asigno espacio de memoria a todo
+[WARNING] 20:48:28:265 MiRam/(10642:10667): el cliente se desconecto.
+[WARNING] 20:48:28:265 MiRam/(10642:10668): el cliente se desconecto.
+[WARNING] 20:48:28:265 MiRam/(10642:10670): el cliente se desconecto.
+[WARNING] 20:48:29:266 MiRam/(10642:10669): el cliente se desconecto.
+[WARNING] 20:48:30:267 MiRam/(10642:10671): el cliente se desconecto.
+[ERROR] 20:48:38:922 MiRam/(10642:10657): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:50:22:888 MiRam/(10685:10709): Se asigno espacio de memoria a todo
+[INFO] 20:50:49:936 MiRam/(10685:10722): no hay mas tareas
+[ERROR] 20:52:03:666 MiRam/(10685:10709): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:53:51:148 MiRam/(10771:10798): Se asigno espacio de memoria a todo
+[INFO] 20:54:18:206 MiRam/(10771:10806): no hay mas tareas
+[ERROR] 20:57:49:326 MiRam/(10771:10798): el discordiador finalizo el programa. Terminando servidor
+[INFO] 20:58:02:210 MiRam/(10870:10894): Se asigno espacio de memoria a todo
+[INFO] 20:58:29:249 MiRam/(10870:10905): no hay mas tareas
+[ERROR] 20:59:49:049 MiRam/(10870:10894): el discordiador finalizo el programa. Terminando servidor
+[INFO] 21:30:36:293 MiRam/(11336:11365): Se asigno espacio de memoria a todo
+[INFO] 21:31:02:333 MiRam/(11336:11372): no hay mas tareas
+[ERROR] 21:35:48:071 MiRam/(11336:11365): el discordiador finalizo el programa. Terminando servidor
+[INFO] 21:36:01:670 MiRam/(11423:11451): Se asigno espacio de memoria a todo
+[INFO] 21:36:28:698 MiRam/(11423:11458): no hay mas tareas
+[ERROR] 21:37:34:255 MiRam/(11423:11451): el discordiador finalizo el programa. Terminando servidor
+[INFO] 21:37:44:134 MiRam/(11480:11504): Se asigno espacio de memoria a todo
+[WARNING] 21:38:12:170 MiRam/(11480:11517): el cliente se desconecto.
+[WARNING] 21:38:14:170 MiRam/(11480:11518): el cliente se desconecto.
+[INFO] 21:38:17:173 MiRam/(11480:11515): no hay mas tareas
+[ERROR] 21:39:43:248 MiRam/(11480:11504): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 21:39:43:249 MiRam/(11480:11515): el cliente se desconecto.
+[INFO] 21:39:52:662 MiRam/(11531:11555): Se asigno espacio de memoria a todo
+[WARNING] 21:40:20:691 MiRam/(11531:11568): el cliente se desconecto.
+[WARNING] 21:40:21:692 MiRam/(11531:11569): el cliente se desconecto.
+[INFO] 21:40:41:710 MiRam/(11531:11565): no hay mas tareas
+[ERROR] 21:45:15:877 MiRam/(11531:11555): el discordiador finalizo el programa. Terminando servidor
+[INFO] 21:46:06:662 MiRam/(11605:11629): Se asigno espacio de memoria a todo
+[WARNING] 21:46:34:708 MiRam/(11605:11642): el cliente se desconecto.
+[WARNING] 21:46:35:708 MiRam/(11605:11643): el cliente se desconecto.
+[ERROR] 21:48:10:655 MiRam/(11605:11629): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 21:48:10:656 MiRam/(11605:11641): el cliente se desconecto.
+[WARNING] 21:48:10:656 MiRam/(11605:11640): el cliente se desconecto.
+[WARNING] 21:48:10:656 MiRam/(11605:11639): el cliente se desconecto.
+[INFO] 22:00:41:863 MiRam/(11859:11886): Se asigno espacio de memoria a todo
+[WARNING] 22:01:09:900 MiRam/(11859:11896): el cliente se desconecto.
+[WARNING] 22:01:10:902 MiRam/(11859:11897): el cliente se desconecto.
+[INFO] 22:01:13:898 MiRam/(11859:11893): no hay mas tareas
+[INFO] 22:01:13:898 MiRam/(11859:11893): Se expulso segmento 2
+[WARNING] 22:01:13:901 MiRam/(11859:11893): el cliente se desconecto.
+[ERROR] 22:06:19:027 MiRam/(11859:11886): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:07:27:154 MiRam/(11961:11990): Se asigno espacio de memoria a todo
+[WARNING] 22:07:55:190 MiRam/(11961:12001): el cliente se desconecto.
+[WARNING] 22:07:57:191 MiRam/(11961:12002): el cliente se desconecto.
+[INFO] 22:08:00:193 MiRam/(11961:11998): no hay mas tareas
+[INFO] 22:08:00:193 MiRam/(11961:11998): Se expulso segmento 2
+[WARNING] 22:08:00:197 MiRam/(11961:11998): el cliente se desconecto.
+[ERROR] 22:12:17:967 MiRam/(11961:11990): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:12:27:983 MiRam/(12040:12069): Se asigno espacio de memoria a todo
+[WARNING] 22:12:55:019 MiRam/(12040:12079): el cliente se desconecto.
+[WARNING] 22:12:57:027 MiRam/(12040:12080): el cliente se desconecto.
+[INFO] 22:13:00:028 MiRam/(12040:12076): no hay mas tareas
+[INFO] 22:13:00:028 MiRam/(12040:12076): Se expulso segmento 2
+[WARNING] 22:13:00:030 MiRam/(12040:12076): el cliente se desconecto.
+[ERROR] 22:14:08:393 MiRam/(12040:12069): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:15:21:102 MiRam/(12141:12168): Se asigno espacio de memoria a todo
+[WARNING] 22:15:48:137 MiRam/(12141:12178): el cliente se desconecto.
+[WARNING] 22:15:50:139 MiRam/(12141:12179): el cliente se desconecto.
+[INFO] 22:15:53:141 MiRam/(12141:12175): no hay mas tareas
+[INFO] 22:15:53:141 MiRam/(12141:12175): Se expulso segmento 2
+[WARNING] 22:15:53:145 MiRam/(12141:12175): el cliente se desconecto.
+[ERROR] 22:16:18:902 MiRam/(12141:12168): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:22:33:623 MiRam/(12263:12282): Se asigno espacio de memoria a todo
+[WARNING] 22:23:01:674 MiRam/(12263:12292): el cliente se desconecto.
+[WARNING] 22:23:02:674 MiRam/(12263:12293): el cliente se desconecto.
+[INFO] 22:23:05:675 MiRam/(12263:12289): no hay mas tareas
+[INFO] 22:24:39:789 MiRam/(12316:12333): Se asigno espacio de memoria a todo
+[WARNING] 22:25:07:820 MiRam/(12316:12343): el cliente se desconecto.
+[WARNING] 22:25:08:820 MiRam/(12316:12344): el cliente se desconecto.
+[INFO] 22:25:11:821 MiRam/(12316:12340): no hay mas tareas
+[INFO] 22:25:11:821 MiRam/(12316:12340): Se expulso segmento 2
+[WARNING] 22:25:11:825 MiRam/(12316:12340): el cliente se desconecto.
+[ERROR] 22:25:27:490 MiRam/(12316:12333): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:27:09:616 MiRam/(12385:12402): Se asigno espacio de memoria a todo
+[INFO] 22:27:09:617 MiRam/(12385:12402): bytes send 21
+[INFO] 22:27:09:626 MiRam/(12385:12409): bytes send 14
+[INFO] 22:27:09:637 MiRam/(12385:12410): bytes send 14
+[INFO] 22:27:09:638 MiRam/(12385:12411): bytes send 14
+[INFO] 22:27:09:638 MiRam/(12385:12412): bytes send 14
+[INFO] 22:27:09:638 MiRam/(12385:12413): bytes send 14
+[INFO] 22:27:26:640 MiRam/(12385:12409): bytes send 14
+[INFO] 22:27:26:646 MiRam/(12385:12410): bytes send 14
+[INFO] 22:27:29:641 MiRam/(12385:12411): bytes send 14
+[INFO] 22:27:29:647 MiRam/(12385:12412): bytes send 14
+[INFO] 22:27:32:644 MiRam/(12385:12413): bytes send 14
+[INFO] 22:27:33:649 MiRam/(12385:12409): bytes send 14
+[INFO] 22:27:35:652 MiRam/(12385:12410): bytes send 14
+[INFO] 22:27:36:653 MiRam/(12385:12411): bytes send 14
+[INFO] 22:27:36:653 MiRam/(12385:12409): bytes send 14
+[INFO] 22:27:37:647 MiRam/(12385:12410): bytes send 14
+[INFO] 22:27:37:654 MiRam/(12385:12412): bytes send 14
+[WARNING] 22:27:37:654 MiRam/(12385:12412): el cliente se desconecto.
+[INFO] 22:27:38:654 MiRam/(12385:12413): bytes send 14
+[WARNING] 22:27:38:655 MiRam/(12385:12413): el cliente se desconecto.
+[INFO] 22:27:39:654 MiRam/(12385:12411): bytes send 14
+[INFO] 22:27:41:650 MiRam/(12385:12409): no hay mas tareas
+[INFO] 22:27:41:651 MiRam/(12385:12409): bytes send 22
+[INFO] 22:27:41:651 MiRam/(12385:12409): Se expulso segmento 2
+[WARNING] 22:27:41:653 MiRam/(12385:12409): el cliente se desconecto.
+[ERROR] 22:28:45:711 MiRam/(12385:12402): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:31:41:585 MiRam/(12465:12496): Se asigno espacio de memoria a todo
+[INFO] 22:31:41:588 MiRam/(12465:12496): bytes send 21
+[INFO] 22:31:41:606 MiRam/(12465:12503): bytes send 14
+[INFO] 22:31:41:606 MiRam/(12465:12504): bytes send 14
+[INFO] 22:31:41:609 MiRam/(12465:12505): bytes send 14
+[INFO] 22:31:41:610 MiRam/(12465:12506): bytes send 14
+[INFO] 22:31:41:610 MiRam/(12465:12507): bytes send 14
+[INFO] 22:31:58:618 MiRam/(12465:12503): bytes send 14
+[INFO] 22:31:58:618 MiRam/(12465:12504): bytes send 14
+[INFO] 22:32:01:620 MiRam/(12465:12505): bytes send 14
+[INFO] 22:32:01:621 MiRam/(12465:12506): bytes send 14
+[INFO] 22:32:04:622 MiRam/(12465:12507): bytes send 14
+[INFO] 22:32:05:623 MiRam/(12465:12503): bytes send 14
+[INFO] 22:32:07:625 MiRam/(12465:12504): bytes send 14
+[INFO] 22:32:08:625 MiRam/(12465:12505): bytes send 14
+[INFO] 22:32:08:626 MiRam/(12465:12503): bytes send 14
+[INFO] 22:32:09:627 MiRam/(12465:12504): bytes send 14
+[INFO] 22:32:09:627 MiRam/(12465:12506): bytes send 14
+[WARNING] 22:32:09:628 MiRam/(12465:12506): el cliente se desconecto.
+[INFO] 22:32:10:629 MiRam/(12465:12507): bytes send 14
+[WARNING] 22:32:10:629 MiRam/(12465:12507): el cliente se desconecto.
+[INFO] 22:32:11:629 MiRam/(12465:12505): bytes send 14
+[INFO] 22:32:13:631 MiRam/(12465:12503): no hay mas tareas
+[INFO] 22:32:13:631 MiRam/(12465:12503): bytes send 22
+[INFO] 22:32:13:631 MiRam/(12465:12503): Se expulso segmento 2
+[WARNING] 22:32:13:637 MiRam/(12465:12503): el cliente se desconecto.
+[ERROR] 22:32:55:604 MiRam/(12465:12496): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:35:24:723 MiRam/(12552:12570): Se asigno espacio de memoria a todo
+[INFO] 22:35:24:724 MiRam/(12552:12570): bytes send 21
+[INFO] 22:35:24:739 MiRam/(12552:12579): if 1
+[INFO] 22:35:24:739 MiRam/(12552:12579): if 2
+[INFO] 22:35:24:740 MiRam/(12552:12579): bytes send 14
+[INFO] 22:35:24:741 MiRam/(12552:12580): if 1
+[INFO] 22:35:24:741 MiRam/(12552:12580): if 2
+[INFO] 22:35:24:742 MiRam/(12552:12580): bytes send 14
+[INFO] 22:35:24:743 MiRam/(12552:12581): if 1
+[INFO] 22:35:24:743 MiRam/(12552:12581): if 2
+[INFO] 22:35:24:743 MiRam/(12552:12581): bytes send 14
+[INFO] 22:35:24:744 MiRam/(12552:12582): if 1
+[INFO] 22:35:24:744 MiRam/(12552:12582): if 2
+[INFO] 22:35:24:744 MiRam/(12552:12582): bytes send 14
+[INFO] 22:35:24:744 MiRam/(12552:12583): if 1
+[INFO] 22:35:24:744 MiRam/(12552:12583): if 2
+[INFO] 22:35:24:745 MiRam/(12552:12583): bytes send 14
+[INFO] 22:35:41:749 MiRam/(12552:12579): if 1
+[INFO] 22:35:41:749 MiRam/(12552:12579): if 2
+[INFO] 22:35:41:749 MiRam/(12552:12579): bytes send 14
+[INFO] 22:35:41:750 MiRam/(12552:12580): if 1
+[INFO] 22:35:41:750 MiRam/(12552:12580): if 2
+[INFO] 22:35:41:750 MiRam/(12552:12580): bytes send 14
+[INFO] 22:35:44:751 MiRam/(12552:12581): if 1
+[INFO] 22:35:44:751 MiRam/(12552:12581): if 2
+[INFO] 22:35:44:751 MiRam/(12552:12581): bytes send 14
+[INFO] 22:35:44:751 MiRam/(12552:12582): if 1
+[INFO] 22:35:44:751 MiRam/(12552:12582): if 2
+[INFO] 22:35:44:751 MiRam/(12552:12582): bytes send 14
+[INFO] 22:35:47:753 MiRam/(12552:12583): if 1
+[INFO] 22:35:47:754 MiRam/(12552:12583): if 2
+[INFO] 22:35:47:754 MiRam/(12552:12583): bytes send 14
+[INFO] 22:35:48:753 MiRam/(12552:12579): if 1
+[INFO] 22:35:48:753 MiRam/(12552:12579): if 2
+[INFO] 22:35:48:753 MiRam/(12552:12579): bytes send 14
+[INFO] 22:35:50:755 MiRam/(12552:12580): if 1
+[INFO] 22:35:50:755 MiRam/(12552:12580): if 2
+[INFO] 22:35:50:755 MiRam/(12552:12580): bytes send 14
+[INFO] 22:35:50:755 MiRam/(12552:12579): if 1
+[INFO] 22:35:50:755 MiRam/(12552:12579): if 2
+[INFO] 22:35:50:755 MiRam/(12552:12579): bytes send 14
+[INFO] 22:35:51:756 MiRam/(12552:12581): if 1
+[INFO] 22:35:51:756 MiRam/(12552:12581): if 2
+[INFO] 22:35:51:756 MiRam/(12552:12581): bytes send 14
+[INFO] 22:35:52:757 MiRam/(12552:12582): if 1
+[INFO] 22:35:52:758 MiRam/(12552:12582): if 2
+[INFO] 22:35:52:758 MiRam/(12552:12582): bytes send 14
+[WARNING] 22:35:52:758 MiRam/(12552:12582): el cliente se desconecto.
+[INFO] 22:35:53:756 MiRam/(12552:12580): if 1
+[INFO] 22:35:53:756 MiRam/(12552:12580): if 2
+[INFO] 22:35:53:756 MiRam/(12552:12580): bytes send 14
+[INFO] 22:35:53:757 MiRam/(12552:12581): if 1
+[INFO] 22:35:53:757 MiRam/(12552:12581): if 2
+[INFO] 22:35:53:757 MiRam/(12552:12581): bytes send 14
+[INFO] 22:35:54:757 MiRam/(12552:12583): if 1
+[INFO] 22:35:54:757 MiRam/(12552:12583): if 2
+[INFO] 22:35:54:757 MiRam/(12552:12583): bytes send 14
+[WARNING] 22:35:54:758 MiRam/(12552:12583): el cliente se desconecto.
+[INFO] 22:35:57:759 MiRam/(12552:12579): if 1
+[INFO] 22:35:57:759 MiRam/(12552:12579): if 2
+[INFO] 22:35:57:760 MiRam/(12552:12579): no hay mas tareas
+[INFO] 22:35:57:760 MiRam/(12552:12579): bytes send 22
+[INFO] 22:35:57:760 MiRam/(12552:12579): Se expulso segmento 2
+[WARNING] 22:35:57:765 MiRam/(12552:12579): el cliente se desconecto.
+[ERROR] 22:36:46:503 MiRam/(12552:12570): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:37:52:590 MiRam/(12602:12620): Se asigno espacio de memoria a todo
+[INFO] 22:37:52:591 MiRam/(12602:12620): bytes send 21
+[INFO] 22:37:52:602 MiRam/(12602:12626): ANTES
+[INFO] 22:37:52:602 MiRam/(12602:12626): FOR
+[INFO] 22:37:52:602 MiRam/(12602:12626): if 1
+[INFO] 22:37:52:602 MiRam/(12602:12626): if 2
+[INFO] 22:37:52:609 MiRam/(12602:12626): bytes send 14
+[INFO] 22:37:52:612 MiRam/(12602:12627): ANTES
+[INFO] 22:37:52:612 MiRam/(12602:12627): FOR
+[INFO] 22:37:52:612 MiRam/(12602:12627): if 1
+[INFO] 22:37:52:612 MiRam/(12602:12627): if 2
+[INFO] 22:37:52:613 MiRam/(12602:12627): bytes send 14
+[INFO] 22:37:52:613 MiRam/(12602:12628): ANTES
+[INFO] 22:37:52:613 MiRam/(12602:12628): FOR
+[INFO] 22:37:52:613 MiRam/(12602:12628): if 1
+[INFO] 22:37:52:613 MiRam/(12602:12628): if 2
+[INFO] 22:37:52:614 MiRam/(12602:12628): bytes send 14
+[INFO] 22:37:52:614 MiRam/(12602:12629): ANTES
+[INFO] 22:37:52:614 MiRam/(12602:12629): FOR
+[INFO] 22:37:52:614 MiRam/(12602:12629): if 1
+[INFO] 22:37:52:614 MiRam/(12602:12629): if 2
+[INFO] 22:37:52:615 MiRam/(12602:12629): bytes send 14
+[INFO] 22:37:52:615 MiRam/(12602:12630): ANTES
+[INFO] 22:37:52:615 MiRam/(12602:12630): FOR
+[INFO] 22:37:52:615 MiRam/(12602:12630): if 1
+[INFO] 22:37:52:615 MiRam/(12602:12630): if 2
+[INFO] 22:37:52:615 MiRam/(12602:12630): bytes send 14
+[INFO] 22:38:09:626 MiRam/(12602:12626): ANTES
+[INFO] 22:38:09:626 MiRam/(12602:12626): FOR
+[INFO] 22:38:09:626 MiRam/(12602:12626): if 1
+[INFO] 22:38:09:626 MiRam/(12602:12626): if 2
+[INFO] 22:38:09:626 MiRam/(12602:12626): bytes send 14
+[INFO] 22:38:09:626 MiRam/(12602:12627): ANTES
+[INFO] 22:38:09:626 MiRam/(12602:12627): FOR
+[INFO] 22:38:09:626 MiRam/(12602:12627): if 1
+[INFO] 22:38:09:626 MiRam/(12602:12627): if 2
+[INFO] 22:38:09:626 MiRam/(12602:12627): bytes send 14
+[INFO] 22:38:12:629 MiRam/(12602:12628): ANTES
+[INFO] 22:38:12:629 MiRam/(12602:12628): FOR
+[INFO] 22:38:12:629 MiRam/(12602:12628): if 1
+[INFO] 22:38:12:629 MiRam/(12602:12628): if 2
+[INFO] 22:38:12:629 MiRam/(12602:12628): bytes send 14
+[INFO] 22:38:12:629 MiRam/(12602:12629): ANTES
+[INFO] 22:38:12:629 MiRam/(12602:12629): FOR
+[INFO] 22:38:12:629 MiRam/(12602:12629): if 1
+[INFO] 22:38:12:629 MiRam/(12602:12629): if 2
+[INFO] 22:38:12:629 MiRam/(12602:12629): bytes send 14
+[INFO] 22:38:15:630 MiRam/(12602:12630): ANTES
+[INFO] 22:38:15:631 MiRam/(12602:12630): FOR
+[INFO] 22:38:15:631 MiRam/(12602:12630): if 1
+[INFO] 22:38:15:631 MiRam/(12602:12630): if 2
+[INFO] 22:38:15:631 MiRam/(12602:12630): bytes send 14
+[INFO] 22:38:16:631 MiRam/(12602:12626): ANTES
+[INFO] 22:38:16:632 MiRam/(12602:12626): FOR
+[INFO] 22:38:16:632 MiRam/(12602:12626): if 1
+[INFO] 22:38:16:632 MiRam/(12602:12626): if 2
+[INFO] 22:38:16:632 MiRam/(12602:12626): bytes send 14
+[INFO] 22:38:18:632 MiRam/(12602:12627): ANTES
+[INFO] 22:38:18:632 MiRam/(12602:12627): FOR
+[INFO] 22:38:18:632 MiRam/(12602:12627): if 1
+[INFO] 22:38:18:632 MiRam/(12602:12627): if 2
+[INFO] 22:38:18:633 MiRam/(12602:12627): bytes send 14
+[INFO] 22:38:19:634 MiRam/(12602:12628): ANTES
+[INFO] 22:38:19:634 MiRam/(12602:12628): FOR
+[INFO] 22:38:19:634 MiRam/(12602:12628): if 1
+[INFO] 22:38:19:634 MiRam/(12602:12628): if 2
+[INFO] 22:38:19:634 MiRam/(12602:12628): bytes send 14
+[INFO] 22:38:19:634 MiRam/(12602:12626): ANTES
+[INFO] 22:38:19:634 MiRam/(12602:12626): FOR
+[INFO] 22:38:19:634 MiRam/(12602:12626): if 1
+[INFO] 22:38:19:634 MiRam/(12602:12626): if 2
+[INFO] 22:38:19:635 MiRam/(12602:12626): bytes send 14
+[INFO] 22:38:20:633 MiRam/(12602:12627): ANTES
+[INFO] 22:38:20:633 MiRam/(12602:12627): FOR
+[INFO] 22:38:20:633 MiRam/(12602:12627): if 1
+[INFO] 22:38:20:633 MiRam/(12602:12627): if 2
+[INFO] 22:38:20:633 MiRam/(12602:12627): bytes send 14
+[INFO] 22:38:20:635 MiRam/(12602:12629): ANTES
+[INFO] 22:38:20:635 MiRam/(12602:12629): FOR
+[INFO] 22:38:20:635 MiRam/(12602:12629): if 1
+[INFO] 22:38:20:635 MiRam/(12602:12629): if 2
+[INFO] 22:38:20:635 MiRam/(12602:12629): bytes send 14
+[WARNING] 22:38:20:635 MiRam/(12602:12629): el cliente se desconecto.
+[INFO] 22:38:21:635 MiRam/(12602:12630): ANTES
+[INFO] 22:38:21:636 MiRam/(12602:12630): FOR
+[INFO] 22:38:21:636 MiRam/(12602:12630): if 1
+[INFO] 22:38:21:636 MiRam/(12602:12630): if 2
+[INFO] 22:38:21:636 MiRam/(12602:12630): bytes send 14
+[WARNING] 22:38:21:636 MiRam/(12602:12630): el cliente se desconecto.
+[INFO] 22:38:22:635 MiRam/(12602:12628): ANTES
+[INFO] 22:38:22:635 MiRam/(12602:12628): FOR
+[INFO] 22:38:22:635 MiRam/(12602:12628): if 1
+[INFO] 22:38:22:635 MiRam/(12602:12628): if 2
+[INFO] 22:38:22:635 MiRam/(12602:12628): bytes send 14
+[INFO] 22:38:24:635 MiRam/(12602:12626): ANTES
+[INFO] 22:38:24:635 MiRam/(12602:12626): FOR
+[INFO] 22:38:24:635 MiRam/(12602:12626): if 1
+[INFO] 22:38:24:636 MiRam/(12602:12626): if 2
+[INFO] 22:38:24:636 MiRam/(12602:12626): no hay mas tareas
+[INFO] 22:38:24:636 MiRam/(12602:12626): bytes send 22
+[INFO] 22:38:24:636 MiRam/(12602:12626): Se expulso segmento 2
+[WARNING] 22:38:24:638 MiRam/(12602:12626): el cliente se desconecto.
+[ERROR] 22:39:30:911 MiRam/(12602:12620): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:40:28:037 MiRam/(12663:12683): Se asigno espacio de memoria a todo
+[INFO] 22:40:28:038 MiRam/(12663:12683): bytes send 21
+[INFO] 22:40:28:054 MiRam/(12663:12689): ANTES
+[INFO] 22:40:28:054 MiRam/(12663:12689): FOR
+[INFO] 22:40:28:054 MiRam/(12663:12689): if 1
+[INFO] 22:40:28:058 MiRam/(12663:12689): if 2
+[INFO] 22:40:28:059 MiRam/(12663:12689): bytes send 14
+[INFO] 22:40:28:060 MiRam/(12663:12690): ANTES
+[INFO] 22:40:28:060 MiRam/(12663:12690): FOR
+[INFO] 22:40:28:060 MiRam/(12663:12690): if 1
+[INFO] 22:40:28:060 MiRam/(12663:12690): if 2
+[INFO] 22:40:28:061 MiRam/(12663:12690): bytes send 14
+[INFO] 22:40:28:067 MiRam/(12663:12691): ANTES
+[INFO] 22:40:28:067 MiRam/(12663:12691): FOR
+[INFO] 22:40:28:067 MiRam/(12663:12691): if 1
+[INFO] 22:40:28:067 MiRam/(12663:12691): if 2
+[INFO] 22:40:28:069 MiRam/(12663:12691): bytes send 14
+[INFO] 22:40:28:069 MiRam/(12663:12692): ANTES
+[INFO] 22:40:28:070 MiRam/(12663:12692): FOR
+[INFO] 22:40:28:070 MiRam/(12663:12692): if 1
+[INFO] 22:40:28:070 MiRam/(12663:12692): if 2
+[INFO] 22:40:28:071 MiRam/(12663:12692): bytes send 14
+[INFO] 22:40:28:071 MiRam/(12663:12693): ANTES
+[INFO] 22:40:28:071 MiRam/(12663:12693): FOR
+[INFO] 22:40:28:071 MiRam/(12663:12693): if 1
+[INFO] 22:40:28:071 MiRam/(12663:12693): if 2
+[INFO] 22:40:28:072 MiRam/(12663:12693): bytes send 14
+[INFO] 22:40:45:074 MiRam/(12663:12689): ANTES
+[INFO] 22:40:45:074 MiRam/(12663:12689): FOR
+[INFO] 22:40:45:074 MiRam/(12663:12689): if 1
+[INFO] 22:40:45:074 MiRam/(12663:12689): if 2
+[INFO] 22:40:45:074 MiRam/(12663:12689): bytes send 14
+[INFO] 22:40:45:074 MiRam/(12663:12690): ANTES
+[INFO] 22:40:45:074 MiRam/(12663:12690): FOR
+[INFO] 22:40:45:074 MiRam/(12663:12690): if 1
+[INFO] 22:40:45:074 MiRam/(12663:12690): if 2
+[INFO] 22:40:45:074 MiRam/(12663:12690): bytes send 14
+[INFO] 22:40:48:076 MiRam/(12663:12691): ANTES
+[INFO] 22:40:48:076 MiRam/(12663:12691): FOR
+[INFO] 22:40:48:076 MiRam/(12663:12691): if 1
+[INFO] 22:40:48:076 MiRam/(12663:12691): if 2
+[INFO] 22:40:48:076 MiRam/(12663:12691): bytes send 14
+[INFO] 22:40:48:076 MiRam/(12663:12692): ANTES
+[INFO] 22:40:48:076 MiRam/(12663:12692): FOR
+[INFO] 22:40:48:077 MiRam/(12663:12692): if 1
+[INFO] 22:40:48:077 MiRam/(12663:12692): if 2
+[INFO] 22:40:48:077 MiRam/(12663:12692): bytes send 14
+[INFO] 22:40:51:080 MiRam/(12663:12693): ANTES
+[INFO] 22:40:51:081 MiRam/(12663:12693): FOR
+[INFO] 22:40:51:081 MiRam/(12663:12693): if 1
+[INFO] 22:40:51:081 MiRam/(12663:12693): if 2
+[INFO] 22:40:51:081 MiRam/(12663:12693): bytes send 14
+[INFO] 22:40:52:082 MiRam/(12663:12689): ANTES
+[INFO] 22:40:52:082 MiRam/(12663:12689): FOR
+[INFO] 22:40:52:082 MiRam/(12663:12689): if 1
+[INFO] 22:40:52:082 MiRam/(12663:12689): if 2
+[INFO] 22:40:52:082 MiRam/(12663:12689): bytes send 14
+[INFO] 22:40:54:083 MiRam/(12663:12690): ANTES
+[INFO] 22:40:54:083 MiRam/(12663:12690): FOR
+[INFO] 22:40:54:083 MiRam/(12663:12690): if 1
+[INFO] 22:40:54:083 MiRam/(12663:12690): if 2
+[INFO] 22:40:54:083 MiRam/(12663:12690): bytes send 14
+[INFO] 22:40:55:083 MiRam/(12663:12689): ANTES
+[INFO] 22:40:55:083 MiRam/(12663:12689): FOR
+[INFO] 22:40:55:083 MiRam/(12663:12689): if 1
+[INFO] 22:40:55:083 MiRam/(12663:12689): if 2
+[INFO] 22:40:55:084 MiRam/(12663:12689): bytes send 14
+[INFO] 22:40:55:084 MiRam/(12663:12691): ANTES
+[INFO] 22:40:55:084 MiRam/(12663:12691): FOR
+[INFO] 22:40:55:084 MiRam/(12663:12691): if 1
+[INFO] 22:40:55:084 MiRam/(12663:12691): if 2
+[INFO] 22:40:55:084 MiRam/(12663:12691): bytes send 14
+[INFO] 22:40:56:083 MiRam/(12663:12690): ANTES
+[INFO] 22:40:56:084 MiRam/(12663:12690): FOR
+[INFO] 22:40:56:084 MiRam/(12663:12690): if 1
+[INFO] 22:40:56:084 MiRam/(12663:12690): if 2
+[INFO] 22:40:56:084 MiRam/(12663:12690): bytes send 14
+[INFO] 22:40:56:085 MiRam/(12663:12692): ANTES
+[INFO] 22:40:56:085 MiRam/(12663:12692): FOR
+[INFO] 22:40:56:085 MiRam/(12663:12692): if 1
+[INFO] 22:40:56:085 MiRam/(12663:12692): if 2
+[INFO] 22:40:56:085 MiRam/(12663:12692): bytes send 14
+[WARNING] 22:40:56:085 MiRam/(12663:12692): el cliente se desconecto.
+[INFO] 22:40:57:085 MiRam/(12663:12693): ANTES
+[INFO] 22:40:57:086 MiRam/(12663:12693): FOR
+[INFO] 22:40:57:086 MiRam/(12663:12693): if 1
+[INFO] 22:40:57:086 MiRam/(12663:12693): if 2
+[INFO] 22:40:57:086 MiRam/(12663:12693): bytes send 14
+[WARNING] 22:40:57:086 MiRam/(12663:12693): el cliente se desconecto.
+[INFO] 22:40:58:085 MiRam/(12663:12691): ANTES
+[INFO] 22:40:58:085 MiRam/(12663:12691): FOR
+[INFO] 22:40:58:086 MiRam/(12663:12691): if 1
+[INFO] 22:40:58:086 MiRam/(12663:12691): if 2
+[INFO] 22:40:58:086 MiRam/(12663:12691): bytes send 14
+[INFO] 22:41:00:087 MiRam/(12663:12689): ANTES
+[INFO] 22:41:00:087 MiRam/(12663:12689): FOR
+[INFO] 22:41:00:088 MiRam/(12663:12689): if 1
+[INFO] 22:41:00:088 MiRam/(12663:12689): if 2
+[INFO] 22:41:00:088 MiRam/(12663:12689): no hay mas tareas
+[INFO] 22:41:00:088 MiRam/(12663:12689): bytes send 22
+[INFO] 22:41:00:088 MiRam/(12663:12689): Se expulso segmento 2
+[WARNING] 22:41:00:092 MiRam/(12663:12689): el cliente se desconecto.
+[INFO] 22:41:01:094 MiRam/(12663:12690): ANTES
+[INFO] 22:41:01:094 MiRam/(12663:12690): FOR
+[INFO] 22:41:01:094 MiRam/(12663:12690): if 1
+[INFO] 22:41:01:094 MiRam/(12663:12690): if 2
+[INFO] 22:41:01:094 MiRam/(12663:12690): no hay mas tareas
+[INFO] 22:41:01:094 MiRam/(12663:12690): bytes send 22
+[INFO] 22:41:01:094 MiRam/(12663:12690): Se expulso segmento 3
+[WARNING] 22:41:01:094 MiRam/(12663:12690): el cliente se desconecto.
+[INFO] 22:41:02:094 MiRam/(12663:12691): ANTES
+[INFO] 22:41:02:094 MiRam/(12663:12691): FOR
+[INFO] 22:41:02:094 MiRam/(12663:12691): if 1
+[INFO] 22:41:02:094 MiRam/(12663:12691): if 2
+[INFO] 22:41:02:094 MiRam/(12663:12691): no hay mas tareas
+[INFO] 22:41:02:094 MiRam/(12663:12691): bytes send 22
+[INFO] 22:41:02:094 MiRam/(12663:12691): Se expulso segmento 4
+[WARNING] 22:41:02:095 MiRam/(12663:12691): el cliente se desconecto.
+[ERROR] 22:41:09:910 MiRam/(12663:12683): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:43:12:464 MiRam/(12737:12770): Se asigno espacio de memoria a todo
+[WARNING] 22:43:39:496 MiRam/(12737:12779): el cliente se desconecto.
+[WARNING] 22:43:41:499 MiRam/(12737:12780): el cliente se desconecto.
+[INFO] 22:43:44:500 MiRam/(12737:12776): no hay mas tareas
+[INFO] 22:43:44:501 MiRam/(12737:12776): Se expulso segmento 2
+[WARNING] 22:43:44:505 MiRam/(12737:12776): el cliente se desconecto.
+[INFO] 22:43:45:506 MiRam/(12737:12777): no hay mas tareas
+[INFO] 22:43:45:506 MiRam/(12737:12777): Se expulso segmento 3
+[WARNING] 22:43:45:507 MiRam/(12737:12777): el cliente se desconecto.
+[INFO] 22:43:46:501 MiRam/(12737:12778): no hay mas tareas
+[INFO] 22:43:46:502 MiRam/(12737:12778): Se expulso segmento 4
+[WARNING] 22:43:46:502 MiRam/(12737:12778): el cliente se desconecto.
+[INFO] 22:44:56:489 MiRam/(12737:12770): Se asigno espacio de memoria a todo
+[WARNING] 22:45:20:513 MiRam/(12737:12793): el cliente se desconecto.
+[WARNING] 22:45:22:514 MiRam/(12737:12792): el cliente se desconecto.
+[WARNING] 22:45:23:518 MiRam/(12737:12795): el cliente se desconecto.
+[WARNING] 22:45:24:520 MiRam/(12737:12794): el cliente se desconecto.
+[WARNING] 22:45:25:520 MiRam/(12737:12796): el cliente se desconecto.
+[ERROR] 22:46:45:491 MiRam/(12737:12770): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:47:44:433 MiRam/(12838:12866): Se asigno espacio de memoria a todo
+[INFO] 22:47:46:436 MiRam/(12838:12866): Se asigno espacio de memoria a todo
+[INFO] 22:48:55:499 MiRam/(12838:12873): no hay mas tareas
+[INFO] 22:48:55:500 MiRam/(12838:12873): Se expulso segmento 2
+[INFO] 22:48:55:500 MiRam/(12838:12874): no hay mas tareas
+[WARNING] 22:48:55:500 MiRam/(12838:12873): el cliente se desconecto.
+[INFO] 22:48:55:501 MiRam/(12838:12874): Se expulso segmento 3
+[WARNING] 22:48:55:501 MiRam/(12838:12874): el cliente se desconecto.
+[INFO] 22:48:56:500 MiRam/(12838:12875): no hay mas tareas
+[INFO] 22:48:56:501 MiRam/(12838:12875): Se expulso segmento 4
+[WARNING] 22:48:56:501 MiRam/(12838:12875): el cliente se desconecto.
+[INFO] 22:48:56:502 MiRam/(12838:12876): no hay mas tareas
+[INFO] 22:48:56:502 MiRam/(12838:12876): Se expulso segmento 5
+[WARNING] 22:48:56:502 MiRam/(12838:12876): el cliente se desconecto.
+[INFO] 22:48:57:501 MiRam/(12838:12883): no hay mas tareas
+[INFO] 22:48:57:502 MiRam/(12838:12883): Se expulso segmento 2
+[INFO] 22:48:57:502 MiRam/(12838:12877): no hay mas tareas
+[WARNING] 22:48:57:502 MiRam/(12838:12883): el cliente se desconecto.
+[INFO] 22:48:57:503 MiRam/(12838:12877): Se expulso segmento 6
+[WARNING] 22:48:57:503 MiRam/(12838:12877): el cliente se desconecto.
+[INFO] 22:48:58:502 MiRam/(12838:12885): no hay mas tareas
+[INFO] 22:48:58:502 MiRam/(12838:12885): Se expulso segmento 4
+[WARNING] 22:48:58:503 MiRam/(12838:12885): el cliente se desconecto.
+[INFO] 22:48:58:503 MiRam/(12838:12884): no hay mas tareas
+[INFO] 22:48:58:503 MiRam/(12838:12884): Se expulso segmento 3
+[WARNING] 22:48:58:505 MiRam/(12838:12884): el cliente se desconecto.
+[INFO] 22:48:59:503 MiRam/(12838:12887): no hay mas tareas
+[INFO] 22:48:59:504 MiRam/(12838:12887): Se expulso segmento 6
+[WARNING] 22:48:59:504 MiRam/(12838:12887): el cliente se desconecto.
+[INFO] 22:48:59:505 MiRam/(12838:12886): no hay mas tareas
+[INFO] 22:48:59:505 MiRam/(12838:12886): Se expulso segmento 5
+[WARNING] 22:48:59:506 MiRam/(12838:12886): el cliente se desconecto.
+[ERROR] 22:50:31:061 MiRam/(12838:12866): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:21:01:493 MiRam/(13131:13164): Se asigno espacio de memoria a todo
+[INFO] 23:21:36:531 MiRam/(13131:13171): no hay mas tareas
+[INFO] 23:21:36:531 MiRam/(13131:13171): Se expulso segmento 2
+[WARNING] 23:21:36:532 MiRam/(13131:13171): el cliente se desconecto.
+[INFO] 23:21:37:532 MiRam/(13131:13172): no hay mas tareas
+[INFO] 23:21:37:532 MiRam/(13131:13172): Se expulso segmento 3
+[WARNING] 23:21:37:533 MiRam/(13131:13172): el cliente se desconecto.
+[INFO] 23:21:38:533 MiRam/(13131:13173): no hay mas tareas
+[INFO] 23:21:38:533 MiRam/(13131:13173): Se expulso segmento 4
+[INFO] 23:21:38:533 MiRam/(13131:13174): no hay mas tareas
+[WARNING] 23:21:38:535 MiRam/(13131:13173): el cliente se desconecto.
+[INFO] 23:21:38:536 MiRam/(13131:13174): Se expulso segmento 5
+[WARNING] 23:21:38:536 MiRam/(13131:13174): el cliente se desconecto.
+[INFO] 23:21:39:536 MiRam/(13131:13175): no hay mas tareas
+[INFO] 23:21:39:537 MiRam/(13131:13175): Se expulso segmento 6
+[WARNING] 23:21:39:538 MiRam/(13131:13175): el cliente se desconecto.
+[ERROR] 23:22:06:219 MiRam/(13131:13164): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:29:45:504 MiRam/(13313:13330): Se asigno espacio de memoria a todo
+[INFO] 23:30:00:828 MiRam/(13313:13330): Se expulso segmento 3
+[ERROR] 23:30:43:597 MiRam/(13313:13330): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 23:30:43:597 MiRam/(13313:13343): el cliente se desconecto.
+[WARNING] 23:30:43:597 MiRam/(13313:13342): el cliente se desconecto.
+[WARNING] 23:30:43:597 MiRam/(13313:13341): el cliente se desconecto.
+[WARNING] 23:30:43:597 MiRam/(13313:13340): el cliente se desconecto.
+[WARNING] 23:30:43:597 MiRam/(13313:13339): el cliente se desconecto.
+[INFO] 23:31:00:273 MiRam/(13358:13375): Se asigno espacio de memoria a todo
+[INFO] 23:31:35:325 MiRam/(13358:13382): no hay mas tareas
+[INFO] 23:31:35:325 MiRam/(13358:13382): Se expulso segmento 2
+[WARNING] 23:31:35:325 MiRam/(13358:13382): el cliente se desconecto.
+[INFO] 23:31:36:326 MiRam/(13358:13383): no hay mas tareas
+[INFO] 23:31:36:328 MiRam/(13358:13383): Se expulso segmento 3
+[WARNING] 23:31:36:328 MiRam/(13358:13383): el cliente se desconecto.
+[INFO] 23:31:37:328 MiRam/(13358:13384): no hay mas tareas
+[INFO] 23:31:37:328 MiRam/(13358:13384): Se expulso segmento 4
+[INFO] 23:31:37:333 MiRam/(13358:13385): no hay mas tareas
+[WARNING] 23:31:37:333 MiRam/(13358:13384): el cliente se desconecto.
+[INFO] 23:31:37:333 MiRam/(13358:13385): Se expulso segmento 5
+[WARNING] 23:31:37:333 MiRam/(13358:13385): el cliente se desconecto.
+[INFO] 23:31:38:334 MiRam/(13358:13386): no hay mas tareas
+[INFO] 23:31:38:334 MiRam/(13358:13386): Se expulso segmento 6
+[WARNING] 23:31:38:334 MiRam/(13358:13386): el cliente se desconecto.
+[ERROR] 23:31:55:532 MiRam/(13358:13375): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:46:53:260 MiRam/(13795:13809): Se asigno espacio de memoria a todo
+[ERROR] 23:51:33:179 MiRam/(13795:13809): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 23:51:33:180 MiRam/(13795:13823): el cliente se desconecto.
+[WARNING] 23:51:33:180 MiRam/(13795:13822): el cliente se desconecto.
+[WARNING] 23:51:33:180 MiRam/(13795:13821): el cliente se desconecto.
+[WARNING] 23:51:33:180 MiRam/(13795:13820): el cliente se desconecto.
+[WARNING] 23:51:33:180 MiRam/(13795:13819): el cliente se desconecto.
+[INFO] 23:51:52:935 MiRam/(13874:13892): Se asigno espacio de memoria a todo
+[INFO] 23:52:44:630 MiRam/(13874:13901): no hay mas tareas
+[INFO] 23:52:44:631 MiRam/(13874:13901): Se expulso segmento 2
+[WARNING] 23:52:44:631 MiRam/(13874:13901): el cliente se desconecto.
+[INFO] 23:52:45:631 MiRam/(13874:13902): no hay mas tareas
+[INFO] 23:52:45:632 MiRam/(13874:13902): Se expulso segmento 3
+[WARNING] 23:52:45:632 MiRam/(13874:13902): el cliente se desconecto.
+[INFO] 23:52:46:632 MiRam/(13874:13903): no hay mas tareas
+[INFO] 23:52:46:632 MiRam/(13874:13903): Se expulso segmento 4
+[INFO] 23:52:46:637 MiRam/(13874:13904): no hay mas tareas
+[WARNING] 23:52:46:637 MiRam/(13874:13903): el cliente se desconecto.
+[INFO] 23:52:46:638 MiRam/(13874:13904): Se expulso segmento 5
+[WARNING] 23:52:46:638 MiRam/(13874:13904): el cliente se desconecto.
+[INFO] 23:52:47:638 MiRam/(13874:13905): no hay mas tareas
+[INFO] 23:52:47:639 MiRam/(13874:13905): Se expulso segmento 6
+[WARNING] 23:52:47:639 MiRam/(13874:13905): el cliente se desconecto.
+[WARNING] 23:53:51:477 MiRam/(13874:13892): No se pudo eliminar ese tripulante
+[WARNING] 23:53:54:118 MiRam/(13874:13892): No se pudo eliminar ese tripulante
+[ERROR] 23:54:29:702 MiRam/(13874:13892): el discordiador finalizo el programa. Terminando servidor

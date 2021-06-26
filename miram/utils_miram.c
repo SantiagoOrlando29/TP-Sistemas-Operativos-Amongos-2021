@@ -170,10 +170,14 @@ int funcion_cliente(int socket_cliente){
 
 			case PEDIR_TAREA:;
 				t_list* lista_tripulante = recibir_paquete(socket_cliente);
-				tcbTripulante* tripulante = (tcbTripulante*)list_get(lista_tripulante,0);
-				int numero_patota = (int)atoi(list_get(lista_tripulante,1));
+				int id_tripulante = (int)atoi(list_get(lista_tripulante,0));
+				int prox_instruccion = (int)atoi(list_get(lista_tripulante,1));
+				int numero_patota = (int)atoi(list_get(lista_tripulante,2));
 
-				enviar_tarea_segmentacion(socket_cliente, numero_patota, tripulante);
+				bool hay_mas_tareas = enviar_tarea_segmentacion(socket_cliente, numero_patota, id_tripulante, prox_instruccion);
+				if(hay_mas_tareas == false){
+					funcion_expulsar_tripulante(id_tripulante);
+				}
 
 				break;
 
@@ -885,6 +889,13 @@ espacio_de_memoria* busqueda_best_fit(int tam){
 
 espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) {
 	espacio_de_memoria *espacio_libre = buscar_espacio_de_memoria_libre(tam);
+
+	if(espacio_libre == NULL){ //NO PROBE ESTE IF
+		log_info(logger, "No hay espacio libre de memoria. Hacemos Compactacion");
+		compactar_memoria();
+		espacio_libre = buscar_espacio_de_memoria_libre(tam);
+	}
+
 	if (espacio_libre != NULL) {
 
 		if (espacio_libre->tam == tam) {//Si el espacio libre encontrado es de igual tamanio al segmento a alojar no es necesario ordenar. CAPAZ NO HACE FALTA
@@ -1041,7 +1052,6 @@ void compactar_memoria(){
         	log_info(logger, "espacio libre econtrado %d", espacio->base);
 
         	for(int k=0; k < list_size(lista_tablas_segmentos); k++){
-        		//tabla_segmentacion* tabla_segmentos = list_remove(lista_tablas_segmentos, k);
         		tabla_segmentacion* tabla_segmentos = list_get(lista_tablas_segmentos, k);
 
         		for(int l=0; l < list_size(tabla_segmentos->lista_segmentos); l++){
@@ -1049,29 +1059,20 @@ void compactar_memoria(){
 
             		if (segmento->base > espacio->base){
             			//para segmento->base < espacio->base no hace nada porque significa que la memoria ya los paso y estan antes que el espacio libre
-            			//segmento = list_remove(tabla_segmentos->lista_segmentos, l);
             			segmento->base -= espacio->tam;
-            			//list_add_in_index(tabla_segmentos->lista_segmentos, l, segmento);
             		}
         		}
-
-        		//list_add_in_index(lista_tablas_segmentos, k, tabla_segmentos);
         	}
 
         	list_remove(tabla_espacios_de_memoria, i);
 
         	for(int j = i; j < list_size(tabla_espacios_de_memoria); j++){
-        		//espacio_de_memoria* espacio_temp = list_remove(tabla_espacios_de_memoria, j);
         		espacio_de_memoria* espacio_temp = list_get(tabla_espacios_de_memoria, j);
         		espacio_temp->base -= espacio->tam;
 
         		if(j == list_size(tabla_espacios_de_memoria)-1){ //esta recorriendo el ultimo espacio de memoria
         			espacio_temp->tam += espacio->tam; //entonces le amplia el tamanio porque es el espacio libre
-        			//list_add_in_index(tabla_espacios_de_memoria, j, espacio_temp);
-        		} else {
-        			//list_add_in_index(tabla_espacios_de_memoria, j, espacio_temp);
         		}
-
         	}
             imprimir_tabla_espacios_de_memoria();
         }
@@ -1086,69 +1087,68 @@ void compactar_memoria(){
 void cambiar_estado(int numero_patota, char nuevo_estado, int tid){
 	sem_wait(&MUTEX_CAMBIAR_ESTADO);
 
-	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
-		tabla_segmentacion* tabla_segmentos = list_get(lista_tablas_segmentos, i);
+	tabla_segmentacion* tabla_segmentos = buscar_tabla_segmentos(numero_patota);
+	if(tabla_segmentos != NULL){
+		int seg_a_buscar = tid - tabla_segmentos->primer_tripulante;
 
-		if(tabla_segmentos->id_patota == numero_patota){
+		for(int k=2; k < list_size(tabla_segmentos->lista_segmentos); k++){
+			segmento* segmento = list_get(tabla_segmentos->lista_segmentos, k);
 
-			int seg_a_buscar = tid - tabla_segmentos->primer_tripulante;
-			for(int k=2; k < list_size(tabla_segmentos->lista_segmentos); k++){
-				segmento* segmento = list_get(tabla_segmentos->lista_segmentos, k);
-
-				if(seg_a_buscar == segmento->numero_segmento -2){ //CREO QUE ESTA BIEN PERO NO PROBE
-					espacio_de_memoria* espacio = buscar_espacio(segmento); //encontro la base en memoria del tcb del tripulante
-					//list_remove(tabla_espacios_de_memoria, j);
-					tcbTripulante* tripulante = espacio->contenido;
-					tripulante->estado = nuevo_estado;
-					espacio->contenido = tripulante;
-					//list_add_in_index(tabla_espacios_de_memoria, j, espacio);
-				}
+			if(seg_a_buscar == segmento->numero_segmento -2){ //CREO QUE ESTA BIEN PERO NO PROBE MUCHO
+				espacio_de_memoria* espacio = buscar_espacio(segmento); //encontro la base en memoria del tcb del tripulante
+				tcbTripulante* tripulante = espacio->contenido;
+				tripulante->estado = nuevo_estado;
+				espacio->contenido = tripulante;
 			}
 		}
 	}
+
 	sem_post(&MUTEX_CAMBIAR_ESTADO);
 }
 
-void enviar_tarea_segmentacion(int socket_cliente, int numero_patota, tcbTripulante* tripulante){
-	sem_wait(&MUTEX_PEDIR_TAREA);
-	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
-		tabla_segmentacion* tabla_segmentos = list_get(lista_tablas_segmentos, i);
+bool enviar_tarea_segmentacion(int socket_cliente, int numero_patota, int id_tripulante, int prox_instruccion){
+	sem_wait(&MUTEX_PEDIR_TAREA); //REEVER ESTOS SEMAFOROS
 
-		if(tabla_segmentos->id_patota == numero_patota){
-			segmento* segmento = list_get(tabla_segmentos->lista_segmentos, 1); // 1 es el segmento de tareas
-			espacio_de_memoria* espacio = buscar_espacio(segmento);
+	tabla_segmentacion* tabla_segmentos = buscar_tabla_segmentos(numero_patota);
 
-			if(espacio != NULL){ //encontro la base en memoria de las tareas
-				char* una_tarea = buscar_tarea(espacio, tripulante);
-				//char* una_tarea = malloc(10);
+	if(tabla_segmentos != NULL){
+		segmento* segmento = list_get(tabla_segmentos->lista_segmentos, 1); // 1 es el segmento de tareas
+		espacio_de_memoria* espacio = buscar_espacio(segmento);
 
-				enviar_mensaje(una_tarea, socket_cliente);
-				//free(una_tarea);
+		if(espacio != NULL){ //encontro la base en memoria de las tareas
+			char* una_tarea = buscar_tarea(espacio, prox_instruccion);
+			//char* una_tarea = malloc(10);
+
+			if(una_tarea == NULL){ //no tiene mas tareas
+				char* mensaje = malloc(18);
+				mensaje = "no hay mas tareas";
+				enviar_mensaje(mensaje, socket_cliente);
+				//free(mensaje);
+				sem_post(&MUTEX_PEDIR_TAREA);
+				return false;
 			}
-			int seg_a_buscar = tripulante->tid - tabla_segmentos->primer_tripulante;
-			for(int k=2; k < list_size(tabla_segmentos->lista_segmentos); k++){//actualizo el prox_instruccion del tripu PERO NOSE PARA QUE PQ NO LO USO CREO
-				segmento = list_get(tabla_segmentos->lista_segmentos, k);
 
-				if(seg_a_buscar == segmento->numero_segmento -2){ //CREO QUE ESTA BIEN PERO NO PROBE
+			enviar_mensaje(una_tarea, socket_cliente);
+			//free(una_tarea);
+		}
+		int seg_a_buscar = id_tripulante - tabla_segmentos->primer_tripulante;
+		for(int k=2; k < list_size(tabla_segmentos->lista_segmentos); k++){//actualizo el prox_instruccion del tripu PERO NOSE PARA QUE PQ NO LO USO CREO
+			segmento = list_get(tabla_segmentos->lista_segmentos, k);
 
-					for(int j=0; j < list_size(tabla_espacios_de_memoria); j++){
-						espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, j);
+			if(seg_a_buscar == segmento->numero_segmento -2){ //CREO QUE ESTA BIEN PERO NO PROBE MUCHO
 
-						if(espacio->base == segmento->base){//encontro la base en memoria del tcb del tripulante
-							//list_remove(tabla_espacios_de_memoria, j);
-							tripulante->prox_instruccion++;
-							tripulante->estado = 'R';
-	            			espacio->contenido = tripulante;
-	            			//list_add_in_index(tabla_espacios_de_memoria, j, espacio);
-
-	            			j = list_size(tabla_espacios_de_memoria); //para cortar el for
-						}
-					}
+				espacio_de_memoria* espacio_tcb = buscar_espacio(segmento); //encontro la base en memoria del tcb del tripulante
+				if(espacio_tcb != NULL){
+					tcbTripulante* tripulante = espacio_tcb->contenido;
+					tripulante->prox_instruccion++;
+					tripulante->estado = 'R';
+					espacio_tcb->contenido = tripulante;
 				}
 			}
 		}
 	}
 	sem_post(&MUTEX_PEDIR_TAREA);
+	return true;
 }
 
 espacio_de_memoria* buscar_espacio(segmento* segmento){
@@ -1162,7 +1162,18 @@ espacio_de_memoria* buscar_espacio(segmento* segmento){
 	return NULL;
 }
 
-char* buscar_tarea(espacio_de_memoria* espacio, tcbTripulante* tripulante){
+tabla_segmentacion* buscar_tabla_segmentos(int numero_patota){
+	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
+		tabla_segmentacion* tabla_segmentos = list_get(lista_tablas_segmentos, i);
+
+		if(tabla_segmentos->id_patota == numero_patota){
+			return tabla_segmentos;
+		}
+	}
+	return NULL;
+}
+
+char* buscar_tarea(espacio_de_memoria* espacio, int prox_instruccion){
 	char* una_tarea = malloc(10);
 	//char linea[200];//CREO QUE NO HACE FALTA ESTA PARTE Y PUEDO HACER EL STRTOK DIRECTO DE ESPACIO->CONTENIDO. POR EL LIST_GET
 	//strcpy(linea, espacio->contenido);
@@ -1176,7 +1187,11 @@ char* buscar_tarea(espacio_de_memoria* espacio, tcbTripulante* tripulante){
 	//FALTA HACER EL CASO DE QUE YA NO LE QUEDEN MAS TAREAS
 
 	char** tareas = string_split(espacio->contenido,";");
-	una_tarea = tareas[tripulante->prox_instruccion];
+	una_tarea = tareas[prox_instruccion];
+	if(una_tarea == NULL){
+		log_info(logger, "no hay mas tareas");
+		return NULL;
+	}
 
 	return una_tarea;
 }

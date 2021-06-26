@@ -28,12 +28,12 @@ tarea* pedir_tarea_IO(tcbTripulante* tripulante){
 	return(tarea_recibida);
 }
 tarea* pedir_tarea_normal(tcbTripulante* tripulante){
-	if(tripulante->tid < 4){ // ESTO HACE Q VAYA A EXIT
+	//if(tripulante->tid < 4){ // ESTO HACE Q VAYA A EXIT
 		tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,2);
 		return(tarea_recibida);
-	} else{
-		return NULL;
-	}
+	//} else{
+		//return NULL;
+	//}
 }
 
 bool sigue_ejecutando(int quantums_ejecutados){
@@ -77,13 +77,28 @@ void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pen
 
 char* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
 	t_paquete* paquete = crear_paquete(PEDIR_TAREA);
-	agregar_a_paquete(paquete, tripulante, tamanio_TCB);//NOSE SI ESTA BIEN MANDARLE TOODO EL TRIPU. SOLO CON TID Y PROX_INSTRUCCION ALCANZARIA.
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* instruccion_char = malloc(sizeof(char));
+	sprintf(instruccion_char, "%d", tripulante->prox_instruccion);
+	agregar_a_paquete(paquete, instruccion_char, strlen(instruccion_char)+1);
+
 	char* numero_patota_char = malloc(sizeof(char));
 	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
 	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
+
 	enviar_paquete(paquete, conexion_miram);
+
 	char* tarea_recibida_miram = recibir_mensaje(conexion_miram);
-	log_info(logger, "tarea recibida: %s", tarea_recibida_miram);
+	log_info(logger, "TRIPU %d  tarea recibida: %s", tripulante->tid, tarea_recibida_miram);
+
+	if(strcmp("no hay mas tareas", tarea_recibida_miram) ==0){
+		return NULL;
+	}
+
 	tripulante->prox_instruccion++;
 
 	eliminar_paquete(paquete);
@@ -130,7 +145,8 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	int contador_movimientos = 0;
 	int contador_ciclos_trabajando = 0;
 	int quantums_ejecutados = 0;
-	while(tripulante->prox_instruccion < 4){
+
+	while(tareaaa != NULL){
 		while(contador_movimientos < tarea_recibida->tiempo){
 			sem_wait(&CONTINUAR_PLANIFICACION);
 			sem_post(&CONTINUAR_PLANIFICACION);
@@ -166,15 +182,20 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			sem_post(&PASA_A_BLOQUEADO);
 			sem_post(&HABILITA_GRADO_MULTITAREA);
 			sem_wait(&(tripulante->semaforo_tripulante));
+
 			if(tripulante->estado != 'X'){ // O SEA Q TIENE MAS TAREAS
 				tarea_recibida = pedir_tarea_normal(tripulante); //esto en realidad no iria, pq se la tiene q pasar el bloq o algo asi
 
+				tripulante->prox_instruccion--; //MEDIO CHOTO PORQUE YA LA HABIA PEDIDO EN EL BLOQ PERO NOSE COMO HACER PARA PASAR LA TAREA DE BLOQ A ACA
 				tareaaa = pedir_tarea(tripulante->socket_miram, tripulante);
 
 				sem_post(&HABILITA_EJECUTAR);
+
 			} else{ // NO TIENE MAS TAREAS
 				tripulante->prox_instruccion = 100;
+				tareaaa = NULL;
 			}
+
 		} else { //TAREA NORMAL
 			while(contador_ciclos_trabajando < tarea_recibida->tiempo){
 				sem_wait(&CONTINUAR_PLANIFICACION);
@@ -190,6 +211,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 
 					if(tarea_recibida == NULL){ // NO TIENE MAS TAREAS
 						tripulante->prox_instruccion = 200;
+						tareaaa = NULL;
 					}else{ //TIENE MAS TAREAS
 						termina_quantum(&quantums_ejecutados, tripulante);
 					}
@@ -202,11 +224,13 @@ void tripulante_hilo (tcbTripulante* tripulante){
 
 		//tripulante->prox_instruccion++;
 	}
+
 	if(tripulante->estado != 'X'){
 		sem_post(&HABILITA_GRADO_MULTITAREA);
 
 		sem_wait(&CONTINUAR_PLANIFICACION);
 		sem_post(&CONTINUAR_PLANIFICACION);
+
 		sem_wait(&MUTEX_LISTA_TRABAJANDO);
 		list_remove(lista_tripulantes_trabajando, 0);
 		sem_post(&MUTEX_LISTA_TRABAJANDO);
@@ -410,6 +434,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 
 /*
 INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
+INICIAR_PATOTA 5 tareas_corta.txt 300|4 10|20 4|500
 */
 				bool hay_mas_parametros = true;
 				for(int i = 0; i < cantidad_tripulantes ; i++){
@@ -518,6 +543,7 @@ INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
 				break;
 /*
 INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
+INICIAR_PATOTA 5 tareas_corta.txt 300|4 10|20 4|500
 */
 
 			case OBTENER_BITACORA:

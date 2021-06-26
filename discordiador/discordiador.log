@@ -1,42 +1,26 @@
-[INFO] 18:16:45:150 discordiador/(8457:8457): Memoria asignada
-[INFO] 18:16:45:174 discordiador/(8457:8470): tarea recibida: 6-0-0-0-0
-[INFO] 18:16:45:174 discordiador/(8457:8471): tarea recibida: 6-0-0-0-0
-[INFO] 18:16:45:175 discordiador/(8457:8472): tarea recibida: 6-0-0-0-0
-[INFO] 18:16:45:177 discordiador/(8457:8473): tarea recibida: 6-0-0-0-0
-[INFO] 18:16:45:178 discordiador/(8457:8474): tarea recibida: 6-0-0-0-0
-[INFO] 18:16:46:572 discordiador/(8457:8457): Memoria asignada
-[INFO] 18:16:46:576 discordiador/(8457:8480): tarea recibida: 6-0-0-0-0
-[INFO] 18:16:46:577 discordiador/(8457:8481): tarea recibida: 6-0-0-0-0
-[INFO] 18:16:46:577 discordiador/(8457:8482): tarea recibida: 6-0-0-0-0
-[INFO] 18:16:46:579 discordiador/(8457:8483): tarea recibida: 6-0-0-0-0
-[INFO] 18:16:46:580 discordiador/(8457:8484): tarea recibida: 6-0-0-0-0
-[INFO] 18:17:35:230 discordiador/(8457:8457): Memoria asignada
-[INFO] 18:17:40:414 discordiador/(8457:8514): tarea recibida: 6-0-0-0-0
-[INFO] 18:17:40:420 discordiador/(8457:8515): tarea recibida: 6-0-0-0-0
-[INFO] 18:18:29:721 discordiador/(8457:8471): tarea recibida: 0-1-4-4-1
-[INFO] 18:18:29:721 discordiador/(8457:8470): tarea recibida: 0-1-4-4-1
-[INFO] 18:18:46:622 discordiador/(8457:8472): tarea recibida: 0-1-4-4-1
-[INFO] 18:18:46:622 discordiador/(8457:8473): tarea recibida: 0-1-4-4-1
-[INFO] 18:18:49:624 discordiador/(8457:8480): tarea recibida: 0-1-4-4-1
-[INFO] 18:18:49:625 discordiador/(8457:8474): tarea recibida: 0-1-4-4-1
-[INFO] 18:18:52:626 discordiador/(8457:8482): tarea recibida: 0-1-4-4-1
-[INFO] 18:18:52:626 discordiador/(8457:8481): tarea recibida: 0-1-4-4-1
-[INFO] 18:18:58:629 discordiador/(8457:8484): tarea recibida: 0-1-4-4-1
-[INFO] 18:18:58:629 discordiador/(8457:8483): tarea recibida: 0-1-4-4-1
-[INFO] 18:19:02:632 discordiador/(8457:8465): tarea recibida: 1-4-2-2-1
-[INFO] 18:21:00:281 discordiador/(8457:8465): tarea recibida: 1-4-2-2-1
-[INFO] 18:21:01:284 discordiador/(8457:8465): tarea recibida: 1-4-2-2-1
-[INFO] 18:21:02:284 discordiador/(8457:8465): tarea recibida: 1-4-2-2-1
-[INFO] 18:21:03:284 discordiador/(8457:8465): tarea recibida: 1-4-2-2-1
-[INFO] 18:21:04:285 discordiador/(8457:8465): tarea recibida: 1-4-2-2-1
-[INFO] 18:21:05:285 discordiador/(8457:8465): tarea recibida: 1-4-2-2-1
-[INFO] 18:21:06:284 discordiador/(8457:8515): tarea recibida: 0-1-4-4-1
-[INFO] 18:21:06:285 discordiador/(8457:8514): tarea recibida: 0-1-4-4-1
-[INFO] 18:21:06:291 discordiador/(8457:8465): tarea recibida: 1-4-2-2-1
-[INFO] 18:21:09:287 discordiador/(8457:8470): tarea recibida: 2-2-3-3-1
-[INFO] 18:21:09:287 discordiador/(8457:8472): tarea recibida: 2-2-3-3-1
-[INFO] 18:21:09:289 discordiador/(8457:8471): tarea recibida: 2-2-3-3-1
-[INFO] 18:21:10:289 discordiador/(8457:8465): tarea recibida: 1-4-2-2-1
-[INFO] 18:21:11:290 discordiador/(8457:8465): tarea recibida: 1-4-2-2-1
-[INFO] 18:21:12:291 discordiador/(8457:8465): tarea recibida: 1-4-2-2-1
-[INFO] 18:21:13:292 discordiador/(8457:8465): tarea recibida: 1-4-2-2-1
+[INFO] 23:51:52:940 discordiador/(13886:13886): Memoria asignada
+[INFO] 23:51:52:956 discordiador/(13886:13896): TRIPU 1  tarea recibida: 6-0-0-0-0
+[INFO] 23:51:52:959 discordiador/(13886:13897): TRIPU 2  tarea recibida: 6-0-0-0-0
+[INFO] 23:51:52:960 discordiador/(13886:13898): TRIPU 3  tarea recibida: 6-0-0-0-0
+[INFO] 23:51:52:968 discordiador/(13886:13899): TRIPU 4  tarea recibida: 6-0-0-0-0
+[INFO] 23:51:52:970 discordiador/(13886:13900): TRIPU 5  tarea recibida: 6-0-0-0-0
+[INFO] 23:52:26:615 discordiador/(13886:13896): TRIPU 1  tarea recibida: 0-1-4-4-1
+[INFO] 23:52:26:615 discordiador/(13886:13897): TRIPU 2  tarea recibida: 0-1-4-4-1
+[INFO] 23:52:29:617 discordiador/(13886:13898): TRIPU 3  tarea recibida: 0-1-4-4-1
+[INFO] 23:52:29:618 discordiador/(13886:13899): TRIPU 4  tarea recibida: 0-1-4-4-1
+[INFO] 23:52:32:620 discordiador/(13886:13900): TRIPU 5  tarea recibida: 0-1-4-4-1
+[INFO] 23:52:33:620 discordiador/(13886:13895): TRIPU 1  tarea recibida: 1-4-2-2-1
+[INFO] 23:52:35:622 discordiador/(13886:13895): TRIPU 2  tarea recibida: 1-4-2-2-1
+[INFO] 23:52:36:623 discordiador/(13886:13896): TRIPU 1  tarea recibida: 1-4-2-2-1
+[INFO] 23:52:36:623 discordiador/(13886:13895): TRIPU 3  tarea recibida: 1-4-2-2-1
+[INFO] 23:52:37:623 discordiador/(13886:13897): TRIPU 2  tarea recibida: 1-4-2-2-1
+[INFO] 23:52:37:624 discordiador/(13886:13895): TRIPU 4  tarea recibida: 1-4-2-2-1
+[INFO] 23:52:38:625 discordiador/(13886:13895): TRIPU 5  tarea recibida: 1-4-2-2-1
+[INFO] 23:52:39:625 discordiador/(13886:13898): TRIPU 3  tarea recibida: 1-4-2-2-1
+[INFO] 23:52:40:626 discordiador/(13886:13899): TRIPU 4  tarea recibida: 1-4-2-2-1
+[INFO] 23:52:42:627 discordiador/(13886:13900): TRIPU 5  tarea recibida: 1-4-2-2-1
+[INFO] 23:52:44:631 discordiador/(13886:13896): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 23:52:45:632 discordiador/(13886:13897): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 23:52:46:632 discordiador/(13886:13898): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 23:52:46:638 discordiador/(13886:13899): TRIPU 4  tarea recibida: no hay mas tareas
+[INFO] 23:52:47:639 discordiador/(13886:13900): TRIPU 5  tarea recibida: no hay mas tareas
