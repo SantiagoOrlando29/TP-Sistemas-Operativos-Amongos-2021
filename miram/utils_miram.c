@@ -797,38 +797,32 @@ int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* co
 }
 
 void dump_memoria(){
-	char buff[100];
+	char buff1[50];
+	char buff2[50];
+	char namebuff[100];
 	time_t now = time(0);
-	strftime(buff, 100, " %H:%M.%S  %d/%m/%Y", localtime(&now));
-	printf("Dump: %s\n", buff);
+	strftime(buff1, 100, "%d/%m/%Y %H:%M:%S"  , localtime(&now)); //TImestamp a escribir en el archivo
+	strftime(buff2, 100, "%d_%m_%Y_%H_%M_%S"  , localtime(&now)); //Timestamp del nombre del archivo
+	sprintf(namebuff, "Dump_%s.dmp",buff2);
+	FILE *dump_file;
+	dump_file=fopen(namebuff, "w");
 	fflush(stdout);
+	fprintf(dump_file,"Dump: %s\n", buff1);
 	int estado;
 	int proceso;
 	int pagina;
 	for(int k=0;k<configuracion.cant_marcos;k++){
 		buscar_marco(k,&estado,&proceso, &pagina);
 		if(estado==1){
-			printf("Marco:%2d    ",k);
-			fflush(stdout);
-			printf("Estado:Ocupado   ");
-			fflush(stdout);
-			printf("Proceso:%d    ", proceso);
-			fflush(stdout);
-			printf("Pagina:%d    \n", pagina);
+			fprintf(dump_file,"Marco:%2d    Estado:Ocupado    Proceso:%2d    Pagina:%2d\n",k,proceso,pagina);
 			fflush(stdout);
 		}else{
-			printf("Marco:%2d    ",k);
-			fflush(stdout);
-			printf("Estado:Libre     ");
-			fflush(stdout);
-			printf("Proceso:-    ");
-
-			fflush(stdout);
-			printf("Pagina:-    \n");
+			fprintf(dump_file,"Marco:%2d    Estado:Libre      Proceso: -    Pagina: -\n",k);
 			fflush(stdout);
 
+		}
 	}
-}
+	fclose(dump_file);
 }
 
 
