@@ -43,7 +43,8 @@ typedef enum
 	OBTENER_BITACORA,
 	FIN,
 	PEDIR_TAREA,
-	CAMBIAR_DE_ESTADO
+	CAMBIAR_DE_ESTADO,
+	INFORMAR_MOVIMIENTO
 }tipoMensaje;
 
 
@@ -159,6 +160,7 @@ void ejecutar_tarea(tarea_tripulante,int);
 char* pedir_tarea(int conexion_miram, tcbTripulante* tripulante);
 
 void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado);
+void informar_movimiento(int conexion_miram, tcbTripulante* tripulante);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanio_tcb(tcbTripulante*);

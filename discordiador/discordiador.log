@@ -1,26 +1,28 @@
-[INFO] 23:51:52:940 discordiador/(13886:13886): Memoria asignada
-[INFO] 23:51:52:956 discordiador/(13886:13896): TRIPU 1  tarea recibida: 6-0-0-0-0
-[INFO] 23:51:52:959 discordiador/(13886:13897): TRIPU 2  tarea recibida: 6-0-0-0-0
-[INFO] 23:51:52:960 discordiador/(13886:13898): TRIPU 3  tarea recibida: 6-0-0-0-0
-[INFO] 23:51:52:968 discordiador/(13886:13899): TRIPU 4  tarea recibida: 6-0-0-0-0
-[INFO] 23:51:52:970 discordiador/(13886:13900): TRIPU 5  tarea recibida: 6-0-0-0-0
-[INFO] 23:52:26:615 discordiador/(13886:13896): TRIPU 1  tarea recibida: 0-1-4-4-1
-[INFO] 23:52:26:615 discordiador/(13886:13897): TRIPU 2  tarea recibida: 0-1-4-4-1
-[INFO] 23:52:29:617 discordiador/(13886:13898): TRIPU 3  tarea recibida: 0-1-4-4-1
-[INFO] 23:52:29:618 discordiador/(13886:13899): TRIPU 4  tarea recibida: 0-1-4-4-1
-[INFO] 23:52:32:620 discordiador/(13886:13900): TRIPU 5  tarea recibida: 0-1-4-4-1
-[INFO] 23:52:33:620 discordiador/(13886:13895): TRIPU 1  tarea recibida: 1-4-2-2-1
-[INFO] 23:52:35:622 discordiador/(13886:13895): TRIPU 2  tarea recibida: 1-4-2-2-1
-[INFO] 23:52:36:623 discordiador/(13886:13896): TRIPU 1  tarea recibida: 1-4-2-2-1
-[INFO] 23:52:36:623 discordiador/(13886:13895): TRIPU 3  tarea recibida: 1-4-2-2-1
-[INFO] 23:52:37:623 discordiador/(13886:13897): TRIPU 2  tarea recibida: 1-4-2-2-1
-[INFO] 23:52:37:624 discordiador/(13886:13895): TRIPU 4  tarea recibida: 1-4-2-2-1
-[INFO] 23:52:38:625 discordiador/(13886:13895): TRIPU 5  tarea recibida: 1-4-2-2-1
-[INFO] 23:52:39:625 discordiador/(13886:13898): TRIPU 3  tarea recibida: 1-4-2-2-1
-[INFO] 23:52:40:626 discordiador/(13886:13899): TRIPU 4  tarea recibida: 1-4-2-2-1
-[INFO] 23:52:42:627 discordiador/(13886:13900): TRIPU 5  tarea recibida: 1-4-2-2-1
-[INFO] 23:52:44:631 discordiador/(13886:13896): TRIPU 1  tarea recibida: no hay mas tareas
-[INFO] 23:52:45:632 discordiador/(13886:13897): TRIPU 2  tarea recibida: no hay mas tareas
-[INFO] 23:52:46:632 discordiador/(13886:13898): TRIPU 3  tarea recibida: no hay mas tareas
-[INFO] 23:52:46:638 discordiador/(13886:13899): TRIPU 4  tarea recibida: no hay mas tareas
-[INFO] 23:52:47:639 discordiador/(13886:13900): TRIPU 5  tarea recibida: no hay mas tareas
+[INFO] 23:56:52:567 discordiador/(15969:15969): Memoria asignada
+[INFO] 23:56:52:583 discordiador/(15969:15979): TRIPU 1  tarea recibida: 6-0-0-0-0
+[INFO] 23:56:52:584 discordiador/(15969:15979): TRIPU 1  cambio estado: cambio de estado exitoso
+[INFO] 23:56:52:586 discordiador/(15969:15980): TRIPU 2  tarea recibida: 6-0-0-0-0
+[INFO] 23:56:52:586 discordiador/(15969:15981): TRIPU 3  tarea recibida: 6-0-0-0-0
+[INFO] 23:56:52:587 discordiador/(15969:15980): TRIPU 2  cambio estado: cambio de estado exitoso
+[INFO] 23:56:52:587 discordiador/(15969:15982): TRIPU 4  tarea recibida: 6-0-0-0-0
+[INFO] 23:56:52:587 discordiador/(15969:15983): TRIPU 5  tarea recibida: 6-0-0-0-0
+[INFO] 23:56:55:585 discordiador/(15969:15979): TRIPU 1  cambio estado: cambio de estado exitoso
+[INFO] 23:56:55:585 discordiador/(15969:15981): TRIPU 3  cambio estado: cambio de estado exitoso
+[INFO] 23:56:55:587 discordiador/(15969:15980): TRIPU 2  cambio estado: cambio de estado exitoso
+[INFO] 23:56:55:587 discordiador/(15969:15982): TRIPU 4  cambio estado: cambio de estado exitoso
+[INFO] 23:56:58:587 discordiador/(15969:15981): TRIPU 3  cambio estado: cambio de estado exitoso
+[INFO] 23:56:58:587 discordiador/(15969:15983): TRIPU 5  cambio estado: cambio de estado exitoso
+[INFO] 23:56:58:588 discordiador/(15969:15982): TRIPU 4  cambio estado: cambio de estado exitoso
+[INFO] 23:56:58:588 discordiador/(15969:15979): TRIPU 1  cambio estado: cambio de estado exitoso
+[INFO] 23:57:01:589 discordiador/(15969:15983): TRIPU 5  cambio estado: cambio de estado exitoso
+[INFO] 23:57:01:589 discordiador/(15969:15980): TRIPU 2  cambio estado: cambio de estado exitoso
+[INFO] 23:57:01:589 discordiador/(15969:15979): TRIPU 1  cambio estado: cambio de estado exitoso
+[INFO] 23:57:01:589 discordiador/(15969:15981): TRIPU 3  cambio estado: cambio de estado exitoso
+[INFO] 23:57:04:593 discordiador/(15969:15980): TRIPU 2  cambio estado: cambio de estado exitoso
+[INFO] 23:57:04:593 discordiador/(15969:15982): TRIPU 4  cambio estado: cambio de estado exitoso
+[INFO] 23:57:04:593 discordiador/(15969:15981): TRIPU 3  cambio estado: cambio de estado exitoso
+[INFO] 23:57:04:593 discordiador/(15969:15983): TRIPU 5  cambio estado: cambio de estado exitoso
+[INFO] 23:57:07:595 discordiador/(15969:15983): TRIPU 5  cambio estado: cambio de estado exitoso
+[INFO] 23:57:07:595 discordiador/(15969:15979): TRIPU 1  cambio estado: cambio de estado exitoso
+[INFO] 23:57:07:595 discordiador/(15969:15982): TRIPU 4  cambio estado: cambio de estado exitoso
+[INFO] 23:57:07:595 discordiador/(15969:15980): TRIPU 2  cambio estado: cambio de estado exitoso

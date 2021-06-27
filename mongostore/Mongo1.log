@@ -398,3 +398,31 @@
 [INFO] 23:51:40:301 Mongo1/(13876:13877): Servidor MongoStore encendido
 [INFO] 23:51:47:307 Mongo1/(13876:13877): Estableciendo conexión desde 45779
 [INFO] 23:51:47:308 Mongo1/(13876:13877): Creando hilo
+[INFO] 22:38:02:895 Mongo1/(14967:14968): Servidor MongoStore iniciando
+[INFO] 22:38:02:896 Mongo1/(14967:14968): Servidor MongoStore encendido
+[INFO] 22:38:14:374 Mongo1/(14967:14968): Estableciendo conexión desde 6868
+[INFO] 22:38:14:378 Mongo1/(14967:14968): Creando hilo
+[INFO] 22:52:07:193 Mongo1/(15141:15142): Servidor MongoStore iniciando
+[INFO] 22:52:07:194 Mongo1/(15141:15142): Servidor MongoStore encendido
+[INFO] 22:52:20:378 Mongo1/(15141:15142): Estableciendo conexión desde 14036
+[INFO] 22:52:20:380 Mongo1/(15141:15142): Creando hilo
+[INFO] 22:54:16:566 Mongo1/(15200:15201): Servidor MongoStore iniciando
+[INFO] 22:54:16:567 Mongo1/(15200:15201): Servidor MongoStore encendido
+[INFO] 22:54:31:077 Mongo1/(15200:15201): Estableciendo conexión desde 18132
+[INFO] 22:54:31:081 Mongo1/(15200:15201): Creando hilo
+[INFO] 23:07:00:135 Mongo1/(15420:15421): Servidor MongoStore iniciando
+[INFO] 23:07:00:136 Mongo1/(15420:15421): Servidor MongoStore encendido
+[INFO] 23:07:11:018 Mongo1/(15420:15421): Estableciendo conexión desde 24788
+[INFO] 23:07:11:024 Mongo1/(15420:15421): Creando hilo
+[INFO] 23:53:46:636 Mongo1/(15824:15825): Servidor MongoStore iniciando
+[INFO] 23:53:46:637 Mongo1/(15824:15825): Servidor MongoStore encendido
+[INFO] 23:53:54:904 Mongo1/(15824:15825): Estableciendo conexión desde 41172
+[INFO] 23:53:54:908 Mongo1/(15824:15825): Creando hilo
+[INFO] 23:55:51:208 Mongo1/(15895:15896): Servidor MongoStore iniciando
+[INFO] 23:55:51:209 Mongo1/(15895:15896): Servidor MongoStore encendido
+[INFO] 23:55:57:036 Mongo1/(15895:15896): Estableciendo conexión desde 45268
+[INFO] 23:55:57:039 Mongo1/(15895:15896): Creando hilo
+[INFO] 23:56:45:406 Mongo1/(15952:15953): Servidor MongoStore iniciando
+[INFO] 23:56:45:407 Mongo1/(15952:15953): Servidor MongoStore encendido
+[INFO] 23:56:50:596 Mongo1/(15952:15953): Estableciendo conexión desde 48852
+[INFO] 23:56:50:599 Mongo1/(15952:15953): Creando hilo

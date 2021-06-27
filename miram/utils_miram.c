@@ -171,10 +171,9 @@ int funcion_cliente(int socket_cliente){
 			case PEDIR_TAREA:;
 				t_list* lista_tripulante = recibir_paquete(socket_cliente);
 				int id_tripulante = (int)atoi(list_get(lista_tripulante,0));
-				int prox_instruccion = (int)atoi(list_get(lista_tripulante,1));
-				int numero_patota = (int)atoi(list_get(lista_tripulante,2));
+				int numero_patota = (int)atoi(list_get(lista_tripulante,1));
 
-				bool hay_mas_tareas = enviar_tarea_segmentacion(socket_cliente, numero_patota, id_tripulante, prox_instruccion);
+				bool hay_mas_tareas = enviar_tarea_segmentacion(socket_cliente, numero_patota, id_tripulante);
 				if(hay_mas_tareas == false){
 					funcion_expulsar_tripulante(id_tripulante);
 				}
@@ -190,7 +189,27 @@ int funcion_cliente(int socket_cliente){
 
 				int pid_recibido = (int)atoi(list_get(lista_recibida,2));
 
-				cambiar_estado(pid_recibido, estado, tid);
+				bool cambio_exitoso = cambiar_estado(pid_recibido, estado, tid);
+				if(cambio_exitoso == false){
+					char* mensaje = malloc(23);
+					mensaje = "fallo cambio de estado";
+					enviar_mensaje(mensaje, socket_cliente);
+				}else{
+					char* mensaje = malloc(25);
+					mensaje = "cambio de estado exitoso";
+					enviar_mensaje(mensaje, socket_cliente);
+				}
+
+				break;
+
+			case INFORMAR_MOVIMIENTO:;
+				t_list* lista__movimiento = recibir_paquete(socket_cliente);
+				int tid_rec = (int)atoi(list_get(lista__movimiento,0));
+				int posx = (int)atoi(list_get(lista__movimiento,1));
+				int posy = (int)atoi(list_get(lista__movimiento,2));
+				int pid_rec = (int)atoi(list_get(lista__movimiento,3));
+
+				bool movimiento_exitoso = cambiar_posicion(tid_rec, posx, posy, pid_rec);
 
 				break;
 
@@ -1084,8 +1103,8 @@ void compactar_memoria(){
     log_info(logger, "Termina compactacion");
 }
 
-void cambiar_estado(int numero_patota, char nuevo_estado, int tid){
-	sem_wait(&MUTEX_CAMBIAR_ESTADO);
+bool cambiar_estado(int numero_patota, char nuevo_estado, int tid){
+	sem_wait(&MUTEX_CAMBIAR_ESTADO);//REEVER SEMAFOROS
 
 	tabla_segmentacion* tabla_segmentos = buscar_tabla_segmentos(numero_patota);
 	if(tabla_segmentos != NULL){
@@ -1099,48 +1118,53 @@ void cambiar_estado(int numero_patota, char nuevo_estado, int tid){
 				tcbTripulante* tripulante = espacio->contenido;
 				tripulante->estado = nuevo_estado;
 				espacio->contenido = tripulante;
+				sem_post(&MUTEX_CAMBIAR_ESTADO);
+				return true;
 			}
 		}
 	}
-
 	sem_post(&MUTEX_CAMBIAR_ESTADO);
+	return false;
 }
 
-bool enviar_tarea_segmentacion(int socket_cliente, int numero_patota, int id_tripulante, int prox_instruccion){
+bool enviar_tarea_segmentacion(int socket_cliente, int numero_patota, int id_tripulante){
 	sem_wait(&MUTEX_PEDIR_TAREA); //REEVER ESTOS SEMAFOROS
 
 	tabla_segmentacion* tabla_segmentos = buscar_tabla_segmentos(numero_patota);
 
 	if(tabla_segmentos != NULL){
-		segmento* segmento = list_get(tabla_segmentos->lista_segmentos, 1); // 1 es el segmento de tareas
-		espacio_de_memoria* espacio = buscar_espacio(segmento);
+		for(int k=2; k < list_size(tabla_segmentos->lista_segmentos); k++){ //busco segmento del tripulante
+			segmento* segmento_tcb = list_get(tabla_segmentos->lista_segmentos, k);
 
-		if(espacio != NULL){ //encontro la base en memoria de las tareas
-			char* una_tarea = buscar_tarea(espacio, prox_instruccion);
-			//char* una_tarea = malloc(10);
+			int seg_a_buscar = id_tripulante - tabla_segmentos->primer_tripulante;
+			if(seg_a_buscar == segmento_tcb->numero_segmento -2){ //CREO QUE ESTA BIEN PERO NO PROBE MUCHO
 
-			if(una_tarea == NULL){ //no tiene mas tareas
-				char* mensaje = malloc(18);
-				mensaje = "no hay mas tareas";
-				enviar_mensaje(mensaje, socket_cliente);
-				//free(mensaje);
-				sem_post(&MUTEX_PEDIR_TAREA);
-				return false;
-			}
-
-			enviar_mensaje(una_tarea, socket_cliente);
-			//free(una_tarea);
-		}
-		int seg_a_buscar = id_tripulante - tabla_segmentos->primer_tripulante;
-		for(int k=2; k < list_size(tabla_segmentos->lista_segmentos); k++){//actualizo el prox_instruccion del tripu PERO NOSE PARA QUE PQ NO LO USO CREO
-			segmento = list_get(tabla_segmentos->lista_segmentos, k);
-
-			if(seg_a_buscar == segmento->numero_segmento -2){ //CREO QUE ESTA BIEN PERO NO PROBE MUCHO
-
-				espacio_de_memoria* espacio_tcb = buscar_espacio(segmento); //encontro la base en memoria del tcb del tripulante
+				espacio_de_memoria* espacio_tcb = buscar_espacio(segmento_tcb); //encontro la base en memoria del tcb del tripulante
 				if(espacio_tcb != NULL){
 					tcbTripulante* tripulante = espacio_tcb->contenido;
-					tripulante->prox_instruccion++;
+
+					segmento* segmento_tarea = list_get(tabla_segmentos->lista_segmentos, 1); // 1 es el segmento de tareas
+					espacio_de_memoria* espacio = buscar_espacio(segmento_tarea);
+
+					if(espacio != NULL){ //encontro la base en memoria de las tareas
+						char* una_tarea = buscar_tarea(espacio, tripulante->prox_instruccion);
+						//char* una_tarea = malloc(10);
+
+						if(una_tarea == NULL){ //no tiene mas tareas
+							char* mensaje = malloc(18);
+							mensaje = "no hay mas tareas";
+							enviar_mensaje(mensaje, socket_cliente);
+							//free(mensaje);
+							sem_post(&MUTEX_PEDIR_TAREA);
+							return false;
+						}
+
+						enviar_mensaje(una_tarea, socket_cliente);
+						//free(una_tarea);
+					}
+					if(tripulante->estado != 'B'){ //SI ESTA EN BLOQ NO LO SUMA PQ DESPUES LO PIDE DE VUELTA EN EXEC
+						tripulante->prox_instruccion++;
+					}
 					tripulante->estado = 'R';
 					espacio_tcb->contenido = tripulante;
 				}
@@ -1194,4 +1218,9 @@ char* buscar_tarea(espacio_de_memoria* espacio, int prox_instruccion){
 	}
 
 	return una_tarea;
+}
+
+bool cambiar_posicion(int tid, int posx, int posy, int pid){
+	//HACER
+	return false;
 }

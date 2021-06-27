@@ -59,7 +59,8 @@ typedef enum
 	OBTENER_BITACORA,
 	FIN,
 	PEDIR_TAREA,
-	CAMBIAR_DE_ESTADO
+	CAMBIAR_DE_ESTADO,
+	INFORMAR_MOVIMIENTO
 }tipoMensaje;
 
 typedef struct
@@ -219,11 +220,12 @@ void unir_espacios_contiguos_libres();
 bool patota_segmentacion(uint32_t, uint32_t, char*, t_list*);
 bool funcion_expulsar_tripulante(uint32_t tripulante_id);
 void compactar_memoria();
-bool enviar_tarea_segmentacion(int socket_cliente, int numero_patota, int id_tripulante, int prox_instruccion);
+bool enviar_tarea_segmentacion(int socket_cliente, int numero_patota, int id_tripulante);
 espacio_de_memoria* buscar_espacio(segmento* segmento);
 char* buscar_tarea(espacio_de_memoria* espacio, int prox_instruccion);
-void cambiar_estado(int numero_patota, char nuevo_estado, int tid);
+bool cambiar_estado(int numero_patota, char nuevo_estado, int tid);
 tabla_segmentacion* buscar_tabla_segmentos(int numero_patota);
+bool cambiar_posicion(int tid, int posx, int posy, int pid);
 
 pcbPatota* crear_pcb(uint32_t numero_patota);
 

@@ -82,10 +82,6 @@ char* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
-	char* instruccion_char = malloc(sizeof(char));
-	sprintf(instruccion_char, "%d", tripulante->prox_instruccion);
-	agregar_a_paquete(paquete, instruccion_char, strlen(instruccion_char)+1);
-
 	char* numero_patota_char = malloc(sizeof(char));
 	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
 	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
@@ -103,6 +99,7 @@ char* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
 
 	eliminar_paquete(paquete);
 	free(numero_patota_char);
+	free(tid_char);
 
 	return tarea_recibida_miram;
 }
@@ -123,6 +120,47 @@ void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_es
 	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
 
 	enviar_paquete(paquete, conexion_miram);
+
+	char* mensaje_recibido = recibir_mensaje(conexion_miram);
+	//log_info(logger, "TRIPU %d  cambio estado: %s", tripulante->tid, mensaje_recibido);
+
+	eliminar_paquete(paquete);
+	free(tid_char);
+	free(estado_char);
+	free(numero_patota_char);
+	free(mensaje_recibido);
+}
+
+void informar_movimiento(int conexion_miram, tcbTripulante* tripulante){
+	t_paquete* paquete = crear_paquete(INFORMAR_MOVIMIENTO);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* posx_char = malloc(sizeof(char));
+	sprintf(posx_char, "%d", tripulante->posicionX);
+	agregar_a_paquete(paquete, posx_char, strlen(posx_char)+1);
+
+	char* posy_char = malloc(sizeof(char));
+	sprintf(posy_char, "%d", tripulante->posicionY);
+	agregar_a_paquete(paquete, posy_char, strlen(posy_char)+1);
+
+	char* numero_patota_char = malloc(sizeof(char));
+	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
+	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
+
+	enviar_paquete(paquete, conexion_miram);
+
+	char* mensaje_recibido = recibir_mensaje(conexion_miram);
+	//log_info(logger, "TRIPU %d  %s", tripulante->tid, mensaje_recibido);
+
+	eliminar_paquete(paquete);
+	free(tid_char);
+	free(posx_char);
+	free(posy_char);
+	free(numero_patota_char);
+	free(mensaje_recibido);
 }
 
 void tripulante_hilo (tcbTripulante* tripulante){
@@ -132,7 +170,6 @@ void tripulante_hilo (tcbTripulante* tripulante){
 
 	tripulante->socket_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	char* tareaaa = pedir_tarea(tripulante->socket_miram, tripulante);
-
 
 	printf("hola soy el hilo %d, P%d, estoy listo para ejecutar \n", tripulante->tid, tripulante->puntero_pcb);
 	sem_post(&NUEVO_READY);
@@ -182,11 +219,12 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			sem_post(&PASA_A_BLOQUEADO);
 			sem_post(&HABILITA_GRADO_MULTITAREA);
 			sem_wait(&(tripulante->semaforo_tripulante));
+			cambiar_estado(tripulante->socket_miram, tripulante, 'E'); //tengo que cambiar a E ??
 
 			if(tripulante->estado != 'X'){ // O SEA Q TIENE MAS TAREAS
 				tarea_recibida = pedir_tarea_normal(tripulante); //esto en realidad no iria, pq se la tiene q pasar el bloq o algo asi
 
-				tripulante->prox_instruccion--; //MEDIO CHOTO PORQUE YA LA HABIA PEDIDO EN EL BLOQ PERO NOSE COMO HACER PARA PASAR LA TAREA DE BLOQ A ACA
+				tripulante->prox_instruccion--;
 				tareaaa = pedir_tarea(tripulante->socket_miram, tripulante);
 
 				sem_post(&HABILITA_EJECUTAR);
