@@ -143,9 +143,10 @@ int funcion_cliente(int socket_cliente){
 					printf("\n");
 					dump_memoria();
 					void* contenidoAEscribir = malloc(sizeof(configuracion.tamanio_pag));
-					memcpy(contenidoAEscribir, (char*)configuracion.posicion_inicial + 0*configuracion.tamanio_pag,sizeof(32));
-					printf("%s\n", (char*)contenidoAEscribir);
-					swap_pagina(contenidoAEscribir,0);
+					memcpy(contenidoAEscribir, configuracion.posicion_inicial ,sizeof(configuracion.tamanio_pag));
+					swap_pagina((char*)contenidoAEscribir,0);
+					memcpy(configuracion.posicion_inicial,(void*) recuperar_pag_swap(0),sizeof(configuracion.tamanio_pag));
+					leer_informacion(&configuracion,  una_tabla, lista);
 				}
 
 
@@ -861,15 +862,16 @@ char* obtener_tarea(int id_patota, int nro_tarea){
 void swap_pagina(char* contenidoAEscribir,int numDeBloque){
 	FILE* swapfile = fopen("swap.bin","rb+");
 	fseek(swapfile,numDeBloque*configuracion.tamanio_pag,SEEK_SET);
-	char* aux = completarBloque(contenidoAEscribir);
-	fwrite(aux,sizeof(configuracion.tamanio_pag),1,swapfile);
+	char* aux = malloc(sizeof(configuracion.tamanio_pag));
+	aux=completarBloque(contenidoAEscribir);
+	fwrite(aux,configuracion.tamanio_pag,1,swapfile);
 	free(aux);
 	fclose(swapfile);
 }
 
 char* recuperar_pag_swap(int numDeBloque){
-	FILE* swapfile = fopen("swap.bin","rb+");
-	char* leido = malloc(sizeof(configuracion.tamanio_pag));
+	FILE* swapfile = fopen("swap.bin","r+");
+	char* leido = malloc(configuracion.tamanio_pag);
 	fseek(swapfile,numDeBloque*configuracion.tamanio_pag,SEEK_SET);
 	fread(leido,configuracion.tamanio_pag,1,swapfile);
 	char* aux = vaciar_bloque(leido);
@@ -896,8 +898,14 @@ void borrarBloque(int numeroDeBloque, int tamanioDeBloque){
 char* completarBloque(char* bloqueACompletar){
 	int cantACompletar = configuracion.tamanio_pag - string_length(bloqueACompletar);
 	printf("Cant a completar %d\n", cantACompletar);
-	char* aux = string_duplicate(bloqueACompletar);
+	fflush(stdout);
+	char* aux = malloc(sizeof(configuracion.tamanio_pag));
+	aux = string_duplicate(bloqueACompletar);
 	string_append(&aux,string_repeat('#',cantACompletar));
+	fflush(stdout);
+	printf("%s",aux);
+	fflush(stdout);
 
 	return aux;
 }
+
