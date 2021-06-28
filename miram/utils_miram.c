@@ -88,10 +88,6 @@ int funcion_cliente(int socket_cliente){
 		switch(tipoMensajeRecibido)
 		{
 			case PRUEBA:;
-				int a1;
-				a1=posicion_marco(&configuracion);
-				int a2;
-				a2=posicion_marco(&configuracion);
 				lista=recibir_paquete(socket_cliente);
 				int pid = (int)atoi(list_get(lista,0));
 				printf("el numero de la patota es %d\n", pid);
@@ -146,6 +142,10 @@ int funcion_cliente(int socket_cliente){
 					fflush(stdout);
 					printf("\n");
 					dump_memoria();
+					void* contenidoAEscribir = malloc(sizeof(configuracion.tamanio_pag));
+					memcpy(contenidoAEscribir, (char*)configuracion.posicion_inicial + 0*configuracion.tamanio_pag,sizeof(32));
+					printf("%s\n", (char*)contenidoAEscribir);
+					swap_pagina(contenidoAEscribir,0);
 				}
 
 
@@ -652,7 +652,7 @@ int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato){
 int escribir_atributo(void* dato, int offset, int nro_marco, config_struct* config_s){
 	void* p = config_s->posicion_inicial;
 	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
-	memcpy((int*)p+desplazamiento,dato,sizeof(int));
+	memcpy((char*)p+desplazamiento,dato,sizeof(int));
 	return sizeof(int);
 }
 
@@ -660,7 +660,7 @@ void* leer_atributo(int offset, int nro_marco, config_struct* config_s){
 	void* dato =malloc(sizeof(int));
 	void* p = config_s->posicion_inicial;
 	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
-	memcpy(&dato,(int*)p+desplazamiento,sizeof(int));
+	memcpy(&dato,(char*)p+desplazamiento,sizeof(int));
 	return dato;
 }
 
@@ -671,7 +671,7 @@ int escribir_atributo_char(tcbTripulante* tripulante, int offset, int nro_marco,
 	sprintf(estado,"%c",tripulante->estado);
 	void* p = config_s->posicion_inicial;
 	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
-	memcpy((int*)p+desplazamiento,estado,sizeof(char));
+	memcpy((char*)p+desplazamiento,estado,sizeof(char));
 	return sizeof(char);
 }
 
@@ -680,7 +680,7 @@ int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct*
 	sprintf(valor,"%c",caracter);
 	void* p = config_s->posicion_inicial;
 	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
-	memcpy((int*)p+desplazamiento,valor,sizeof(char));
+	memcpy((char*)p+desplazamiento,valor,sizeof(char));
 	return sizeof(char);
 }
 
@@ -689,7 +689,7 @@ void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s){
 	void* dato =malloc(sizeof(char));
 	void* p = config_s->posicion_inicial;
 	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
-	memcpy(dato,(int*)p+desplazamiento,sizeof(char));
+	memcpy(dato,(char*)p+desplazamiento,sizeof(char));
 	return dato;
 }
 
@@ -845,4 +845,59 @@ void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina){
 	}
 }
 
+char* obtener_tarea(int id_patota, int nro_tarea){
+	for(int i=0; i<list_size(memoria_aux);i++){
+		tabla_paginacion* una_tabla = list_get(memoria_aux,i);
+		if(una_tabla->id_patota==id_patota){
+			una_tabla->marco_inicial;
+		}
+	}
+	char* tarea;
+	return tarea;
 
+}
+
+
+void swap_pagina(char* contenidoAEscribir,int numDeBloque){
+	FILE* swapfile = fopen("swap.bin","rb+");
+	fseek(swapfile,numDeBloque*configuracion.tamanio_pag,SEEK_SET);
+	char* aux = completarBloque(contenidoAEscribir);
+	fwrite(aux,sizeof(configuracion.tamanio_pag),1,swapfile);
+	free(aux);
+	fclose(swapfile);
+}
+
+char* recuperar_pag_swap(int numDeBloque){
+	FILE* swapfile = fopen("swap.bin","rb+");
+	char* leido = malloc(sizeof(configuracion.tamanio_pag));
+	fseek(swapfile,numDeBloque*configuracion.tamanio_pag,SEEK_SET);
+	fread(leido,configuracion.tamanio_pag,1,swapfile);
+	char* aux = vaciar_bloque(leido);
+	fclose(swapfile);
+	free(leido);
+	return aux;
+}
+
+char* vaciar_bloque(char* bloqueAVaciar){
+	char* bloque;// = string_new();
+	int i;
+	for (i = 0; i < string_length(bloqueAVaciar); ++i) {
+		if (bloqueAVaciar[i] == '#')
+			break;
+	}
+	bloque = string_substring_until(bloqueAVaciar,i);
+	return bloque;
+}
+
+void borrarBloque(int numeroDeBloque, int tamanioDeBloque){
+	swap_pagina("",numeroDeBloque);
+}
+
+char* completarBloque(char* bloqueACompletar){
+	int cantACompletar = configuracion.tamanio_pag - string_length(bloqueACompletar);
+	printf("Cant a completar %d\n", cantACompletar);
+	char* aux = string_duplicate(bloqueACompletar);
+	string_append(&aux,string_repeat('#',cantACompletar));
+
+	return aux;
+}

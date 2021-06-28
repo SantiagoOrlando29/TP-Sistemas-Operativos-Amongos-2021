@@ -10,6 +10,7 @@
 #include<netdb.h>
 #include<commons/log.h>
 #include<commons/collections/list.h>
+#include <commons/string.h>
 #include <commons/config.h>
 #include<string.h>
 #include<pthread.h>
@@ -203,6 +204,15 @@ int escribir_atributo(void* dato, int offset, int nro_marco, config_struct* conf
 int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct* config_s);
 void dump_memoria();
 void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina);
+
+
+//swap
+
+void swap_pagina(char* contenidoAEscribir,int numDeBloque);
+void borrarBloque(int numeroDeBloque, int tamanioDeBloque);
+char* completarBloque(char* bloqueACompletar);
+char* recuperar_pag_swap(int numDeBloque);
+char* vaciar_bloque(char* bloqueAVaciar);
 
 void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial);
 
