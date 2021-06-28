@@ -24,12 +24,12 @@ t_list* lista_tripulantes_exit;
 
 
 tarea* pedir_tarea_IO(tcbTripulante* tripulante){
-	tarea* tarea_recibida = crear_tarea(GENERAR_COMIDA,7,2,2,2);
+	tarea* tarea_recibida = crear_tarea("GENERAR_COMIDA",7,2,2,2);
 	return(tarea_recibida);
 }
 tarea* pedir_tarea_normal(tcbTripulante* tripulante){
 	//if(tripulante->tid < 4){ // ESTO HACE Q VAYA A EXIT
-		tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,2);
+		tarea* tarea_recibida = crear_tarea("GENERAR_OXIGENO",5,2,2,2);
 		return(tarea_recibida);
 	//} else{
 		//return NULL;
@@ -94,6 +94,10 @@ char* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
 	if(strcmp("no hay mas tareas", tarea_recibida_miram) ==0){
 		return NULL;
 	}
+
+	int largo_char_tarea = strlen(tarea_recibida_miram) +1;
+	tarea* tarea_posta = transformar_char_tarea(largo_char_tarea, tarea_recibida_miram);
+	//log_info("TAREA: ")
 
 	tripulante->prox_instruccion++;
 
@@ -166,7 +170,7 @@ void informar_movimiento(int conexion_miram, tcbTripulante* tripulante){
 void tripulante_hilo (tcbTripulante* tripulante){
 	sem_wait(&(tripulante->semaforo_tripulante));
 
-	tarea* tarea_recibida = crear_tarea(GENERAR_OXIGENO,5,2,2,4); //TAREA NORMAL
+	tarea* tarea_recibida = crear_tarea("GENERAR_OXIGENO",5,2,2,4); //TAREA NORMAL
 
 	tripulante->socket_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	char* tareaaa = pedir_tarea(tripulante->socket_miram, tripulante);
@@ -188,6 +192,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			sem_wait(&CONTINUAR_PLANIFICACION);
 			sem_post(&CONTINUAR_PLANIFICACION);
 			printf("hilo %d P%d, me estoy moviendo \n", tripulante->tid, tripulante->puntero_pcb);
+			informar_movimiento(tripulante->socket_miram, tripulante);
 			sleep(1); // retardo ciclo cpu VA?  EN TODOS LOS SLEEP IRIA ESO?
 			fflush(stdout);
 			contador_movimientos++;
@@ -466,10 +471,13 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				//agregar_entero_a_paquete(paquete, cantidad_tripulantes, sizeof(uint32_t));
 				agregar_a_paquete(paquete, cantidad_tripulantes_char, strlen(cantidad_tripulantes_char)+1);
 
-				char* tareas = malloc(sizeof(char));
-				leer_tareas(parametros[2], &tareas);
-				printf("Las tareas recibidas por parametro son: %s\n", tareas);
+				//char* tareas = malloc(sizeof(char));
+				//leer_tareas(parametros[2], &tareas);
+				//printf("Las tareas recibidas por parametro son: %s\n", tareas);
 
+				char* tareas = malloc(sizeof(char));
+				tareas = leer_tareas_archivo(parametros[2]);
+				printf("tareasssss %s \n", tareas);
 /*
 INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
 INICIAR_PATOTA 5 tareas_corta.txt 300|4 10|20 4|500
@@ -510,7 +518,7 @@ INICIAR_PATOTA 5 tareas_corta.txt 300|4 10|20 4|500
 				sprintf(largo_tarea, "%d", strlen(tareas)+1);
 				agregar_a_paquete(paquete, largo_tarea, strlen(largo_tarea)+1);
 				agregar_a_paquete(paquete, tareas, strlen(tareas)+1);
-				free(tareas);
+				//free(tareas);
 
 				enviar_paquete(paquete, conexionMiRam);
 

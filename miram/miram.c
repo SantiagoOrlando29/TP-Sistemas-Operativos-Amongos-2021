@@ -10,6 +10,7 @@ int main(void)
 
 	sem_init(&MUTEX_PEDIR_TAREA, 0,1);
 	sem_init(&MUTEX_CAMBIAR_ESTADO, 0,1);
+	sem_init(&MUTEX_CAMBIAR_POSICION, 0,1);
 
 	t_list* memoria_aux=list_create();
 	agregar_memoria_aux(memoria_aux,&configuracion);

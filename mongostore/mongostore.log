@@ -105,3 +105,30 @@
 [ERROR] 23:54:46:794 mongostore/(15824:15850): el discordiador finalizo el programa. Terminando servidor
 [ERROR] 23:56:31:186 mongostore/(15895:15923): el discordiador finalizo el programa. Terminando servidor
 [ERROR] 23:57:07:763 mongostore/(15952:15978): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 22:34:20:991 mongostore/(17010:17041): el cliente se desconecto. Terminando servidor
+[ERROR] 22:36:17:924 mongostore/(17071:17089): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 22:49:21:560 mongostore/(17152:17304): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 23:23:56:965 mongostore/(17799:17869): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 23:27:09:008 mongostore/(17917:17975): el cliente se desconecto. Terminando servidor
+[ERROR] 23:34:27:773 mongostore/(18027:18070): el cliente se desconecto. Terminando servidor
+[ERROR] 23:37:30:717 mongostore/(18146:18174): el cliente se desconecto. Terminando servidor
+[ERROR] 23:39:14:994 mongostore/(18212:18236): el cliente se desconecto. Terminando servidor
+[ERROR] 23:42:27:982 mongostore/(18266:18290): el cliente se desconecto. Terminando servidor
+[ERROR] 23:46:33:368 mongostore/(18324:18422): el cliente se desconecto. Terminando servidor
+[ERROR] 23:48:32:018 mongostore/(18445:18468): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 23:53:27:657 mongostore/(18532:18556): el cliente se desconecto. Terminando servidor
+[ERROR] 23:55:24:673 mongostore/(18586:18604): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 23:56:56:645 mongostore/(18631:18652): el cliente se desconecto. Terminando servidor
+[ERROR] 00:04:08:370 mongostore/(18679:18693): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 00:27:56:225 mongostore/(19197:19408): el cliente se desconecto. Terminando servidor
+[ERROR] 00:28:58:635 mongostore/(19433:19459): el cliente se desconecto. Terminando servidor
+[ERROR] 00:30:15:025 mongostore/(19483:19516): el cliente se desconecto. Terminando servidor
+[ERROR] 00:31:13:019 mongostore/(19530:19557): el cliente se desconecto. Terminando servidor
+[ERROR] 00:31:59:425 mongostore/(19588:19604): el cliente se desconecto. Terminando servidor
+[ERROR] 00:32:32:850 mongostore/(19620:19645): el cliente se desconecto. Terminando servidor
+[ERROR] 00:33:07:202 mongostore/(19659:19680): el cliente se desconecto. Terminando servidor
+[ERROR] 00:34:09:250 mongostore/(19708:19740): el cliente se desconecto. Terminando servidor
+[ERROR] 00:34:54:867 mongostore/(19754:19780): el cliente se desconecto. Terminando servidor
+[ERROR] 00:38:02:898 mongostore/(19823:19847): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 00:39:39:140 mongostore/(19876:19904): el cliente se desconecto. Terminando servidor
+[ERROR] 00:45:54:970 mongostore/(19981:20006): el discordiador finalizo el programa. Terminando servidor

@@ -22,6 +22,7 @@
 
 sem_t MUTEX_PEDIR_TAREA;
 sem_t MUTEX_CAMBIAR_ESTADO;
+sem_t MUTEX_CAMBIAR_POSICION;
 
 typedef struct{
 	int patota_id;

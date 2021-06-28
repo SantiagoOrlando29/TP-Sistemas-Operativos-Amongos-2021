@@ -288,6 +288,87 @@ void leer_tareas(char* archTarea, char* *tareas){
 
 }
 
+char* leer_tareas_archivo(char* archTarea){
+	   FILE *fp;
+	   char linea[200]; //reever este 200
+	   char ultimo_caracter;
+	   char* tareass = malloc(500);
+	   strcpy(tareass, "");
+	   fp = fopen(archTarea, "r");
+	   if (fp == NULL)
+	     {
+	        perror("Error al abrir el archivo.\n");
+	        exit(EXIT_FAILURE);
+	     }
+	   while (fgets(linea, sizeof(linea), fp)){
+		   ultimo_caracter = linea[strlen(linea)-1];
+		   linea[strlen(linea)-1] = '-';
+
+		   strcat(tareass, linea);
+	   }
+	   tareass[strlen(tareass)-1] = ultimo_caracter;
+
+	   //printf("Las tareas sonNNNNNNNNN %s\n",tareas);
+	   return tareass;
+}
+
+tarea* transformar_char_tarea(int largo_char_tarea, char* char_tarea){
+	  // char *item;
+	   char linea[largo_char_tarea];
+	   //strcpy(char_tarea, "");
+	   tarea* tarea_leida = malloc(sizeof(tarea));
+	   //int contador_tareas =1;
+	   //int codTarea;
+
+	   char** partes = string_split(char_tarea,";");
+
+	   if(strchr(partes[0], ' ') != NULL){ // tiene un espacio => tiene parametro => es tarea E/S
+		   tarea_leida->tarea = strtok(partes[0]," ");
+		  // printf("tarea nombre %s \n", tarea_leida->tarea);
+		   tarea_leida->parametro = atoi(strtok(NULL,""));
+		  // printf("tarea parametro %d \n", tarea_leida->parametro);
+
+	   }else{ //no tiene parametro => es tarea normal
+		   tarea_leida->tarea = partes[0];
+		  // printf("tarea nombre %s \n", tarea_leida->tarea);
+		   tarea_leida->parametro = NULL;
+	   }
+
+	   tarea_leida->pos_x = atoi(partes[1]);
+	   tarea_leida->pos_y = atoi(partes[2]);
+	   tarea_leida->tiempo = atoi(partes[3]);
+
+	   return tarea_leida;
+
+
+	  /* if(linea[0]=='D'){    //A corregir
+		   codTarea = codigoTarea(strtok(linea,";"));
+		   leida->tarea=codTarea;
+		   leida->parametro=0;
+
+	   }else{
+	   codTarea = codigoTarea(strtok(linea," "));
+
+	   leida->tarea = codTarea;
+	item = strtok(NULL,";");
+	   leida->parametro=atoi(item);
+	   }
+	   item = strtok(NULL,";");
+	   leida->pos_x=atoi(item);
+	   item = strtok(NULL,";");
+	   leida->pos_y=atoi(item);
+	   item = strtok(NULL,"\n");
+	   leida->tiempo=atoi(item);
+
+	   char* string_tarea = imprimirTarea(leida);
+	   *tareas = realloc(*tareas, (strlen(string_tarea)*contador_tareas)+1);
+	   strcat (*tareas, string_tarea);
+
+	   contador_tareas++;
+	   //free(mensaje); Aca liberar ya que antes hice malloc(20)*/
+
+}
+
 tarea_tripulante codigoTarea(char *nombretarea){
 	if(strcmp(nombretarea,"GENERAR_OXIGENO")==0)
 		return GENERAR_OXIGENO;
@@ -326,8 +407,8 @@ char* imprimirTarea(tarea* aimprimir){
 
 }
 
-
-tarea* crear_tarea(tarea_tripulante cod_tarea,int parametro,int pos_x,int pos_y,int tiempo){
+//tarea* crear_tarea(tarea_tripulante cod_tarea,int parametro,int pos_x,int pos_y,int tiempo){
+tarea* crear_tarea(char* cod_tarea,int parametro,int pos_x,int pos_y,int tiempo){
 	tarea* tarea_recibida = malloc(sizeof(tarea));
 	tarea_recibida->tarea=cod_tarea;
 	tarea_recibida->parametro=parametro;
@@ -338,13 +419,13 @@ tarea* crear_tarea(tarea_tripulante cod_tarea,int parametro,int pos_x,int pos_y,
 
 }
 
-tcbTripulante* hacer_tarea(tcbTripulante* tripulante,tarea* tarea_recibida){
+/*tcbTripulante* hacer_tarea(tcbTripulante* tripulante,tarea* tarea_recibida){
 	tripulante->posicionX=tarea_recibida->pos_x;
 	tripulante->posicionY=tarea_recibida->pos_y;
 	ejecutar_tarea(tarea_recibida->tarea,tarea_recibida->parametro);
 	sleep(tarea_recibida->tiempo);
 	return tripulante; //Enviar a MiRam (Actualizar tcb)
-}
+}*/
 
 void ejecutar_tarea(tarea_tripulante cod_tarea,int parametro){
 

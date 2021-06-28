@@ -125,7 +125,7 @@ typedef enum
 }tarea_tripulante;
 
 typedef struct{
-	tarea_tripulante tarea;
+	char* tarea;
 	int parametro;
 	int pos_x;
 	int pos_y;
@@ -154,10 +154,14 @@ void enviar_header(tipoMensaje tipo, int socket_cliente);
 char* imprimirTarea(tarea*);
 tarea_tripulante codigoTarea(char*);
 void leer_tareas(char* archTarea, char* *tareas);
-tarea* crear_tarea(tarea_tripulante,int,int,int,int);
+//tarea* crear_tarea(tarea_tripulante,int,int,int,int);
+tarea* crear_tarea(char*,int,int,int,int);
 tcbTripulante* hacer_tarea(tcbTripulante*,tarea*);
 void ejecutar_tarea(tarea_tripulante,int);
 char* pedir_tarea(int conexion_miram, tcbTripulante* tripulante);
+
+char* leer_tareas_archivo(char* archTarea);
+tarea* transformar_char_tarea(int largo_char_tarea, char* char_tarea);
 
 void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado);
 void informar_movimiento(int conexion_miram, tcbTripulante* tripulante);

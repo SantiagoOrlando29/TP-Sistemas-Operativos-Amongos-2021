@@ -1,28 +1,21 @@
-[INFO] 23:56:52:567 discordiador/(15969:15969): Memoria asignada
-[INFO] 23:56:52:583 discordiador/(15969:15979): TRIPU 1  tarea recibida: 6-0-0-0-0
-[INFO] 23:56:52:584 discordiador/(15969:15979): TRIPU 1  cambio estado: cambio de estado exitoso
-[INFO] 23:56:52:586 discordiador/(15969:15980): TRIPU 2  tarea recibida: 6-0-0-0-0
-[INFO] 23:56:52:586 discordiador/(15969:15981): TRIPU 3  tarea recibida: 6-0-0-0-0
-[INFO] 23:56:52:587 discordiador/(15969:15980): TRIPU 2  cambio estado: cambio de estado exitoso
-[INFO] 23:56:52:587 discordiador/(15969:15982): TRIPU 4  tarea recibida: 6-0-0-0-0
-[INFO] 23:56:52:587 discordiador/(15969:15983): TRIPU 5  tarea recibida: 6-0-0-0-0
-[INFO] 23:56:55:585 discordiador/(15969:15979): TRIPU 1  cambio estado: cambio de estado exitoso
-[INFO] 23:56:55:585 discordiador/(15969:15981): TRIPU 3  cambio estado: cambio de estado exitoso
-[INFO] 23:56:55:587 discordiador/(15969:15980): TRIPU 2  cambio estado: cambio de estado exitoso
-[INFO] 23:56:55:587 discordiador/(15969:15982): TRIPU 4  cambio estado: cambio de estado exitoso
-[INFO] 23:56:58:587 discordiador/(15969:15981): TRIPU 3  cambio estado: cambio de estado exitoso
-[INFO] 23:56:58:587 discordiador/(15969:15983): TRIPU 5  cambio estado: cambio de estado exitoso
-[INFO] 23:56:58:588 discordiador/(15969:15982): TRIPU 4  cambio estado: cambio de estado exitoso
-[INFO] 23:56:58:588 discordiador/(15969:15979): TRIPU 1  cambio estado: cambio de estado exitoso
-[INFO] 23:57:01:589 discordiador/(15969:15983): TRIPU 5  cambio estado: cambio de estado exitoso
-[INFO] 23:57:01:589 discordiador/(15969:15980): TRIPU 2  cambio estado: cambio de estado exitoso
-[INFO] 23:57:01:589 discordiador/(15969:15979): TRIPU 1  cambio estado: cambio de estado exitoso
-[INFO] 23:57:01:589 discordiador/(15969:15981): TRIPU 3  cambio estado: cambio de estado exitoso
-[INFO] 23:57:04:593 discordiador/(15969:15980): TRIPU 2  cambio estado: cambio de estado exitoso
-[INFO] 23:57:04:593 discordiador/(15969:15982): TRIPU 4  cambio estado: cambio de estado exitoso
-[INFO] 23:57:04:593 discordiador/(15969:15981): TRIPU 3  cambio estado: cambio de estado exitoso
-[INFO] 23:57:04:593 discordiador/(15969:15983): TRIPU 5  cambio estado: cambio de estado exitoso
-[INFO] 23:57:07:595 discordiador/(15969:15983): TRIPU 5  cambio estado: cambio de estado exitoso
-[INFO] 23:57:07:595 discordiador/(15969:15979): TRIPU 1  cambio estado: cambio de estado exitoso
-[INFO] 23:57:07:595 discordiador/(15969:15982): TRIPU 4  cambio estado: cambio de estado exitoso
-[INFO] 23:57:07:595 discordiador/(15969:15980): TRIPU 2  cambio estado: cambio de estado exitoso
+[INFO] 00:47:29:827 discordiador/(20061:20061): Memoria asignada
+[INFO] 00:47:29:840 discordiador/(20061:20071): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:47:29:843 discordiador/(20061:20072): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:47:29:851 discordiador/(20061:20073): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:47:29:855 discordiador/(20061:20074): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:47:29:856 discordiador/(20061:20075): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:47:46:852 discordiador/(20061:20072): TRIPU 2  tarea recibida: ABC;5;6;7
+[INFO] 00:47:46:852 discordiador/(20061:20071): TRIPU 1  tarea recibida: ABC;5;6;7
+[INFO] 00:47:49:856 discordiador/(20061:20075): TRIPU 5  tarea recibida: ABC;5;6;7
+[INFO] 00:47:49:856 discordiador/(20061:20073): TRIPU 3  tarea recibida: ABC;5;6;7
+[INFO] 00:47:52:858 discordiador/(20061:20074): TRIPU 4  tarea recibida: ABC;5;6;7
+[INFO] 00:47:53:859 discordiador/(20061:20071): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 00:47:56:860 discordiador/(20061:20072): TRIPU 2  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 00:47:56:861 discordiador/(20061:20075): TRIPU 5  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 00:47:59:862 discordiador/(20061:20073): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 00:47:59:863 discordiador/(20061:20074): TRIPU 4  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 00:48:06:869 discordiador/(20061:20072): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 00:48:07:870 discordiador/(20061:20071): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 00:48:08:875 discordiador/(20061:20075): TRIPU 5  tarea recibida: no hay mas tareas
+[INFO] 00:48:09:877 discordiador/(20061:20074): TRIPU 4  tarea recibida: no hay mas tareas
+[INFO] 00:48:09:880 discordiador/(20061:20073): TRIPU 3  tarea recibida: no hay mas tareas
