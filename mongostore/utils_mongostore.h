@@ -25,9 +25,10 @@
 //#include<messages_lib/messages_lib.h>
 #include<stdbool.h>
 
-#define IP "127.0.0.1"
-#define PUERTO "5002"
 
+//Los siguientes defines estan comentados ya que los valores se toman del config
+//#define IP "127.0.0.1"
+//#define PUERTO "5002"
 
 //#define pathFiles "/home/utnso/polus/Files/"
 //#define pathBlocks "/home/utnso/polus/"
@@ -44,7 +45,7 @@ typedef enum
 	PAUSAR_PLANIFICACION,
 	OBTENER_BITACORA,
 	FIN
-}tipoMensaje;
+} mensaje_code;
 
 typedef struct
 {
@@ -54,18 +55,18 @@ typedef struct
 
 typedef struct
 {
-	tipoMensaje mensajeOperacion;
+	mensaje_code mensajeOperacion;
 	t_buffer* buffer;
-}t_paquete;
+} t_paquete;
 
 typedef struct{
-	char* ip_mongostore; // IP
-	char* puerto_mongostore; // puerto en el que se iniciara el servidor
-	char* punto_monstaje; // direccion donde se montara los archivos
+	char* ip; // IP
+	char* puerto; // puerto en el que se iniciara el servidor
+	char* punto_montaje; // direccion donde se montara los archivos
 	int tiempo_sincronizacion; //Tiempo entre bajadas de memoria a disco
 	char** posiciones_sabotaje; // Lista de posiciones de los sabotajes
 
-}config_struct;
+} config_struct;
 
 typedef struct{
 	uint32_t size;
@@ -73,39 +74,40 @@ typedef struct{
 	t_list* blocks; // [1,2,3]
 	char caracter_llenado;
 	char* md5_archivo;
-}config_metadata;
+} config_metadata;
 
 typedef enum{
 	LIBRE,
 	OCUPADO
-}estadoBloque;
+} bloque_state;
 
 typedef enum{
 	ARCHIVO,
 	DIRECTORIO
-}tipoMetadata;
+} tipoMetadata;
 
 typedef struct{
 	int parte_entera;
 	int bytes_usados;
-}bloque_usado;
+} bloque_usado;
 
 typedef struct{
 	uint32_t size;
 	uint32_t block_count;
 	char* blocks; // [1,2,3]
 	char caracter_llenado;
-}bloques_recurso; //al momento de generar recurso
+} bloques_recurso; //al momento de generar recurso
+
 typedef struct{
 	uint32_t block_size; //
 	uint32_t blocks;	//
 	char* bitmap; //lista de estados de bloques
-}superBloque;
+} t_superbloque;
 
 typedef struct{
 	uint32_t size;
 	t_list* blocks; // [bloques utilizados]
-}bitacora;
+} bitacora;
 
 typedef enum
 {
@@ -115,19 +117,18 @@ typedef enum
 	CONSUMIR_COMIDA,
 	GENERAR_BASURA,
 	DESCARTAR_BASURA,
-}tarea_tripulante;
+} tarea_tripulante_code;
 
 typedef struct{
-	tarea_tripulante tarea;
+	tarea_tripulante_code tarea;
 	int parametro;
 	int pos_x;
 	int pos_y;
 	int tiempo;
-}tarea;
-
+} tarea;
 
 t_log* logger;
-config_struct configuracion;
+config_struct ims_config;
 
 void* recibir_buffer(int*, int);
 //int iniciar_servidor(char* , char*);
@@ -138,35 +139,34 @@ int esperar_cliente(int);
 t_list* recibir_paquete(int);
 void recibir_mensaje(int);
 int recibir_operacion(int);
-void leer_config();
+
 
 
 /*Operaciones para enviar mensajes desde mongostore a discordiador*/
-t_paquete* crear_paquete(tipoMensaje tipo);
+t_paquete* crear_paquete(mensaje_code tipo);
 void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 /*FINALIZACION*/
 
 //tareas
-tarea* crearTarea(tarea_tripulante tipo,int parametro,int pos_x,int pos_y,int tiempo);
+tarea* crear_tarea(tarea_tripulante_code tipo,int parametro,int pos_x,int pos_y,int tiempo);
 
-char* buscarPath(char* path,char* puntoMontaje);
-int archivoExiste(char* path);
-void crearDireccion(char* direccion);
-void eliminarDirectorio(char* path);
+char* buscar_path(char* path,char* puntoMontaje);
+int archivo_existe(char* path);
+void crear_direccion(char* direccion);
+void eliminar_directorio(char* path);
 
 
-void escribirArchivoSuperBloque(char*);
-void crearSuperBloque();
+void escribir_archivo_superbloque(char*);
+void crear_superbloque();
 void generar_oxigeno(int ,char*);
 void generar_comida(int,char*);
 void generar_basura(int,char*);
-bloques_recurso* recuperarValores(char*);
-bloques_recurso* asignarBloques(int,superBloque*,char,char*);
-void crearRecursoMetadata(bloques_recurso*,char*,char*);
-void iniciarFS();
-void iniciarBlocks(int);
+bloques_recurso* recuperar_valores(char*);
+bloques_recurso* asignar_bloques(int,t_superbloque*,char,char*);
+void crear_recurso_metadata(bloques_recurso*,char*,char*);
+void iniciar_blocks(int);
 
 
 

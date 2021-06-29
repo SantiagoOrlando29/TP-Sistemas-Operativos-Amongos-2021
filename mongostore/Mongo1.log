@@ -602,3 +602,5 @@
 [INFO] 23:42:02:674 Mongo1/(22013:22014): Servidor MongoStore encendido
 [INFO] 23:42:08:367 Mongo1/(22013:22014): Estableciendo conexión desde 3288
 [INFO] 23:42:08:369 Mongo1/(22013:22014): Creando hilo
+[INFO] 17:10:10:275 Mongo1/(1268:1273): Servidor MongoStore iniciando
+[INFO] 17:13:18:811 Mongo1/(1304:1311): Servidor MongoStore iniciando

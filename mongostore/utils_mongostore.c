@@ -4,6 +4,8 @@
 int socket_servidor;
 int variable_servidor = -1;
 
+
+
 int iniciar_servidor2(char* ip_mongostore, char* puerto_mongostore) //Viejo inicio
 {
 	int socket_servidor;
@@ -53,7 +55,7 @@ void iniciar_servidor(config_struct* config_servidor)
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
-    getaddrinfo(config_servidor->ip_mongostore, config_servidor->puerto_mongostore, &hints, &servinfo);
+    getaddrinfo(config_servidor->ip, config_servidor->puerto, &hints, &servinfo);
 
     for (p=servinfo; p != NULL; p = p->ai_next)
     {
@@ -225,7 +227,7 @@ void crear_buffer(t_paquete* paquete)
 }
 
 
-t_paquete* crear_paquete(tipoMensaje tipo)
+t_paquete* crear_paquete(mensaje_code tipo)
 {
 	t_paquete* paquete = malloc(sizeof(t_paquete));
 	paquete->mensajeOperacion = tipo;
@@ -261,30 +263,25 @@ void eliminar_paquete(t_paquete* paquete)
 	free(paquete);
 }
 
-char* buscarPath(char* path,char* puntoMontaje){
+char* buscar_path(char* path,char* puntoMontaje){
 	char* direccion=string_new();
 	string_append(&direccion,puntoMontaje);
 	string_append(&direccion,path);
 	return direccion;
 }
-int archivoExiste(char* path){
-	if(access(path,F_OK)!=-1){
-		return 1; //true
+
+void crear_direccion(char* direccion){
+	printf("ENTRO A crear_direccion\n");
+	if(!mkdir(direccion,0755))
+	{
+		printf("Creada con exito la direccion \"%s\"...\n", direccion);
 	}
 	else{
-		return 0; //false
+		printf("Ya existia la direccion \"%s\"...\n", direccion);
 	}
-}
-void crearDireccion(char* direccion){
-	int ok=mkdir(direccion,0755);
-	if(ok==0){
-		printf("\nCreado con exito..\n");
-	}
-	else{
-		printf("\nDireccion ya existente...\n");
-	}
-}
-void eliminarDirectorio(char* path){
-	rmdir(path);
+	printf("SALGO DE crear_direccion\n");
 }
 
+void eliminar_directorio(char* path){
+	rmdir(path);
+}
