@@ -11,6 +11,7 @@
 #include<commons/log.h>
 #include<commons/collections/list.h>
 #include <commons/string.h>
+#include <commons/memory.h>
 #include <commons/config.h>
 #include<string.h>
 #include<pthread.h>

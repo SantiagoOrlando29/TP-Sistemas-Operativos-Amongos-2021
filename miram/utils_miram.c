@@ -88,6 +88,10 @@ int funcion_cliente(int socket_cliente){
 		switch(tipoMensajeRecibido)
 		{
 			case PRUEBA:;
+			    int a1;
+				a1=posicion_marco(&configuracion);
+				int a2;
+				a2=posicion_marco(&configuracion);
 				lista=recibir_paquete(socket_cliente);
 				int pid = (int)atoi(list_get(lista,0));
 				printf("el numero de la patota es %d\n", pid);
@@ -139,14 +143,49 @@ int funcion_cliente(int socket_cliente){
 					}
 					almacenar_informacion(&configuracion, una_tabla, lista);
 					leer_informacion(&configuracion,  una_tabla, lista);
+					mem_hexdump(configuracion.posicion_inicial, configuracion.tamanio_pag*sizeof(char));
 					fflush(stdout);
 					printf("\n");
+					fflush(stdout);
 					dump_memoria();
-					void* contenidoAEscribir = malloc(sizeof(configuracion.tamanio_pag));
-					memcpy(contenidoAEscribir, configuracion.posicion_inicial ,sizeof(configuracion.tamanio_pag));
+
+
+
+					void* dato =malloc(sizeof(int));
+					void* p = configuracion.posicion_inicial;
+					int desplazamiento=4*(configuracion.tamanio_pag) + 12;
+					printf("La memoria hdp es %d\n",(int)( p+desplazamiento));
+					fflush(stdout);
+
+					memcpy(&dato,(char*)p+desplazamiento,sizeof(int));
+
+
+					printf("NUmro eesss %d", (uint32_t)dato);
+					fflush(stdout);
+
+
+					desplazamiento=5*(configuracion.tamanio_pag)+4;
+					printf("La memoria hdp es %d\n",(int)( p+desplazamiento));
+					fflush(stdout);
+
+					memcpy(&dato,(char*)p+desplazamiento,sizeof(int));
+
+					printf("NUmro eesss %d", (uint32_t)dato);
+					fflush(stdout);
+
+					printf("NUmro eesss %d", (uint32_t)leer_atributo(0,2, &configuracion));
+
+					fflush(stdout);
+
+/*
+					void* contenidoAEscribir = malloc(configuracion.tamanio_pag*sizeof(char));
+
+					memcpy(contenidoAEscribir,(char*)configuracion.posicion_inicial + 2*configuracion.tamanio_pag ,configuracion.tamanio_pag*sizeof(char));
 					swap_pagina((char*)contenidoAEscribir,0);
-					memcpy(configuracion.posicion_inicial,(void*) recuperar_pag_swap(0),sizeof(configuracion.tamanio_pag));
+					memcpy((char*)configuracion.posicion_inicial + 2*configuracion.tamanio_pag, recuperar_pag_swap(0),configuracion.tamanio_pag*sizeof(char));
+					mem_hexdump(configuracion.posicion_inicial+2*configuracion.tamanio_pag, configuracion.tamanio_pag*sizeof(char));
 					leer_informacion(&configuracion,  una_tabla, lista);
+*/
 				}
 
 
@@ -439,13 +478,20 @@ void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabl
 	int offset = 0;
 	int indice_marco=0;
 
+
+
 	marco* marco = list_get(una_tabla->marco_inicial,indice_marco);
+	printf("MARCO %d\n",marco->id_marco);
+			printf("OFFSET %d\n",offset);
 	uint32_t pid = (uint32_t) leer_atributo(offset,marco->id_marco, config_servidor);
 	offset+= sizeof(int);
 	printf("ID magico %d\n",pid);
+	printf("MARCO %d\n",marco->id_marco);
+	printf("OFFSET %d\n",offset);
 	indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 	marco = list_get(una_tabla->marco_inicial,indice_marco);
-
+	printf("MARCO %d\n",marco->id_marco);
+	printf("OFFSET %d\n",offset);
 	uint32_t puntero_tarea = (uint32_t)leer_atributo(offset,marco->id_marco, config_servidor);
 	offset+=sizeof(int);
 	printf("Puntero magico %d\n",puntero_tarea);
@@ -454,6 +500,8 @@ void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabl
 
 	for(int i=0; i < una_tabla->cant_tripulantes;i++){
 
+		printf("MARCO %d\n",marco->id_marco);
+		printf("OFFSET %d\n",offset);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(int));
 		marco = list_get(una_tabla->marco_inicial,indice_marco);
 		uint32_t tid = (uint32_t)leer_atributo(offset,marco->id_marco, config_servidor);
@@ -461,7 +509,8 @@ void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabl
 		printf("TID magico %d\n",tid);
 		fflush(stdout);
 
-
+		printf("MARCO %d\n",marco->id_marco);
+		printf("OFFSET %d\n",offset);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		marco = list_get(una_tabla->marco_inicial,indice_marco);
 		char estado =*(char*)leer_atributo_char(offset,marco->id_marco, config_servidor);
@@ -861,23 +910,24 @@ char* obtener_tarea(int id_patota, int nro_tarea){
 
 void swap_pagina(char* contenidoAEscribir,int numDeBloque){
 	FILE* swapfile = fopen("swap.bin","rb+");
-	fseek(swapfile,numDeBloque*configuracion.tamanio_pag,SEEK_SET);
-	char* aux = malloc(sizeof(configuracion.tamanio_pag));
-	aux=completarBloque(contenidoAEscribir);
-	fwrite(aux,configuracion.tamanio_pag,1,swapfile);
-	free(aux);
+	fseek(swapfile,numDeBloque*configuracion.tamanio_pag*sizeof(char),SEEK_SET);
+	char* aux = malloc(configuracion.tamanio_pag*sizeof(char));
+	//aux=completarBloque(contenidoAEscribir);
+	fwrite((void*)contenidoAEscribir,sizeof(char)*configuracion.tamanio_pag,1,swapfile);
+	//free(aux);
 	fclose(swapfile);
 }
 
 char* recuperar_pag_swap(int numDeBloque){
 	FILE* swapfile = fopen("swap.bin","r+");
-	char* leido = malloc(configuracion.tamanio_pag);
-	fseek(swapfile,numDeBloque*configuracion.tamanio_pag,SEEK_SET);
-	fread(leido,configuracion.tamanio_pag,1,swapfile);
-	char* aux = vaciar_bloque(leido);
+	char* leido = malloc(configuracion.tamanio_pag*sizeof(char));
+	fseek(swapfile,(numDeBloque*configuracion.tamanio_pag)*sizeof(char),SEEK_SET);
+	printf("Tamanio charxint %d",configuracion.tamanio_pag*sizeof(char));
+	fread(leido,configuracion.tamanio_pag*sizeof(char),1,swapfile);
+	//char* aux = vaciar_bloque(leido);
 	fclose(swapfile);
-	free(leido);
-	return aux;
+	//free(leido);
+	return leido;
 }
 
 char* vaciar_bloque(char* bloqueAVaciar){
