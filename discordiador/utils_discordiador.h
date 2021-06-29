@@ -158,13 +158,15 @@ void leer_tareas(char* archTarea, char* *tareas);
 tarea* crear_tarea(char*,int,int,int,int);
 tcbTripulante* hacer_tarea(tcbTripulante*,tarea*);
 void ejecutar_tarea(tarea_tripulante,int);
-char* pedir_tarea(int conexion_miram, tcbTripulante* tripulante);
+tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante);
 
 char* leer_tareas_archivo(char* archTarea);
-tarea* transformar_char_tarea(int largo_char_tarea, char* char_tarea);
+tarea* transformar_char_tarea(char* char_tarea);
 
 void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado);
 void informar_movimiento(int conexion_miram, tcbTripulante* tripulante);
+
+void planificacion_pausada_o_no();
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanio_tcb(tcbTripulante*);

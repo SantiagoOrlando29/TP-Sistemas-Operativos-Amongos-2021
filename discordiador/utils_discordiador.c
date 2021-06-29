@@ -312,13 +312,8 @@ char* leer_tareas_archivo(char* archTarea){
 	   return tareass;
 }
 
-tarea* transformar_char_tarea(int largo_char_tarea, char* char_tarea){
-	  // char *item;
-	   char linea[largo_char_tarea];
-	   //strcpy(char_tarea, "");
+tarea* transformar_char_tarea(char* char_tarea){
 	   tarea* tarea_leida = malloc(sizeof(tarea));
-	   //int contador_tareas =1;
-	   //int codTarea;
 
 	   char** partes = string_split(char_tarea,";");
 
@@ -339,34 +334,6 @@ tarea* transformar_char_tarea(int largo_char_tarea, char* char_tarea){
 	   tarea_leida->tiempo = atoi(partes[3]);
 
 	   return tarea_leida;
-
-
-	  /* if(linea[0]=='D'){    //A corregir
-		   codTarea = codigoTarea(strtok(linea,";"));
-		   leida->tarea=codTarea;
-		   leida->parametro=0;
-
-	   }else{
-	   codTarea = codigoTarea(strtok(linea," "));
-
-	   leida->tarea = codTarea;
-	item = strtok(NULL,";");
-	   leida->parametro=atoi(item);
-	   }
-	   item = strtok(NULL,";");
-	   leida->pos_x=atoi(item);
-	   item = strtok(NULL,";");
-	   leida->pos_y=atoi(item);
-	   item = strtok(NULL,"\n");
-	   leida->tiempo=atoi(item);
-
-	   char* string_tarea = imprimirTarea(leida);
-	   *tareas = realloc(*tareas, (strlen(string_tarea)*contador_tareas)+1);
-	   strcat (*tareas, string_tarea);
-
-	   contador_tareas++;
-	   //free(mensaje); Aca liberar ya que antes hice malloc(20)*/
-
 }
 
 tarea_tripulante codigoTarea(char *nombretarea){

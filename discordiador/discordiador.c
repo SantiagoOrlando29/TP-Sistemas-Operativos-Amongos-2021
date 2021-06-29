@@ -2,8 +2,6 @@
 #include <semaphore.h>
 
 
-
-
 config_discordiador configuracion;
 //config_struct configuracion;
 sem_t AGREGAR_NUEVO_A_READY;
@@ -23,19 +21,6 @@ t_list* lista_tripulantes_trabajando;
 t_list* lista_tripulantes_exit;
 
 
-tarea* pedir_tarea_IO(tcbTripulante* tripulante){
-	tarea* tarea_recibida = crear_tarea("GENERAR_COMIDA",7,2,2,2);
-	return(tarea_recibida);
-}
-tarea* pedir_tarea_normal(tcbTripulante* tripulante){
-	//if(tripulante->tid < 4){ // ESTO HACE Q VAYA A EXIT
-		tarea* tarea_recibida = crear_tarea("GENERAR_OXIGENO",5,2,2,2);
-		return(tarea_recibida);
-	//} else{
-		//return NULL;
-	//}
-}
-
 bool sigue_ejecutando(int quantums_ejecutados){
 	if(strcmp(configuracion.algoritmo, "FIFO") ==0){
 		return true;
@@ -50,12 +35,12 @@ bool sigue_ejecutando(int quantums_ejecutados){
 void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pensar otro nombre para la funcion
 	bool flag_sigue_ejecutando = sigue_ejecutando(*quantums_ejecutados);
 	if(flag_sigue_ejecutando == false ){
-		sem_wait(&CONTINUAR_PLANIFICACION);
-		sem_post(&CONTINUAR_PLANIFICACION);
-		printf("hilo %d P%d, FIN DE Q \n", tripulante->tid, tripulante->puntero_pcb);
+		planificacion_pausada_o_no();
 
-		sem_wait(&CONTINUAR_PLANIFICACION);
-		sem_post(&CONTINUAR_PLANIFICACION);
+		printf("hilo %d, FIN DE Q \n", tripulante->tid);
+
+		planificacion_pausada_o_no();
+
 		sem_wait(&MUTEX_LISTA_TRABAJANDO);
 		list_remove(lista_tripulantes_trabajando, 0);
 		sem_post(&MUTEX_LISTA_TRABAJANDO);
@@ -75,7 +60,7 @@ void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pen
 	}
 }
 
-char* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
+tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
 	t_paquete* paquete = crear_paquete(PEDIR_TAREA);
 
 	char* tid_char = malloc(sizeof(char));
@@ -95,9 +80,7 @@ char* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
 		return NULL;
 	}
 
-	int largo_char_tarea = strlen(tarea_recibida_miram) +1;
-	tarea* tarea_posta = transformar_char_tarea(largo_char_tarea, tarea_recibida_miram);
-	//log_info("TAREA: ")
+	tarea* tarea_posta = transformar_char_tarea(tarea_recibida_miram);
 
 	tripulante->prox_instruccion++;
 
@@ -105,7 +88,7 @@ char* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
 	free(numero_patota_char);
 	free(tid_char);
 
-	return tarea_recibida_miram;
+	return tarea_posta;
 }
 
 void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado){
@@ -167,15 +150,18 @@ void informar_movimiento(int conexion_miram, tcbTripulante* tripulante){
 	free(mensaje_recibido);
 }
 
+void planificacion_pausada_o_no(){
+	sem_wait(&CONTINUAR_PLANIFICACION);
+	sem_post(&CONTINUAR_PLANIFICACION);
+}
+
 void tripulante_hilo (tcbTripulante* tripulante){
 	sem_wait(&(tripulante->semaforo_tripulante));
 
-	tarea* tarea_recibida = crear_tarea("GENERAR_OXIGENO",5,2,2,4); //TAREA NORMAL
-
 	tripulante->socket_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
-	char* tareaaa = pedir_tarea(tripulante->socket_miram, tripulante);
+	tarea* tarea = pedir_tarea(tripulante->socket_miram, tripulante);
 
-	printf("hola soy el hilo %d, P%d, estoy listo para ejecutar \n", tripulante->tid, tripulante->puntero_pcb);
+	printf("hola soy el hilo %d, estoy listo para ejecutar \n", tripulante->tid);
 	sem_post(&NUEVO_READY);
 
 	fflush(stdout);
@@ -187,12 +173,13 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	int contador_ciclos_trabajando = 0;
 	int quantums_ejecutados = 0;
 
-	while(tareaaa != NULL){
-		while(contador_movimientos < tarea_recibida->tiempo){
-			sem_wait(&CONTINUAR_PLANIFICACION);
-			sem_post(&CONTINUAR_PLANIFICACION);
-			printf("hilo %d P%d, me estoy moviendo \n", tripulante->tid, tripulante->puntero_pcb);
+	while(tarea != NULL){
+		while(contador_movimientos < tarea->tiempo){
+			planificacion_pausada_o_no();
+
+			printf("hilo %d, me estoy moviendo \n", tripulante->tid);
 			informar_movimiento(tripulante->socket_miram, tripulante);
+
 			sleep(1); // retardo ciclo cpu VA?  EN TODOS LOS SLEEP IRIA ESO?
 			fflush(stdout);
 			contador_movimientos++;
@@ -201,14 +188,14 @@ void tripulante_hilo (tcbTripulante* tripulante){
 		}
 		contador_movimientos = 0;
 
-		if(tarea_recibida->tarea == 2){ //TAREA DE I/O
+		if(tarea->parametro != NULL){ //TAREA DE I/O
 			quantums_ejecutados++;
 			termina_quantum(&quantums_ejecutados, tripulante);
 			sleep(1); // retardo ciclo cpu //sleep para eso de iniciar tarea I/O (simula peticion al SO). Nose si va en esta linea
 			quantums_ejecutados = 0;
 
-			sem_wait(&CONTINUAR_PLANIFICACION);
-			sem_post(&CONTINUAR_PLANIFICACION);
+			planificacion_pausada_o_no();
+
 			sem_wait(&MUTEX_LISTA_TRABAJANDO);
 			list_remove(lista_tripulantes_trabajando, 0);
 			sem_post(&MUTEX_LISTA_TRABAJANDO);
@@ -219,7 +206,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			list_add(lista_tripulantes_bloqueado, tripulante);
 			sem_post(&MUTEX_LISTA_BLOQUEADO);
 
-			printf("hilo %d P%d, me bloquie \n", tripulante->tid, tripulante->puntero_pcb);
+			printf("hilo %d, me bloquie \n", tripulante->tid);
 			cambiar_estado(tripulante->socket_miram, tripulante, 'B');
 			sem_post(&PASA_A_BLOQUEADO);
 			sem_post(&HABILITA_GRADO_MULTITAREA);
@@ -227,35 +214,28 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			cambiar_estado(tripulante->socket_miram, tripulante, 'E'); //tengo que cambiar a E ??
 
 			if(tripulante->estado != 'X'){ // O SEA Q TIENE MAS TAREAS
-				tarea_recibida = pedir_tarea_normal(tripulante); //esto en realidad no iria, pq se la tiene q pasar el bloq o algo asi
-
 				tripulante->prox_instruccion--;
-				tareaaa = pedir_tarea(tripulante->socket_miram, tripulante);
+				tarea = pedir_tarea(tripulante->socket_miram, tripulante);
 
 				sem_post(&HABILITA_EJECUTAR);
 
 			} else{ // NO TIENE MAS TAREAS
 				tripulante->prox_instruccion = 100;
-				tareaaa = NULL;
+				tarea = NULL;
 			}
 
 		} else { //TAREA NORMAL
-			while(contador_ciclos_trabajando < tarea_recibida->tiempo){
-				sem_wait(&CONTINUAR_PLANIFICACION);
-				sem_post(&CONTINUAR_PLANIFICACION);
-				printf("hilo %d P%d, estoy trabajando \n", tripulante->tid, tripulante->puntero_pcb);
+			while(contador_ciclos_trabajando < tarea->tiempo){
+				planificacion_pausada_o_no();
+
+				printf("hilo %d, estoy trabajando \n", tripulante->tid);
 				sleep(1);
 				contador_ciclos_trabajando++;
 				quantums_ejecutados++;
-				if(contador_ciclos_trabajando == tarea_recibida->tiempo){//ESTE IF ESTA PARA QUE SI  YA TERMINO LA TAREA, SE FIJE SI TIENE OTRA MAS
-					tarea_recibida = pedir_tarea_IO(tripulante); // I/O     // Y SI NO LA TIENE QUE VAYA DIRECTO A EXIT SIN BLOQUEARSE POR FIN DE QUANTUM
+				if(contador_ciclos_trabajando == tarea->tiempo){//ESTE IF ESTA PARA QUE SI YA TERMINO LA TAREA, SE FIJE SI TIENE OTRA MAS
+					tarea = pedir_tarea(tripulante->socket_miram, tripulante);
 
-					tareaaa = pedir_tarea(tripulante->socket_miram, tripulante);
-
-					if(tarea_recibida == NULL){ // NO TIENE MAS TAREAS
-						tripulante->prox_instruccion = 200;
-						tareaaa = NULL;
-					}else{ //TIENE MAS TAREAS
+					if(tarea != NULL){ // TIENE MAS TAREAS
 						termina_quantum(&quantums_ejecutados, tripulante);
 					}
 				}else{
@@ -264,15 +244,12 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			}
 			contador_ciclos_trabajando = 0;
 		}
-
-		//tripulante->prox_instruccion++;
 	}
 
 	if(tripulante->estado != 'X'){
 		sem_post(&HABILITA_GRADO_MULTITAREA);
 
-		sem_wait(&CONTINUAR_PLANIFICACION);
-		sem_post(&CONTINUAR_PLANIFICACION);
+		planificacion_pausada_o_no();
 
 		sem_wait(&MUTEX_LISTA_TRABAJANDO);
 		list_remove(lista_tripulantes_trabajando, 0);
@@ -281,12 +258,11 @@ void tripulante_hilo (tcbTripulante* tripulante){
 		tripulante->estado = 'X';
 		list_add(lista_tripulantes_exit, tripulante);
 	}
-	printf("hilo %d P%d, EXIT\n", tripulante->tid, tripulante->puntero_pcb);
+	printf("hilo %d, EXIT\n", tripulante->tid);
 	close(tripulante->socket_miram);
 }
 
 void ready_exec() {
-	//sem_wait(&INICIAR_TRIPULANTE);
 	tcbTripulante* tripulante1 = malloc(tamanio_TCB);
 	int lista_size;
 	while(1){
@@ -294,8 +270,7 @@ void ready_exec() {
 		if (lista_size >0){ //PARA QUE NO HAYA ESPERA ACTIVA PODRIA CAMBIAR ESTO POR UN SEMAFORO
 			sem_wait(&HABILITA_GRADO_MULTITAREA);
 			sem_wait(&HABILITA_EJECUTAR);
-			sem_wait(&CONTINUAR_PLANIFICACION);
-			sem_post(&CONTINUAR_PLANIFICACION);
+			planificacion_pausada_o_no();
 			tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_ready, 0);
 			tripulante1->estado = 'E';
 
@@ -313,8 +288,9 @@ void nuevo_ready() {
 	tcbTripulante* tripulante1 = malloc(tamanio_TCB);
 	while(1){
 		sem_wait(&AGREGAR_NUEVO_A_READY);
-		sem_wait(&CONTINUAR_PLANIFICACION);
-		sem_post(&CONTINUAR_PLANIFICACION);
+
+		planificacion_pausada_o_no();
+
 		tripulante1 = (tcbTripulante*)list_remove(lista_tripulantes_nuevo, 0);
 		sem_post(&(tripulante1->semaforo_tripulante));
 		sem_wait(&NUEVO_READY);
@@ -330,7 +306,6 @@ void nuevo_ready() {
 
 void bloqueado_ready() {
 	tcbTripulante* tripulante = malloc(tamanio_TCB);
-	tarea* tarea_recibida;
 	while(1){
 		sem_wait(&PASA_A_BLOQUEADO);
 
@@ -338,27 +313,25 @@ void bloqueado_ready() {
 		tripulante = (tcbTripulante*)list_get(lista_tripulantes_bloqueado, 0);
 		sem_post(&MUTEX_LISTA_BLOQUEADO);
 
-		sem_wait(&CONTINUAR_PLANIFICACION);
-		sem_post(&CONTINUAR_PLANIFICACION);
-		printf("hilo %d P%d, haciendo I/O \n", tripulante->tid, tripulante->puntero_pcb);
+		planificacion_pausada_o_no();
+
+		printf("hilo %d, haciendo I/O \n", tripulante->tid);
 		sleep(1);
-		sem_wait(&CONTINUAR_PLANIFICACION);
-		sem_post(&CONTINUAR_PLANIFICACION);
-		printf("hilo %d P%d, termino I/O \n", tripulante->tid, tripulante->puntero_pcb);
+
+		planificacion_pausada_o_no();
+
+		printf("hilo %d, termino I/O \n", tripulante->tid);
 		fflush(stdout);
 
-		tarea_recibida = pedir_tarea_normal(tripulante);
+		tarea* tarea = pedir_tarea(tripulante->socket_miram, tripulante);
 
-		char* tareaaa = pedir_tarea(tripulante->socket_miram, tripulante);
+		planificacion_pausada_o_no();
 
-
-		sem_wait(&CONTINUAR_PLANIFICACION);
-		sem_post(&CONTINUAR_PLANIFICACION);
 		sem_wait(&MUTEX_LISTA_BLOQUEADO);
 		tripulante = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
 		sem_post(&MUTEX_LISTA_BLOQUEADO);
 
-		if(tarea_recibida != NULL){ // TIENE MAS TAREAS
+		if(tarea != NULL){ // TIENE MAS TAREAS
 			tripulante->estado = 'R';
 			sem_wait(&MUTEX_LISTA_READY);
 			list_add(lista_tripulantes_ready, tripulante);
@@ -371,7 +344,6 @@ void bloqueado_ready() {
 
 	}
 	//free(tripulante);
-
 }
 
 
