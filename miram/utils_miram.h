@@ -201,7 +201,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 void reservar_marco(int cantidad_marcos, config_struct* configuracion, t_list* tabla_aux, int pid );
 void eliminar_estructura_memoria(t_list* tabla_aux);
 void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista);
-int escribir_atributo(void* dato, int offset, int nro_marco, config_struct* config_s);
+int escribir_atributo(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
 int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct* config_s);
 void dump_memoria();
 void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina);
@@ -209,10 +209,10 @@ void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina);
 
 //swap
 
-void swap_pagina(char* contenidoAEscribir,int numDeBloque);
+void swap_pagina(void* contenidoAEscribir,int numDeBloque);
 void borrarBloque(int numeroDeBloque, int tamanioDeBloque);
 char* completarBloque(char* bloqueACompletar);
-char* recuperar_pag_swap(int numDeBloque);
+void* recuperar_pag_swap(int numDeBloque);
 char* vaciar_bloque(char* bloqueAVaciar);
 
 void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial);
