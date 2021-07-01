@@ -157,36 +157,6 @@ int funcion_cliente(int socket_cliente){
 
 
 
-/*					void* dato =malloc(sizeof(int));
-					void* p = configuracion.posicion_inicial;
-					int desplazamiento=2*(configuracion.tamanio_pag) + 0;
-					printf("La memoria hdp es %d\n",(int)( p+desplazamiento));
-					fflush(stdout);
-
-					memcpy(p+desplazamiento,dato,sizeof(int)); // escribo en swap
-
-
-					printf("NUmro eesss %d", (uint32_t)dato);
-					fflush(stdout);
-
-
-					//desplazamiento=5*(configuracion.tamanio_pag)+4;
-					printf("La memoria hdp es %d\n",(int)( p+desplazamiento));
-					fflush(stdout);
-
-					memcpy(dato,p+desplazamiento,sizeof(int)); // leo en swap
-
-					printf("NUmro eesss %d", (uint32_t)dato);
-					fflush(stdout);
-
-					printf("NUmro eesss %d", (uint32_t)leer_atributo(0,2, &configuracion));
-
-					fflush(stdout);
-
-*/
-
-
-
 				}
 
 
@@ -437,6 +407,13 @@ void iniciar_miram(config_struct* config_servidor){
 		config_servidor->cant_marcos = nro_marcos;
 		printf("\nNumero de marco es: %d nro_marcos\n", nro_marcos);
 
+		int nro_lugares_swap = (config_servidor->tamanio_swap)/(configuracion.tamanio_pag);
+		config_servidor->cant_lugares_swap=nro_lugares_swap;
+
+		for(int i=0; i<=nro_lugares_swap;i++){
+			int vacio=0;
+			list_add(config_servidor->swap_libre,(void*)vacio);
+				}
 		//config_servidor->marcos= malloc(sizeof(int));
 		//Inicializo el array en 0, me indica la ocupacion de los marcos
 		for(int i=0; i<=nro_marcos;i++){
@@ -596,13 +573,14 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 	//tabla_paginacion* una_tabla = list_get(una_tabla,posicion_patota(pid, una_tabla));
 	marco* marcos =(marco*)list_get(una_tabla->marco_inicial,indice_marco);
-
+	actualizar_lru(marcos);
 	offset +=escribir_atributo(pid,offset,marcos->id_marco, config_servidor); //Completar con puntero a tareas
 
 	uint32_t puntero_tarea = 0;
 	uint32_t offset_pcb = offset;
 	indice_marco += alcanza_espacio(&offset, config_servidor->tamanio_pag, sizeof(uint32_t));
 	marcos =(marco*) list_get(una_tabla->marco_inicial,indice_marco);
+	actualizar_lru(marcos);
 	uint32_t marco_pcb = indice_marco;
 	offset +=escribir_atributo(puntero_tarea,offset,marcos->id_marco, config_servidor);
 
@@ -619,6 +597,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos =(marco*) list_get(una_tabla->marco_inicial,indice_marco);
+		actualizar_lru(marcos);
 		offset +=escribir_atributo(tid,offset,marcos->id_marco, config_servidor);
 
 
@@ -627,6 +606,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
+		actualizar_lru(marcos);
 		offset +=escribir_atributo_char(tripulante,offset,marcos->id_marco, config_servidor);
 
 
@@ -635,6 +615,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
+		actualizar_lru(marcos);
 		offset +=escribir_atributo(pos_x,offset,marcos->id_marco, config_servidor);
 
 		uint32_t pos_y =tripulante->posicionY;
@@ -642,6 +623,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
+		actualizar_lru(marcos);
 		offset +=escribir_atributo(pos_y,offset,marcos->id_marco, config_servidor);
 
 
@@ -650,6 +632,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
+		actualizar_lru(marcos);
 		offset +=escribir_atributo(prox_i,offset,marcos->id_marco, config_servidor);
 
 		uint32_t p_pcb =tripulante->puntero_pcb;
@@ -657,6 +640,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
+		actualizar_lru(marcos);
 	    offset +=escribir_atributo(p_pcb,offset,marcos->id_marco, config_servidor);
 
 
@@ -674,6 +658,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 	for(int i=0;i<strlen(tarea)+1;i++){
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
+		actualizar_lru(marcos);
 		offset +=escribir_char_tarea(tarea[i],offset,marcos->id_marco, config_servidor);
 		printf("%c",tarea[i]);
 		fflush(stdout);
@@ -766,6 +751,9 @@ int posicion_marco(config_struct* config_servidor){
 	}
 	return -1;
 }
+
+
+
 
 int cuantos_marcos_libres(config_struct* config_servidor){
 	int contador_marcos = 0;
@@ -891,6 +879,9 @@ void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina){
 		for(int j=0; j<list_size(una_tabla->marco_inicial);j++){
 			marco* un_marco=list_get(una_tabla->marco_inicial,j);
 			if(un_marco->id_marco==id_marco){
+				char buff1[100];
+				strftime(buff1, 100, "%d/%m/%Y %H:%M:%S"  , localtime(&un_marco->ultimo_uso));
+				printf("Ultimo uso %s\n", buff1);
 				 *estado = 1;
 				 *proceso=una_tabla->id_patota;
 				 *pagina=j;
@@ -967,4 +958,50 @@ char* completarBloque(char* bloqueACompletar){
 
 	return aux;
 }
+
+
+int reemplazo_lru(){
+	   int nro_marco;
+	   time_t lru_actual = time(0);
+		marco* lru_m=malloc(sizeof(marco));
+	   for(int i=0; i<list_size(memoria_aux);i++){
+		   tabla_paginacion* una_tabla = list_get(memoria_aux,i);
+		   	   for(int j=0; j<list_size(una_tabla->marco_inicial);j++){
+		   		   	  marco* un_marco=list_get(una_tabla->marco_inicial,j);
+		   		   if(un_marco->ultimo_uso < lru_actual && un_marco->ubicacion==MEM_PRINCIPAL){
+		   		               lru_actual = un_marco->ultimo_uso;
+		   		               lru_m = un_marco;
+		   		           }
+		   	   }
+	   }
+
+	   lru_m->ubicacion=MEM_SECUNDARIA;
+	   nro_marco=lru_m->id_marco;
+
+	   void* contenidoAEscribir = malloc(configuracion.tamanio_pag*sizeof(char));
+	   memcpy(contenidoAEscribir,configuracion.posicion_inicial + nro_marco*(configuracion.tamanio_pag) ,configuracion.tamanio_pag);
+	   lru_m->id_marco=lugar_swap_libre();
+	   swap_pagina(contenidoAEscribir,lru_m->id_marco);
+
+	   return nro_marco;
+}
+
+
+void actualizar_lru(marco* un_marco){
+	un_marco->ultimo_uso= time(0);
+
+
+}
+
+int lugar_swap_libre(){
+	for(int i=0;i<configuracion.cant_lugares_swap;i++){
+		if(list_get(configuracion.swap_libre,i)==0){
+			int valor = 1;
+			list_add_in_index(configuracion.swap_libre,i,(void*)valor);
+			return i;
+		}
+	}
+	return -1;
+}
+
 

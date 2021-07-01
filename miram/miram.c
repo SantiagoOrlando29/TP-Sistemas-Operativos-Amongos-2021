@@ -380,7 +380,7 @@ void leer_config(){
     configuracion.tamanio_memoria = config_get_int_value(archConfig, "TAMANIO_MEMORIA");
     configuracion.squema_memoria = config_get_string_value(archConfig, "ESQUEMA_MEMORIA");
     configuracion.tamanio_pag =config_get_int_value(archConfig, "TAMANIO_PAG");
-    configuracion.tamanio_swap =config_get_string_value(archConfig, "TAMANIO_SWAP");
+    configuracion.tamanio_swap =config_get_int_value(archConfig, "TAMANIO_SWAP");
     configuracion.path_swap = config_get_string_value(archConfig, "PATH_SWAP");
     configuracion.algoritmo_reemplazo = config_get_string_value(archConfig, "ALGORITMO_REEMPLAZO");
     configuracion.criterio_seleccion = config_get_string_value(archConfig, "CRITERIO_SELECCION");

@@ -114,7 +114,7 @@ typedef struct{
 	int tamanio_memoria;
 	char* squema_memoria;
 	int tamanio_pag;
-	char* tamanio_swap;
+	int tamanio_swap;
 	char* path_swap;
 	char* algoritmo_reemplazo;
 	void* posicion_inicial;
@@ -122,6 +122,9 @@ typedef struct{
 	int **marcos;
 	char* criterio_seleccion;
 	t_list* marcos_libres;
+	int cant_lugares_swap;
+	t_list* swap_libre;
+
 }config_struct;
 
 
@@ -132,7 +135,6 @@ typedef enum{
 
 typedef struct{
 	int id_patota;
-	presencia ubicacion;
 	t_list* marco_inicial;
 	int cant_tripulantes;
 	int long_tareas;
@@ -141,7 +143,8 @@ typedef struct{
 
 typedef struct{
 	int id_marco;
-	int control_lru;
+	time_t ultimo_uso;
+	presencia ubicacion;
 	int clock;
 	int libre;
 }marco;
@@ -205,6 +208,8 @@ int escribir_atributo(uint32_t dato, int offset, int nro_marco, config_struct* c
 int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct* config_s);
 void dump_memoria();
 void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina);
+int lugar_swap_libre();
+void actualizar_lru(marco* un_marco);
 
 
 //swap
