@@ -124,7 +124,9 @@ int funcion_cliente(int socket_cliente){
 				break;
 
 
-			case LISTAR_TRIPULANTES:
+			case LISTAR_TRIPULANTES:;
+				t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
+
 				if(strcmp(configuracion.squema_memoria,"SEGMENTACION")==0){
 					for(int i=0; i < list_size(lista_tablas_segmentos); i++){
 						tabla_segmentacion* tabla_segmentos = (tabla_segmentacion*)list_get(lista_tablas_segmentos, i);
@@ -137,7 +139,14 @@ int funcion_cliente(int socket_cliente){
 								espacio_de_memoria* espacio = (espacio_de_memoria*)list_get(tabla_espacios_de_memoria, k);
 								if(espacio->base == segmento->base){
 									tcbTripulante* tripulante = espacio->contenido;
-									printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, pid, tripulante->estado);
+
+									agregar_a_paquete(paquete, tripulante, tamanio_TCB);
+
+									char* pid_char = malloc(sizeof(char));
+									sprintf(pid_char, "%d", pid);
+									agregar_a_paquete(paquete, pid_char, strlen(pid_char)+1);
+
+									//printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, pid, tripulante->estado);
 									k = list_size(tabla_espacios_de_memoria); //para que corte el for
 								}
 							}
@@ -145,13 +154,14 @@ int funcion_cliente(int socket_cliente){
 					}
 				}
 
+				if(paquete->buffer->size == 0){ //no habia TCBs para mandar
+					enviar_header(NO_HAY_NADA_PARA_LISTAR , socket_cliente);
+				}else{
+					enviar_paquete(paquete, socket_cliente);
+				}
 
-				/*t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
-				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
-				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
-				enviar_paquete(paquete,socket_cliente);
-				eliminar_paquete(paquete);*/
-				imprimir_tabla_espacios_de_memoria();
+				eliminar_paquete(paquete);
+
 				break;
 
 
@@ -193,6 +203,7 @@ int funcion_cliente(int socket_cliente){
 				if(cambio_exitoso == false){
 					char* mensaje = malloc(23);
 					mensaje = "fallo cambio de estado";
+					log_info(logger, "fallo cambio estado");
 					enviar_mensaje(mensaje, socket_cliente);
 				}else{
 					char* mensaje = malloc(25);

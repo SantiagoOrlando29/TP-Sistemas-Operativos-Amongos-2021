@@ -109,6 +109,9 @@ void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_es
 	enviar_paquete(paquete, conexion_miram);
 
 	char* mensaje_recibido = recibir_mensaje(conexion_miram);
+	if(strcmp(mensaje_recibido, "fallo cambio de estado") ==0){
+		log_info(logger, "fallo cambio estado");
+	}
 	//log_info(logger, "TRIPU %d  cambio estado: %s", tripulante->tid, mensaje_recibido);
 
 	eliminar_paquete(paquete);
@@ -211,7 +214,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			sem_post(&PASA_A_BLOQUEADO);
 			sem_post(&HABILITA_GRADO_MULTITAREA);
 			sem_wait(&(tripulante->semaforo_tripulante));
-			cambiar_estado(tripulante->socket_miram, tripulante, 'E'); //tengo que cambiar a E ??
+			cambiar_estado(tripulante->socket_miram, tripulante, 'E');
 
 			if(tripulante->estado != 'X'){ // O SEA Q TIENE MAS TAREAS
 				tripulante->prox_instruccion--;
@@ -333,6 +336,7 @@ void bloqueado_ready() {
 
 		if(tarea != NULL){ // TIENE MAS TAREAS
 			tripulante->estado = 'R';
+			cambiar_estado(tripulante->socket_miram, tripulante, 'R');
 			sem_wait(&MUTEX_LISTA_READY);
 			list_add(lista_tripulantes_ready, tripulante);
 			sem_post(&MUTEX_LISTA_READY);
@@ -539,8 +543,20 @@ INICIAR_PATOTA 5 tareas_corta.txt 300|4 10|20 4|500
 
 			case LISTAR_TRIPULANTES:
 				enviar_header(LISTAR_TRIPULANTES, conexionMiRam);
-				//tipoMensaje = recibir_operacion(conexionMiRam);
-				//recibir_lista_tripulantes(tipoMensaje, conexionMiRam, logger);
+				int tipo_mensaje = recibir_operacion(conexionMiRam);
+				if(tipo_mensaje == 11){  //NO_HAY_NADA_PARA_LISTAR
+					log_info(logger, "No hay tripulantes en memoria para listar");
+
+				}else{
+					t_list* lista_tripulantes = recibir_paquete(conexionMiRam);
+
+					for(int i=0; i < list_size(lista_tripulantes); i+=2){
+						tcbTripulante* tripulante_recibido = (tcbTripulante*)list_get(lista_tripulantes, i);
+						int numero_patota = (int)atoi(list_get(lista_tripulantes,i+1));
+						printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante_recibido->tid, numero_patota, tripulante_recibido->estado);
+					}
+
+				}
 
 				break;
 

@@ -1,52 +1,14 @@
-[INFO] 23:42:11:482 discordiador/(22020:22020): Memoria asignada
-[INFO] 23:42:11:495 discordiador/(22020:22030): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:42:11:495 discordiador/(22020:22031): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:42:11:499 discordiador/(22020:22032): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:42:11:500 discordiador/(22020:22033): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:42:11:500 discordiador/(22020:22034): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:42:14:499 discordiador/(22020:22027): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 23:42:15:500 discordiador/(22020:22027): TRIPU 2  tarea recibida: ABC;5;6;4
-[INFO] 23:42:15:500 discordiador/(22020:22030): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 23:42:16:500 discordiador/(22020:22027): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 23:42:17:501 discordiador/(22020:22031): TRIPU 2  tarea recibida: ABC;5;6;4
-[INFO] 23:42:17:501 discordiador/(22020:22027): TRIPU 4  tarea recibida: ABC;5;6;4
-[INFO] 23:42:18:501 discordiador/(22020:22027): TRIPU 5  tarea recibida: ABC;5;6;4
-[INFO] 23:42:18:502 discordiador/(22020:22032): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 23:42:20:502 discordiador/(22020:22033): TRIPU 4  tarea recibida: ABC;5;6;4
-[INFO] 23:42:21:503 discordiador/(22020:22034): TRIPU 5  tarea recibida: ABC;5;6;4
-[INFO] 23:42:32:508 discordiador/(22020:22030): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 23:42:34:509 discordiador/(22020:22031): TRIPU 2  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 23:42:35:510 discordiador/(22020:22032): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 23:42:37:511 discordiador/(22020:22033): TRIPU 4  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 23:42:38:512 discordiador/(22020:22034): TRIPU 5  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 23:42:40:519 discordiador/(22020:22027): TRIPU 1  tarea recibida: no hay mas tareas
-[INFO] 23:42:41:520 discordiador/(22020:22027): TRIPU 2  tarea recibida: no hay mas tareas
-[INFO] 23:42:42:522 discordiador/(22020:22027): TRIPU 3  tarea recibida: no hay mas tareas
-[INFO] 23:42:43:523 discordiador/(22020:22027): TRIPU 4  tarea recibida: no hay mas tareas
-[INFO] 23:42:44:525 discordiador/(22020:22027): TRIPU 5  tarea recibida: no hay mas tareas
-[INFO] 23:44:24:233 discordiador/(22020:22020): Memoria asignada
-[INFO] 23:44:24:238 discordiador/(22020:22045): TRIPU 6  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:44:24:240 discordiador/(22020:22046): TRIPU 7  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:44:24:255 discordiador/(22020:22047): TRIPU 8  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:44:24:256 discordiador/(22020:22048): TRIPU 9  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:44:24:260 discordiador/(22020:22049): TRIPU 10  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:44:27:244 discordiador/(22020:22027): TRIPU 6  tarea recibida: ABC;5;6;4
-[INFO] 23:44:28:244 discordiador/(22020:22027): TRIPU 7  tarea recibida: ABC;5;6;4
-[INFO] 23:44:28:248 discordiador/(22020:22045): TRIPU 6  tarea recibida: ABC;5;6;4
-[INFO] 23:44:29:245 discordiador/(22020:22027): TRIPU 8  tarea recibida: ABC;5;6;4
-[INFO] 23:44:30:245 discordiador/(22020:22046): TRIPU 7  tarea recibida: ABC;5;6;4
-[INFO] 23:44:30:245 discordiador/(22020:22027): TRIPU 9  tarea recibida: ABC;5;6;4
-[INFO] 23:44:31:246 discordiador/(22020:22027): TRIPU 10  tarea recibida: ABC;5;6;4
-[INFO] 23:44:31:249 discordiador/(22020:22047): TRIPU 8  tarea recibida: ABC;5;6;4
-[INFO] 23:44:33:247 discordiador/(22020:22048): TRIPU 9  tarea recibida: ABC;5;6;4
-[INFO] 23:44:34:250 discordiador/(22020:22049): TRIPU 10  tarea recibida: ABC;5;6;4
-[INFO] 23:44:45:254 discordiador/(22020:22045): TRIPU 6  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 23:44:47:255 discordiador/(22020:22046): TRIPU 7  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 23:44:48:256 discordiador/(22020:22047): TRIPU 8  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 23:44:50:257 discordiador/(22020:22048): TRIPU 9  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 23:44:51:258 discordiador/(22020:22049): TRIPU 10  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 23:44:53:262 discordiador/(22020:22027): TRIPU 6  tarea recibida: no hay mas tareas
-[INFO] 23:44:54:264 discordiador/(22020:22027): TRIPU 7  tarea recibida: no hay mas tareas
-[INFO] 23:44:55:265 discordiador/(22020:22027): TRIPU 8  tarea recibida: no hay mas tareas
-[INFO] 23:44:56:266 discordiador/(22020:22027): TRIPU 9  tarea recibida: no hay mas tareas
-[INFO] 23:44:57:267 discordiador/(22020:22027): TRIPU 10  tarea recibida: no hay mas tareas
+[INFO] 00:03:49:652 discordiador/(24339:24339): Memoria asignada
+[INFO] 00:03:49:673 discordiador/(24339:24348): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:03:49:674 discordiador/(24339:24349): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:03:49:679 discordiador/(24339:24350): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:03:49:680 discordiador/(24339:24351): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:03:49:681 discordiador/(24339:24352): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:03:52:679 discordiador/(24339:24347): TRIPU 1  tarea recibida: ABC;5;6;4
+[INFO] 00:04:12:172 discordiador/(24339:24348): TRIPU 1  tarea recibida: ABC;5;6;4
+[INFO] 00:04:12:172 discordiador/(24339:24347): TRIPU 2  tarea recibida: ABC;5;6;4
+[INFO] 00:04:13:173 discordiador/(24339:24347): TRIPU 3  tarea recibida: ABC;5;6;4
+[INFO] 00:04:14:175 discordiador/(24339:24347): TRIPU 4  tarea recibida: ABC;5;6;4
+[INFO] 00:04:14:176 discordiador/(24339:24349): TRIPU 2  tarea recibida: ABC;5;6;4
+[INFO] 00:04:15:177 discordiador/(24339:24347): TRIPU 5  tarea recibida: ABC;5;6;4
+[INFO] 00:04:15:177 discordiador/(24339:24350): TRIPU 3  tarea recibida: ABC;5;6;4

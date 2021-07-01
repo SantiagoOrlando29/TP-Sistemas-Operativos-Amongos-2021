@@ -2569,3 +2569,212 @@
 [INFO] 23:44:57:267 MiRam/(22011:22054): aaaaa
 [WARNING] 23:44:57:267 MiRam/(22011:22054): el cliente se desconecto.
 [ERROR] 23:45:13:217 MiRam/(22011:22029): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:02:34:285 MiRam/(22910:22958): Se asigno espacio de memoria a todo
+[INFO] 23:03:03:338 MiRam/(22910:22966): no hay mas tareas
+[INFO] 23:03:03:338 MiRam/(22910:22966): Se expulso segmento 2
+[WARNING] 23:03:03:341 MiRam/(22910:22966): el cliente se desconecto.
+[INFO] 23:03:04:339 MiRam/(22910:22967): no hay mas tareas
+[INFO] 23:03:04:340 MiRam/(22910:22967): Se expulso segmento 3
+[WARNING] 23:03:04:341 MiRam/(22910:22967): el cliente se desconecto.
+[INFO] 23:03:05:341 MiRam/(22910:22968): no hay mas tareas
+[INFO] 23:03:05:341 MiRam/(22910:22968): Se expulso segmento 4
+[WARNING] 23:03:05:342 MiRam/(22910:22968): el cliente se desconecto.
+[INFO] 23:03:06:343 MiRam/(22910:22969): no hay mas tareas
+[INFO] 23:03:06:343 MiRam/(22910:22969): Se expulso segmento 5
+[WARNING] 23:03:06:344 MiRam/(22910:22969): el cliente se desconecto.
+[INFO] 23:03:07:345 MiRam/(22910:22970): no hay mas tareas
+[INFO] 23:03:07:346 MiRam/(22910:22970): Se expulso segmento 6
+[WARNING] 23:03:07:346 MiRam/(22910:22970): el cliente se desconecto.
+[ERROR] 23:04:10:275 MiRam/(22910:22958): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 23:23:21:598 MiRam/(23429:23450): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:24:06:328 MiRam/(23481:23494): Se asigno espacio de memoria a todo
+[INFO] 23:25:47:580 MiRam/(23481:23507): no hay mas tareas
+[INFO] 23:25:47:585 MiRam/(23481:23507): Se expulso segmento 2
+[WARNING] 23:25:47:586 MiRam/(23481:23507): el cliente se desconecto.
+[ERROR] 23:26:10:250 MiRam/(23481:23494): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:27:10:030 MiRam/(23555:23583): Se asigno espacio de memoria a todo
+[INFO] 23:27:13:303 MiRam/(23555:23583): Se asigno espacio de memoria a todo
+[INFO] 23:27:59:101 MiRam/(23555:23592): no hay mas tareas
+[INFO] 23:27:59:102 MiRam/(23555:23592): Se expulso segmento 2
+[WARNING] 23:27:59:103 MiRam/(23555:23592): el cliente se desconecto.
+[INFO] 23:28:06:110 MiRam/(23555:23593): no hay mas tareas
+[INFO] 23:28:06:110 MiRam/(23555:23593): Se expulso segmento 3
+[WARNING] 23:28:06:111 MiRam/(23555:23593): el cliente se desconecto.
+[INFO] 23:28:07:111 MiRam/(23555:23594): no hay mas tareas
+[INFO] 23:28:07:112 MiRam/(23555:23594): Se expulso segmento 4
+[WARNING] 23:28:07:113 MiRam/(23555:23594): el cliente se desconecto.
+[INFO] 23:28:08:117 MiRam/(23555:23595): no hay mas tareas
+[INFO] 23:28:08:117 MiRam/(23555:23595): Se expulso segmento 5
+[WARNING] 23:28:08:118 MiRam/(23555:23595): el cliente se desconecto.
+[INFO] 23:28:09:119 MiRam/(23555:23596): no hay mas tareas
+[INFO] 23:28:09:119 MiRam/(23555:23596): Se expulso segmento 6
+[WARNING] 23:28:09:125 MiRam/(23555:23596): el cliente se desconecto.
+[INFO] 23:28:10:121 MiRam/(23555:23602): no hay mas tareas
+[INFO] 23:28:10:121 MiRam/(23555:23602): Se expulso segmento 2
+[WARNING] 23:28:10:122 MiRam/(23555:23602): el cliente se desconecto.
+[INFO] 23:28:11:123 MiRam/(23555:23603): no hay mas tareas
+[INFO] 23:28:11:123 MiRam/(23555:23603): Se expulso segmento 3
+[WARNING] 23:28:11:124 MiRam/(23555:23603): el cliente se desconecto.
+[INFO] 23:28:12:125 MiRam/(23555:23604): no hay mas tareas
+[INFO] 23:28:12:125 MiRam/(23555:23604): Se expulso segmento 4
+[WARNING] 23:28:12:126 MiRam/(23555:23604): el cliente se desconecto.
+[INFO] 23:28:13:136 MiRam/(23555:23605): no hay mas tareas
+[INFO] 23:28:13:136 MiRam/(23555:23605): Se expulso segmento 5
+[WARNING] 23:28:13:137 MiRam/(23555:23605): el cliente se desconecto.
+[INFO] 23:28:14:138 MiRam/(23555:23606): no hay mas tareas
+[INFO] 23:28:14:138 MiRam/(23555:23606): Se expulso segmento 6
+[WARNING] 23:28:14:138 MiRam/(23555:23606): el cliente se desconecto.
+[INFO] 23:34:16:167 MiRam/(23670:23694): Se asigno espacio de memoria a todo
+[INFO] 23:34:45:216 MiRam/(23670:23703): no hay mas tareas
+[INFO] 23:34:45:221 MiRam/(23670:23703): Se expulso segmento 2
+[WARNING] 23:34:45:222 MiRam/(23670:23703): el cliente se desconecto.
+[INFO] 23:34:46:222 MiRam/(23670:23704): no hay mas tareas
+[INFO] 23:34:46:223 MiRam/(23670:23704): Se expulso segmento 3
+[WARNING] 23:34:46:223 MiRam/(23670:23704): el cliente se desconecto.
+[INFO] 23:34:47:224 MiRam/(23670:23705): no hay mas tareas
+[INFO] 23:34:47:224 MiRam/(23670:23705): Se expulso segmento 4
+[WARNING] 23:34:47:225 MiRam/(23670:23705): el cliente se desconecto.
+[INFO] 23:34:48:226 MiRam/(23670:23706): no hay mas tareas
+[INFO] 23:34:48:226 MiRam/(23670:23706): Se expulso segmento 5
+[WARNING] 23:34:48:227 MiRam/(23670:23706): el cliente se desconecto.
+[INFO] 23:34:49:228 MiRam/(23670:23707): no hay mas tareas
+[INFO] 23:34:49:228 MiRam/(23670:23707): Se expulso segmento 6
+[WARNING] 23:34:49:229 MiRam/(23670:23707): el cliente se desconecto.
+[INFO] 23:37:19:321 MiRam/(23738:23759): Se asigno espacio de memoria a todo
+[INFO] 23:37:46:372 MiRam/(23738:23768): no hay mas tareas
+[INFO] 23:37:46:372 MiRam/(23738:23768): Se expulso segmento 2
+[WARNING] 23:37:46:373 MiRam/(23738:23768): el cliente se desconecto.
+[INFO] 23:37:48:374 MiRam/(23738:23769): no hay mas tareas
+[INFO] 23:37:48:377 MiRam/(23738:23769): Se expulso segmento 3
+[WARNING] 23:37:48:378 MiRam/(23738:23769): el cliente se desconecto.
+[INFO] 23:37:49:379 MiRam/(23738:23770): no hay mas tareas
+[INFO] 23:37:49:379 MiRam/(23738:23770): Se expulso segmento 4
+[WARNING] 23:37:49:379 MiRam/(23738:23770): el cliente se desconecto.
+[INFO] 23:37:50:380 MiRam/(23738:23772): no hay mas tareas
+[INFO] 23:37:50:380 MiRam/(23738:23772): Se expulso segmento 6
+[WARNING] 23:37:50:381 MiRam/(23738:23772): el cliente se desconecto.
+[INFO] 23:37:51:382 MiRam/(23738:23771): no hay mas tareas
+[INFO] 23:37:51:382 MiRam/(23738:23771): Se expulso segmento 5
+[WARNING] 23:37:51:383 MiRam/(23738:23771): el cliente se desconecto.
+[INFO] 23:41:30:973 MiRam/(23838:23872): Se asigno espacio de memoria a todo
+[INFO] 23:41:58:044 MiRam/(23838:23881): no hay mas tareas
+[INFO] 23:41:58:045 MiRam/(23838:23881): Se expulso segmento 2
+[WARNING] 23:41:58:045 MiRam/(23838:23881): el cliente se desconecto.
+[INFO] 23:42:00:047 MiRam/(23838:23882): no hay mas tareas
+[INFO] 23:42:00:053 MiRam/(23838:23882): Se expulso segmento 3
+[WARNING] 23:42:00:054 MiRam/(23838:23882): el cliente se desconecto.
+[INFO] 23:42:01:054 MiRam/(23838:23883): no hay mas tareas
+[INFO] 23:42:01:054 MiRam/(23838:23883): Se expulso segmento 4
+[WARNING] 23:42:01:055 MiRam/(23838:23883): el cliente se desconecto.
+[INFO] 23:42:02:055 MiRam/(23838:23884): no hay mas tareas
+[INFO] 23:42:02:055 MiRam/(23838:23884): Se expulso segmento 5
+[WARNING] 23:42:02:056 MiRam/(23838:23884): el cliente se desconecto.
+[INFO] 23:42:03:057 MiRam/(23838:23885): no hay mas tareas
+[INFO] 23:42:03:057 MiRam/(23838:23885): Se expulso segmento 6
+[WARNING] 23:42:03:057 MiRam/(23838:23885): el cliente se desconecto.
+[INFO] 23:42:45:006 MiRam/(23838:23872): Se asigno espacio de memoria a todo
+[ERROR] 23:43:19:128 MiRam/(23838:23872): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:43:31:719 MiRam/(23903:23924): Se asigno espacio de memoria a todo
+[INFO] 23:43:58:777 MiRam/(23903:23933): no hay mas tareas
+[INFO] 23:43:58:777 MiRam/(23903:23933): Se expulso segmento 2
+[WARNING] 23:43:58:779 MiRam/(23903:23933): el cliente se desconecto.
+[INFO] 23:44:00:779 MiRam/(23903:23934): no hay mas tareas
+[INFO] 23:44:00:781 MiRam/(23903:23934): Se expulso segmento 3
+[WARNING] 23:44:00:782 MiRam/(23903:23934): el cliente se desconecto.
+[INFO] 23:44:01:782 MiRam/(23903:23935): no hay mas tareas
+[INFO] 23:44:01:782 MiRam/(23903:23935): Se expulso segmento 4
+[WARNING] 23:44:01:783 MiRam/(23903:23935): el cliente se desconecto.
+[INFO] 23:44:02:783 MiRam/(23903:23936): no hay mas tareas
+[INFO] 23:44:02:784 MiRam/(23903:23936): Se expulso segmento 5
+[WARNING] 23:44:02:784 MiRam/(23903:23936): el cliente se desconecto.
+[INFO] 23:44:03:784 MiRam/(23903:23937): no hay mas tareas
+[INFO] 23:44:03:785 MiRam/(23903:23937): Se expulso segmento 6
+[WARNING] 23:44:03:785 MiRam/(23903:23937): el cliente se desconecto.
+[INFO] 23:44:47:837 MiRam/(23903:23924): Se asigno espacio de memoria a todo
+[INFO] 23:45:14:871 MiRam/(23903:23948): no hay mas tareas
+[INFO] 23:45:14:871 MiRam/(23903:23948): Se expulso segmento 2
+[WARNING] 23:45:14:872 MiRam/(23903:23948): el cliente se desconecto.
+[INFO] 23:45:16:873 MiRam/(23903:23949): no hay mas tareas
+[INFO] 23:45:16:877 MiRam/(23903:23949): Se expulso segmento 3
+[WARNING] 23:45:16:878 MiRam/(23903:23949): el cliente se desconecto.
+[INFO] 23:45:17:878 MiRam/(23903:23950): no hay mas tareas
+[INFO] 23:45:17:878 MiRam/(23903:23950): Se expulso segmento 4
+[WARNING] 23:45:17:878 MiRam/(23903:23950): el cliente se desconecto.
+[INFO] 23:45:18:880 MiRam/(23903:23952): no hay mas tareas
+[INFO] 23:45:18:880 MiRam/(23903:23952): Se expulso segmento 6
+[WARNING] 23:45:18:883 MiRam/(23903:23952): el cliente se desconecto.
+[INFO] 23:45:19:885 MiRam/(23903:23951): no hay mas tareas
+[INFO] 23:45:19:885 MiRam/(23903:23951): Se expulso segmento 5
+[WARNING] 23:45:19:886 MiRam/(23903:23951): el cliente se desconecto.
+[ERROR] 23:46:07:245 MiRam/(23903:23924): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:49:33:373 MiRam/(23996:24021): Se asigno espacio de memoria a todo
+[INFO] 23:50:00:423 MiRam/(23996:24027): no hay mas tareas
+[INFO] 23:50:00:423 MiRam/(23996:24027): Se expulso segmento 2
+[WARNING] 23:50:00:424 MiRam/(23996:24027): el cliente se desconecto.
+[INFO] 23:50:02:424 MiRam/(23996:24028): no hay mas tareas
+[INFO] 23:50:02:429 MiRam/(23996:24028): Se expulso segmento 3
+[WARNING] 23:50:02:430 MiRam/(23996:24028): el cliente se desconecto.
+[INFO] 23:50:03:430 MiRam/(23996:24029): no hay mas tareas
+[INFO] 23:50:03:430 MiRam/(23996:24029): Se expulso segmento 4
+[WARNING] 23:50:03:431 MiRam/(23996:24029): el cliente se desconecto.
+[INFO] 23:50:04:431 MiRam/(23996:24030): no hay mas tareas
+[INFO] 23:50:04:432 MiRam/(23996:24030): Se expulso segmento 5
+[WARNING] 23:50:04:432 MiRam/(23996:24030): el cliente se desconecto.
+[INFO] 23:50:05:433 MiRam/(23996:24031): no hay mas tareas
+[INFO] 23:50:05:433 MiRam/(23996:24031): Se expulso segmento 6
+[WARNING] 23:50:05:434 MiRam/(23996:24031): el cliente se desconecto.
+[ERROR] 23:50:17:009 MiRam/(23996:24021): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:53:33:024 MiRam/(24072:24099): Se asigno espacio de memoria a todo
+[INFO] 23:54:00:076 MiRam/(24072:24105): no hay mas tareas
+[INFO] 23:54:00:076 MiRam/(24072:24105): Se expulso segmento 2
+[INFO] 23:54:00:077 MiRam/(24072:24105): fallo cambio estado
+[WARNING] 23:54:00:077 MiRam/(24072:24105): el cliente se desconecto.
+[INFO] 23:54:02:077 MiRam/(24072:24106): no hay mas tareas
+[INFO] 23:54:02:080 MiRam/(24072:24106): Se expulso segmento 3
+[INFO] 23:54:02:081 MiRam/(24072:24106): fallo cambio estado
+[WARNING] 23:54:02:081 MiRam/(24072:24106): el cliente se desconecto.
+[INFO] 23:54:03:082 MiRam/(24072:24107): no hay mas tareas
+[INFO] 23:54:03:082 MiRam/(24072:24107): Se expulso segmento 4
+[INFO] 23:54:03:082 MiRam/(24072:24107): fallo cambio estado
+[WARNING] 23:54:03:083 MiRam/(24072:24107): el cliente se desconecto.
+[INFO] 23:54:04:084 MiRam/(24072:24108): no hay mas tareas
+[INFO] 23:54:04:084 MiRam/(24072:24108): Se expulso segmento 5
+[INFO] 23:54:04:085 MiRam/(24072:24108): fallo cambio estado
+[WARNING] 23:54:04:085 MiRam/(24072:24108): el cliente se desconecto.
+[INFO] 23:54:05:086 MiRam/(24072:24109): no hay mas tareas
+[INFO] 23:54:05:086 MiRam/(24072:24109): Se expulso segmento 6
+[INFO] 23:54:05:087 MiRam/(24072:24109): fallo cambio estado
+[WARNING] 23:54:05:087 MiRam/(24072:24109): el cliente se desconecto.
+[ERROR] 23:54:30:694 MiRam/(24072:24099): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:58:31:946 MiRam/(24177:24198): Se asigno espacio de memoria a todo
+[INFO] 23:58:59:004 MiRam/(24177:24207): no hay mas tareas
+[INFO] 23:58:59:005 MiRam/(24177:24207): Se expulso segmento 2
+[INFO] 23:58:59:005 MiRam/(24177:24207): fallo cambio estado
+[WARNING] 23:58:59:005 MiRam/(24177:24207): el cliente se desconecto.
+[INFO] 23:59:01:005 MiRam/(24177:24208): no hay mas tareas
+[INFO] 23:59:01:009 MiRam/(24177:24208): Se expulso segmento 3
+[INFO] 23:59:01:009 MiRam/(24177:24208): fallo cambio estado
+[WARNING] 23:59:01:009 MiRam/(24177:24208): el cliente se desconecto.
+[INFO] 23:59:02:010 MiRam/(24177:24209): no hay mas tareas
+[INFO] 23:59:02:010 MiRam/(24177:24209): Se expulso segmento 4
+[INFO] 23:59:02:010 MiRam/(24177:24209): fallo cambio estado
+[WARNING] 23:59:02:011 MiRam/(24177:24209): el cliente se desconecto.
+[INFO] 23:59:03:011 MiRam/(24177:24211): no hay mas tareas
+[INFO] 23:59:03:011 MiRam/(24177:24211): Se expulso segmento 6
+[INFO] 23:59:03:012 MiRam/(24177:24211): fallo cambio estado
+[WARNING] 23:59:03:012 MiRam/(24177:24211): el cliente se desconecto.
+[INFO] 23:59:04:013 MiRam/(24177:24210): no hay mas tareas
+[INFO] 23:59:04:013 MiRam/(24177:24210): Se expulso segmento 5
+[INFO] 23:59:04:014 MiRam/(24177:24210): fallo cambio estado
+[WARNING] 23:59:04:014 MiRam/(24177:24210): el cliente se desconecto.
+[ERROR] 23:59:44:605 MiRam/(24177:24198): el discordiador finalizo el programa. Terminando servidor
+[INFO] 00:03:10:457 MiRam/(24274:24303): Se asigno espacio de memoria a todo
+[ERROR] 00:03:32:944 MiRam/(24274:24303): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 00:03:32:945 MiRam/(24274:24316): el cliente se desconecto.
+[WARNING] 00:03:32:945 MiRam/(24274:24315): el cliente se desconecto.
+[WARNING] 00:03:32:946 MiRam/(24274:24314): el cliente se desconecto.
+[WARNING] 00:03:32:946 MiRam/(24274:24313): el cliente se desconecto.
+[WARNING] 00:03:32:946 MiRam/(24274:24312): el cliente se desconecto.
+[INFO] 00:03:49:649 MiRam/(24332:24344): Se asigno espacio de memoria a todo
+[ERROR] 00:04:37:021 MiRam/(24332:24344): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 00:04:37:023 MiRam/(24332:24357): el cliente se desconecto.
