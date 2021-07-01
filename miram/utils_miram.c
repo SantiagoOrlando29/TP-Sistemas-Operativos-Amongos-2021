@@ -139,13 +139,18 @@ int funcion_cliente(int socket_cliente){
 						marco_nuevo->bit_uso=1;
 						list_add(una_tabla->marco_inicial,marco_nuevo);
 					}
+					tcbTripulante* tripulante3 =crear_tripulante(3,'N',23,23,23,23);
 					almacenar_informacion(&configuracion, una_tabla, lista);
 					printf("\n");
 					leer_informacion(&configuracion,  una_tabla, lista);
-					mem_hexdump(configuracion.posicion_inicial, configuracion.tamanio_pag*sizeof(char));
+
+					actualizar_tripulante( tripulante3, 1);
+
+					leer_informacion(&configuracion,  una_tabla, lista);
+					//mem_hexdump(configuracion.posicion_inicial, configuracion.tamanio_pag*sizeof(char));
 					fflush(stdout);
 					printf("\n");
-					fflush(stdout);
+					/*fflush(stdout);
 					dump_memoria();
 
 
@@ -157,7 +162,7 @@ int funcion_cliente(int socket_cliente){
 					mem_hexdump(configuracion.posicion_inicial, configuracion.tamanio_pag*sizeof(char));
 					leer_informacion(&configuracion,  una_tabla, lista);
 
-
+*/
 
 				}
 
@@ -404,6 +409,8 @@ void iniciar_miram(config_struct* config_servidor){
 	if(strcmp(config_servidor->squema_memoria,"PAGINACION")==0){
 
 		config_servidor->marcos_libres=list_create();
+
+		config_servidor->swap_libre=list_create();
 
 		int nro_marcos =(config_servidor->tamanio_memoria)/(config_servidor->tamanio_pag);
 		config_servidor->cant_marcos = nro_marcos;
@@ -1044,4 +1051,102 @@ int reemplazo_clock(){
 		   return nro_marco;
 
 }
+
+
+void actualizar_tripulante(tcbTripulante* tripulante, int id_patota){
+
+
+	int offset=0;
+	int nro_marco=0;
+	int pos;
+	pos=posicion_patota(id_patota, memoria_aux);
+	tabla_paginacion* auxiliar= (tabla_paginacion*)list_get(memoria_aux, pos);
+	//PID
+	nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+	offset+=sizeof(int);
+	//PunteroTareas
+
+	nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+	offset+=sizeof(int);
+	for (int i; i<auxiliar->cant_tripulantes;i++){
+		//TID
+		nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+		offset+=sizeof(int);
+
+		//Estado
+		nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(char));
+		offset+=sizeof(char);
+
+		//Pos x
+		nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+		offset+=sizeof(int);
+
+		//POs y
+		nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+		offset+=sizeof(int);
+
+		//Prox inst
+		nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+		offset+=sizeof(int);
+
+		//Puntero PCB
+		nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+		offset+=sizeof(int);
+
+	}
+
+
+
+			uint32_t tid = tripulante->tid;
+
+			fflush(stdout);
+			nro_marco += alcanza_espacio(&offset, configuracion.tamanio_pag, sizeof(uint32_t));
+			marco* marcos;
+			marcos =(marco*) list_get(auxiliar->marco_inicial,nro_marco);
+			actualizar_lru(marcos);
+			offset +=escribir_atributo(tid,offset,marcos->id_marco, &configuracion);
+
+
+			char estado = tripulante->estado;
+			fflush(stdout);
+			nro_marco += alcanza_espacio(&offset, configuracion.tamanio_pag, sizeof(char));
+			marcos =(marco*) list_get(auxiliar->marco_inicial,nro_marco);
+			actualizar_lru(marcos);
+			offset +=escribir_atributo_char(tripulante,offset,marcos->id_marco, &configuracion);
+
+
+			uint32_t pos_x = tripulante->posicionX;
+			fflush(stdout);
+			nro_marco += alcanza_espacio(&offset, configuracion.tamanio_pag, sizeof(uint32_t));
+			marcos =(marco*) list_get(auxiliar->marco_inicial,nro_marco);
+			actualizar_lru(marcos);
+			offset +=escribir_atributo(pos_x,offset,marcos->id_marco, &configuracion);
+
+			uint32_t pos_y =tripulante->posicionY;
+			fflush(stdout);
+			nro_marco += alcanza_espacio(&offset, configuracion.tamanio_pag, sizeof(uint32_t));
+			marcos =(marco*) list_get(auxiliar->marco_inicial,nro_marco);
+			actualizar_lru(marcos);
+			offset +=escribir_atributo(pos_y,offset,marcos->id_marco, &configuracion);
+
+
+			uint32_t prox_i = tripulante->prox_instruccion;
+			fflush(stdout);
+			nro_marco += alcanza_espacio(&offset, configuracion.tamanio_pag, sizeof(uint32_t));
+			marcos =(marco*) list_get(auxiliar->marco_inicial,nro_marco);
+			actualizar_lru(marcos);
+			offset +=escribir_atributo(prox_i,offset,marcos->id_marco, &configuracion);
+
+			uint32_t p_pcb =tripulante->puntero_pcb;
+			fflush(stdout);
+			nro_marco += alcanza_espacio(&offset, configuracion.tamanio_pag, sizeof(uint32_t));
+			marcos =(marco*) list_get(auxiliar->marco_inicial,nro_marco);
+			actualizar_lru(marcos);
+		    offset +=escribir_atributo(p_pcb,offset,marcos->id_marco, &configuracion);
+
+
+
+}
+
+
 

@@ -211,6 +211,7 @@ void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina);
 int lugar_swap_libre();
 void actualizar_lru(marco* un_marco);
 int reemplazo_clock();
+void actualizar_tripulante(tcbTripulante* tripulante, int id_patota);
 
 
 //swap

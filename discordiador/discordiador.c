@@ -496,6 +496,7 @@ void leer_config(void){
 	    configuracion.quantum = config_get_int_value(archConfig, "QUANTUM");
 	    configuracion.duracion_sabotaje = config_get_int_value(archConfig, "DURACION_SABOTAJE");
 	    configuracion.retardo_cpu = config_get_int_value(archConfig, "RETARDO_CICLO_CPU");
+	    configuracion.retardo_cpu = config_get_int_value(archConfig, "RETARDO_CICLO_CPU");
 }
 
 void terminar_discordiador (int conexionMiRam, int conexionMongoStore, t_log* logger){
