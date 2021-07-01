@@ -179,8 +179,6 @@ int main(void)
 	pthread_join(servidor,NULL);
 
 
-
-
 	return 0;
 }
 

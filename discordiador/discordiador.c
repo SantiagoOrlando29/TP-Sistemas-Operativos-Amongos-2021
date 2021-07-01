@@ -19,6 +19,7 @@ t_list* lista_tripulantes_ready;
 t_list* lista_tripulantes_bloqueado;
 t_list* lista_tripulantes_trabajando;
 t_list* lista_tripulantes_exit;
+t_list* lista_bloq_emergencia;
 
 
 bool sigue_ejecutando(int quantums_ejecutados){
@@ -42,7 +43,7 @@ void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pen
 		planificacion_pausada_o_no();
 
 		sem_wait(&MUTEX_LISTA_TRABAJANDO);
-		list_remove(lista_tripulantes_trabajando, 0);
+		remover_tripulante_de_lista(tripulante, lista_tripulantes_trabajando);
 		sem_post(&MUTEX_LISTA_TRABAJANDO);
 
 		tripulante->estado = 'R';
@@ -172,26 +173,47 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	cambiar_estado(tripulante->socket_miram, tripulante, 'E');
 	sem_post(&HABILITA_EJECUTAR);
 
-	int contador_movimientos = 0;
 	int contador_ciclos_trabajando = 0;
 	int quantums_ejecutados = 0;
 
 	while(tarea != NULL){
-		while(contador_movimientos < tarea->tiempo){
+
+		while(tripulante->posicionX != tarea->pos_x){ // muevo en X
 			planificacion_pausada_o_no();
+			printf("hilo %d, me estoy moviendo X \n", tripulante->tid);
 
-			printf("hilo %d, me estoy moviendo \n", tripulante->tid);
+			if(tripulante->posicionX > tarea->pos_x){ //mayor a la posicion de la tarea -> se mueve para la izq
+				tripulante->posicionX--;
+			} else {
+				tripulante->posicionX++;
+			}
+
 			informar_movimiento(tripulante->socket_miram, tripulante);
-
 			sleep(1); // retardo ciclo cpu VA?  EN TODOS LOS SLEEP IRIA ESO?
 			fflush(stdout);
-			contador_movimientos++;
 			quantums_ejecutados++;
 			termina_quantum(&quantums_ejecutados, tripulante);
 		}
-		contador_movimientos = 0;
 
-		if(tarea->parametro != NULL){ //TAREA DE I/O
+		while(tripulante->posicionY != tarea->pos_y){ // muevo en y
+			planificacion_pausada_o_no();
+			printf("hilo %d, me estoy moviendo Y \n", tripulante->tid);
+
+			if(tripulante->posicionY > tarea->pos_y){ //mayor a la posicion de la tarea -> se mueve para abajo
+				tripulante->posicionY--;
+			} else{
+				tripulante->posicionY++;
+			}
+
+			informar_movimiento(tripulante->socket_miram, tripulante);
+			sleep(1); // retardo ciclo cpu VA?  EN TODOS LOS SLEEP IRIA ESO?
+			fflush(stdout);
+			quantums_ejecutados++;
+			termina_quantum(&quantums_ejecutados, tripulante);
+		}
+
+
+		if((void*)tarea->parametro != NULL){ //TAREA DE I/O
 			quantums_ejecutados++;
 			termina_quantum(&quantums_ejecutados, tripulante);
 			sleep(1); // retardo ciclo cpu //sleep para eso de iniciar tarea I/O (simula peticion al SO). Nose si va en esta linea
@@ -200,7 +222,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			planificacion_pausada_o_no();
 
 			sem_wait(&MUTEX_LISTA_TRABAJANDO);
-			list_remove(lista_tripulantes_trabajando, 0);
+			remover_tripulante_de_lista(tripulante, lista_tripulantes_trabajando);
 			sem_post(&MUTEX_LISTA_TRABAJANDO);
 
 			tripulante->estado = 'B';
@@ -214,16 +236,19 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			sem_post(&PASA_A_BLOQUEADO);
 			sem_post(&HABILITA_GRADO_MULTITAREA);
 			sem_wait(&(tripulante->semaforo_tripulante));
+
+			planificacion_pausada_o_no();
+
 			cambiar_estado(tripulante->socket_miram, tripulante, 'E');
 
-			if(tripulante->estado != 'X'){ // O SEA Q TIENE MAS TAREAS
+			if(tripulante->estado != 'X'){ // o sea que tiene mas tareas
+				planificacion_pausada_o_no();
 				tripulante->prox_instruccion--;
 				tarea = pedir_tarea(tripulante->socket_miram, tripulante);
 
 				sem_post(&HABILITA_EJECUTAR);
 
-			} else{ // NO TIENE MAS TAREAS
-				tripulante->prox_instruccion = 100;
+			} else{ // no tiene mas tareas
 				tarea = NULL;
 			}
 
@@ -235,7 +260,9 @@ void tripulante_hilo (tcbTripulante* tripulante){
 				sleep(1);
 				contador_ciclos_trabajando++;
 				quantums_ejecutados++;
+
 				if(contador_ciclos_trabajando == tarea->tiempo){//ESTE IF ESTA PARA QUE SI YA TERMINO LA TAREA, SE FIJE SI TIENE OTRA MAS
+					planificacion_pausada_o_no();
 					tarea = pedir_tarea(tripulante->socket_miram, tripulante);
 
 					if(tarea != NULL){ // TIENE MAS TAREAS
@@ -255,7 +282,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 		planificacion_pausada_o_no();
 
 		sem_wait(&MUTEX_LISTA_TRABAJANDO);
-		list_remove(lista_tripulantes_trabajando, 0);
+		remover_tripulante_de_lista(tripulante, lista_tripulantes_trabajando);
 		sem_post(&MUTEX_LISTA_TRABAJANDO);
 
 		tripulante->estado = 'X';
@@ -266,11 +293,11 @@ void tripulante_hilo (tcbTripulante* tripulante){
 }
 
 void ready_exec() {
-	tcbTripulante* tripulante1 = malloc(tamanio_TCB);
+	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
 	int lista_size;
 	while(1){
 		lista_size = list_size(lista_tripulantes_ready);
-		if (lista_size >0){ //PARA QUE NO HAYA ESPERA ACTIVA PODRIA CAMBIAR ESTO POR UN SEMAFORO
+		if (lista_size >0){ //PARA QUE NO HAYA ESPERA ACTIVA PODRIA CAMBIAR ESTO POR UN SEMAFORO?
 			sem_wait(&HABILITA_GRADO_MULTITAREA);
 			sem_wait(&HABILITA_EJECUTAR);
 			planificacion_pausada_o_no();
@@ -288,7 +315,7 @@ void ready_exec() {
 }
 
 void nuevo_ready() {
-	tcbTripulante* tripulante1 = malloc(tamanio_TCB);
+	tcbTripulante* tripulante1 = malloc(sizeof(tcbTripulante));
 	while(1){
 		sem_wait(&AGREGAR_NUEVO_A_READY);
 
@@ -308,7 +335,7 @@ void nuevo_ready() {
 }
 
 void bloqueado_ready() {
-	tcbTripulante* tripulante = malloc(tamanio_TCB);
+	tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
 	while(1){
 		sem_wait(&PASA_A_BLOQUEADO);
 
@@ -319,12 +346,14 @@ void bloqueado_ready() {
 		planificacion_pausada_o_no();
 
 		printf("hilo %d, haciendo I/O \n", tripulante->tid);
-		sleep(1);
+		sleep(1);//sleep tiempo tarea
 
 		planificacion_pausada_o_no();
 
 		printf("hilo %d, termino I/O \n", tripulante->tid);
 		fflush(stdout);
+
+		planificacion_pausada_o_no();
 
 		tarea* tarea = pedir_tarea(tripulante->socket_miram, tripulante);
 
@@ -404,6 +433,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	lista_tripulantes_bloqueado = list_create();
 	lista_tripulantes_trabajando = list_create();
 	lista_tripulantes_exit = list_create();
+	lista_bloq_emergencia = list_create();
 
 	bool pausar_planificacion_activado = false;
 	uint32_t numero_patota = 0;
@@ -577,7 +607,7 @@ INICIAR_PATOTA 5 tareas_corta.txt 300|4 10|20 4|500
 				break;
 /*
 INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
-INICIAR_PATOTA 5 tareas_corta.txt 300|4 10|20 4|500
+INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|20 4|5
 */
 
 			case OBTENER_BITACORA:
@@ -597,6 +627,84 @@ INICIAR_PATOTA 5 tareas_corta.txt 300|4 10|20 4|500
 				agregar_a_paquete(paquete, tripulante_id, strlen(tripulante_id)+1);
 				enviar_paquete(paquete, conexionMiRam);
 				eliminar_paquete(paquete);
+				break;
+/*
+INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
+INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|2 4|5
+*/
+			case PRUEBA: //para probar el sabotaje por ahora
+				sem_wait(&CONTINUAR_PLANIFICACION);
+
+				lista_bloq_emergencia = list_take_and_remove(lista_tripulantes_trabajando, list_size(lista_tripulantes_trabajando));
+
+				for(int i=0; i < list_size(lista_tripulantes_ready); i++){
+					tcbTripulante* tripulante_de_lista = malloc(sizeof(tcbTripulante));
+					tripulante_de_lista = (tcbTripulante*)list_remove(lista_tripulantes_ready, i);
+					list_add(lista_bloq_emergencia,tripulante_de_lista);
+					//log_info(logger, "tid %d  posx %d  posy %d", tripulante_de_lista->tid, tripulante_de_lista->posicionX, tripulante_de_lista->posicionY);
+					i = -1;
+				}
+
+				log_info(logger, "lista bloq emer");
+				for(int i=0; i < list_size(lista_bloq_emergencia); i++){
+					tcbTripulante* tripulante_de_listaa = malloc(sizeof(tcbTripulante));
+					tripulante_de_listaa = (tcbTripulante*)list_get(lista_bloq_emergencia, i);
+					log_info(logger, "tid %d  posx %d  posy %d", tripulante_de_listaa->tid, tripulante_de_listaa->posicionX, tripulante_de_listaa->posicionY);
+				}
+
+				tcbTripulante* tripu1 = malloc(sizeof(tcbTripulante));
+				tripu1 = (tcbTripulante*)list_get(lista_bloq_emergencia, 0);
+				tcbTripulante* tripu2 = malloc(sizeof(tcbTripulante));
+				int dif_x = abs(tripu1->posicionX - 5);//NO ES 5, ES LO Q RECIBA DE POSICION
+				int dif_y = abs(tripu1->posicionY - 5);
+
+				for(int i=1; i < list_size(lista_bloq_emergencia); i++){
+					tripu2 = (tcbTripulante*)list_get(lista_bloq_emergencia, i);
+
+					int dif_x_2 = abs(tripu2->posicionX - 5);
+					int dif_y_2 = abs(tripu2->posicionY - 5);
+
+					if( dif_x + dif_y >= dif_x_2 + dif_y_2 ){ //esta mas cerca el segundo
+						dif_x = dif_x_2;
+						dif_y = dif_y_2;
+						tripu1 = tripu2;
+					}
+
+				}
+				log_info(logger,"aaaaaa");
+				log_info(logger, "tid %d  posx %d  posy %d", tripu1->tid, tripu1->posicionX, tripu1->posicionY);
+
+				//mover al tripu1 que es el mas cercano
+				while(tripu1->posicionX != 5){//muevo en x
+					if(tripu1->posicionX > 5){ //mayor a la posicion del sabotaje -> se mueve para la izq
+						tripu1->posicionX--;
+						//supongo que iran sleep()
+					} else{
+						tripu1->posicionX++;
+					}
+				}
+
+				while(tripu1->posicionY != 5){//muevo en y
+					if(tripu1->posicionY > 5){ //mayor a la posicion del sabotaje -> se mueve para abajo
+						tripu1->posicionY--;
+					} else{
+						tripu1->posicionY++;
+					}
+				}
+
+				sleep(configuracion.duracion_sabotaje);
+
+				//devuelvo los tripulantes a sus correspondientes listas
+				/*for(int i=0; i < list_size(lista_bloq_emergencia); i++){
+					tcbTripulante* tripulante_de_listaa = malloc(sizeof(tcbTripulante));
+					tripulante_de_listaa = (tcbTripulante*)list_remove(lista_bloq_emergencia, i);
+
+					if(tripulante->estado = 'E'){
+
+					}
+				}*/
+
+				sem_post(&CONTINUAR_PLANIFICACION);
 				break;
 
 			case FIN:

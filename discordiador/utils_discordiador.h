@@ -151,6 +151,8 @@ pcbPatota* crear_patota(uint32_t , uint32_t);
 int codigoOperacion (const char*);
 void enviar_header(tipoMensaje tipo, int socket_cliente);
 
+void remover_tripulante_de_lista(tcbTripulante* tripulante, t_list* lista);
+
 //TAREAS
 char* imprimirTarea(tarea*);
 tarea_tripulante codigoTarea(char*);

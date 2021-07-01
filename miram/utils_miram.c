@@ -1204,7 +1204,9 @@ bool enviar_tarea_segmentacion(int socket_cliente, int numero_patota, int id_tri
 					if(tripulante->estado != 'B'){ //SI ESTA EN BLOQ NO LO SUMA PQ DESPUES LO PIDE DE VUELTA EN EXEC
 						tripulante->prox_instruccion++;
 					}
-					tripulante->estado = 'R';
+					if(tripulante->estado != 'E'){
+						tripulante->estado = 'R';
+					}
 					espacio_tcb->contenido = tripulante;
 				}
 			}

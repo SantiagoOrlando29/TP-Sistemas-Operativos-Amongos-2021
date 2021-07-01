@@ -426,3 +426,14 @@ void ejecutar_tarea(tarea_tripulante cod_tarea,int parametro){
 	}
 
 }
+
+void remover_tripulante_de_lista(tcbTripulante* tripulante, t_list* lista){
+	for(int i=0; i < list_size(lista); i++){
+		tcbTripulante* tripulante_de_lista = (tcbTripulante*)list_get(lista, i);
+
+		if(tripulante_de_lista->tid == tripulante->tid){
+			list_remove(lista, i);
+			i = list_size(lista); //para que corte el for
+		}
+	}
+}
