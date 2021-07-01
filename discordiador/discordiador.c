@@ -216,7 +216,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 		if((void*)tarea->parametro != NULL){ //TAREA DE I/O
 			quantums_ejecutados++;
 			termina_quantum(&quantums_ejecutados, tripulante);
-			sleep(1); // retardo ciclo cpu //sleep para eso de iniciar tarea I/O (simula peticion al SO). Nose si va en esta linea
+			sleep(1); // retardo ciclo cpu VA? //sleep para eso de iniciar tarea I/O (simula peticion al SO). Nose si va en esta linea
 			quantums_ejecutados = 0;
 
 			planificacion_pausada_o_no();
@@ -257,7 +257,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 				planificacion_pausada_o_no();
 
 				printf("hilo %d, estoy trabajando \n", tripulante->tid);
-				sleep(1);
+				sleep(1); // retardo ciclo cpu VA?
 				contador_ciclos_trabajando++;
 				quantums_ejecutados++;
 
@@ -346,7 +346,7 @@ void bloqueado_ready() {
 		planificacion_pausada_o_no();
 
 		printf("hilo %d, haciendo I/O \n", tripulante->tid);
-		sleep(1);//sleep tiempo tarea
+		sleep(1); // retardo ciclo cpu VA?
 
 		planificacion_pausada_o_no();
 
