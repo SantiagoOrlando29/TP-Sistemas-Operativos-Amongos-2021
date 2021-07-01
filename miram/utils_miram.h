@@ -145,7 +145,7 @@ typedef struct{
 	int id_marco;
 	time_t ultimo_uso;
 	presencia ubicacion;
-	int clock;
+	int bit_uso;
 	int libre;
 }marco;
 
@@ -210,6 +210,7 @@ void dump_memoria();
 void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina);
 int lugar_swap_libre();
 void actualizar_lru(marco* un_marco);
+int reemplazo_clock();
 
 
 //swap

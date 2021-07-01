@@ -135,6 +135,8 @@ int funcion_cliente(int socket_cliente){
 						posicion_libre = posicion_marco(&configuracion);
 						marco* marco_nuevo = malloc (sizeof(marco));
 						marco_nuevo->id_marco=posicion_libre;
+						marco_nuevo->ubicacion=MEM_PRINCIPAL;
+						marco_nuevo->bit_uso=1;
 						list_add(una_tabla->marco_inicial,marco_nuevo);
 					}
 					almacenar_informacion(&configuracion, una_tabla, lista);
@@ -878,7 +880,7 @@ void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina){
 		tabla_paginacion* una_tabla = list_get(memoria_aux,i);
 		for(int j=0; j<list_size(una_tabla->marco_inicial);j++){
 			marco* un_marco=list_get(una_tabla->marco_inicial,j);
-			if(un_marco->id_marco==id_marco){
+			if(un_marco->id_marco==id_marco && un_marco->ubicacion==MEM_PRINCIPAL){
 				char buff1[100];
 				strftime(buff1, 100, "%d/%m/%Y %H:%M:%S"  , localtime(&un_marco->ultimo_uso));
 				printf("Ultimo uso %s\n", buff1);
@@ -1004,4 +1006,42 @@ int lugar_swap_libre(){
 	return -1;
 }
 
+int espacios_swap_libres(config_struct* config_servidor){
+	int contador_swap = 0;
+	for(int i=0;i<config_servidor->cant_lugares_swap;i++){
+		if((int)(list_get(config_servidor->swap_libre, i))==0){
+			contador_swap++;
+		}
+
+	}
+	return contador_swap;
+}
+
+int reemplazo_clock(){
+			int nro_marco;
+			marco* clock_m=malloc(sizeof(marco));
+				for(int i=0; i<list_size(memoria_aux);i++){
+					tabla_paginacion* una_tabla = list_get(memoria_aux,i);
+						for(int j=0; j<list_size(una_tabla->marco_inicial);j++){
+							marco* un_marco=list_get(una_tabla->marco_inicial,j);
+							if(un_marco->bit_uso==1 && un_marco->ubicacion==MEM_PRINCIPAL){
+			   		            un_marco->bit_uso=0;
+			   		           }
+							if(un_marco->bit_uso==0 && un_marco->ubicacion==MEM_PRINCIPAL){
+								clock_m = un_marco;
+							}
+			   	   }
+		   }
+
+		   clock_m->ubicacion=MEM_SECUNDARIA;
+		   nro_marco=clock_m->id_marco;
+
+		   void* contenidoAEscribir = malloc(configuracion.tamanio_pag*sizeof(char));
+		   memcpy(contenidoAEscribir,configuracion.posicion_inicial + nro_marco*(configuracion.tamanio_pag) ,configuracion.tamanio_pag);
+		   clock_m->id_marco=lugar_swap_libre();
+		   swap_pagina(contenidoAEscribir,clock_m->id_marco);
+
+		   return nro_marco;
+
+}
 
