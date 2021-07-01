@@ -3,42 +3,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ARCHIVO_CONFIGURACION "mongostore.config"
+///////
 #define ARCHIVO_LOGS "mongostore.log"
+#define PROGRAMA argv[0]
+#define LOGS_EN_CONSOLA 1
+#define NIVEL_DE_LOGS_MINIMO LOG_LEVEL_DEBUG
+#define ARCHIVO_CONFIGURACION "mongostore.config"
+///////
+t_log* logger;
+config_struct ims_config;
+int blocks_fd;
+///////
+void validar_argumentos(int cantidad_parametros, char* programa);
+void cargar_configuracion_en_struct();
+void iniciar_file_system(char* argv[]);
+int existe_file_system();
+int existe_path(char*);
+void recuperar_file_system_existente();
+void crear_file_system(char* argv[]);
+void crear_directorios();
+void crear_directorio_si_no_existe(char* path);
 
+///////
 pthread_mutex_t mutex_blocks;
-
 int blocks_size=128; //acepta 8 caracteres de char
 int blocks=4;
-int blocks_fd;
 
 t_superbloque superbloque;
 char* bloques_copia;
 
-void validar_parametros(int cantidad_parametros, char* parametros[]);
-void cargar_configuracion_en_struct();
-void iniciar_file_system();
-int existe_file_system();
-int existe_path(char*);
-void recuperar_file_system_existente();
-void crear_file_system();
-void crear_directorios();
-void crear_directorio_si_no_existe(char* path);
 void levantar_blocks();
 
 void main (int argc, char *argv[]){
-	logger = log_create(ARCHIVO_LOGS, argv[0], 1, LOG_LEVEL_DEBUG);
+	logger = log_create(ARCHIVO_LOGS, PROGRAMA, LOGS_EN_CONSOLA, NIVEL_DE_LOGS_MINIMO);
+	
 	if(logger == NULL)
 	{
 		printf("No se puede abrir el archivo de logs para iniciar el programa\n");
 		exit(EXIT_FAILURE);
 	}
 
-	validar_parametros(argc, argv);
+	validar_argumentos(argc, argv);
 
 	cargar_configuracion_en_struct();
-
-	iniciar_file_system();
+	
+	iniciar_file_system(argv[]);
 
 	pthread_t servidor;
 	int hilo_servidor = 1;
@@ -57,6 +66,19 @@ void main (int argc, char *argv[]){
 	exit(EXIT_SUCCESS);
 }
 
+//Se valida que el numero de parametros ingresados al iniciar el programa sea el correcto. De no serlo se finaliza indicando el error
+void validar_argumentos(int cantidad_parametros, char* programa){
+	if (cantidad_parametros != 1 && cantidad_parametros != 3)
+	{
+		printf("Numero de parametros incorrecto\nModos de ejecucion de \"%s\":\n"
+				" 1) %s (Si no existe el File System se pedira la cantidad y el tamaño de bloques para crearlo, debe existir el archivo de configuracion)\n"
+				" 2) %s <tamanio de bloques> <cantidad de bloques> (El tamanio y la cantidad de bloques serviran para crear el SuperBloque)\n",
+				programa, programa, programa);
+		log_info(logger, "Los parametros para la ejecucion del programa no son los correctos");
+		exit(EXIT_FAILURE);
+	}
+}
+
 /*Crea un t_config con el archivo existente de configuracion guardando sus valores en la estructura global ims_config y
 destruyendo luego la estructura t_config*/
 void cargar_configuracion_en_struct()
@@ -73,9 +95,12 @@ void cargar_configuracion_en_struct()
 	printf("*** * lc se abrio %s\n", config->path);
 
 	//Se carga la estructura global "ims_config"
-	// *** Si no se precisa que sea global puede pasarse a local retornandolo y eliminado el destroy
+	// *** Si no se precisa que sea global puede pasarse a local retornandolo y eliminando el destroy
 	ims_config.punto_montaje = config_get_string_value(config,"PUNTO_MONTAJE");
-	ims_config.ip = config_get_string_value(config, "IP");// *** el archivo de configuracion no tiene IP
+	char* ip;
+	printf("Ingrese por favor la direccion IP donde se conectara \n");
+	scanf("%s", ip);
+	ims_config.ip = ip;//config_get_string_value(config, "IP");// *** el archivo de configuracion no tiene IP
     ims_config.puerto = config_get_string_value(config, "PUERTO");
     ims_config.tiempo_sincronizacion = config_get_int_value(config,"TIEMPO_SINCRONIZACION");
     ims_config.posiciones_sabotaje = config_get_array_value(config,"POSICIONES_SABOTAJE");
@@ -87,43 +112,24 @@ void cargar_configuracion_en_struct()
 
     printf("*** *** salgo de cargar_configuracion_en_struct\n\n");
 }
-
-void validar_parametros(int cantidad_parametros, char* parametros[])
-{
-	/*if (argc != 1)
-	{
-		printf("\"%s\" no lleva parametros\n", argv[0]);
-		exit(EXIT_FAILURE);
-	}*/
-	if (cantidad_parametros > 3)
-	{
-		printf("Modos de ejecucion de \"%s\":\n"
-				" 1) %s (solo inicia i-Mongo-Store, ya debe existir el archivo superbloque.ims en [PUNTO_MONTAJE]) "
-				"o seran solicitados tamaño y cantidad de bloques durante la ejecucion del programa\n"
-				" 2) %s <ruta metadata superbloque> (se recupera los datos de un archivo de Superbloque en otra ruta\n"
-				" 3) %s <tamanio de bloques> <cantidad de bloques>\n (los valores se ingresan como parametros)\n",
-				parametros[0], parametros[0], parametros[0], parametros[0]);
-		exit(EXIT_FAILURE);
-	}
-}
-
+	
 /*Inicia el File System verificando la existencia previa del mismo, creandolo si no existiera de antes, recuperandolo si ya
 existiera y levantando posteriormente a memoria el archivo Blocks.ims*/
-void iniciar_file_system()
+void iniciar_file_system(int argc, char* argv[])
 {
 	printf("*** entro a iniciar_file_system\n");
 
-	if(existe_file_system() == 0)
-	{
-		printf("*** ** no existe el file system\n");
-		crear_file_system();
-	}
-	else
+	if(existe_file_system())
 	{
 		printf("*** ** existe el file system\n");
 		recuperar_file_system_existente();
 	}
-
+	else
+	{
+		printf("*** ** no existe el file system\n");
+		crear_file_system(argc, argv[]);
+	}
+	levantar_superbloque();
 	levantar_blocks();
 
 	printf("*** *** salgo de iniciar_file_system\n");
@@ -132,8 +138,8 @@ void iniciar_file_system()
 //Devuelve true si existe el archivo Blocks.ims en la ruta dada por el punto de montaje
 int existe_file_system()
 {
-	printf("*** * entro a -y salgo de?- existe_file_system - sacar 1/2 hardcodes\n");
-	return (existe_path("/home/utnso/polus/Blocks.ims") /*&& existe_path("/home/utnso/polus/SuperBloque.ims")*/);
+	printf("*** * entro a -y salgo de?- existe_file_system SACAR HARCODEO\n");
+	return (existe_path("/home/utnso/polus/Blocks.ims") && existe_path("/home/utnso/polus/SuperBloque.ims"));
 }
 
 //Devuelve true si el path recibido corresponde a una ruta ya existente (verifica existencia de archivos y/o carpetas)
@@ -144,70 +150,163 @@ int existe_path(char* path)
 }
 
 //Abre el archivo Blocks.ims (finaliza el programa si no es posible)
+//Suponemos en principio creados los archivos de files
 void recuperar_file_system_existente()
 {
-	printf("*** entro a recuperar_file_system_existente, puede ser necesario que se creen los directorios también acá\n");
-	char* blocks_path;
-	blocks_path = "/home/utnso/polus/Blocks.ims";
-	blocks_fd = open(blocks_path, O_RDWR);
-	if(blocks_fd == -1)
-	{
-		log_info(logger, "No pudo ser abierto el archivo %s para lectura y escritura", blocks_path);
-		exit(EXIT_FAILURE);
-	}
-	printf("*** ** se abrio correctamente el archivo %s ya existente para lectura y escritura\n", blocks_path);
-
+	printf("*** entro a recuperar_file_system_existente\n");
+	//crear_directorios_si_no_existen();
+	levantar_superbloque();
+	levantar_blocks();
+	
 	printf("*** *** salgo de recuperar_file_system_existente\n");
 }
 
 /*Crea los directorios (si no existen) para los archivos del File System, abre el archivo de Blocks.ims (si no existe lo crea)
 (si no puede crearlo o puede abrirlo, finaliza el programa). Por último define el tamanio que tendra dicho archivo*/
-void crear_file_system()
+void crear_file_system(int cantidad_parametros_programa, char* parametros_programa[])
 {
 	printf("*** entro a crear_file_system\n");
-	crear_directorios();
-
-	void* address; //ver si no rompe o volver a char*
-	int tamanio;
-	tamanio	= (int)superbloque.block_size * (int)superbloque.blocks; //HACE FALTA CASTEAR?? ***
-	printf("***(int)superbloque.block_size = %d;   (int)superbloque.blocks = %d\n", (int)superbloque.block_size, (int)superbloque.blocks);
-	char* blocks_path;
-	blocks_path = "/home/utnso/polus/Blocks.ims"; //*** sacar hardcode
-
-	if(existe_path(blocks_path))
-	//*** verificacion valida solo si file system != blocks.ims
+	crear_directorios_si_no_existen();
+	if(existe_path(/home/utnso/polus/SuperBloque.ims) == 0)
 	{
-		blocks_fd = open(blocks_path, O_RDWR);
-		if(blocks_fd == -1)
+		crear_archivo_superbloque(cantidad_parametros_programa, char* parametros_programa[]);
+	}
+	levantar_superbloque();
+	crear_arhivo_blocks();
+	levantar_blocks();
+	
+	printf("*** *** salgo de crear_file_system\n\n");
+
+/*	int tamanio_blocks;
+	if(existe_path(/home/utnso/polus/SuperBloque.ims) == 0)
+	{	
+		if(argc == 1)
 		{
-			log_info(logger, "No pudo ser abierto el archivo %s para lectura y escritura", blocks_path);
-			exit(EXIT_FAILURE);
+			printf("Ingrese el tamanio de los bloques:\n");
+			scanf("%d", &superbloque.block_size);
+			printf("Ingrese la cantidad de bloques:\n");
+			scanf("%d", &superbloque.blocks);
 		}
-		printf("*** ** se abrio correctamente el archivo %s ya existente para lectura y escritura\n", blocks_path);
+		else
+		{
+			superbloque.block_size = atoi(argv[1]);
+			superbloque.blocks = atoi(argv[2]);
+		}
 	}
 	else
 	{
-		blocks_fd = open(blocks_path, O_CREAT|O_RDWR, S_IRWXU);
-		if(blocks_fd == -1)
-		{
-			log_info(logger, "No pudo ser creado el archivo %s", blocks_path);
-			exit(EXIT_FAILURE);
-		}
-		printf("*** ** se creo y abrio correctamente el archivo %s para lectura y escritura\n", blocks_path);
+		levantar_superbloque();
 	}
+	
+	tamanio_blocks	= superbloque.block_size * superbloque.blocks;
+	printf("***superbloque.block_size = %d;   superbloque.blocks = %d\n", superbloque.block_size, superbloque.blocks);
+	
+	char* blocks_path;
+	blocks_path = "/home/utnso/polus/Blocks.ims"; //*** sacar hardcode
+	blocks_fd = open(blocks_path, O_CREAT|O_RDWR, S_IRWXU);
+	if(blocks_fd == -1)
+	{
+		log_info(logger, "No pudo ser creado el archivo %s. Se finaliza el programa\n", blocks_path);
+		exit(EXIT_FAILURE);
+	}
+	printf("*** ** se creo y abrio correctamente el archivo %s para lectura y escritura\n", blocks_path);
 
 	//Se cambia el tamanio del archivo fisico
 	if(ftruncate(blocks_fd, tamanio) == -1)
 	{
-		log_info(logger, "No se le pudo asignar el tamanio al archivo %s", blocks_path);
+		log_info(logger, "No se le pudo asignar el tamanio al archivo %s. Se finaliza el programa\n", blocks_path);
 		exit(EXIT_FAILURE);
 	}
 
 	printf("*** ** se le pudo asignar tamanio al archivo %s\n", blocks_path);
 
-	printf("*** *** salgo de crear_file_system\n\n");
+*/
+}
+//crear_directorios_si_no_existen();crear_archivo_superbloque();levantar_superbloque();crear_arhivo_blocks();levantar_blocks();
+
+//Crea el archivo Superbloque.ims usando los parametros recibidos al iniciar el programa o solicitandolos
+void crear_archivo_superbloque(int cantidad_parametros_programa, char* parametros_programa[])
+{
+	printf("*** entro a crear_archivo_superbloque - sacar hardcodeo");
+	FILE* superbloque_file;
+	if(superbloque_file = fopen("/home/utnso/polus/SuperBloque.ims","w"))
+	{
+		log_info(logger, "No puede ser creado el archivo %s\n. Se finaliza el programa", "/home/utnso/polus/SuperBloque.ims");
+		exit(EXIT_FAILURE);
+	}
+	
+	int tamanio_bloques, cantidad_bloques;
+	char* bitmap;
+	if (cantidad_parametros_programa == 1)
+	{
+		printf("Ingrese el tamanio de los bloques:\n");
+		scanf("%d", tamanio_bloques);
+		getchar();//para eliminar del buffer el fin de linea
+		printf("Ingrese la cantidad de bloques:\n");
+		scanf("%d", cantidad_bloques);
+		getchar();//para eliminar del buffer el fin de linea
+	}
+	else
+	{
+		tamanio_bloques = atoi(parametros_programa[1]);
+		cantidad_bloques = atoi(parametros_programa[2]);
+	}
+	bitmap = (char*) malloc(cantidad_bloques * sizeof(char)); //usar un bitmap real con las commons
+	//setear a 0
+	
+	fprintf(superbloque_file, "BLOCK_SIZE=%d\n", tamanio_bloques);
+	fprintf(superbloque_file, "BLOCKS=%d\n", cantidad_bloques);
+	fprintf(superbloque_file, "BITMAP=%s\n", bitmap);
+
+	free(bitmap);
+	fclose(superbloque_file);
+	printf("*** *** salgo de crear_archivo_superbloque");
 }
 
+void levantar_superbloque()
+{
+	FILE* superbloque_file;
+	if(superbloque_file = fopen("/home/utnso/polus/SuperBloque.ims","w"))
+	
+}
+	}
+	else
+	{
+		levantar_superbloque();
+	}
+	
+	t_config* archivo=config_create("SuperBloque.ims");
+		
+	superbloque.block_size = config_get_int_value(archivo,"BLOCK_SIZE");
+	superbloque.blocks = config_get_int_value(archivo,"BLOCKS");
+	superbloque.bitmap = (char *)malloc(superbloque.blocks * sizeof(char));
+		
+	(char *)malloc(superbloque.blocks * sizeof(char));
+	
+	int tamanio_blocks;
+	tamanio_blocks	= superbloque.block_size * superbloque.blocks;
+	printf("***superbloque.block_size = %d;   superbloque.blocks = %d\n", superbloque.block_size, superbloque.blocks);
+	
+	char* blocks_path;
+	blocks_path = "/home/utnso/polus/Blocks.ims"; //*** sacar hardcode
+	blocks_fd = open(blocks_path, O_CREAT|O_RDWR, S_IRWXU);
+	if(blocks_fd == -1)
+	{
+		log_info(logger, "No pudo ser creado el archivo %s. Se finaliza el programa\n", blocks_path);
+		exit(EXIT_FAILURE);
+	}
+	printf("*** ** se creo y abrio correctamente el archivo %s para lectura y escritura\n", blocks_path);
+
+	//Se cambia el tamanio del archivo fisico
+	if(ftruncate(blocks_fd, tamanio) == -1)
+	{
+		log_info(logger, "No se le pudo asignar el tamanio al archivo %s. Se finaliza el programa\n", blocks_path);
+		exit(EXIT_FAILURE);
+	}
+
+	printf("*** ** se le pudo asignar tamanio al archivo %s\n", blocks_path);
+
+	
 //Si no existen, crea los directorios para el File System
 void crear_directorios()
 {
@@ -241,14 +340,23 @@ void crear_directorio_si_no_existe(char* path)
 (puede que se precise dejarlo abierto para la sincronizacion de los datos)*/
 void levantar_blocks()
 {
-	// *** struct stat stat_file;
 	printf("*** entro a levantar_blocks - sacar 1 hardcodes\n");
-	printf("lb 0\n");
-	int tamanio = (int)superbloque.block_size * (int)superbloque.blocks; //HACE FALTA CASTEAR? ***
-	printf("lb 1\n");
+
+	char* blocks_path;
+	blocks_path = "/home/utnso/polus/Blocks.ims";
+	blocks_fd = open(blocks_path, O_RDWR);
+	if(blocks_fd == -1)
+	{
+		log_info(logger, "No pudo ser abierto el archivo %s para lectura y escritura", blocks_path);
+		exit(EXIT_FAILURE);
+	}
+	printf("*** ** 1 - se abrio correctamente el archivo %s ya existente para lectura y escritura\n", blocks_path);
+	// *** struct stat stat_file;
+	int tamanio = superbloque.block_size * superbloque.blocks;
+
 	void* address = mmap(NULL, tamanio, PROT_WRITE|PROT_READ, MAP_SHARED, blocks_fd, 0);
-	printf("lb 2\n");
-	printf("*** ** ubicacion de mapeo %p\n", address);
+
+	printf("*** 2 - se mapeo correctamente blocks a la memoria - direccion de mapeo %p\n", address);
 
 	close(blocks_fd);//puede que se precise dejarlo abierto para la sincronizacion de los datos ***
 	printf("*** *** salgo de levantar_blocks\n");
@@ -274,7 +382,7 @@ void algo()
 //crear_recurso_metadata(64,1,"[6]",'B',"0132465","/home/utnso/polus/Files/Basura.ims");
 */
 
-/*Sube a memoria a traves del struct global superbloque los valores que se tienen en el archivo SuerBloque.ims
+/*Sube a memoria a traves del struct global superbloque los valores que se tienen en el archivo SuperBloque.ims
 (ex void crear_superbloque())*/
 void levantar_superbloque()
 {
@@ -474,7 +582,7 @@ void crear_recurso_metadata(bloques_recurso* recurso, char* md5, char* path)
               ├─────────────┼───────────────────────────────┤
               │     a+      │ O_RDWR | O_CREAT | O_APPEND   │
               └─────────────┴───────────────────────────────┘
-
+    
 	@NAME: string_from_format
 	* @DESC: Crea un nuevo string a partir de un formato especificado
 	*
