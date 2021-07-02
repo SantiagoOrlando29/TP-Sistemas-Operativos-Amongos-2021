@@ -4,6 +4,8 @@ config_struct configuracion;
 t_list* memoria_aux;
 int variable_servidor = -1;
 int socket_servidor;
+NIVEL* nivel;
+int err;
 
 void iniciar_servidor(config_struct* config_servidor)
 {
@@ -139,6 +141,11 @@ int funcion_cliente(int socket_cliente){
 						marco_nuevo->bit_uso=1;
 						list_add(una_tabla->marco_inicial,marco_nuevo);
 					}
+
+
+					int cols, rows;
+
+
 					tcbTripulante* tripulante3 =crear_tripulante(3,'N',23,23,23,23);
 					almacenar_informacion(&configuracion, una_tabla, lista);
 					printf("\n");
@@ -150,6 +157,45 @@ int funcion_cliente(int socket_cliente){
 					//mem_hexdump(configuracion.posicion_inicial, configuracion.tamanio_pag*sizeof(char));
 					fflush(stdout);
 					printf("\n");
+
+					cols=25;
+					rows=25;
+
+					nivel_gui_inicializar();
+
+					nivel_gui_get_area_nivel(&cols, &rows);
+
+					nivel = nivel_crear("AMong-OS");
+
+					char letra = 'A';
+
+					err = personaje_crear(nivel, letra, 10, 12);
+					ASSERT_CREATE(nivel, letra, err);
+
+					letra = 'B';
+
+					err = personaje_crear(nivel, letra, 3, 4);
+					ASSERT_CREATE(nivel, letra, err);
+
+					letra = 'C';
+
+					err = personaje_crear(nivel, letra, 20, 10);
+					ASSERT_CREATE(nivel, letra, err);
+
+					while ( 1 ) {
+							nivel_gui_dibujar(nivel);
+
+
+					}
+
+					item_desplazar(nivel, 'A', 0, -1);
+												sleep(1);
+												item_desplazar(nivel, 'A', -2, 0);
+												sleep(1);
+												item_desplazar(nivel, 'A', 0, -2);
+												sleep(1);
+												item_desplazar(nivel, 'A', 0, +3);
+												sleep(1);
 					/*fflush(stdout);
 					dump_memoria();
 
@@ -600,6 +646,8 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 	for(int i =2; i<cantidad_tripulantes+2;i++){
 		tcbTripulante* tripulante= (tcbTripulante*) list_get(lista,i);
 
+
+
 		uint32_t tid = tripulante->tid;
 		printf("\n TID %d",tid);
 
@@ -976,7 +1024,7 @@ int reemplazo_lru(){
 	   for(int i=0; i<list_size(memoria_aux);i++){
 		   tabla_paginacion* una_tabla = list_get(memoria_aux,i);
 		   	   for(int j=0; j<list_size(una_tabla->marco_inicial);j++){
-		   		   	  marco* un_marco=list_get(una_tabla->marco_inicial,j);
+		   		   marco* un_marco=(marco*)list_get(una_tabla->marco_inicial,j);
 		   		   if(un_marco->ultimo_uso < lru_actual && un_marco->ubicacion==MEM_PRINCIPAL){
 		   		               lru_actual = un_marco->ultimo_uso;
 		   		               lru_m = un_marco;
@@ -1029,6 +1077,7 @@ int reemplazo_clock(){
 			marco* clock_m=malloc(sizeof(marco));
 				for(int i=0; i<list_size(memoria_aux);i++){
 					tabla_paginacion* una_tabla = list_get(memoria_aux,i);
+					while(1){
 						for(int j=0; j<list_size(una_tabla->marco_inicial);j++){
 							marco* un_marco=list_get(una_tabla->marco_inicial,j);
 							if(un_marco->bit_uso==1 && un_marco->ubicacion==MEM_PRINCIPAL){
@@ -1036,9 +1085,11 @@ int reemplazo_clock(){
 			   		           }
 							if(un_marco->bit_uso==0 && un_marco->ubicacion==MEM_PRINCIPAL){
 								clock_m = un_marco;
+								break;
 							}
 			   	   }
 		   }
+		}
 
 		   clock_m->ubicacion=MEM_SECUNDARIA;
 		   nro_marco=clock_m->id_marco;
@@ -1062,35 +1113,35 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota){
 	pos=posicion_patota(id_patota, memoria_aux);
 	tabla_paginacion* auxiliar= (tabla_paginacion*)list_get(memoria_aux, pos);
 	//PID
-	nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+	nro_marco+=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
 	offset+=sizeof(int);
 	//PunteroTareas
 
-	nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+	nro_marco+=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
 	offset+=sizeof(int);
-	for (int i; i<auxiliar->cant_tripulantes;i++){
+	for (int i=0; i<3;i++){
 		//TID
-		nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+		nro_marco+=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
 		offset+=sizeof(int);
 
 		//Estado
-		nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(char));
+		nro_marco+=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(char));
 		offset+=sizeof(char);
 
 		//Pos x
-		nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+		nro_marco+=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
 		offset+=sizeof(int);
 
 		//POs y
-		nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+		nro_marco+=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
 		offset+=sizeof(int);
 
 		//Prox inst
-		nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+		nro_marco+=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
 		offset+=sizeof(int);
 
 		//Puntero PCB
-		nro_marco=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
+		nro_marco+=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(int));
 		offset+=sizeof(int);
 
 	}
@@ -1147,6 +1198,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota){
 
 
 }
+
 
 
 

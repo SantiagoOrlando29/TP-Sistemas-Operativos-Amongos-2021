@@ -17,13 +17,21 @@
 #include<pthread.h>
 #include<stdbool.h>
 #include <semaphore.h>
+#include <nivel-gui/nivel-gui.h>
+#include <nivel-gui/tad_nivel.h>
 
 
 #define tamanio_PCB  8
 #define tamanio_tarea 10
 #define tamanio_TCB  21
 
-
+#define ASSERT_CREATE(nivel, id, err)                                                   \
+    if(err) {                                                                           \
+        nivel_destruir(nivel);                                                          \
+        nivel_gui_terminar();                                                           \
+        fprintf(stderr, "Error al crear '%c': %s\n", id, nivel_gui_string_error(err));  \
+        return EXIT_FAILURE;                                                            \
+    }
 
 typedef struct{
 	int patota_id;
@@ -266,6 +274,11 @@ tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, ui
 
 char* string_nombre_tarea(int);
 char* tarea_a_string(tarea* t);
+
+
+//Mapa
+
+int iniciar_mapa(int * cols, int * rows);
 
 #endif /* CONEXIONES_H_ */
 
