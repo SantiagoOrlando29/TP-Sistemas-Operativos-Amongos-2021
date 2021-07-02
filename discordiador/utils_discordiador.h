@@ -45,7 +45,9 @@ typedef enum
 	PEDIR_TAREA,
 	CAMBIAR_DE_ESTADO,
 	INFORMAR_MOVIMIENTO,
-	NO_HAY_NADA_PARA_LISTAR
+	NO_HAY_NADA_PARA_LISTAR,
+	INFORMAR_BITACORA,
+	INFORMAR_BITACORA_MOVIMIENTO
 }tipoMensaje;
 
 
@@ -111,6 +113,7 @@ typedef struct{
 	uint32_t puntero_pcb; //Dirección lógica del PCB del tripulante
 	sem_t semaforo_tripulante;
 	int socket_miram;
+	int socket_mongo;
 }tcbTripulante;
 
 // fin estructuras tripulantes
@@ -168,6 +171,12 @@ tarea* transformar_char_tarea(char* char_tarea);
 
 void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado);
 void informar_movimiento(int conexion_miram, tcbTripulante* tripulante);
+void informar_inicio_tarea(tcbTripulante* tripulante);
+void informar_fin_tarea(tcbTripulante* tripulante);
+void informar_movimiento_mongo_X (tcbTripulante* tripulante, int x_viejo);
+void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo);
+void informar_atencion_sabotaje(tcbTripulante* tripulante);
+void informar_sabotaje_resuelto(tcbTripulante* tripulante);
 
 void planificacion_pausada_o_no();
 

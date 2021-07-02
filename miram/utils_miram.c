@@ -233,6 +233,24 @@ int funcion_cliente(int socket_cliente){
 
 				break;
 
+			case INFORMAR_BITACORA:; //PARA PROBAR LO DE MONGO
+				t_list* lista_pr = recibir_paquete(socket_cliente);
+				int tid_pr = (int)atoi(list_get(lista_pr,0));
+				char* mens = list_get(lista_pr,1);
+				log_info(logger, "tid %d  mens %s",tid_pr, mens);
+
+
+				break;
+
+			case INFORMAR_BITACORA_MOVIMIENTO:; //PARA PROBAR LO DE MONGO
+				t_list* lista_pru = recibir_paquete(socket_cliente);
+				int tid_pru = (int)atoi(list_get(lista_pru,0));
+				char* mens1 = list_get(lista_pru,1);
+				char* mens2 = list_get(lista_pru,2);
+				log_info(logger, "tid %d  mens1 %s, mens2 %s",tid_pru, mens1, mens2);
+
+				break;
+
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
 				variable_servidor = 0;

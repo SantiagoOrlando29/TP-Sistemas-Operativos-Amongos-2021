@@ -3010,3 +3010,129 @@
 [INFO] 17:49:21:711 MiRam/(29152:29189): fallo cambio estado
 [WARNING] 17:49:21:711 MiRam/(29152:29189): el cliente se desconecto.
 [ERROR] 17:49:40:037 MiRam/(29152:29178): el discordiador finalizo el programa. Terminando servidor
+[INFO] 11:46:32:231 MiRam/(31760:31803): Se asigno espacio de memoria a todo
+[INFO] 11:46:32:251 MiRam/(31760:31809): tid 1  largo 7  mens inicio
+[WARNING] 11:46:33:146 MiRam/(31760:31809): el cliente se desconecto.
+[WARNING] 11:46:33:147 MiRam/(31760:31803): el cliente se desconecto.
+[INFO] 11:48:07:663 MiRam/(31830:31859): Se asigno espacio de memoria a todo
+[INFO] 11:48:07:698 MiRam/(31830:31865): tid 1  largo 7  mens inicio
+[WARNING] 11:48:08:449 MiRam/(31830:31865): el cliente se desconecto.
+[WARNING] 11:48:08:450 MiRam/(31830:31859): el cliente se desconecto.
+[INFO] 11:48:59:118 MiRam/(31880:31905): Se asigno espacio de memoria a todo
+[INFO] 11:48:59:139 MiRam/(31880:31911): tid 1  largo 7  mens inicio
+[WARNING] 11:49:00:203 MiRam/(31880:31911): el cliente se desconecto.
+[WARNING] 11:49:00:204 MiRam/(31880:31905): el cliente se desconecto.
+[INFO] 11:49:24:366 MiRam/(31913:31950): Se asigno espacio de memoria a todo
+[INFO] 11:49:24:420 MiRam/(31913:31956): tid 1  largo 7  mens inicio
+[INFO] 11:49:24:422 MiRam/(31913:31957): tid 2  largo 7  mens inicio
+[INFO] 11:49:24:429 MiRam/(31913:31958): tid 3  largo 7  mens inicio
+[INFO] 11:49:24:430 MiRam/(31913:31959): tid 4  largo 7  mens inicio
+[INFO] 11:49:24:431 MiRam/(31913:31960): tid 5  largo 7  mens inicio
+[ERROR] 11:49:33:160 MiRam/(31913:31950): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 11:49:33:161 MiRam/(31913:31960): el cliente se desconecto.
+[WARNING] 11:49:33:161 MiRam/(31913:31959): el cliente se desconecto.
+[WARNING] 11:49:33:161 MiRam/(31913:31958): el cliente se desconecto.
+[WARNING] 11:49:33:161 MiRam/(31913:31957): el cliente se desconecto.
+[WARNING] 11:49:33:161 MiRam/(31913:31956): el cliente se desconecto.
+[INFO] 11:59:45:779 MiRam/(32072:32095): Se asigno espacio de memoria a todo
+[INFO] 11:59:45:797 MiRam/(32072:32103): tid 1  mens inicio
+[INFO] 11:59:45:801 MiRam/(32072:32104): tid 2  mens inicio
+[INFO] 11:59:45:801 MiRam/(32072:32105): tid 3  mens inicio
+[INFO] 11:59:45:802 MiRam/(32072:32106): tid 4  mens inicio
+[INFO] 11:59:45:803 MiRam/(32072:32107): tid 5  mens inicio
+[ERROR] 11:59:53:325 MiRam/(32072:32095): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 11:59:53:326 MiRam/(32072:32107): el cliente se desconecto.
+[WARNING] 11:59:53:326 MiRam/(32072:32106): el cliente se desconecto.
+[WARNING] 11:59:53:326 MiRam/(32072:32105): el cliente se desconecto.
+[WARNING] 11:59:53:326 MiRam/(32072:32104): el cliente se desconecto.
+[WARNING] 11:59:53:326 MiRam/(32072:32103): el cliente se desconecto.
+[INFO] 12:01:40:490 MiRam/(32163:32200): Se asigno espacio de memoria a todo
+[INFO] 12:01:40:505 MiRam/(32163:32206): tid 1  mens inicio
+[INFO] 12:01:41:500 MiRam/(32163:32206): tid 1  mens fin
+[INFO] 12:01:41:502 MiRam/(32163:32207): tid 2  mens inicio
+[INFO] 12:01:42:501 MiRam/(32163:32207): tid 2  mens fin
+[INFO] 12:01:42:507 MiRam/(32163:32208): tid 3  mens inicio
+[INFO] 12:01:43:503 MiRam/(32163:32208): tid 3  mens fin
+[INFO] 12:01:43:506 MiRam/(32163:32209): tid 4  mens inicio
+[INFO] 12:01:44:506 MiRam/(32163:32209): tid 4  mens fin
+[INFO] 12:01:44:507 MiRam/(32163:32210): tid 5  mens inicio
+[INFO] 12:01:45:507 MiRam/(32163:32210): tid 5  mens fin
+[ERROR] 12:01:50:544 MiRam/(32163:32200): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 12:01:50:545 MiRam/(32163:32210): el cliente se desconecto.
+[INFO] 12:29:35:108 MiRam/(614:679): Se asigno espacio de memoria a todo
+[INFO] 12:29:35:124 MiRam/(614:688): tid 1  mens inicio
+[INFO] 12:29:36:122 MiRam/(614:688): tid 1  mens fin
+[INFO] 12:29:36:123 MiRam/(614:689): tid 2  mens inicio
+[WARNING] 12:29:36:524 MiRam/(614:689): el cliente se desconecto.
+[WARNING] 12:29:36:524 MiRam/(614:688): el cliente se desconecto.
+[WARNING] 12:29:36:524 MiRam/(614:679): el cliente se desconecto.
+[INFO] 12:31:08:954 MiRam/(737:759): Se asigno espacio de memoria a todo
+[INFO] 12:31:08:962 MiRam/(737:771): tid 1  mens inicio
+[INFO] 12:31:09:963 MiRam/(737:771): tid 1  mens fin
+[INFO] 12:31:09:965 MiRam/(737:772): tid 2  mens inicio
+[WARNING] 12:31:10:320 MiRam/(737:772): el cliente se desconecto.
+[WARNING] 12:31:10:320 MiRam/(737:771): el cliente se desconecto.
+[WARNING] 12:31:10:320 MiRam/(737:759): el cliente se desconecto.
+[INFO] 12:32:06:753 MiRam/(793:815): Se asigno espacio de memoria a todo
+[INFO] 12:32:06:761 MiRam/(793:826): tid 1  mens inicio
+[INFO] 12:32:07:762 MiRam/(793:826): tid 1  mens fin
+[INFO] 12:32:07:772 MiRam/(793:827): tid 2  mens inicio
+[WARNING] 12:32:08:100 MiRam/(793:827): el cliente se desconecto.
+[WARNING] 12:32:08:100 MiRam/(793:826): el cliente se desconecto.
+[WARNING] 12:32:08:100 MiRam/(793:815): el cliente se desconecto.
+[INFO] 12:33:04:805 MiRam/(845:867): Se asigno espacio de memoria a todo
+[INFO] 12:33:04:817 MiRam/(845:876): tid 1  mens inicio
+[INFO] 12:33:05:818 MiRam/(845:876): tid 1  mens fin
+[INFO] 12:33:05:820 MiRam/(845:879): tid 2  mens inicio
+[WARNING] 12:33:06:130 MiRam/(845:879): el cliente se desconecto.
+[WARNING] 12:33:06:131 MiRam/(845:876): el cliente se desconecto.
+[WARNING] 12:33:06:131 MiRam/(845:867): el cliente se desconecto.
+[INFO] 12:33:42:203 MiRam/(887:913): Se asigno espacio de memoria a todo
+[INFO] 12:33:42:217 MiRam/(887:925): tid 1  mens inicio
+[INFO] 12:33:43:210 MiRam/(887:925): tid 1  mens fin
+[INFO] 12:33:43:211 MiRam/(887:926): tid 2  mens inicio
+[WARNING] 12:33:43:375 MiRam/(887:926): el cliente se desconecto.
+[WARNING] 12:33:43:375 MiRam/(887:925): el cliente se desconecto.
+[WARNING] 12:33:43:375 MiRam/(887:913): el cliente se desconecto.
+[INFO] 12:34:54:253 MiRam/(949:980): Se asigno espacio de memoria a todo
+[INFO] 12:34:54:261 MiRam/(949:989): tid 1  mens inicio
+[INFO] 12:34:55:265 MiRam/(949:989): tid 1  mens fin
+[INFO] 12:34:55:270 MiRam/(949:990): tid 2  mens inicio
+[WARNING] 12:34:55:566 MiRam/(949:990): el cliente se desconecto.
+[WARNING] 12:34:55:566 MiRam/(949:989): el cliente se desconecto.
+[WARNING] 12:34:55:566 MiRam/(949:980): el cliente se desconecto.
+[INFO] 12:35:47:147 MiRam/(1007:1032): Se asigno espacio de memoria a todo
+[INFO] 12:35:47:153 MiRam/(1007:1044): tid 1  mens inicio
+[INFO] 12:35:48:154 MiRam/(1007:1044): tid 1  mens fin
+[INFO] 12:35:48:155 MiRam/(1007:1045): tid 2  mens inicio
+[WARNING] 12:35:48:507 MiRam/(1007:1045): el cliente se desconecto.
+[WARNING] 12:35:48:507 MiRam/(1007:1044): el cliente se desconecto.
+[WARNING] 12:35:48:507 MiRam/(1007:1032): el cliente se desconecto.
+[INFO] 12:37:03:466 MiRam/(1060:1082): Se asigno espacio de memoria a todo
+[INFO] 12:37:03:480 MiRam/(1060:1092): tid 1  mens inicio
+[INFO] 12:37:04:477 MiRam/(1060:1092): tid 1  mens fin
+[INFO] 12:37:04:479 MiRam/(1060:1093): tid 2  mens inicio
+[INFO] 12:37:04:479 MiRam/(1060:1092): tid 1  mens1 3|4, mens2 4|4
+[INFO] 12:37:05:478 MiRam/(1060:1093): tid 2  mens fin
+[INFO] 12:37:05:484 MiRam/(1060:1093): tid 2  mens1 10|2, mens2 9|2
+[INFO] 12:37:05:488 MiRam/(1060:1094): tid 3  mens inicio
+[INFO] 12:37:06:481 MiRam/(1060:1094): tid 3  mens fin
+[INFO] 12:37:06:483 MiRam/(1060:1094): tid 3  mens1 4|5, mens2 4|4
+[INFO] 12:37:06:485 MiRam/(1060:1093): tid 2  mens1 9|2, mens2 8|2
+[INFO] 12:37:06:489 MiRam/(1060:1097): tid 4  mens inicio
+[INFO] 12:37:07:483 MiRam/(1060:1097): tid 4  mens fin
+[INFO] 12:37:07:484 MiRam/(1060:1099): tid 5  mens inicio
+[INFO] 12:37:07:486 MiRam/(1060:1093): tid 2  mens1 8|2, mens2 7|2
+[INFO] 12:37:08:485 MiRam/(1060:1099): tid 5  mens fin
+[INFO] 12:37:08:485 MiRam/(1060:1097): tid 4  mens1 0|0, mens2 1|0
+[INFO] 12:37:08:486 MiRam/(1060:1093): tid 2  mens1 7|2, mens2 6|2
+[INFO] 12:37:09:485 MiRam/(1060:1097): tid 4  mens1 1|0, mens2 2|0
+[INFO] 12:37:09:486 MiRam/(1060:1093): tid 2  mens1 6|2, mens2 5|2
+[INFO] 12:37:10:486 MiRam/(1060:1097): tid 4  mens1 2|0, mens2 3|0
+[INFO] 12:37:10:486 MiRam/(1060:1093): tid 2  mens1 5|2, mens2 4|2
+[ERROR] 12:37:11:265 MiRam/(1060:1082): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 12:37:11:265 MiRam/(1060:1099): el cliente se desconecto.
+[WARNING] 12:37:11:265 MiRam/(1060:1097): el cliente se desconecto.
+[WARNING] 12:37:11:265 MiRam/(1060:1094): el cliente se desconecto.
+[WARNING] 12:37:11:265 MiRam/(1060:1093): el cliente se desconecto.
+[WARNING] 12:37:11:265 MiRam/(1060:1092): el cliente se desconecto.

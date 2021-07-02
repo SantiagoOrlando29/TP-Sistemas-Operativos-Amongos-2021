@@ -67,6 +67,7 @@ tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, u
 	tripulante->puntero_pcb = puntero_pcb;
 	sem_init(&(tripulante->semaforo_tripulante),0,0);
 	tripulante->socket_miram = 0;
+	tripulante->socket_mongo = 0;
 	return tripulante;
 }
 
@@ -436,4 +437,64 @@ void remover_tripulante_de_lista(tcbTripulante* tripulante, t_list* lista){
 			i = list_size(lista); //para que corte el for
 		}
 	}
+}
+
+void informar_atencion_sabotaje(tcbTripulante* tripulante){
+	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* mensaje = malloc(17);
+	mensaje = "corro a sabotaje";
+	//memset(mensaje, '\0', strlen(mensaje); //NOSE SI VA ESTO
+
+	int largo_mensaje = strlen(mensaje)+1;
+	//char* largo_mensaje_char = malloc(sizeof(char));
+	//sprintf(largo_mensaje_char, "%d", largo_mensaje);
+	//agregar_a_paquete(paquete, largo_mensaje_char, strlen(largo_mensaje_char)+1);
+
+	agregar_a_paquete(paquete, mensaje, largo_mensaje);
+
+	//enviar_paquete(paquete, tripulante->socket_mongo);
+	enviar_paquete(paquete, tripulante->socket_miram);
+
+	//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
+
+	//eliminar_paquete(paquete);
+	//free(tid_char);
+	//free(mensaje);
+	//free(largo_mensaje_char);
+	//free(mensaje_recibido);
+}
+
+void informar_sabotaje_resuelto(tcbTripulante* tripulante){
+	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* mensaje = malloc(9);
+	mensaje = "resuelto";
+	//memset(mensaje, '\0', strlen(mensaje); //NOSE SI VA ESTO
+
+	int largo_mensaje = strlen(mensaje)+1;
+	//char* largo_mensaje_char = malloc(sizeof(char));
+	//sprintf(largo_mensaje_char, "%d", largo_mensaje);
+	//agregar_a_paquete(paquete, largo_mensaje_char, strlen(largo_mensaje_char)+1);
+
+	agregar_a_paquete(paquete, mensaje, largo_mensaje);
+
+	//enviar_paquete(paquete, tripulante->socket_mongo);
+	enviar_paquete(paquete, tripulante->socket_miram);
+
+	//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
+
+	//eliminar_paquete(paquete);
+	//free(tid_char);
+	//free(mensaje);
+	//free(largo_mensaje_char);
+	//free(mensaje_recibido);
 }

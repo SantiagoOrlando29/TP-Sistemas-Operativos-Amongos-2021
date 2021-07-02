@@ -1,32 +1,38 @@
-[INFO] 17:48:22:618 discordiador/(29171:29171): Memoria asignada
-[INFO] 17:48:22:637 discordiador/(29171:29180): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 17:48:22:646 discordiador/(29171:29181): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 17:48:22:647 discordiador/(29171:29182): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 17:48:22:648 discordiador/(29171:29183): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 17:48:22:652 discordiador/(29171:29184): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 17:48:25:646 discordiador/(29171:29179): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 17:48:27:647 discordiador/(29171:29179): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 17:48:32:652 discordiador/(29171:29179): TRIPU 2  tarea recibida: ABC;5;6;4
-[INFO] 17:48:35:660 discordiador/(29171:29180): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 17:48:36:661 discordiador/(29171:29179): TRIPU 4  tarea recibida: ABC;5;6;4
-[INFO] 17:48:40:666 discordiador/(29171:29182): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 17:48:41:666 discordiador/(29171:29179): TRIPU 5  tarea recibida: ABC;5;6;4
-[INFO] 17:48:42:666 discordiador/(29171:29180): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 17:48:47:676 discordiador/(29171:29182): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 17:48:50:678 discordiador/(29171:29181): TRIPU 2  tarea recibida: ABC;5;6;4
-[INFO] 17:48:51:679 discordiador/(29171:29179): TRIPU 1  tarea recibida: no hay mas tareas
-[INFO] 17:48:51:680 discordiador/(29171:29180): fallo cambio estado
-[INFO] 17:48:55:682 discordiador/(29171:29183): TRIPU 4  tarea recibida: ABC;5;6;4
-[INFO] 17:48:56:683 discordiador/(29171:29179): TRIPU 3  tarea recibida: no hay mas tareas
-[INFO] 17:48:56:684 discordiador/(29171:29182): fallo cambio estado
-[INFO] 17:48:57:684 discordiador/(29171:29181): TRIPU 2  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 17:49:02:687 discordiador/(29171:29183): TRIPU 4  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 17:49:05:692 discordiador/(29171:29184): TRIPU 5  tarea recibida: ABC;5;6;4
-[INFO] 17:49:06:694 discordiador/(29171:29179): TRIPU 2  tarea recibida: no hay mas tareas
-[INFO] 17:49:06:694 discordiador/(29171:29181): fallo cambio estado
-[INFO] 17:49:11:699 discordiador/(29171:29179): TRIPU 4  tarea recibida: no hay mas tareas
-[INFO] 17:49:11:700 discordiador/(29171:29183): fallo cambio estado
-[INFO] 17:49:12:700 discordiador/(29171:29184): TRIPU 5  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 17:49:21:711 discordiador/(29171:29179): TRIPU 5  tarea recibida: no hay mas tareas
-[INFO] 17:49:21:711 discordiador/(29171:29184): fallo cambio estado
-[INFO] 17:49:38:053 discordiador/(29171:29171): No hay tripulantes en memoria para listar
+[INFO] 12:37:03:466 discordiador/(1077:1077): Memoria asignada
+[INFO] 12:37:04:478 discordiador/(1077:1086): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 12:37:04:479 discordiador/(1077:1086): aaaaaaaaa
+[INFO] 12:37:04:479 discordiador/(1077:1086): pos_vieja 3|4
+[INFO] 12:37:04:479 discordiador/(1077:1086): pos_actual 4|4
+[INFO] 12:37:05:479 discordiador/(1077:1087): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 12:37:05:484 discordiador/(1077:1087): aaaaaaaaa
+[INFO] 12:37:05:484 discordiador/(1077:1087): pos_vieja 10|2
+[INFO] 12:37:05:484 discordiador/(1077:1087): pos_actual 9|2
+[INFO] 12:37:06:481 discordiador/(1077:1088): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 12:37:06:485 discordiador/(1077:1087): aaaaaaaaa
+[INFO] 12:37:06:485 discordiador/(1077:1087): pos_vieja 9|2
+[INFO] 12:37:06:485 discordiador/(1077:1087): pos_actual 8|2
+[INFO] 12:37:07:484 discordiador/(1077:1085): TRIPU 1  tarea recibida: ABC;5;6;4
+[INFO] 12:37:07:484 discordiador/(1077:1089): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 12:37:07:485 discordiador/(1077:1087): aaaaaaaaa
+[INFO] 12:37:07:485 discordiador/(1077:1087): pos_vieja 8|2
+[INFO] 12:37:07:486 discordiador/(1077:1087): pos_actual 7|2
+[INFO] 12:37:08:484 discordiador/(1077:1089): aaaaaaaaa
+[INFO] 12:37:08:484 discordiador/(1077:1089): pos_vieja 0|0
+[INFO] 12:37:08:485 discordiador/(1077:1089): pos_actual 1|0
+[INFO] 12:37:08:485 discordiador/(1077:1090): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 12:37:08:486 discordiador/(1077:1087): aaaaaaaaa
+[INFO] 12:37:08:486 discordiador/(1077:1087): pos_vieja 7|2
+[INFO] 12:37:08:486 discordiador/(1077:1087): pos_actual 6|2
+[INFO] 12:37:09:485 discordiador/(1077:1085): TRIPU 3  tarea recibida: ABC;5;6;4
+[INFO] 12:37:09:485 discordiador/(1077:1089): aaaaaaaaa
+[INFO] 12:37:09:485 discordiador/(1077:1089): pos_vieja 1|0
+[INFO] 12:37:09:485 discordiador/(1077:1089): pos_actual 2|0
+[INFO] 12:37:09:486 discordiador/(1077:1087): aaaaaaaaa
+[INFO] 12:37:09:486 discordiador/(1077:1087): pos_vieja 6|2
+[INFO] 12:37:09:486 discordiador/(1077:1087): pos_actual 5|2
+[INFO] 12:37:10:486 discordiador/(1077:1089): aaaaaaaaa
+[INFO] 12:37:10:486 discordiador/(1077:1089): pos_vieja 2|0
+[INFO] 12:37:10:486 discordiador/(1077:1089): pos_actual 3|0
+[INFO] 12:37:10:486 discordiador/(1077:1087): aaaaaaaaa
+[INFO] 12:37:10:486 discordiador/(1077:1087): pos_vieja 5|2
+[INFO] 12:37:10:486 discordiador/(1077:1087): pos_actual 4|2

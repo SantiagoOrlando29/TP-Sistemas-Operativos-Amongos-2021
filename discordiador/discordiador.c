@@ -154,6 +154,140 @@ void informar_movimiento(int conexion_miram, tcbTripulante* tripulante){
 	free(mensaje_recibido);
 }
 
+void informar_movimiento_mongo_X (tcbTripulante* tripulante, int x_viejo){
+	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA_MOVIMIENTO);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* posicion_vieja [8];
+
+	char* x_viejo_char = malloc(sizeof(char));
+	sprintf(x_viejo_char, "%d", x_viejo);
+	strcpy(posicion_vieja, x_viejo_char);
+
+	strcat(posicion_vieja, "|");
+
+	char* y_actual = malloc(sizeof(char));
+	sprintf(y_actual, "%d", tripulante->posicionY);
+	strcat(posicion_vieja, y_actual);
+
+	agregar_a_paquete(paquete, posicion_vieja, strlen(posicion_vieja)+1);
+
+
+	char* posicion_actual [8];
+
+	char* x_actual = malloc(sizeof(char));
+	sprintf(x_actual, "%d", tripulante->posicionX);
+	strcpy(posicion_actual, x_actual);
+
+	strcat(posicion_actual, "|");
+	strcat(posicion_actual, y_actual);
+
+	agregar_a_paquete(paquete, posicion_actual, strlen(posicion_actual)+1);
+
+	//enviar_paquete(paquete, tripulante->socket_mongo);
+	enviar_paquete(paquete, tripulante->socket_miram);
+}
+
+void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo){
+	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA_MOVIMIENTO);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* posicion_vieja [8];
+
+	char* x_actual = malloc(sizeof(char));
+	sprintf(x_actual, "%d", tripulante->posicionX);
+	strcpy(posicion_vieja, x_actual);
+
+	strcat(posicion_vieja, "|");
+
+	char* y_viejo_char = malloc(sizeof(char));
+	sprintf(y_viejo_char, "%d", y_viejo);
+	strcat(posicion_vieja, y_viejo_char);
+
+	agregar_a_paquete(paquete, posicion_vieja, strlen(posicion_vieja)+1);
+
+
+	char* posicion_actual [8];
+
+	strcpy(posicion_actual, x_actual);
+	strcat(posicion_actual, "|");
+
+	char* y_actual = malloc(sizeof(char));
+	sprintf(y_actual, "%d", tripulante->posicionY);
+	strcat(posicion_actual, y_actual);
+
+	agregar_a_paquete(paquete, posicion_actual, strlen(posicion_actual)+1);
+
+	//enviar_paquete(paquete, tripulante->socket_mongo);
+	enviar_paquete(paquete, tripulante->socket_miram);
+}
+
+void informar_inicio_tarea(tcbTripulante* tripulante){
+	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* mensaje = malloc(7);
+	mensaje = "inicio";
+	//memset(mensaje, '\0', strlen(mensaje); //NOSE SI VA ESTO
+
+	int largo_mensaje = strlen(mensaje)+1;
+	//char* largo_mensaje_char = malloc(sizeof(char));
+	//sprintf(largo_mensaje_char, "%d", largo_mensaje);
+	//agregar_a_paquete(paquete, largo_mensaje_char, strlen(largo_mensaje_char)+1);
+
+	agregar_a_paquete(paquete, mensaje, largo_mensaje);
+
+	//enviar_paquete(paquete, tripulante->socket_mongo);
+	enviar_paquete(paquete, tripulante->socket_miram);
+
+	//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
+
+	//eliminar_paquete(paquete);
+	//free(tid_char);
+	//free(mensaje);
+	//free(largo_mensaje_char);
+	//free(mensaje_recibido);
+}
+
+void informar_fin_tarea(tcbTripulante* tripulante){
+	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* mensaje = malloc(4);
+	mensaje = "fin";
+	//memset(mensaje, '\0', strlen(mensaje); //NOSE SI VA ESTO
+
+	int largo_mensaje = strlen(mensaje)+1;
+	//char* largo_mensaje_char = malloc(sizeof(char));
+	//sprintf(largo_mensaje_char, "%d", largo_mensaje);
+	//agregar_a_paquete(paquete, largo_mensaje_char, strlen(largo_mensaje_char)+1);
+
+	agregar_a_paquete(paquete, mensaje, largo_mensaje);
+
+	//enviar_paquete(paquete, tripulante->socket_mongo);
+	enviar_paquete(paquete, tripulante->socket_miram);
+
+	//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
+
+	//eliminar_paquete(paquete);
+	//free(tid_char);
+	//free(mensaje);
+	//free(largo_mensaje_char);
+	//free(mensaje_recibido);
+}
+
 void planificacion_pausada_o_no(){
 	sem_wait(&CONTINUAR_PLANIFICACION);
 	sem_post(&CONTINUAR_PLANIFICACION);
@@ -163,6 +297,8 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	sem_wait(&(tripulante->semaforo_tripulante));
 
 	tripulante->socket_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
+	//tripulante->socket_mongo = crear_conexion(configuracion.ip_mongostore,configuracion.puerto_mongostore);
+
 	tarea* tarea = pedir_tarea(tripulante->socket_miram, tripulante);
 
 	printf("hola soy el hilo %d, estoy listo para ejecutar \n", tripulante->tid);
@@ -182,6 +318,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			planificacion_pausada_o_no();
 			printf("hilo %d, me estoy moviendo X \n", tripulante->tid);
 
+			int x_viejo = tripulante->posicionX;
 			if(tripulante->posicionX > tarea->pos_x){ //mayor a la posicion de la tarea -> se mueve para la izq
 				tripulante->posicionX--;
 			} else {
@@ -189,6 +326,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			}
 
 			informar_movimiento(tripulante->socket_miram, tripulante);
+			informar_movimiento_mongo_X (tripulante, x_viejo);
 			sleep(1); // retardo ciclo cpu VA?  EN TODOS LOS SLEEP IRIA ESO?
 			fflush(stdout);
 			quantums_ejecutados++;
@@ -199,6 +337,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			planificacion_pausada_o_no();
 			printf("hilo %d, me estoy moviendo Y \n", tripulante->tid);
 
+			int y_viejo = tripulante->posicionY;
 			if(tripulante->posicionY > tarea->pos_y){ //mayor a la posicion de la tarea -> se mueve para abajo
 				tripulante->posicionY--;
 			} else{
@@ -206,6 +345,8 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			}
 
 			informar_movimiento(tripulante->socket_miram, tripulante);
+			informar_movimiento_mongo_Y (tripulante, y_viejo);
+
 			sleep(1); // retardo ciclo cpu VA?  EN TODOS LOS SLEEP IRIA ESO?
 			fflush(stdout);
 			quantums_ejecutados++;
@@ -255,7 +396,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 		} else { //TAREA NORMAL
 			while(contador_ciclos_trabajando < tarea->tiempo){
 				planificacion_pausada_o_no();
-
+				informar_inicio_tarea(tripulante);
 				printf("hilo %d, estoy trabajando \n", tripulante->tid);
 				sleep(1); // retardo ciclo cpu VA?
 				contador_ciclos_trabajando++;
@@ -263,6 +404,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 
 				if(contador_ciclos_trabajando == tarea->tiempo){//ESTE IF ESTA PARA QUE SI YA TERMINO LA TAREA, SE FIJE SI TIENE OTRA MAS
 					planificacion_pausada_o_no();
+					informar_fin_tarea(tripulante);
 					tarea = pedir_tarea(tripulante->socket_miram, tripulante);
 
 					if(tarea != NULL){ // TIENE MAS TAREAS
@@ -343,12 +485,16 @@ void bloqueado_ready() {
 		tripulante = (tcbTripulante*)list_get(lista_tripulantes_bloqueado, 0);
 		sem_post(&MUTEX_LISTA_BLOQUEADO);
 
+
+
 		planificacion_pausada_o_no();
+		informar_inicio_tarea(tripulante);
 
 		printf("hilo %d, haciendo I/O \n", tripulante->tid);
 		sleep(1); // retardo ciclo cpu VA?
 
 		planificacion_pausada_o_no();
+		informar_fin_tarea(tripulante);
 
 		printf("hilo %d, termino I/O \n", tripulante->tid);
 		fflush(stdout);
@@ -486,7 +632,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				printf("tareasssss %s \n", tareas);
 /*
 INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
-INICIAR_PATOTA 5 tareas_corta.txt 300|4 10|20 4|500
+INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|2 4|5
 */
 				bool hay_mas_parametros = true;
 				for(int i = 0; i < cantidad_tripulantes ; i++){
@@ -673,7 +819,7 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|2 4|5
 				}
 				log_info(logger,"aaaaaa");
 				log_info(logger, "tid %d  posx %d  posy %d", tripu1->tid, tripu1->posicionX, tripu1->posicionY);
-
+				informar_atencion_sabotaje(tripu1);
 				//mover al tripu1 que es el mas cercano
 				while(tripu1->posicionX != 5){//muevo en x
 					if(tripu1->posicionX > 5){ //mayor a la posicion del sabotaje -> se mueve para la izq
@@ -693,7 +839,7 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|2 4|5
 				}
 
 				sleep(configuracion.duracion_sabotaje);
-
+				informar_sabotaje_resuelto(tripu1);
 				//devuelvo los tripulantes a sus correspondientes listas
 				/*for(int i=0; i < list_size(lista_bloq_emergencia); i++){
 					tcbTripulante* tripulante_de_listaa = malloc(sizeof(tcbTripulante));
