@@ -67,6 +67,14 @@ typedef enum
 	INFORMAR_BITACORA_MOVIMIENTO //PARA PROBAR LO DE MONGO
 }tipoMensaje;
 
+typedef enum //PARA PROBAR LO DE MONGO
+{
+	INICIO_TAREA,
+	FIN_TAREA,
+	CORRER_A_SABOTAJE,
+	RESOLVER_SABOTAJE
+}mensaje_bitacora;
+
 typedef struct
 {
 	int size;

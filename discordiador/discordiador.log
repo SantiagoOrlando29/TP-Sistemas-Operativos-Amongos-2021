@@ -1,38 +1,15 @@
-[INFO] 12:37:03:466 discordiador/(1077:1077): Memoria asignada
-[INFO] 12:37:04:478 discordiador/(1077:1086): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 12:37:04:479 discordiador/(1077:1086): aaaaaaaaa
-[INFO] 12:37:04:479 discordiador/(1077:1086): pos_vieja 3|4
-[INFO] 12:37:04:479 discordiador/(1077:1086): pos_actual 4|4
-[INFO] 12:37:05:479 discordiador/(1077:1087): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 12:37:05:484 discordiador/(1077:1087): aaaaaaaaa
-[INFO] 12:37:05:484 discordiador/(1077:1087): pos_vieja 10|2
-[INFO] 12:37:05:484 discordiador/(1077:1087): pos_actual 9|2
-[INFO] 12:37:06:481 discordiador/(1077:1088): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 12:37:06:485 discordiador/(1077:1087): aaaaaaaaa
-[INFO] 12:37:06:485 discordiador/(1077:1087): pos_vieja 9|2
-[INFO] 12:37:06:485 discordiador/(1077:1087): pos_actual 8|2
-[INFO] 12:37:07:484 discordiador/(1077:1085): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 12:37:07:484 discordiador/(1077:1089): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 12:37:07:485 discordiador/(1077:1087): aaaaaaaaa
-[INFO] 12:37:07:485 discordiador/(1077:1087): pos_vieja 8|2
-[INFO] 12:37:07:486 discordiador/(1077:1087): pos_actual 7|2
-[INFO] 12:37:08:484 discordiador/(1077:1089): aaaaaaaaa
-[INFO] 12:37:08:484 discordiador/(1077:1089): pos_vieja 0|0
-[INFO] 12:37:08:485 discordiador/(1077:1089): pos_actual 1|0
-[INFO] 12:37:08:485 discordiador/(1077:1090): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 12:37:08:486 discordiador/(1077:1087): aaaaaaaaa
-[INFO] 12:37:08:486 discordiador/(1077:1087): pos_vieja 7|2
-[INFO] 12:37:08:486 discordiador/(1077:1087): pos_actual 6|2
-[INFO] 12:37:09:485 discordiador/(1077:1085): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 12:37:09:485 discordiador/(1077:1089): aaaaaaaaa
-[INFO] 12:37:09:485 discordiador/(1077:1089): pos_vieja 1|0
-[INFO] 12:37:09:485 discordiador/(1077:1089): pos_actual 2|0
-[INFO] 12:37:09:486 discordiador/(1077:1087): aaaaaaaaa
-[INFO] 12:37:09:486 discordiador/(1077:1087): pos_vieja 6|2
-[INFO] 12:37:09:486 discordiador/(1077:1087): pos_actual 5|2
-[INFO] 12:37:10:486 discordiador/(1077:1089): aaaaaaaaa
-[INFO] 12:37:10:486 discordiador/(1077:1089): pos_vieja 2|0
-[INFO] 12:37:10:486 discordiador/(1077:1089): pos_actual 3|0
-[INFO] 12:37:10:486 discordiador/(1077:1087): aaaaaaaaa
-[INFO] 12:37:10:486 discordiador/(1077:1087): pos_vieja 5|2
-[INFO] 12:37:10:486 discordiador/(1077:1087): pos_actual 4|2
+[INFO] 14:30:23:523 discordiador/(2556:2556): Memoria asignada
+[INFO] 14:30:23:542 discordiador/(2556:2567): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 14:30:23:545 discordiador/(2556:2568): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 14:30:23:549 discordiador/(2556:2573): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 14:30:23:550 discordiador/(2556:2574): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 14:30:23:552 discordiador/(2556:2575): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 14:30:26:547 discordiador/(2556:2565): TRIPU 1  tarea recibida: ABC;5;6;4
+[INFO] 14:30:27:124 discordiador/(2556:2556): lista bloq emer
+[INFO] 14:30:27:124 discordiador/(2556:2556): tid 2  posx 6  posy 2
+[INFO] 14:30:27:124 discordiador/(2556:2556): tid 3  posx 4  posy 4
+[INFO] 14:30:27:124 discordiador/(2556:2556): tid 4  posx 0  posy 0
+[INFO] 14:30:27:124 discordiador/(2556:2556): tid 5  posx 0  posy 0
+[INFO] 14:30:27:124 discordiador/(2556:2556): tid 1  posx 4  posy 4
+[INFO] 14:30:27:124 discordiador/(2556:2556): aaaaaa
+[INFO] 14:30:27:124 discordiador/(2556:2556): tid 1  posx 4  posy 4

@@ -50,7 +50,13 @@ typedef enum
 	INFORMAR_BITACORA_MOVIMIENTO
 }tipoMensaje;
 
-
+typedef enum
+{
+	INICIO_TAREA,
+	FIN_TAREA,
+	CORRER_A_SABOTAJE,
+	RESOLVER_SABOTAJE
+}mensaje_bitacora;
 
 typedef struct
 {

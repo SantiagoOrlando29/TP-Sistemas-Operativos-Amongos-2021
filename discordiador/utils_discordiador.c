@@ -446,16 +446,19 @@ void informar_atencion_sabotaje(tcbTripulante* tripulante){
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
-	char* mensaje = malloc(17);
-	mensaje = "corro a sabotaje";
+	//char* mensaje = malloc(17);
+	//mensaje = "corro a sabotaje";
 	//memset(mensaje, '\0', strlen(mensaje); //NOSE SI VA ESTO
 
-	int largo_mensaje = strlen(mensaje)+1;
+	//int largo_mensaje = strlen(mensaje)+1;
 	//char* largo_mensaje_char = malloc(sizeof(char));
 	//sprintf(largo_mensaje_char, "%d", largo_mensaje);
 	//agregar_a_paquete(paquete, largo_mensaje_char, strlen(largo_mensaje_char)+1);
 
-	agregar_a_paquete(paquete, mensaje, largo_mensaje);
+	//agregar_a_paquete(paquete, mensaje, largo_mensaje);
+	char* mensaje_bitacora_char = malloc(sizeof(char));
+	sprintf(mensaje_bitacora_char, "%d", CORRER_A_SABOTAJE);
+	agregar_a_paquete(paquete, mensaje_bitacora_char, strlen(mensaje_bitacora_char)+1);
 
 	//enviar_paquete(paquete, tripulante->socket_mongo);
 	enviar_paquete(paquete, tripulante->socket_miram);
@@ -476,16 +479,19 @@ void informar_sabotaje_resuelto(tcbTripulante* tripulante){
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
-	char* mensaje = malloc(9);
-	mensaje = "resuelto";
+	//char* mensaje = malloc(9);
+	//mensaje = "resuelto";
 	//memset(mensaje, '\0', strlen(mensaje); //NOSE SI VA ESTO
 
-	int largo_mensaje = strlen(mensaje)+1;
+	//int largo_mensaje = strlen(mensaje)+1;
 	//char* largo_mensaje_char = malloc(sizeof(char));
 	//sprintf(largo_mensaje_char, "%d", largo_mensaje);
 	//agregar_a_paquete(paquete, largo_mensaje_char, strlen(largo_mensaje_char)+1);
 
-	agregar_a_paquete(paquete, mensaje, largo_mensaje);
+	//agregar_a_paquete(paquete, mensaje, largo_mensaje);
+	char* mensaje_bitacora_char = malloc(sizeof(char));
+	sprintf(mensaje_bitacora_char, "%d", RESOLVER_SABOTAJE);
+	agregar_a_paquete(paquete, mensaje_bitacora_char, strlen(mensaje_bitacora_char)+1);
 
 	//enviar_paquete(paquete, tripulante->socket_mongo);
 	enviar_paquete(paquete, tripulante->socket_miram);

@@ -3136,3 +3136,157 @@
 [WARNING] 12:37:11:265 MiRam/(1060:1094): el cliente se desconecto.
 [WARNING] 12:37:11:265 MiRam/(1060:1093): el cliente se desconecto.
 [WARNING] 12:37:11:265 MiRam/(1060:1092): el cliente se desconecto.
+[INFO] 14:26:36:913 MiRam/(2427:2458): Se asigno espacio de memoria a todo
+[INFO] 14:26:36:932 MiRam/(2427:2469): tid 1  mens1 3|4, mens2 4|4
+[INFO] 14:26:36:938 MiRam/(2427:2470): tid 2  mens1 10|2, mens2 9|2
+[INFO] 14:26:37:940 MiRam/(2427:2470): tid 2  mens1 9|2, mens2 8|2
+[INFO] 14:26:38:933 MiRam/(2427:2469): tid 1  mens 0
+[INFO] 14:26:38:933 MiRam/(2427:2471): tid 3  mens1 4|5, mens2 4|4
+[INFO] 14:26:38:942 MiRam/(2427:2470): tid 2  mens1 8|2, mens2 7|2
+[INFO] 14:26:39:933 MiRam/(2427:2469): tid 1  mens 1
+[INFO] 14:26:39:943 MiRam/(2427:2470): tid 2  mens1 7|2, mens2 6|2
+[INFO] 14:26:40:936 MiRam/(2427:2472): tid 4  mens1 0|0, mens2 1|0
+[INFO] 14:26:40:936 MiRam/(2427:2471): tid 3  mens 0
+[INFO] 14:26:40:944 MiRam/(2427:2470): tid 2  mens1 6|2, mens2 5|2
+[INFO] 14:26:41:936 MiRam/(2427:2471): tid 3  mens 1
+[INFO] 14:26:41:937 MiRam/(2427:2472): tid 4  mens1 1|0, mens2 2|0
+[INFO] 14:26:41:951 MiRam/(2427:2470): tid 2  mens1 5|2, mens2 4|2
+[INFO] 14:26:42:938 MiRam/(2427:2472): tid 4  mens1 2|0, mens2 3|0
+[INFO] 14:26:42:951 MiRam/(2427:2470): tid 2  mens1 4|2, mens2 4|3
+[INFO] 14:26:43:939 MiRam/(2427:2472): tid 4  mens1 3|0, mens2 4|0
+[INFO] 14:26:43:952 MiRam/(2427:2470): tid 2  mens1 4|3, mens2 4|4
+[INFO] 14:26:44:940 MiRam/(2427:2472): tid 4  mens1 4|0, mens2 4|1
+[INFO] 14:26:45:941 MiRam/(2427:2472): tid 4  mens1 4|1, mens2 4|2
+[INFO] 14:26:45:958 MiRam/(2427:2473): tid 5  mens1 0|0, mens2 1|0
+[INFO] 14:26:45:958 MiRam/(2427:2470): tid 2  mens 0
+[INFO] 14:26:46:942 MiRam/(2427:2472): tid 4  mens1 4|2, mens2 4|3
+[INFO] 14:26:46:958 MiRam/(2427:2470): tid 2  mens 1
+[INFO] 14:26:46:958 MiRam/(2427:2473): tid 5  mens1 1|0, mens2 2|0
+[INFO] 14:26:47:943 MiRam/(2427:2472): tid 4  mens1 4|3, mens2 4|4
+[INFO] 14:26:47:959 MiRam/(2427:2473): tid 5  mens1 2|0, mens2 3|0
+[INFO] 14:26:48:960 MiRam/(2427:2473): tid 5  mens1 3|0, mens2 4|0
+[INFO] 14:26:49:945 MiRam/(2427:2472): tid 4  mens 0
+[INFO] 14:26:49:946 MiRam/(2427:2469): tid 1  mens1 4|4, mens2 5|4
+[INFO] 14:26:49:960 MiRam/(2427:2473): tid 5  mens1 4|0, mens2 4|1
+[INFO] 14:26:50:945 MiRam/(2427:2472): tid 4  mens 1
+[INFO] 14:26:50:946 MiRam/(2427:2469): tid 1  mens1 5|4, mens2 5|5
+[INFO] 14:26:50:961 MiRam/(2427:2473): tid 5  mens1 4|1, mens2 4|2
+[INFO] 14:26:51:947 MiRam/(2427:2469): tid 1  mens1 5|5, mens2 5|6
+[INFO] 14:26:51:961 MiRam/(2427:2473): tid 5  mens1 4|2, mens2 4|3
+[INFO] 14:26:52:947 MiRam/(2427:2469): tid 1  mens 0
+[INFO] 14:26:52:962 MiRam/(2427:2473): tid 5  mens1 4|3, mens2 4|4
+[INFO] 14:26:53:949 MiRam/(2427:2469): tid 1  mens 0
+[INFO] 14:26:54:950 MiRam/(2427:2469): tid 1  mens 0
+[INFO] 14:26:54:965 MiRam/(2427:2473): tid 5  mens 0
+[INFO] 14:26:54:965 MiRam/(2427:2471): tid 3  mens1 4|4, mens2 5|4
+[INFO] 14:26:55:951 MiRam/(2427:2469): tid 1  mens 0
+[INFO] 14:26:55:965 MiRam/(2427:2473): tid 5  mens 1
+[INFO] 14:26:55:966 MiRam/(2427:2471): tid 3  mens1 5|4, mens2 5|5
+[INFO] 14:26:56:952 MiRam/(2427:2469): tid 1  mens 1
+[INFO] 14:26:56:953 MiRam/(2427:2469): tid 1  mens1 5|6, mens2 4|6
+[INFO] 14:26:56:966 MiRam/(2427:2471): tid 3  mens1 5|5, mens2 5|6
+[INFO] 14:26:57:954 MiRam/(2427:2469): tid 1  mens1 4|6, mens2 3|6
+[INFO] 14:26:57:967 MiRam/(2427:2471): tid 3  mens 0
+[INFO] 14:26:58:954 MiRam/(2427:2469): tid 1  mens1 3|6, mens2 2|6
+[INFO] 14:26:58:970 MiRam/(2427:2471): tid 3  mens 0
+[INFO] 14:26:59:960 MiRam/(2427:2469): tid 1  mens1 2|6, mens2 2|5
+[INFO] 14:26:59:973 MiRam/(2427:2471): tid 3  mens 0
+[INFO] 14:27:00:961 MiRam/(2427:2469): tid 1  mens1 2|5, mens2 2|4
+[INFO] 14:27:00:974 MiRam/(2427:2471): tid 3  mens 0
+[ERROR] 14:27:01:919 MiRam/(2427:2458): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 14:27:01:920 MiRam/(2427:2473): el cliente se desconecto.
+[WARNING] 14:27:01:920 MiRam/(2427:2472): el cliente se desconecto.
+[WARNING] 14:27:01:920 MiRam/(2427:2471): el cliente se desconecto.
+[WARNING] 14:27:01:920 MiRam/(2427:2470): el cliente se desconecto.
+[WARNING] 14:27:01:920 MiRam/(2427:2469): el cliente se desconecto.
+[INFO] 14:28:20:334 MiRam/(2487:2515): Se asigno espacio de memoria a todo
+[INFO] 14:28:20:368 MiRam/(2487:2521): tid 1  mens1 3|4, mens2 4|4
+[INFO] 14:28:20:368 MiRam/(2487:2522): tid 2  mens1 10|2, mens2 9|2
+[INFO] 14:28:21:369 MiRam/(2487:2522): tid 2  mens1 9|2, mens2 8|2
+[INFO] 14:28:22:369 MiRam/(2487:2521): tid 1  mens 0
+[INFO] 14:28:22:370 MiRam/(2487:2522): tid 2  mens1 8|2, mens2 7|2
+[INFO] 14:28:22:370 MiRam/(2487:2523): tid 3  mens1 4|5, mens2 4|4
+[INFO] 14:28:23:369 MiRam/(2487:2521): tid 1  mens 1
+[INFO] 14:28:23:370 MiRam/(2487:2522): tid 2  mens1 7|2, mens2 6|2
+[INFO] 14:28:24:373 MiRam/(2487:2522): tid 2  mens1 6|2, mens2 5|2
+[INFO] 14:28:24:373 MiRam/(2487:2524): tid 4  mens1 0|0, mens2 1|0
+[INFO] 14:28:24:373 MiRam/(2487:2523): tid 3  mens 0
+[INFO] 14:28:25:374 MiRam/(2487:2522): tid 2  mens1 5|2, mens2 4|2
+[INFO] 14:28:25:374 MiRam/(2487:2523): tid 3  mens 1
+[INFO] 14:28:25:374 MiRam/(2487:2524): tid 4  mens1 1|0, mens2 2|0
+[INFO] 14:28:26:381 MiRam/(2487:2524): tid 4  mens1 2|0, mens2 3|0
+[INFO] 14:28:26:382 MiRam/(2487:2522): tid 2  mens1 4|2, mens2 4|3
+[INFO] 14:28:27:382 MiRam/(2487:2522): tid 2  mens1 4|3, mens2 4|4
+[INFO] 14:28:27:383 MiRam/(2487:2524): tid 4  mens1 3|0, mens2 4|0
+[INFO] 14:28:28:384 MiRam/(2487:2524): tid 4  mens1 4|0, mens2 4|1
+[INFO] 14:28:29:384 MiRam/(2487:2525): tid 5  mens1 0|0, mens2 1|0
+[INFO] 14:28:29:385 MiRam/(2487:2524): tid 4  mens1 4|1, mens2 4|2
+[INFO] 14:28:29:385 MiRam/(2487:2522): tid 2  mens 0
+[INFO] 14:28:30:384 MiRam/(2487:2522): tid 2  mens 1
+[INFO] 14:28:30:385 MiRam/(2487:2524): tid 4  mens1 4|2, mens2 4|3
+[INFO] 14:28:30:385 MiRam/(2487:2525): tid 5  mens1 1|0, mens2 2|0
+[INFO] 14:28:31:386 MiRam/(2487:2525): tid 5  mens1 2|0, mens2 3|0
+[INFO] 14:28:31:387 MiRam/(2487:2524): tid 4  mens1 4|3, mens2 4|4
+[INFO] 14:28:32:389 MiRam/(2487:2525): tid 5  mens1 3|0, mens2 4|0
+[INFO] 14:28:33:392 MiRam/(2487:2525): tid 5  mens1 4|0, mens2 4|1
+[INFO] 14:28:33:392 MiRam/(2487:2524): tid 4  mens 0
+[INFO] 14:28:33:393 MiRam/(2487:2521): tid 1  mens1 4|4, mens2 5|4
+[INFO] 14:28:34:392 MiRam/(2487:2524): tid 4  mens 1
+[INFO] 14:28:34:393 MiRam/(2487:2525): tid 5  mens1 4|1, mens2 4|2
+[INFO] 14:28:34:393 MiRam/(2487:2521): tid 1  mens1 5|4, mens2 5|5
+[INFO] 14:28:35:394 MiRam/(2487:2521): tid 1  mens1 5|5, mens2 5|6
+[INFO] 14:28:35:395 MiRam/(2487:2525): tid 5  mens1 4|2, mens2 4|3
+[INFO] 14:28:36:395 MiRam/(2487:2521): tid 1  mens 0
+[INFO] 14:28:36:396 MiRam/(2487:2525): tid 5  mens1 4|3, mens2 4|4
+[INFO] 14:28:38:397 MiRam/(2487:2525): tid 5  mens 0
+[INFO] 14:28:38:398 MiRam/(2487:2523): tid 3  mens1 4|4, mens2 5|4
+[INFO] 14:28:39:397 MiRam/(2487:2525): tid 5  mens 1
+[INFO] 14:28:39:398 MiRam/(2487:2523): tid 3  mens1 5|4, mens2 5|5
+[INFO] 14:28:40:397 MiRam/(2487:2521): tid 1  mens 1
+[INFO] 14:28:40:399 MiRam/(2487:2523): tid 3  mens1 5|5, mens2 5|6
+[INFO] 14:28:40:399 MiRam/(2487:2521): tid 1  mens1 5|6, mens2 4|6
+[INFO] 14:28:41:399 MiRam/(2487:2523): tid 3  mens 0
+[INFO] 14:28:41:400 MiRam/(2487:2521): tid 1  mens1 4|6, mens2 3|6
+[INFO] 14:28:42:401 MiRam/(2487:2521): tid 1  mens1 3|6, mens2 2|6
+[INFO] 14:28:43:402 MiRam/(2487:2521): tid 1  mens1 2|6, mens2 2|5
+[INFO] 14:28:44:404 MiRam/(2487:2521): tid 1  mens1 2|5, mens2 2|4
+[INFO] 14:28:45:406 MiRam/(2487:2523): tid 3  mens 1
+[INFO] 14:28:45:407 MiRam/(2487:2521): tid 1  mens1 2|4, mens2 2|3
+[INFO] 14:28:45:407 MiRam/(2487:2523): tid 3  mens1 5|6, mens2 4|6
+[INFO] 14:28:46:407 MiRam/(2487:2523): tid 3  mens1 4|6, mens2 3|6
+[INFO] 14:28:46:408 MiRam/(2487:2521): tid 1  mens1 2|3, mens2 2|2
+[INFO] 14:28:47:413 MiRam/(2487:2523): tid 3  mens1 3|6, mens2 2|6
+[INFO] 14:28:48:414 MiRam/(2487:2523): tid 3  mens1 2|6, mens2 2|5
+[INFO] 14:28:48:415 MiRam/(2487:2521): tid 1  mens 0
+[INFO] 14:28:48:415 MiRam/(2487:2522): tid 2  mens1 4|4, mens2 5|4
+[INFO] 14:28:49:415 MiRam/(2487:2523): tid 3  mens1 2|5, mens2 2|4
+[INFO] 14:28:49:415 MiRam/(2487:2521): tid 1  mens 1
+[INFO] 14:28:49:415 MiRam/(2487:2521): no hay mas tareas
+[INFO] 14:28:49:415 MiRam/(2487:2521): Se expulso segmento 2
+[INFO] 14:28:49:416 MiRam/(2487:2521): fallo cambio estado
+[WARNING] 14:28:49:416 MiRam/(2487:2521): el cliente se desconecto.
+[INFO] 14:28:49:416 MiRam/(2487:2522): tid 2  mens1 5|4, mens2 5|5
+[ERROR] 14:28:49:544 MiRam/(2487:2515): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 14:28:49:545 MiRam/(2487:2525): el cliente se desconecto.
+[WARNING] 14:28:49:545 MiRam/(2487:2524): el cliente se desconecto.
+[WARNING] 14:28:49:545 MiRam/(2487:2523): el cliente se desconecto.
+[WARNING] 14:28:49:545 MiRam/(2487:2522): el cliente se desconecto.
+[INFO] 14:30:23:521 MiRam/(2543:2566): Se asigno espacio de memoria a todo
+[INFO] 14:30:23:543 MiRam/(2543:2576): tid 1  mens1 3|4, mens2 4|4
+[INFO] 14:30:23:550 MiRam/(2543:2577): tid 2  mens1 10|2, mens2 9|2
+[INFO] 14:30:24:551 MiRam/(2543:2577): tid 2  mens1 9|2, mens2 8|2
+[INFO] 14:30:25:546 MiRam/(2543:2576): tid 1  mens 0
+[INFO] 14:30:25:546 MiRam/(2543:2578): tid 3  mens1 4|5, mens2 4|4
+[INFO] 14:30:25:552 MiRam/(2543:2577): tid 2  mens1 8|2, mens2 7|2
+[INFO] 14:30:26:546 MiRam/(2543:2576): tid 1  mens 1
+[INFO] 14:30:26:553 MiRam/(2543:2577): tid 2  mens1 7|2, mens2 6|2
+[INFO] 14:30:27:124 MiRam/(2543:2576): tid 1  mens 2
+[INFO] 14:30:30:126 MiRam/(2543:2576): tid 1  mens 3
+[INFO] 14:30:30:126 MiRam/(2543:2577): tid 2  mens1 6|2, mens2 5|2
+[INFO] 14:30:30:127 MiRam/(2543:2578): tid 3  mens 0
+[WARNING] 14:30:30:749 MiRam/(2543:2580): el cliente se desconecto.
+[WARNING] 14:30:30:750 MiRam/(2543:2579): el cliente se desconecto.
+[WARNING] 14:30:30:750 MiRam/(2543:2578): el cliente se desconecto.
+[WARNING] 14:30:30:750 MiRam/(2543:2577): el cliente se desconecto.
+[WARNING] 14:30:30:750 MiRam/(2543:2576): el cliente se desconecto.
+[WARNING] 14:30:30:750 MiRam/(2543:2566): el cliente se desconecto.

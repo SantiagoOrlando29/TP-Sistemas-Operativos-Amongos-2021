@@ -235,16 +235,20 @@ void informar_inicio_tarea(tcbTripulante* tripulante){
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
-	char* mensaje = malloc(7);
-	mensaje = "inicio";
+	//char* mensaje = malloc(7);
+	//mensaje = "inicio";
 	//memset(mensaje, '\0', strlen(mensaje); //NOSE SI VA ESTO
 
-	int largo_mensaje = strlen(mensaje)+1;
+	//int largo_mensaje = strlen(mensaje)+1;
 	//char* largo_mensaje_char = malloc(sizeof(char));
 	//sprintf(largo_mensaje_char, "%d", largo_mensaje);
 	//agregar_a_paquete(paquete, largo_mensaje_char, strlen(largo_mensaje_char)+1);
+	//INICIO_TAREA
+	char* mensaje_bitacora_char = malloc(sizeof(char));
+	sprintf(mensaje_bitacora_char, "%d", INICIO_TAREA);
+	agregar_a_paquete(paquete, mensaje_bitacora_char, strlen(mensaje_bitacora_char)+1);
 
-	agregar_a_paquete(paquete, mensaje, largo_mensaje);
+	//agregar_a_paquete(paquete, mensaje, largo_mensaje);
 
 	//enviar_paquete(paquete, tripulante->socket_mongo);
 	enviar_paquete(paquete, tripulante->socket_miram);
@@ -265,16 +269,19 @@ void informar_fin_tarea(tcbTripulante* tripulante){
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
-	char* mensaje = malloc(4);
-	mensaje = "fin";
+	//char* mensaje = malloc(4);
+	//mensaje = "fin";
 	//memset(mensaje, '\0', strlen(mensaje); //NOSE SI VA ESTO
 
-	int largo_mensaje = strlen(mensaje)+1;
+	//int largo_mensaje = strlen(mensaje)+1;
 	//char* largo_mensaje_char = malloc(sizeof(char));
 	//sprintf(largo_mensaje_char, "%d", largo_mensaje);
 	//agregar_a_paquete(paquete, largo_mensaje_char, strlen(largo_mensaje_char)+1);
 
-	agregar_a_paquete(paquete, mensaje, largo_mensaje);
+	//agregar_a_paquete(paquete, mensaje, largo_mensaje);
+	char* mensaje_bitacora_char = malloc(sizeof(char));
+	sprintf(mensaje_bitacora_char, "%d", FIN_TAREA);
+	agregar_a_paquete(paquete, mensaje_bitacora_char, strlen(mensaje_bitacora_char)+1);
 
 	//enviar_paquete(paquete, tripulante->socket_mongo);
 	enviar_paquete(paquete, tripulante->socket_miram);
@@ -394,9 +401,10 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			}
 
 		} else { //TAREA NORMAL
+			informar_inicio_tarea(tripulante);
 			while(contador_ciclos_trabajando < tarea->tiempo){
 				planificacion_pausada_o_no();
-				informar_inicio_tarea(tripulante);
+
 				printf("hilo %d, estoy trabajando \n", tripulante->tid);
 				sleep(1); // retardo ciclo cpu VA?
 				contador_ciclos_trabajando++;

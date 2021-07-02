@@ -236,9 +236,9 @@ int funcion_cliente(int socket_cliente){
 			case INFORMAR_BITACORA:; //PARA PROBAR LO DE MONGO
 				t_list* lista_pr = recibir_paquete(socket_cliente);
 				int tid_pr = (int)atoi(list_get(lista_pr,0));
-				char* mens = list_get(lista_pr,1);
-				log_info(logger, "tid %d  mens %s",tid_pr, mens);
-
+				//char* mens = list_get(lista_pr,1);
+				int tipo_mensaje_bitacora = (int)atoi(list_get(lista_pr,1));
+				log_info(logger, "tid %d  mens %d",tid_pr, tipo_mensaje_bitacora);
 
 				break;
 

@@ -111,11 +111,16 @@ int funcion_cliente(int socket_cliente){ //Funciones de prueba, hay que ver que 
 
 		switch(tipoMensajeRecibido)
 		{
-			case INFORMAR_BITACORA:; //sin el ; no anda
+			case INFORMAR_BITACORA:; //PARA PROBAR LO DE MONGO
 				t_list* lista_pr = recibir_paquete(socket_cliente);
 				int tid_pr = (int)atoi(list_get(lista_pr,0));
-				char* mens = list_get(lista_pr,1);
-				log_info(logger, "tid %d  mens %s",tid_pr, mens);
+				//char* mens = list_get(lista_pr,1);
+				int tipo_mensaje_bitacora = (int)atoi(list_get(lista_pr,1));
+				log_info(logger, "tid %d  mens %d",tid_pr, tipo_mensaje_bitacora);
+
+				//ACA IRIA UN SWITCH CASE SUPONGO PARA DECIRLE QUE HACER SEGUN EL tipo_mensaje_bitacora QUE RECIBA
+				//falta hacer lo de bitacora
+				// y falta enviar al tripu que esta toodo ok
 
 				break;
 
@@ -125,6 +130,9 @@ int funcion_cliente(int socket_cliente){ //Funciones de prueba, hay que ver que 
 				char* mens1 = list_get(lista_pru,1);
 				char* mens2 = list_get(lista_pru,2);
 				log_info(logger, "tid %d  mens1 %s, mens2 %s",tid_pru, mens1, mens2);
+
+				//falta hacer lo de bitacora
+				// y falta enviar al tripu que esta toodo ok
 
 				break;
 
