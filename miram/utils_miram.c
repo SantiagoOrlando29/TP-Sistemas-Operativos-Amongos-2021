@@ -6,13 +6,19 @@ int variable_servidor = -1;
 int socket_servidor;
 NIVEL* nivel;
 int err;
+int numero_mapa = 0;
 
 void iniciar_servidor(config_struct* config_servidor)
 {
+
+
+
 	memoria_aux=list_create();
-	t_log* logg;
-	logg = log_create("MiRam1.log", "MiRam1", 1, LOG_LEVEL_DEBUG);
-	log_info(logg, "Servidor iniciando");
+	//Reinicio el anterior y arranco uno nuevo
+	FILE* archivo = fopen("miram-rq.log","w");
+	fclose(archivo);
+	logger = log_create("MiRam.log","Miram-RQ",1,LOG_LEVEL_INFO);
+	log_info(logger, "Servidor iniciando");
 
 	//int socket_servidor;
 
@@ -41,7 +47,7 @@ void iniciar_servidor(config_struct* config_servidor)
 
 	freeaddrinfo(servinfo);
 
-	log_info(logg, "Servidor MiRam encendido");
+	log_info(logger, "Servidor MiRam encendido");
 
 
 	struct sockaddr_in dir_cliente;
@@ -58,8 +64,8 @@ void iniciar_servidor(config_struct* config_servidor)
 
 		if(socket_cliente>0){
 			hilo ++ ;
-			log_info(logg, "Estableciendo conexión desde %d\n", dir_cliente.sin_port);
-			log_info(logg, "Creando hilo");
+			log_info(logger, "Estableciendo conexión desde %d\n", dir_cliente.sin_port);
+			log_info(logger, "Creando hilo");
 			fflush(stdout);
 			pthread_t hilo_cliente=(char)hilo;
 			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente ,(void*)socket_cliente);
@@ -182,20 +188,16 @@ int funcion_cliente(int socket_cliente){
 					err = personaje_crear(nivel, letra, 20, 10);
 					ASSERT_CREATE(nivel, letra, err);
 
-					while ( 1 ) {
-							nivel_gui_dibujar(nivel);
 
-
-					}
 
 					item_desplazar(nivel, 'A', 0, -1);
-												sleep(1);
-												item_desplazar(nivel, 'A', -2, 0);
-												sleep(1);
-												item_desplazar(nivel, 'A', 0, -2);
-												sleep(1);
-												item_desplazar(nivel, 'A', 0, +3);
-												sleep(1);
+					sleep(1);
+					item_desplazar(nivel, 'A', -2, 0);
+					sleep(1);
+					item_desplazar(nivel, 'A', 0, -2);
+					sleep(1);
+					item_desplazar(nivel, 'A', 0, +3);
+					sleep(1);
 					/*fflush(stdout);
 					dump_memoria();
 
@@ -240,7 +242,10 @@ int funcion_cliente(int socket_cliente){
 
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
+				nivel_destruir(nivel);
+				nivel_gui_terminar();
 				variable_servidor = 0;
+				numero_mapa=1;
 				shutdown(socket_servidor, SHUT_RD);
 				close(socket_cliente);
 				return EXIT_FAILURE;
@@ -1197,6 +1202,15 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota){
 
 
 
+}
+
+void* crear_mapa(){
+	while (numero_mapa!=1) {
+			nivel_gui_dibujar(nivel);
+
+
+
+	}
 }
 
 

@@ -21,6 +21,8 @@
 #include <nivel-gui/tad_nivel.h>
 
 
+
+
 #define tamanio_PCB  8
 #define tamanio_tarea 10
 #define tamanio_TCB  21
@@ -279,6 +281,7 @@ char* tarea_a_string(tarea* t);
 //Mapa
 
 int iniciar_mapa(int * cols, int * rows);
+void* crear_mapa();
 
 #endif /* CONEXIONES_H_ */
 
