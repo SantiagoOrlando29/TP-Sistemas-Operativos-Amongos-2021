@@ -61,240 +61,6 @@ void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pen
 	}
 }
 
-tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
-	t_paquete* paquete = crear_paquete(PEDIR_TAREA);
-
-	char* tid_char = malloc(sizeof(char));
-	sprintf(tid_char, "%d", tripulante->tid);
-	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
-
-	char* numero_patota_char = malloc(sizeof(char));
-	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
-	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
-
-	enviar_paquete(paquete, conexion_miram);
-
-	char* tarea_recibida_miram = recibir_mensaje(conexion_miram);
-	log_info(logger, "TRIPU %d  tarea recibida: %s", tripulante->tid, tarea_recibida_miram);
-
-	if(strcmp("no hay mas tareas", tarea_recibida_miram) ==0){
-		return NULL;
-	}
-
-	tarea* tarea_posta = transformar_char_tarea(tarea_recibida_miram);
-
-	tripulante->prox_instruccion++;
-
-	eliminar_paquete(paquete);
-	free(numero_patota_char);
-	free(tid_char);
-
-	return tarea_posta;
-}
-
-void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado){
-	t_paquete* paquete = crear_paquete(CAMBIAR_DE_ESTADO);
-
-	char* tid_char = malloc(sizeof(char));
-	sprintf(tid_char, "%d", tripulante->tid);
-	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
-
-	char* estado_char = malloc(sizeof(char));
-	sprintf(estado_char, "%c", nuevo_estado);
-	agregar_a_paquete(paquete, estado_char, strlen(estado_char)+1);
-
-	char* numero_patota_char = malloc(sizeof(char));
-	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
-	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
-
-	enviar_paquete(paquete, conexion_miram);
-
-	char* mensaje_recibido = recibir_mensaje(conexion_miram);
-	if(strcmp(mensaje_recibido, "fallo cambio de estado") ==0){
-		log_info(logger, "fallo cambio estado");
-	}
-	//log_info(logger, "TRIPU %d  cambio estado: %s", tripulante->tid, mensaje_recibido);
-
-	eliminar_paquete(paquete);
-	free(tid_char);
-	free(estado_char);
-	free(numero_patota_char);
-	free(mensaje_recibido);
-}
-
-void informar_movimiento(int conexion_miram, tcbTripulante* tripulante){
-	t_paquete* paquete = crear_paquete(INFORMAR_MOVIMIENTO);
-
-	char* tid_char = malloc(sizeof(char));
-	sprintf(tid_char, "%d", tripulante->tid);
-	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
-
-	char* posx_char = malloc(sizeof(char));
-	sprintf(posx_char, "%d", tripulante->posicionX);
-	agregar_a_paquete(paquete, posx_char, strlen(posx_char)+1);
-
-	char* posy_char = malloc(sizeof(char));
-	sprintf(posy_char, "%d", tripulante->posicionY);
-	agregar_a_paquete(paquete, posy_char, strlen(posy_char)+1);
-
-	char* numero_patota_char = malloc(sizeof(char));
-	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
-	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
-
-	enviar_paquete(paquete, conexion_miram);
-
-	char* mensaje_recibido = recibir_mensaje(conexion_miram);
-	//log_info(logger, "TRIPU %d  %s", tripulante->tid, mensaje_recibido);
-
-	eliminar_paquete(paquete);
-	free(tid_char);
-	free(posx_char);
-	free(posy_char);
-	free(numero_patota_char);
-	free(mensaje_recibido);
-}
-
-void informar_movimiento_mongo_X (tcbTripulante* tripulante, int x_viejo){
-	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA_MOVIMIENTO);
-
-	char* tid_char = malloc(sizeof(char));
-	sprintf(tid_char, "%d", tripulante->tid);
-	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
-
-	char* posicion_vieja [8];
-
-	char* x_viejo_char = malloc(sizeof(char));
-	sprintf(x_viejo_char, "%d", x_viejo);
-	strcpy(posicion_vieja, x_viejo_char);
-
-	strcat(posicion_vieja, "|");
-
-	char* y_actual = malloc(sizeof(char));
-	sprintf(y_actual, "%d", tripulante->posicionY);
-	strcat(posicion_vieja, y_actual);
-
-	agregar_a_paquete(paquete, posicion_vieja, strlen(posicion_vieja)+1);
-
-
-	char* posicion_actual [8];
-
-	char* x_actual = malloc(sizeof(char));
-	sprintf(x_actual, "%d", tripulante->posicionX);
-	strcpy(posicion_actual, x_actual);
-
-	strcat(posicion_actual, "|");
-	strcat(posicion_actual, y_actual);
-
-	agregar_a_paquete(paquete, posicion_actual, strlen(posicion_actual)+1);
-
-	//enviar_paquete(paquete, tripulante->socket_mongo);
-	enviar_paquete(paquete, tripulante->socket_miram);
-}
-
-void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo){
-	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA_MOVIMIENTO);
-
-	char* tid_char = malloc(sizeof(char));
-	sprintf(tid_char, "%d", tripulante->tid);
-	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
-
-	char* posicion_vieja [8];
-
-	char* x_actual = malloc(sizeof(char));
-	sprintf(x_actual, "%d", tripulante->posicionX);
-	strcpy(posicion_vieja, x_actual);
-
-	strcat(posicion_vieja, "|");
-
-	char* y_viejo_char = malloc(sizeof(char));
-	sprintf(y_viejo_char, "%d", y_viejo);
-	strcat(posicion_vieja, y_viejo_char);
-
-	agregar_a_paquete(paquete, posicion_vieja, strlen(posicion_vieja)+1);
-
-
-	char* posicion_actual [8];
-
-	strcpy(posicion_actual, x_actual);
-	strcat(posicion_actual, "|");
-
-	char* y_actual = malloc(sizeof(char));
-	sprintf(y_actual, "%d", tripulante->posicionY);
-	strcat(posicion_actual, y_actual);
-
-	agregar_a_paquete(paquete, posicion_actual, strlen(posicion_actual)+1);
-
-	//enviar_paquete(paquete, tripulante->socket_mongo);
-	enviar_paquete(paquete, tripulante->socket_miram);
-}
-
-void informar_inicio_tarea(tcbTripulante* tripulante){
-	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
-
-	char* tid_char = malloc(sizeof(char));
-	sprintf(tid_char, "%d", tripulante->tid);
-	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
-
-	//char* mensaje = malloc(7);
-	//mensaje = "inicio";
-	//memset(mensaje, '\0', strlen(mensaje); //NOSE SI VA ESTO
-
-	//int largo_mensaje = strlen(mensaje)+1;
-	//char* largo_mensaje_char = malloc(sizeof(char));
-	//sprintf(largo_mensaje_char, "%d", largo_mensaje);
-	//agregar_a_paquete(paquete, largo_mensaje_char, strlen(largo_mensaje_char)+1);
-	//INICIO_TAREA
-	char* mensaje_bitacora_char = malloc(sizeof(char));
-	sprintf(mensaje_bitacora_char, "%d", INICIO_TAREA);
-	agregar_a_paquete(paquete, mensaje_bitacora_char, strlen(mensaje_bitacora_char)+1);
-
-	//agregar_a_paquete(paquete, mensaje, largo_mensaje);
-
-	//enviar_paquete(paquete, tripulante->socket_mongo);
-	enviar_paquete(paquete, tripulante->socket_miram);
-
-	//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
-
-	//eliminar_paquete(paquete);
-	//free(tid_char);
-	//free(mensaje);
-	//free(largo_mensaje_char);
-	//free(mensaje_recibido);
-}
-
-void informar_fin_tarea(tcbTripulante* tripulante){
-	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
-
-	char* tid_char = malloc(sizeof(char));
-	sprintf(tid_char, "%d", tripulante->tid);
-	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
-
-	//char* mensaje = malloc(4);
-	//mensaje = "fin";
-	//memset(mensaje, '\0', strlen(mensaje); //NOSE SI VA ESTO
-
-	//int largo_mensaje = strlen(mensaje)+1;
-	//char* largo_mensaje_char = malloc(sizeof(char));
-	//sprintf(largo_mensaje_char, "%d", largo_mensaje);
-	//agregar_a_paquete(paquete, largo_mensaje_char, strlen(largo_mensaje_char)+1);
-
-	//agregar_a_paquete(paquete, mensaje, largo_mensaje);
-	char* mensaje_bitacora_char = malloc(sizeof(char));
-	sprintf(mensaje_bitacora_char, "%d", FIN_TAREA);
-	agregar_a_paquete(paquete, mensaje_bitacora_char, strlen(mensaje_bitacora_char)+1);
-
-	//enviar_paquete(paquete, tripulante->socket_mongo);
-	enviar_paquete(paquete, tripulante->socket_miram);
-
-	//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
-
-	//eliminar_paquete(paquete);
-	//free(tid_char);
-	//free(mensaje);
-	//free(largo_mensaje_char);
-	//free(mensaje_recibido);
-}
-
 void planificacion_pausada_o_no(){
 	sem_wait(&CONTINUAR_PLANIFICACION);
 	sem_post(&CONTINUAR_PLANIFICACION);
@@ -334,7 +100,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 
 			informar_movimiento(tripulante->socket_miram, tripulante);
 			informar_movimiento_mongo_X (tripulante, x_viejo);
-			sleep(1); // retardo ciclo cpu VA?  EN TODOS LOS SLEEP IRIA ESO?
+			sleep(configuracion.retardo_cpu);
 			fflush(stdout);
 			quantums_ejecutados++;
 			termina_quantum(&quantums_ejecutados, tripulante);
@@ -354,17 +120,17 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			informar_movimiento(tripulante->socket_miram, tripulante);
 			informar_movimiento_mongo_Y (tripulante, y_viejo);
 
-			sleep(1); // retardo ciclo cpu VA?  EN TODOS LOS SLEEP IRIA ESO?
+			sleep(configuracion.retardo_cpu);
 			fflush(stdout);
 			quantums_ejecutados++;
 			termina_quantum(&quantums_ejecutados, tripulante);
 		}
 
 
-		if((void*)tarea->parametro != NULL){ //TAREA DE I/O
+		if((void*)tarea->parametro != NULL){ //tarea de I/O
 			quantums_ejecutados++;
 			termina_quantum(&quantums_ejecutados, tripulante);
-			sleep(1); // retardo ciclo cpu VA? //sleep para eso de iniciar tarea I/O (simula peticion al SO). Nose si va en esta linea
+			sleep(configuracion.retardo_cpu); //sleep para eso de iniciar tarea I/O (simula peticion al SO). Nose si va en esta linea, iria en bloq creo
 			quantums_ejecutados = 0;
 
 			planificacion_pausada_o_no();
@@ -391,37 +157,35 @@ void tripulante_hilo (tcbTripulante* tripulante){
 
 			if(tripulante->estado != 'X'){ // o sea que tiene mas tareas
 				planificacion_pausada_o_no();
-				tripulante->prox_instruccion--;
-				tarea = pedir_tarea(tripulante->socket_miram, tripulante);
+				tarea = tripulante->tarea_posta;
 
 				sem_post(&HABILITA_EJECUTAR);
-
-			} else{ // no tiene mas tareas
+			}else{ // no tiene mas tareas
 				tarea = NULL;
 			}
 
-		} else { //TAREA NORMAL
+		} else { //tarea normal
 			informar_inicio_tarea(tripulante);
 			while(contador_ciclos_trabajando < tarea->tiempo){
 				planificacion_pausada_o_no();
 
 				printf("hilo %d, estoy trabajando \n", tripulante->tid);
-				sleep(1); // retardo ciclo cpu VA?
+				sleep(configuracion.retardo_cpu);
 				contador_ciclos_trabajando++;
 				quantums_ejecutados++;
 
-				if(contador_ciclos_trabajando == tarea->tiempo){//ESTE IF ESTA PARA QUE SI YA TERMINO LA TAREA, SE FIJE SI TIENE OTRA MAS
-					planificacion_pausada_o_no();
-					informar_fin_tarea(tripulante);
-					tarea = pedir_tarea(tripulante->socket_miram, tripulante);
-
-					if(tarea != NULL){ // TIENE MAS TAREAS
-						termina_quantum(&quantums_ejecutados, tripulante);
-					}
-				}else{
+				if(contador_ciclos_trabajando != tarea->tiempo){ //todavia no termino la tarea
 					termina_quantum(&quantums_ejecutados, tripulante);
 				}
 			}
+			planificacion_pausada_o_no();
+			informar_fin_tarea(tripulante);
+			tarea = pedir_tarea(tripulante->socket_miram, tripulante);
+
+			if(tarea != NULL){ // tiene mas tareas
+				termina_quantum(&quantums_ejecutados, tripulante);
+			}
+
 			contador_ciclos_trabajando = 0;
 		}
 	}
@@ -447,7 +211,7 @@ void ready_exec() {
 	int lista_size;
 	while(1){
 		lista_size = list_size(lista_tripulantes_ready);
-		if (lista_size >0){ //PARA QUE NO HAYA ESPERA ACTIVA PODRIA CAMBIAR ESTO POR UN SEMAFORO?
+		if (lista_size >0){
 			sem_wait(&HABILITA_GRADO_MULTITAREA);
 			sem_wait(&HABILITA_EJECUTAR);
 			planificacion_pausada_o_no();
@@ -461,7 +225,6 @@ void ready_exec() {
 			sem_post(&(tripulante1->semaforo_tripulante));
 		}
 	}
-	free(tripulante1);
 }
 
 void nuevo_ready() {
@@ -480,8 +243,6 @@ void nuevo_ready() {
 		list_add(lista_tripulantes_ready, tripulante1);
 		sem_post(&MUTEX_LISTA_READY);
 	}
-	free(tripulante1);
-
 }
 
 void bloqueado_ready() {
@@ -493,17 +254,17 @@ void bloqueado_ready() {
 		tripulante = (tcbTripulante*)list_get(lista_tripulantes_bloqueado, 0);
 		sem_post(&MUTEX_LISTA_BLOQUEADO);
 
-
-
-		planificacion_pausada_o_no();
+		printf("hilo %d, haciendo I/O \n", tripulante->tid);
 		informar_inicio_tarea(tripulante);
 
-		printf("hilo %d, haciendo I/O \n", tripulante->tid);
-		sleep(1); // retardo ciclo cpu VA?
+		int ciclos_consumidos = 0;
+		while(ciclos_consumidos < tripulante->tarea_posta->tiempo){
+			planificacion_pausada_o_no();
+			sleep(configuracion.retardo_cpu);
+			ciclos_consumidos++;
+		}
 
-		planificacion_pausada_o_no();
 		informar_fin_tarea(tripulante);
-
 		printf("hilo %d, termino I/O \n", tripulante->tid);
 		fflush(stdout);
 
@@ -517,20 +278,18 @@ void bloqueado_ready() {
 		tripulante = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
 		sem_post(&MUTEX_LISTA_BLOQUEADO);
 
-		if(tarea != NULL){ // TIENE MAS TAREAS
+		if(tarea != NULL){ // tiene mas tareas
 			tripulante->estado = 'R';
 			cambiar_estado(tripulante->socket_miram, tripulante, 'R');
 			sem_wait(&MUTEX_LISTA_READY);
 			list_add(lista_tripulantes_ready, tripulante);
 			sem_post(&MUTEX_LISTA_READY);
-		} else{ // NO TIENE MAS TAREAS
+		} else{ // no tiene mas tareas
 			tripulante->estado = 'X';
 			list_add(lista_tripulantes_exit, tripulante);
 			sem_post(&(tripulante->semaforo_tripulante));
 		}
-
 	}
-	//free(tripulante);
 }
 
 
@@ -618,7 +377,6 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				paquete = crear_paquete(INICIAR_PATOTA);
 				numero_patota++;
 
-				//agregar_entero_a_paquete(paquete, numero_patota, sizeof(uint32_t));
 				char* numero_patota_char = malloc(sizeof(char));
 				sprintf(numero_patota_char, "%d", numero_patota);
 				agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
@@ -628,19 +386,14 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 
 				char* cantidad_tripulantes_char = malloc(sizeof(char));
 				sprintf(cantidad_tripulantes_char, "%d", cantidad_tripulantes);
-				//agregar_entero_a_paquete(paquete, cantidad_tripulantes, sizeof(uint32_t));
 				agregar_a_paquete(paquete, cantidad_tripulantes_char, strlen(cantidad_tripulantes_char)+1);
-
-				//char* tareas = malloc(sizeof(char));
-				//leer_tareas(parametros[2], &tareas);
-				//printf("Las tareas recibidas por parametro son: %s\n", tareas);
 
 				char* tareas = malloc(sizeof(char));
 				tareas = leer_tareas_archivo(parametros[2]);
 				printf("tareasssss %s \n", tareas);
 /*
-INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
-INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|2 4|5
+INICIAR_PATOTA 5 tareas.txt 3|4 1|2 4|5
+INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 */
 				bool hay_mas_parametros = true;
 				for(int i = 0; i < cantidad_tripulantes ; i++){
@@ -649,7 +402,7 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|2 4|5
 							hay_mas_parametros = false;
 						} else {
 							char* posiciones = parametros[i+3];
-							char nuevo [8];
+							char nuevo [3];
 							char* item;
 							item = strtok(posiciones,"|");
 							posx = atoi(item);
@@ -662,7 +415,6 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|2 4|5
 							strcat(nuevo,item);
 
 							strcpy(parametros[i+3],nuevo);
-
 						}
 					}
 
@@ -720,7 +472,6 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|2 4|5
 					log_warning(logger, "no se q tiene q pasar cuando miram no asigna memoria, pero no empieza x ahora");
 				}
 
-
 				eliminar_paquete(paquete);
 
 				break;
@@ -760,8 +511,8 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|2 4|5
 
 				break;
 /*
-INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
-INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|20 4|5
+INICIAR_PATOTA 5 tareas.txt 3|4 1|2 4|5
+INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 */
 
 			case OBTENER_BITACORA:
@@ -783,8 +534,8 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|20 4|5
 				eliminar_paquete(paquete);
 				break;
 /*
-INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
-INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|2 4|5
+INICIAR_PATOTA 5 tareas.txt 3|4 1|2 4|5
+INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 */
 			case PRUEBA: //para probar el sabotaje por ahora
 				sem_wait(&CONTINUAR_PLANIFICACION);
@@ -829,21 +580,22 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 10|2 4|5
 				log_info(logger, "tid %d  posx %d  posy %d", tripu1->tid, tripu1->posicionX, tripu1->posicionY);
 				informar_atencion_sabotaje(tripu1);
 				//mover al tripu1 que es el mas cercano
-				while(tripu1->posicionX != 5){//muevo en x
+				while(tripu1->posicionX != 5){ //muevo en X
 					if(tripu1->posicionX > 5){ //mayor a la posicion del sabotaje -> se mueve para la izq
 						tripu1->posicionX--;
-						//supongo que iran sleep()
 					} else{
 						tripu1->posicionX++;
 					}
+					sleep(configuracion.retardo_cpu);
 				}
 
-				while(tripu1->posicionY != 5){//muevo en y
+				while(tripu1->posicionY != 5){ //muevo en Y
 					if(tripu1->posicionY > 5){ //mayor a la posicion del sabotaje -> se mueve para abajo
 						tripu1->posicionY--;
 					} else{
 						tripu1->posicionY++;
 					}
+					sleep(configuracion.retardo_cpu);
 				}
 
 				sleep(configuracion.duracion_sabotaje);

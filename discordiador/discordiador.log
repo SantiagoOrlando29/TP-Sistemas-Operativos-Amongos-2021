@@ -1,15 +1,26 @@
-[INFO] 14:30:23:523 discordiador/(2556:2556): Memoria asignada
-[INFO] 14:30:23:542 discordiador/(2556:2567): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 14:30:23:545 discordiador/(2556:2568): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 14:30:23:549 discordiador/(2556:2573): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 14:30:23:550 discordiador/(2556:2574): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 14:30:23:552 discordiador/(2556:2575): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 14:30:26:547 discordiador/(2556:2565): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 14:30:27:124 discordiador/(2556:2556): lista bloq emer
-[INFO] 14:30:27:124 discordiador/(2556:2556): tid 2  posx 6  posy 2
-[INFO] 14:30:27:124 discordiador/(2556:2556): tid 3  posx 4  posy 4
-[INFO] 14:30:27:124 discordiador/(2556:2556): tid 4  posx 0  posy 0
-[INFO] 14:30:27:124 discordiador/(2556:2556): tid 5  posx 0  posy 0
-[INFO] 14:30:27:124 discordiador/(2556:2556): tid 1  posx 4  posy 4
-[INFO] 14:30:27:124 discordiador/(2556:2556): aaaaaa
-[INFO] 14:30:27:124 discordiador/(2556:2556): tid 1  posx 4  posy 4
+[INFO] 00:41:03:506 discordiador/(6414:6414): Memoria asignada
+[INFO] 00:41:03:520 discordiador/(6414:6423): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:41:03:521 discordiador/(6414:6424): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:41:03:526 discordiador/(6414:6425): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:41:03:526 discordiador/(6414:6426): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:41:03:527 discordiador/(6414:6427): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:41:06:523 discordiador/(6414:6421): TRIPU 1  tarea recibida: ABC;5;6;4
+[INFO] 00:41:08:524 discordiador/(6414:6421): TRIPU 3  tarea recibida: ABC;5;6;4
+[INFO] 00:41:12:527 discordiador/(6414:6421): TRIPU 2  tarea recibida: ABC;5;6;4
+[INFO] 00:41:17:530 discordiador/(6414:6421): TRIPU 4  tarea recibida: ABC;5;6;4
+[INFO] 00:41:21:535 discordiador/(6414:6421): TRIPU 5  tarea recibida: ABC;5;6;4
+[INFO] 00:41:23:533 discordiador/(6414:6423): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 00:41:27:537 discordiador/(6414:6425): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 00:41:32:541 discordiador/(6414:6421): TRIPU 1  tarea recibida: DEF;5;6;4
+[INFO] 00:41:36:544 discordiador/(6414:6421): TRIPU 3  tarea recibida: DEF;5;6;4
+[INFO] 00:41:38:545 discordiador/(6414:6424): TRIPU 2  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 00:41:42:546 discordiador/(6414:6426): TRIPU 4  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 00:41:47:551 discordiador/(6414:6421): TRIPU 2  tarea recibida: DEF;5;6;4
+[INFO] 00:41:51:558 discordiador/(6414:6421): TRIPU 4  tarea recibida: DEF;5;6;4
+[INFO] 00:41:53:558 discordiador/(6414:6427): TRIPU 5  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 00:42:01:566 discordiador/(6414:6423): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 00:42:02:566 discordiador/(6414:6421): TRIPU 5  tarea recibida: DEF;5;6;4
+[INFO] 00:42:12:575 discordiador/(6414:6424): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 00:42:12:576 discordiador/(6414:6425): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 00:42:23:587 discordiador/(6414:6426): TRIPU 4  tarea recibida: no hay mas tareas
+[INFO] 00:42:23:587 discordiador/(6414:6427): TRIPU 5  tarea recibida: no hay mas tareas

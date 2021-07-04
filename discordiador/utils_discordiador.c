@@ -68,6 +68,7 @@ tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, u
 	sem_init(&(tripulante->semaforo_tripulante),0,0);
 	tripulante->socket_miram = 0;
 	tripulante->socket_mongo = 0;
+	tripulante->tarea_posta = malloc(sizeof(tarea));
 	return tripulante;
 }
 
@@ -286,14 +287,12 @@ void leer_tareas(char* archTarea, char* *tareas){
 	   }
 
 	   printf("Las tareas son %s\n",*tareas);
-
 }
 
 char* leer_tareas_archivo(char* archTarea){
 	   FILE *fp;
-	   char linea[200]; //reever este 200
 	   char ultimo_caracter;
-	   char* tareass = malloc(500);
+	   char* tareass = malloc(500); //REEVER ESTO. SUPONGO QUE UN REALLOC
 	   strcpy(tareass, "");
 	   fp = fopen(archTarea, "r");
 	   if (fp == NULL)
@@ -301,15 +300,28 @@ char* leer_tareas_archivo(char* archTarea){
 	        perror("Error al abrir el archivo.\n");
 	        exit(EXIT_FAILURE);
 	     }
-	   while (fgets(linea, sizeof(linea), fp)){
-		   ultimo_caracter = linea[strlen(linea)-1];
-		   linea[strlen(linea)-1] = '-';
 
-		   strcat(tareass, linea);
+	   char *linea_leida = NULL;
+	   size_t linea_leida_tam = 0;
+	   int line_count = 0;
+	   ssize_t line_size;
+
+	   line_size = getline(&linea_leida, &linea_leida_tam, fp);
+	   while (line_size >= 0){
+		   line_count++;
+
+		   ultimo_caracter = linea_leida[strlen(linea_leida)-1];
+		   linea_leida[strlen(linea_leida)-1] = '-';
+		   strcat(tareass, linea_leida);
+
+		   line_size = getline(&linea_leida, &linea_leida_tam, fp);
 	   }
 	   tareass[strlen(tareass)-1] = ultimo_caracter;
+	   printf("Las tareas son %s\n",tareass);
 
-	   //printf("Las tareas sonNNNNNNNNN %s\n",tareas);
+	   free(linea_leida);
+	   linea_leida = NULL;
+
 	   return tareass;
 }
 
@@ -320,13 +332,9 @@ tarea* transformar_char_tarea(char* char_tarea){
 
 	   if(strchr(partes[0], ' ') != NULL){ // tiene un espacio => tiene parametro => es tarea E/S
 		   tarea_leida->tarea = strtok(partes[0]," ");
-		  // printf("tarea nombre %s \n", tarea_leida->tarea);
 		   tarea_leida->parametro = atoi(strtok(NULL,""));
-		  // printf("tarea parametro %d \n", tarea_leida->parametro);
-
 	   }else{ //no tiene parametro => es tarea normal
 		   tarea_leida->tarea = partes[0];
-		  // printf("tarea nombre %s \n", tarea_leida->tarea);
 		   tarea_leida->parametro = NULL;
 	   }
 
@@ -426,6 +434,240 @@ void ejecutar_tarea(tarea_tripulante cod_tarea,int parametro){
 
 	}
 
+}
+
+tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
+	t_paquete* paquete = crear_paquete(PEDIR_TAREA);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* numero_patota_char = malloc(sizeof(char));
+	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
+	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
+
+	enviar_paquete(paquete, conexion_miram);
+
+	char* tarea_recibida_miram = recibir_mensaje(conexion_miram);
+	log_info(logger, "TRIPU %d  tarea recibida: %s", tripulante->tid, tarea_recibida_miram);
+
+	if(strcmp("no hay mas tareas", tarea_recibida_miram) ==0){
+		return NULL;
+	}
+
+	tripulante->tarea_posta = transformar_char_tarea(tarea_recibida_miram);
+
+	tripulante->prox_instruccion++;
+
+	eliminar_paquete(paquete);
+	free(numero_patota_char);
+	free(tid_char);
+
+	return tripulante->tarea_posta;
+}
+
+void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado){
+	t_paquete* paquete = crear_paquete(CAMBIAR_DE_ESTADO);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* estado_char = malloc(sizeof(char));
+	sprintf(estado_char, "%c", nuevo_estado);
+	agregar_a_paquete(paquete, estado_char, strlen(estado_char)+1);
+
+	char* numero_patota_char = malloc(sizeof(char));
+	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
+	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
+
+	enviar_paquete(paquete, conexion_miram);
+
+	char* mensaje_recibido = recibir_mensaje(conexion_miram);
+	if(strcmp(mensaje_recibido, "fallo cambio de estado") ==0){
+		log_info(logger, "fallo cambio estado");
+	}
+	//log_info(logger, "TRIPU %d  cambio estado: %s", tripulante->tid, mensaje_recibido);
+
+	eliminar_paquete(paquete);
+	free(tid_char);
+	free(estado_char);
+	free(numero_patota_char);
+	free(mensaje_recibido);
+}
+
+void informar_movimiento(int conexion_miram, tcbTripulante* tripulante){
+	t_paquete* paquete = crear_paquete(INFORMAR_MOVIMIENTO);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* posx_char = malloc(sizeof(char));
+	sprintf(posx_char, "%d", tripulante->posicionX);
+	agregar_a_paquete(paquete, posx_char, strlen(posx_char)+1);
+
+	char* posy_char = malloc(sizeof(char));
+	sprintf(posy_char, "%d", tripulante->posicionY);
+	agregar_a_paquete(paquete, posy_char, strlen(posy_char)+1);
+
+	char* numero_patota_char = malloc(sizeof(char));
+	sprintf(numero_patota_char, "%d", tripulante->puntero_pcb);
+	agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
+
+	enviar_paquete(paquete, conexion_miram);
+
+	char* mensaje_recibido = recibir_mensaje(conexion_miram);
+	//log_info(logger, "TRIPU %d  %s", tripulante->tid, mensaje_recibido);
+
+	eliminar_paquete(paquete);
+	free(tid_char);
+	free(posx_char);
+	free(posy_char);
+	free(numero_patota_char);
+	free(mensaje_recibido);
+}
+
+void informar_movimiento_mongo_X (tcbTripulante* tripulante, int x_viejo){
+	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA_MOVIMIENTO);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* posicion_vieja [3];
+
+	char* x_viejo_char = malloc(sizeof(char));
+	sprintf(x_viejo_char, "%d", x_viejo);
+	strcpy(posicion_vieja, x_viejo_char);
+
+	strcat(posicion_vieja, "|");
+
+	char* y_actual = malloc(sizeof(char));
+	sprintf(y_actual, "%d", tripulante->posicionY);
+	strcat(posicion_vieja, y_actual);
+
+	agregar_a_paquete(paquete, posicion_vieja, strlen(posicion_vieja)+1);
+
+
+	char* posicion_actual [3];
+
+	char* x_actual = malloc(sizeof(char));
+	sprintf(x_actual, "%d", tripulante->posicionX);
+	strcpy(posicion_actual, x_actual);
+
+	strcat(posicion_actual, "|");
+	strcat(posicion_actual, y_actual);
+
+	agregar_a_paquete(paquete, posicion_actual, strlen(posicion_actual)+1);
+
+	//enviar_paquete(paquete, tripulante->socket_mongo);
+	enviar_paquete(paquete, tripulante->socket_miram);
+}
+
+void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo){
+	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA_MOVIMIENTO);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	char* posicion_vieja [3];
+
+	char* x_actual = malloc(sizeof(char));
+	sprintf(x_actual, "%d", tripulante->posicionX);
+	strcpy(posicion_vieja, x_actual);
+
+	strcat(posicion_vieja, "|");
+
+	char* y_viejo_char = malloc(sizeof(char));
+	sprintf(y_viejo_char, "%d", y_viejo);
+	strcat(posicion_vieja, y_viejo_char);
+
+	agregar_a_paquete(paquete, posicion_vieja, strlen(posicion_vieja)+1);
+
+
+	char* posicion_actual [3];
+
+	strcpy(posicion_actual, x_actual);
+	strcat(posicion_actual, "|");
+
+	char* y_actual = malloc(sizeof(char));
+	sprintf(y_actual, "%d", tripulante->posicionY);
+	strcat(posicion_actual, y_actual);
+
+	agregar_a_paquete(paquete, posicion_actual, strlen(posicion_actual)+1);
+
+	//enviar_paquete(paquete, tripulante->socket_mongo);
+	enviar_paquete(paquete, tripulante->socket_miram);
+}
+
+void informar_inicio_tarea(tcbTripulante* tripulante){
+	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	//char* mensaje = malloc(7);
+	//mensaje = "inicio";
+	//memset(mensaje, '\0', strlen(mensaje); //NOSE SI VA ESTO
+
+	//int largo_mensaje = strlen(mensaje)+1;
+	//char* largo_mensaje_char = malloc(sizeof(char));
+	//sprintf(largo_mensaje_char, "%d", largo_mensaje);
+	//agregar_a_paquete(paquete, largo_mensaje_char, strlen(largo_mensaje_char)+1);
+	//INICIO_TAREA
+	char* mensaje_bitacora_char = malloc(sizeof(char));
+	sprintf(mensaje_bitacora_char, "%d", INICIO_TAREA);
+	agregar_a_paquete(paquete, mensaje_bitacora_char, strlen(mensaje_bitacora_char)+1);
+
+	//agregar_a_paquete(paquete, mensaje, largo_mensaje);
+
+	//enviar_paquete(paquete, tripulante->socket_mongo);
+	enviar_paquete(paquete, tripulante->socket_miram);
+
+	//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
+
+	//eliminar_paquete(paquete);
+	//free(tid_char);
+	//free(mensaje);
+	//free(largo_mensaje_char);
+	//free(mensaje_recibido);
+}
+
+void informar_fin_tarea(tcbTripulante* tripulante){
+	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
+
+	char* tid_char = malloc(sizeof(char));
+	sprintf(tid_char, "%d", tripulante->tid);
+	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
+
+	//char* mensaje = malloc(4);
+	//mensaje = "fin";
+	//memset(mensaje, '\0', strlen(mensaje); //NOSE SI VA ESTO
+
+	//int largo_mensaje = strlen(mensaje)+1;
+	//char* largo_mensaje_char = malloc(sizeof(char));
+	//sprintf(largo_mensaje_char, "%d", largo_mensaje);
+	//agregar_a_paquete(paquete, largo_mensaje_char, strlen(largo_mensaje_char)+1);
+
+	//agregar_a_paquete(paquete, mensaje, largo_mensaje);
+	char* mensaje_bitacora_char = malloc(sizeof(char));
+	sprintf(mensaje_bitacora_char, "%d", FIN_TAREA);
+	agregar_a_paquete(paquete, mensaje_bitacora_char, strlen(mensaje_bitacora_char)+1);
+
+	//enviar_paquete(paquete, tripulante->socket_mongo);
+	enviar_paquete(paquete, tripulante->socket_miram);
+
+	//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
+
+	//eliminar_paquete(paquete);
+	//free(tid_char);
+	//free(mensaje);
+	//free(largo_mensaje_char);
+	//free(mensaje_recibido);
 }
 
 void remover_tripulante_de_lista(tcbTripulante* tripulante, t_list* lista){

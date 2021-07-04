@@ -105,24 +105,6 @@ typedef enum{
 	B	// BREAK interrumpido
 }estado;
 */
-typedef struct{
-	uint32_t pid;  // ID PATOTA
-	uint32_t tareas; // DIR. LOGICA INCIO DE TAREAS
-}pcbPatota;
-
-typedef struct{
-	uint32_t tid;
-	char estado;
-	uint32_t posicionX;
-	uint32_t posicionY;
-	uint32_t prox_instruccion; // Identificador de la próxima instrucción a ejecutar
-	uint32_t puntero_pcb; //Dirección lógica del PCB del tripulante
-	sem_t semaforo_tripulante;
-	int socket_miram;
-	int socket_mongo;
-}tcbTripulante;
-
-// fin estructuras tripulantes
 
 typedef enum
 {
@@ -141,6 +123,26 @@ typedef struct{
 	int pos_y;
 	int tiempo;
 }tarea;
+
+typedef struct{
+	uint32_t pid;  // ID PATOTA
+	uint32_t tareas; // DIR. LOGICA INCIO DE TAREAS
+}pcbPatota;
+
+typedef struct{
+	uint32_t tid;
+	char estado;
+	uint32_t posicionX;
+	uint32_t posicionY;
+	uint32_t prox_instruccion; // Identificador de la próxima instrucción a ejecutar
+	uint32_t puntero_pcb; //Dirección lógica del PCB del tripulante
+	sem_t semaforo_tripulante;
+	int socket_miram;
+	int socket_mongo;
+	tarea* tarea_posta;
+}tcbTripulante;
+
+// fin estructuras tripulantes
 
 
 /*FINALIZACION DE ESCTRUCTURAS PARA DISCORDIADOR*/

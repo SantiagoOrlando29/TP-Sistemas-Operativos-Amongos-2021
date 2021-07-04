@@ -74,8 +74,12 @@ int funcion_cliente(int socket_cliente){
 	pcbPatota* patota;
 	tcbTripulante* tripulante;
 	t_paquete* paquete;
+	int tripulante_id;
+	int patota_id;
+
 	int tipoMensajeRecibido = -1;
 	printf("Se conecto este socket a mi %d\n",socket_cliente);
+
 	while(1){
 		tipoMensajeRecibido = recibir_operacion(socket_cliente);
 
@@ -84,9 +88,9 @@ int funcion_cliente(int socket_cliente){
 			case INICIAR_PATOTA:
 				lista = recibir_paquete(socket_cliente);
 
-				uint32_t pid = (uint32_t)atoi(list_get(lista,0));
-				printf("el numero de la patota es %d", pid);
-				patota = crear_patota(pid,0);
+				patota_id = (int)atoi(list_get(lista,0));
+				printf("el numero de la patota es %d", patota_id);
+				patota = crear_patota(patota_id,0);
 
 				uint32_t cantidad_tripulantes = (uint32_t)atoi(list_get(lista,1));
 				printf("cant tripu %d\n", cantidad_tripulantes);
@@ -103,7 +107,7 @@ int funcion_cliente(int socket_cliente){
 
 
 				if(strcmp(configuracion.squema_memoria,"SEGMENTACION")==0){
-					bool todo_ok = patota_segmentacion(pid, cantidad_tripulantes, tarea, lista);
+					bool todo_ok = patota_segmentacion(patota_id, cantidad_tripulantes, tarea, lista);
 					if (todo_ok == false){
 						log_warning(logger, "no se puedo asignar espacio de memoria a todo");
 						char* mensaje = malloc(20);
@@ -167,7 +171,7 @@ int funcion_cliente(int socket_cliente){
 
 			case EXPULSAR_TRIPULANTE:
 				lista = recibir_paquete(socket_cliente);
-				uint32_t tripulante_id = (uint32_t)atoi(list_get(lista,0));
+				tripulante_id = (int)atoi(list_get(lista,0));
 
 				if(strcmp(configuracion.squema_memoria,"SEGMENTACION")==0){
 					bool tripulante_expulsado_con_exito = funcion_expulsar_tripulante(tripulante_id);
@@ -176,30 +180,34 @@ int funcion_cliente(int socket_cliente){
 					}
 				}
 
+				list_clean(lista);
+
 				break;
 
 			case PEDIR_TAREA:;
-				t_list* lista_tripulante = recibir_paquete(socket_cliente);
-				int id_tripulante = (int)atoi(list_get(lista_tripulante,0));
-				int numero_patota = (int)atoi(list_get(lista_tripulante,1));
+				lista = recibir_paquete(socket_cliente);
+				tripulante_id = (int)atoi(list_get(lista, 0));
+				patota_id = (int)atoi(list_get(lista, 1));
 
-				bool hay_mas_tareas = enviar_tarea_segmentacion(socket_cliente, numero_patota, id_tripulante);
+				bool hay_mas_tareas = enviar_tarea_segmentacion(socket_cliente, patota_id, tripulante_id);
 				if(hay_mas_tareas == false){
-					funcion_expulsar_tripulante(id_tripulante);
+					funcion_expulsar_tripulante(tripulante_id);
 				}
+
+				list_clean(lista);
 
 				break;
 
 			case CAMBIAR_DE_ESTADO:;
-				t_list* lista_recibida = recibir_paquete(socket_cliente);
-				int tid = (int)atoi(list_get(lista_recibida,0));
+				lista = recibir_paquete(socket_cliente);
+				tripulante_id = (int)atoi(list_get(lista, 0));
 
-				char* estado_recibido = list_get(lista_recibida,1);
+				char* estado_recibido = list_get(lista, 1);
 				char estado = estado_recibido[0];
 
-				int pid_recibido = (int)atoi(list_get(lista_recibida,2));
+				patota_id = (int)atoi(list_get(lista, 2));
 
-				bool cambio_exitoso = cambiar_estado(pid_recibido, estado, tid);
+				bool cambio_exitoso = cambiar_estado(patota_id, estado, tripulante_id);
 				if(cambio_exitoso == false){
 					char* mensaje = malloc(23);
 					mensaje = "fallo cambio de estado";
@@ -211,16 +219,18 @@ int funcion_cliente(int socket_cliente){
 					enviar_mensaje(mensaje, socket_cliente);
 				}
 
+				list_clean(lista);
+
 				break;
 
 			case INFORMAR_MOVIMIENTO:;
-				t_list* lista__movimiento = recibir_paquete(socket_cliente);
-				int tid_rec = (int)atoi(list_get(lista__movimiento,0));
-				int posx = (int)atoi(list_get(lista__movimiento,1));
-				int posy = (int)atoi(list_get(lista__movimiento,2));
-				int pid_rec = (int)atoi(list_get(lista__movimiento,3));
+				lista = recibir_paquete(socket_cliente);
+				tripulante_id = (int)atoi(list_get(lista, 0));
+				int posx = (int)atoi(list_get(lista, 1));
+				int posy = (int)atoi(list_get(lista, 2));
+				patota_id = (int)atoi(list_get(lista, 3));
 
-				bool movimiento_exitoso = cambiar_posicion(tid_rec, posx, posy, pid_rec);
+				bool movimiento_exitoso = cambiar_posicion(tripulante_id, posx, posy, patota_id);
 				if(movimiento_exitoso == false){
 					char* mensaje = malloc(25);
 					mensaje = "fallo cambio de posicion";
@@ -231,23 +241,25 @@ int funcion_cliente(int socket_cliente){
 					enviar_mensaje(mensaje, socket_cliente);
 				}
 
+				list_clean(lista);
+
 				break;
 
 			case INFORMAR_BITACORA:; //PARA PROBAR LO DE MONGO
 				t_list* lista_pr = recibir_paquete(socket_cliente);
-				int tid_pr = (int)atoi(list_get(lista_pr,0));
+				tripulante_id = (int)atoi(list_get(lista_pr,0));
 				//char* mens = list_get(lista_pr,1);
 				int tipo_mensaje_bitacora = (int)atoi(list_get(lista_pr,1));
-				log_info(logger, "tid %d  mens %d",tid_pr, tipo_mensaje_bitacora);
+				//log_info(logger, "tid %d  mens %d",tripulante_id, tipo_mensaje_bitacora);
 
 				break;
 
 			case INFORMAR_BITACORA_MOVIMIENTO:; //PARA PROBAR LO DE MONGO
 				t_list* lista_pru = recibir_paquete(socket_cliente);
-				int tid_pru = (int)atoi(list_get(lista_pru,0));
+				tripulante_id = (int)atoi(list_get(lista_pru,0));
 				char* mens1 = list_get(lista_pru,1);
 				char* mens2 = list_get(lista_pru,2);
-				log_info(logger, "tid %d  mens1 %s, mens2 %s",tid_pru, mens1, mens2);
+				//log_info(logger, "tid %d  mens1 %s, mens2 %s",tripulante_id, mens1, mens2);
 
 				break;
 
@@ -992,7 +1004,7 @@ espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) {
     }
 }
 
-bool patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tarea, t_list* lista){
+bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_list* lista){
 	pcbPatota* pcb_patota = crear_pcb(pid);
 	espacio_de_memoria* espacio_de_memoria_pcb_patota = asignar_espacio_de_memoria(tamanio_PCB);
 	if (espacio_de_memoria_pcb_patota == NULL){
@@ -1062,12 +1074,7 @@ bool patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tare
 		if(i == cantidad_tripulantes +2 -1){ //es el ultimo tripulante de la lista
 			tabla_segmentos_patota->ultimo_tripulante = tripulante->tid;
 		}
-		//free(segmento_tcb);
 	}
-
-	//free(segmento_pcb); //ROMPE SI PONGO TODOS ESTOS FREE
-	//free(segmento_tareas);
-	//free(tripulante);
 
 	imprimir_tabla_espacios_de_memoria();
 
@@ -1075,12 +1082,10 @@ bool patota_segmentacion(uint32_t pid, uint32_t cantidad_tripulantes, char* tare
 
 	list_add(lista_tablas_segmentos, tabla_segmentos_patota);
 
-	//free(tabla_segmentos_patota);
-
 	return true;
 }
 
-bool funcion_expulsar_tripulante(uint32_t tripulante_id){
+bool funcion_expulsar_tripulante(int tripulante_id){
 	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
 		tabla_segmentacion* tabla_segmentos = (tabla_segmentacion*)list_get(lista_tablas_segmentos, i);
 
@@ -1115,7 +1120,7 @@ bool funcion_expulsar_tripulante(uint32_t tripulante_id){
 
 void compactar_memoria(){
     log_info(logger, "Empieza compactacion");
-    ordenar_memoria(); //VER CUANDO ESTE TOODO HECHO SI HACEN FALTA ESTAS 2 LINEAS
+    ordenar_memoria();
     unir_espacios_contiguos_libres();
 
     bool compacto_algo = false;
@@ -1219,12 +1224,13 @@ bool enviar_tarea_segmentacion(int socket_cliente, int numero_patota, int id_tri
 						enviar_mensaje(una_tarea, socket_cliente);
 						//free(una_tarea);
 					}
-					if(tripulante->estado != 'B'){ //SI ESTA EN BLOQ NO LO SUMA PQ DESPUES LO PIDE DE VUELTA EN EXEC
-						tripulante->prox_instruccion++;
-					}
+
+					tripulante->prox_instruccion++;
+
 					if(tripulante->estado != 'E'){
 						tripulante->estado = 'R';
 					}
+
 					espacio_tcb->contenido = tripulante;
 				}
 			}
