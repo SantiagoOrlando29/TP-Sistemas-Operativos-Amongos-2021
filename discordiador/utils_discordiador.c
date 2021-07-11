@@ -292,7 +292,7 @@ void leer_tareas(char* archTarea, char* *tareas){
 char* leer_tareas_archivo(char* archTarea){
 	   FILE *fp;
 	   char ultimo_caracter;
-	   char* tareass = malloc(500); //REEVER ESTO. SUPONGO QUE UN REALLOC
+	   char* tareass = malloc(1);
 	   strcpy(tareass, "");
 	   fp = fopen(archTarea, "r");
 	   if (fp == NULL)
@@ -312,6 +312,7 @@ char* leer_tareas_archivo(char* archTarea){
 
 		   ultimo_caracter = linea_leida[strlen(linea_leida)-1];
 		   linea_leida[strlen(linea_leida)-1] = '-';
+		   tareass = realloc(tareass, strlen(linea_leida)+strlen(tareass)+1);
 		   strcat(tareass, linea_leida);
 
 		   line_size = getline(&linea_leida, &linea_leida_tam, fp);

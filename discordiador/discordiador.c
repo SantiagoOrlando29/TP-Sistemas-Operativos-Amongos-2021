@@ -20,6 +20,7 @@ t_list* lista_tripulantes_bloqueado;
 t_list* lista_tripulantes_trabajando;
 t_list* lista_tripulantes_exit;
 t_list* lista_bloq_emergencia;
+t_list* lista_aux;
 
 
 bool sigue_ejecutando(int quantums_ejecutados){
@@ -347,6 +348,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	lista_tripulantes_trabajando = list_create();
 	lista_tripulantes_exit = list_create();
 	lista_bloq_emergencia = list_create();
+	lista_aux = list_create();
 
 	bool pausar_planificacion_activado = false;
 	uint32_t numero_patota = 0;
@@ -542,13 +544,22 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 
 				lista_bloq_emergencia = list_take_and_remove(lista_tripulantes_trabajando, list_size(lista_tripulantes_trabajando));
 
+			    bool tid_anterior(tcbTripulante* tid_menor, tcbTripulante* tid_mayor) {
+			        return tid_menor->tid < tid_mayor->tid;
+			    }
+			    list_sort(lista_bloq_emergencia, (void*) tid_anterior);
+
+
 				for(int i=0; i < list_size(lista_tripulantes_ready); i++){
 					tcbTripulante* tripulante_de_lista = malloc(sizeof(tcbTripulante));
 					tripulante_de_lista = (tcbTripulante*)list_remove(lista_tripulantes_ready, i);
-					list_add(lista_bloq_emergencia,tripulante_de_lista);
+					list_add(lista_aux,tripulante_de_lista);
 					//log_info(logger, "tid %d  posx %d  posy %d", tripulante_de_lista->tid, tripulante_de_lista->posicionX, tripulante_de_lista->posicionY);
 					i = -1;
 				}
+				list_sort(lista_aux, (void*) tid_anterior);
+
+				list_add_all(lista_bloq_emergencia, lista_aux);
 
 				log_info(logger, "lista bloq emer");
 				for(int i=0; i < list_size(lista_bloq_emergencia); i++){
@@ -600,6 +611,7 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 
 				sleep(configuracion.duracion_sabotaje);
 				informar_sabotaje_resuelto(tripu1);
+
 				//devuelvo los tripulantes a sus correspondientes listas
 				/*for(int i=0; i < list_size(lista_bloq_emergencia); i++){
 					tcbTripulante* tripulante_de_listaa = malloc(sizeof(tcbTripulante));
