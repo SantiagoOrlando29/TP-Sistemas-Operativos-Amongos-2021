@@ -177,6 +177,8 @@ tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante);
 char* leer_tareas_archivo(char* archTarea);
 tarea* transformar_char_tarea(char* char_tarea);
 
+void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante);
+
 void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado);
 void informar_movimiento(int conexion_miram, tcbTripulante* tripulante);
 void informar_inicio_tarea(tcbTripulante* tripulante);
@@ -187,6 +189,7 @@ void informar_atencion_sabotaje(tcbTripulante* tripulante);
 void informar_sabotaje_resuelto(tcbTripulante* tripulante);
 
 void planificacion_pausada_o_no();
+void planificacion_pausada_o_no_exec(tcbTripulante* tripulante);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanio_tcb(tcbTripulante*);
