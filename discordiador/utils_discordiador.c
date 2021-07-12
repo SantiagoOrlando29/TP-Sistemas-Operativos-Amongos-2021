@@ -69,6 +69,7 @@ tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, u
 	tripulante->socket_miram = 0;
 	tripulante->socket_mongo = 0;
 	tripulante->tarea_posta = malloc(sizeof(tarea));
+	tripulante->fui_expulsado = false;
 	return tripulante;
 }
 

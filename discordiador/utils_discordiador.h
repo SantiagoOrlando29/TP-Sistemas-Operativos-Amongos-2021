@@ -140,6 +140,7 @@ typedef struct{
 	int socket_miram;
 	int socket_mongo;
 	tarea* tarea_posta;
+	bool fui_expulsado;
 }tcbTripulante;
 
 // fin estructuras tripulantes
