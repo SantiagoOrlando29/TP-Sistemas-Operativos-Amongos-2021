@@ -189,7 +189,7 @@ void informar_atencion_sabotaje(tcbTripulante* tripulante);
 void informar_sabotaje_resuelto(tcbTripulante* tripulante);
 
 void planificacion_pausada_o_no();
-void planificacion_pausada_o_no_exec(tcbTripulante* tripulante);
+void planificacion_pausada_o_no_exec(tcbTripulante* tripulante, int* quantums_ejecutados);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanio_tcb(tcbTripulante*);
