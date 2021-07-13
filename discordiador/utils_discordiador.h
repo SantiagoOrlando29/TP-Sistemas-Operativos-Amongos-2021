@@ -141,6 +141,7 @@ typedef struct{
 	int socket_mongo;
 	tarea* tarea_posta;
 	bool fui_expulsado;
+	int cant_tripus_patota;
 }tcbTripulante;
 
 // fin estructuras tripulantes
@@ -158,21 +159,21 @@ void eliminar_paquete(t_paquete* paquete);
 char* recibir_mensaje(int socket_cliente);
 
 int menu_discordiador(int , int, t_log* );
-tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, uint32_t);
-pcbPatota* crear_patota(uint32_t , uint32_t);
+tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, uint32_t posicionY, uint32_t puntero_pcb, int cantidad_tripulantes);
+//pcbPatota* crear_patota(uint32_t , uint32_t);
 int codigoOperacion (const char*);
 void enviar_header(tipoMensaje tipo, int socket_cliente);
 
 void remover_tripulante_de_lista(tcbTripulante* tripulante, t_list* lista);
 
 //TAREAS
-char* imprimirTarea(tarea*);
+//char* imprimirTarea(tarea*);
 tarea_tripulante codigoTarea(char*);
-void leer_tareas(char* archTarea, char* *tareas);
+//void leer_tareas(char* archTarea, char* *tareas);
 //tarea* crear_tarea(tarea_tripulante,int,int,int,int);
-tarea* crear_tarea(char*,int,int,int,int);
+//tarea* crear_tarea(char*,int,int,int,int);
 tcbTripulante* hacer_tarea(tcbTripulante*,tarea*);
-void ejecutar_tarea(tarea_tripulante,int);
+//void ejecutar_tarea(tarea_tripulante,int);
 tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante);
 
 char* leer_tareas_archivo(char* archTarea);
@@ -211,7 +212,7 @@ void leer_config();
  * Pre: Recibo el tipo de mensaje y la conexion de donde lo recibo
  * Post: Muestro por pantalla la informacion dada de la lista de los tripulantes
  * */
-t_list* recibir_lista_tripulantes(int , int, t_log*);
+//t_list* recibir_lista_tripulantes(int , int, t_log*);
 
 /*
  * Pre: Recibo un logger

@@ -12,6 +12,7 @@ sem_t PASA_A_BLOQUEADO;
 sem_t MUTEX_LISTA_READY;
 sem_t MUTEX_LISTA_TRABAJANDO;
 sem_t MUTEX_LISTA_BLOQUEADO;
+sem_t MUTEX_LISTA_EXIT;
 sem_t CONTINUAR_PLANIFICACION;
 sem_t ORDENA_FUNCION_QUANTUM;
 sem_t MUTEX_FLAG_SABOTAJE;
@@ -40,32 +41,28 @@ bool sigue_ejecutando(int quantums_ejecutados){
 void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pensar otro nombre para la funcion
 	bool flag_sigue_ejecutando = sigue_ejecutando(*quantums_ejecutados);
 	if(flag_sigue_ejecutando == false){
-		//planificacion_pausada_o_no_exec(tripulante, &(*quantums_ejecutados));
+		//si hubiera habido sabotaje cuando entro a esta funcion no tiene q hacer nada porque el Q se reinicia
+		sem_wait(&ORDENA_FUNCION_QUANTUM);
+		printf("hilo %d, FIN DE Q \n", tripulante->tid);
 
-		//if(quantums_ejecutados > 0){ //osea que NO hubo un sabotaje justo cuando entro a esta funcion
-			//si hubiera habido sabotaje cuando entro a esta funcion no tiene q hacer nada porque el Q se reinicia
-			sem_wait(&ORDENA_FUNCION_QUANTUM);
-			printf("hilo %d, FIN DE Q \n", tripulante->tid);
+		sem_wait(&MUTEX_LISTA_TRABAJANDO);
+		remover_tripulante_de_lista(tripulante, lista_tripulantes_trabajando);
+		sem_post(&MUTEX_LISTA_TRABAJANDO);
 
-			sem_wait(&MUTEX_LISTA_TRABAJANDO);
-			remover_tripulante_de_lista(tripulante, lista_tripulantes_trabajando);
-			sem_post(&MUTEX_LISTA_TRABAJANDO);
+		tripulante->estado = 'R';
+		cambiar_estado(tripulante->socket_miram, tripulante, 'R');
 
-			tripulante->estado = 'R';
-			cambiar_estado(tripulante->socket_miram, tripulante, 'R');
+		sem_wait(&MUTEX_LISTA_READY);
+		list_add(lista_tripulantes_ready, tripulante);
+		sem_post(&MUTEX_LISTA_READY);
 
-			sem_wait(&MUTEX_LISTA_READY);
-			list_add(lista_tripulantes_ready, tripulante);
-			sem_post(&MUTEX_LISTA_READY);
+		sem_post(&ORDENA_FUNCION_QUANTUM);
 
-			sem_post(&ORDENA_FUNCION_QUANTUM);
-
-			sem_post(&HABILITA_GRADO_MULTITAREA);
-			sem_post(&HABILITA_EJECUTAR); //VA ACA? O ABAJO DEL WAIT ESTE DE ABAJO? O NO VA?
-			sem_wait(&(tripulante->semaforo_tripulante));
-			cambiar_estado(tripulante->socket_miram, tripulante, 'E');
-			*quantums_ejecutados = 0;
-		//}
+		sem_post(&HABILITA_GRADO_MULTITAREA);
+		sem_post(&HABILITA_EJECUTAR); //VA ACA? O ABAJO DEL WAIT ESTE DE ABAJO? O NO VA?
+		sem_wait(&(tripulante->semaforo_tripulante));
+		cambiar_estado(tripulante->socket_miram, tripulante, 'E');
+		*quantums_ejecutados = 0;
 	}
 }
 
@@ -81,7 +78,6 @@ void planificacion_pausada_o_no_exec(tcbTripulante* tripulante, int* quantums_ej
 	//sem_wait(&MUTEX_FLAG_SABOTAJE);
 	if(flag_sabotaje != 0){ //si esta en 0 es que no hubo sabotaje
 		flag_sabotaje--;
-		//log_info(logger, "flag sabo %d", flag_sabotaje);
 
 		*quantums_ejecutados = 0;
 		sem_post(&HABILITA_GRADO_MULTITAREA);
@@ -185,25 +181,19 @@ void tripulante_hilo (tcbTripulante* tripulante){
 
 
 		if(tripulante->fui_expulsado == false){
-			if((void*)tarea->parametro != NULL){ //tarea de I/O
+			if((void*)tarea->parametro != NULL){ //tarea de E/S
 				printf("hilo %d, iniciar tarea e/s \n", tripulante->tid);
-				sleep(configuracion.retardo_cpu); //sleep para eso de iniciar tarea I/O (simula peticion al SO). Nose si va en esta linea, iria en bloq creo
+				sleep(configuracion.retardo_cpu); //sleep para eso de iniciar tarea E/S (simula peticion al SO)
 
 				if(tripulante->fui_expulsado == true){
 					tarea = NULL;
 					tripulante->estado = 'X';
 					sem_post(&HABILITA_GRADO_MULTITAREA);
 				}else{
-					quantums_ejecutados++;
-
 					planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);
-					if(quantums_ejecutados > 0){ //si es =0 significa que hubo sabotaje, entonces no me fijo si termino quantum porque se reinicia
-						termina_quantum(&quantums_ejecutados, tripulante);
-					}
 
 					quantums_ejecutados = 0;
 
-					//planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);
 					if(tripulante->posicionX == tarea->pos_x && tripulante->posicionY == tarea->pos_y){//veo si esta en la posicion de tarea por si resolvio sabotaje
 						sem_wait(&MUTEX_LISTA_TRABAJANDO);
 						remover_tripulante_de_lista(tripulante, lista_tripulantes_trabajando);
@@ -220,8 +210,6 @@ void tripulante_hilo (tcbTripulante* tripulante){
 						sem_post(&PASA_A_BLOQUEADO);
 						sem_post(&HABILITA_GRADO_MULTITAREA);
 						sem_wait(&(tripulante->semaforo_tripulante));
-
-						//cambiar_estado(tripulante->socket_miram, tripulante, 'E');
 
 						planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);
 
@@ -242,9 +230,6 @@ void tripulante_hilo (tcbTripulante* tripulante){
 				while(contador_ciclos_trabajando < tarea->tiempo && flag_no_esta_en_posicion ==0){
 
 					planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);
-					if(quantums_ejecutados > 0){ //si es =0 significa que hubo sabotaje, entonces no me fijo si termino quantum porque se reinicia
-						termina_quantum(&quantums_ejecutados, tripulante);
-					}
 
 					if(tripulante->posicionX == tarea->pos_x && tripulante->posicionY == tarea->pos_y){//veo si esta en la posicion de tarea por si resolvio sabotaje
 						printf("hilo %d, estoy trabajando \n", tripulante->tid);
@@ -272,9 +257,6 @@ void tripulante_hilo (tcbTripulante* tripulante){
 					sem_post(&HABILITA_GRADO_MULTITAREA);
 				}else{
 					planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);
-					if(quantums_ejecutados > 0){ //si es =0 significa que hubo sabotaje, entonces no me fijo si termino quantum porque se reinicia
-						termina_quantum(&quantums_ejecutados, tripulante);
-					}
 
 					if(flag_no_esta_en_posicion == 0){ // termino la tarea. Si esta en 1 -> va a moverse de nuevo
 						informar_fin_tarea(tripulante);
@@ -294,6 +276,8 @@ void tripulante_hilo (tcbTripulante* tripulante){
 		}
 	}
 
+	free(tarea);
+
 	if(tripulante->estado != 'X'){
 		sem_post(&HABILITA_GRADO_MULTITAREA);
 
@@ -304,10 +288,40 @@ void tripulante_hilo (tcbTripulante* tripulante){
 		sem_post(&MUTEX_LISTA_TRABAJANDO);
 
 		tripulante->estado = 'X';
+
+		sem_wait(&MUTEX_LISTA_EXIT);
 		list_add(lista_tripulantes_exit, tripulante);
+		sem_post(&MUTEX_LISTA_EXIT);
 	}
 	printf("hilo %d, EXIT\n", tripulante->tid);
 	close(tripulante->socket_miram);
+
+	int tripu_misma_patota_exit = 0;
+	sem_wait(&MUTEX_LISTA_EXIT);
+	for(int i=0; i < list_size(lista_tripulantes_exit); i++){
+		tcbTripulante* tripu = (tcbTripulante*)list_get(lista_tripulantes_exit, i);
+		if(tripu->puntero_pcb == tripulante->puntero_pcb){
+			tripu_misma_patota_exit++;
+		}
+	}
+	sem_post(&MUTEX_LISTA_EXIT);
+
+	log_info(logger, "tripu_misma_patota_exit %d", tripu_misma_patota_exit);
+
+	if(tripulante->cant_tripus_patota == tripu_misma_patota_exit){ //o sea ya estan en exit todos los tripus de esta misma patota
+		sem_wait(&MUTEX_LISTA_EXIT);
+		for(int i=0; i < list_size(lista_tripulantes_exit); i++){
+			tcbTripulante* tripu = (tcbTripulante*)list_get(lista_tripulantes_exit, i);
+			if(tripu->puntero_pcb == tripulante->puntero_pcb){
+				list_remove(lista_tripulantes_exit, i);
+				free(tripu->tarea_posta);
+				free(tripu);
+				i--;
+			}
+		}
+		log_info(logger, "size exit %d", list_size(lista_tripulantes_exit));
+		sem_post(&MUTEX_LISTA_EXIT);
+	}
 }
 
 void ready_exec() {
@@ -404,7 +418,11 @@ void bloqueado_ready() {
 				sem_post(&MUTEX_LISTA_READY);
 			} else{ // no tiene mas tareas
 				tripulante->estado = 'X';
+
+				sem_wait(&MUTEX_LISTA_EXIT);
 				list_add(lista_tripulantes_exit, tripulante);
+				sem_post(&MUTEX_LISTA_EXIT);
+
 				sem_post(&(tripulante->semaforo_tripulante));
 			}
 		}
@@ -415,21 +433,10 @@ void bloqueado_ready() {
 int main(int argc, char* argv[]) {
 	//config_struct configuracion;
 
-
 	//Reinicio el anterior y arranco uno nuevo
 	FILE* archivo = fopen("discordiador.log","w");
 	fclose(archivo);
 	logger = log_create("discordiador.log","discordiador",1,LOG_LEVEL_INFO);
-
-	/*char* archTarea = "tareas.txt";
-	leer_tareas(archTarea);
-	tarea* tarea_recibida1 = crear_tarea(GENERAR_OXIGENO,5,2,2,5);
-	tarea* tarea_recibida2 = crear_tarea(GENERAR_COMIDA,7,2,2,5);
-	tarea* tarea_recibida3 = crear_tarea(GENERAR_BASURA,9,2,2,5);
-	hacer_tarea(tripulante,tarea_recibida1);
-	hacer_tarea(tripulante,tarea_recibida2);
-	hacer_tarea(tripulante,tarea_recibida3);*/
-
 
 	leer_config();
 	//leer numeros random
@@ -457,6 +464,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	sem_init(&MUTEX_LISTA_READY, 0,1);
 	sem_init(&MUTEX_LISTA_TRABAJANDO, 0,1);
 	sem_init(&MUTEX_LISTA_BLOQUEADO, 0,1);
+	sem_init(&MUTEX_LISTA_EXIT, 0,1);
 	sem_init(&CONTINUAR_PLANIFICACION, 0,1);
 	sem_init(&ORDENA_FUNCION_QUANTUM, 0,1);
 	sem_init(&MUTEX_FLAG_SABOTAJE , 0,1);
@@ -504,7 +512,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
 
 				char** parametros = string_split(leido," ");
-				uint32_t cantidad_tripulantes  = atoi(parametros[1]);
+				int cantidad_tripulantes  = atoi(parametros[1]);
 
 				char* cantidad_tripulantes_char = malloc(sizeof(char));
 				sprintf(cantidad_tripulantes_char, "%d", cantidad_tripulantes);
@@ -512,7 +520,6 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 
 				char* tareas = malloc(sizeof(char));
 				tareas = leer_tareas_archivo(parametros[2]);
-				//printf("tareasssss %s \n", tareas);
 /*
 INICIAR_PATOTA 5 tareas.txt 3|4 1|2 4|5
 INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
@@ -541,7 +548,7 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 					}
 
 					printf("El tripulante %d tiene posx %d y posy %d\n", tid, posx,posy);
-					tripulante = crear_tripulante(tid,'N',posx,posy,0,numero_patota);
+					tripulante = crear_tripulante(tid,'N',posx,posy,numero_patota, cantidad_tripulantes);
 					agregar_a_paquete(paquete, tripulante, tamanio_TCB);
 					posx =0;
 					posy =0;
@@ -552,7 +559,6 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 				sprintf(largo_tarea, "%d", strlen(tareas)+1);
 				agregar_a_paquete(paquete, largo_tarea, strlen(largo_tarea)+1);
 				agregar_a_paquete(paquete, tareas, strlen(tareas)+1);
-				//free(tareas);
 
 				enviar_paquete(paquete, conexionMiRam);
 
@@ -578,8 +584,7 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 							}
 						}
 
-						//printf("El tripulante %d tiene posx %d y posy %d\n", tid, posx,posy);
-						tripulante = crear_tripulante(tid,'N',posx,posy,0,numero_patota);
+						tripulante = crear_tripulante(tid,'N',posx,posy,numero_patota, cantidad_tripulantes);
 						pthread_t nombreHilo = (char*)(tid);
 						pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
 						pthread_detach(&nombreHilo);
@@ -595,6 +600,11 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 				}
 
 				eliminar_paquete(paquete);
+				free(numero_patota_char);
+				free(cantidad_tripulantes_char);
+				free(tareas);
+				free(largo_tarea);
+				free(mensaje_recibido);
 
 				break;
 
@@ -612,7 +622,6 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 						int numero_patota = (int)atoi(list_get(lista_tripulantes,i+1));
 						printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, numero_patota, tripulante->estado);
 					}
-
 				}
 
 				break;
@@ -636,6 +645,7 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 /*
 INICIAR_PATOTA 5 tareas.txt 3|4 1|2 4|5
 INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
+INICIAR_PATOTA 3 tareas_corta.txt 3|4 5|2 4|5
 */
 
 			case OBTENER_BITACORA:
@@ -690,7 +700,6 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 						i = list_size(lista_tripulantes_bloqueado); //para cprtar el for
 					}
 				}
-				//sem_post(&CONTINUAR_PLANIFICACION);
 
 				if(encontre_tripu == false){
 					log_info(logger, "no se encontro a ese tripulante para expulsar");
@@ -703,6 +712,36 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 				}
 
 				list_add(lista_tripulantes_exit, tripulante);
+				if(tripulante->estado == 'R'){
+					close(tripulante->socket_miram);
+
+					int tripu_misma_patota_exit = 0;
+					sem_wait(&MUTEX_LISTA_EXIT);
+					for(int i=0; i < list_size(lista_tripulantes_exit); i++){
+						tcbTripulante* tripu = (tcbTripulante*)list_get(lista_tripulantes_exit, i);
+						if(tripu->puntero_pcb == tripulante->puntero_pcb){
+							tripu_misma_patota_exit++;
+						}
+					}
+					sem_post(&MUTEX_LISTA_EXIT);
+
+					log_info(logger, "tripu_misma_patota_exit %d", tripu_misma_patota_exit);
+
+					if(tripulante->cant_tripus_patota == tripu_misma_patota_exit){ //o sea ya estan en exit todos los tripus de esta misma patota
+						sem_wait(&MUTEX_LISTA_EXIT);
+						for(int i=0; i < list_size(lista_tripulantes_exit); i++){
+							tcbTripulante* tripu = (tcbTripulante*)list_get(lista_tripulantes_exit, i);
+							if(tripu->puntero_pcb == tripulante->puntero_pcb){
+								list_remove(lista_tripulantes_exit, i);
+								free(tripu->tarea_posta);
+								free(tripu);
+								i--;
+							}
+						}
+						log_info(logger, "size exit %d", list_size(lista_tripulantes_exit));
+						sem_post(&MUTEX_LISTA_EXIT);
+					}
+				}
 
 				//luego expulso de la memoria miram
 				agregar_a_paquete(paquete, tripulante_id, strlen(tripulante_id)+1);
@@ -713,6 +752,7 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 /*
 INICIAR_PATOTA 5 tareas.txt 3|4 1|2 4|5
 INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
+INICIAR_PATOTA 4 tareas_corta.txt 2|2 2|2 4|5
 */
 			case PRUEBA: //para probar el sabotaje por ahora
 				sem_wait(&CONTINUAR_PLANIFICACION);
@@ -738,11 +778,13 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 				list_add_all(lista_bloq_emergencia, lista_aux);
 				list_clean(lista_aux);
 
+
 				if(list_size(lista_bloq_emergencia) > 0){
 					log_info(logger, "lista bloq emer");
 					for(int i=0; i < list_size(lista_bloq_emergencia); i++){
 						tripulante = (tcbTripulante*)list_get(lista_bloq_emergencia, i);
 						log_info(logger, "tid %d  posx %d  posy %d", tripulante->tid, tripulante->posicionX, tripulante->posicionY);
+						cambiar_estado(tripulante->socket_miram, tripulante, 'B');
 					}
 
 					tcbTripulante* tripu1 = malloc(sizeof(tcbTripulante));
@@ -768,20 +810,26 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 					informar_atencion_sabotaje(tripu1);
 					//mover al tripu1 que es el mas cercano
 					while(tripu1->posicionX != 5){ //muevo en X
+						int x_viejo = tripulante->posicionX;
 						if(tripu1->posicionX > 5){ //mayor a la posicion del sabotaje -> se mueve para la izq
 							tripu1->posicionX--;
 						} else{
 							tripu1->posicionX++;
 						}
+						informar_movimiento(tripu1->socket_miram, tripu1);
+						informar_movimiento_mongo_X (tripu1, x_viejo);
 						sleep(configuracion.retardo_cpu);
 					}
 
 					while(tripu1->posicionY != 5){ //muevo en Y
+						int y_viejo = tripulante->posicionY;
 						if(tripu1->posicionY > 5){ //mayor a la posicion del sabotaje -> se mueve para abajo
 							tripu1->posicionY--;
 						} else{
 							tripu1->posicionY++;
 						}
+						informar_movimiento(tripu1->socket_miram, tripu1);
+						informar_movimiento_mongo_Y (tripu1, y_viejo);
 						sleep(configuracion.retardo_cpu);
 					}
 
@@ -793,6 +841,14 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 					}
 
 					lista_tripulantes_ready = list_take_and_remove(lista_bloq_emergencia, list_size(lista_bloq_emergencia));
+
+					for(int i=0; i < list_size(lista_tripulantes_ready); i++){
+						tripulante = (tcbTripulante*)list_get(lista_tripulantes_ready, i);
+						cambiar_estado(tripulante->socket_miram, tripulante, 'R');
+					}
+
+					//free(tripu1);
+					//free(tripu2);
 				}else{
 					log_info(logger, "no hay tripulantes disponibles para resolver sabotaje");
 					flag_sabotaje = 0;
