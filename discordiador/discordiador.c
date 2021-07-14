@@ -3,6 +3,7 @@
 
 
 config_discordiador configuracion;
+t_config * archConfig;
 //config_struct configuracion;
 sem_t AGREGAR_NUEVO_A_READY;
 sem_t NUEVO_READY;
@@ -15,7 +16,7 @@ sem_t MUTEX_LISTA_BLOQUEADO;
 sem_t MUTEX_LISTA_EXIT;
 sem_t CONTINUAR_PLANIFICACION;
 sem_t ORDENA_FUNCION_QUANTUM;
-sem_t MUTEX_FLAG_SABOTAJE;
+sem_t FINALIZA_HILOS;
 int id_tripulante = 0;
 t_list* lista_tripulantes_nuevo;
 t_list* lista_tripulantes_ready;
@@ -25,6 +26,7 @@ t_list* lista_tripulantes_exit;
 t_list* lista_bloq_emergencia;
 t_list* lista_aux;
 int flag_sabotaje;
+int flag_fin;
 
 
 bool sigue_ejecutando(int quantums_ejecutados){
@@ -59,8 +61,8 @@ void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pen
 		sem_post(&ORDENA_FUNCION_QUANTUM);
 
 		sem_post(&HABILITA_GRADO_MULTITAREA);
-		sem_post(&HABILITA_EJECUTAR); //VA ACA? O ABAJO DEL WAIT ESTE DE ABAJO? O NO VA?
 		sem_wait(&(tripulante->semaforo_tripulante));
+		sem_post(&HABILITA_EJECUTAR);
 		cambiar_estado(tripulante->socket_miram, tripulante, 'E');
 		*quantums_ejecutados = 0;
 	}
@@ -75,17 +77,14 @@ void planificacion_pausada_o_no_exec(tcbTripulante* tripulante, int* quantums_ej
 	sem_wait(&CONTINUAR_PLANIFICACION);
 	sem_post(&CONTINUAR_PLANIFICACION);
 
-	//sem_wait(&MUTEX_FLAG_SABOTAJE);
 	if(flag_sabotaje != 0){ //si esta en 0 es que no hubo sabotaje
 		flag_sabotaje--;
 
 		*quantums_ejecutados = 0;
 		sem_post(&HABILITA_GRADO_MULTITAREA);
-		//sem_post(&HABILITA_EJECUTAR); //ESTE NOSE SI VA
 		sem_wait(&(tripulante->semaforo_tripulante));
-		sem_post(&HABILITA_EJECUTAR); //ESTE NOSE SI VA
+		sem_post(&HABILITA_EJECUTAR);
 	}
-	//sem_post(&MUTEX_FLAG_SABOTAJE);
 }
 
 void tripulante_hilo (tcbTripulante* tripulante){
@@ -217,7 +216,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 							cambiar_estado(tripulante->socket_miram, tripulante, 'E');
 							tarea = tripulante->tarea_posta;
 
-							sem_post(&HABILITA_EJECUTAR);  //VER ESTE SEMAFORO QUE SIENTO Q ESTA AL PEDO O MAL !!!!!!!
+							sem_post(&HABILITA_EJECUTAR);
 						}else{ // vino de bloq sin mas tareas
 							tarea = NULL;
 						}
@@ -314,8 +313,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 			tcbTripulante* tripu = (tcbTripulante*)list_get(lista_tripulantes_exit, i);
 			if(tripu->puntero_pcb == tripulante->puntero_pcb){
 				list_remove(lista_tripulantes_exit, i);
-				free(tripu->tarea_posta);
-				free(tripu);
+				liberar_memoria_tripu(tripu);
 				i--;
 			}
 		}
@@ -325,9 +323,10 @@ void tripulante_hilo (tcbTripulante* tripulante){
 }
 
 void ready_exec() {
-	tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
+	//tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
+	tcbTripulante* tripulante;
 	int lista_size;
-	while(1){
+	while(flag_fin == 0){
 		lista_size = list_size(lista_tripulantes_ready);
 		if (lista_size >0){
 			sem_wait(&HABILITA_GRADO_MULTITAREA);
@@ -347,86 +346,102 @@ void ready_exec() {
 			sem_post(&(tripulante->semaforo_tripulante));
 		}
 	}
+	log_info(logger, "fin hilo ready_exec");
+	//sem_post(&FINALIZA_HILOS);
+	//liberar_memoria_tripu(tripulante);
 }
 
 void nuevo_ready() {
-	tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
-	while(1){
+	//tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
+	tcbTripulante* tripulante;
+	while(flag_fin == 0){
 		sem_wait(&AGREGAR_NUEVO_A_READY);
 
 		planificacion_pausada_o_no();
 
-		tripulante = (tcbTripulante*)list_remove(lista_tripulantes_nuevo, 0);
-		sem_post(&(tripulante->semaforo_tripulante));
-		sem_wait(&NUEVO_READY);
-		tripulante->estado = 'R';
+		if(list_size(lista_tripulantes_nuevo) > 0){ //lo hago para liberar el hilo en el FIN
+			tripulante = (tcbTripulante*)list_remove(lista_tripulantes_nuevo, 0);
+			sem_post(&(tripulante->semaforo_tripulante));
+			sem_wait(&NUEVO_READY);
+			tripulante->estado = 'R';
 
-		sem_wait(&MUTEX_LISTA_READY);
-		list_add(lista_tripulantes_ready, tripulante);
-		sem_post(&MUTEX_LISTA_READY);
+			sem_wait(&MUTEX_LISTA_READY);
+			list_add(lista_tripulantes_ready, tripulante);
+			sem_post(&MUTEX_LISTA_READY);
+		}
 	}
+	log_info(logger, "fin hilo nuevo_ready");
+	//sem_post(&FINALIZA_HILOS);
+	//liberar_memoria_tripu(tripulante);
 }
 
 void bloqueado_ready() {
-	tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
-	while(1){
+	//tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
+	tcbTripulante* tripulante;
+	while(flag_fin == 0){
 		sem_wait(&PASA_A_BLOQUEADO);
 
-		sem_wait(&MUTEX_LISTA_BLOQUEADO);
-		tripulante = (tcbTripulante*)list_get(lista_tripulantes_bloqueado, 0);
-		sem_post(&MUTEX_LISTA_BLOQUEADO);
-
-		planificacion_pausada_o_no();
-
-		printf("hilo %d, haciendo I/O \n", tripulante->tid);
-		informar_inicio_tarea(tripulante);
-
-		int ciclos_consumidos = 0;
-		while(ciclos_consumidos < tripulante->tarea_posta->tiempo){
-			planificacion_pausada_o_no();
-			sleep(configuracion.retardo_cpu);
-
-			if(tripulante->fui_expulsado == true){
-				ciclos_consumidos = tripulante->tarea_posta->tiempo; //para cortar el while
-			}
-
-			ciclos_consumidos++;
-		}
-
-		if(tripulante->fui_expulsado == true){
-			tripulante->estado = 'X';
-
-			sem_post(&(tripulante->semaforo_tripulante));
-		}else{
-			informar_fin_tarea(tripulante);
-			printf("hilo %d, termino I/O \n", tripulante->tid);
-			fflush(stdout);
-
-			planificacion_pausada_o_no();
-
+		if(list_size(lista_tripulantes_bloqueado) > 0){ //lo hago para liberar el hilo en el FIN
 			sem_wait(&MUTEX_LISTA_BLOQUEADO);
-			tripulante = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
+			tripulante = (tcbTripulante*)list_get(lista_tripulantes_bloqueado, 0);
 			sem_post(&MUTEX_LISTA_BLOQUEADO);
 
-			tarea* tarea = pedir_tarea(tripulante->socket_miram, tripulante);
+			planificacion_pausada_o_no();
 
-			if(tarea != NULL){ // tiene mas tareas
-				tripulante->estado = 'R';
-				cambiar_estado(tripulante->socket_miram, tripulante, 'R');
-				sem_wait(&MUTEX_LISTA_READY);
-				list_add(lista_tripulantes_ready, tripulante);
-				sem_post(&MUTEX_LISTA_READY);
-			} else{ // no tiene mas tareas
+			printf("hilo %d, haciendo I/O \n", tripulante->tid);
+			informar_inicio_tarea(tripulante);
+
+			int ciclos_consumidos = 0;
+			while(ciclos_consumidos < tripulante->tarea_posta->tiempo){
+				planificacion_pausada_o_no();
+				sleep(configuracion.retardo_cpu);
+
+				if(tripulante->fui_expulsado == true){
+					ciclos_consumidos = tripulante->tarea_posta->tiempo; //para cortar el while
+				}
+
+				ciclos_consumidos++;
+			}
+
+			if(tripulante->fui_expulsado == true){
 				tripulante->estado = 'X';
 
-				sem_wait(&MUTEX_LISTA_EXIT);
-				list_add(lista_tripulantes_exit, tripulante);
-				sem_post(&MUTEX_LISTA_EXIT);
-
 				sem_post(&(tripulante->semaforo_tripulante));
+			}else{
+				informar_fin_tarea(tripulante);
+				printf("hilo %d, termino I/O \n", tripulante->tid);
+				fflush(stdout);
+
+				planificacion_pausada_o_no();
+
+				sem_wait(&MUTEX_LISTA_BLOQUEADO);
+				tripulante = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
+				sem_post(&MUTEX_LISTA_BLOQUEADO);
+
+				tarea* tarea = pedir_tarea(tripulante->socket_miram, tripulante);
+
+				if(tarea != NULL){ // tiene mas tareas
+					tripulante->estado = 'R';
+					cambiar_estado(tripulante->socket_miram, tripulante, 'R');
+					sem_wait(&MUTEX_LISTA_READY);
+					list_add(lista_tripulantes_ready, tripulante);
+					sem_post(&MUTEX_LISTA_READY);
+				} else{ // no tiene mas tareas
+					tripulante->estado = 'X';
+
+					sem_wait(&MUTEX_LISTA_EXIT);
+					list_add(lista_tripulantes_exit, tripulante);
+					sem_post(&MUTEX_LISTA_EXIT);
+
+					sem_post(&(tripulante->semaforo_tripulante));
+				}
+				//free(tarea);
 			}
 		}
 	}
+	log_info(logger, "fin hilo bloq");
+	//liberar_memoria_tripu(tripulante);
+	//sem_post(&FINALIZA_HILOS);
 }
 
 
@@ -446,7 +461,7 @@ int main(int argc, char* argv[]) {
 
 	menu_discordiador(conexionMiRam, conexionMongoStore,logger);
 
-	terminar_discordiador(conexionMiRam, conexionMongoStore, logger);
+	//terminar_discordiador(conexionMiRam, conexionMongoStore, logger);
 
 
 	return 0;
@@ -467,7 +482,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	sem_init(&MUTEX_LISTA_EXIT, 0,1);
 	sem_init(&CONTINUAR_PLANIFICACION, 0,1);
 	sem_init(&ORDENA_FUNCION_QUANTUM, 0,1);
-	sem_init(&MUTEX_FLAG_SABOTAJE , 0,1);
+	sem_init(&FINALIZA_HILOS, 0,0);
 
 	lista_tripulantes_nuevo = list_create();
 	lista_tripulantes_ready = list_create();
@@ -484,21 +499,23 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	pthread_t nuevo;
 	pthread_t bloqueado;
 	pthread_create(&ready,NULL,(void*)ready_exec,NULL);
-	pthread_detach(&ready);
+	pthread_detach(ready);
 	pthread_create(&nuevo,NULL,(void*)nuevo_ready,NULL);
-	pthread_detach(&nuevo);
+	pthread_detach(nuevo);
 	pthread_create(&bloqueado,NULL,(void*)bloqueado_ready,NULL);
-	pthread_detach(&bloqueado);
+	pthread_detach(bloqueado);
 
 	uint32_t tid =1;
 	uint32_t posx = 0;
 	uint32_t posy = 0;
 	flag_sabotaje = 0;
-
+	flag_fin = 0;
+	//tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
+	tcbTripulante* tripulante;
 
 	while(1){
 		t_paquete* paquete;
-		tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
+		//tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
 		//char* nombreHilo = "";
 		char* leido = readline("Iniciar consola: ");
 		printf("\n");
@@ -507,19 +524,19 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 				paquete = crear_paquete(INICIAR_PATOTA);
 				numero_patota++;
 
-				char* numero_patota_char = malloc(sizeof(char));
+				char* numero_patota_char = malloc(sizeof(char)+1);
 				sprintf(numero_patota_char, "%d", numero_patota);
 				agregar_a_paquete(paquete, numero_patota_char, strlen(numero_patota_char)+1);
 
 				char** parametros = string_split(leido," ");
 				int cantidad_tripulantes  = atoi(parametros[1]);
 
-				char* cantidad_tripulantes_char = malloc(sizeof(char));
+				char* cantidad_tripulantes_char = malloc(sizeof(char)+1);
 				sprintf(cantidad_tripulantes_char, "%d", cantidad_tripulantes);
 				agregar_a_paquete(paquete, cantidad_tripulantes_char, strlen(cantidad_tripulantes_char)+1);
 
-				char* tareas = malloc(sizeof(char));
-				tareas = leer_tareas_archivo(parametros[2]);
+				//char* tareas = malloc(sizeof(char)+1);
+				char* tareas = leer_tareas_archivo(parametros[2]);
 /*
 INICIAR_PATOTA 5 tareas.txt 3|4 1|2 4|5
 INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
@@ -553,9 +570,10 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 					posx =0;
 					posy =0;
 					tid++;
+					liberar_memoria_tripu(tripulante);
 				}
 
-				char* largo_tarea = malloc(sizeof(char));
+				char* largo_tarea = malloc((2*sizeof(char))+1);
 				sprintf(largo_tarea, "%d", strlen(tareas)+1);
 				agregar_a_paquete(paquete, largo_tarea, strlen(largo_tarea)+1);
 				agregar_a_paquete(paquete, tareas, strlen(tareas)+1);
@@ -563,8 +581,8 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 				enviar_paquete(paquete, conexionMiRam);
 
 
-				char* mensaje_recibido = malloc(17);
-				mensaje_recibido = recibir_mensaje(conexionMiRam);
+				//char* mensaje_recibido = malloc(17);
+				char* mensaje_recibido = recibir_mensaje(conexionMiRam);
 				log_info(logger, mensaje_recibido);
 
 				if(strcmp(mensaje_recibido, "Memoria asignada") ==0){//VER SI HAY OTRA MANERA DE CREAR TRIPULANTES PARA NO REPETIR LO DE ARRIBA
@@ -587,7 +605,7 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 						tripulante = crear_tripulante(tid,'N',posx,posy,numero_patota, cantidad_tripulantes);
 						pthread_t nombreHilo = (char*)(tid);
 						pthread_create(&nombreHilo,NULL,(void*)tripulante_hilo,tripulante);
-						pthread_detach(&nombreHilo);
+						pthread_detach(nombreHilo);
 						list_add(lista_tripulantes_nuevo, tripulante);
 						sem_post(&AGREGAR_NUEVO_A_READY);
 
@@ -600,6 +618,7 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 				}
 
 				eliminar_paquete(paquete);
+				limpiar_array(parametros);
 				free(numero_patota_char);
 				free(cantidad_tripulantes_char);
 				free(tareas);
@@ -860,8 +879,25 @@ INICIAR_PATOTA 4 tareas_corta.txt 2|2 2|2 4|5
 			case FIN:
 				paquete = crear_paquete(FIN);
 				enviar_paquete(paquete, conexionMiRam);
-				enviar_paquete(paquete, conexionMongoStore);
+				//enviar_paquete(paquete, conexionMongoStore);
 				eliminar_paquete(paquete);
+				flag_fin = 1;   //VER SI HACE FALTA TODO ESTO. LO HAGO POR LO DE LA MEMORIA PERO CAPAZ NI HACE FALTA.
+				/*sem_post(&HABILITA_GRADO_MULTITAREA);
+				sem_post(&HABILITA_EJECUTAR);
+				sem_post(&AGREGAR_NUEVO_A_READY);
+				sem_post(&NUEVO_READY);
+				sem_post(&PASA_A_BLOQUEADO);
+				sem_wait(&FINALIZA_HILOS);
+				sem_wait(&FINALIZA_HILOS);
+				sem_wait(&FINALIZA_HILOS);*/
+				pthread_cancel(nuevo);
+				pthread_cancel(ready);
+				pthread_cancel(bloqueado);
+				free(leido);
+				//free(tripulante);
+				config_destroy(archConfig);
+				log_info(logger, "aaaaaaaa");
+				terminar_discordiador(conexionMiRam, conexionMongoStore, logger);
 				return EXIT_FAILURE;
 
 			default:
@@ -874,7 +910,7 @@ INICIAR_PATOTA 4 tareas_corta.txt 2|2 2|2 4|5
 }
 
 void leer_config(void){
-	t_config * archConfig = config_create("discordiador.config");
+	archConfig = config_create("discordiador.config");
 
 	configuracion.ip_miram = config_get_string_value(archConfig, "IP_MI_RAM_HQ");
 	configuracion.puerto_miram = config_get_string_value(archConfig, "PUERTO_MI_RAM_HQ");

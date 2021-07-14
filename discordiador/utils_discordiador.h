@@ -220,6 +220,10 @@ void leer_config();
  * */
 
 void mensajeError (t_log* logger);
+
+void limpiar_array(char** array);
+
+void liberar_memoria_tripu(tcbTripulante* tripu);
 /*FINALIZACION*/
 
 
