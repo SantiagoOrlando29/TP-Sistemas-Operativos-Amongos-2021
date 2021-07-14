@@ -1,16 +1,21 @@
 #include "miram.h"
 
-
 int main(void)
 {
+	int piddd = getpid();
+	printf("pid %d    \n", piddd);
+	signal(SIGUSR2, sig_handler);
+
+	sem_init(&MUTEX_PEDIR_TAREA, 0,1);
+	sem_init(&MUTEX_CAMBIAR_ESTADO, 0,1);
+	sem_init(&MUTEX_CAMBIAR_POSICION, 0,1);
+	sem_init(&MUTEX_TABLA_MEMORIA, 0,1);
+	sem_init(&MUTEX_LISTA_TABLAS_SEGMENTOS, 0,1);
 
 	leer_config();
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
 	iniciar_miram(&configuracion);
 
-	sem_init(&MUTEX_PEDIR_TAREA, 0,1);
-	sem_init(&MUTEX_CAMBIAR_ESTADO, 0,1);
-	sem_init(&MUTEX_CAMBIAR_POSICION, 0,1);
 
 	t_list* memoria_aux=list_create();
 	agregar_memoria_aux(memoria_aux,&configuracion);

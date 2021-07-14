@@ -15,6 +15,7 @@
 #include<pthread.h>
 #include<stdbool.h>
 #include <semaphore.h>
+#include <signal.h>
 
 #define tamanio_PCB  8
 #define tamanio_tarea 10
@@ -23,6 +24,8 @@
 sem_t MUTEX_PEDIR_TAREA;
 sem_t MUTEX_CAMBIAR_ESTADO;
 sem_t MUTEX_CAMBIAR_POSICION;
+sem_t MUTEX_TABLA_MEMORIA;
+sem_t MUTEX_LISTA_TABLAS_SEGMENTOS;
 
 typedef struct{
 	int patota_id;
@@ -261,6 +264,8 @@ tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, ui
 
 char* string_nombre_tarea(int);
 char* tarea_a_string(tarea* t);
+
+void sig_handler(int signum);
 
 #endif /* CONEXIONES_H_ */
 

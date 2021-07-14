@@ -139,6 +139,7 @@ int funcion_cliente(int socket_cliente){
 						for(int j=2; j < list_size(tabla_segmentos->lista_segmentos); j++){
 							segmento* segmento = list_get(tabla_segmentos->lista_segmentos, j);
 
+							sem_wait(&MUTEX_TABLA_MEMORIA);
 							for(int k=0; k < list_size(tabla_espacios_de_memoria); k++){
 								espacio_de_memoria* espacio = (espacio_de_memoria*)list_get(tabla_espacios_de_memoria, k);
 								if(espacio->base == segmento->base){
@@ -154,6 +155,7 @@ int funcion_cliente(int socket_cliente){
 									k = list_size(tabla_espacios_de_memoria); //para que corte el for
 								}
 							}
+							sem_post(&MUTEX_TABLA_MEMORIA);
 						}
 					}
 				}
@@ -805,7 +807,8 @@ espacio_de_memoria* crear_espacio_de_memoria(int base, int tam, bool libre){
 }
 
 void imprimir_tabla_espacios_de_memoria(){
-    int size = list_size(tabla_espacios_de_memoria);
+	sem_wait(&MUTEX_TABLA_MEMORIA);
+	int size = list_size(tabla_espacios_de_memoria);
     printf("---------  MEMORIA  --------------------\n");
 
     for(int i=0; i < size; i++) {
@@ -813,6 +816,7 @@ void imprimir_tabla_espacios_de_memoria(){
         printf("base: %d, tam: %d, libre: %s \n", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
         //free(espacio);
     }
+    sem_post(&MUTEX_TABLA_MEMORIA);
     printf("----------------------------------------\n");
 }
 
@@ -833,7 +837,8 @@ void imprimir_tabla_segmentos_patota(tabla_segmentacion* tabla_segmentos_patota)
 
 
 void eliminar_espacio_de_memoria(int base){
-    for(int i = 0; i < list_size(tabla_espacios_de_memoria); i++){
+	sem_wait(&MUTEX_TABLA_MEMORIA);
+	for(int i = 0; i < list_size(tabla_espacios_de_memoria); i++){
     	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
 
     	if(espacio->base == base){
@@ -846,6 +851,7 @@ void eliminar_espacio_de_memoria(int base){
         }
     	//free(espacio);
     }
+	sem_post(&MUTEX_TABLA_MEMORIA);
     ordenar_memoria();
 }
 
@@ -853,12 +859,14 @@ void ordenar_memoria(){
     bool espacio_anterior(espacio_de_memoria* espacio_menor, espacio_de_memoria* espacio_mayor) {
         return espacio_menor->base < espacio_mayor->base;
     }
-
+    sem_wait(&MUTEX_TABLA_MEMORIA);
     list_sort(tabla_espacios_de_memoria, (void*) espacio_anterior);
+    sem_post(&MUTEX_TABLA_MEMORIA);
 }
 
 void unir_espacios_contiguos_libres(){
-    for(int i=0; i < list_size(tabla_espacios_de_memoria) -1; i++){
+	sem_wait(&MUTEX_TABLA_MEMORIA);
+	for(int i=0; i < list_size(tabla_espacios_de_memoria) -1; i++){
 
     	if(list_size(tabla_espacios_de_memoria) == 2){
     		espacio_de_memoria* espacio0 = list_get(tabla_espacios_de_memoria, 0);
@@ -882,6 +890,7 @@ void unir_espacios_contiguos_libres(){
 			}
     	}
     }
+	sem_post(&MUTEX_TABLA_MEMORIA);
 }
 
 void eliminar_segmento(int nro_segmento, tabla_segmentacion* tabla_segmentos_patota){
@@ -911,18 +920,22 @@ espacio_de_memoria* buscar_espacio_de_memoria_libre(int tam){
 }
 
 espacio_de_memoria* busqueda_first_fit(int tam){
-    for(int i=0; i < list_size(tabla_espacios_de_memoria); i++){
+	sem_wait(&MUTEX_TABLA_MEMORIA);
+	for(int i=0; i < list_size(tabla_espacios_de_memoria); i++){
     	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
         if(espacio->libre == true && tam <= espacio->tam){
+        	sem_post(&MUTEX_TABLA_MEMORIA);
             return espacio;
         }
     }
+	sem_post(&MUTEX_TABLA_MEMORIA);
     log_warning(logger, "No hay espacios de memoria libres");
     return NULL;
 }
 
 espacio_de_memoria* busqueda_best_fit(int tam){
-    int size = list_size(tabla_espacios_de_memoria);
+	sem_wait(&MUTEX_TABLA_MEMORIA);
+	int size = list_size(tabla_espacios_de_memoria);
     t_list* espacios_libres = list_create();
 
     for(int i=0; i < size; i++){
@@ -931,11 +944,13 @@ espacio_de_memoria* busqueda_best_fit(int tam){
     	if(espacio->libre == true && tam <= espacio->tam){
 
             if(tam == espacio->tam){ //si encuentra uno justo de su tamanio
+            	sem_post(&MUTEX_TABLA_MEMORIA);
             	return espacio;
             }
             list_add(espacios_libres, espacio);
         }
     }
+    sem_post(&MUTEX_TABLA_MEMORIA);
 
     int espacios_libres_size = list_size(espacios_libres);
 
@@ -986,7 +1001,10 @@ espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) {
             return espacio_libre;
         } else { //Si no es de igual tamanio, debo crear un nuevo espacio con base en el libre y reacomodar la base y tamanio del libre.
             espacio_de_memoria* nuevo_espacio_de_memoria = crear_espacio_de_memoria(espacio_libre->base, tam, false);
+
+            sem_wait(&MUTEX_TABLA_MEMORIA);
             list_add(tabla_espacios_de_memoria, nuevo_espacio_de_memoria);
+            sem_post(&MUTEX_TABLA_MEMORIA);
 
             //actualizo base y tamanio del espacio libre
             espacio_libre->base += tam;
@@ -1080,12 +1098,15 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 
 	imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
 
+	sem_wait(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 	list_add(lista_tablas_segmentos, tabla_segmentos_patota);
+	sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 
 	return true;
 }
 
 bool funcion_expulsar_tripulante(int tripulante_id){
+	sem_wait(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
 		tabla_segmentacion* tabla_segmentos = (tabla_segmentacion*)list_get(lista_tablas_segmentos, i);
 
@@ -1105,6 +1126,7 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 
 						list_remove(lista_tablas_segmentos, i);
 					}
+					sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 
 					unir_espacios_contiguos_libres();
 					imprimir_tabla_espacios_de_memoria();
@@ -1115,6 +1137,7 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 			}
 		}
 	}
+	sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 	return false;
 }
 
@@ -1125,6 +1148,7 @@ void compactar_memoria(){
 
     bool compacto_algo = false;
 
+    sem_wait(&MUTEX_TABLA_MEMORIA);
     for(int i=0; i < list_size(tabla_espacios_de_memoria)-1; i++){ //-1 para que no se fije en el ultimo espacio que es el libre
     	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
 
@@ -1132,19 +1156,19 @@ void compactar_memoria(){
         	compacto_algo = true;
         	log_info(logger, "espacio libre econtrado %d", espacio->base);
 
+        	//sem_wait(&MUTEX_LISTA_TABLAS_SEGMENTOS);
         	for(int k=0; k < list_size(lista_tablas_segmentos); k++){
         		tabla_segmentacion* tabla_segmentos = list_get(lista_tablas_segmentos, k);
 
         		for(int l=0; l < list_size(tabla_segmentos->lista_segmentos); l++){
         			segmento* segmento = list_get(tabla_segmentos->lista_segmentos, l);
-
             		if (segmento->base > espacio->base){
             			//para segmento->base < espacio->base no hace nada porque significa que la memoria ya los paso y estan antes que el espacio libre
             			segmento->base -= espacio->tam;
             		}
         		}
         	}
-
+        	//sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
         	list_remove(tabla_espacios_de_memoria, i);
 
         	for(int j = i; j < list_size(tabla_espacios_de_memoria); j++){
@@ -1155,10 +1179,12 @@ void compactar_memoria(){
         			espacio_temp->tam += espacio->tam; //entonces le amplia el tamanio porque es el espacio libre
         		}
         	}
+        	sem_post(&MUTEX_TABLA_MEMORIA);
             imprimir_tabla_espacios_de_memoria();
         }
     }
     if(compacto_algo == false){
+    	sem_post(&MUTEX_TABLA_MEMORIA);
     	log_info(logger, "No hay nada para compactar");
     }
 
@@ -1241,24 +1267,30 @@ bool enviar_tarea_segmentacion(int socket_cliente, int numero_patota, int id_tri
 }
 
 espacio_de_memoria* buscar_espacio(segmento* segmento){
+	sem_wait(&MUTEX_TABLA_MEMORIA);
 	for(int j=0; j < list_size(tabla_espacios_de_memoria); j++){
 		espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, j);
 
 		if(espacio->base == segmento->base){ //encontro la base del segmento en memoria
+			sem_post(&MUTEX_TABLA_MEMORIA);
 			return espacio;
 		}
 	}
+	sem_post(&MUTEX_TABLA_MEMORIA);
 	return NULL;
 }
 
 tabla_segmentacion* buscar_tabla_segmentos(int numero_patota){
+	sem_wait(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
 		tabla_segmentacion* tabla_segmentos = list_get(lista_tablas_segmentos, i);
 
 		if(tabla_segmentos->id_patota == numero_patota){
+			sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 			return tabla_segmentos;
 		}
 	}
+	sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 	return NULL;
 }
 
@@ -1299,4 +1331,11 @@ bool cambiar_posicion(int tid, int posx, int posy, int pid){
 
 	sem_post(&MUTEX_CAMBIAR_POSICION);
 	return false;
+}
+
+void sig_handler(int signum){
+    if (signum == SIGUSR2){
+        printf("SIGUSR2\n");
+        compactar_memoria();
+    }
 }
