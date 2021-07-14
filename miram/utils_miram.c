@@ -7,6 +7,11 @@ int socket_servidor;
 NIVEL* nivel;
 int err;
 int numero_mapa = 0;
+int cols=10;
+int rows=20;
+
+
+
 
 void iniciar_servidor(config_struct* config_servidor)
 {
@@ -54,7 +59,13 @@ void iniciar_servidor(config_struct* config_servidor)
 	int tam_direccion = sizeof(struct sockaddr_in);
 	int socket_cliente = 0;
 
-	printf("Llegue");
+
+	//se crea mapa
+	nivel_gui_inicializar();
+
+	nivel_gui_get_area_nivel(&cols, &rows);
+
+	nivel = nivel_crear("AMong-OS");
 
 
 	int hilo;
@@ -64,9 +75,6 @@ void iniciar_servidor(config_struct* config_servidor)
 
 		if(socket_cliente>0){
 			hilo ++ ;
-			log_info(logger, "Estableciendo conexión desde %d\n", dir_cliente.sin_port);
-			log_info(logger, "Creando hilo");
-			fflush(stdout);
 			pthread_t hilo_cliente=(char)hilo;
 			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente ,(void*)socket_cliente);
 			pthread_detach(hilo_cliente);
@@ -87,8 +95,7 @@ int funcion_cliente(int socket_cliente){
 	tcbTripulante* tripulante;
 	t_paquete* paquete;
 	int tipoMensajeRecibido = -1;
-	printf("Se conecto este socket a mi %d\n",socket_cliente);
-	fflush(stdout);
+
 
 	while(1){
 
@@ -98,11 +105,10 @@ int funcion_cliente(int socket_cliente){
 			case PRUEBA:;
 				lista=recibir_paquete(socket_cliente);
 				int pid = (int)atoi(list_get(lista,0));
-				printf("el numero de la patota es %d\n", pid);
+		/*		printf("el numero de la patota es %d\n", pid);
 				fflush(stdout);
-				patota = crear_patota(pid,0);
 
-				int cantidad_tripulantes = (int)atoi((list_get(lista,1)));
+
 				printf("cant tripu %d\n", cantidad_tripulantes);
 				fflush(stdout);
 
@@ -113,25 +119,21 @@ int funcion_cliente(int socket_cliente){
 					mostrar_tripulante(tripulante,patota);
 					printf("\n");
 					fflush(stdin);
-				}
+				}*/
+				patota = crear_patota(pid,0);
+
+				int cantidad_tripulantes = (int)atoi((list_get(lista,1)));
 
 				char* tarea=(char*)list_get(lista, cantidad_tripulantes+2);
-				printf("Las tareas serializadas son: %s \n", tarea);
-				fflush(stdout);
+
 				int cuantos_marcos_necesito = cuantos_marcos(cantidad_tripulantes,strlen(tarea)+1,&configuracion);
-				fflush(stdout);
-				printf("\n Necesito estos marcos pablin %d", cuantos_marcos_necesito);
-				fflush(stdout);
-				printf("\n Marcos sin un carajo: %d \n", cuantos_marcos_libres(&configuracion));
-				fflush(stdout);
+
 				if(cuantos_marcos_necesito>cuantos_marcos_libres(&configuracion)){
-					printf(" \n No vas a poder poner un choto\n");
-					fflush(stdout);
+
 					//ack a discordiador
 				}else{
 					int posicion_libre = -1;
-					printf("Guardando info.....");
-					fflush(stdout);
+
 					tabla_paginacion* una_tabla=malloc(sizeof(tabla_paginacion));
 					una_tabla->id_patota = pid;
 					una_tabla->cant_tripulantes= cantidad_tripulantes;
@@ -149,55 +151,22 @@ int funcion_cliente(int socket_cliente){
 					}
 
 
-					int cols, rows;
 
-
-					tcbTripulante* tripulante3 =crear_tripulante(3,'N',23,23,23,23);
+					tcbTripulante* tripulante3 =crear_tripulante(1,'N',10,10,0,0);
 					almacenar_informacion(&configuracion, una_tabla, lista);
-					printf("\n");
 					leer_informacion(&configuracion,  una_tabla, lista);
-
+					sleep(5);
 					actualizar_tripulante( tripulante3, 1);
 
+
+
 					leer_informacion(&configuracion,  una_tabla, lista);
+
 					//mem_hexdump(configuracion.posicion_inicial, configuracion.tamanio_pag*sizeof(char));
-					fflush(stdout);
-					printf("\n");
 
-					cols=25;
-					rows=25;
-
-					nivel_gui_inicializar();
-
-					nivel_gui_get_area_nivel(&cols, &rows);
-
-					nivel = nivel_crear("AMong-OS");
-
-					char letra = 'A';
-
-					err = personaje_crear(nivel, letra, 10, 12);
-					ASSERT_CREATE(nivel, letra, err);
-
-					letra = 'B';
-
-					err = personaje_crear(nivel, letra, 3, 4);
-					ASSERT_CREATE(nivel, letra, err);
-
-					letra = 'C';
-
-					err = personaje_crear(nivel, letra, 20, 10);
-					ASSERT_CREATE(nivel, letra, err);
+/*
 
 
-
-					item_desplazar(nivel, 'A', 0, -1);
-					sleep(1);
-					item_desplazar(nivel, 'A', -2, 0);
-					sleep(1);
-					item_desplazar(nivel, 'A', 0, -2);
-					sleep(1);
-					item_desplazar(nivel, 'A', 0, +3);
-					sleep(1);
 					/*fflush(stdout);
 					dump_memoria();
 
@@ -218,7 +187,6 @@ int funcion_cliente(int socket_cliente){
 				break;
 
 			case INICIAR_PATOTA:
-				log_info(logger, "Respondiendo");
 				enviar_header(INICIAR_PATOTA, socket_cliente);
 				break;
 
@@ -465,7 +433,6 @@ void iniciar_miram(config_struct* config_servidor){
 
 		int nro_marcos =(config_servidor->tamanio_memoria)/(config_servidor->tamanio_pag);
 		config_servidor->cant_marcos = nro_marcos;
-		printf("\nNumero de marco es: %d nro_marcos\n", nro_marcos);
 
 		int nro_lugares_swap = (config_servidor->tamanio_swap)/(configuracion.tamanio_pag);
 		config_servidor->cant_lugares_swap=nro_lugares_swap;
@@ -519,49 +486,29 @@ void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabl
 
 
 	marco* marcos =(marco*) list_get(una_tabla->marco_inicial,indice_marco);
-	printf("MARCO %d\n",marcos->id_marco);
-	fflush(stdout);
-	printf("OFFSET %d\n",offset);
-	fflush(stdout);
 	uint32_t pid = (uint32_t) leer_atributo(offset,marcos->id_marco, config_servidor);
 	offset+= sizeof(uint32_t);
-	printf("ID magico %d\n",pid);
-	fflush(stdout);
-	printf("MARCO %d\n",marcos->id_marco);
-	fflush(stdout);
-	printf("OFFSET %d\n",offset);
-	fflush(stdout);
 	indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 	marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 	uint32_t puntero_tarea = (uint32_t)leer_atributo(offset,marcos->id_marco, config_servidor);
 	offset+=sizeof(uint32_t);
-	printf("Puntero magico %d\n",puntero_tarea);
-	fflush(stdout);
+
 
 
 	for(int i=0; i < una_tabla->cant_tripulantes;i++){
 
-		printf("MARCO %d\n",marcos->id_marco);
-		fflush(stdout);
-		printf("OFFSET %d\n",offset);
-		fflush(stdout);
+
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*) list_get(una_tabla->marco_inicial,indice_marco);
 		uint32_t tid = (uint32_t)leer_atributo(offset,marcos->id_marco, config_servidor);
 		offset+=sizeof(uint32_t);
-		printf("TID magico %d\n",tid);
-		fflush(stdout);
 
-		printf("MARCO %d\n",marcos->id_marco);
-		fflush(stdout);
-		printf("OFFSET %d\n",offset);
-		fflush(stdout);
+
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		marcos =  (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		char estado =*(char*)leer_atributo_char(offset,marcos->id_marco, config_servidor);
 		offset+=sizeof(char);
-        printf("Estado magico %c\n",estado);
-		fflush(stdout);
+
 
 
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
@@ -569,8 +516,7 @@ void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabl
 		uint32_t pos_x = (uint32_t)leer_atributo(offset,marcos->id_marco, config_servidor);
 		offset+=sizeof(uint32_t);
 
-		printf("Pos x magico %d\n",pos_x);
-		fflush(stdout);
+
 
 
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
@@ -578,52 +524,38 @@ void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabl
 		uint32_t pos_y = (uint32_t)leer_atributo(offset,marcos->id_marco, config_servidor);
 		offset+=sizeof(uint32_t);
 
-		printf("Pos y magico %d\n",pos_y);
-		fflush(stdout);
+
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*) list_get(una_tabla->marco_inicial,indice_marco);
 		uint32_t puntero_pcb = (uint32_t)leer_atributo(offset,marcos->id_marco, config_servidor);
 		offset+=sizeof(uint32_t);
 
-		printf("Puntero magico  %d\n",puntero_pcb);
-		fflush(stdout);
+
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*) list_get(una_tabla->marco_inicial,indice_marco);
 		uint32_t prox_in = (uint32_t)leer_atributo(offset,marcos->id_marco, config_servidor);
 		offset+=sizeof(uint32_t);
 
 
-		printf("Prox instruccion %d\n",prox_in);
-		fflush(stdout);
+
 
 	}
 
-	printf("Marco %d\n", indice_marco);
-	fflush(stdout);
-	printf("Marco id %d\n", marcos->id_marco);
-	fflush(stdout);
-	printf("Offset %d\n", marcos->id_marco);
-	fflush(stdout);
 
-
-
-	printf("Debe iterar %d\n", una_tabla->long_tareas);
-	fflush(stdout);
 	for(int j=0; j <(una_tabla->long_tareas);j++){
 
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		char valor =*(char*)leer_atributo_char(offset,marcos->id_marco, config_servidor);
 		offset+=sizeof(char);
-		printf("%c",valor);
-		fflush(stdout);
 
 	}
 }
 
 
 
-void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista ){
+int almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista ){
+	char letra = 65;
 
 	uint32_t offset = 0;
 	uint32_t indice_marco=0;
@@ -653,10 +585,20 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 
 
-		uint32_t tid = tripulante->tid;
-		printf("\n TID %d",tid);
 
-		fflush(stdout);
+
+
+
+	/*
+		item_desplazar(nivel, 'A', -2, 0);
+		sleep(1);
+		item_desplazar(nivel, 'A', 0, -2);
+		sleep(1);
+		item_desplazar(nivel, 'A', 0, +3);
+		sleep(1); */
+
+		uint32_t tid = tripulante->tid;
+
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos =(marco*) list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
@@ -664,8 +606,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 
 		char estado = tripulante->estado;
-		printf("\n Estado %c", estado);
-		fflush(stdout);
+
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
@@ -673,16 +614,14 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 
 		uint32_t pos_x = tripulante->posicionX;
-		printf("\n Pos x %d",pos_x);
-		fflush(stdout);
+
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
 		offset +=escribir_atributo(pos_x,offset,marcos->id_marco, config_servidor);
 
 		uint32_t pos_y =tripulante->posicionY;
-		printf("\n Pos y %d",pos_y);
-		fflush(stdout);
+
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
@@ -690,21 +629,22 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 
 		uint32_t prox_i = tripulante->prox_instruccion;
-		printf("\nProx instruccion %d", prox_i);
-		fflush(stdout);
+
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
 		offset +=escribir_atributo(prox_i,offset,marcos->id_marco, config_servidor);
 
 		uint32_t p_pcb =tripulante->puntero_pcb;
-		printf("\n Este es el puntero al pcb  %d\n",p_pcb);
-		fflush(stdout);
+
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
 	    offset +=escribir_atributo(p_pcb,offset,marcos->id_marco, config_servidor);
 
+
+		err = personaje_crear(nivel, letra+(pid*10)+tid, pos_x, pos_y);
+		ASSERT_CREATE(nivel, letra, err);
 
 
 	}
@@ -722,12 +662,10 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
 		offset +=escribir_char_tarea(tarea[i],offset,marcos->id_marco, config_servidor);
-		printf("%c",tarea[i]);
-		fflush(stdout);
 
 
-}
-
+	}
+	return 0;
 }
 /*
 void buscar_tripulante(int id_patota, int nro_tripulante, tabla_paginacion tabla_pag, config_struct* config){
@@ -1111,6 +1049,7 @@ int reemplazo_clock(){
 
 void actualizar_tripulante(tcbTripulante* tripulante, int id_patota){
 
+	char letra = 65;
 
 	int offset=0;
 	int nro_marco=0;
@@ -1200,6 +1139,8 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota){
 			actualizar_lru(marcos);
 		    offset +=escribir_atributo(p_pcb,offset,marcos->id_marco, &configuracion);
 
+		    item_desplazar(nivel, letra+(id_patota*10)+tid, pos_x, pos_y);
+		    sleep(1);
 
 
 }
@@ -1207,10 +1148,14 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota){
 void* crear_mapa(){
 	while (numero_mapa!=1) {
 			nivel_gui_dibujar(nivel);
-
-
+			fflush(stdout);
+			sleep(1);
+	if(err){
+		printf("WARN: %s\n", nivel_gui_string_error(err));
+	}
 
 	}
+	printf("\n Termino");
 }
 
 

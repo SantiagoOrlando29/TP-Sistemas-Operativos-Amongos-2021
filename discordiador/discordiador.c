@@ -357,7 +357,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 
 /*
 INICIAR_PATOTA 5 tareas.txt 300|4 10|20 4|500
-PRUEBA 5 tareas.txt 300|4 10|20 4|500
+PRUEBA 5 tareas.txt 5|4 8|3 4|7 4|8 8|7
 */
 				bool hay_mas_parametros = true;
 				for(int i = 0; i < cantidad_tripulantes ; i++){
