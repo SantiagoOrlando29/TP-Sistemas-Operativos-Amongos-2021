@@ -195,7 +195,8 @@ void agregar_memoria_aux(t_list* tabla_aux, config_struct* config);
 void imprimir_memoria(t_list* tabla_aux);
 void imprimir_seg(t_list* tabla_aux);
 void agregar_segmentos(t_list* lista_aux_seg);
-int posicion_marco(config_struct*);
+int posicion_marco();
+int swap_a_memoria();
 marco* siguiente_marco(int id_patota, int id_marco,tabla_paginacion* tabla_aux);
 void* leer_atributo(int offset, int nro_marco, config_struct* config_s);
 void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s);
@@ -222,6 +223,8 @@ int lugar_swap_libre();
 void actualizar_lru(marco* un_marco);
 int reemplazo_clock();
 void actualizar_tripulante(tcbTripulante* tripulante, int id_patota);
+
+char* obtener_tarea(int id_patota, int nro_tarea);
 
 
 //swap

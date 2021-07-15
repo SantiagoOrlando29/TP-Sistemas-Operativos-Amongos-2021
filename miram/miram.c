@@ -9,9 +9,7 @@ int main(void)
 	leer_config();
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
 	iniciar_miram(&configuracion);
-	pthread_t hilo_mapa;
-	pthread_create(&hilo_mapa,NULL,crear_mapa,NULL);
-	pthread_detach(hilo_mapa);
+
 
 	//t_list* memoria_aux=list_create();
 	//agregar_memoria_aux(memoria_aux,&configuracion);

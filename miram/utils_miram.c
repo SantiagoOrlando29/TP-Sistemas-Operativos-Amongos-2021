@@ -164,42 +164,14 @@ int funcion_cliente(int socket_cliente){
 					fflush(stdout);
 					printf("\n");
 
-					cols=25;
-					rows=25;
-
-					nivel_gui_inicializar();
-
-					nivel_gui_get_area_nivel(&cols, &rows);
-
-					nivel = nivel_crear("AMong-OS");
-
-					char letra = 'A';
-
-					err = personaje_crear(nivel, letra, 10, 12);
-					ASSERT_CREATE(nivel, letra, err);
-
-					letra = 'B';
-
-					err = personaje_crear(nivel, letra, 3, 4);
-					ASSERT_CREATE(nivel, letra, err);
-
-					letra = 'C';
-
-					err = personaje_crear(nivel, letra, 20, 10);
-					ASSERT_CREATE(nivel, letra, err);
+					printf("La tarea es %s\n", obtener_tarea(1, 0));
 
 
 
-					item_desplazar(nivel, 'A', 0, -1);
-					sleep(1);
-					item_desplazar(nivel, 'A', -2, 0);
-					sleep(1);
-					item_desplazar(nivel, 'A', 0, -2);
-					sleep(1);
-					item_desplazar(nivel, 'A', 0, +3);
-					sleep(1);
+
+					//dump_memoria();
 					/*fflush(stdout);
-					dump_memoria();
+
 
 
 					void* contenidoAEscribir = malloc(configuracion.tamanio_pag*sizeof(char));
@@ -242,9 +214,10 @@ int funcion_cliente(int socket_cliente){
 
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
+				variable_servidor = 0;
 				nivel_destruir(nivel);
 				nivel_gui_terminar();
-				variable_servidor = 0;
+
 				numero_mapa=1;
 				shutdown(socket_servidor, SHUT_RD);
 				close(socket_cliente);
@@ -709,13 +682,12 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 	}
 
-	//indice_marco+=alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
-
-	//puntero_tarea=0;
 	//Terminar de escribir patota
 
+	puntero_tarea=((indice_marco)*(config_servidor->tamanio_pag))+offset;
 
-	//escribir_atributo(&puntero_tarea,offset_pcb,marco_pcb, config_servidor, sizeof(int));
+	printf("EL puntero a tareas escrito es %d", puntero_tarea);
+	escribir_atributo(puntero_tarea,offset_pcb,marco_pcb, config_servidor);
 
 	for(int i=0;i<strlen(tarea)+1;i++){
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
@@ -802,11 +774,11 @@ void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s){
 
 
 
-int posicion_marco(config_struct* config_servidor){
-	for(int i=0;i<config_servidor->cant_marcos;i++){
-		if((int)(list_get(config_servidor->marcos_libres, i))==0){
+int posicion_marco(){
+	for(int i=0;i<configuracion.cant_marcos;i++){
+		if((int)(list_get(configuracion.marcos_libres, i))==0){
 			int valor = 1;
-			list_add_in_index(config_servidor->marcos_libres, i, (void*)valor);
+			list_add_in_index(configuracion.marcos_libres, i, (void*)valor);
 			return i;
 		}
 
@@ -958,6 +930,7 @@ void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina){
 	}
 }
 
+/*
 char* obtener_tarea(int id_patota, int nro_tarea){
 	for(int i=0; i<list_size(memoria_aux);i++){
 		tabla_paginacion* una_tabla = list_get(memoria_aux,i);
@@ -969,7 +942,7 @@ char* obtener_tarea(int id_patota, int nro_tarea){
 	return tarea;
 
 }
-
+*/
 
 void swap_pagina(void* contenidoAEscribir,int numDeBloque){
 	FILE* swapfile = fopen("swap.bin","rb+");
@@ -980,6 +953,16 @@ void swap_pagina(void* contenidoAEscribir,int numDeBloque){
 	//free(aux);
 	fclose(swapfile);
 }
+
+int swap_a_memoria(int numBloque){
+
+	int nuevo_marco=posicion_marco();
+	memcpy(configuracion.posicion_inicial+(nuevo_marco*configuracion.tamanio_pag),(recuperar_pag_swap(numBloque)),configuracion.tamanio_pag*sizeof(char));
+
+	return nuevo_marco;
+
+}
+
 
 void* recuperar_pag_swap(int numDeBloque){
 	FILE* swapfile = fopen("swap.bin","r+");
@@ -1204,6 +1187,41 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota){
 
 }
 
+
+
+char* obtener_tarea(int id_patota, int nro_tarea){
+	char* tarea=malloc(sizeof(char));
+	for(int i=0; i<list_size(memoria_aux);i++){
+		tabla_paginacion* una_tabla = list_get(memoria_aux,i);
+		if(una_tabla->id_patota==id_patota){
+
+			marco* un_marco=(marco*)list_get(una_tabla->marco_inicial,0);
+			uint32_t puntero_tareas = (uint32_t)leer_atributo(1,un_marco->id_marco, &configuracion);
+
+			uint32_t indice_marco = puntero_tareas/configuracion.tamanio_pag;
+			printf("El indice %d\n", indice_marco);
+			uint32_t offset = configuracion.tamanio_pag*(puntero_tareas%configuracion.tamanio_pag);
+			printf("El offset %d\n", offset);
+
+
+		    marco* otro_marco=(marco*)list_get(una_tabla->marco_inicial,indice_marco);
+		    if(otro_marco->ubicacion == MEM_PRINCIPAL){
+		    	tarea=leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
+		    }else{
+		    	int nuevo_marco = swap_a_memoria(otro_marco->id_marco);
+		    	otro_marco->ubicacion=MEM_PRINCIPAL;
+		    	otro_marco->id_marco=nuevo_marco;
+
+		    	tarea=leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
+		    }
+		}
+	}
+
+	return tarea;
+
+}
+
+
 void* crear_mapa(){
 	while (numero_mapa!=1) {
 			nivel_gui_dibujar(nivel);
@@ -1212,6 +1230,7 @@ void* crear_mapa(){
 
 	}
 }
+
 
 
 
