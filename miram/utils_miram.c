@@ -686,7 +686,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 	puntero_tarea=((indice_marco)*(config_servidor->tamanio_pag))+offset;
 
-	printf("EL puntero a tareas escrito es %d", puntero_tarea);
+	printf("EL puntero a tareas escrito es %d y el offset es %d", puntero_tarea, offset);
 	escribir_atributo(puntero_tarea,offset_pcb,marco_pcb, config_servidor);
 
 	for(int i=0;i<strlen(tarea)+1;i++){
@@ -1191,45 +1191,45 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota){
 
 char* obtener_tarea(int id_patota, int nro_tarea){
 	char* tarea=malloc(sizeof(char));
+	char tarea_nueva ;
 	for(int i=0; i<list_size(memoria_aux);i++){
 		tabla_paginacion* una_tabla = list_get(memoria_aux,i);
 		if(una_tabla->id_patota==id_patota){
 
 			marco* un_marco=(marco*)list_get(una_tabla->marco_inicial,0);
-			uint32_t puntero_tareas = (uint32_t)leer_atributo(1,un_marco->id_marco, &configuracion);
-
-			uint32_t indice_marco = puntero_tareas/configuracion.tamanio_pag;
-			printf("El indice %d\n", indice_marco);
-			uint32_t offset = configuracion.tamanio_pag*(puntero_tareas%configuracion.tamanio_pag);
+			uint32_t puntero_tareas = (uint32_t)leer_atributo(sizeof(uint32_t),un_marco->id_marco, &configuracion);
+			printf("El punterin %d\n", puntero_tareas);
+			fflush(stdout);
+			float indice_marco = (float)puntero_tareas/configuracion.tamanio_pag;
+			printf("El indice %f\n", indice_marco);
+			int parte_entera = puntero_tareas/configuracion.tamanio_pag;
+			float parte_decimal = (indice_marco - parte_entera);
+			indice_marco=(int)parte_entera;
+			printf("El indice %f\n", parte_decimal);
+			fflush(stdout);
+			uint32_t offset = configuracion.tamanio_pag*(parte_decimal);
 			printf("El offset %d\n", offset);
+			fflush(stdout);
+
 
 
 		    marco* otro_marco=(marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		    if(otro_marco->ubicacion == MEM_PRINCIPAL){
-		    	tarea=leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
+		    	tarea_nueva=*(char*)leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
 		    }else{
 		    	int nuevo_marco = swap_a_memoria(otro_marco->id_marco);
 		    	otro_marco->ubicacion=MEM_PRINCIPAL;
 		    	otro_marco->id_marco=nuevo_marco;
 
-		    	tarea=leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
+		    	tarea_nueva=*(char*)leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
 		    }
 		}
 	}
-
+	printf("es esta papa: %c",tarea_nueva);
 	return tarea;
 
 }
 
-
-void* crear_mapa(){
-	while (numero_mapa!=1) {
-			nivel_gui_dibujar(nivel);
-
-
-
-	}
-}
 
 
 
