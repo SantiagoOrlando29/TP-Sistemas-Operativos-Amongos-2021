@@ -164,7 +164,7 @@ int funcion_cliente(int socket_cliente){
 					fflush(stdout);
 					printf("\n");
 
-					printf("La tarea es %s\n", obtener_tarea(1, 0));
+					printf("La tarea es %s\n", obtener_tarea(1, 3));
 
 
 
@@ -1190,12 +1190,13 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota){
 
 
 char* obtener_tarea(int id_patota, int nro_tarea){
+	char* una_tarea;
+	int contador_tarea=0;
 	char* tarea=malloc(sizeof(char));
-	char tarea_nueva ;
 	for(int i=0; i<list_size(memoria_aux);i++){
 		tabla_paginacion* una_tabla = list_get(memoria_aux,i);
 		if(una_tabla->id_patota==id_patota){
-
+			char* tarea_nueva=malloc(una_tabla->long_tareas + 1);
 			marco* un_marco=(marco*)list_get(una_tabla->marco_inicial,0);
 			uint32_t puntero_tareas = (uint32_t)leer_atributo(sizeof(uint32_t),un_marco->id_marco, &configuracion);
 			printf("El punterin %d\n", puntero_tareas);
@@ -1211,23 +1212,42 @@ char* obtener_tarea(int id_patota, int nro_tarea){
 			printf("El offset %d\n", offset);
 			fflush(stdout);
 
+			//Traigo el marco al que apunta el puntero de las tareas a memoria
 
+			for(int letra=0; letra<una_tabla->long_tareas;letra++){
 
 		    marco* otro_marco=(marco*)list_get(una_tabla->marco_inicial,indice_marco);
+
 		    if(otro_marco->ubicacion == MEM_PRINCIPAL){
-		    	tarea_nueva=*(char*)leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
+		    	tarea=(char*)leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
+		    	offset+=sizeof(char);
+		    	tarea_nueva=strcat(tarea_nueva,tarea);
+
 		    }else{
 		    	int nuevo_marco = swap_a_memoria(otro_marco->id_marco);
 		    	otro_marco->ubicacion=MEM_PRINCIPAL;
 		    	otro_marco->id_marco=nuevo_marco;
+		    	tarea=(char*)leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
+		    	tarea_nueva=strcat(tarea_nueva,tarea);
+		    	offset+=sizeof(char);
 
-		    	tarea_nueva=*(char*)leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
 		    }
-		}
-	}
-	printf("es esta papa: %c",tarea_nueva);
-	return tarea;
+		    if(tarea==";"){
+		    	contador_tarea++;
+		    }
+		    indice_marco+=alcanza_espacio(&offset,configuracion.tamanio_pag, sizeof(char));
+    	}
 
+			//tarea_nueva=strcat(tarea_nueva,'\0');
+			char** tareas = string_split(tarea_nueva, ";");
+			una_tarea = tareas[nro_tarea];
+			//printf("La tarea nro %d es %s", nro_tarea, una_tarea);
+
+	}
+
+
+}
+	return una_tarea;
 }
 
 
