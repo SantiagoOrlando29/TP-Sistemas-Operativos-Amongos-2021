@@ -65,6 +65,7 @@ void iniciar_servidor(config_struct* config_servidor)
 		}
 	}
 
+	log_destroy(logg);
 	printf("Me fui\n");
 }
 
@@ -110,14 +111,14 @@ int funcion_cliente(int socket_cliente){
 					bool todo_ok = patota_segmentacion(patota_id, cantidad_tripulantes, tarea, lista);
 					if (todo_ok == false){
 						log_warning(logger, "no se puedo asignar espacio de memoria a todo");
-						char* mensaje = malloc(20);
-						mensaje = "Memoria NO asignada";
+						//char* mensaje = malloc(20);
+						char* mensaje = "Memoria NO asignada";
 						enviar_mensaje(mensaje, socket_cliente);
 						//free(mensaje);
 					} else {
 						log_info(logger, "Se asigno espacio de memoria a todo");
-						char* mensaje = malloc(17);
-						mensaje = "Memoria asignada";
+						//char* mensaje = malloc(17);
+						char* mensaje = "Memoria asignada";
 						enviar_mensaje(mensaje, socket_cliente);
 						//free(mensaje);
 					}
@@ -182,7 +183,8 @@ int funcion_cliente(int socket_cliente){
 					}
 				}
 
-				list_clean(lista);
+				//list_clean(lista);
+				list_clean_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 				break;
 
@@ -196,7 +198,8 @@ int funcion_cliente(int socket_cliente){
 					funcion_expulsar_tripulante(tripulante_id);
 				}
 
-				list_clean(lista);
+				//list_clean(lista);
+				list_clean_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 				break;
 
@@ -211,17 +214,18 @@ int funcion_cliente(int socket_cliente){
 
 				bool cambio_exitoso = cambiar_estado(patota_id, estado, tripulante_id);
 				if(cambio_exitoso == false){
-					char* mensaje = malloc(23);
-					mensaje = "fallo cambio de estado";
+					//char* mensaje = malloc(23);
+					char* mensaje = "fallo cambio de estado";
 					log_info(logger, "fallo cambio estado");
 					enviar_mensaje(mensaje, socket_cliente);
 				}else{
-					char* mensaje = malloc(25);
-					mensaje = "cambio de estado exitoso";
+					//char* mensaje = malloc(25);
+					char* mensaje = "cambio de estado exitoso";
 					enviar_mensaje(mensaje, socket_cliente);
 				}
 
-				list_clean(lista);
+				//list_clean(lista);
+				list_clean_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 				break;
 
@@ -234,16 +238,17 @@ int funcion_cliente(int socket_cliente){
 
 				bool movimiento_exitoso = cambiar_posicion(tripulante_id, posx, posy, patota_id);
 				if(movimiento_exitoso == false){
-					char* mensaje = malloc(25);
-					mensaje = "fallo cambio de posicion";
+					//char* mensaje = malloc(25);
+					char* mensaje = "fallo cambio de posicion";
 					enviar_mensaje(mensaje, socket_cliente);
 				}else{
-					char* mensaje = malloc(27);
-					mensaje = "cambio de posicion exitoso";
+					//char* mensaje = malloc(27);
+					char* mensaje = "cambio de posicion exitoso";
 					enviar_mensaje(mensaje, socket_cliente);
 				}
 
-				list_clean(lista);
+				//list_clean(lista);
+				list_clean_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 				break;
 
@@ -254,6 +259,8 @@ int funcion_cliente(int socket_cliente){
 				int tipo_mensaje_bitacora = (int)atoi(list_get(lista_pr,1));
 				//log_info(logger, "tid %d  mens %d",tripulante_id, tipo_mensaje_bitacora);
 
+				list_clean_and_destroy_elements(lista_pr, (void*)destruir_lista_paquete);
+				list_destroy(lista_pr);
 				break;
 
 			case INFORMAR_BITACORA_MOVIMIENTO:; //PARA PROBAR LO DE MONGO
@@ -263,6 +270,8 @@ int funcion_cliente(int socket_cliente){
 				char* mens2 = list_get(lista_pru,2);
 				//log_info(logger, "tid %d  mens1 %s, mens2 %s",tripulante_id, mens1, mens2);
 
+				list_clean_and_destroy_elements(lista_pru, (void*)destruir_lista_paquete);
+				list_destroy(lista_pru);
 				break;
 
 			case FIN:
@@ -270,6 +279,19 @@ int funcion_cliente(int socket_cliente){
 				variable_servidor = 0;
 				shutdown(socket_servidor, SHUT_RD);
 				close(socket_cliente);
+
+				list_destroy(lista);
+
+				/*void destruir_tripu(tcbTripulante* tripu){
+					free(tripu);
+				}*/
+
+				list_destroy_and_destroy_elements(lista_tablas_segmentos, (void*)destruir_tabla_segmentacion);
+				list_destroy_and_destroy_elements(tabla_espacios_de_memoria, (void*)destruir_espacio_memoria);
+				//ME FALTA ALGO CON TRIPUS O TAREAS? DIRIA QUE NO PORQUE ESO ES LO Q HAY EN ESPACIO->CONTENIDO
+
+				log_destroy(logger);
+				config_destroy(archConfig);
 				return EXIT_FAILURE;
 
 			case -1:
@@ -879,7 +901,7 @@ void unir_espacios_contiguos_libres(){
     		}
     	}else{
 			espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
-			espacio_de_memoria* siguiente_espacio = list_get(tabla_espacios_de_memoria, i + 1);
+			espacio_de_memoria* siguiente_espacio = list_get(tabla_espacios_de_memoria, i+1);
 
 			if (espacio->libre && siguiente_espacio->libre){
 				espacio->tam += siguiente_espacio->tam;
@@ -898,8 +920,8 @@ void eliminar_segmento(int nro_segmento, tabla_segmentacion* tabla_segmentos_pat
 		segmento* segmento = list_get(tabla_segmentos_patota->lista_segmentos, i);
 
 		if(segmento->numero_segmento == nro_segmento){
-			list_remove(tabla_segmentos_patota->lista_segmentos, i);
-			//list_remove_and_destroy_element(t_list *, int index, void(*element_destroyer)(void*));
+			//list_remove(tabla_segmentos_patota->lista_segmentos, i);
+			list_remove_and_destroy_element(tabla_segmentos_patota->lista_segmentos, i, (void*)destruir_segmentos);
 			eliminar_espacio_de_memoria(segmento->base);
 		}
 	}
@@ -950,7 +972,6 @@ espacio_de_memoria* busqueda_best_fit(int tam){
             list_add(espacios_libres, espacio);
         }
     }
-    sem_post(&MUTEX_TABLA_MEMORIA);
 
     int espacios_libres_size = list_size(espacios_libres);
 
@@ -977,10 +998,12 @@ espacio_de_memoria* busqueda_best_fit(int tam){
 		}
 
         //log_info(logger, "El espacio de memoria encontrado con Best Fit (base:%d)", espacio_best_fit->base);
-        return espacio_best_fit;
+    	sem_post(&MUTEX_TABLA_MEMORIA);
+    	return espacio_best_fit;
 
     }else{
         log_warning(logger, "No hay espacios de memoria libres");
+        sem_post(&MUTEX_TABLA_MEMORIA);
         return NULL;
     }
 }
@@ -1119,12 +1142,18 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 					log_info(logger, "Se expulso segmento %d", segmento_tcb->numero_segmento);
 
 					if(list_size(tabla_segmentos->lista_segmentos) <= 2){ //la tabla de segmentos tiene solo pcb y tareas. Si es 3 o mayor todavia hay tcb
-						segmento* segmento_tareas = list_get(tabla_segmentos->lista_segmentos, 1);
+						/*segmento* segmento_tareas = list_get(tabla_segmentos->lista_segmentos, 1);
 						eliminar_segmento(segmento_tareas->numero_segmento, tabla_segmentos);
 						segmento* segmento_pcb = list_get(tabla_segmentos->lista_segmentos, 0);
 						eliminar_segmento(segmento_pcb->numero_segmento, tabla_segmentos);
 
-						list_remove(lista_tablas_segmentos, i);
+						free(tabla_segmentos->lista_segmentos);*/
+						list_destroy_and_destroy_elements(tabla_segmentos->lista_segmentos, (void*)destruir_segmentos);
+						//list_remove(lista_tablas_segmentos, i);
+						void destruir_una_tabla_seg(tabla_segmentacion* tabla){
+							free(tabla);
+						}
+						list_remove_and_destroy_element(lista_tablas_segmentos, i, (void*)destruir_una_tabla_seg);
 					}
 					sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 
@@ -1169,7 +1198,8 @@ void compactar_memoria(){
         		}
         	}
         	//sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
-        	list_remove(tabla_espacios_de_memoria, i);
+        	//list_remove(tabla_espacios_de_memoria, i);
+        	list_remove_and_destroy_element(tabla_espacios_de_memoria, i, (void*)destruir_espacio_memoria);
 
         	for(int j = i; j < list_size(tabla_espacios_de_memoria); j++){
         		espacio_de_memoria* espacio_temp = list_get(tabla_espacios_de_memoria, j);
@@ -1236,11 +1266,9 @@ bool enviar_tarea_segmentacion(int socket_cliente, int numero_patota, int id_tri
 
 					if(espacio != NULL){ //encontro la base en memoria de las tareas
 						char* una_tarea = buscar_tarea(espacio, tripulante->prox_instruccion);
-						//char* una_tarea = malloc(10);
 
 						if(una_tarea == NULL){ //no tiene mas tareas
-							char* mensaje = malloc(18);
-							mensaje = "no hay mas tareas";
+							char* mensaje = "no hay mas tareas";
 							enviar_mensaje(mensaje, socket_cliente);
 							//free(mensaje);
 							sem_post(&MUTEX_PEDIR_TAREA);
@@ -1295,16 +1323,29 @@ tabla_segmentacion* buscar_tabla_segmentos(int numero_patota){
 }
 
 char* buscar_tarea(espacio_de_memoria* espacio, int prox_instruccion){
-	char* una_tarea = malloc(10);
+	//char* una_tarea = malloc(10);
+	char* una_tarea;
 
 	char** tareas = string_split(espacio->contenido,"-");
 	una_tarea = tareas[prox_instruccion];
 	if(una_tarea == NULL){
 		log_info(logger, "no hay mas tareas");
+		limpiar_array(tareas);
 		return NULL;
 	}
 
+	limpiar_array(tareas);
 	return una_tarea;
+}
+
+void limpiar_array(char** array){
+	int i = 0;
+	while(array[i] != NULL){
+		free(array[i]);
+		i++;
+	}
+	free(array[i]);
+	free(array);
 }
 
 bool cambiar_posicion(int tid, int posx, int posy, int pid){
@@ -1338,4 +1379,20 @@ void sig_handler(int signum){
         printf("SIGUSR2\n");
         compactar_memoria();
     }
+}
+
+void destruir_lista_paquete(char* contenido){
+	free(contenido);
+}
+void destruir_segmentos(segmento* seg){
+	free(seg);
+}
+void destruir_espacio_memoria(espacio_de_memoria* espacio){
+	free(espacio->contenido);
+	free(espacio);
+}
+void destruir_tabla_segmentacion(tabla_segmentacion* tabla){ //ESTARA BIEN???
+	list_destroy_and_destroy_elements(tabla->lista_segmentos, (void*)destruir_segmentos);
+	//free(tabla->lista_segmentos);
+	free(tabla);
 }

@@ -1,22 +1,34 @@
-[INFO] 16:40:57:093 discordiador/(12329:12329): Memoria asignada
-[INFO] 16:40:57:109 discordiador/(12329:12338): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 16:40:57:113 discordiador/(12329:12339): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 16:40:57:113 discordiador/(12329:12340): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 16:40:58:869 discordiador/(12329:12329): Memoria asignada
-[INFO] 16:40:58:873 discordiador/(12329:12344): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 16:40:58:874 discordiador/(12329:12345): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 16:40:58:874 discordiador/(12329:12346): TRIPU 6  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 16:41:00:117 discordiador/(12329:12337): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 16:41:02:121 discordiador/(12329:12337): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 16:41:03:126 discordiador/(12329:12337): TRIPU 4  tarea recibida: ABC;5;6;4
-[INFO] 16:41:05:127 discordiador/(12329:12337): TRIPU 6  tarea recibida: ABC;5;6;4
-[INFO] 16:41:06:064 discordiador/(12329:12329): tripu expulsado: 2 
-[INFO] 16:41:06:130 discordiador/(12329:12339): tripu_misma_patota_exit 1
-[INFO] 16:41:07:398 discordiador/(12329:12329): tripu expulsado: 4 
-[INFO] 16:41:08:132 discordiador/(12329:12344): tripu_misma_patota_exit 1
-[INFO] 16:41:10:134 discordiador/(12329:12337): TRIPU 5  tarea recibida: ABC;5;6;4
-[INFO] 16:41:16:180 discordiador/(12329:12338): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 16:41:18:184 discordiador/(12329:12340): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 16:41:21:224 discordiador/(12329:12346): TRIPU 6  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 16:41:25:228 discordiador/(12329:12345): TRIPU 5  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 16:41:30:219 discordiador/(12329:12329): aaaaaaaa
+[INFO] 12:53:38:721 discordiador/(16858:16858): Memoria asignada
+[INFO] 12:53:38:758 discordiador/(16858:16863): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 12:53:38:784 discordiador/(16858:16864): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 12:53:38:795 discordiador/(16858:16865): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 12:53:44:819 discordiador/(16858:16861): TRIPU 3  tarea recibida: ABC;5;6;4
+[INFO] 12:53:45:825 discordiador/(16858:16861): TRIPU 2  tarea recibida: ABC;5;6;4
+[INFO] 12:53:46:841 discordiador/(16858:16861): TRIPU 1  tarea recibida: ABC;5;6;4
+[INFO] 12:53:53:951 discordiador/(16858:16858): Memoria asignada
+[INFO] 12:53:53:959 discordiador/(16858:16870): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 12:53:53:962 discordiador/(16858:16871): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 12:53:53:966 discordiador/(16858:16872): TRIPU 6  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 12:53:54:881 discordiador/(16858:16865): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 12:53:55:908 discordiador/(16858:16864): TRIPU 2  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[ERROR] 12:54:01:165 discordiador/(16858:16858): Error en la operacion
+[INFO] 12:54:01:966 discordiador/(16858:16863): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 12:54:02:900 discordiador/(16858:16861): TRIPU 6  tarea recibida: ABC;5;6;4
+[INFO] 12:54:05:701 discordiador/(16858:16858): tripu expulsado: 4 
+[INFO] 12:54:05:904 discordiador/(16858:16870): tripu_misma_patota_exit 1
+[INFO] 12:54:08:911 discordiador/(16858:16861): TRIPU 5  tarea recibida: ABC;5;6;4
+[INFO] 12:54:13:989 discordiador/(16858:16861): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 12:54:13:990 discordiador/(16858:16865): tripu_misma_patota_exit 1
+[INFO] 12:54:14:991 discordiador/(16858:16861): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 12:54:14:991 discordiador/(16858:16864): tripu_misma_patota_exit 2
+[INFO] 12:54:20:004 discordiador/(16858:16861): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 12:54:20:004 discordiador/(16858:16863): tripu_misma_patota_exit 3
+[INFO] 12:54:20:004 discordiador/(16858:16863): size exit 1
+[INFO] 12:54:20:041 discordiador/(16858:16872): TRIPU 6  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 12:54:20:925 discordiador/(16858:16871): TRIPU 5  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 12:54:29:057 discordiador/(16858:16861): TRIPU 6  tarea recibida: no hay mas tareas
+[INFO] 12:54:29:057 discordiador/(16858:16872): tripu_misma_patota_exit 2
+[INFO] 12:54:30:058 discordiador/(16858:16861): TRIPU 5  tarea recibida: no hay mas tareas
+[INFO] 12:54:30:059 discordiador/(16858:16871): tripu_misma_patota_exit 3
+[INFO] 12:54:30:059 discordiador/(16858:16871): size exit 0
+[INFO] 12:55:10:284 discordiador/(16858:16858): aaaaaaaa

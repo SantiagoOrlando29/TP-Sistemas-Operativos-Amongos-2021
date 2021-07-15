@@ -136,6 +136,7 @@ typedef struct{
 	char* criterio_seleccion;
 }config_struct;
 
+t_config * archConfig;
 config_struct configuracion;
 t_log* logger;
 
@@ -264,6 +265,13 @@ tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, ui
 
 char* string_nombre_tarea(int);
 char* tarea_a_string(tarea* t);
+
+void limpiar_array(char** array);
+
+void destruir_lista_paquete(char* contenido);
+void destruir_segmentos(segmento* seg);
+void destruir_espacio_memoria(espacio_de_memoria* espacio);
+void destruir_tabla_segmentacion(tabla_segmentacion* tabla);
 
 void sig_handler(int signum);
 

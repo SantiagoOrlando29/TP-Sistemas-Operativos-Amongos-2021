@@ -427,9 +427,11 @@ void bloqueado_ready() {
 				tripulante = (tcbTripulante*)list_remove(lista_tripulantes_bloqueado, 0);
 				sem_post(&MUTEX_LISTA_BLOQUEADO);
 
-				tarea* tarea = pedir_tarea(tripulante->socket_miram, tripulante);
+				//tarea* tarea = pedir_tarea(tripulante->socket_miram, tripulante);
+				tripulante->tarea_posta = pedir_tarea(tripulante->socket_miram, tripulante);
 
-				if(tarea != NULL){ // tiene mas tareas
+				//if(tarea != NULL){ // tiene mas tareas
+				if(tripulante->tarea_posta != NULL){
 					tripulante->estado = 'R';
 					cambiar_estado(tripulante->socket_miram, tripulante, 'R');
 					sem_wait(&MUTEX_LISTA_READY);
@@ -900,6 +902,20 @@ INICIAR_PATOTA 3 tareas_corta.txt 2|2 2|2 4|5
 				sem_wait(&FINALIZA_HILOS);
 				sem_wait(&FINALIZA_HILOS);
 				sem_wait(&FINALIZA_HILOS);*/
+
+				void destruir_tripu(tcbTripulante* tripu){
+					free(tripu->tarea_posta);
+					free(tripu);
+				}
+				list_destroy_and_destroy_elements(lista_tripulantes_bloqueado, (void*)destruir_tripu);
+				list_destroy_and_destroy_elements(lista_tripulantes_ready, (void*)destruir_tripu);
+				list_destroy_and_destroy_elements(lista_tripulantes_trabajando, (void*)destruir_tripu);
+				list_destroy_and_destroy_elements(lista_tripulantes_exit, (void*)destruir_tripu);
+				list_destroy_and_destroy_elements(lista_tripulantes_nuevo, (void*)destruir_tripu);
+				list_destroy_and_destroy_elements(lista_bloq_emergencia, (void*)destruir_tripu);
+				list_destroy_and_destroy_elements(lista_aux, (void*)destruir_tripu);
+
+
 				pthread_cancel(nuevo);
 				pthread_cancel(ready);
 				pthread_cancel(bloqueado);

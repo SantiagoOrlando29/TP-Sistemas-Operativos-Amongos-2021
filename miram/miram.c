@@ -17,8 +17,8 @@ int main(void)
 	iniciar_miram(&configuracion);
 
 
-	t_list* memoria_aux=list_create();
-	agregar_memoria_aux(memoria_aux,&configuracion);
+	//t_list* memoria_aux=list_create();
+	//agregar_memoria_aux(memoria_aux,&configuracion);
 
  /*	crear_marcos(cuantostripulantes,+strlen(tarea)+1);
 
@@ -190,7 +190,7 @@ int main(void)
 
 void leer_config(){
 
-    t_config * archConfig = config_create("miram.config");
+    archConfig = config_create("miram.config");
 
     configuracion.ip_miram = config_get_string_value(archConfig, "IP_MI_RAM_HQ");
     configuracion.puerto_miram = config_get_string_value(archConfig, "PUERTO_MI_RAM_HQ");
@@ -203,4 +203,6 @@ void leer_config(){
     configuracion.criterio_seleccion = config_get_string_value(archConfig, "CRITERIO_SELECCION");
     //Parametros utiles (No obtenidos del archivo de configuracion)
     configuracion.cant_marcos=0;
+
+    //config_destroy(archConfig);
 }
