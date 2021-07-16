@@ -71,7 +71,8 @@ void iniciar_servidor(config_struct* config_servidor)
 
 
 int funcion_cliente(int socket_cliente){
-	t_list* lista = list_create();
+	//t_list* lista = list_create();
+	t_list* lista;
 	pcbPatota* patota;
 	tcbTripulante* tripulante;
 	t_paquete* paquete;
@@ -102,6 +103,8 @@ int funcion_cliente(int socket_cliente){
 					printf("\n");
 				}
 
+				free(patota);
+
 				char* tarea = malloc((uint32_t)atoi(list_get(lista, cantidad_tripulantes+2)));
 				tarea = (char*)list_get(lista, cantidad_tripulantes+3);
 				printf("Las tareas serializadas son: %s \n", tarea);
@@ -111,20 +114,14 @@ int funcion_cliente(int socket_cliente){
 					bool todo_ok = patota_segmentacion(patota_id, cantidad_tripulantes, tarea, lista);
 					if (todo_ok == false){
 						log_warning(logger, "no se puedo asignar espacio de memoria a todo");
-						//char* mensaje = malloc(20);
 						char* mensaje = "Memoria NO asignada";
 						enviar_mensaje(mensaje, socket_cliente);
-						//free(mensaje);
 					} else {
 						log_info(logger, "Se asigno espacio de memoria a todo");
-						//char* mensaje = malloc(17);
 						char* mensaje = "Memoria asignada";
 						enviar_mensaje(mensaje, socket_cliente);
-						//free(mensaje);
 					}
 				}
-
-				//free(tarea);
 
 				break;
 
@@ -183,8 +180,7 @@ int funcion_cliente(int socket_cliente){
 					}
 				}
 
-				//list_clean(lista);
-				list_clean_and_destroy_elements(lista, (void*)destruir_lista_paquete);
+				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 				break;
 
@@ -198,8 +194,7 @@ int funcion_cliente(int socket_cliente){
 					funcion_expulsar_tripulante(tripulante_id);
 				}
 
-				//list_clean(lista);
-				list_clean_and_destroy_elements(lista, (void*)destruir_lista_paquete);
+				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 				break;
 
@@ -214,18 +209,15 @@ int funcion_cliente(int socket_cliente){
 
 				bool cambio_exitoso = cambiar_estado(patota_id, estado, tripulante_id);
 				if(cambio_exitoso == false){
-					//char* mensaje = malloc(23);
 					char* mensaje = "fallo cambio de estado";
 					log_info(logger, "fallo cambio estado");
 					enviar_mensaje(mensaje, socket_cliente);
 				}else{
-					//char* mensaje = malloc(25);
 					char* mensaje = "cambio de estado exitoso";
 					enviar_mensaje(mensaje, socket_cliente);
 				}
 
-				//list_clean(lista);
-				list_clean_and_destroy_elements(lista, (void*)destruir_lista_paquete);
+				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 				break;
 
@@ -238,17 +230,14 @@ int funcion_cliente(int socket_cliente){
 
 				bool movimiento_exitoso = cambiar_posicion(tripulante_id, posx, posy, patota_id);
 				if(movimiento_exitoso == false){
-					//char* mensaje = malloc(25);
 					char* mensaje = "fallo cambio de posicion";
 					enviar_mensaje(mensaje, socket_cliente);
 				}else{
-					//char* mensaje = malloc(27);
 					char* mensaje = "cambio de posicion exitoso";
 					enviar_mensaje(mensaje, socket_cliente);
 				}
 
-				//list_clean(lista);
-				list_clean_and_destroy_elements(lista, (void*)destruir_lista_paquete);
+				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 				break;
 
@@ -287,9 +276,14 @@ int funcion_cliente(int socket_cliente){
 				}*/
 
 				list_destroy_and_destroy_elements(lista_tablas_segmentos, (void*)destruir_tabla_segmentacion);
-				list_destroy_and_destroy_elements(tabla_espacios_de_memoria, (void*)destruir_espacio_memoria);
+				if(list_size(tabla_espacios_de_memoria) > 1){ //todavia tiene algun espacio de memoria ocupado
+					list_destroy_and_destroy_elements(tabla_espacios_de_memoria, (void*)destruir_espacio_memoria);
+				}else{ //solo tiene el espacio entero de la memoria total
+					espacio_de_memoria* espacio = (espacio_de_memoria*)list_remove(tabla_espacios_de_memoria, 0);
+					free(espacio);
+					list_destroy(tabla_espacios_de_memoria);
+				}
 				//ME FALTA ALGO CON TRIPUS O TAREAS? DIRIA QUE NO PORQUE ESO ES LO Q HAY EN ESPACIO->CONTENIDO
-
 				log_destroy(logger);
 				config_destroy(archConfig);
 				return EXIT_FAILURE;
@@ -761,7 +755,7 @@ printf("Lo leido es %s\n",(configuracion.posicion_inicial+marco*atoi(configuraci
 };*/
 
 pcbPatota* crear_pcb(uint32_t numero_patota){
-	pcbPatota* pcb = malloc(sizeof(pcbPatota));
+	pcbPatota* pcb = malloc(tamanio_PCB);
 	pcb->pid = numero_patota;
 	//pcb->tareas = NULL;
 
@@ -843,7 +837,7 @@ void imprimir_tabla_espacios_de_memoria(){
 }
 
 void imprimir_tabla_segmentos_patota(tabla_segmentacion* tabla_segmentos_patota){
-	if(list_size(tabla_segmentos_patota->lista_segmentos) >0){
+	if(list_size(tabla_segmentos_patota->lista_segmentos) >0){//marca rojo porque ya no existe esa tabla o lsta nose creo
 		printf("Tabla de segmentos correspondiente a patota %d\n", tabla_segmentos_patota->id_patota);
 
 		for(int j=0; j < list_size(tabla_segmentos_patota->lista_segmentos); j++){
@@ -865,6 +859,7 @@ void eliminar_espacio_de_memoria(int base){
 
     	if(espacio->base == base){
             espacio->libre = true;
+            free(espacio->contenido);
             //list_remove(tabla_espacios_de_memoria, i);
             //espacio_de_memoria* espacio_libre = crear_espacio_de_memoria(base, espacio->tam, true);
             //list_add(tabla_espacios_de_memoria, espacio_libre);
@@ -921,8 +916,8 @@ void eliminar_segmento(int nro_segmento, tabla_segmentacion* tabla_segmentos_pat
 
 		if(segmento->numero_segmento == nro_segmento){
 			//list_remove(tabla_segmentos_patota->lista_segmentos, i);
-			list_remove_and_destroy_element(tabla_segmentos_patota->lista_segmentos, i, (void*)destruir_segmentos);
 			eliminar_espacio_de_memoria(segmento->base);
+			list_remove_and_destroy_element(tabla_segmentos_patota->lista_segmentos, i, (void*)destruir_segmentos);
 		}
 	}
 }
@@ -1082,8 +1077,9 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 	list_add(tabla_segmentos_patota->lista_segmentos, segmento_pcb);
 	list_add(tabla_segmentos_patota->lista_segmentos, segmento_tareas);
 
-	tcbTripulante* tripulante = malloc(tamanio_TCB);
+	//tcbTripulante* tripulante = malloc(tamanio_TCB);//NO ENTIENDO COMO ANDA TODO CON UN SOLO MALLOC. NO TENDRIA QUE SER UNO POR TRIPULANTE?
 	for(int i=2; i < cantidad_tripulantes +2; i++){
+		tcbTripulante* tripulante = malloc(tamanio_TCB);
 		tripulante = (tcbTripulante*)list_get(lista,i);
 
 		if(i == 2){//es el primer tripulante de la lista
@@ -1118,7 +1114,6 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 	}
 
 	imprimir_tabla_espacios_de_memoria();
-
 	imprimir_tabla_segmentos_patota(tabla_segmentos_patota);
 
 	sem_wait(&MUTEX_LISTA_TABLAS_SEGMENTOS);
@@ -1138,28 +1133,45 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 				segmento* segmento_tcb = list_get(tabla_segmentos->lista_segmentos, j);
 
 				if(segmento_tcb->numero_segmento -2 == (tripulante_id - tabla_segmentos->primer_tripulante)){
-					eliminar_segmento(segmento_tcb->numero_segmento, tabla_segmentos);
 					log_info(logger, "Se expulso segmento %d", segmento_tcb->numero_segmento);
+					eliminar_segmento(segmento_tcb->numero_segmento, tabla_segmentos);
 
+					bool se_elimina_toda_la_tabla = false;
 					if(list_size(tabla_segmentos->lista_segmentos) <= 2){ //la tabla de segmentos tiene solo pcb y tareas. Si es 3 o mayor todavia hay tcb
-						/*segmento* segmento_tareas = list_get(tabla_segmentos->lista_segmentos, 1);
+						se_elimina_toda_la_tabla = true;
+
+						segmento* segmento_tareas = list_get(tabla_segmentos->lista_segmentos, 1);
 						eliminar_segmento(segmento_tareas->numero_segmento, tabla_segmentos);
 						segmento* segmento_pcb = list_get(tabla_segmentos->lista_segmentos, 0);
 						eliminar_segmento(segmento_pcb->numero_segmento, tabla_segmentos);
 
-						free(tabla_segmentos->lista_segmentos);*/
-						list_destroy_and_destroy_elements(tabla_segmentos->lista_segmentos, (void*)destruir_segmentos);
+						list_destroy(tabla_segmentos->lista_segmentos);
+
+						list_remove(lista_tablas_segmentos, i);
+						free(tabla_segmentos);
+
+						/*void destruir_una_tabla_seg(tabla_segmentacion* tabla){
+							free(tabla);
+						}
+						list_remove_and_destroy_element(lista_tablas_segmentos, i, (void*)destruir_una_tabla_seg);*/
+						//list_destroy(tabla_segmentos);
+
+						/*list_destroy_and_destroy_elements(tabla_segmentos->lista_segmentos, (void*)destruir_segmentos);
 						//list_remove(lista_tablas_segmentos, i);
 						void destruir_una_tabla_seg(tabla_segmentacion* tabla){
 							free(tabla);
 						}
-						list_remove_and_destroy_element(lista_tablas_segmentos, i, (void*)destruir_una_tabla_seg);
+						list_remove_and_destroy_element(lista_tablas_segmentos, i, (void*)destruir_una_tabla_seg);*/
 					}
 					sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 
 					unir_espacios_contiguos_libres();
 					imprimir_tabla_espacios_de_memoria();
-					imprimir_tabla_segmentos_patota(tabla_segmentos);
+					if(se_elimina_toda_la_tabla == false){
+						imprimir_tabla_segmentos_patota(tabla_segmentos);
+					}else{
+						log_info(logger, "Tabla de segmentos de patota ya no existe");
+					}
 
 					return true;
 				}
