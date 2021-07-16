@@ -68,7 +68,8 @@ tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, u
 	sem_init(&(tripulante->semaforo_tripulante),0,0);
 	tripulante->socket_miram = 0;
 	tripulante->socket_mongo = 0;
-	tripulante->tarea_posta = malloc(sizeof(tarea));
+	//tripulante->tarea_posta = malloc(sizeof(tarea));
+	tripulante->tarea_posta = NULL;
 	tripulante->fui_expulsado = false;
 	tripulante->cant_tripus_patota = cantidad_tripulantes;
 	return tripulante;

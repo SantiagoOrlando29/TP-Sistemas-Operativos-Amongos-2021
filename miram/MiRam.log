@@ -5856,3 +5856,584 @@
 [INFO] 23:21:39:653 MiRam/(21891:21908): Tabla de segmentos de patota ya no existe
 [WARNING] 23:21:39:653 MiRam/(21891:21908): el cliente se desconecto.
 [ERROR] 23:21:59:503 MiRam/(21891:21899): el discordiador finalizo el programa. Terminando servidor
+[INFO] 10:10:36:393 MiRam/(23288:23317): Se asigno espacio de memoria a todo
+[WARNING] 10:10:36:764 MiRam/(23288:23323): el cliente se desconecto.
+[WARNING] 10:10:36:764 MiRam/(23288:23322): el cliente se desconecto.
+[WARNING] 10:10:36:764 MiRam/(23288:23317): el cliente se desconecto.
+[INFO] 10:11:15:391 MiRam/(23332:23351): Se asigno espacio de memoria a todo
+[WARNING] 10:11:15:671 MiRam/(23332:23359): el cliente se desconecto.
+[WARNING] 10:11:15:671 MiRam/(23332:23358): el cliente se desconecto.
+[WARNING] 10:11:15:671 MiRam/(23332:23351): el cliente se desconecto.
+[INFO] 10:12:12:322 MiRam/(23384:23391): Se asigno espacio de memoria a todo
+[WARNING] 10:12:12:518 MiRam/(23384:23399): el cliente se desconecto.
+[WARNING] 10:12:12:518 MiRam/(23384:23398): el cliente se desconecto.
+[WARNING] 10:12:12:518 MiRam/(23384:23391): el cliente se desconecto.
+[INFO] 10:13:35:838 MiRam/(23454:23468): Se asigno espacio de memoria a todo
+[WARNING] 10:13:36:217 MiRam/(23454:23476): el cliente se desconecto.
+[WARNING] 10:13:36:217 MiRam/(23454:23475): el cliente se desconecto.
+[WARNING] 10:13:36:217 MiRam/(23454:23468): el cliente se desconecto.
+[INFO] 10:15:30:986 MiRam/(23515:23548): Se asigno espacio de memoria a todo
+[INFO] 10:15:31:002 MiRam/(23515:23552): tarea: èæRAR_OXIGENO 1;4;4;1
+[INFO] 10:15:31:005 MiRam/(23515:23553): tarea: 
+[WARNING] 10:15:31:387 MiRam/(23515:23553): el cliente se desconecto.
+[WARNING] 10:15:31:387 MiRam/(23515:23552): el cliente se desconecto.
+[WARNING] 10:15:31:387 MiRam/(23515:23548): el cliente se desconecto.
+[INFO] 10:16:10:293 MiRam/(23577:23594): Se asigno espacio de memoria a todo
+[INFO] 10:16:10:307 MiRam/(23577:23602): tarea: èWRAR_OXIGENO 1;4;4;1
+[INFO] 10:16:10:309 MiRam/(23577:23603): tarea: 
+[WARNING] 10:16:10:675 MiRam/(23577:23603): el cliente se desconecto.
+[WARNING] 10:16:10:675 MiRam/(23577:23602): el cliente se desconecto.
+[WARNING] 10:16:10:675 MiRam/(23577:23594): el cliente se desconecto.
+[INFO] 10:17:22:374 MiRam/(23640:23655): Se asigno espacio de memoria a todo
+[INFO] 10:17:22:391 MiRam/(23640:23662): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:17:22:391 MiRam/(23640:23662): tarea: è‡ö	RAR_OXIGENO 1;4;4;1
+[INFO] 10:17:22:392 MiRam/(23640:23663): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:17:22:392 MiRam/(23640:23663): tarea: 
+[WARNING] 10:17:22:764 MiRam/(23640:23663): el cliente se desconecto.
+[WARNING] 10:17:22:764 MiRam/(23640:23662): el cliente se desconecto.
+[WARNING] 10:17:22:764 MiRam/(23640:23655): el cliente se desconecto.
+[INFO] 10:18:28:481 MiRam/(23692:23709): Se asigno espacio de memoria a todo
+[INFO] 10:18:28:502 MiRam/(23692:23716): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:18:28:502 MiRam/(23692:23716): tarea en funcion: è÷k	RAR_OXIGENO 1;4;4;1
+[INFO] 10:18:28:503 MiRam/(23692:23716): tarea: è÷k	RAR_OXIGENO 1;4;4;1
+[INFO] 10:18:28:503 MiRam/(23692:23717): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:18:28:503 MiRam/(23692:23717): tarea en funcion: 
+[INFO] 10:18:28:504 MiRam/(23692:23717): tarea: 8 ¶	 ¶OXIG
+[WARNING] 10:18:28:800 MiRam/(23692:23717): el cliente se desconecto.
+[WARNING] 10:18:28:800 MiRam/(23692:23716): el cliente se desconecto.
+[WARNING] 10:18:28:800 MiRam/(23692:23709): el cliente se desconecto.
+[INFO] 10:20:30:626 MiRam/(23744:23761): Se asigno espacio de memoria a todo
+[INFO] 10:20:30:633 MiRam/(23744:23768): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:20:30:633 MiRam/(23744:23768): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:20:30:633 MiRam/(23744:23768): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:20:30:641 MiRam/(23744:23769): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:20:30:641 MiRam/(23744:23769): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:20:30:641 MiRam/(23744:23769): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:20:30:643 MiRam/(23744:23770): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:20:30:643 MiRam/(23744:23770): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:20:30:643 MiRam/(23744:23770): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:20:33:637 MiRam/(23744:23768): tarea en funcion: ABC;5;6;4
+[INFO] 10:20:33:637 MiRam/(23744:23768): tarea en funcion: ABC;5;6;4
+[INFO] 10:20:33:637 MiRam/(23744:23768): tarea: ABC;5;6;4
+[INFO] 10:20:35:643 MiRam/(23744:23770): tarea en funcion: ABC;5;6;4
+[INFO] 10:20:35:643 MiRam/(23744:23770): tarea en funcion: ABC;5;6;4
+[INFO] 10:20:35:643 MiRam/(23744:23770): tarea: ABC;5;6;4
+[INFO] 10:20:36:644 MiRam/(23744:23769): tarea en funcion: ABC;5;6;4
+[INFO] 10:20:36:645 MiRam/(23744:23769): tarea en funcion: ABC;5;6;4
+[INFO] 10:20:36:645 MiRam/(23744:23769): tarea: ABC;5;6;4
+[INFO] 10:20:43:688 MiRam/(23744:23768): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:20:43:688 MiRam/(23744:23768): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:20:43:688 MiRam/(23744:23768): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:20:45:688 MiRam/(23744:23770): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:20:45:689 MiRam/(23744:23770): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:20:45:689 MiRam/(23744:23770): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:20:46:728 MiRam/(23744:23769): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:20:46:728 MiRam/(23744:23769): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:20:46:728 MiRam/(23744:23769): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:20:55:736 MiRam/(23744:23768): tarea en funcion: (null)
+[INFO] 10:20:55:736 MiRam/(23744:23768): no hay mas tareas
+[INFO] 10:20:55:736 MiRam/(23744:23768): Se expulso segmento 2
+[WARNING] 10:20:55:737 MiRam/(23744:23768): el cliente se desconecto.
+[INFO] 10:20:57:697 MiRam/(23744:23770): tarea en funcion: (null)
+[INFO] 10:20:57:697 MiRam/(23744:23770): no hay mas tareas
+[INFO] 10:20:57:697 MiRam/(23744:23770): Se expulso segmento 4
+[WARNING] 10:20:57:698 MiRam/(23744:23770): el cliente se desconecto.
+[INFO] 10:20:58:743 MiRam/(23744:23769): tarea en funcion: (null)
+[INFO] 10:20:58:743 MiRam/(23744:23769): no hay mas tareas
+[INFO] 10:20:58:743 MiRam/(23744:23769): Se expulso segmento 3
+[INFO] 10:20:58:743 MiRam/(23744:23769): Tabla de segmentos de patota ya no existe
+[WARNING] 10:20:58:744 MiRam/(23744:23769): el cliente se desconecto.
+[INFO] 10:22:34:216 MiRam/(23744:23761): Se asigno espacio de memoria a todo
+[INFO] 10:22:34:227 MiRam/(23744:23790): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:227 MiRam/(23744:23790): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:227 MiRam/(23744:23790): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:231 MiRam/(23744:23791): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:231 MiRam/(23744:23791): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:231 MiRam/(23744:23791): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:236 MiRam/(23744:23792): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:236 MiRam/(23744:23792): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:237 MiRam/(23744:23792): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:237 MiRam/(23744:23793): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:238 MiRam/(23744:23793): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:238 MiRam/(23744:23793): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:238 MiRam/(23744:23794): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:238 MiRam/(23744:23794): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:34:238 MiRam/(23744:23794): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:22:37:232 MiRam/(23744:23790): tarea en funcion: ABC;5;6;4
+[INFO] 10:22:37:232 MiRam/(23744:23790): tarea en funcion: ABC;5;6;4
+[INFO] 10:22:37:232 MiRam/(23744:23790): tarea: ABC;5;6;4
+[INFO] 10:22:39:233 MiRam/(23744:23792): tarea en funcion: ABC;5;6;4
+[INFO] 10:22:39:234 MiRam/(23744:23792): tarea en funcion: ABC;5;6;4
+[INFO] 10:22:39:234 MiRam/(23744:23792): tarea: ABC;5;6;4
+[INFO] 10:22:52:243 MiRam/(23744:23791): tarea en funcion: ABC;5;6;4
+[INFO] 10:22:52:243 MiRam/(23744:23791): tarea en funcion: ABC;5;6;4
+[INFO] 10:22:52:243 MiRam/(23744:23791): tarea: ABC;5;6;4
+[INFO] 10:22:55:245 MiRam/(23744:23793): tarea en funcion: ABC;5;6;4
+[INFO] 10:22:55:245 MiRam/(23744:23793): tarea en funcion: ABC;5;6;4
+[INFO] 10:22:55:245 MiRam/(23744:23793): tarea: ABC;5;6;4
+[INFO] 10:22:55:285 MiRam/(23744:23790): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:22:55:285 MiRam/(23744:23790): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:22:55:285 MiRam/(23744:23790): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:22:57:246 MiRam/(23744:23794): tarea en funcion: ABC;5;6;4
+[INFO] 10:22:57:246 MiRam/(23744:23794): tarea en funcion: ABC;5;6;4
+[INFO] 10:22:57:246 MiRam/(23744:23794): tarea: ABC;5;6;4
+[INFO] 10:22:58:324 MiRam/(23744:23792): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:22:58:325 MiRam/(23744:23792): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:22:58:325 MiRam/(23744:23792): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:23:12:296 MiRam/(23744:23791): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:23:12:296 MiRam/(23744:23791): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:23:12:297 MiRam/(23744:23791): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:23:13:338 MiRam/(23744:23790): tarea en funcion: (null)
+[INFO] 10:23:13:338 MiRam/(23744:23790): no hay mas tareas
+[INFO] 10:23:13:338 MiRam/(23744:23790): Se expulso segmento 2
+[WARNING] 10:23:13:338 MiRam/(23744:23790): el cliente se desconecto.
+[INFO] 10:23:15:336 MiRam/(23744:23793): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:23:15:336 MiRam/(23744:23793): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:23:15:336 MiRam/(23744:23793): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:23:16:339 MiRam/(23744:23792): tarea en funcion: (null)
+[INFO] 10:23:16:339 MiRam/(23744:23792): no hay mas tareas
+[INFO] 10:23:16:339 MiRam/(23744:23792): Se expulso segmento 4
+[WARNING] 10:23:16:340 MiRam/(23744:23792): el cliente se desconecto.
+[INFO] 10:23:16:377 MiRam/(23744:23794): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:23:16:377 MiRam/(23744:23794): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:23:16:377 MiRam/(23744:23794): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:23:25:386 MiRam/(23744:23791): tarea en funcion: (null)
+[INFO] 10:23:25:386 MiRam/(23744:23791): no hay mas tareas
+[INFO] 10:23:25:386 MiRam/(23744:23791): Se expulso segmento 3
+[WARNING] 10:23:25:386 MiRam/(23744:23791): el cliente se desconecto.
+[INFO] 10:23:27:344 MiRam/(23744:23793): tarea en funcion: (null)
+[INFO] 10:23:27:344 MiRam/(23744:23793): no hay mas tareas
+[INFO] 10:23:27:344 MiRam/(23744:23793): Se expulso segmento 5
+[WARNING] 10:23:27:345 MiRam/(23744:23793): el cliente se desconecto.
+[INFO] 10:23:28:387 MiRam/(23744:23794): tarea en funcion: (null)
+[INFO] 10:23:28:387 MiRam/(23744:23794): no hay mas tareas
+[INFO] 10:23:28:387 MiRam/(23744:23794): Se expulso segmento 6
+[INFO] 10:23:28:388 MiRam/(23744:23794): Tabla de segmentos de patota ya no existe
+[WARNING] 10:23:28:388 MiRam/(23744:23794): el cliente se desconecto.
+[ERROR] 10:24:33:901 MiRam/(23744:23761): el discordiador finalizo el programa. Terminando servidor
+[INFO] 10:25:04:781 MiRam/(23822:23840): Se asigno espacio de memoria a todo
+[INFO] 10:25:04:794 MiRam/(23822:23849): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:794 MiRam/(23822:23849): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:794 MiRam/(23822:23849): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:797 MiRam/(23822:23850): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:797 MiRam/(23822:23850): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:797 MiRam/(23822:23850): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:798 MiRam/(23822:23851): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:798 MiRam/(23822:23851): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:798 MiRam/(23822:23851): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:798 MiRam/(23822:23852): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:798 MiRam/(23822:23852): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:798 MiRam/(23822:23852): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:799 MiRam/(23822:23853): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:799 MiRam/(23822:23853): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:04:799 MiRam/(23822:23853): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:25:07:798 MiRam/(23822:23849): tarea en funcion: ABC;5;6;4
+[INFO] 10:25:07:798 MiRam/(23822:23849): tarea en funcion: ABC;5;6;4
+[INFO] 10:25:07:798 MiRam/(23822:23849): tarea: ABC;5;6;4
+[INFO] 10:25:09:799 MiRam/(23822:23851): tarea en funcion: ABC;5;6;4
+[INFO] 10:25:09:799 MiRam/(23822:23851): tarea en funcion: ABC;5;6;4
+[INFO] 10:25:09:799 MiRam/(23822:23851): tarea: ABC;5;6;4
+[INFO] 10:25:22:816 MiRam/(23822:23850): tarea en funcion: ABC;5;6;4
+[INFO] 10:25:22:816 MiRam/(23822:23850): tarea en funcion: ABC;5;6;4
+[INFO] 10:25:22:816 MiRam/(23822:23850): tarea: ABC;5;6;4
+[INFO] 10:25:25:819 MiRam/(23822:23852): tarea en funcion: ABC;5;6;4
+[INFO] 10:25:25:819 MiRam/(23822:23852): tarea en funcion: ABC;5;6;4
+[INFO] 10:25:25:819 MiRam/(23822:23852): tarea: ABC;5;6;4
+[INFO] 10:25:25:857 MiRam/(23822:23849): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:25:857 MiRam/(23822:23849): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:25:857 MiRam/(23822:23849): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:27:820 MiRam/(23822:23853): tarea en funcion: ABC;5;6;4
+[INFO] 10:25:27:820 MiRam/(23822:23853): tarea en funcion: ABC;5;6;4
+[INFO] 10:25:27:820 MiRam/(23822:23853): tarea: ABC;5;6;4
+[INFO] 10:25:28:896 MiRam/(23822:23851): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:28:896 MiRam/(23822:23851): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:28:897 MiRam/(23822:23851): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:42:868 MiRam/(23822:23850): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:42:868 MiRam/(23822:23850): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:42:868 MiRam/(23822:23850): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:43:905 MiRam/(23822:23849): tarea en funcion: (null)
+[INFO] 10:25:43:905 MiRam/(23822:23849): no hay mas tareas
+[INFO] 10:25:43:905 MiRam/(23822:23849): Se expulso segmento 2
+[WARNING] 10:25:43:906 MiRam/(23822:23849): el cliente se desconecto.
+[INFO] 10:25:45:908 MiRam/(23822:23852): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:45:908 MiRam/(23822:23852): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:45:908 MiRam/(23822:23852): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:46:908 MiRam/(23822:23851): tarea en funcion: (null)
+[INFO] 10:25:46:908 MiRam/(23822:23851): no hay mas tareas
+[INFO] 10:25:46:909 MiRam/(23822:23851): Se expulso segmento 4
+[WARNING] 10:25:46:910 MiRam/(23822:23851): el cliente se desconecto.
+[INFO] 10:25:46:945 MiRam/(23822:23853): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:46:945 MiRam/(23822:23853): tarea en funcion: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:46:945 MiRam/(23822:23853): tarea: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 10:25:55:957 MiRam/(23822:23850): tarea en funcion: (null)
+[INFO] 10:25:55:958 MiRam/(23822:23850): no hay mas tareas
+[INFO] 10:25:55:958 MiRam/(23822:23850): Se expulso segmento 3
+[WARNING] 10:25:55:958 MiRam/(23822:23850): el cliente se desconecto.
+[INFO] 10:25:57:917 MiRam/(23822:23852): tarea en funcion: (null)
+[INFO] 10:25:57:917 MiRam/(23822:23852): no hay mas tareas
+[INFO] 10:25:57:917 MiRam/(23822:23852): Se expulso segmento 5
+[WARNING] 10:25:57:917 MiRam/(23822:23852): el cliente se desconecto.
+[INFO] 10:25:58:960 MiRam/(23822:23853): tarea en funcion: (null)
+[INFO] 10:25:58:960 MiRam/(23822:23853): no hay mas tareas
+[INFO] 10:25:58:960 MiRam/(23822:23853): Se expulso segmento 6
+[INFO] 10:25:58:961 MiRam/(23822:23853): Tabla de segmentos de patota ya no existe
+[WARNING] 10:25:58:961 MiRam/(23822:23853): el cliente se desconecto.
+[ERROR] 10:26:30:016 MiRam/(23822:23840): el discordiador finalizo el programa. Terminando servidor
+[INFO] 10:27:11:466 MiRam/(23872:23887): Se asigno espacio de memoria a todo
+[INFO] 10:27:11:485 MiRam/(23872:23892): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:27:11:485 MiRam/(23872:23892): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:27:11:485 MiRam/(23872:23892): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:27:11:489 MiRam/(23872:23893): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:27:11:489 MiRam/(23872:23893): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:27:11:489 MiRam/(23872:23893): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:27:11:489 MiRam/(23872:23894): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:27:11:490 MiRam/(23872:23894): tarea en funcion: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:27:11:490 MiRam/(23872:23894): tarea: GENERAR_OXIGENO 1;4;4;1
+[INFO] 10:27:14:494 MiRam/(23872:23892): tarea en funcion: ABC;5;6;4
+[INFO] 10:27:14:494 MiRam/(23872:23892): tarea en funcion: ABC;5;6;4
+[INFO] 10:27:14:494 MiRam/(23872:23892): tarea: ABC;5;6;4
+[INFO] 10:27:16:496 MiRam/(23872:23894): tarea en funcion: ABC;5;6;4
+[INFO] 10:27:16:497 MiRam/(23872:23894): tarea en funcion: ABC;5;6;4
+[INFO] 10:27:16:497 MiRam/(23872:23894): tarea: ABC;5;6;4
+[INFO] 10:27:23:505 MiRam/(23872:23893): tarea en funcion: ABC;5;6;4
+[INFO] 10:27:23:505 MiRam/(23872:23893): tarea en funcion: ABC;5;6;4
+[INFO] 10:27:23:505 MiRam/(23872:23893): tarea: ABC;5;6;4
+[INFO] 10:27:23:544 MiRam/(23872:23892): tarea en funcion: DEF;3;3;4
+[INFO] 10:27:23:544 MiRam/(23872:23892): tarea en funcion: DEF;3;3;4
+[INFO] 10:27:23:544 MiRam/(23872:23892): tarea: DEF;3;3;4
+[INFO] 10:27:26:585 MiRam/(23872:23894): tarea en funcion: DEF;3;3;4
+[INFO] 10:27:26:585 MiRam/(23872:23894): tarea en funcion: DEF;3;3;4
+[INFO] 10:27:26:585 MiRam/(23872:23894): tarea: DEF;3;3;4
+[INFO] 10:27:34:552 MiRam/(23872:23893): tarea en funcion: DEF;3;3;4
+[INFO] 10:27:34:552 MiRam/(23872:23893): tarea en funcion: DEF;3;3;4
+[INFO] 10:27:34:552 MiRam/(23872:23893): tarea: DEF;3;3;4
+[INFO] 10:27:37:592 MiRam/(23872:23892): tarea en funcion: (null)
+[INFO] 10:27:37:592 MiRam/(23872:23892): no hay mas tareas
+[INFO] 10:27:37:592 MiRam/(23872:23892): Se expulso segmento 2
+[WARNING] 10:27:37:596 MiRam/(23872:23892): el cliente se desconecto.
+[INFO] 10:27:38:637 MiRam/(23872:23894): tarea en funcion: (null)
+[INFO] 10:27:38:637 MiRam/(23872:23894): no hay mas tareas
+[INFO] 10:27:38:637 MiRam/(23872:23894): Se expulso segmento 4
+[WARNING] 10:27:38:637 MiRam/(23872:23894): el cliente se desconecto.
+[INFO] 10:27:44:641 MiRam/(23872:23893): tarea en funcion: (null)
+[INFO] 10:27:44:641 MiRam/(23872:23893): no hay mas tareas
+[INFO] 10:27:44:641 MiRam/(23872:23893): Se expulso segmento 3
+[INFO] 10:27:44:642 MiRam/(23872:23893): Tabla de segmentos de patota ya no existe
+[WARNING] 10:27:44:642 MiRam/(23872:23893): el cliente se desconecto.
+[ERROR] 10:28:35:415 MiRam/(23872:23887): el discordiador finalizo el programa. Terminando servidor
+[INFO] 10:46:16:999 MiRam/(24075:24110): Se asigno espacio de memoria a todo
+[INFO] 10:46:44:112 MiRam/(24075:24220): no hay mas tareas
+[INFO] 10:46:44:112 MiRam/(24075:24220): Se expulso segmento 2
+[WARNING] 10:46:44:117 MiRam/(24075:24220): el cliente se desconecto.
+[INFO] 10:46:45:157 MiRam/(24075:24221): no hay mas tareas
+[INFO] 10:46:45:157 MiRam/(24075:24221): Se expulso segmento 3
+[WARNING] 10:46:45:157 MiRam/(24075:24221): el cliente se desconecto.
+[INFO] 10:46:46:148 MiRam/(24075:24222): no hay mas tareas
+[INFO] 10:46:46:149 MiRam/(24075:24222): Se expulso segmento 4
+[INFO] 10:46:46:149 MiRam/(24075:24222): Tabla de segmentos de patota ya no existe
+[WARNING] 10:46:46:149 MiRam/(24075:24222): el cliente se desconecto.
+[ERROR] 10:46:54:970 MiRam/(24075:24110): el discordiador finalizo el programa. Terminando servidor
+[INFO] 10:56:29:909 MiRam/(24321:24340): Se asigno espacio de memoria a todo
+[WARNING] 10:56:36:358 MiRam/(24321:24349): el cliente se desconecto.
+[INFO] 10:56:36:358 MiRam/(24321:24340): Se expulso segmento 4
+[INFO] 10:57:08:068 MiRam/(24321:24347): no hay mas tareas
+[INFO] 10:57:08:069 MiRam/(24321:24347): Se expulso segmento 2
+[INFO] 10:57:15:069 MiRam/(24321:24348): no hay mas tareas
+[INFO] 10:57:15:069 MiRam/(24321:24348): Se expulso segmento 3
+[INFO] 10:57:16:112 MiRam/(24321:24350): no hay mas tareas
+[INFO] 10:57:16:112 MiRam/(24321:24350): Se expulso segmento 5
+[INFO] 10:57:18:117 MiRam/(24321:24351): no hay mas tareas
+[INFO] 10:57:18:117 MiRam/(24321:24351): Se expulso segmento 6
+[INFO] 10:57:18:117 MiRam/(24321:24351): Tabla de segmentos de patota ya no existe
+[INFO] 11:09:20:764 MiRam/(24741:24751): Se asigno espacio de memoria a todo
+[WARNING] 11:09:32:901 MiRam/(24741:24762): el cliente se desconecto.
+[INFO] 11:09:32:908 MiRam/(24741:24751): Se expulso segmento 4
+[INFO] 11:10:00:960 MiRam/(24741:24760): no hay mas tareas
+[INFO] 11:10:00:965 MiRam/(24741:24760): Se expulso segmento 2
+[WARNING] 11:10:00:971 MiRam/(24741:24760): el cliente se desconecto.
+[INFO] 11:10:07:051 MiRam/(24741:24761): no hay mas tareas
+[INFO] 11:10:07:052 MiRam/(24741:24761): Se expulso segmento 3
+[WARNING] 11:10:07:070 MiRam/(24741:24761): el cliente se desconecto.
+[INFO] 11:10:08:107 MiRam/(24741:24763): no hay mas tareas
+[INFO] 11:10:08:109 MiRam/(24741:24763): Se expulso segmento 5
+[WARNING] 11:10:08:117 MiRam/(24741:24763): el cliente se desconecto.
+[INFO] 11:10:11:012 MiRam/(24741:24764): no hay mas tareas
+[INFO] 11:10:11:014 MiRam/(24741:24764): Se expulso segmento 6
+[INFO] 11:10:11:033 MiRam/(24741:24764): Tabla de segmentos de patota ya no existe
+[WARNING] 11:10:11:034 MiRam/(24741:24764): el cliente se desconecto.
+[INFO] 11:18:23:176 MiRam/(24877:24892): Se asigno espacio de memoria a todo
+[WARNING] 11:18:31:629 MiRam/(24877:24900): el cliente se desconecto.
+[INFO] 11:18:31:632 MiRam/(24877:24892): Se expulso segmento 4
+[INFO] 11:19:01:411 MiRam/(24877:24898): no hay mas tareas
+[INFO] 11:19:01:415 MiRam/(24877:24898): Se expulso segmento 2
+[INFO] 11:19:08:424 MiRam/(24877:24899): no hay mas tareas
+[INFO] 11:19:08:429 MiRam/(24877:24899): Se expulso segmento 3
+[INFO] 11:19:09:467 MiRam/(24877:24901): no hay mas tareas
+[INFO] 11:19:09:468 MiRam/(24877:24901): Se expulso segmento 5
+[INFO] 11:19:11:460 MiRam/(24877:24902): no hay mas tareas
+[INFO] 11:19:11:462 MiRam/(24877:24902): Se expulso segmento 6
+[INFO] 11:19:11:475 MiRam/(24877:24902): Tabla de segmentos de patota ya no existe
+[INFO] 11:20:44:985 MiRam/(24941:24964): Se asigno espacio de memoria a todo
+[WARNING] 11:20:50:292 MiRam/(24941:24975): el cliente se desconecto.
+[INFO] 11:20:50:298 MiRam/(24941:24964): Se expulso segmento 4
+[INFO] 11:21:23:354 MiRam/(24941:24970): no hay mas tareas
+[INFO] 11:21:23:355 MiRam/(24941:24970): Se expulso segmento 2
+[INFO] 11:21:30:363 MiRam/(24941:24974): no hay mas tareas
+[INFO] 11:21:30:363 MiRam/(24941:24974): Se expulso segmento 3
+[INFO] 11:21:31:407 MiRam/(24941:24976): no hay mas tareas
+[INFO] 11:21:31:407 MiRam/(24941:24976): Se expulso segmento 5
+[INFO] 11:21:33:415 MiRam/(24941:24977): no hay mas tareas
+[INFO] 11:21:33:415 MiRam/(24941:24977): Se expulso segmento 6
+[INFO] 11:21:33:415 MiRam/(24941:24977): Tabla de segmentos de patota ya no existe
+[INFO] 11:26:31:114 MiRam/(25100:25129): Se asigno espacio de memoria a todo
+[WARNING] 11:26:37:232 MiRam/(25100:25140): el cliente se desconecto.
+[INFO] 11:26:37:241 MiRam/(25100:25129): Se expulso segmento 4
+[INFO] 11:27:09:642 MiRam/(25100:25134): no hay mas tareas
+[INFO] 11:27:09:643 MiRam/(25100:25134): Se expulso segmento 2
+[INFO] 11:27:16:654 MiRam/(25100:25139): no hay mas tareas
+[INFO] 11:27:16:655 MiRam/(25100:25139): Se expulso segmento 3
+[INFO] 11:27:17:703 MiRam/(25100:25141): no hay mas tareas
+[INFO] 11:27:17:703 MiRam/(25100:25141): Se expulso segmento 5
+[INFO] 11:27:19:699 MiRam/(25100:25142): no hay mas tareas
+[INFO] 11:27:19:699 MiRam/(25100:25142): Se expulso segmento 6
+[INFO] 11:27:19:699 MiRam/(25100:25142): Tabla de segmentos de patota ya no existe
+[INFO] 11:35:01:750 MiRam/(25279:25307): Se asigno espacio de memoria a todo
+[INFO] 11:35:06:530 MiRam/(25279:25307): Se expulso segmento 4
+[WARNING] 11:35:06:954 MiRam/(25279:25321): el cliente se desconecto.
+[INFO] 11:35:40:115 MiRam/(25279:25318): no hay mas tareas
+[INFO] 11:35:40:115 MiRam/(25279:25318): Se expulso segmento 2
+[INFO] 11:35:47:131 MiRam/(25279:25320): no hay mas tareas
+[INFO] 11:35:47:132 MiRam/(25279:25320): Se expulso segmento 3
+[INFO] 11:35:48:175 MiRam/(25279:25322): no hay mas tareas
+[INFO] 11:35:48:175 MiRam/(25279:25322): Se expulso segmento 5
+[INFO] 11:35:50:171 MiRam/(25279:25323): no hay mas tareas
+[INFO] 11:35:50:171 MiRam/(25279:25323): Se expulso segmento 6
+[INFO] 11:35:50:171 MiRam/(25279:25323): Tabla de segmentos de patota ya no existe
+[INFO] 11:39:43:793 MiRam/(25696:25724): Se asigno espacio de memoria a todo
+[INFO] 11:39:48:686 MiRam/(25696:25724): Se expulso segmento 4
+[WARNING] 11:39:48:999 MiRam/(25696:25735): el cliente se desconecto.
+[INFO] 11:40:21:152 MiRam/(25696:25729): no hay mas tareas
+[INFO] 11:40:21:152 MiRam/(25696:25729): Se expulso segmento 2
+[INFO] 11:40:30:184 MiRam/(25696:25734): no hay mas tareas
+[INFO] 11:40:30:185 MiRam/(25696:25734): Se expulso segmento 3
+[INFO] 11:40:31:213 MiRam/(25696:25736): no hay mas tareas
+[INFO] 11:40:31:213 MiRam/(25696:25736): Se expulso segmento 5
+[INFO] 11:40:31:236 MiRam/(25696:25737): no hay mas tareas
+[INFO] 11:40:31:237 MiRam/(25696:25737): Se expulso segmento 6
+[INFO] 11:40:31:237 MiRam/(25696:25737): Tabla de segmentos de patota ya no existe
+[INFO] 11:47:35:550 MiRam/(25860:25889): Se asigno espacio de memoria a todo
+[INFO] 11:47:40:619 MiRam/(25860:25889): Se expulso segmento 4
+[WARNING] 11:47:40:746 MiRam/(25860:25902): el cliente se desconecto.
+[INFO] 11:48:13:916 MiRam/(25860:25896): no hay mas tareas
+[INFO] 11:48:13:916 MiRam/(25860:25896): Se expulso segmento 2
+[INFO] 11:48:20:908 MiRam/(25860:25901): no hay mas tareas
+[INFO] 11:48:20:909 MiRam/(25860:25901): Se expulso segmento 3
+[INFO] 11:48:21:952 MiRam/(25860:25903): no hay mas tareas
+[INFO] 11:48:21:953 MiRam/(25860:25903): Se expulso segmento 5
+[INFO] 11:48:23:973 MiRam/(25860:25904): no hay mas tareas
+[INFO] 11:48:23:973 MiRam/(25860:25904): Se expulso segmento 6
+[INFO] 11:48:23:973 MiRam/(25860:25904): Tabla de segmentos de patota ya no existe
+[INFO] 11:55:04:147 MiRam/(26158:26187): Se asigno espacio de memoria a todo
+[INFO] 11:55:09:176 MiRam/(26158:26187): Se expulso segmento 4
+[WARNING] 11:55:09:358 MiRam/(26158:26202): el cliente se desconecto.
+[INFO] 11:55:42:517 MiRam/(26158:26197): no hay mas tareas
+[INFO] 11:55:42:517 MiRam/(26158:26197): Se expulso segmento 2
+[INFO] 11:58:50:503 MiRam/(26287:26313): Se asigno espacio de memoria a todo
+[WARNING] 11:58:55:440 MiRam/(26287:26313): No se pudo eliminar ese tripulante
+[WARNING] 11:58:55:528 MiRam/(26287:26323): el cliente se desconecto.
+[ERROR] 11:59:16:902 MiRam/(26287:26313): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:01:38:676 MiRam/(26370:26387): Se asigno espacio de memoria a todo
+[WARNING] 12:01:43:324 MiRam/(26370:26387): No se pudo eliminar ese tripulante
+[WARNING] 12:01:43:698 MiRam/(26370:26395): el cliente se desconecto.
+[ERROR] 12:01:51:091 MiRam/(26370:26387): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:06:17:040 MiRam/(26452:26490): Se asigno espacio de memoria a todo
+[WARNING] 12:06:22:975 MiRam/(26452:26500): el cliente se desconecto.
+[INFO] 12:06:22:976 MiRam/(26452:26490): for 1
+[INFO] 12:06:22:976 MiRam/(26452:26490): for 2
+[INFO] 12:06:22:976 MiRam/(26452:26490): for 2
+[INFO] 12:06:22:976 MiRam/(26452:26490): for 2
+[INFO] 12:06:22:976 MiRam/(26452:26490): for 2
+[INFO] 12:06:22:976 MiRam/(26452:26490): for 2
+[WARNING] 12:06:22:976 MiRam/(26452:26490): No se pudo eliminar ese tripulante
+[ERROR] 12:06:33:052 MiRam/(26452:26490): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:08:34:495 MiRam/(26513:26532): Se asigno espacio de memoria a todo
+[WARNING] 12:08:39:190 MiRam/(26513:26544): el cliente se desconecto.
+[INFO] 12:08:39:190 MiRam/(26513:26532): for 1
+[INFO] 12:08:39:190 MiRam/(26513:26532): for 2
+[INFO] 12:08:39:190 MiRam/(26513:26532): for 2
+[INFO] 12:08:39:190 MiRam/(26513:26532): for 2
+[INFO] 12:08:39:190 MiRam/(26513:26532): for 2
+[INFO] 12:08:39:190 MiRam/(26513:26532): for 2
+[WARNING] 12:08:39:190 MiRam/(26513:26532): No se pudo eliminar ese tripulante
+[ERROR] 12:08:43:665 MiRam/(26513:26532): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:10:26:300 MiRam/(26596:26612): Se asigno espacio de memoria a todo
+[WARNING] 12:10:31:068 MiRam/(26596:26618): el cliente se desconecto.
+[INFO] 12:10:31:069 MiRam/(26596:26612): tid 0
+[INFO] 12:10:31:069 MiRam/(26596:26612): for 1
+[INFO] 12:10:31:069 MiRam/(26596:26612): for 2
+[INFO] 12:10:31:069 MiRam/(26596:26612): seg 2
+[INFO] 12:10:31:069 MiRam/(26596:26612): for 2
+[INFO] 12:10:31:069 MiRam/(26596:26612): seg 3
+[INFO] 12:10:31:069 MiRam/(26596:26612): for 2
+[INFO] 12:10:31:069 MiRam/(26596:26612): seg 4
+[INFO] 12:10:31:069 MiRam/(26596:26612): for 2
+[INFO] 12:10:31:069 MiRam/(26596:26612): seg 5
+[INFO] 12:10:31:069 MiRam/(26596:26612): for 2
+[INFO] 12:10:31:069 MiRam/(26596:26612): seg 6
+[WARNING] 12:10:31:069 MiRam/(26596:26612): No se pudo eliminar ese tripulante
+[ERROR] 12:10:34:559 MiRam/(26596:26612): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:11:39:384 MiRam/(26643:26668): Se asigno espacio de memoria a todo
+[WARNING] 12:11:44:042 MiRam/(26643:26677): el cliente se desconecto.
+[INFO] 12:11:44:043 MiRam/(26643:26668): tid 1
+[INFO] 12:11:44:043 MiRam/(26643:26668): for 1
+[INFO] 12:11:44:043 MiRam/(26643:26668): for 2
+[INFO] 12:11:44:043 MiRam/(26643:26668): seg 2
+[INFO] 12:11:44:043 MiRam/(26643:26668): Se expulso segmento 2
+[INFO] 12:12:17:544 MiRam/(26643:26679): no hay mas tareas
+[INFO] 12:12:17:545 MiRam/(26643:26679): for 1
+[INFO] 12:12:17:545 MiRam/(26643:26679): for 2
+[INFO] 12:12:17:545 MiRam/(26643:26679): seg 3
+[INFO] 12:12:17:545 MiRam/(26643:26679): for 2
+[INFO] 12:12:17:545 MiRam/(26643:26679): seg 4
+[INFO] 12:12:17:545 MiRam/(26643:26679): Se expulso segmento 4
+[WARNING] 12:12:17:546 MiRam/(26643:26679): el cliente se desconecto.
+[INFO] 12:12:24:552 MiRam/(26643:26678): no hay mas tareas
+[INFO] 12:12:24:552 MiRam/(26643:26678): for 1
+[INFO] 12:12:24:557 MiRam/(26643:26678): for 2
+[INFO] 12:12:24:557 MiRam/(26643:26678): seg 3
+[INFO] 12:12:24:557 MiRam/(26643:26678): Se expulso segmento 3
+[WARNING] 12:12:24:558 MiRam/(26643:26678): el cliente se desconecto.
+[INFO] 12:12:25:596 MiRam/(26643:26680): no hay mas tareas
+[INFO] 12:12:25:597 MiRam/(26643:26680): for 1
+[INFO] 12:12:25:597 MiRam/(26643:26680): for 2
+[INFO] 12:12:25:597 MiRam/(26643:26680): seg 5
+[INFO] 12:12:25:597 MiRam/(26643:26680): Se expulso segmento 5
+[WARNING] 12:12:25:597 MiRam/(26643:26680): el cliente se desconecto.
+[INFO] 12:12:27:588 MiRam/(26643:26681): no hay mas tareas
+[INFO] 12:12:27:588 MiRam/(26643:26681): for 1
+[INFO] 12:12:27:589 MiRam/(26643:26681): for 2
+[INFO] 12:12:27:590 MiRam/(26643:26681): seg 6
+[INFO] 12:12:27:590 MiRam/(26643:26681): Se expulso segmento 6
+[INFO] 12:12:27:590 MiRam/(26643:26681): Tabla de segmentos de patota ya no existe
+[WARNING] 12:12:27:591 MiRam/(26643:26681): el cliente se desconecto.
+[WARNING] 12:12:28:016 MiRam/(26643:26668): el cliente se desconecto.
+[INFO] 12:16:28:879 MiRam/(27025:27050): Se asigno espacio de memoria a todo
+[WARNING] 12:16:34:344 MiRam/(27025:27065): el cliente se desconecto.
+[INFO] 12:16:34:344 MiRam/(27025:27050): Se expulso segmento 4
+[INFO] 12:17:07:042 MiRam/(27025:27063): no hay mas tareas
+[INFO] 12:17:07:042 MiRam/(27025:27063): Se expulso segmento 2
+[WARNING] 12:17:07:043 MiRam/(27025:27063): el cliente se desconecto.
+[INFO] 12:17:14:046 MiRam/(27025:27064): no hay mas tareas
+[INFO] 12:17:14:046 MiRam/(27025:27064): Se expulso segmento 3
+[WARNING] 12:17:14:052 MiRam/(27025:27064): el cliente se desconecto.
+[INFO] 12:17:15:091 MiRam/(27025:27066): no hay mas tareas
+[INFO] 12:17:15:091 MiRam/(27025:27066): Se expulso segmento 5
+[WARNING] 12:17:15:091 MiRam/(27025:27066): el cliente se desconecto.
+[INFO] 12:17:17:094 MiRam/(27025:27067): no hay mas tareas
+[INFO] 12:17:17:094 MiRam/(27025:27067): Se expulso segmento 6
+[INFO] 12:17:17:095 MiRam/(27025:27067): Tabla de segmentos de patota ya no existe
+[WARNING] 12:17:17:096 MiRam/(27025:27067): el cliente se desconecto.
+[WARNING] 12:17:17:423 MiRam/(27025:27050): el cliente se desconecto.
+[INFO] 12:19:46:080 MiRam/(27114:27139): Se asigno espacio de memoria a todo
+[WARNING] 12:19:51:151 MiRam/(27114:27149): el cliente se desconecto.
+[INFO] 12:19:51:151 MiRam/(27114:27139): Se expulso segmento 4
+[INFO] 12:20:24:238 MiRam/(27114:27147): no hay mas tareas
+[INFO] 12:20:24:239 MiRam/(27114:27147): Se expulso segmento 2
+[WARNING] 12:20:24:239 MiRam/(27114:27147): el cliente se desconecto.
+[INFO] 12:20:31:243 MiRam/(27114:27148): no hay mas tareas
+[INFO] 12:20:31:243 MiRam/(27114:27148): Se expulso segmento 3
+[WARNING] 12:20:31:245 MiRam/(27114:27148): el cliente se desconecto.
+[INFO] 12:20:32:282 MiRam/(27114:27150): no hay mas tareas
+[INFO] 12:20:32:282 MiRam/(27114:27150): Se expulso segmento 5
+[WARNING] 12:20:32:283 MiRam/(27114:27150): el cliente se desconecto.
+[INFO] 12:20:34:283 MiRam/(27114:27151): no hay mas tareas
+[INFO] 12:20:34:283 MiRam/(27114:27151): Se expulso segmento 6
+[INFO] 12:20:34:284 MiRam/(27114:27151): Tabla de segmentos de patota ya no existe
+[WARNING] 12:20:34:284 MiRam/(27114:27151): el cliente se desconecto.
+[WARNING] 12:20:34:627 MiRam/(27114:27139): el cliente se desconecto.
+[INFO] 12:27:34:362 MiRam/(27258:27283): Se asigno espacio de memoria a todo
+[INFO] 12:27:38:714 MiRam/(27258:27283): Se expulso segmento 4
+[WARNING] 12:27:39:395 MiRam/(27258:27293): el cliente se desconecto.
+[INFO] 12:28:11:530 MiRam/(27258:27291): no hay mas tareas
+[INFO] 12:28:11:530 MiRam/(27258:27291): Se expulso segmento 2
+[WARNING] 12:28:11:531 MiRam/(27258:27291): el cliente se desconecto.
+[INFO] 12:28:20:538 MiRam/(27258:27292): no hay mas tareas
+[INFO] 12:28:20:538 MiRam/(27258:27292): Se expulso segmento 3
+[WARNING] 12:28:20:543 MiRam/(27258:27292): el cliente se desconecto.
+[INFO] 12:28:21:575 MiRam/(27258:27294): no hay mas tareas
+[INFO] 12:28:21:575 MiRam/(27258:27294): Se expulso segmento 5
+[WARNING] 12:28:21:575 MiRam/(27258:27294): el cliente se desconecto.
+[INFO] 12:28:21:582 MiRam/(27258:27295): no hay mas tareas
+[INFO] 12:28:21:582 MiRam/(27258:27295): Se expulso segmento 6
+[INFO] 12:28:21:583 MiRam/(27258:27295): Tabla de segmentos de patota ya no existe
+[WARNING] 12:28:21:583 MiRam/(27258:27295): el cliente se desconecto.
+[ERROR] 12:28:54:318 MiRam/(27258:27283): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:29:17:881 MiRam/(27312:27337): Se asigno espacio de memoria a todo
+[INFO] 12:29:20:024 MiRam/(27312:27337): Se asigno espacio de memoria a todo
+[WARNING] 12:29:24:444 MiRam/(27312:27344): el cliente se desconecto.
+[INFO] 12:29:24:445 MiRam/(27312:27337): Se expulso segmento 3
+[INFO] 12:30:02:098 MiRam/(27312:27343): no hay mas tareas
+[INFO] 12:30:02:098 MiRam/(27312:27343): Se expulso segmento 2
+[WARNING] 12:30:02:099 MiRam/(27312:27343): el cliente se desconecto.
+[INFO] 12:30:03:063 MiRam/(27312:27345): no hay mas tareas
+[INFO] 12:30:03:063 MiRam/(27312:27345): Se expulso segmento 4
+[INFO] 12:30:03:064 MiRam/(27312:27345): Tabla de segmentos de patota ya no existe
+[WARNING] 12:30:03:064 MiRam/(27312:27345): el cliente se desconecto.
+[INFO] 12:30:04:102 MiRam/(27312:27349): no hay mas tareas
+[INFO] 12:30:04:102 MiRam/(27312:27349): Se expulso segmento 2
+[WARNING] 12:30:04:108 MiRam/(27312:27349): el cliente se desconecto.
+[INFO] 12:30:05:146 MiRam/(27312:27351): no hay mas tareas
+[INFO] 12:30:05:147 MiRam/(27312:27351): Se expulso segmento 4
+[WARNING] 12:30:05:147 MiRam/(27312:27351): el cliente se desconecto.
+[INFO] 12:30:06:143 MiRam/(27312:27350): no hay mas tareas
+[INFO] 12:30:06:143 MiRam/(27312:27350): Se expulso segmento 3
+[INFO] 12:30:06:144 MiRam/(27312:27350): Tabla de segmentos de patota ya no existe
+[WARNING] 12:30:06:144 MiRam/(27312:27350): el cliente se desconecto.
+[ERROR] 12:44:42:369 MiRam/(27312:27337): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:46:57:409 MiRam/(27472:27488): Se asigno espacio de memoria a todo
+[INFO] 12:47:24:518 MiRam/(27472:27495): no hay mas tareas
+[INFO] 12:47:24:518 MiRam/(27472:27495): Se expulso segmento 2
+[WARNING] 12:47:24:523 MiRam/(27472:27495): el cliente se desconecto.
+[INFO] 12:47:25:554 MiRam/(27472:27497): no hay mas tareas
+[INFO] 12:47:25:554 MiRam/(27472:27497): Se expulso segmento 4
+[WARNING] 12:47:25:555 MiRam/(27472:27497): el cliente se desconecto.
+[INFO] 12:47:25:562 MiRam/(27472:27496): no hay mas tareas
+[INFO] 12:47:25:562 MiRam/(27472:27496): Se expulso segmento 3
+[INFO] 12:47:25:563 MiRam/(27472:27496): Tabla de segmentos de patota ya no existe
+[WARNING] 12:47:25:563 MiRam/(27472:27496): el cliente se desconecto.
+[ERROR] 12:47:55:270 MiRam/(27472:27488): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:47:55:270 MiRam/(27472:27488): aaaaa
+[INFO] 12:48:09:865 MiRam/(27500:27520): Se asigno espacio de memoria a todo
+[WARNING] 12:48:16:699 MiRam/(27500:27528): el cliente se desconecto.
+[INFO] 12:48:16:700 MiRam/(27500:27520): Se expulso segmento 3
+[INFO] 12:48:29:986 MiRam/(27500:27527): no hay mas tareas
+[INFO] 12:48:29:987 MiRam/(27500:27527): Se expulso segmento 2
+[WARNING] 12:48:29:987 MiRam/(27500:27527): el cliente se desconecto.
+[INFO] 12:48:30:987 MiRam/(27500:27529): no hay mas tareas
+[INFO] 12:48:30:987 MiRam/(27500:27529): Se expulso segmento 4
+[INFO] 12:48:30:987 MiRam/(27500:27529): Tabla de segmentos de patota ya no existe
+[WARNING] 12:48:30:988 MiRam/(27500:27529): el cliente se desconecto.
+[ERROR] 12:48:39:336 MiRam/(27500:27520): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:51:08:035 MiRam/(27583:27603): Se asigno espacio de memoria a todo
+[INFO] 12:51:09:809 MiRam/(27583:27603): Se asigno espacio de memoria a todo
+[WARNING] 12:51:14:712 MiRam/(27583:27610): el cliente se desconecto.
+[INFO] 12:51:14:712 MiRam/(27583:27603): Se expulso segmento 3
+[INFO] 12:51:53:748 MiRam/(27583:27611): no hay mas tareas
+[INFO] 12:51:53:748 MiRam/(27583:27611): Se expulso segmento 4
+[WARNING] 12:51:53:748 MiRam/(27583:27611): el cliente se desconecto.
+[INFO] 12:51:54:712 MiRam/(27583:27609): no hay mas tareas
+[INFO] 12:51:54:712 MiRam/(27583:27609): Se expulso segmento 2
+[INFO] 12:51:54:712 MiRam/(27583:27609): Tabla de segmentos de patota ya no existe
+[WARNING] 12:51:54:712 MiRam/(27583:27609): el cliente se desconecto.
+[INFO] 12:51:55:752 MiRam/(27583:27615): no hay mas tareas
+[INFO] 12:51:55:752 MiRam/(27583:27615): Se expulso segmento 2
+[WARNING] 12:51:55:757 MiRam/(27583:27615): el cliente se desconecto.
+[INFO] 12:51:56:796 MiRam/(27583:27617): no hay mas tareas
+[INFO] 12:51:56:796 MiRam/(27583:27617): Se expulso segmento 4
+[WARNING] 12:51:56:796 MiRam/(27583:27617): el cliente se desconecto.
+[INFO] 12:51:57:788 MiRam/(27583:27616): no hay mas tareas
+[INFO] 12:51:57:789 MiRam/(27583:27616): Se expulso segmento 3
+[INFO] 12:51:57:789 MiRam/(27583:27616): Tabla de segmentos de patota ya no existe
+[WARNING] 12:51:57:789 MiRam/(27583:27616): el cliente se desconecto.
+[ERROR] 12:52:08:661 MiRam/(27583:27603): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:52:08:661 MiRam/(27583:27603): aaaaa

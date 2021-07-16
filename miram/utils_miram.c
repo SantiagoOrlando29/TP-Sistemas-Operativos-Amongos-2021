@@ -75,7 +75,7 @@ int funcion_cliente(int socket_cliente){
 	t_list* lista;
 	pcbPatota* patota;
 	tcbTripulante* tripulante;
-	t_paquete* paquete;
+	//t_paquete* paquete;
 	int tripulante_id;
 	int patota_id;
 
@@ -181,7 +181,7 @@ int funcion_cliente(int socket_cliente){
 				}
 
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
-
+				//return 0;//para que termine el hilo se supone
 				break;
 
 			case PEDIR_TAREA:;
@@ -192,6 +192,11 @@ int funcion_cliente(int socket_cliente){
 				bool hay_mas_tareas = enviar_tarea_segmentacion(socket_cliente, patota_id, tripulante_id);
 				if(hay_mas_tareas == false){
 					funcion_expulsar_tripulante(tripulante_id);
+					//list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
+					//close(socket_cliente);
+					//NOSE SI TENDRIA Q HACER ESTO. EN DISCORDIADOR LO VA A HACER PERO CON ESTO QUE YA TERMINO ENTONCES NUNCA RECIBE ESTE CLOSE
+					//PERO SI LO HAGO ACA DIRIA Q ROMPE PQ CAPAZ EL OTRO NO RECIBIO TODAVIA Y YO YA CERRE CONEXION.
+					//return 0;//para que termine el hilo se supone
 				}
 
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
@@ -269,7 +274,7 @@ int funcion_cliente(int socket_cliente){
 				shutdown(socket_servidor, SHUT_RD);
 				close(socket_cliente);
 
-				list_destroy(lista);
+				//list_destroy(lista);
 
 				/*void destruir_tripu(tcbTripulante* tripu){
 					free(tripu);
@@ -284,6 +289,7 @@ int funcion_cliente(int socket_cliente){
 					list_destroy(tabla_espacios_de_memoria);
 				}
 				//ME FALTA ALGO CON TRIPUS O TAREAS? DIRIA QUE NO PORQUE ESO ES LO Q HAY EN ESPACIO->CONTENIDO
+				log_info(logger, "aaaaa");
 				log_destroy(logger);
 				config_destroy(archConfig);
 				return EXIT_FAILURE;
@@ -1334,8 +1340,8 @@ tabla_segmentacion* buscar_tabla_segmentos(int numero_patota){
 }
 
 char* buscar_tarea(espacio_de_memoria* espacio, int prox_instruccion){
-	//char* una_tarea = malloc(30);
-	char* una_tarea;
+	char* una_tarea = malloc(30);
+	//char* una_tarea;
 
 	char** tareas = string_split(espacio->contenido,"-");
 	una_tarea = tareas[prox_instruccion];
@@ -1345,7 +1351,7 @@ char* buscar_tarea(espacio_de_memoria* espacio, int prox_instruccion){
 		return NULL;
 	}
 
-	limpiar_array(tareas);
+	//limpiar_array(tareas); //VER. PORQUE CREO Q ES NECESARIO.
 	return una_tarea;
 }
 
