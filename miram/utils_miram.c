@@ -1282,7 +1282,6 @@ bool enviar_tarea_segmentacion(int socket_cliente, int numero_patota, int id_tri
 						if(una_tarea == NULL){ //no tiene mas tareas
 							char* mensaje = "no hay mas tareas";
 							enviar_mensaje(mensaje, socket_cliente);
-							//free(mensaje);
 							sem_post(&MUTEX_PEDIR_TAREA);
 							return false;
 						}
@@ -1335,7 +1334,7 @@ tabla_segmentacion* buscar_tabla_segmentos(int numero_patota){
 }
 
 char* buscar_tarea(espacio_de_memoria* espacio, int prox_instruccion){
-	//char* una_tarea = malloc(10);
+	//char* una_tarea = malloc(30);
 	char* una_tarea;
 
 	char** tareas = string_split(espacio->contenido,"-");

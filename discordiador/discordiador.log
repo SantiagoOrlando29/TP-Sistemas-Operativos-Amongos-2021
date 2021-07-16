@@ -1,18 +1,18 @@
-[INFO] 22:58:45:543 discordiador/(21356:21356): Memoria asignada
-[INFO] 22:58:45:556 discordiador/(21356:21363): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 22:58:45:599 discordiador/(21356:21364): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 22:58:45:621 discordiador/(21356:21365): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 22:58:48:631 discordiador/(21356:21360): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 22:58:50:633 discordiador/(21356:21360): TRIPU 2  tarea recibida: ABC;5;6;4
-[INFO] 22:58:51:639 discordiador/(21356:21360): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 22:58:59:692 discordiador/(21356:21363): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 22:59:00:688 discordiador/(21356:21364): TRIPU 2  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 22:59:02:735 discordiador/(21356:21365): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 22:59:11:758 discordiador/(21356:21360): TRIPU 1  tarea recibida: no hay mas tareas
-[INFO] 22:59:11:758 discordiador/(21356:21363): tripu_misma_patota_exit 1
-[INFO] 22:59:12:761 discordiador/(21356:21360): TRIPU 2  tarea recibida: no hay mas tareas
-[INFO] 22:59:12:761 discordiador/(21356:21364): tripu_misma_patota_exit 2
-[INFO] 22:59:14:762 discordiador/(21356:21360): TRIPU 3  tarea recibida: no hay mas tareas
-[INFO] 22:59:14:762 discordiador/(21356:21365): tripu_misma_patota_exit 3
-[INFO] 22:59:14:762 discordiador/(21356:21365): size exit 0
-[INFO] 23:00:53:593 discordiador/(21356:21356): aaaaaaaa
+[INFO] 23:21:10:426 discordiador/(21898:21898): Memoria asignada
+[INFO] 23:21:10:461 discordiador/(21898:21903): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 23:21:10:471 discordiador/(21898:21904): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 23:21:10:478 discordiador/(21898:21905): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 23:21:13:503 discordiador/(21898:21902): TRIPU 1  tarea recibida: ABC;5;6;4
+[INFO] 23:21:15:506 discordiador/(21898:21902): TRIPU 2  tarea recibida: ABC;5;6;4
+[INFO] 23:21:16:509 discordiador/(21898:21902): TRIPU 3  tarea recibida: ABC;5;6;4
+[INFO] 23:21:24:559 discordiador/(21898:21903): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 23:21:25:559 discordiador/(21898:21904): TRIPU 2  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 23:21:27:604 discordiador/(21898:21905): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 23:21:36:643 discordiador/(21898:21902): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 23:21:36:645 discordiador/(21898:21903): tripu_misma_patota_exit 1
+[INFO] 23:21:37:652 discordiador/(21898:21902): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 23:21:37:652 discordiador/(21898:21904): tripu_misma_patota_exit 2
+[INFO] 23:21:39:642 discordiador/(21898:21902): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 23:21:39:642 discordiador/(21898:21905): tripu_misma_patota_exit 3
+[INFO] 23:21:39:643 discordiador/(21898:21905): size exit 0
+[INFO] 23:21:59:502 discordiador/(21898:21898): aaaaaaaa

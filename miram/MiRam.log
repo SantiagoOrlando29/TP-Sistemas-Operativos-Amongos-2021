@@ -5831,3 +5831,28 @@
 [INFO] 22:59:14:775 MiRam/(21349:21368): Tabla de segmentos de patota ya no existe
 [WARNING] 22:59:14:776 MiRam/(21349:21368): el cliente se desconecto.
 [ERROR] 23:00:53:593 MiRam/(21349:21357): el discordiador finalizo el programa. Terminando servidor
+[ERROR] 23:17:13:114 MiRam/(21735:21753): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:19:00:075 MiRam/(21798:21810): Se asigno espacio de memoria a todo
+[INFO] 23:19:26:293 MiRam/(21798:21814): no hay mas tareas
+[INFO] 23:19:26:296 MiRam/(21798:21814): Se expulso segmento 2
+[WARNING] 23:19:26:332 MiRam/(21798:21814): el cliente se desconecto.
+[INFO] 23:19:27:296 MiRam/(21798:21815): no hay mas tareas
+[INFO] 23:19:27:297 MiRam/(21798:21815): Se expulso segmento 3
+[WARNING] 23:19:27:306 MiRam/(21798:21815): el cliente se desconecto.
+[INFO] 23:19:29:298 MiRam/(21798:21816): no hay mas tareas
+[INFO] 23:19:29:302 MiRam/(21798:21816): Se expulso segmento 4
+[INFO] 23:19:29:317 MiRam/(21798:21816): Tabla de segmentos de patota ya no existe
+[WARNING] 23:19:29:318 MiRam/(21798:21816): el cliente se desconecto.
+[ERROR] 23:19:40:625 MiRam/(21798:21810): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:21:10:424 MiRam/(21891:21899): Se asigno espacio de memoria a todo
+[INFO] 23:21:36:637 MiRam/(21891:21906): no hay mas tareas
+[INFO] 23:21:36:663 MiRam/(21891:21906): Se expulso segmento 2
+[WARNING] 23:21:36:689 MiRam/(21891:21906): el cliente se desconecto.
+[INFO] 23:21:37:646 MiRam/(21891:21907): no hay mas tareas
+[INFO] 23:21:37:653 MiRam/(21891:21907): Se expulso segmento 3
+[WARNING] 23:21:37:677 MiRam/(21891:21907): el cliente se desconecto.
+[INFO] 23:21:39:641 MiRam/(21891:21908): no hay mas tareas
+[INFO] 23:21:39:643 MiRam/(21891:21908): Se expulso segmento 4
+[INFO] 23:21:39:653 MiRam/(21891:21908): Tabla de segmentos de patota ya no existe
+[WARNING] 23:21:39:653 MiRam/(21891:21908): el cliente se desconecto.
+[ERROR] 23:21:59:503 MiRam/(21891:21899): el discordiador finalizo el programa. Terminando servidor
