@@ -1,10 +1,10 @@
-Dump: 16/07/2021 22:30:45
-Marco: 0    Estado:Libre      Proceso: -    Pagina: -
-Marco: 1    Estado:Libre      Proceso: -    Pagina: -
-Marco: 2    Estado:Libre      Proceso: -    Pagina: -
-Marco: 3    Estado:Libre      Proceso: -    Pagina: -
-Marco: 4    Estado:Libre      Proceso: -    Pagina: -
-Marco: 5    Estado:Libre      Proceso: -    Pagina: -
+Dump: 16/07/2021 23:42:30
+Marco: 0    Estado:Ocupado    Proceso: 1    Pagina: 0
+Marco: 1    Estado:Ocupado    Proceso: 1    Pagina: 1
+Marco: 2    Estado:Ocupado    Proceso: 1    Pagina: 2
+Marco: 3    Estado:Ocupado    Proceso: 1    Pagina: 3
+Marco: 4    Estado:Ocupado    Proceso: 1    Pagina: 4
+Marco: 5    Estado:Ocupado    Proceso: 1    Pagina: 5
 Marco: 6    Estado:Ocupado    Proceso: 2    Pagina: 0
 Marco: 7    Estado:Ocupado    Proceso: 2    Pagina: 1
 Marco: 8    Estado:Ocupado    Proceso: 2    Pagina: 2

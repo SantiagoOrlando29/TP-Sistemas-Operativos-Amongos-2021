@@ -100,20 +100,8 @@ int funcion_cliente(int socket_cliente){
 				int pid = (int)atoi(list_get(lista,0));
 				printf("el numero de la patota es %d\n", pid);
 				fflush(stdout);
-				patota = crear_patota(pid,0);
 
 				int cantidad_tripulantes = (int)atoi((list_get(lista,1)));
-				printf("cant tripu %d\n", cantidad_tripulantes);
-				fflush(stdout);
-
-
-
-				for(int i=2; i < cantidad_tripulantes +2; i++){
-					tripulante=(tcbTripulante*)list_get(lista,i);
-					mostrar_tripulante(tripulante,patota);
-					printf("\n");
-					fflush(stdin);
-				}
 
 				char* tarea=(char*)list_get(lista, cantidad_tripulantes+2);
 				printf("Las tareas serializadas son: %s \n", tarea);
@@ -168,7 +156,7 @@ int funcion_cliente(int socket_cliente){
 					printf("La tarea es %s\n", obtener_tarea(1, 3));
 
 
-
+					imprimir_ocupacion_marcos(&configuracion);
 					dump_memoria();
 					/*fflush(stdout);
 
@@ -921,6 +909,7 @@ void dump_memoria(){
 
 
 void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina){
+	*estado = 0 ;
 	for(int i=0; i<list_size(memoria_aux);i++){
 		tabla_paginacion* una_tabla = list_get(memoria_aux,i);
 		for(int j=0; j<list_size(una_tabla->marco_inicial);j++){
@@ -934,6 +923,10 @@ void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina){
 				 *pagina=j;
 				 break;
 			}
+				if(*estado==1){
+					break;
+				}
+
 				*estado=0;
 				*proceso=0;
 				*pagina=0;

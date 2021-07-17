@@ -224,6 +224,8 @@ void actualizar_lru(marco* un_marco);
 int reemplazo_clock();
 void actualizar_tripulante(tcbTripulante* tripulante, int id_patota);
 
+
+
 char* obtener_tarea(int id_patota, int nro_tarea);
 int reemplazo_lru();
 
