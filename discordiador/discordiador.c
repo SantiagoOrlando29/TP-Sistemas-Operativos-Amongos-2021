@@ -494,7 +494,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	sem_init(&MUTEX_LISTA_TRABAJANDO, 0,1);
 	sem_init(&MUTEX_LISTA_BLOQUEADO, 0,1);
 	sem_init(&MUTEX_LISTA_EXIT, 0,1);
-	sem_init(&CONTINUAR_PLANIFICACION, 0,1);
+	sem_init(&CONTINUAR_PLANIFICACION, 0,0);
 	sem_init(&ORDENA_FUNCION_QUANTUM, 0,1);
 	sem_init(&FINALIZA_HILOS, 0,0);
 
@@ -506,7 +506,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	lista_bloq_emergencia = list_create();
 	lista_aux = list_create();
 
-	bool pausar_planificacion_activado = false;
+	bool pausar_planificacion_activado = true;
 	uint32_t numero_patota = 0;
 
 	pthread_t ready;
@@ -623,8 +623,8 @@ INICIAR_PATOTA 3 tareas_corta.txt 3|4 9|2 4|5
 						list_add(lista_tripulantes_nuevo, tripulante);
 						sem_post(&AGREGAR_NUEVO_A_READY);
 
-						posx =0;
-						posy =0;
+						posx = 0;
+						posy = 0;
 						tid++;
 					}
 				} else {
@@ -660,7 +660,7 @@ INICIAR_PATOTA 3 tareas_corta.txt 3|4 9|2 4|5
 				break;
 
 			case INICIAR_PLANIFICACION:
-				if (pausar_planificacion_activado == true){ //PARA QUE NO HAGA NADA SI NO PAUSE PLANIFICACION ANTES
+				if (pausar_planificacion_activado == true){
 					sem_post(&CONTINUAR_PLANIFICACION);
 					pausar_planificacion_activado = false;
 				}

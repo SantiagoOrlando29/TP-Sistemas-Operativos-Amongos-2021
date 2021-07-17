@@ -274,6 +274,7 @@ void destruir_espacio_memoria(espacio_de_memoria* espacio);
 void destruir_tabla_segmentacion(tabla_segmentacion* tabla);
 
 void sig_handler(int signum);
+void dump_memoria();
 
 #endif /* CONEXIONES_H_ */
 

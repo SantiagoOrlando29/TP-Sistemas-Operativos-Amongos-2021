@@ -1104,6 +1104,7 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 		}
 
 		tripulante->puntero_pcb = 0; //direccion logica del pcb. Segmento pcb es el 0
+		tripulante->estado = 'N';
 		tripulante->prox_instruccion = 0;
 		espacio_de_memoria_tcb_tripulante->contenido = tripulante;
 
@@ -1396,6 +1397,52 @@ void sig_handler(int signum){
         printf("SIGUSR2\n");
         compactar_memoria();
     }
+    if(signum == SIGUSR1){
+    	printf("SIGUSR1\n");
+    	dump_memoria();
+    }
+}
+
+void dump_memoria(){
+	char buff1[50];
+	char buff2[50];
+	char namebuff[100];
+	time_t now = time(0);
+	strftime(buff1, 100, "%d/%m/%Y %H:%M:%S"  , localtime(&now)); //TImestamp a escribir en el archivo
+	strftime(buff2, 100, "%d_%m_%Y_%H_%M_%S"  , localtime(&now)); //Timestamp del nombre del archivo
+	sprintf(namebuff, "Dump_%s.dmp",buff2);
+	FILE *dump_file;
+	dump_file=fopen(namebuff, "w");
+	fflush(stdout);
+	fprintf(dump_file,"Dump: %s\n", buff1);
+
+	printf("The value in hex is %X\n", 10);
+	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
+		tabla_segmentacion* tabla_seg = (tabla_segmentacion*)list_get(lista_tablas_segmentos, i);
+		for(int j=0; j < list_size(tabla_seg->lista_segmentos); j++){
+			segmento* seg = (segmento*)list_get(tabla_seg->lista_segmentos, j);
+			if(seg->base < 16){
+				fprintf(dump_file, "Patota:%2d   Segmento:%2d   Inicio: 0x000%X   Tam: %d b\n", tabla_seg->id_patota, seg->numero_segmento, seg->base, seg->tamanio);
+			}else if(seg->base < 256){
+				fprintf(dump_file, "Patota:%2d   Segmento:%2d   Inicio: 0x00%X   Tam: %d b\n", tabla_seg->id_patota, seg->numero_segmento, seg->base, seg->tamanio);
+			}else{
+				fprintf(dump_file, "Patota:%2d   Segmento:%2d   Inicio: 0x0%X   Tam: %d b\n", tabla_seg->id_patota, seg->numero_segmento, seg->base, seg->tamanio);
+			}
+			fflush(stdout);
+		}
+	}
+	/*int estado,proceso,pagina;
+	for(int k=0;k<configuracion.cant_marcos;k++){
+		buscar_marco(k,&estado,&proceso, &pagina);
+		if(estado==1){
+			fprintf(dump_file,"Marco:%2d    Estado:Ocupado    Proceso:%2d    Pagina:%2d\n",k,proceso,pagina);
+			fflush(stdout);
+		}else{
+			fprintf(dump_file,"Marco:%2d    Estado:Libre      Proceso: -    Pagina: -\n",k);
+			fflush(stdout);
+		}
+	}*/
+	fclose(dump_file);
 }
 
 void destruir_lista_paquete(char* contenido){

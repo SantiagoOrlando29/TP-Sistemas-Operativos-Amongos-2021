@@ -6437,3 +6437,146 @@
 [WARNING] 12:51:57:789 MiRam/(27583:27616): el cliente se desconecto.
 [ERROR] 12:52:08:661 MiRam/(27583:27603): el discordiador finalizo el programa. Terminando servidor
 [INFO] 12:52:08:661 MiRam/(27583:27603): aaaaa
+[INFO] 22:00:32:977 MiRam/(29981:30007): Se asigno espacio de memoria a todo
+[INFO] 22:00:50:436 MiRam/(29981:30007): Se asigno espacio de memoria a todo
+[INFO] 22:02:02:025 MiRam/(29981:30019): no hay mas tareas
+[INFO] 22:02:02:027 MiRam/(29981:30019): Se expulso segmento 2
+[WARNING] 22:02:02:027 MiRam/(29981:30019): el cliente se desconecto.
+[INFO] 22:02:03:021 MiRam/(29981:30021): no hay mas tareas
+[INFO] 22:02:03:021 MiRam/(29981:30021): Se expulso segmento 4
+[WARNING] 22:02:03:023 MiRam/(29981:30021): el cliente se desconecto.
+[INFO] 22:02:03:065 MiRam/(29981:30022): no hay mas tareas
+[INFO] 22:02:03:065 MiRam/(29981:30022): Se expulso segmento 2
+[WARNING] 22:02:03:066 MiRam/(29981:30022): el cliente se desconecto.
+[INFO] 22:02:04:105 MiRam/(29981:30024): no hay mas tareas
+[INFO] 22:02:04:105 MiRam/(29981:30024): Se expulso segmento 4
+[WARNING] 22:02:04:107 MiRam/(29981:30024): el cliente se desconecto.
+[INFO] 22:02:05:145 MiRam/(29981:30020): no hay mas tareas
+[INFO] 22:02:05:145 MiRam/(29981:30020): Se expulso segmento 3
+[INFO] 22:02:05:146 MiRam/(29981:30020): Tabla de segmentos de patota ya no existe
+[WARNING] 22:02:05:146 MiRam/(29981:30020): el cliente se desconecto.
+[INFO] 22:02:07:065 MiRam/(29981:30023): no hay mas tareas
+[INFO] 22:02:07:066 MiRam/(29981:30023): Se expulso segmento 3
+[INFO] 22:02:07:066 MiRam/(29981:30023): Tabla de segmentos de patota ya no existe
+[WARNING] 22:02:07:067 MiRam/(29981:30023): el cliente se desconecto.
+[ERROR] 22:03:08:257 MiRam/(29981:30007): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:03:08:259 MiRam/(29981:30007): aaaaa
+[INFO] 22:04:53:646 MiRam/(30154:30179): Se asigno espacio de memoria a todo
+[INFO] 22:04:55:703 MiRam/(30154:30179): Se asigno espacio de memoria a todo
+[WARNING] 22:05:26:962 MiRam/(30154:30194): el cliente se desconecto.
+[INFO] 22:05:26:962 MiRam/(30154:30179): Se expulso segmento 3
+[INFO] 22:05:57:125 MiRam/(30154:30195): no hay mas tareas
+[INFO] 22:05:57:125 MiRam/(30154:30195): Se expulso segmento 4
+[WARNING] 22:05:57:126 MiRam/(30154:30195): el cliente se desconecto.
+[INFO] 22:05:58:127 MiRam/(30154:30196): no hay mas tareas
+[INFO] 22:05:58:127 MiRam/(30154:30196): Se expulso segmento 2
+[WARNING] 22:05:58:128 MiRam/(30154:30196): el cliente se desconecto.
+[INFO] 22:05:58:166 MiRam/(30154:30193): no hay mas tareas
+[INFO] 22:05:58:166 MiRam/(30154:30193): Se expulso segmento 2
+[INFO] 22:05:58:169 MiRam/(30154:30193): Tabla de segmentos de patota ya no existe
+[WARNING] 22:05:58:169 MiRam/(30154:30193): el cliente se desconecto.
+[INFO] 22:06:02:210 MiRam/(30154:30198): no hay mas tareas
+[INFO] 22:06:02:210 MiRam/(30154:30198): Se expulso segmento 4
+[WARNING] 22:06:02:210 MiRam/(30154:30198): el cliente se desconecto.
+[INFO] 22:06:06:175 MiRam/(30154:30197): no hay mas tareas
+[INFO] 22:06:06:175 MiRam/(30154:30197): Se expulso segmento 3
+[INFO] 22:06:06:176 MiRam/(30154:30197): Tabla de segmentos de patota ya no existe
+[WARNING] 22:06:06:176 MiRam/(30154:30197): el cliente se desconecto.
+[ERROR] 22:06:14:484 MiRam/(30154:30179): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:06:14:485 MiRam/(30154:30179): aaaaa
+[INFO] 22:20:36:493 MiRam/(30485:30529): Se asigno espacio de memoria a todo
+[INFO] 22:20:54:956 MiRam/(30485:30485): Empieza compactacion
+[INFO] 22:20:54:957 MiRam/(30485:30485): No hay nada para compactar
+[INFO] 22:20:54:957 MiRam/(30485:30485): Termina compactacion
+[INFO] 22:21:11:241 MiRam/(30485:30537): no hay mas tareas
+[INFO] 22:21:11:241 MiRam/(30485:30537): Se expulso segmento 2
+[WARNING] 22:21:11:246 MiRam/(30485:30537): el cliente se desconecto.
+[INFO] 22:21:12:285 MiRam/(30485:30539): no hay mas tareas
+[INFO] 22:21:12:285 MiRam/(30485:30539): Se expulso segmento 4
+[WARNING] 22:21:12:286 MiRam/(30485:30539): el cliente se desconecto.
+[INFO] 22:21:13:281 MiRam/(30485:30538): no hay mas tareas
+[INFO] 22:21:13:281 MiRam/(30485:30538): Se expulso segmento 3
+[INFO] 22:21:13:282 MiRam/(30485:30538): Tabla de segmentos de patota ya no existe
+[WARNING] 22:21:13:282 MiRam/(30485:30538): el cliente se desconecto.
+[ERROR] 22:21:17:122 MiRam/(30485:30529): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:21:17:123 MiRam/(30485:30529): aaaaa
+[INFO] 22:22:11:599 MiRam/(30587:30602): Se asigno espacio de memoria a todo
+[INFO] 22:22:41:765 MiRam/(30587:30611): no hay mas tareas
+[INFO] 22:22:41:765 MiRam/(30587:30611): Se expulso segmento 2
+[WARNING] 22:22:41:767 MiRam/(30587:30611): el cliente se desconecto.
+[INFO] 22:22:43:881 MiRam/(30587:30613): no hay mas tareas
+[INFO] 22:22:43:881 MiRam/(30587:30613): Se expulso segmento 4
+[WARNING] 22:22:43:882 MiRam/(30587:30613): el cliente se desconecto.
+[INFO] 22:22:45:809 MiRam/(30587:30612): no hay mas tareas
+[INFO] 22:22:45:809 MiRam/(30587:30612): Se expulso segmento 3
+[INFO] 22:22:45:810 MiRam/(30587:30612): Tabla de segmentos de patota ya no existe
+[WARNING] 22:22:45:810 MiRam/(30587:30612): el cliente se desconecto.
+[ERROR] 22:22:51:910 MiRam/(30587:30602): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:22:51:911 MiRam/(30587:30602): aaaaa
+[INFO] 22:25:45:924 MiRam/(30662:30678): Se asigno espacio de memoria a todo
+[INFO] 22:25:53:368 MiRam/(30662:30662): dumpppp
+[ERROR] 22:26:01:748 MiRam/(30662:30678): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:26:01:748 MiRam/(30662:30678): aaaaa
+[ERROR] 22:27:34:925 MiRam/(30713:30725): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:27:34:926 MiRam/(30713:30725): aaaaa
+[INFO] 22:28:02:021 MiRam/(30744:30761): Se asigno espacio de memoria a todo
+[INFO] 22:28:11:730 MiRam/(30744:30744): dumpppp
+[INFO] 22:28:32:857 MiRam/(30744:30769): no hay mas tareas
+[INFO] 22:28:32:857 MiRam/(30744:30769): Se expulso segmento 2
+[WARNING] 22:28:32:862 MiRam/(30744:30769): el cliente se desconecto.
+[INFO] 22:28:34:981 MiRam/(30744:30771): no hay mas tareas
+[INFO] 22:28:34:981 MiRam/(30744:30771): Se expulso segmento 4
+[WARNING] 22:28:34:982 MiRam/(30744:30771): el cliente se desconecto.
+[INFO] 22:28:36:905 MiRam/(30744:30770): no hay mas tareas
+[INFO] 22:28:36:905 MiRam/(30744:30770): Se expulso segmento 3
+[INFO] 22:28:36:906 MiRam/(30744:30770): Tabla de segmentos de patota ya no existe
+[WARNING] 22:28:36:906 MiRam/(30744:30770): el cliente se desconecto.
+[ERROR] 22:35:18:264 MiRam/(30744:30761): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:35:18:269 MiRam/(30744:30761): aaaaa
+[INFO] 22:40:03:264 MiRam/(31237:31252): Se asigno espacio de memoria a todo
+[INFO] 22:40:05:404 MiRam/(31237:31252): Se asigno espacio de memoria a todo
+[INFO] 22:40:17:791 MiRam/(31237:31237): aaaaaaaaaa
+[INFO] 22:40:17:792 MiRam/(31237:31237): aaaaaaaaaa
+[INFO] 22:40:17:792 MiRam/(31237:31237): dumpppp
+[INFO] 22:40:33:736 MiRam/(31237:31237): aaaaaaaaaa
+[INFO] 22:40:33:736 MiRam/(31237:31237): aaaaaaaaaa
+[INFO] 22:40:33:737 MiRam/(31237:31237): dumpppp
+[INFO] 22:41:02:398 MiRam/(31237:31262): no hay mas tareas
+[INFO] 22:41:02:418 MiRam/(31237:31262): Se expulso segmento 2
+[WARNING] 22:41:02:421 MiRam/(31237:31262): el cliente se desconecto.
+[INFO] 22:41:03:401 MiRam/(31237:31264): no hay mas tareas
+[INFO] 22:41:03:402 MiRam/(31237:31264): Se expulso segmento 4
+[WARNING] 22:41:03:402 MiRam/(31237:31264): el cliente se desconecto.
+[INFO] 22:41:03:458 MiRam/(31237:31265): no hay mas tareas
+[INFO] 22:41:03:458 MiRam/(31237:31265): Se expulso segmento 2
+[WARNING] 22:41:03:459 MiRam/(31237:31265): el cliente se desconecto.
+[INFO] 22:41:04:510 MiRam/(31237:31267): no hay mas tareas
+[INFO] 22:41:04:510 MiRam/(31237:31267): Se expulso segmento 4
+[WARNING] 22:41:04:513 MiRam/(31237:31267): el cliente se desconecto.
+[INFO] 22:41:05:555 MiRam/(31237:31263): no hay mas tareas
+[INFO] 22:41:05:555 MiRam/(31237:31263): Se expulso segmento 3
+[INFO] 22:41:05:556 MiRam/(31237:31263): Tabla de segmentos de patota ya no existe
+[WARNING] 22:41:05:557 MiRam/(31237:31263): el cliente se desconecto.
+[INFO] 22:41:07:442 MiRam/(31237:31266): no hay mas tareas
+[INFO] 22:41:07:442 MiRam/(31237:31266): Se expulso segmento 3
+[INFO] 22:41:07:443 MiRam/(31237:31266): Tabla de segmentos de patota ya no existe
+[WARNING] 22:41:07:443 MiRam/(31237:31266): el cliente se desconecto.
+[ERROR] 22:41:37:343 MiRam/(31237:31252): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:41:37:343 MiRam/(31237:31252): aaaaa
+[INFO] 22:54:16:750 MiRam/(31436:31452): Se asigno espacio de memoria a todo
+[ERROR] 22:54:39:453 MiRam/(31436:31452): el discordiador finalizo el programa. Terminando servidor
+[INFO] 22:54:39:453 MiRam/(31436:31452): aaaaa
+[INFO] 22:56:49:021 MiRam/(31499:31529): Se asigno espacio de memoria a todo
+[ERROR] 22:58:48:597 MiRam/(31499:31529): el discordiador finalizo el programa. Terminando servidor
+[WARNING] 22:58:48:598 MiRam/(31499:31552): el cliente se desconecto.
+[WARNING] 22:58:48:598 MiRam/(31499:31551): el cliente se desconecto.
+[WARNING] 22:58:48:598 MiRam/(31499:31550): el cliente se desconecto.
+[INFO] 22:58:48:599 MiRam/(31499:31529): aaaaa
+[INFO] 23:01:17:323 MiRam/(31585:31600): Se asigno espacio de memoria a todo
+[INFO] 23:01:21:007 MiRam/(31585:31600): Se asigno espacio de memoria a todo
+[ERROR] 23:01:35:077 MiRam/(31585:31600): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:01:35:077 MiRam/(31585:31600): aaaaa
+[INFO] 23:09:36:672 MiRam/(31700:31720): Se asigno espacio de memoria a todo
+[INFO] 23:09:39:411 MiRam/(31700:31720): Se asigno espacio de memoria a todo
+[ERROR] 23:09:56:232 MiRam/(31700:31720): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:09:56:232 MiRam/(31700:31720): aaaaa

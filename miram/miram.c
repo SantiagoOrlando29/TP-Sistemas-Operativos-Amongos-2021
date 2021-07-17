@@ -5,6 +5,7 @@ int main(void)
 	int piddd = getpid();
 	printf("pid %d    \n", piddd);
 	signal(SIGUSR2, sig_handler);
+	signal(SIGUSR1, sig_handler);
 
 	sem_init(&MUTEX_PEDIR_TAREA, 0,1);
 	sem_init(&MUTEX_CAMBIAR_ESTADO, 0,1);
