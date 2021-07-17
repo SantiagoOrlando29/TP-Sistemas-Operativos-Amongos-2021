@@ -4,7 +4,7 @@ config_struct configuracion;
 t_list* memoria_aux;
 int variable_servidor = -1;
 int socket_servidor;
-NIVEL* nivel;
+//NIVEL* nivel;
 int err;
 int numero_mapa = 0;
 
@@ -112,7 +112,7 @@ int funcion_cliente(int socket_cliente){
 				fflush(stdout);
 				printf("\n Marcos sin un carajo: %d \n", cuantos_marcos_libres(&configuracion));
 				fflush(stdout);
-				if(cuantos_marcos_necesito > (cuantos_marcos_libres(&configuracion))){
+				if(cuantos_marcos_necesito > (cuantos_marcos_libres(&configuracion))+ espacios_swap_libres(&configuracion)){
 					printf(" \n No vas a poder poner un choto\n");
 					fflush(stdout);
 					//ack a discordiador
@@ -129,11 +129,12 @@ int funcion_cliente(int socket_cliente){
 
 					for(int i=0 ; i<cuantos_marcos_necesito; i++){
 						posicion_libre = posicion_marco(&configuracion);
+						printf("ASGINE ESTA POS %d\n", posicion_libre);
 						marco* marco_nuevo = malloc (sizeof(marco));
 						marco_nuevo->id_marco=posicion_libre;
 						marco_nuevo->ubicacion=MEM_PRINCIPAL;
 						marco_nuevo->bit_uso=1;
-						//marco_nuevo->ultimo_uso = time(0);
+						marco_nuevo->ultimo_uso = time(0);
 						list_add(una_tabla->marco_inicial,marco_nuevo);
 					}
 
@@ -141,22 +142,21 @@ int funcion_cliente(int socket_cliente){
 					int cols, rows;
 
 
-					tcbTripulante* tripulante3 =crear_tripulante(3,'N',23,23,23,23);
+
 					almacenar_informacion(&configuracion, una_tabla, lista);
 					printf("\n");
-					leer_informacion(&configuracion,  una_tabla, lista);
+					//leer_informacion(&configuracion,  una_tabla, lista);
 
 					//actualizar_tripulante( tripulante3, 1);
 
 					//leer_informacion(&configuracion,  una_tabla, lista);
 					//mem_hexdump(configuracion.posicion_inicial, configuracion.tamanio_pag*sizeof(char));
-					fflush(stdout);
-					printf("\n");
 
-					printf("La tarea es %s\n", obtener_tarea(1, 3));
 
 
 					imprimir_ocupacion_marcos(&configuracion);
+					imprimir_tabla();
+					sleep(1);
 					dump_memoria();
 					/*fflush(stdout);
 
@@ -203,10 +203,10 @@ int funcion_cliente(int socket_cliente){
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
 				variable_servidor = 0;
-				nivel_destruir(nivel);
-				nivel_gui_terminar();
+				//nivel_destruir(nivel);
+				//nivel_gui_terminar();
 
-				numero_mapa=1;
+				//numero_mapa=1;
 				shutdown(socket_servidor, SHUT_RD);
 				close(socket_cliente);
 				return EXIT_FAILURE;
@@ -559,17 +559,6 @@ void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabl
 
 	}
 
-	printf("Marco %d\n", indice_marco);
-	fflush(stdout);
-	printf("Marco id %d\n", marcos->id_marco);
-	fflush(stdout);
-	printf("Offset %d\n", marcos->id_marco);
-	fflush(stdout);
-
-
-
-	printf("Debe iterar %d\n", una_tabla->long_tareas);
-	fflush(stdout);
 	for(int j=0; j <(una_tabla->long_tareas);j++){
 
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
@@ -615,9 +604,6 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 
 		uint32_t tid = tripulante->tid;
-		printf("\n TID %d",tid);
-
-		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos =(marco*) list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
@@ -625,8 +611,6 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 
 		char estado = tripulante->estado;
-		printf("\n Estado %c", estado);
-		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
@@ -634,16 +618,12 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 
 		uint32_t pos_x = tripulante->posicionX;
-		printf("\n Pos x %d",pos_x);
-		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
 		offset +=escribir_atributo(pos_x,offset,marcos->id_marco, config_servidor);
 
 		uint32_t pos_y =tripulante->posicionY;
-		printf("\n Pos y %d",pos_y);
-		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
@@ -651,16 +631,12 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 
 		uint32_t prox_i = tripulante->prox_instruccion;
-		printf("\nProx instruccion %d", prox_i);
-		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
 		offset +=escribir_atributo(prox_i,offset,marcos->id_marco, config_servidor);
 
 		uint32_t p_pcb =tripulante->puntero_pcb;
-		printf("\n Este es el puntero al pcb  %d\n",p_pcb);
-		fflush(stdout);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(uint32_t));
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
@@ -682,9 +658,6 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 		marcos = (marco*)list_get(una_tabla->marco_inicial,indice_marco);
 		actualizar_lru(marcos);
 		offset +=escribir_char_tarea(tarea[i],offset,marcos->id_marco, config_servidor);
-		printf("%c",tarea[i]);
-		fflush(stdout);
-
 
 }
 
@@ -772,17 +745,17 @@ int posicion_marco(){
 		}
 
 	}
-/*	if(strcmp(configuracion.algoritmo_reemplazo,"LRU")==0){
-		printf("Hola LRU in da house\n\n\n");
-
+	//Si no hay marcos libres en memoria principal, ejecuto el algoritmo de reemplazo
+	if(strcmp(configuracion.algoritmo_reemplazo,"LRU")==0){
+		printf("ES LRU\n");
 		return reemplazo_lru();
 	}else{
+		printf("ES CLOCK\n");
 		return reemplazo_clock();
 	}
 
-	*/
 
-	return -1;
+
 }
 
 
@@ -914,7 +887,7 @@ void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina){
 		tabla_paginacion* una_tabla = list_get(memoria_aux,i);
 		for(int j=0; j<list_size(una_tabla->marco_inicial);j++){
 			marco* un_marco=list_get(una_tabla->marco_inicial,j);
-			if(un_marco->id_marco==id_marco){
+			if(un_marco->id_marco==id_marco && un_marco->ubicacion==MEM_PRINCIPAL){
 				char buff1[100];
 				strftime(buff1, 100, "%d/%m/%Y %H:%M:%S"  , localtime(&un_marco->ultimo_uso));
 				//printf("Ultimo uso %s\n", buff1);
@@ -931,6 +904,23 @@ void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina){
 				*proceso=0;
 				*pagina=0;
 
+			}
+
+	}
+}
+
+
+void imprimir_tabla(){
+	for(int i=0; i<list_size(memoria_aux);i++){
+		tabla_paginacion* una_tabla = list_get(memoria_aux,i);
+		printf("Patota %d\n",una_tabla->id_patota);
+		for(int j=0; j<list_size(una_tabla->marco_inicial);j++){
+			marco* un_marco=list_get(una_tabla->marco_inicial,j);
+			printf("ID MARCO %d\n",un_marco->id_marco );
+			printf("Uso %d\n",un_marco->bit_uso );
+			//printf("Libre %d\n",un_marco->libre );
+			printf("Ubicacion %d\n",un_marco->ubicacion );
+			printf("Time %f\n",un_marco->ultimo_uso);
 			}
 
 	}
@@ -1067,11 +1057,13 @@ int espacios_swap_libres(config_struct* config_servidor){
 }
 
 int reemplazo_clock(){
+			printf("Estoy en el clock\n");
 			int nro_marco;
+			int flag =0;
 			marco* clock_m=malloc(sizeof(marco));
 				for(int i=0; i<list_size(memoria_aux);i++){
 					tabla_paginacion* una_tabla = list_get(memoria_aux,i);
-					while(1){
+					while(flag !=1){
 						for(int j=0; j<list_size(una_tabla->marco_inicial);j++){
 							marco* un_marco=list_get(una_tabla->marco_inicial,j);
 							if(un_marco->bit_uso==1 && un_marco->ubicacion==MEM_PRINCIPAL){
@@ -1079,20 +1071,26 @@ int reemplazo_clock(){
 			   		           }
 							if(un_marco->bit_uso==0 && un_marco->ubicacion==MEM_PRINCIPAL){
 								clock_m = un_marco;
+								flag=1;
 								break;
 							}
 			   	   }
 		   }
 		}
 
+
+
+
 		   clock_m->ubicacion=MEM_SECUNDARIA;
 		   nro_marco=clock_m->id_marco;
 
-		   void* contenidoAEscribir = malloc(configuracion.tamanio_pag*sizeof(char));
+		   void* contenidoAEscribir = malloc(configuracion.tamanio_pag);
 		   memcpy(contenidoAEscribir,configuracion.posicion_inicial + nro_marco*(configuracion.tamanio_pag) ,configuracion.tamanio_pag);
 		   clock_m->id_marco=lugar_swap_libre();
 		   swap_pagina(contenidoAEscribir,clock_m->id_marco);
 
+		   printf("MARCO ENTREGADO POR CLOCK %d \n",  nro_marco);
+		   fflush(stdout);
 		   return nro_marco;
 
 }

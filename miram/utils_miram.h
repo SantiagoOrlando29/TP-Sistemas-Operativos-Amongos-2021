@@ -223,7 +223,8 @@ int lugar_swap_libre();
 void actualizar_lru(marco* un_marco);
 int reemplazo_clock();
 void actualizar_tripulante(tcbTripulante* tripulante, int id_patota);
-
+int espacios_swap_libres(config_struct* config_servidor);
+void imprimir_tabla();
 
 
 char* obtener_tarea(int id_patota, int nro_tarea);
