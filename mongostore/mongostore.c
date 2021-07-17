@@ -1,595 +1,300 @@
-#include "mongostore.h"
-#include <openssl/md5.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "utils_mongostore.h"
 
-///////
-#define ARCHIVO_LOGS "mongostore.log"
-#define PROGRAMA argv[0]
-#define LOGS_EN_CONSOLA 1
-#define NIVEL_DE_LOGS_MINIMO LOG_LEVEL_DEBUG
-#define ARCHIVO_CONFIGURACION "mongostore.config"
-///////
-t_log* logger;
-config_struct ims_config;
-int blocks_fd;
-///////
-void validar_argumentos(int cantidad_parametros, char* programa);
-void cargar_configuracion_en_struct();
-void iniciar_file_system(char* argv[]);
-int existe_file_system();
-int existe_path(char*);
-void recuperar_file_system_existente();
-void crear_file_system(char* argv[]);
-void crear_directorios();
-void crear_directorio_si_no_existe(char* path);
+//Prototipos de funciones en desarrollo
 
-///////
-pthread_mutex_t mutex_blocks;
-int blocks_size=128; //acepta 8 caracteres de char
-int blocks=4;
 
-t_superbloque superbloque;
-char* bloques_copia;
+int main(void)
+{
+	printf("dsfs\n");
 
-void levantar_blocks();
 
-void main (int argc, char *argv[]){
 	logger = log_create(ARCHIVO_LOGS, PROGRAMA, LOGS_EN_CONSOLA, NIVEL_DE_LOGS_MINIMO);
-	
+
 	if(logger == NULL)
 	{
 		printf("No se puede abrir el archivo de logs para iniciar el programa\n");
 		exit(EXIT_FAILURE);
 	}
 
-	validar_argumentos(argc, argv);
+	log_debug(logger, "LOGGER OK");
 
-	cargar_configuracion_en_struct();
-	
-	iniciar_file_system(argv[]);
+	leer_config();
+	log_debug(logger, "Testeo config, la IP es: %s", configuracion.ip);
 
-	pthread_t servidor;
-	int hilo_servidor = 1;
-	if(pthread_create(&servidor,NULL,(void*)iniciar_servidor,&ims_config) != 0)
-	{
-		log_info(logger, "Falla al crearse el hilo");
-		log_destroy(logger);
+	file_system_iniciar();
 
-		exit(EXIT_FAILURE);
-	}
-	pthread_join(servidor,NULL);
+	recurso_generar_cantidad(OXIGENO, 2);/*
+	recurso_generar_cantidad(COMIDA, 3);
+	recurso_generar_cantidad(BASURA, 4);
+	recurso_generar_cantidad(BASURA, 5);
 
-	//mapeo();
+	log_info(logger, "Finaliza main");
 
-	log_destroy(logger);
-	exit(EXIT_SUCCESS);
+	return EXIT_SUCCESS;*/
+return 8;
 }
 
-//Se valida que el numero de parametros ingresados al iniciar el programa sea el correcto. De no serlo se finaliza indicando el error
-void validar_argumentos(int cantidad_parametros, char* programa){
-	if (cantidad_parametros != 1 && cantidad_parametros != 3)
-	{
-		printf("Numero de parametros incorrecto\nModos de ejecucion de \"%s\":\n"
-				" 1) %s (Si no existe el File System se pedira la cantidad y el tamaño de bloques para crearlo, debe existir el archivo de configuracion)\n"
-				" 2) %s <tamanio de bloques> <cantidad de bloques> (El tamanio y la cantidad de bloques serviran para crear el SuperBloque)\n",
-				programa, programa, programa);
-		log_info(logger, "Los parametros para la ejecucion del programa no son los correctos");
-		exit(EXIT_FAILURE);
-	}
-}
+//TODO actualizar_metadata_inicial en base a SB+B? ENTIENDO QUE NO SERIA NECESARIO Y HASTA ESTARIA MAL (PREGUNTAR)
+//TODO generar md5
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/*Crea un t_config con el archivo existente de configuracion guardando sus valores en la estructura global ims_config y
-destruyendo luego la estructura t_config*/
-void cargar_configuracion_en_struct()
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+///**Elimina la cantidad cantidad de caracteres de llenado del archivo y de la metadata correspondiente al recurso dado
+void recurso_consumir_cantidad(recurso_code codigo_recurso, int cantidad)
 {
-	printf("*** entro a cargar_configuracion_en_struct\n");
-
-	//Se carga el archivo de configuracion. Si no es posible se imprime en pantalla y finaliza el programa
-	t_config* config = config_create(ARCHIVO_CONFIGURACION);
-	if(config == NULL)
+	t_recurso_data* recurso_data = &lista_recursos[codigo_recurso];
+	log_debug(logger, "Se ingresa a recurso_consumir_cantidad para el recurso %s y la cantidad %d", recurso_data->nombre, cantidad);
+	recurso_validar_existencia_metadata_en_memoria(recurso_data);
+	metadata_consumir_cantidad(recurso_data->metadata, cantidad);
+	superbloque_actualizar_archivo();
+	blocks_actualizar_archivo();
+	recurso_actualizar_archivo(recurso_data);
+	//signal recurso_data superbloque y blocks //quiza se puede ser mas especifico
+	if(recurso_data->metadata == NULL)
 	{
-		log_info(logger, "No se puede cargar la configuracion. Se finaliza el programa");
-		exit(EXIT_FAILURE);
+		int bloques_llenos_a_eliminar = cantidad / superbloque.block_size;
+		int resto_de_caracteres_a_eliminar = cantidad % superbloque.block_size;
 	}
-	printf("*** * lc se abrio %s\n", config->path);
-
-	//Se carga la estructura global "ims_config"
-	// *** Si no se precisa que sea global puede pasarse a local retornandolo y eliminando el destroy
-	ims_config.punto_montaje = config_get_string_value(config,"PUNTO_MONTAJE");
-	char* ip;
-	printf("Ingrese por favor la direccion IP donde se conectara \n");
-	scanf("%s", ip);
-	ims_config.ip = ip;//config_get_string_value(config, "IP");// *** el archivo de configuracion no tiene IP
-    ims_config.puerto = config_get_string_value(config, "PUERTO");
-    ims_config.tiempo_sincronizacion = config_get_int_value(config,"TIEMPO_SINCRONIZACION");
-    ims_config.posiciones_sabotaje = config_get_array_value(config,"POSICIONES_SABOTAJE");
-    printf("*** * lc: se cargo en la estructura \"ims_config\" en los campos de:\n  PUNTO_MONTAJE, IP, PUERTO, "
-		"TIEMPO_SINCRONIZACION y POSICIONES_SABOTAJES\n  con los valores:\n  %s, %s, %s, %d y %s\n", ims_config.punto_montaje,
-		ims_config.ip, ims_config.puerto, ims_config.tiempo_sincronizacion, ims_config.posiciones_sabotaje[0]);
-
-    config_destroy(config);
-
-    printf("*** *** salgo de cargar_configuracion_en_struct\n\n");
+	log_info(logger, "Finaliza recurso_consumir_cantidad de %s", recurso_data->nombre);
 }
-	
-/*Inicia el File System verificando la existencia previa del mismo, creandolo si no existiera de antes, recuperandolo si ya
-existiera y levantando posteriormente a memoria el archivo Blocks.ims*/
-void iniciar_file_system(int argc, char* argv[])
+//Actualiza la metadata del recurso en memoria al archivo. Si este no existe lo crea con los valores actualizados
+void recurso_actualizar_archivo(t_recurso_data* recurso_data)//para modificar
 {
-	printf("*** entro a iniciar_file_system\n");
-
-	if(existe_file_system())
+	log_debug(logger, "Se ingresa a recurso_actualizar_archivo de recurso %s", recurso_data->nombre);
+	if(existe_en_disco(recurso_data->ruta_completa) == 0)
 	{
-		printf("*** ** existe el file system\n");
-		recuperar_file_system_existente();
+		crear_archivo(recurso_data->ruta_completa);
 	}
-	else
+	t_config* recurso_md = config_create(recurso_data->ruta_completa);
+	char* size_str = string_itoa(recurso_data->metadata->size);
+	char* block_count_str = string_itoa(recurso_data->metadata->block_count);
+	config_set_value(recurso_md, "SIZE", size_str);
+	config_set_value(recurso_md, "BLOCK_COUNT", block_count_str);
+	config_set_value(recurso_md, "BLOCKS", recurso_data->metadata->blocks);
+	config_set_value(recurso_md, "CARACTER_LLENADO", recurso_data->metadata->caracter_llenado);
+	config_set_value(recurso_md, "MD5_ARCHIVO", recurso_data->metadata->md5_archivo);
+	free(size_str);
+	free(block_count_str);
+	config_save(recurso_md);
+	log_debug(logger, "Valores persistidos: SIZE %d  B_C %d  BS %s  C_LL %s MD5 %s", config_get_int_value(recurso_md, "SIZE"),
+			config_get_int_value(recurso_md, "BLOCK_COUNT"), config_get_string_value(recurso_md, "BLOCKS"),
+			config_get_string_value(recurso_md, "CARACTER_LLENADO"), config_get_string_value(recurso_md, "MD5_ARCHIVO"));
+	config_destroy(recurso_md);
+	log_info(logger, "Se actualizo metadata de %s de memoria de a archivo %s", recurso_data->nombre, recurso_data->ruta_completa);
+}
+//Carga la cantidad cantidad de los recursos del codigo_recurso en el ultimo bloque o en nuevos bloques que esten libres agregandolos a la lista de bloques
+void metadata_consumir_cantidad(t_recurso_md* recurso_md, int cantidad)
+{
+	//pthread_mutex_lock(&mutex_blocks); //sector critico porque se usa superbloque.ims  y blocks.ims
+	log_debug(logger, "Entro a metadata_consumir_cantidad con C_LL %s y cantidad %d", recurso_md->caracter_llenado, cantidad);
+	log_debug(logger, "Valores de metadata antes de consumir recursos: SIZE %d, BLOCK_COUNT %d, BLOCKS %s y MD5 %s",
+			recurso_md->size, recurso_md->block_count, recurso_md->blocks, recurso_md->md5_archivo);
+	if(cantidad > recurso_md->size)
 	{
-		printf("*** ** no existe el file system\n");
-		crear_file_system(argc, argv[]);
+		free(recurso_md->blocks);
+		free(recurso_md->md5_archivo);
+		metadata_setear_con_valores_default_en_memoria(recurso_md);
+		log_info(logger, "Quisieron eliminarse mas caracteres \"%s\" de los existentes");
 	}
-	levantar_superbloque();
-	levantar_blocks();
-
-	printf("*** *** salgo de iniciar_file_system\n");
-}
-
-//Devuelve true si existe el archivo Blocks.ims en la ruta dada por el punto de montaje
-int existe_file_system()
-{
-	printf("*** * entro a -y salgo de?- existe_file_system SACAR HARCODEO\n");
-	return (existe_path("/home/utnso/polus/Blocks.ims") && existe_path("/home/utnso/polus/SuperBloque.ims"));
-}
-
-//Devuelve true si el path recibido corresponde a una ruta ya existente (verifica existencia de archivos y/o carpetas)
-int existe_path(char* path)
-{
-	printf("*** * entro a -y salgo de?- existe_path\n");
-	return (access(path, F_OK) == 0);
-}
-
-//Abre el archivo Blocks.ims (finaliza el programa si no es posible)
-//Suponemos en principio creados los archivos de files
-void recuperar_file_system_existente()
-{
-	printf("*** entro a recuperar_file_system_existente\n");
-	//crear_directorios_si_no_existen();
-	levantar_superbloque();
-	levantar_blocks();
-	
-	printf("*** *** salgo de recuperar_file_system_existente\n");
-}
-
-/*Crea los directorios (si no existen) para los archivos del File System, abre el archivo de Blocks.ims (si no existe lo crea)
-(si no puede crearlo o puede abrirlo, finaliza el programa). Por último define el tamanio que tendra dicho archivo*/
-void crear_file_system(int cantidad_parametros_programa, char* parametros_programa[])
-{
-	printf("*** entro a crear_file_system\n");
-	crear_directorios_si_no_existen();
-	if(existe_path(/home/utnso/polus/SuperBloque.ims) == 0)
+	while(cantidad > 0)
 	{
-		crear_archivo_superbloque(cantidad_parametros_programa, char* parametros_programa[]);
-	}
-	levantar_superbloque();
-	crear_arhivo_blocks();
-	levantar_blocks();
-	
-	printf("*** *** salgo de crear_file_system\n\n");
-
-/*	int tamanio_blocks;
-	if(existe_path(/home/utnso/polus/SuperBloque.ims) == 0)
-	{	
-		if(argc == 1)
+		if(metadata_tiene_espacio_en_ultimo_bloque(recurso_md))
 		{
-			printf("Ingrese el tamanio de los bloques:\n");
-			scanf("%d", &superbloque.block_size);
-			printf("Ingrese la cantidad de bloques:\n");
-			scanf("%d", &superbloque.blocks);
+			metadata_consumir_en_ultimo_bloque(recurso_md, &cantidad, nuevo_bloque);
 		}
 		else
 		{
-			superbloque.block_size = atoi(argv[1]);
-			superbloque.blocks = atoi(argv[2]);
-		}
+			log_debug(logger, "En cargar_recursos_en_memoria (while-else 1): cantidad %d, blocks %s, recurso_md->size %d y "
+					"superbloque.block_size %d", cantidad, recurso_md->blocks, recurso_md->size, superbloque.block_size);
+			nuevo_bloque = superbloque_obtener_bloque_nuevo_a_usar();
+			cadena_sacar_ultimo_caracter(recurso_md->blocks);
+			log_debug(logger, "Cadena despues de sacarle el ultimo caracter %s", recurso_md->blocks);
+			string_append_with_format(&recurso_md->blocks, ",%d]", nuevo_bloque);
+			recurso_md->block_count++;
+			log_debug(logger, "En cargar_recursos_en_memoria (while-else 2): blocks %s y recurso_md->block_count  %d",
+					recurso_md->blocks, recurso_md->block_count);
+			}
 	}
-	else
-	{
-		levantar_superbloque();
-	}
-	
-	tamanio_blocks	= superbloque.block_size * superbloque.blocks;
-	printf("***superbloque.block_size = %d;   superbloque.blocks = %d\n", superbloque.block_size, superbloque.blocks);
-	
-	char* blocks_path;
-	blocks_path = "/home/utnso/polus/Blocks.ims"; //*** sacar hardcode
-	blocks_fd = open(blocks_path, O_CREAT|O_RDWR, S_IRWXU);
-	if(blocks_fd == -1)
-	{
-		log_info(logger, "No pudo ser creado el archivo %s. Se finaliza el programa\n", blocks_path);
-		exit(EXIT_FAILURE);
-	}
-	printf("*** ** se creo y abrio correctamente el archivo %s para lectura y escritura\n", blocks_path);
-
-	//Se cambia el tamanio del archivo fisico
-	if(ftruncate(blocks_fd, tamanio) == -1)
-	{
-		log_info(logger, "No se le pudo asignar el tamanio al archivo %s. Se finaliza el programa\n", blocks_path);
-		exit(EXIT_FAILURE);
-	}
-
-	printf("*** ** se le pudo asignar tamanio al archivo %s\n", blocks_path);
-
-*/
+	metadata_actualizar_md5(recurso_md);
+	log_info(logger, "Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL %s, SIZE %s, BLOCKS %s y el MD5 %s",
+			recurso_md->caracter_llenado, recurso_md->size, recurso_md->blocks, recurso_md->md5_archivo);
 }
-//crear_directorios_si_no_existen();crear_archivo_superbloque();levantar_superbloque();crear_arhivo_blocks();levantar_blocks();
-
-//Crea el archivo Superbloque.ims usando los parametros recibidos al iniciar el programa o solicitandolos
-void crear_archivo_superbloque(int cantidad_parametros_programa, char* parametros_programa[])
+//Carga recursos en el ultimo bloque registrado hasta que no quede espacio en el o no hayan mas recursos para cargar
+void metadata_consumir_en_ultimo_bloque(t_recurso_md* recurso_md, int* cantidad, int nuevo_bloque)
 {
-	printf("*** entro a crear_archivo_superbloque - sacar hardcodeo");
-	FILE* superbloque_file;
-	if(superbloque_file = fopen("/home/utnso/polus/SuperBloque.ims","w"))
+	log_debug(logger, "Se ingresa a recurso_cconsumir_en_ultimo_bloque con caracter %s y cantidad %d", recurso_md->caracter_llenado, cantidad);
+	//Si el valor del nuevo_bloque no es el valor default es porque ese bloque es el nuevo ultimo de la lista y no necesita calcularse
+	int ultimo_bloque = nuevo_bloque != -1 ? nuevo_bloque : metadata_ultimo_bloque_usado(recurso_md);
+	int posicion_en_bloque = recurso_md->size % superbloque.block_size;
+	int posicion_inicio_bloque = ultimo_bloque * superbloque.block_size; //se toma en cuenta que los bloques comienzan en 0
+	//La posicion absoluta es la suma entre la posicion de inicio del conjunto de bloques mas la posicion de inicio del bloque a cargar
+	//relativa al inicio de bloques mas la posicion en el bloque relativa al inicio del bloque
+	char* posicion_absoluta = blocks_address + posicion_inicio_bloque + posicion_en_bloque; //esta ok sumar un puntero con 2 ints?
+	log_debug(logger, "Ultimo_bloque %d, posicion_en_bloque %d, posicion_inicio_bloque %d posicion absoluta %p o %d",
+			*cantidad, ultimo_bloque, posicion_en_bloque, posicion_inicio_bloque, posicion_absoluta, posicion_absoluta);
+	char caracter_llenado = recurso_md->caracter_llenado[0];
+	while(posicion_en_bloque < superbloque.block_size && (*cantidad) > 0)
 	{
-		log_info(logger, "No puede ser creado el archivo %s\n. Se finaliza el programa", "/home/utnso/polus/SuperBloque.ims");
-		exit(EXIT_FAILURE);
+		*posicion_absoluta = caracter_llenado;
+		(*cantidad)--;
+		recurso_md->size++;
+		posicion_absoluta++;
+		posicion_en_bloque++;
 	}
-	
-	int tamanio_bloques, cantidad_bloques;
-	char* bitmap;
-	if (cantidad_parametros_programa == 1)
-	{
-		printf("Ingrese el tamanio de los bloques:\n");
-		scanf("%d", tamanio_bloques);
-		getchar();//para eliminar del buffer el fin de linea
-		printf("Ingrese la cantidad de bloques:\n");
-		scanf("%d", cantidad_bloques);
-		getchar();//para eliminar del buffer el fin de linea
-	}
-	else
-	{
-		tamanio_bloques = atoi(parametros_programa[1]);
-		cantidad_bloques = atoi(parametros_programa[2]);
-	}
-	bitmap = (char*) malloc(cantidad_bloques * sizeof(char)); //usar un bitmap real con las commons
-	//setear a 0
-	
-	fprintf(superbloque_file, "BLOCK_SIZE=%d\n", tamanio_bloques);
-	fprintf(superbloque_file, "BLOCKS=%d\n", cantidad_bloques);
-	fprintf(superbloque_file, "BITMAP=%s\n", bitmap);
-
-	free(bitmap);
-	fclose(superbloque_file);
-	printf("*** *** salgo de crear_archivo_superbloque");
+	log_debug(logger, "Se cargo en ultimo bloque con caracter %s quedando por cargar %d recurso(s)", recurso_md->caracter_llenado, cantidad);
 }
-
-void levantar_superbloque()
+//Carga recursos en el ultimo bloque registrado hasta que no quede espacio en el o no hayan mas recursos para cargar
+void metadata_consumir_en_ultimo_bloque2(t_recurso_md* recurso_md, int* cantidad, int nuevo_bloque)
 {
-	FILE* superbloque_file;
-	if(superbloque_file = fopen("/home/utnso/polus/SuperBloque.ims","w"))
-	
+	log_debug(logger, "Se ingresa a recurso_cargar_en_ultimo_bloque con caracter %s y cantidad %d", recurso_md->caracter_llenado, cantidad);
+	//Si el valor del nuevo_bloque no es el valor default es porque ese bloque es el nuevo ultimo de la lista y no necesita calcularse
+	int ultimo_bloque = nuevo_bloque != -1 ? nuevo_bloque : metadata_ultimo_bloque_usado(recurso_md);
+	int posicion_en_bloque = recurso_md->size % superbloque.block_size;
+	int posicion_inicio_bloque = ultimo_bloque * superbloque.block_size; //se toma en cuenta que los bloques comienzan en 0
+	char* posicion_absoluta = blocks_address + posicion_inicio_bloque + posicion_en_bloque; //esta ok sumar un puntero con 2 ints?
+	log_debug(logger, "Ultimo_bloque %d, posicion_en_bloque %d, posicion_inicio_bloque %d posicion absoluta %p o %d",
+			*cantidad, ultimo_bloque, posicion_en_bloque, posicion_inicio_bloque, posicion_absoluta, posicion_absoluta);
+	char caracter_llenado = recurso_md->caracter_llenado[0];
+	int espacio_libre_en_bloque = superbloque.block_size - posicion_en_bloque;
+	int cantidad_a_cargar = espacio_libre_en_bloque < *cantidad ? espacio_libre_en_bloque : *cantidad;
+	*cantidad -= cantidad_a_cargar;
+	memset(posicion_absoluta, caracter_llenado, cantidad_a_cargar);
+	recurso_md->size += cantidad_a_cargar;
+	log_debug(logger, "Se cargo en ultimo bloque con caracter %s quedando por cargar %d recurso(s)", recurso_md->caracter_llenado, cantidad);
 }
-	}
-	else
-	{
-		levantar_superbloque();
-	}
-	
-	t_config* archivo=config_create("SuperBloque.ims");
-		
-	superbloque.block_size = config_get_int_value(archivo,"BLOCK_SIZE");
-	superbloque.blocks = config_get_int_value(archivo,"BLOCKS");
-	superbloque.bitmap = (char *)malloc(superbloque.blocks * sizeof(char));
-		
-	(char *)malloc(superbloque.blocks * sizeof(char));
-	
-	int tamanio_blocks;
-	tamanio_blocks	= superbloque.block_size * superbloque.blocks;
-	printf("***superbloque.block_size = %d;   superbloque.blocks = %d\n", superbloque.block_size, superbloque.blocks);
-	
-	char* blocks_path;
-	blocks_path = "/home/utnso/polus/Blocks.ims"; //*** sacar hardcode
-	blocks_fd = open(blocks_path, O_CREAT|O_RDWR, S_IRWXU);
-	if(blocks_fd == -1)
-	{
-		log_info(logger, "No pudo ser creado el archivo %s. Se finaliza el programa\n", blocks_path);
-		exit(EXIT_FAILURE);
-	}
-	printf("*** ** se creo y abrio correctamente el archivo %s para lectura y escritura\n", blocks_path);
-
-	//Se cambia el tamanio del archivo fisico
-	if(ftruncate(blocks_fd, tamanio) == -1)
-	{
-		log_info(logger, "No se le pudo asignar el tamanio al archivo %s. Se finaliza el programa\n", blocks_path);
-		exit(EXIT_FAILURE);
-	}
-
-	printf("*** ** se le pudo asignar tamanio al archivo %s\n", blocks_path);
-
-	
-//Si no existen, crea los directorios para el File System
-void crear_directorios()
+//Devuelve el ultimo bloque registrado en la lista de Blocks del metadata del recurso
+int metadata_ultimo_bloque_usado(t_recurso_md* recurso_md)
 {
-	printf("*** entro a crear_directorios - sacar 3 hardcodes\n");
-
-	crear_directorio_si_no_existe("/home/utnso/polus");
-	crear_directorio_si_no_existe("/home/utnso/polus/Files");
-	crear_directorio_si_no_existe("/home/utnso/polus/Files/Bitacoras");
-
-	printf("*** *** salgo de crear_directorios\n\n");
-	return;
-}
-
-/*Crea el directorio para la ruta especificada. En caso de no poderse crear, finaliza el programa*/
-void crear_directorio_si_no_existe(char* path)
-{
-	//Se verifica si la ruta ya existe y -en caso contrario- si puede crearse exitosamente
-	if (existe_path(path) == 0 && mkdir(path, 0777))
-	{
-		log_info(logger, "No existia el directorio %s desde antes ni puede crearse. No pueden crearse el total de directorios del file system", path);
-		exit(EXIT_FAILURE);
-	}
-	else
-	{
-		printf("*** ** el directorio %s ya existia desde antes o fue creado con exito\n", path);
-		return;
-	}
-}
-
-/*Levanta a memoria con mmap el archivo de Blocks.ims ya abierto el cual luego de esto es cerrado
-(puede que se precise dejarlo abierto para la sincronizacion de los datos)*/
-void levantar_blocks()
-{
-	printf("*** entro a levantar_blocks - sacar 1 hardcodes\n");
-
-	char* blocks_path;
-	blocks_path = "/home/utnso/polus/Blocks.ims";
-	blocks_fd = open(blocks_path, O_RDWR);
-	if(blocks_fd == -1)
-	{
-		log_info(logger, "No pudo ser abierto el archivo %s para lectura y escritura", blocks_path);
-		exit(EXIT_FAILURE);
-	}
-	printf("*** ** 1 - se abrio correctamente el archivo %s ya existente para lectura y escritura\n", blocks_path);
-	// *** struct stat stat_file;
-	int tamanio = superbloque.block_size * superbloque.blocks;
-
-	void* address = mmap(NULL, tamanio, PROT_WRITE|PROT_READ, MAP_SHARED, blocks_fd, 0);
-
-	printf("*** 2 - se mapeo correctamente blocks a la memoria - direccion de mapeo %p\n", address);
-
-	close(blocks_fd);//puede que se precise dejarlo abierto para la sincronizacion de los datos ***
-	printf("*** *** salgo de levantar_blocks\n");
-}
-
-
-////De aca para abajo esta sin revisar
-
-
-/*
-void algo()
-{
-	escribir_archivo_superbloque(string_repeat('0',blocks));
-	printf("1\n");
-	bloques_copia=string_repeat('0',blocks);
-	printf("2\n");;
-	crear_superbloque();
-	printf("3\n");
-}
-
-//crear_recurso_metadata(133,3,"[1,2,3]",'O',"0123","/home/utnso/polus/Files/Oxigeno.ims");
-//crear_recurso_metadata(32,2,"[4,5]",'C',"0123","/home/utnso/polus/Files/Comida.ims");
-//crear_recurso_metadata(64,1,"[6]",'B',"0132465","/home/utnso/polus/Files/Basura.ims");
-*/
-
-/*Sube a memoria a traves del struct global superbloque los valores que se tienen en el archivo SuperBloque.ims
-(ex void crear_superbloque())*/
-void levantar_superbloque()
-{
-	printf("*** entro a crear_superbloque - sacar 1 hardcodes\n");
-	t_config* superbloque_config = config_create("/home/utnso/polus/SuperBloque.ims"); //*** sacar hardcode
-
-	printf("*** **1b\n");
-	superbloque.block_size = (uint32_t)config_get_int_value(superbloque_config,"BLOCK_SIZE");
-	printf("*** **2b\n");
-	superbloque.blocks = (uint32_t)config_get_int_value(superbloque_config,"BLOCKS");
-	printf("*** **3b\n");
-	superbloque.bitmap = config_get_string_value(superbloque_config,"BITMAP");
-
-	config_destroy(superbloque_config);
-
-	printf("*** ** salgo de crear_superbloque\n");
-}
-
-/*Baja a disco al archivo SuperBloque.ims los valores contenidos en el struct global superbloque*/
-void persistir_superbloque(char* bitmap)
-//(ex) void escribir_archivo_superbloque(char* bitmap) ***
-{
-	printf("*** entro a persistir_superbloque (ver si se cargan bien los valores en el archivo) - sacar 1 hardcodes\n");
-	FILE* archivo_superbloque;
-	archivo_superbloque = fopen("/home/utnso/polus/SuperBloque.ims", "w"); //*** sacar hardcode
-
-	fputs(string_from_format("BLOCK_SIZE=%d", blocks_size), archivo_superbloque);
-	fputs(string_from_format("BLOCKS=%d", blocks), archivo_superbloque);
-	fputs(string_from_format("BITMAP=%s", bitmap), archivo_superbloque);
-
-	fclose(archivo_superbloque);
-	printf("*** ** salgo de persistir_superbloque\n\n");
-}
-
-/*
-void generar_oxigeno(int cant,char* bloques)
-{
-	printf("*** entro a generar_oxigeno - sacar 1/3 hardcodes\n");
-	// size de archivo en bytes
-	// char = 1 bytes
-	bloques_recurso* oxigeno=asignar_bloques(cant,superbloque,'O',bloques);
-	crear_recurso_metadata(oxigeno,"0xMD5oxigeno","/home/utnso/polus/Files/Oxigeno.ims");
-	printf("*** ** salgo de generar_oxigeno\n\n");
-}
-void generar_comida(int cant,char* bloques)
-{
-	printf("*** entro a generar_comida - sacar 1/3 hardcodes\n");
-	// size de archivo en bytes
-	// char = 1 bytes
-	bloques_recurso* comida=asignar_bloques(cant,superbloque,'C',bloques);
-	crear_recurso_metadata(comida,"0xMD5oxigeno","/home/utnso/polus/Files/Comida.ims");
-	printf("*** ** salgo de generar_comida\n\n");
-}
-
-void generar_basura(int cant,char* bloques)
-{
-	printf("*** entro a generar_basura - sacar 1/3 hardcodes\n");
-	// size de archivo en bytes
-	// char = 1 bytes
-	bloques_recurso* basura=asignar_bloques(cant,superbloque,'B',bloques);
-	crear_recurso_metadata(basura,"0xMD5oxigeno","/home/utnso/polus/Files/Basura.ims");
-	printf("*** ** salgo de generar_basura\n\n");
-}
-
-bloques_recurso* recuperar_valores(char* path)
-{
-	printf("*** entro a recuperar_valores en %s\n", path);
-	bloques_recurso* recurso;
-	t_config* archivo=config_create(path);
-	recurso->size=config_get_int_value(archivo,"SIZE");
-	recurso->block_count=config_get_int_value(archivo,"BLOCK_COUNT");
-	recurso->blocks=config_get_string_value(archivo,"BLOCKS");
-	//recurso->caracter_llenado=config_get_string_value(archivo,"CARACTER_LLENADO"); TIRA ERROR
-	recurso->caracter_llenado='0';
-
-	printf("**** salgo de recuperar_valores en %s\n\n", path);
-	return recurso;
+	log_debug(logger, "Ingreso a metadata_ultimo_bloque_usado con BLOCKS %s", recurso_md->blocks);
+	char** lista_bloques = malloc(sizeof(string_get_string_as_array(recurso_md->blocks)));
+	lista_bloques = string_get_string_as_array(recurso_md->blocks);
+	int cantidad_bloques = cadena_cantidad_elementos_en_lista(recurso_md->blocks);
+	int ultimo_bloque = atoi(lista_bloques[cantidad_bloques - 1]); //Probar strtol(data, NULL, 10);
+	//puede hacer falta liberar uno por uno todos los bloques con un for(int i = 0; i < cantidad_bloques; i++)
+	free(lista_bloques);
+	log_debug(logger, "Ultimo_bloque usado %d", ultimo_bloque);
+	return ultimo_bloque;
 }
 */
-/*falta contemplar el caso donde se sobrepasa la cantidad de bloques*/
-/* Tambien se escribe en bloques  los recursos y bitmap es modificado */
-bloques_recurso* asignar_bloques(int cant,t_superbloque* sb,char caracter,char* bloques)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*void mandar_primer_ubicacion_sabotaje()
 {
+}*/
 
-	printf("*** entro a asignar_bloques\n");
-	bloques_recurso* recurso;
-	char* bloques_asignados="[";
-	int i=0;
-	int inicio=0;
-	int aux_cant=cant;
-	recurso->block_count=0;
+//Inicia la secuencia de chequeos y reparaciones del File System Catastrophe Killer
+/*void fsck_iniciar()
+{
+	fsck_chequeo_de_sabotajes_en_superbloque();
+	fsck_chequeo_de_sabotajes_en_files();
+}
 
-	pthread_mutex_lock(&mutex_blocks); //sector critica poruqe se usa superBloque  y bloques
+//Realiza los chequeos propios del superbloque
+void fsck_chequeo_de_sabotajes_en_superbloque()
+{
+	superbloque_validar_integridad_cantidad_de_bloques();
+	superbloque_validar_integridad_bitmap();
+	//agregar aca la actualizacion del archivo
+}
 
-	if(sb->bitmap[i]=='0')
+//Valida que la cantidad de bloques en el superbloque se corresponda con la cantidad real en el recurso fisico
+void superbloque_validar_integridad_cantidad_de_bloques()
+{
+	superbloque.blocks = blocks_size / superbloque.block_size; //TODO usar el tamanio de bloque real del archivo Blocs.ims el cual debe ser equivalente
+	memcpy(superbloque_address, &superbloque.blocks, sizeof(uint32_t));
+	msync(superbloque_address, sizeof(uint32_t), MS_SYNC);
+}
+
+//Valida que los bloques indicados en el bitmap del superbloque realmente sean los unicos ocupados
+void superbloque_validar_integridad_bitmap()
+{
+	char* bloques_ocupados = files_obtener_lista_de_bloques_ocupados(); //TODO
+
+	superbloque_setear_bitmap_a_cero();
+	superbloque_setear_bloques_en_bitmap(bloques_ocupados);
+	superbloque_actualizar_archivo();
+
+	free(bloques_ocupados);
+}
+
+//Devuelve una lista en formato cadena con los bloques ocupados por el total de recursos
+char* files_obtener_bloques_ocupados()
+{
+	log_debug(logger, "Se ingresa a files_obtener_bloques_ocupados");
+	char* bloques;
+	int cantidad_recursos = sizeof(lista_recursos) / sizeof(t_recurso_data);
+	int posicion_ultimo_recurso = cantidad_recursos - 1;
+	bloques = string_duplicate(lista_recursos[0].metadata->blocks);
+	cadena_sacar_ultimo_caracter(bloques);
+	for(int i = 1; i < cantidad_recursos; i++)
 	{
-		string_append_with_format(&bloques_asignados,"%s",i);
-		for(size_t cont=0;cont<sb->block_size;cont++)
+		char* string_buffer = string_duplicate(lista_recursos[i].metadata->blocks);
+		string_buffer[0] = ',';
+		string_append_with_format(bloques, "%s", string_buffer); //ERROR
+		if(i != posicion_ultimo_recurso)
 		{
-			if(cont < cant )
-			{
-				bloques[inicio+cont]=caracter;
-				aux_cant= aux_cant - 1;
-			}
+			cadena_sacar_ultimo_caracter(bloques);
 		}
-		sb->bitmap[i]='1';
-		recurso->block_count++;
-		cant= cant-aux_cant; // vemos si basta con solo un bloque
+		free(string_buffer);
 	}
-	else
-	{
-		/*
-		 * Vimos que esta ocupado
-		 * Vemos si esta ocupado con los mismos recursos que generaremos
-		 * Solo vemos si el primer byte es del mismo caracter recurso
-		 */
-		if(sb->bitmap[i]=='1' && bloques[inicio]==caracter)
-		{
-			string_append_with_format(&bloques_asignados,"%s",i);
-		}
-	}
-
-
-	if(cant > 0)
-	{ //Si basta con  el primer bloeque vacio o necesitamos mas bloques o el primer bloque esta ocupado
-		for(i=1;i<sb->blocks;i++)
-		{ //recorremos el bitmap
-			inicio=i*sb->block_size; //definimos el inicio del bloque
-			if(sb->bitmap[i]=='0')
-			{ //vemos si esta libre
-				string_append_with_format(&bloques_asignados,",%s",i);
-				for(size_t cont=0;cont<sb->block_size;cont++)
-				{
-					if(cont < cant)
-					{
-						bloques[inicio + cont]=caracter;
-						aux_cant= aux_cant - 1;
-					}
-				}
-				sb->bitmap[i]='1';
-				recurso->block_count++;
-			}
-			else
-			{
-				if(sb->bitmap[i]=='1' && bloques[inicio]==caracter)
-				{
-					string_append_with_format(&bloques_asignados,",%s",i);
-				}
-			}
-		}
-	}
-	/*poner en una funcion sincronizacion escribe en el archivo el cambio del bitmap*/
-	//escribir_archivo_superbloque(sb.bitmap);
-
-	pthread_mutex_unlock(&mutex_blocks);
-	string_append(&bloques_asignados,"]");
-
-	recurso->blocks=bloques_asignados;
-	recurso->caracter_llenado=caracter;
-	recurso->size=cant; // char = 1 byte
-
-	printf("*** ** salgo de asignar_bloques\n\n");
-	return recurso; // un string de donde se han guardado
+	log_debug(logger, "Los bloques ocupados por el total de recursos son %s"), bloques;
+	return bloques;
 }
 
-void crear_recurso_metadata(bloques_recurso* recurso, char* md5, char* path)
+void superbloque_setear_bloques_en_bitmap(char* bloques_ocupados)
 {
-	printf("*** entro a crear_recurso_metadata en %s\n", path);
-	FILE* archivo;
+	log_debug(logger, "Ingreso a superbloque_setear_bloques_en_bitmap");
 
-	archivo = fopen(path,"w");
+	char** lista_bloques = malloc(sizeof(string_get_string_as_array(bloques_ocupados)));
+	lista_bloques = string_get_string_as_array(bloques_ocupados);
 
-	fputs(string_from_format("SIZE=%d\n", recurso->size), archivo);
-	fputs(string_from_format("BLOCK_COUNT=%d\n", recurso->block_count), archivo);
-	fputs(string_from_format("BLOCKS=%s\n", recurso->blocks), archivo);
-	fputs(string_from_format("CARACTER_LLENADO=%c\n", recurso->caracter_llenado), archivo);
-	fputs(string_from_format("MD5_ARCHIVO=%s", md5), archivo);
+	int cantidad_bloques = cadena_cantidad_elementos_en_lista(bloques_ocupados);
 
-	fclose(archivo);
-	printf("**** salgo de crear_recurso_metadata en %s\n\n", path);
+	int ultimo_bloque = atoi(lista_bloques[cantidad_bloques - 1]);         //Probar strtol(data, NULL, 10);
+
+	//for();//TODO iterando el total de bloques hasta terminar la lista
+
+	//puede hacer falta liberar uno por uno todos los bloques con un for(int i = 0; i < cantidad_bloques; i++)
+	free(lista_bloques);
+
+	log_debug(logger, "Bitmap del SuperBloque actualizado en memoria");
+
+
 }
 
-//verificar modos de apertura de archivos necesarios
-/*
-              ┌─────────────┬───────────────────────────────┐
-              │fopen() mode │ open() flags                  │
-              ├─────────────┼───────────────────────────────┤
-              │     r       │ O_RDONLY                      │
-              ├─────────────┼───────────────────────────────┤
-              │     w       │ O_WRONLY | O_CREAT | O_TRUNC  │
-              ├─────────────┼───────────────────────────────┤
-              │     a       │ O_WRONLY | O_CREAT | O_APPEND │
-              ├─────────────┼───────────────────────────────┤
-              │     r+      │ O_RDWR                        │
-              ├─────────────┼───────────────────────────────┤
-              │     w+      │ O_RDWR | O_CREAT | O_TRUNC    │
-              ├─────────────┼───────────────────────────────┤
-              │     a+      │ O_RDWR | O_CREAT | O_APPEND   │
-              └─────────────┴───────────────────────────────┘
-    
-	@NAME: string_from_format
-	* @DESC: Crea un nuevo string a partir de un formato especificado
-	*
-	* Ejemplo:
-	* char* saludo = string_from_format("Hola %s", "mundo");
-	*
-	* => saludo = "Hola mundo"
-	*
-	char*   string_from_format(const char* format, ...);
-	para generar la ruta de los archivos en tiempo de ejecución por lo que no pueden ser variables globales, no? */
+//Realiza los chequeos propios de los recursos
+void fsck_chequeo_de_sabotajes_en_files()
+{
+	files_validar_tamanio_de_archivos();
+	files_validar_block_counts();
+	files_validar_blocks();
+}
+
+void files_validar_tamanio_de_archivos()
+{
+}
+
+char* files_obtener_lista_de_bloques_ocupados(){
+	//TODO
+	return "";
+};
+
+
+
+
+
+ //FSCK, bitacora, signal,
+char** prueba = string_split("La casa,dos_diez"," ,_");
+	log_debug(logger, "Se genero el recurso solicitado. Se probara iniciar el servidor a traves de un hilo %s %s %s %s %p", prueba[0], prueba[1], prueba[2], prueba[3], prueba[4], prueba[5], prueba[6]);
+	pthread_t servidor;
+	int hilo_servidor = 1;
+	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){
+		log_info(logger, "Falla al crearse el hilo");
+	}
+	pthread_join(servidor,NULL);
+	log_info(logger, "Main: Se genero un hilo");
+	//mapeo();
+	return EXIT_SUCCESS;
+}*/
