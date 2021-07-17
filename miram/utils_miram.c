@@ -124,7 +124,7 @@ int funcion_cliente(int socket_cliente){
 				fflush(stdout);
 				printf("\n Marcos sin un carajo: %d \n", cuantos_marcos_libres(&configuracion));
 				fflush(stdout);
-				if(cuantos_marcos_necesito>cuantos_marcos_libres(&configuracion)){
+				if(cuantos_marcos_necesito > (cuantos_marcos_libres(&configuracion))){
 					printf(" \n No vas a poder poner un choto\n");
 					fflush(stdout);
 					//ack a discordiador
@@ -145,6 +145,7 @@ int funcion_cliente(int socket_cliente){
 						marco_nuevo->id_marco=posicion_libre;
 						marco_nuevo->ubicacion=MEM_PRINCIPAL;
 						marco_nuevo->bit_uso=1;
+						//marco_nuevo->ultimo_uso = time(0);
 						list_add(una_tabla->marco_inicial,marco_nuevo);
 					}
 
@@ -157,9 +158,9 @@ int funcion_cliente(int socket_cliente){
 					printf("\n");
 					leer_informacion(&configuracion,  una_tabla, lista);
 
-					actualizar_tripulante( tripulante3, 1);
+					//actualizar_tripulante( tripulante3, 1);
 
-					leer_informacion(&configuracion,  una_tabla, lista);
+					//leer_informacion(&configuracion,  una_tabla, lista);
 					//mem_hexdump(configuracion.posicion_inicial, configuracion.tamanio_pag*sizeof(char));
 					fflush(stdout);
 					printf("\n");
@@ -168,8 +169,7 @@ int funcion_cliente(int socket_cliente){
 
 
 
-
-					//dump_memoria();
+					dump_memoria();
 					/*fflush(stdout);
 
 
@@ -775,6 +775,7 @@ void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s){
 
 
 int posicion_marco(){
+
 	for(int i=0;i<configuracion.cant_marcos;i++){
 		if((int)(list_get(configuracion.marcos_libres, i))==0){
 			int valor = 1;
@@ -783,6 +784,16 @@ int posicion_marco(){
 		}
 
 	}
+/*	if(strcmp(configuracion.algoritmo_reemplazo,"LRU")==0){
+		printf("Hola LRU in da house\n\n\n");
+
+		return reemplazo_lru();
+	}else{
+		return reemplazo_clock();
+	}
+
+	*/
+
 	return -1;
 }
 
@@ -907,15 +918,17 @@ void dump_memoria(){
 
 
 
+
+
 void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina){
 	for(int i=0; i<list_size(memoria_aux);i++){
 		tabla_paginacion* una_tabla = list_get(memoria_aux,i);
 		for(int j=0; j<list_size(una_tabla->marco_inicial);j++){
 			marco* un_marco=list_get(una_tabla->marco_inicial,j);
-			if(un_marco->id_marco==id_marco && un_marco->ubicacion==MEM_PRINCIPAL){
+			if(un_marco->id_marco==id_marco){
 				char buff1[100];
 				strftime(buff1, 100, "%d/%m/%Y %H:%M:%S"  , localtime(&un_marco->ultimo_uso));
-				printf("Ultimo uso %s\n", buff1);
+				//printf("Ultimo uso %s\n", buff1);
 				 *estado = 1;
 				 *proceso=una_tabla->id_patota;
 				 *pagina=j;
@@ -1008,7 +1021,7 @@ char* completarBloque(char* bloqueACompletar){
 int reemplazo_lru(){
 	   int nro_marco;
 	   time_t lru_actual = time(0);
-		marco* lru_m=malloc(sizeof(marco));
+	   marco* lru_m=malloc(sizeof(marco));
 	   for(int i=0; i<list_size(memoria_aux);i++){
 		   tabla_paginacion* una_tabla = list_get(memoria_aux,i);
 		   	   for(int j=0; j<list_size(una_tabla->marco_inicial);j++){
