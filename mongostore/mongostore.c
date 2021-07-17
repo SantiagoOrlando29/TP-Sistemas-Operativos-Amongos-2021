@@ -5,9 +5,6 @@
 
 int main(void)
 {
-	printf("dsfs\n");
-
-
 	logger = log_create(ARCHIVO_LOGS, PROGRAMA, LOGS_EN_CONSOLA, NIVEL_DE_LOGS_MINIMO);
 
 	if(logger == NULL)
@@ -23,7 +20,13 @@ int main(void)
 
 	file_system_iniciar();
 
-	recurso_generar_cantidad(OXIGENO, 2);/*
+	recurso_generar_cantidad(OXIGENO, 2);
+/*	int fd = abrir_archivo_para_lectura_escritura(blocks_path);
+	char* deblocks =malloc(41);
+	read(fd,deblocks, 40);
+	printf("aaa %c\n", deblocks[15]);
+	free(deblocks);close(fd);*/
+	/*
 	recurso_generar_cantidad(COMIDA, 3);
 	recurso_generar_cantidad(BASURA, 4);
 	recurso_generar_cantidad(BASURA, 5);
@@ -31,7 +34,7 @@ int main(void)
 	log_info(logger, "Finaliza main");
 
 	return EXIT_SUCCESS;*/
-return 8;
+	return 8;
 }
 
 //TODO actualizar_metadata_inicial en base a SB+B? ENTIENDO QUE NO SERIA NECESARIO Y HASTA ESTARIA MAL (PREGUNTAR)
