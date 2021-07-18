@@ -1,5 +1,5 @@
 #include "miram.h"
-
+config_struct configuracion;
 int main(void)
 {
 	int piddd = getpid();
@@ -12,6 +12,9 @@ int main(void)
 	sem_init(&MUTEX_CAMBIAR_POSICION, 0,1);
 	sem_init(&MUTEX_TABLA_MEMORIA, 0,1);
 	sem_init(&MUTEX_LISTA_TABLAS_SEGMENTOS, 0,1);
+	sem_init(&MUTEX_LISTA_TABLAS_SEGMENTOS, 0,1);
+	sem_init(&MUTEX_MEM_PPAL, 0,1);
+	sem_init(&MUTEX_MEM_SEC, 0,1);
 
 	leer_config();
 	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
@@ -191,19 +194,19 @@ int main(void)
 
 void leer_config(){
 
-    archConfig = config_create("miram.config");
+    t_config * archConfig = config_create("miram.config");
 
     configuracion.ip_miram = config_get_string_value(archConfig, "IP_MI_RAM_HQ");
     configuracion.puerto_miram = config_get_string_value(archConfig, "PUERTO_MI_RAM_HQ");
-    configuracion.tamanio_memoria = config_get_string_value(archConfig, "TAMANIO_MEMORIA");
+    configuracion.tamanio_memoria = config_get_int_value(archConfig, "TAMANIO_MEMORIA");
     configuracion.squema_memoria = config_get_string_value(archConfig, "ESQUEMA_MEMORIA");
-    configuracion.tamanio_pag =config_get_string_value(archConfig, "TAMANIO_PAG");
-    configuracion.tamanio_swap =config_get_string_value(archConfig, "TAMANIO_SWAP");
+    configuracion.tamanio_pag =config_get_int_value(archConfig, "TAMANIO_PAG");
+    configuracion.tamanio_swap =config_get_int_value(archConfig, "TAMANIO_SWAP");
     configuracion.path_swap = config_get_string_value(archConfig, "PATH_SWAP");
     configuracion.algoritmo_reemplazo = config_get_string_value(archConfig, "ALGORITMO_REEMPLAZO");
     configuracion.criterio_seleccion = config_get_string_value(archConfig, "CRITERIO_SELECCION");
     //Parametros utiles (No obtenidos del archivo de configuracion)
     configuracion.cant_marcos=0;
-
-    //config_destroy(archConfig);
 }
+
+

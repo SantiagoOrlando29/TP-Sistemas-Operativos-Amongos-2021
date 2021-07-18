@@ -10,6 +10,7 @@
 #include<netdb.h>
 #include<commons/log.h>
 #include<commons/collections/list.h>
+#include <commons/string.h>
 #include <commons/config.h>
 #include<string.h>
 #include<pthread.h>
@@ -26,6 +27,9 @@ sem_t MUTEX_CAMBIAR_ESTADO;
 sem_t MUTEX_CAMBIAR_POSICION;
 sem_t MUTEX_TABLA_MEMORIA;
 sem_t MUTEX_LISTA_TABLAS_SEGMENTOS;
+sem_t MUTEX_TABLA_MEMORIA_PAGINACION;
+sem_t MUTEX_MEM_PPAL;
+sem_t MUTEX_MEM_SEC;
 
 typedef struct{
 	int patota_id;
@@ -124,17 +128,25 @@ typedef struct {
 typedef struct{
 	char* ip_miram;
 	char* puerto_miram;
-	char* tamanio_memoria;
+	int tamanio_memoria;
 	char* squema_memoria;
-	char* tamanio_pag;
-	char* tamanio_swap;
+	int tamanio_pag;
+	int tamanio_swap;
 	char* path_swap;
 	char* algoritmo_reemplazo;
 	void* posicion_inicial;
 	int cant_marcos;
-	uint8_t **marcos;
+	int **marcos;
 	char* criterio_seleccion;
+	t_list* marcos_libres;
+	int cant_lugares_swap;
+	t_list* swap_libre;
+
 }config_struct;
+
+
+
+
 
 t_config * archConfig;
 config_struct configuracion;
@@ -147,15 +159,17 @@ typedef enum{
 
 typedef struct{
 	int id_patota;
-	presencia ubicacion;
 	t_list* marco_inicial;
+	int cant_tripulantes;
+	int long_tareas;
 
 }tabla_paginacion;
 
 typedef struct{
 	int id_marco;
-	int control_lru;
-	int clock;
+	time_t ultimo_uso;
+	presencia ubicacion;
+	int bit_uso;
 	int libre;
 }marco;
 
@@ -201,8 +215,8 @@ void iniciar_miram(config_struct* config);
 void agregar_memoria_aux(t_list* tabla_aux, config_struct* config);
 void imprimir_memoria(t_list* tabla_aux);
 void imprimir_seg(t_list* tabla_aux);
-int posicion_marco(config_struct*);
-void imprimir_ocupacion_marcos(config_struct configuracion);
+int posicion_marco();
+void imprimir_ocupacion_marcos(config_struct* configuracion);
 int posicion_patota(int id_buscado,t_list* tabla_aux);
 void finalizar_miram(config_struct* config_servidor);
 int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco);
@@ -219,7 +233,39 @@ void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 void enviar_header(tipoMensaje , int );
-int funcion_cliente(int);
+int funcion_cliente_segmentacion(int);
+int funcion_cliente_paginacion(int);
+
+
+
+//PAGINACION
+int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco);
+void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* tabla_aux, config_struct* configuracion);
+int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* config_servidor);
+void mostrar_tripulante(tcbTripulante* tripulante,pcbPatota* patota);
+int cuantos_marcos_libres(config_struct* config_servidor);
+void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista);
+void reservar_marco(int cantidad_marcos, config_struct* configuracion, t_list* tabla_aux, int pid );
+void eliminar_estructura_memoria(t_list* tabla_aux);
+void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista);
+void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s);
+void* leer_atributo(int offset, int nro_marco, config_struct* config_s);
+int escribir_atributo_char(tcbTripulante* tripulante, int offset, int nro_marco, config_struct* config_s);
+int escribir_atributo(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
+int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct* config_s);
+void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina);
+int lugar_swap_libre();
+int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato);
+void actualizar_lru(marco* un_marco);
+int reemplazo_clock();
+void actualizar_tripulante(tcbTripulante* tripulante, int id_patota);
+int espacios_swap_libres(config_struct* config_servidor);
+void imprimir_tabla_paginacion();
+void swap_pagina(void* contenidoAEscribir,int numDeBloque);
+void* recuperar_pag_swap(int numDeBloque);
+void dump_memoria_paginacion();
+int reemplazo_lru();
+
 
 //SEGMENTACION
 espacio_de_memoria* crear_espacio_de_memoria(int, int, bool);
@@ -242,7 +288,7 @@ char* buscar_tarea(espacio_de_memoria* espacio, int prox_instruccion);
 bool cambiar_estado(int numero_patota, char nuevo_estado, int tid);
 tabla_segmentacion* buscar_tabla_segmentos(int numero_patota);
 bool cambiar_posicion(int tid, int posx, int posy, int pid);
-
+void dump_memoria_segmentacion();
 pcbPatota* crear_pcb(uint32_t numero_patota);
 
 
@@ -274,7 +320,7 @@ void destruir_espacio_memoria(espacio_de_memoria* espacio);
 void destruir_tabla_segmentacion(tabla_segmentacion* tabla);
 
 void sig_handler(int signum);
-void dump_memoria();
+
 
 #endif /* CONEXIONES_H_ */
 

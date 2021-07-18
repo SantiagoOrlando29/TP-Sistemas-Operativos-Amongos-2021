@@ -6580,3 +6580,35 @@
 [INFO] 23:09:39:411 MiRam/(31700:31720): Se asigno espacio de memoria a todo
 [ERROR] 23:09:56:232 MiRam/(31700:31720): el discordiador finalizo el programa. Terminando servidor
 [INFO] 23:09:56:232 MiRam/(31700:31720): aaaaa
+[INFO] 21:33:14:433 MiRam/(10652:10653): Servidor iniciando
+[INFO] 21:33:14:433 MiRam/(10652:10653): Servidor MiRam encendido
+[INFO] 21:36:48:237 MiRam/(10652:10653): Estableciendo conexión desde 20160
+[INFO] 21:36:48:237 MiRam/(10652:10653): Creando hilo
+[INFO] 21:39:05:549 MiRam/(10794:10795): Servidor iniciando
+[INFO] 21:39:05:550 MiRam/(10794:10795): Servidor MiRam encendido
+[INFO] 21:39:14:085 MiRam/(10794:10795): Estableciendo conexión desde 22208
+[INFO] 21:39:14:086 MiRam/(10794:10795): Creando hilo
+[INFO] 21:39:33:112 MiRam/(10819:10820): Servidor iniciando
+[INFO] 21:39:33:115 MiRam/(10819:10820): Servidor MiRam encendido
+[INFO] 21:39:36:855 MiRam/(10819:10820): Estableciendo conexión desde 23232
+[INFO] 21:39:36:856 MiRam/(10819:10820): Creando hilo
+[INFO] 21:58:38:922 MiRam/(11016:11017): Servidor iniciando
+[INFO] 21:58:38:927 MiRam/(11016:11017): Servidor MiRam encendido
+[INFO] 21:58:43:728 MiRam/(11016:11017): Estableciendo conexión desde 28864
+[INFO] 21:58:43:728 MiRam/(11016:11017): Creando hilo
+[INFO] 22:25:47:020 MiRam/(11403:11404): Servidor iniciando
+[INFO] 22:25:47:031 MiRam/(11403:11404): Servidor MiRam encendido
+[INFO] 22:25:50:915 MiRam/(11403:11404): Estableciendo conexión desde 37056
+[INFO] 22:25:50:915 MiRam/(11403:11404): Creando hilo
+[INFO] 22:30:36:494 MiRam/(11520:11521): Servidor iniciando
+[INFO] 22:30:36:500 MiRam/(11520:11521): Servidor MiRam encendido
+[INFO] 22:30:39:183 MiRam/(11520:11521): Estableciendo conexión desde 39104
+[INFO] 22:30:39:183 MiRam/(11520:11521): Creando hilo
+[INFO] 22:33:40:718 MiRam/(11564:11565): Servidor iniciando
+[INFO] 22:33:40:725 MiRam/(11564:11565): Servidor MiRam encendido
+[INFO] 22:33:43:000 MiRam/(11564:11565): Estableciendo conexión desde 41152
+[INFO] 22:33:43:000 MiRam/(11564:11565): Creando hilo
+[INFO] 22:38:36:060 MiRam/(11647:11648): Servidor iniciando
+[INFO] 22:38:36:067 MiRam/(11647:11648): Servidor MiRam encendido
+[INFO] 22:38:38:985 MiRam/(11647:11648): Estableciendo conexión desde 43200
+[INFO] 22:38:38:985 MiRam/(11647:11648): Creando hilo
