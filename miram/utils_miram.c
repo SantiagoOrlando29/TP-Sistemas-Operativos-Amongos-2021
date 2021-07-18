@@ -53,7 +53,6 @@ void iniciar_servidor(config_struct* config_servidor)
 	int tam_direccion = sizeof(struct sockaddr_in);
 	int socket_cliente = 0;
 
-	printf("Llegue");
 
 
 	int hilo;
@@ -79,7 +78,7 @@ void iniciar_servidor(config_struct* config_servidor)
 	}
 
 	//log_destroy(logger);
-	printf("Me fui\n");
+
 }
 
 //Funcion cliente para segmentacion
@@ -93,7 +92,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 	int patota_id;
 
 	int tipoMensajeRecibido = -1;
-	printf("Se conecto este socket a mi %d\n",socket_cliente);
+	log_info(logger, "Se conecto este socket a mi %d\n",socket_cliente);
 
 	while(1){
 		tipoMensajeRecibido = recibir_operacion(socket_cliente);
@@ -104,23 +103,21 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				lista = recibir_paquete(socket_cliente);
 
 				patota_id = (int)atoi(list_get(lista,0));
-				printf("el numero de la patota es %d", patota_id);
+				log_info(logger,"El numero de la patota recibida es %d", patota_id);
 				patota = crear_patota(patota_id,0);
 
 				uint32_t cantidad_tripulantes = (uint32_t)atoi(list_get(lista,1));
-				printf("cant tripu %d\n", cantidad_tripulantes);
+				log_info(logger, "cant tripu %d\n", cantidad_tripulantes);
 
 				for(int i=2; i < cantidad_tripulantes +2; i++){
 					tripulante = (tcbTripulante*)list_get(lista,i);
 					mostrar_tripulante(tripulante, patota);
-					printf("\n");
 				}
 
 				free(patota);
 
 				char* tarea = malloc((uint32_t)atoi(list_get(lista, cantidad_tripulantes+2)));
 				tarea = (char*)list_get(lista, cantidad_tripulantes+3);
-				printf("Las tareas serializadas son: %s \n", tarea);
 
 
 				if(strcmp(configuracion.squema_memoria,"SEGMENTACION")==0){
@@ -1254,13 +1251,12 @@ int funcion_cliente_paginacion(int socket_cliente){
 				int cuantos_marcos_necesito = cuantos_marcos(cantidad_tripulantes,strlen(tarea)+1,&configuracion);
 				fflush(stdout);
 				if(cuantos_marcos_necesito > (cuantos_marcos_libres(&configuracion))+ espacios_swap_libres(&configuracion)){
-					printf(" \n No vas a poder poner un choto\n");
+					log_info(logger,"No hay espacio, no se puede almacenar nada mas");
 					fflush(stdout);
 					//ack a discordiador
 				}else{
 					int posicion_libre = -1;
-					printf("Guardando info.....");
-					fflush(stdout);
+					log_info(logger, "Guardando info");
 					tabla_paginacion* una_tabla=malloc(sizeof(tabla_paginacion));
 					una_tabla->id_patota = pid;
 					una_tabla->cant_tripulantes= cantidad_tripulantes;
@@ -1270,7 +1266,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 
 					for(int i=0 ; i<cuantos_marcos_necesito; i++){
 						posicion_libre = posicion_marco(&configuracion);
-						printf("ASIGNE ESTA POS %d\n", posicion_libre);
+						log_info(logger, "ASIGNE ESTA POS %d\n", posicion_libre);
 						marco* marco_nuevo = malloc (sizeof(marco));
 						marco_nuevo->id_marco=posicion_libre;
 						marco_nuevo->ubicacion=MEM_PRINCIPAL;
@@ -1285,7 +1281,6 @@ int funcion_cliente_paginacion(int socket_cliente){
 
 
 					almacenar_informacion(&configuracion, una_tabla, lista);
-					printf("\n");
 					//leer_informacion(&configuracion,  una_tabla, lista);
 
 					//actualizar_tripulante( tripulante3, 1);
@@ -1643,10 +1638,10 @@ int posicion_marco(){
 	}
 	//Si no hay marcos libres en memoria principal, ejecuto el algoritmo de reemplazo
 	if(strcmp(configuracion.algoritmo_reemplazo,"LRU")==0){
-		printf("ES LRU\n");
+		printf("Algoritmo de reemplazo es LRU\n");
 		return reemplazo_lru();
 	}else{
-		printf("ES CLOCK\n");
+		log_info(logger,"Algoritmo de reemplazo es clock\n");
 		return reemplazo_clock();
 	}
 
