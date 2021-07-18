@@ -77,6 +77,13 @@ typedef enum {
 	DESCARTAR
 } accion_code;
 
+typedef enum {
+	REALIZAR_TAREA,
+	CARGAR_BITACORA,
+	INICIAR_FSCK,
+	SALIR
+} op_code;
+
 struct {
 	uint32_t block_size;
 	uint32_t blocks;
@@ -92,14 +99,12 @@ char* bitacoras_path;
 char* superbloque_path;
 char* superbloque_address;
 size_t superbloque_size;
+char* bitmap_address;
 size_t bitmap_size;
 
 char* blocks_path;
 char* blocks_address; //Direccion en memoria de la copia principal de Blocks.ims
 size_t blocks_size;
-
-int superbloque_es_nuevo; //Flag para decidir crear un nuevo Blocks por mas que ya existiera desde antes
-
 
 //pthread_mutex_t mutex_blocks;
 //char* bloques_copia;
@@ -156,6 +161,36 @@ void metadata_levantar_de_archivo_a_memoria_valores_variables(t_recurso_md*, cha
 void metadata_setear_con_valores_default_en_memoria(t_recurso_md*);
 void metadata_actualizar_md5(t_recurso_md*);
 void metadata_actualizar_md5_alter(t_recurso_md*);
+
+//Recientemente agregadas
+int recurso_es_valido(recurso_code codigo_recurso);
+int files_cantidad_recursos();
+void superbloque_actualizar_mapeo();
+void file_system_eliminar_archivos_previos();
+void blocks_eliminar_archivo();
+void files_eliminar_archivos();
+void superbloque_actualizar_bitmap_en_archivo();
+void superbloque_actualizar_blocks_en_archivo();
+void superbloque_liberar_bloques_en_bitmap(char* blocks);
+
+//Prototipos de funciones sujetas a cambios al linkearse con discordiador
+void recurso_realizar_tarea();
+void tomar_accion_recurso_y_cantidad(int* accion, int* recurso, int* cantidad);
+
+//Funciones en desarrollo
+void fsck_iniciar();
+void fsck_chequeo_de_sabotajes_en_superbloque();
+void superbloque_validar_integridad_cantidad_de_bloques();
+void superbloque_validar_integridad_bitmap();
+char* files_obtener_cadena_con_bloques_ocupados();
+void superbloque_setear_bloques_en_bitmap(char* bloques_ocupados);
+void fsck_chequeo_de_sabotajes_en_files();
+void recurso_validar_size(t_recurso_data* recurso_data);
+int recurso_obtener_size_real(t_recurso_data* recurso_data);
+void recurso_validar_block_count(t_recurso_data* recurso_data);
+int recurso_obtener_block_count_real(t_recurso_data* recurso_data);
+void recurso_validar_blocks(t_recurso_data* recurso_data);
+char* recurso_obtener_blocks_real(t_recurso_data* recurso_data);
 
 
 
