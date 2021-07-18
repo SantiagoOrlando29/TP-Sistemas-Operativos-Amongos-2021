@@ -2,8 +2,12 @@
 config_struct configuracion;
 int main(void)
 {
+	FILE* archivo = fopen("MiRam.log","w");
+	fclose(archivo);
+	logger = log_create("MiRam.log","MiRam",0,LOG_LEVEL_INFO);
+
 	int piddd = getpid();
-	printf("pid %d    \n", piddd);
+	log_info(logger, "pid %d    \n", piddd);
 	signal(SIGUSR2, sig_handler);
 	signal(SIGUSR1, sig_handler);
 
@@ -12,12 +16,11 @@ int main(void)
 	sem_init(&MUTEX_CAMBIAR_POSICION, 0,1);
 	sem_init(&MUTEX_TABLA_MEMORIA, 0,1);
 	sem_init(&MUTEX_LISTA_TABLAS_SEGMENTOS, 0,1);
-	sem_init(&MUTEX_LISTA_TABLAS_SEGMENTOS, 0,1);
 	sem_init(&MUTEX_MEM_PPAL, 0,1);
 	sem_init(&MUTEX_MEM_SEC, 0,1);
 
 	leer_config();
-	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
+
 	iniciar_miram(&configuracion);
 
 
@@ -179,7 +182,6 @@ int main(void)
 
 */
 
-	logger = log_create("MiRam.log", "MiRam", 1, LOG_LEVEL_DEBUG);
 	pthread_t servidor;
 	int hilo_servidor = 1;
 	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){

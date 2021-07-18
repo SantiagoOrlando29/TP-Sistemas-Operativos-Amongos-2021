@@ -1,66 +1,93 @@
-[INFO] 23:01:20:464 MiRam/(12594:12595): Servidor iniciando
-[INFO] 23:01:20:464 MiRam/(12594:12595): Servidor MiRam encendido
-[INFO] 23:01:23:573 MiRam/(12594:12595): Estableciendo conexión desde 48833
-[INFO] 23:01:23:574 MiRam/(12594:12595): Creando hilo
-[INFO] 23:07:41:604 MiRam/(12883:12884): Servidor iniciando
-[INFO] 23:07:41:605 MiRam/(12883:12884): Servidor MiRam encendido
-[INFO] 23:07:45:719 MiRam/(12883:12884): Estableciendo conexión desde 52929
-[INFO] 23:07:45:719 MiRam/(12883:12884): Creando hilo
-[INFO] 23:07:48:843 MiRam/(12883:12886): Guardando info
-[INFO] 23:07:48:843 MiRam/(12883:12886): ASIGNE ESTA POS 0
+[INFO] 23:57:42:614 MiRam/(2186:2186): pid 2186    
 
-[INFO] 23:07:48:843 MiRam/(12883:12886): ASIGNE ESTA POS 1
-
-[INFO] 23:07:48:843 MiRam/(12883:12886): ASIGNE ESTA POS 2
-
-[INFO] 23:07:54:302 MiRam/(12883:12886): Guardando info
-[INFO] 23:07:54:302 MiRam/(12883:12886): ASIGNE ESTA POS 3
-
-[INFO] 23:07:54:302 MiRam/(12883:12886): ASIGNE ESTA POS 4
-
-[INFO] 23:07:54:302 MiRam/(12883:12886): ASIGNE ESTA POS 5
-
-[INFO] 23:08:08:227 MiRam/(12883:12886): Guardando info
-[INFO] 23:08:08:228 MiRam/(12883:12886): ASIGNE ESTA POS 6
-
-[INFO] 23:08:08:228 MiRam/(12883:12886): ASIGNE ESTA POS 7
-
-[INFO] 23:10:13:115 MiRam/(12944:12945): Servidor iniciando
-[INFO] 23:10:13:115 MiRam/(12944:12945): Servidor MiRam encendido
-[INFO] 23:10:16:402 MiRam/(12944:12945): Estableciendo conexión desde 3266
-[INFO] 23:10:16:402 MiRam/(12944:12945): Creando hilo
-[INFO] 23:10:18:893 MiRam/(12944:12947): Guardando info
-[INFO] 23:10:18:893 MiRam/(12944:12947): ASIGNE ESTA POS 0
-
-[INFO] 23:10:18:893 MiRam/(12944:12947): ASIGNE ESTA POS 1
-
-[INFO] 23:10:18:893 MiRam/(12944:12947): ASIGNE ESTA POS 2
-
-[INFO] 23:10:18:893 MiRam/(12944:12947): ASIGNE ESTA POS 3
-
-[INFO] 23:10:18:893 MiRam/(12944:12947): ASIGNE ESTA POS 4
-
-[INFO] 23:10:18:893 MiRam/(12944:12947): ASIGNE ESTA POS 5
-
-[INFO] 23:10:26:370 MiRam/(12944:12947): Guardando info
-[INFO] 23:10:26:370 MiRam/(12944:12947): ASIGNE ESTA POS 6
-
-[INFO] 23:10:26:370 MiRam/(12944:12947): ASIGNE ESTA POS 7
-
-[INFO] 23:10:26:370 MiRam/(12944:12947): ASIGNE ESTA POS 8
-
-[INFO] 23:10:26:370 MiRam/(12944:12947): ASIGNE ESTA POS 9
-
-[INFO] 23:10:26:370 MiRam/(12944:12947): ASIGNE ESTA POS 10
-
-[INFO] 23:10:26:370 MiRam/(12944:12947): ASIGNE ESTA POS 11
-
-[INFO] 23:10:31:651 MiRam/(12944:12947): Guardando info
-[INFO] 23:10:31:651 MiRam/(12944:12947): ASIGNE ESTA POS 12
-
-[INFO] 23:10:31:651 MiRam/(12944:12947): ASIGNE ESTA POS 13
-
-[INFO] 23:10:31:651 MiRam/(12944:12947): ASIGNE ESTA POS 14
-
-[INFO] 23:10:31:651 MiRam/(12944:12947): ASIGNE ESTA POS 15
-
+[INFO] 23:57:42:615 MiRam/(2186:2186): ---------  MEMORIA  --------------------
+[INFO] 23:57:42:615 MiRam/(2186:2186): base: 0, tam: 512, libre: true 
+[INFO] 23:57:42:615 MiRam/(2186:2186): ----------------------------------------
+[INFO] 23:57:42:615 MiRam/(2186:2187): Servidor iniciando
+[INFO] 23:57:42:615 MiRam/(2186:2187): Servidor MiRam encendido
+[INFO] 23:57:50:027 MiRam/(2186:2187): Estableciendo conexión desde 53380
+[INFO] 23:57:50:027 MiRam/(2186:2187): Creando hilo
+[INFO] 23:57:50:036 MiRam/(2186:2198): Se conecto este socket a mi 5
+[INFO] 23:57:53:211 MiRam/(2186:2198): El numero de la patota recibida es 1
+[INFO] 23:57:53:211 MiRam/(2186:2198): cant tripu 3
+[INFO] 23:57:53:211 MiRam/(2186:2198): ID 1 
+[INFO] 23:57:53:211 MiRam/(2186:2198): posicion x: 3 
+[INFO] 23:57:53:211 MiRam/(2186:2198): posicion y: 4 
+[INFO] 23:57:53:211 MiRam/(2186:2198): Status: N 
+[INFO] 23:57:53:211 MiRam/(2186:2198): n patota: 1 
+[INFO] 23:57:53:211 MiRam/(2186:2198): ID 2 
+[INFO] 23:57:53:211 MiRam/(2186:2198): posicion x: 5 
+[INFO] 23:57:53:211 MiRam/(2186:2198): posicion y: 2 
+[INFO] 23:57:53:211 MiRam/(2186:2198): Status: N 
+[INFO] 23:57:53:211 MiRam/(2186:2198): n patota: 1 
+[INFO] 23:57:53:211 MiRam/(2186:2198): ID 3 
+[INFO] 23:57:53:211 MiRam/(2186:2198): posicion x: 4 
+[INFO] 23:57:53:211 MiRam/(2186:2198): posicion y: 5 
+[INFO] 23:57:53:211 MiRam/(2186:2198): Status: N 
+[INFO] 23:57:53:211 MiRam/(2186:2198): n patota: 1 
+[INFO] 23:57:53:211 MiRam/(2186:2198): ---------  MEMORIA  --------------------
+[INFO] 23:57:53:211 MiRam/(2186:2198): base: 0, tam: 8, libre: false 
+[INFO] 23:57:53:211 MiRam/(2186:2198): base: 8, tam: 44, libre: false 
+[INFO] 23:57:53:211 MiRam/(2186:2198): base: 52, tam: 21, libre: false 
+[INFO] 23:57:53:211 MiRam/(2186:2198): base: 73, tam: 21, libre: false 
+[INFO] 23:57:53:211 MiRam/(2186:2198): base: 94, tam: 21, libre: false 
+[INFO] 23:57:53:211 MiRam/(2186:2198): base: 115, tam: 397, libre: true 
+[INFO] 23:57:53:211 MiRam/(2186:2198): ----------------------------------------
+[INFO] 23:57:53:211 MiRam/(2186:2198): Tabla de segmentos correspondiente a patota 1
+[INFO] 23:57:53:211 MiRam/(2186:2198): Base 0   Tamanio 8
+[INFO] 23:57:53:211 MiRam/(2186:2198): Base 8   Tamanio 44
+[INFO] 23:57:53:211 MiRam/(2186:2198): Base 52   Tamanio 21
+[INFO] 23:57:53:211 MiRam/(2186:2198): Base 73   Tamanio 21
+[INFO] 23:57:53:211 MiRam/(2186:2198): Base 94   Tamanio 21
+[INFO] 23:57:53:211 MiRam/(2186:2198): ---------------------------------------
+[INFO] 23:57:53:211 MiRam/(2186:2198): Se asigno espacio de memoria a todo
+[INFO] 23:57:59:971 MiRam/(2186:2187): Estableciendo conexión desde 54404
+[INFO] 23:57:59:972 MiRam/(2186:2187): Creando hilo
+[INFO] 23:57:59:976 MiRam/(2186:2209): Se conecto este socket a mi 7
+[INFO] 23:57:59:976 MiRam/(2186:2187): Estableciendo conexión desde 54916
+[INFO] 23:57:59:976 MiRam/(2186:2187): Creando hilo
+[INFO] 23:57:59:983 MiRam/(2186:2210): Se conecto este socket a mi 8
+[INFO] 23:57:59:984 MiRam/(2186:2187): Estableciendo conexión desde 55428
+[INFO] 23:57:59:984 MiRam/(2186:2187): Creando hilo
+[INFO] 23:57:59:984 MiRam/(2186:2211): Se conecto este socket a mi 9
+[INFO] 23:58:27:086 MiRam/(2186:2209): no hay mas tareas
+[INFO] 23:58:27:086 MiRam/(2186:2209): Se expulso segmento 2
+[INFO] 23:58:27:086 MiRam/(2186:2209): ---------  MEMORIA  --------------------
+[INFO] 23:58:27:086 MiRam/(2186:2209): base: 0, tam: 8, libre: false 
+[INFO] 23:58:27:086 MiRam/(2186:2209): base: 8, tam: 44, libre: false 
+[INFO] 23:58:27:086 MiRam/(2186:2209): base: 52, tam: 21, libre: true 
+[INFO] 23:58:27:086 MiRam/(2186:2209): base: 73, tam: 21, libre: false 
+[INFO] 23:58:27:086 MiRam/(2186:2209): base: 94, tam: 21, libre: false 
+[INFO] 23:58:27:086 MiRam/(2186:2209): base: 115, tam: 397, libre: true 
+[INFO] 23:58:27:086 MiRam/(2186:2209): ----------------------------------------
+[INFO] 23:58:27:086 MiRam/(2186:2209): Tabla de segmentos correspondiente a patota 1
+[INFO] 23:58:27:086 MiRam/(2186:2209): Base 0   Tamanio 8
+[INFO] 23:58:27:086 MiRam/(2186:2209): Base 8   Tamanio 44
+[INFO] 23:58:27:086 MiRam/(2186:2209): Base 73   Tamanio 21
+[INFO] 23:58:27:086 MiRam/(2186:2209): Base 94   Tamanio 21
+[INFO] 23:58:27:086 MiRam/(2186:2209): ---------------------------------------
+[WARNING] 23:58:27:090 MiRam/(2186:2209): el cliente se desconecto.
+[INFO] 23:58:28:127 MiRam/(2186:2211): no hay mas tareas
+[INFO] 23:58:28:127 MiRam/(2186:2211): Se expulso segmento 4
+[INFO] 23:58:28:127 MiRam/(2186:2211): ---------  MEMORIA  --------------------
+[INFO] 23:58:28:127 MiRam/(2186:2211): base: 0, tam: 8, libre: false 
+[INFO] 23:58:28:127 MiRam/(2186:2211): base: 8, tam: 44, libre: false 
+[INFO] 23:58:28:127 MiRam/(2186:2211): base: 52, tam: 21, libre: true 
+[INFO] 23:58:28:127 MiRam/(2186:2211): base: 73, tam: 21, libre: false 
+[INFO] 23:58:28:127 MiRam/(2186:2211): base: 94, tam: 418, libre: true 
+[INFO] 23:58:28:127 MiRam/(2186:2211): ----------------------------------------
+[INFO] 23:58:28:127 MiRam/(2186:2211): Tabla de segmentos correspondiente a patota 1
+[INFO] 23:58:28:127 MiRam/(2186:2211): Base 0   Tamanio 8
+[INFO] 23:58:28:127 MiRam/(2186:2211): Base 8   Tamanio 44
+[INFO] 23:58:28:127 MiRam/(2186:2211): Base 73   Tamanio 21
+[INFO] 23:58:28:127 MiRam/(2186:2211): ---------------------------------------
+[WARNING] 23:58:28:127 MiRam/(2186:2211): el cliente se desconecto.
+[INFO] 23:58:28:131 MiRam/(2186:2210): no hay mas tareas
+[INFO] 23:58:28:131 MiRam/(2186:2210): Se expulso segmento 3
+[INFO] 23:58:28:131 MiRam/(2186:2210): ---------  MEMORIA  --------------------
+[INFO] 23:58:28:131 MiRam/(2186:2210): base: 0, tam: 512, libre: true 
+[INFO] 23:58:28:131 MiRam/(2186:2210): ----------------------------------------
+[INFO] 23:58:28:131 MiRam/(2186:2210): Tabla de segmentos de patota ya no existe
+[WARNING] 23:58:28:131 MiRam/(2186:2210): el cliente se desconecto.
+[ERROR] 23:58:52:682 MiRam/(2186:2198): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:58:52:682 MiRam/(2186:2198): aaaaaaAAAAA

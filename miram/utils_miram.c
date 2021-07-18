@@ -92,7 +92,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 	int patota_id;
 
 	int tipoMensajeRecibido = -1;
-	log_info(logger, "Se conecto este socket a mi %d\n",socket_cliente);
+	log_info(logger, "Se conecto este socket a mi %d",socket_cliente);
 
 	while(1){
 		tipoMensajeRecibido = recibir_operacion(socket_cliente);
@@ -107,7 +107,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				patota = crear_patota(patota_id,0);
 
 				uint32_t cantidad_tripulantes = (uint32_t)atoi(list_get(lista,1));
-				log_info(logger, "cant tripu %d\n", cantidad_tripulantes);
+				log_info(logger, "cant tripu %d", cantidad_tripulantes);
 
 				for(int i=2; i < cantidad_tripulantes +2; i++){
 					tripulante = (tcbTripulante*)list_get(lista,i);
@@ -156,7 +156,8 @@ int funcion_cliente_segmentacion(int socket_cliente){
 									agregar_a_paquete(paquete, tripulante, tamanio_TCB);
 
 									char* pid_char = malloc(sizeof(char));
-									sprintf(pid_char, "%d", pid);
+									//sprintf(pid_char, "%d", pid);
+									log_info(logger, pid_char, "%d", pid);
 									agregar_a_paquete(paquete, pid_char, strlen(pid_char)+1);
 
 									//printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, pid, tripulante->estado);
@@ -299,9 +300,9 @@ int funcion_cliente_segmentacion(int socket_cliente){
 					list_destroy(tabla_espacios_de_memoria);
 				}
 				//ME FALTA ALGO CON TRIPUS O TAREAS? DIRIA QUE NO PORQUE ESO ES LO Q HAY EN ESPACIO->CONTENIDO
-				log_info(logger, "aaaaa");
+				log_info(logger, "aaaaaaAAAAA");
 				log_destroy(logger);
-				config_destroy(archConfig);
+				//config_destroy(archConfig);
 				return EXIT_FAILURE;
 
 			case -1:
@@ -449,11 +450,11 @@ pcbPatota* crear_patota(uint32_t pid, uint32_t tareas){
 }
 
 void mostrar_tripulante(tcbTripulante* tripulante, pcbPatota* patota){
-	printf("ID %d \n",tripulante->tid);
-	printf("posicion x: %d \n",tripulante->posicionX);
-	printf("posicion y: %d \n",tripulante->posicionY);
-	printf("Status: %c \n",tripulante->estado);
-	printf("n patota: %d \n",patota->pid);
+	log_info(logger, "ID %d ",tripulante->tid);
+	log_info(logger, "posicion x: %d ",tripulante->posicionX);
+	log_info(logger, "posicion y: %d ",tripulante->posicionY);
+	log_info(logger, "Status: %c ",tripulante->estado);
+	log_info(logger, "n patota: %d ",patota->pid);
 }
 
 
@@ -509,7 +510,7 @@ size_t tamanio_pcb(pcbPatota* patota){
 }
 
 void mensajeError (t_log* logger) {
-	printf("Error, no existe tal proceso\n");
+	//printf("Error, no existe tal proceso\n");
 	log_error(logger, "Error en la operacion");
 }
 
@@ -599,30 +600,30 @@ espacio_de_memoria* crear_espacio_de_memoria(int base, int tam, bool libre){
 void imprimir_tabla_espacios_de_memoria(){
 	sem_wait(&MUTEX_TABLA_MEMORIA);
 	int size = list_size(tabla_espacios_de_memoria);
-    printf("---------  MEMORIA  --------------------\n");
+	log_info(logger, "---------  MEMORIA  --------------------");
 
     for(int i=0; i < size; i++) {
     	espacio_de_memoria *espacio = list_get(tabla_espacios_de_memoria, i);
-        printf("base: %d, tam: %d, libre: %s \n", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
+    	log_info(logger, "base: %d, tam: %d, libre: %s ", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
         //free(espacio);
     }
     sem_post(&MUTEX_TABLA_MEMORIA);
-    printf("----------------------------------------\n");
+    log_info(logger, "----------------------------------------");
 }
 
 void imprimir_tabla_segmentos_patota(tabla_segmentacion* tabla_segmentos_patota){
 	if(list_size(tabla_segmentos_patota->lista_segmentos) >0){//marca rojo porque ya no existe esa tabla o lsta nose creo
-		printf("Tabla de segmentos correspondiente a patota %d\n", tabla_segmentos_patota->id_patota);
+		log_info(logger, "Tabla de segmentos correspondiente a patota %d", tabla_segmentos_patota->id_patota);
 
 		for(int j=0; j < list_size(tabla_segmentos_patota->lista_segmentos); j++){
 			segmento* segmento_leido = list_get(tabla_segmentos_patota->lista_segmentos, j);
-			printf("Base %d   Tamanio %d\n", segmento_leido->base, segmento_leido->tamanio);
+			log_info(logger, "Base %d   Tamanio %d", segmento_leido->base, segmento_leido->tamanio);
 			//free(segmento_leido);
 		}
 	}else{
-		printf("Tabla de segmentos de patota %d ya no existe \n", tabla_segmentos_patota->id_patota);
+		log_info(logger, "Tabla de segmentos de patota %d ya no existe ", tabla_segmentos_patota->id_patota);
 	}
-	printf("---------------------------------------\n");
+	log_info(logger, "---------------------------------------");
 }
 
 
@@ -851,7 +852,7 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 	list_add(tabla_segmentos_patota->lista_segmentos, segmento_pcb);
 	list_add(tabla_segmentos_patota->lista_segmentos, segmento_tareas);
 
-	//tcbTripulante* tripulante = malloc(tamanio_TCB);//NO ENTIENDO COMO ANDA TODO CON UN SOLO MALLOC. NO TENDRIA QUE SER UNO POR TRIPULANTE?
+	//tcbTripulante* tripulante = malloc(tamanio_TCB);//NO ENTIENDO COMO ANDA TOoDO CON UN SOLO MALLOC. NO TENDRIA QUE SER UNO POR TRIPULANTE?
 	for(int i=2; i < cantidad_tripulantes +2; i++){
 		tcbTripulante* tripulante = malloc(tamanio_TCB);
 		tripulante = (tcbTripulante*)list_get(lista,i);
@@ -1162,11 +1163,11 @@ bool cambiar_posicion(int tid, int posx, int posy, int pid){
 
 void sig_handler(int signum){
     if (signum == SIGUSR2){
-        printf("SIGUSR2\n");
+    	log_info(logger, "SIGUSR2\n");
         compactar_memoria();
     }
     if(signum == SIGUSR1){
-    	printf("SIGUSR1\n");
+    	log_info(logger, "SIGUSR1\n");
     	dump_memoria_segmentacion();
     }
 }
@@ -1184,7 +1185,6 @@ void dump_memoria_segmentacion(){
 	fflush(stdout);
 	fprintf(dump_file,"Dump: %s\n", buff1);
 
-	printf("The value in hex is %X\n", 10);
 	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
 		tabla_segmentacion* tabla_seg = (tabla_segmentacion*)list_get(lista_tablas_segmentos, i);
 		for(int j=0; j < list_size(tabla_seg->lista_segmentos); j++){

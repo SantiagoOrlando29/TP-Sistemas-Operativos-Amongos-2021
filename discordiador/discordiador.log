@@ -1,15 +1,19 @@
-[INFO] 23:09:36:673 discordiador/(31712:31712): Memoria asignada
-[INFO] 23:09:39:411 discordiador/(31712:31712): Memoria asignada
-[INFO] 23:09:49:458 discordiador/(31712:31721): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:09:49:465 discordiador/(31712:31722): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:09:49:466 discordiador/(31712:31723): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:09:49:466 discordiador/(31712:31724): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:09:49:467 discordiador/(31712:31725): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:09:49:467 discordiador/(31712:31726): TRIPU 6  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:09:49:468 discordiador/(31712:31727): TRIPU 7  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:09:49:469 discordiador/(31712:31728): TRIPU 8  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:09:49:469 discordiador/(31712:31729): TRIPU 9  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:09:49:470 discordiador/(31712:31730): TRIPU 10  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 23:09:52:460 discordiador/(31712:31719): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 23:09:54:461 discordiador/(31712:31719): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 23:09:56:234 discordiador/(31712:31712): aaaaaaaa
+[INFO] 23:57:53:211 discordiador/(2193:2193): Memoria asignada
+[INFO] 23:57:59:976 discordiador/(2193:2205): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 23:57:59:983 discordiador/(2193:2206): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 23:57:59:984 discordiador/(2193:2207): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 23:58:02:980 discordiador/(2193:2201): TRIPU 1  tarea recibida: ABC;5;6;4
+[INFO] 23:58:04:983 discordiador/(2193:2201): TRIPU 3  tarea recibida: ABC;5;6;4
+[INFO] 23:58:05:984 discordiador/(2193:2201): TRIPU 2  tarea recibida: ABC;5;6;4
+[INFO] 23:58:13:034 discordiador/(2193:2205): TRIPU 1  tarea recibida: DEF;3;3;4
+[INFO] 23:58:15:038 discordiador/(2193:2207): TRIPU 3  tarea recibida: DEF;3;3;4
+[INFO] 23:58:16:075 discordiador/(2193:2206): TRIPU 2  tarea recibida: DEF;3;3;4
+[INFO] 23:58:27:087 discordiador/(2193:2205): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 23:58:27:090 discordiador/(2193:2205): tripu_misma_patota_exit 1
+[INFO] 23:58:28:127 discordiador/(2193:2207): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 23:58:28:127 discordiador/(2193:2207): tripu_misma_patota_exit 2
+[INFO] 23:58:28:131 discordiador/(2193:2206): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 23:58:28:131 discordiador/(2193:2206): tripu_misma_patota_exit 3
+[INFO] 23:58:28:131 discordiador/(2193:2206): size exit 0
+[INFO] 23:58:52:685 discordiador/(2193:2199): fin hilo ready_exec
+[INFO] 23:58:52:689 discordiador/(2193:2193): aaaaaaaa
