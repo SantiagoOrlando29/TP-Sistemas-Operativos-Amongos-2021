@@ -28,6 +28,7 @@ sem_t MUTEX_CAMBIAR_POSICION;
 sem_t MUTEX_TABLA_MEMORIA;
 sem_t MUTEX_LISTA_TABLAS_SEGMENTOS;
 sem_t MUTEX_TABLA_MEMORIA_PAGINACION;
+sem_t MUTEX_LISTA_TABLAS_PAGINAS;
 sem_t MUTEX_MEM_PPAL;
 sem_t MUTEX_MEM_SEC;
 
@@ -159,7 +160,7 @@ typedef enum{
 
 typedef struct{
 	int id_patota;
-	t_list* marco_inicial;
+	t_list* lista_marcos;
 	int cant_tripulantes;
 	int long_tareas;
 
