@@ -88,11 +88,14 @@ void iniciar_servidor(config_struct* config_servidor)
 int funcion_cliente_segmentacion(int socket_cliente){
 	//t_list* lista = list_create();
 	t_list* lista;
+	bool lista_usada = false;
 	pcbPatota* patota;
 	tcbTripulante* tripulante;
 	//t_paquete* paquete;
 	int tripulante_id;
 	int patota_id;
+	char* pid_char;
+	char* tid_char;
 
 	int tipoMensajeRecibido = -1;
 	log_info(logger, "Se conecto este socket a mi %d",socket_cliente);
@@ -105,16 +108,19 @@ int funcion_cliente_segmentacion(int socket_cliente){
 			case INICIAR_PATOTA:
 				lista = recibir_paquete(socket_cliente);
 
-				patota_id = (int)atoi(list_get(lista,0));
+				//patota_id = (int)atoi(list_get(lista,0));
+				pid_char = list_get(lista,0);
+				patota_id = (int)atoi(pid_char);
+				free(pid_char);
 				log_info(logger,"\nEl numero de la patota recibida es %d", patota_id);
-				//patota = crear_patota(patota_id,0);
 
-				uint32_t cantidad_tripulantes = (uint32_t)atoi(list_get(lista,1));
-				//log_info(logger, "cant tripu %d", cantidad_tripulantes);
+				//uint32_t cantidad_tripulantes = (uint32_t)atoi(list_get(lista,1));
+				char* cant_tripu_char = list_get(lista,1);
+				uint32_t cantidad_tripulantes = (uint32_t)atoi(cant_tripu_char);
+				free(cant_tripu_char);
 
 				for(int i=2; i < cantidad_tripulantes +2; i++){
 					tripulante = (tcbTripulante*)list_get(lista,i);
-					//mostrar_tripulante(tripulante, patota);
 					log_info(logger, "ID %d ",tripulante->tid);
 					log_info(logger, "posicion x: %d ",tripulante->posicionX);
 					log_info(logger, "posicion y: %d ",tripulante->posicionY);
@@ -122,24 +128,24 @@ int funcion_cliente_segmentacion(int socket_cliente){
 					log_info(logger, "n patota: %d \n",patota_id);
 				}
 
-				//free(patota);
+				//char* tarea = malloc((uint32_t)atoi(list_get(lista, cantidad_tripulantes+2)));
+				char* largo_tarea_char = list_get(lista, cantidad_tripulantes+2);
+				free(largo_tarea_char);
+				char* tarea = (char*)list_get(lista, cantidad_tripulantes+3);
 
-				char* tarea = malloc((uint32_t)atoi(list_get(lista, cantidad_tripulantes+2)));
-				tarea = (char*)list_get(lista, cantidad_tripulantes+3);
 
-
-				if(strcmp(configuracion.squema_memoria,"SEGMENTACION")==0){
-					bool todo_ok = patota_segmentacion(patota_id, cantidad_tripulantes, tarea, lista);
-					if (todo_ok == false){
-						log_warning(logger, "no se puedo asignar espacio de memoria a todo");
-						char* mensaje = "Memoria NO asignada";
-						enviar_mensaje(mensaje, socket_cliente);
-					} else {
-						log_info(logger, "Se asigno espacio de memoria a todo \n");
-						char* mensaje = "Memoria asignada";
-						enviar_mensaje(mensaje, socket_cliente);
-					}
+				bool todo_ok = patota_segmentacion(patota_id, cantidad_tripulantes, tarea, lista);
+				if (todo_ok == false){
+					log_warning(logger, "no se puedo asignar espacio de memoria a todo");
+					char* mensaje = "Memoria NO asignada";
+					enviar_mensaje(mensaje, socket_cliente);
+				} else {
+					log_info(logger, "Se asigno espacio de memoria a todo \n");
+					char* mensaje = "Memoria asignada";
+					enviar_mensaje(mensaje, socket_cliente);
 				}
+
+				list_destroy(lista);
 
 				break;
 
@@ -163,7 +169,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 
 									agregar_a_paquete(paquete, tripulante, tamanio_TCB);
 
-									char* pid_char = malloc(sizeof(char));
+									char* pid_char = malloc(sizeof(char)+1);
 									sprintf(pid_char, "%d", pid);
 									agregar_a_paquete(paquete, pid_char, strlen(pid_char)+1);
 
@@ -183,13 +189,18 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				}
 
 				eliminar_paquete(paquete);
+				free(pid_char);
 
 				break;
 
 
 			case EXPULSAR_TRIPULANTE:
 				lista = recibir_paquete(socket_cliente);
-				tripulante_id = (int)atoi(list_get(lista,0));
+
+				//tripulante_id = (int)atoi(list_get(lista,0));
+				tid_char = list_get(lista,0);
+				tripulante_id = (int)atoi(tid_char);
+				//free(tid_char);
 
 				if(strcmp(configuracion.squema_memoria,"SEGMENTACION")==0){
 					bool tripulante_expulsado_con_exito = funcion_expulsar_tripulante(tripulante_id);
@@ -199,13 +210,21 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				}
 
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
+				lista_usada = true;
 				//return 0;//para que termine el hilo se supone
 				break;
 
 			case PEDIR_TAREA:;
 				lista = recibir_paquete(socket_cliente);
-				tripulante_id = (int)atoi(list_get(lista, 0));
-				patota_id = (int)atoi(list_get(lista, 1));
+				//tripulante_id = (int)atoi(list_get(lista, 0));
+				tid_char = list_get(lista,0);
+				tripulante_id = (int)atoi(tid_char);
+				//free(tid_char);
+
+				//patota_id = (int)atoi(list_get(lista, 1));
+				pid_char = list_get(lista,1);
+				patota_id = (int)atoi(pid_char);
+				//free(pid_char);
 
 				bool hay_mas_tareas = enviar_tarea_segmentacion(socket_cliente, patota_id, tripulante_id);
 				if(hay_mas_tareas == false){
@@ -223,12 +242,18 @@ int funcion_cliente_segmentacion(int socket_cliente){
 
 			case CAMBIAR_DE_ESTADO:;
 				lista = recibir_paquete(socket_cliente);
-				tripulante_id = (int)atoi(list_get(lista, 0));
+				//tripulante_id = (int)atoi(list_get(lista, 0));
+				tid_char = list_get(lista,0);
+				tripulante_id = (int)atoi(tid_char);
+				//free(tid_char);
 
 				char* estado_recibido = list_get(lista, 1);
 				char estado = estado_recibido[0];
 
-				patota_id = (int)atoi(list_get(lista, 2));
+				//patota_id = (int)atoi(list_get(lista, 2));
+				pid_char = list_get(lista,2);
+				patota_id = (int)atoi(pid_char);
+				//free(pid_char);
 
 				bool cambio_exitoso = cambiar_estado(patota_id, estado, tripulante_id);
 				if(cambio_exitoso == false){
@@ -246,10 +271,25 @@ int funcion_cliente_segmentacion(int socket_cliente){
 
 			case INFORMAR_MOVIMIENTO:;
 				lista = recibir_paquete(socket_cliente);
-				tripulante_id = (int)atoi(list_get(lista, 0));
-				int posx = (int)atoi(list_get(lista, 1));
-				int posy = (int)atoi(list_get(lista, 2));
-				patota_id = (int)atoi(list_get(lista, 3));
+				//tripulante_id = (int)atoi(list_get(lista, 0));
+				tid_char = list_get(lista,0);
+				tripulante_id = (int)atoi(tid_char);
+				//free(tid_char);
+
+				//int posx = (int)atoi(list_get(lista, 1));
+				char* posx_char = list_get(lista, 1);
+				int posx = (int)atoi(posx_char);
+				//free(posx_char);
+
+				//int posy = (int)atoi(list_get(lista, 2));
+				char* posy_char = list_get(lista, 2);
+				int posy = (int)atoi(posy_char);
+				//free(posy_char);
+
+				//patota_id = (int)atoi(list_get(lista, 3));
+				pid_char = list_get(lista,3);
+				patota_id = (int)atoi(pid_char);
+				//free(pid_char);
 
 				bool movimiento_exitoso = cambiar_posicion(tripulante_id, posx, posy, patota_id);
 				if(movimiento_exitoso == false){
@@ -288,15 +328,20 @@ int funcion_cliente_segmentacion(int socket_cliente){
 
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
-				variable_servidor = 0;;
-				shutdown(socket_servidor, SHUT_RD);
-				//close(socket_servidor);
+				variable_servidor = 0;
+				log_info(logger, "aaaaaaaaaa");
+				//shutdown(socket_servidor, SHUT_RD);//A VECES ANDA Y A VECES NO
+				log_info(logger, "bbbbbbbb");
+				close(socket_servidor);
+				log_info(logger, "bbbbbbbb");
 				close(socket_cliente);
 
-				//list_destroy(lista);
+				//list_destroy(lista);//TENGO Q HACERLO SOLO SI NO USO OTRAS FUNCIONES Q DESTRUYAN LISTAS
 
-				/*void destruir_tripu(tcbTripulante* tripu){
-					free(tripu);
+				/*if(list_size(lista) > 0){
+					list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
+				}else{
+					list_destroy(lista);
 				}*/
 
 				list_destroy_and_destroy_elements(lista_tablas_segmentos, (void*)destruir_tabla_segmentacion);
@@ -665,14 +710,11 @@ void eliminar_espacio_de_memoria(int base){
 
     	if(espacio->base == base){
             espacio->libre = true;
-            free(espacio->contenido);
-            //list_remove(tabla_espacios_de_memoria, i);
-            //espacio_de_memoria* espacio_libre = crear_espacio_de_memoria(base, espacio->tam, true);
-            //list_add(tabla_espacios_de_memoria, espacio_libre);
-
-            //free(espacio_libre);
+            void* elemento = espacio->contenido; //VER SI CON ESTO ANDA. SINO CAPAZ TENGO Q HACER UNO PARA ELIMINAR TCB OTRO PARA PATOTA Y OTRO P TAREA
+            free(elemento);
+            //free(espacio->contenido);
+            espacio = NULL;
         }
-    	//free(espacio);
     }
 	sem_post(&MUTEX_TABLA_MEMORIA);
     ordenar_memoria();
@@ -721,7 +763,6 @@ void eliminar_segmento(int nro_segmento, tabla_segmentacion* tabla_segmentos_pat
 		segmento* segmento = list_get(tabla_segmentos_patota->lista_segmentos, i);
 
 		if(segmento->numero_segmento == nro_segmento){
-			//list_remove(tabla_segmentos_patota->lista_segmentos, i);
 			eliminar_espacio_de_memoria(segmento->base);
 			list_remove_and_destroy_element(tabla_segmentos_patota->lista_segmentos, i, (void*)destruir_segmentos);
 		}
@@ -883,10 +924,9 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 	list_add(tabla_segmentos_patota->lista_segmentos, segmento_pcb);
 	list_add(tabla_segmentos_patota->lista_segmentos, segmento_tareas);
 
-	//tcbTripulante* tripulante = malloc(tamanio_TCB);//NO ENTIENDO COMO ANDA TOoDO CON UN SOLO MALLOC. NO TENDRIA QUE SER UNO POR TRIPULANTE?
 	for(int i=2; i < cantidad_tripulantes +2; i++){
-		tcbTripulante* tripulante = malloc(tamanio_TCB);
-		tripulante = (tcbTripulante*)list_get(lista,i);
+		//tcbTripulante* tripulante = malloc(tamanio_TCB);
+		tcbTripulante* tripulante = (tcbTripulante*)list_get(lista,i);
 
 		if(i == 2){//es el primer tripulante de la lista
 			tabla_segmentos_patota->primer_tripulante = tripulante->tid;
@@ -903,7 +943,7 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 			return false;
 		}
 
-		tripulante->puntero_pcb = 0; //direccion logica del pcb. Segmento pcb es el 0
+		tripulante->puntero_pcb = 0; //direccion logica del pcb. Segmento pcb es el 0 //FALLA POR EL PADDING CREO.
 		tripulante->estado = 'N';
 		tripulante->prox_instruccion = 0;
 		espacio_de_memoria_tcb_tripulante->contenido = tripulante;

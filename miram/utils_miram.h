@@ -274,6 +274,7 @@ char* obtener_tarea(int id_patota, int nro_tarea);
 espacio_de_memoria* crear_espacio_de_memoria(int, int, bool);
 void imprimir_tabla_espacios_de_memoria();
 void eliminar_espacio_de_memoria(int);
+void eliminar_espacio_de_memoria_tarea(int base);
 espacio_de_memoria* buscar_espacio_de_memoria_libre(int);
 espacio_de_memoria* busqueda_first_fit(int);
 espacio_de_memoria* busqueda_best_fit(int);
