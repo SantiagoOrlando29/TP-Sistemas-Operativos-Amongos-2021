@@ -78,6 +78,7 @@ void iniciar_servidor(config_struct* config_servidor)
 		    }
 		}
 	}
+	printf("me fui");
 
 	//log_destroy(logger);
 
@@ -105,18 +106,23 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				lista = recibir_paquete(socket_cliente);
 
 				patota_id = (int)atoi(list_get(lista,0));
-				log_info(logger,"El numero de la patota recibida es %d", patota_id);
-				patota = crear_patota(patota_id,0);
+				log_info(logger,"\nEl numero de la patota recibida es %d", patota_id);
+				//patota = crear_patota(patota_id,0);
 
 				uint32_t cantidad_tripulantes = (uint32_t)atoi(list_get(lista,1));
-				log_info(logger, "cant tripu %d", cantidad_tripulantes);
+				//log_info(logger, "cant tripu %d", cantidad_tripulantes);
 
 				for(int i=2; i < cantidad_tripulantes +2; i++){
 					tripulante = (tcbTripulante*)list_get(lista,i);
-					mostrar_tripulante(tripulante, patota);
+					//mostrar_tripulante(tripulante, patota);
+					log_info(logger, "ID %d ",tripulante->tid);
+					log_info(logger, "posicion x: %d ",tripulante->posicionX);
+					log_info(logger, "posicion y: %d ",tripulante->posicionY);
+					log_info(logger, "Status: %c ",tripulante->estado);
+					log_info(logger, "n patota: %d \n",patota_id);
 				}
 
-				free(patota);
+				//free(patota);
 
 				char* tarea = malloc((uint32_t)atoi(list_get(lista, cantidad_tripulantes+2)));
 				tarea = (char*)list_get(lista, cantidad_tripulantes+3);
@@ -129,7 +135,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 						char* mensaje = "Memoria NO asignada";
 						enviar_mensaje(mensaje, socket_cliente);
 					} else {
-						log_info(logger, "Se asigno espacio de memoria a todo");
+						log_info(logger, "Se asigno espacio de memoria a todo \n");
 						char* mensaje = "Memoria asignada";
 						enviar_mensaje(mensaje, socket_cliente);
 					}
@@ -158,8 +164,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 									agregar_a_paquete(paquete, tripulante, tamanio_TCB);
 
 									char* pid_char = malloc(sizeof(char));
-									//sprintf(pid_char, "%d", pid);
-									log_info(logger, pid_char, "%d", pid);
+									sprintf(pid_char, "%d", pid);
 									agregar_a_paquete(paquete, pid_char, strlen(pid_char)+1);
 
 									//printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, pid, tripulante->estado);
@@ -283,8 +288,9 @@ int funcion_cliente_segmentacion(int socket_cliente){
 
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
-				variable_servidor = 0;
+				variable_servidor = 0;;
 				shutdown(socket_servidor, SHUT_RD);
+				//close(socket_servidor);
 				close(socket_cliente);
 
 				//list_destroy(lista);
@@ -304,7 +310,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				//ME FALTA ALGO CON TRIPUS O TAREAS? DIRIA QUE NO PORQUE ESO ES LO Q HAY EN ESPACIO->CONTENIDO
 				log_info(logger, "aaaaaaAAAAA");
 				log_destroy(logger);
-				//config_destroy(archConfig);
+				config_destroy(archConfig);
 				return EXIT_FAILURE;
 
 			case -1:
@@ -400,6 +406,31 @@ void enviar_mensaje(char* mensaje, int socket_cliente)
 
 	free(a_enviar);
 	eliminar_paquete(paquete);
+}
+
+int enviar_mensaje_malloqueado(char* mensaje, int socket_cliente)
+{
+	t_paquete* paquete = malloc(sizeof(t_paquete));
+
+	paquete->buffer = malloc(sizeof(t_buffer));
+	paquete->buffer->size = strlen(mensaje) + 1;
+	paquete->buffer->stream = malloc(paquete->buffer->size);
+	memcpy(paquete->buffer->stream, mensaje, paquete->buffer->size);
+
+	int bytes = paquete->buffer->size + sizeof(int);
+
+	void* a_enviar = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(a_enviar + desplazamiento, &(paquete->buffer->size), sizeof(int));
+	desplazamiento+= sizeof(int);
+	memcpy(a_enviar + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
+
+	send(socket_cliente, a_enviar, bytes, 0);
+
+	free(a_enviar);
+	eliminar_paquete(paquete);
+	return 1;
 }
 
 void* serializar_paquete(t_paquete* paquete, int bytes)
@@ -607,20 +638,18 @@ void imprimir_tabla_espacios_de_memoria(){
     for(int i=0; i < size; i++) {
     	espacio_de_memoria *espacio = list_get(tabla_espacios_de_memoria, i);
     	log_info(logger, "base: %d, tam: %d, libre: %s ", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
-        //free(espacio);
     }
     sem_post(&MUTEX_TABLA_MEMORIA);
     log_info(logger, "----------------------------------------");
 }
 
 void imprimir_tabla_segmentos_patota(tabla_segmentacion* tabla_segmentos_patota){
-	if(list_size(tabla_segmentos_patota->lista_segmentos) >0){//marca rojo porque ya no existe esa tabla o lsta nose creo
+	if(list_size(tabla_segmentos_patota->lista_segmentos) >0){
 		log_info(logger, "Tabla de segmentos correspondiente a patota %d", tabla_segmentos_patota->id_patota);
 
 		for(int j=0; j < list_size(tabla_segmentos_patota->lista_segmentos); j++){
 			segmento* segmento_leido = list_get(tabla_segmentos_patota->lista_segmentos, j);
 			log_info(logger, "Base %d   Tamanio %d", segmento_leido->base, segmento_leido->tamanio);
-			//free(segmento_leido);
 		}
 	}else{
 		log_info(logger, "Tabla de segmentos de patota %d ya no existe ", tabla_segmentos_patota->id_patota);
@@ -1055,17 +1084,20 @@ bool enviar_tarea_segmentacion(int socket_cliente, int numero_patota, int id_tri
 					espacio_de_memoria* espacio = buscar_espacio(segmento_tarea);
 
 					if(espacio != NULL){ //encontro la base en memoria de las tareas
-						char* una_tarea = buscar_tarea(espacio, tripulante->prox_instruccion);
-
-						if(una_tarea == NULL){ //no tiene mas tareas
+						char* una_tarea;
+						char** tareas = string_split(espacio->contenido,"-");
+						una_tarea = tareas[tripulante->prox_instruccion];
+						if(una_tarea == NULL){
+							log_info(logger, "no hay mas tareas");
 							char* mensaje = "no hay mas tareas";
 							enviar_mensaje(mensaje, socket_cliente);
+							limpiar_array(tareas);
 							sem_post(&MUTEX_PEDIR_TAREA);
 							return false;
 						}
 
-						enviar_mensaje(una_tarea, socket_cliente);
-						//free(una_tarea);
+						enviar_mensaje_malloqueado(una_tarea, socket_cliente);
+						limpiar_array(tareas);
 					}
 
 					tripulante->prox_instruccion++;
@@ -1111,7 +1143,7 @@ tabla_segmentacion* buscar_tabla_segmentos(int numero_patota){
 	return NULL;
 }
 
-char* buscar_tarea(espacio_de_memoria* espacio, int prox_instruccion){
+char* buscar_tarea(espacio_de_memoria* espacio, int prox_instruccion){ //LA PUEDO BORRAR PORQUE NO LA USO
 	char* una_tarea = malloc(30);
 	//char* una_tarea;
 
@@ -1120,10 +1152,13 @@ char* buscar_tarea(espacio_de_memoria* espacio, int prox_instruccion){
 	if(una_tarea == NULL){
 		log_info(logger, "no hay mas tareas");
 		limpiar_array(tareas);
+		//strcpy(una_tarea, "no hay mas tareas");
+		free(una_tarea);
 		return NULL;
+		//return una_tarea;
 	}
 
-	//limpiar_array(tareas); //VER. PORQUE CREO Q ES NECESARIO.
+	limpiar_array(tareas);
 	return una_tarea;
 }
 

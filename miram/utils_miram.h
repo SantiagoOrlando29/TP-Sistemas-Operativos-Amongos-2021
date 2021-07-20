@@ -208,6 +208,7 @@ int recibir_operacion(int);
 void leer_config();
 tarea* crear_tarea(tarea_tripulante,int,int,int,int);
 void enviar_mensaje(char* mensaje, int socket_cliente);
+int enviar_mensaje_malloqueado(char* mensaje, int socket_cliente);
 void* serializar_paquete(t_paquete* paquete, int bytes);
 
 

@@ -7,7 +7,7 @@ int main(void)
 	logger = log_create("MiRam.log","MiRam",1,LOG_LEVEL_INFO);
 
 	int piddd = getpid();
-	log_info(logger, "pid %d    \n", piddd);
+	log_info(logger, "pid %d  \n", piddd);
 	signal(SIGUSR2, sig_handler);
 	signal(SIGUSR1, sig_handler);
 
@@ -197,7 +197,8 @@ int main(void)
 
 void leer_config(){
 
-    t_config * archConfig = config_create("miram.config");
+    //t_config * archConfig = config_create("miram.config");
+	archConfig = config_create("miram.config");
 
     configuracion.ip_miram = config_get_string_value(archConfig, "IP_MI_RAM_HQ");
     configuracion.puerto_miram = config_get_string_value(archConfig, "PUERTO_MI_RAM_HQ");
