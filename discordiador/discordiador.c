@@ -17,6 +17,7 @@ sem_t MUTEX_LISTA_EXIT;
 sem_t CONTINUAR_PLANIFICACION;
 sem_t ORDENA_FUNCION_QUANTUM;
 sem_t FINALIZA_HILOS;
+sem_t LISTA_READY_NO_VACIA;
 int id_tripulante = 0;
 t_list* lista_tripulantes_nuevo;
 t_list* lista_tripulantes_ready;
@@ -54,6 +55,8 @@ void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante){ //pen
 		sem_wait(&MUTEX_LISTA_READY);
 		list_add(lista_tripulantes_ready, tripulante);
 		sem_post(&MUTEX_LISTA_READY);
+
+		sem_post(&LISTA_READY_NO_VACIA);
 
 		sem_post(&ORDENA_FUNCION_QUANTUM);
 
@@ -336,10 +339,9 @@ void tripulante_hilo (tcbTripulante* tripulante){
 void ready_exec() {
 	//tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
 	tcbTripulante* tripulante;
-	int lista_size;
 	while(flag_fin == 0){
-		lista_size = list_size(lista_tripulantes_ready);
-		if (lista_size >0){
+		sem_wait(&LISTA_READY_NO_VACIA); //para que no haya espera activa
+		if (list_size(lista_tripulantes_ready) >0){
 			sem_wait(&HABILITA_GRADO_MULTITAREA);
 			sem_wait(&HABILITA_EJECUTAR);
 
@@ -379,6 +381,8 @@ void nuevo_ready() {
 			sem_wait(&MUTEX_LISTA_READY);
 			list_add(lista_tripulantes_ready, tripulante);
 			sem_post(&MUTEX_LISTA_READY);
+
+			sem_post(&LISTA_READY_NO_VACIA);
 		}
 	}
 	log_info(logger, "fin hilo nuevo_ready");
@@ -440,6 +444,8 @@ void bloqueado_ready() {
 					sem_wait(&MUTEX_LISTA_READY);
 					list_add(lista_tripulantes_ready, tripulante);
 					sem_post(&MUTEX_LISTA_READY);
+
+					sem_post(&LISTA_READY_NO_VACIA);
 				} else{ // no tiene mas tareas
 					tripulante->estado = 'X';
 
@@ -497,6 +503,7 @@ int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger)
 	sem_init(&CONTINUAR_PLANIFICACION, 0,0);
 	sem_init(&ORDENA_FUNCION_QUANTUM, 0,1);
 	sem_init(&FINALIZA_HILOS, 0,0);
+	sem_init(&LISTA_READY_NO_VACIA, 0,0);
 
 	lista_tripulantes_nuevo = list_create();
 	lista_tripulantes_ready = list_create();
@@ -710,7 +717,7 @@ INICIAR_PATOTA 3 tareas_corta.txt 3|4 5|2 4|5
 						list_remove(lista_tripulantes_ready, i);
 						tripulante->fui_expulsado = true;
 						encontre_tripu = true;
-						i = list_size(lista_tripulantes_ready); //para cprtar el for
+						i = list_size(lista_tripulantes_ready); //para cortar el for
 					}
 				}
 
@@ -880,6 +887,7 @@ INICIAR_PATOTA 3 tareas_corta.txt 2|2 2|2 4|5
 					for(int i=0; i < list_size(lista_tripulantes_ready); i++){
 						tripulante = (tcbTripulante*)list_get(lista_tripulantes_ready, i);
 						cambiar_estado(tripulante->socket_miram, tripulante, 'R');
+						sem_post(&LISTA_READY_NO_VACIA);
 					}
 
 					//free(tripu1);

@@ -78,7 +78,7 @@ void iniciar_servidor(config_struct* config_servidor)
 		    }
 		}
 	}
-	printf("me fui");
+	//printf("me fui");
 
 	//log_destroy(logger);
 

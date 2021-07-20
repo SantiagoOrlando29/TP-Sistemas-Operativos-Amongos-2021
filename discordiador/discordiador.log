@@ -1,18 +1,2 @@
-[INFO] 11:53:02:686 discordiador/(7470:7470): Memoria asignada
-[INFO] 11:53:11:196 discordiador/(7470:7475): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 11:53:11:209 discordiador/(7470:7476): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 11:53:11:223 discordiador/(7470:7477): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 11:53:14:261 discordiador/(7470:7474): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 11:53:16:261 discordiador/(7470:7474): TRIPU 2  tarea recibida: ABC;5;6;4
-[INFO] 11:53:17:267 discordiador/(7470:7474): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 11:53:25:311 discordiador/(7470:7475): TRIPU 1  tarea recibida: DEF;3;3;4
-[INFO] 11:53:26:319 discordiador/(7470:7476): TRIPU 2  tarea recibida: DEF;3;3;4
-[INFO] 11:53:28:354 discordiador/(7470:7477): TRIPU 3  tarea recibida: DEF;3;3;4
-[INFO] 11:53:38:376 discordiador/(7470:7475): TRIPU 1  tarea recibida: no hay mas tareas
-[INFO] 11:53:38:380 discordiador/(7470:7475): tripu_misma_patota_exit 1
-[INFO] 11:53:39:419 discordiador/(7470:7476): TRIPU 2  tarea recibida: no hay mas tareas
-[INFO] 11:53:39:419 discordiador/(7470:7476): tripu_misma_patota_exit 2
-[INFO] 11:53:40:419 discordiador/(7470:7477): TRIPU 3  tarea recibida: no hay mas tareas
-[INFO] 11:53:40:419 discordiador/(7470:7477): tripu_misma_patota_exit 3
-[INFO] 11:53:40:419 discordiador/(7470:7477): size exit 0
-[INFO] 11:53:56:156 discordiador/(7470:7470): aaaaaaaa
+[INFO] 12:20:35:328 discordiador/(8424:8424): Memoria asignada
+[INFO] 12:20:41:390 discordiador/(8424:8424): aaaaaaaa

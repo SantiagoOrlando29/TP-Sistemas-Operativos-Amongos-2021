@@ -1,97 +1,49 @@
-[INFO] 11:52:55:870 MiRam/(7462:7462): pid 7462  
+[INFO] 12:20:23:322 MiRam/(8413:8413): pid 8413  
 
-[INFO] 11:52:56:338 MiRam/(7462:7462): ---------  MEMORIA  --------------------
-[INFO] 11:52:56:354 MiRam/(7462:7462): base: 0, tam: 512, libre: true 
-[INFO] 11:52:56:355 MiRam/(7462:7462): ----------------------------------------
-[INFO] 11:52:56:386 MiRam/(7462:7467): Servidor iniciando
-[INFO] 11:52:56:451 MiRam/(7462:7467): Servidor MiRam encendido
-[INFO] 11:52:59:580 MiRam/(7462:7467): Estableciendo conexión desde 43142
-[INFO] 11:52:59:580 MiRam/(7462:7467): Creando hilo
-[INFO] 11:52:59:589 MiRam/(7462:7471): Se conecto este socket a mi 6
-[INFO] 11:53:02:470 MiRam/(7462:7471): 
+[INFO] 12:20:23:323 MiRam/(8413:8413): ---------  MEMORIA  --------------------
+[INFO] 12:20:23:323 MiRam/(8413:8413): base: 0, tam: 512, libre: true 
+[INFO] 12:20:23:323 MiRam/(8413:8413): ----------------------------------------
+[INFO] 12:20:23:327 MiRam/(8413:8414): Servidor iniciando
+[INFO] 12:20:23:327 MiRam/(8413:8414): Servidor MiRam encendido
+[INFO] 12:20:29:270 MiRam/(8413:8414): Estableciendo conexión desde 4231
+[INFO] 12:20:29:270 MiRam/(8413:8414): Creando hilo
+[INFO] 12:20:29:275 MiRam/(8413:8431): Se conecto este socket a mi 5
+[INFO] 12:20:35:326 MiRam/(8413:8431): 
 El numero de la patota recibida es 1
-[INFO] 11:53:02:493 MiRam/(7462:7471): ID 1 
-[INFO] 11:53:02:497 MiRam/(7462:7471): posicion x: 3 
-[INFO] 11:53:02:510 MiRam/(7462:7471): posicion y: 4 
-[INFO] 11:53:02:515 MiRam/(7462:7471): Status: N 
-[INFO] 11:53:02:515 MiRam/(7462:7471): n patota: 1 
+[INFO] 12:20:35:326 MiRam/(8413:8431): ID 1 
+[INFO] 12:20:35:326 MiRam/(8413:8431): posicion x: 3 
+[INFO] 12:20:35:326 MiRam/(8413:8431): posicion y: 4 
+[INFO] 12:20:35:326 MiRam/(8413:8431): Status: N 
+[INFO] 12:20:35:326 MiRam/(8413:8431): n patota: 1 
 
-[INFO] 11:53:02:520 MiRam/(7462:7471): ID 2 
-[INFO] 11:53:02:524 MiRam/(7462:7471): posicion x: 5 
-[INFO] 11:53:02:528 MiRam/(7462:7471): posicion y: 2 
-[INFO] 11:53:02:530 MiRam/(7462:7471): Status: N 
-[INFO] 11:53:02:532 MiRam/(7462:7471): n patota: 1 
+[INFO] 12:20:35:327 MiRam/(8413:8431): ID 2 
+[INFO] 12:20:35:327 MiRam/(8413:8431): posicion x: 5 
+[INFO] 12:20:35:327 MiRam/(8413:8431): posicion y: 2 
+[INFO] 12:20:35:327 MiRam/(8413:8431): Status: N 
+[INFO] 12:20:35:327 MiRam/(8413:8431): n patota: 1 
 
-[INFO] 11:53:02:532 MiRam/(7462:7471): ID 3 
-[INFO] 11:53:02:542 MiRam/(7462:7471): posicion x: 4 
-[INFO] 11:53:02:545 MiRam/(7462:7471): posicion y: 5 
-[INFO] 11:53:02:548 MiRam/(7462:7471): Status: N 
-[INFO] 11:53:02:548 MiRam/(7462:7471): n patota: 1 
+[INFO] 12:20:35:327 MiRam/(8413:8431): ID 3 
+[INFO] 12:20:35:327 MiRam/(8413:8431): posicion x: 4 
+[INFO] 12:20:35:327 MiRam/(8413:8431): posicion y: 5 
+[INFO] 12:20:35:327 MiRam/(8413:8431): Status: N 
+[INFO] 12:20:35:327 MiRam/(8413:8431): n patota: 1 
 
-[INFO] 11:53:02:626 MiRam/(7462:7471): ---------  MEMORIA  --------------------
-[INFO] 11:53:02:627 MiRam/(7462:7471): base: 0, tam: 8, libre: false 
-[INFO] 11:53:02:630 MiRam/(7462:7471): base: 8, tam: 44, libre: false 
-[INFO] 11:53:02:635 MiRam/(7462:7471): base: 52, tam: 21, libre: false 
-[INFO] 11:53:02:638 MiRam/(7462:7471): base: 73, tam: 21, libre: false 
-[INFO] 11:53:02:642 MiRam/(7462:7471): base: 94, tam: 21, libre: false 
-[INFO] 11:53:02:646 MiRam/(7462:7471): base: 115, tam: 397, libre: true 
-[INFO] 11:53:02:646 MiRam/(7462:7471): ----------------------------------------
-[INFO] 11:53:02:647 MiRam/(7462:7471): Tabla de segmentos correspondiente a patota 1
-[INFO] 11:53:02:647 MiRam/(7462:7471): Base 0   Tamanio 8
-[INFO] 11:53:02:659 MiRam/(7462:7471): Base 8   Tamanio 44
-[INFO] 11:53:02:663 MiRam/(7462:7471): Base 52   Tamanio 21
-[INFO] 11:53:02:664 MiRam/(7462:7471): Base 73   Tamanio 21
-[INFO] 11:53:02:665 MiRam/(7462:7471): Base 94   Tamanio 21
-[INFO] 11:53:02:668 MiRam/(7462:7471): ---------------------------------------
-[INFO] 11:53:02:669 MiRam/(7462:7471): Se asigno espacio de memoria a todo 
+[INFO] 12:20:35:327 MiRam/(8413:8431): ---------  MEMORIA  --------------------
+[INFO] 12:20:35:327 MiRam/(8413:8431): base: 0, tam: 8, libre: false 
+[INFO] 12:20:35:327 MiRam/(8413:8431): base: 8, tam: 44, libre: false 
+[INFO] 12:20:35:327 MiRam/(8413:8431): base: 52, tam: 21, libre: false 
+[INFO] 12:20:35:327 MiRam/(8413:8431): base: 73, tam: 21, libre: false 
+[INFO] 12:20:35:327 MiRam/(8413:8431): base: 94, tam: 21, libre: false 
+[INFO] 12:20:35:327 MiRam/(8413:8431): base: 115, tam: 397, libre: true 
+[INFO] 12:20:35:327 MiRam/(8413:8431): ----------------------------------------
+[INFO] 12:20:35:327 MiRam/(8413:8431): Tabla de segmentos correspondiente a patota 1
+[INFO] 12:20:35:327 MiRam/(8413:8431): Base 0   Tamanio 8
+[INFO] 12:20:35:327 MiRam/(8413:8431): Base 8   Tamanio 44
+[INFO] 12:20:35:327 MiRam/(8413:8431): Base 52   Tamanio 21
+[INFO] 12:20:35:327 MiRam/(8413:8431): Base 73   Tamanio 21
+[INFO] 12:20:35:327 MiRam/(8413:8431): Base 94   Tamanio 21
+[INFO] 12:20:35:328 MiRam/(8413:8431): ---------------------------------------
+[INFO] 12:20:35:328 MiRam/(8413:8431): Se asigno espacio de memoria a todo 
 
-[INFO] 11:53:11:151 MiRam/(7462:7467): Estableciendo conexión desde 44166
-[INFO] 11:53:11:154 MiRam/(7462:7467): Creando hilo
-[INFO] 11:53:11:166 MiRam/(7462:7481): Se conecto este socket a mi 7
-[INFO] 11:53:11:197 MiRam/(7462:7467): Estableciendo conexión desde 44678
-[INFO] 11:53:11:197 MiRam/(7462:7467): Creando hilo
-[INFO] 11:53:11:206 MiRam/(7462:7482): Se conecto este socket a mi 8
-[INFO] 11:53:11:210 MiRam/(7462:7467): Estableciendo conexión desde 45190
-[INFO] 11:53:11:210 MiRam/(7462:7467): Creando hilo
-[INFO] 11:53:11:216 MiRam/(7462:7483): Se conecto este socket a mi 9
-[INFO] 11:53:38:375 MiRam/(7462:7481): no hay mas tareas
-[INFO] 11:53:38:384 MiRam/(7462:7481): Se expulso segmento 2
-[INFO] 11:53:38:404 MiRam/(7462:7481): ---------  MEMORIA  --------------------
-[INFO] 11:53:38:415 MiRam/(7462:7481): base: 0, tam: 8, libre: false 
-[INFO] 11:53:38:417 MiRam/(7462:7481): base: 8, tam: 44, libre: false 
-[INFO] 11:53:38:422 MiRam/(7462:7481): base: 52, tam: 21, libre: true 
-[INFO] 11:53:38:422 MiRam/(7462:7481): base: 73, tam: 21, libre: false 
-[INFO] 11:53:38:423 MiRam/(7462:7481): base: 94, tam: 21, libre: false 
-[INFO] 11:53:38:423 MiRam/(7462:7481): base: 115, tam: 397, libre: true 
-[INFO] 11:53:38:438 MiRam/(7462:7481): ----------------------------------------
-[INFO] 11:53:38:439 MiRam/(7462:7481): Tabla de segmentos correspondiente a patota 1
-[INFO] 11:53:38:439 MiRam/(7462:7481): Base 0   Tamanio 8
-[INFO] 11:53:38:442 MiRam/(7462:7481): Base 8   Tamanio 44
-[INFO] 11:53:38:450 MiRam/(7462:7481): Base 73   Tamanio 21
-[INFO] 11:53:38:450 MiRam/(7462:7481): Base 94   Tamanio 21
-[INFO] 11:53:38:454 MiRam/(7462:7481): ---------------------------------------
-[WARNING] 11:53:38:456 MiRam/(7462:7481): el cliente se desconecto.
-[INFO] 11:53:39:418 MiRam/(7462:7482): no hay mas tareas
-[INFO] 11:53:39:419 MiRam/(7462:7482): Se expulso segmento 3
-[INFO] 11:53:39:421 MiRam/(7462:7482): ---------  MEMORIA  --------------------
-[INFO] 11:53:39:421 MiRam/(7462:7482): base: 0, tam: 8, libre: false 
-[INFO] 11:53:39:430 MiRam/(7462:7482): base: 8, tam: 44, libre: false 
-[INFO] 11:53:39:436 MiRam/(7462:7482): base: 52, tam: 42, libre: true 
-[INFO] 11:53:39:438 MiRam/(7462:7482): base: 94, tam: 21, libre: false 
-[INFO] 11:53:39:438 MiRam/(7462:7482): base: 115, tam: 397, libre: true 
-[INFO] 11:53:39:439 MiRam/(7462:7482): ----------------------------------------
-[INFO] 11:53:39:439 MiRam/(7462:7482): Tabla de segmentos correspondiente a patota 1
-[INFO] 11:53:39:439 MiRam/(7462:7482): Base 0   Tamanio 8
-[INFO] 11:53:39:442 MiRam/(7462:7482): Base 8   Tamanio 44
-[INFO] 11:53:39:447 MiRam/(7462:7482): Base 94   Tamanio 21
-[INFO] 11:53:39:449 MiRam/(7462:7482): ---------------------------------------
-[WARNING] 11:53:39:449 MiRam/(7462:7482): el cliente se desconecto.
-[INFO] 11:53:40:418 MiRam/(7462:7483): no hay mas tareas
-[INFO] 11:53:40:419 MiRam/(7462:7483): Se expulso segmento 4
-[INFO] 11:53:40:427 MiRam/(7462:7483): ---------  MEMORIA  --------------------
-[INFO] 11:53:40:428 MiRam/(7462:7483): base: 0, tam: 512, libre: true 
-[INFO] 11:53:40:428 MiRam/(7462:7483): ----------------------------------------
-[INFO] 11:53:40:430 MiRam/(7462:7483): Tabla de segmentos de patota ya no existe
-[WARNING] 11:53:40:434 MiRam/(7462:7483): el cliente se desconecto.
-[ERROR] 11:53:56:156 MiRam/(7462:7471): el discordiador finalizo el programa. Terminando servidor
-[INFO] 11:53:56:198 MiRam/(7462:7471): aaaaaaAAAAA
+[ERROR] 12:20:41:390 MiRam/(8413:8431): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:20:41:391 MiRam/(8413:8431): aaaaaaAAAAA
