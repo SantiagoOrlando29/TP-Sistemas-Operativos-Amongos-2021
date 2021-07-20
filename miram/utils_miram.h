@@ -266,6 +266,7 @@ void swap_pagina(void* contenidoAEscribir,int numDeBloque);
 void* recuperar_pag_swap(int numDeBloque);
 void dump_memoria_paginacion();
 int reemplazo_lru();
+char* obtener_tarea(int id_patota, int nro_tarea);
 
 
 //SEGMENTACION

@@ -4,6 +4,8 @@ int variable_servidor = -1;
 int socket_servidor;
 t_list* tabla_paginacion_ppal;
 
+int borrar = 1;
+
 void iniciar_servidor(config_struct* config_servidor)
 {
 
@@ -1237,14 +1239,14 @@ int funcion_cliente_paginacion(int socket_cliente){
 		tipoMensajeRecibido = recibir_operacion(socket_cliente);
 		switch(tipoMensajeRecibido)
 		{
-			case PRUEBA:;
+			case INICIAR_PATOTA:;
 				lista=recibir_paquete(socket_cliente);
 				int pid = (int)atoi(list_get(lista,0));
-				fflush(stdout);
+				log_info(logger, "PID es %d",pid);
 
 				int cantidad_tripulantes = (int)atoi((list_get(lista,1)));
 
-				char* tarea=(char*)list_get(lista, cantidad_tripulantes+2);
+				char* tarea=(char*)list_get(lista, cantidad_tripulantes+3);
 
 				int cuantos_marcos_necesito = cuantos_marcos(cantidad_tripulantes,strlen(tarea)+1,&configuracion);
 				log_info(logger, "Ingresa nueva patota, necesito %d marcos", cuantos_marcos_necesito);
@@ -1271,13 +1273,14 @@ int funcion_cliente_paginacion(int socket_cliente){
 						marco_nuevo->ultimo_uso = time(0);
 						list_add(una_tabla->lista_marcos,marco_nuevo);
 					}
-
+					char* mensaje = "Memoria asignada";
+					enviar_mensaje(mensaje, socket_cliente);
 
 					//int cols, rows;
 
 
 
-					//almacenar_informacion(&configuracion, una_tabla, lista);
+					almacenar_informacion(&configuracion, una_tabla, lista);
 					//leer_informacion(&configuracion,  una_tabla, lista);
 
 					//actualizar_tripulante( tripulante3, 1);
@@ -1286,7 +1289,8 @@ int funcion_cliente_paginacion(int socket_cliente){
 					//mem_hexdump(configuracion.posicion_inicial, configuracion.tamanio_pag*sizeof(char));
 
 
-
+					log_info(logger,"Tarea %s\n",obtener_tarea(borrar, borrar+1));
+					borrar+=borrar;
 					imprimir_ocupacion_marcos(&configuracion);
 					imprimir_tabla_paginacion();
 					dump_memoria_paginacion();
@@ -1309,10 +1313,6 @@ int funcion_cliente_paginacion(int socket_cliente){
 
 				break;
 
-			case INICIAR_PATOTA:
-				log_info(logger, "Respondiendo");
-				enviar_header(INICIAR_PATOTA, socket_cliente);
-				break;
 
 			case LISTAR_TRIPULANTES:;
 				t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
@@ -1484,7 +1484,7 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 	uint32_t cantidad_tripulantes = (uint32_t)atoi((list_get(lista,1)));
 
-	char* tarea=(char*)list_get(lista, cantidad_tripulantes+2);
+	char* tarea=(char*)list_get(lista, cantidad_tripulantes+3);
 
 	for(int i =2; i<cantidad_tripulantes+2;i++){
 		tcbTripulante* tripulante= (tcbTripulante*) list_get(lista,i);
@@ -1538,14 +1538,16 @@ void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una
 
 	puntero_tarea=((indice_marco)*(config_servidor->tamanio_pag))+offset;
 
-	printf("EL puntero a tareas escrito es %d y el offset es %d", puntero_tarea, offset);
+	log_info(logger,"EL puntero a tareas escrito es %d y el offset es %d", puntero_tarea, offset);
 	escribir_atributo(puntero_tarea,offset_pcb,marco_pcb, config_servidor);
 
 	for(int i=0;i<strlen(tarea)+1;i++){
+		printf("%c", tarea[i]);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 		marcos = (marco*)list_get(una_tabla->lista_marcos,indice_marco);
 		actualizar_lru(marcos);
 		offset +=escribir_char_tarea(tarea[i],offset,marcos->id_marco, config_servidor);
+
 
 }
 
@@ -1923,7 +1925,6 @@ int espacios_swap_libres(config_struct* config_servidor){
 
 
 int reemplazo_clock(){
-	printf("Estoy en el clock\n");
 	int nro_marco;
 	int flag =0;
 	marco* clock_m=malloc(sizeof(marco));
@@ -2104,7 +2105,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota){
 
 }
 
-
+/* Pseudocodigo direccion logica en todos los tripulantes
+ *
+ * obtener_tarea_2(pid, dire_logica)
+ * buscar_tabla_paginacion_patota
+ *
+ */
 
 char* obtener_tarea(int id_patota, int nro_tarea){
 	char* una_tarea;
@@ -2156,7 +2162,7 @@ char* obtener_tarea(int id_patota, int nro_tarea){
     	}
 
 			//tarea_nueva=strcat(tarea_nueva,'\0');
-			char** tareas = string_split(tarea_nueva, ";");
+			char** tareas = string_split(tarea_nueva, "-");
 			una_tarea = tareas[nro_tarea];
 			//printf("La tarea nro %d es %s", nro_tarea, una_tarea);
 

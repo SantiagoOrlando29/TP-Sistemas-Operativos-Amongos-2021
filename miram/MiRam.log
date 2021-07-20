@@ -1,55 +1,30 @@
-[INFO] 18:39:46:455 MiRam/(22725:22725): pid 22725    
+[INFO] 23:30:46:468 MiRam/(9453:9453): pid 9453    
 
-[INFO] 18:39:46:456 MiRam/(22725:22726): Servidor iniciando
-[INFO] 18:39:46:456 MiRam/(22725:22726): Servidor MiRam encendido
-[INFO] 18:39:49:111 MiRam/(22725:22726): Estableciendo conexión desde 30918
-[INFO] 18:39:49:111 MiRam/(22725:22726): Creando hilo
-[INFO] 18:39:53:091 MiRam/(22725:22728): Ingresa nueva patota, necesito 6 marcos
-[INFO] 18:39:53:091 MiRam/(22725:22728): Guardando info
-[INFO] 18:39:53:091 MiRam/(22725:22728): Asigne esta posicion 0
+[INFO] 23:30:46:468 MiRam/(9453:9454): Servidor iniciando
+[INFO] 23:30:46:468 MiRam/(9453:9454): Servidor MiRam encendido
+[INFO] 23:30:48:854 MiRam/(9453:9454): Estableciendo conexión desde 24291
+[INFO] 23:30:48:855 MiRam/(9453:9454): Creando hilo
+[INFO] 23:31:09:848 MiRam/(9453:9456): PID es 1
+[INFO] 23:31:09:848 MiRam/(9453:9456): Ingresa nueva patota, necesito 9 marcos
+[INFO] 23:31:09:848 MiRam/(9453:9456): Guardando info
+[INFO] 23:31:09:848 MiRam/(9453:9456): Asigne esta posicion 0
 
-[INFO] 18:39:53:091 MiRam/(22725:22728): Asigne esta posicion 1
+[INFO] 23:31:09:848 MiRam/(9453:9456): Asigne esta posicion 1
 
-[INFO] 18:39:53:091 MiRam/(22725:22728): Asigne esta posicion 2
+[INFO] 23:31:09:848 MiRam/(9453:9456): Asigne esta posicion 2
 
-[INFO] 18:39:53:091 MiRam/(22725:22728): Asigne esta posicion 3
+[INFO] 23:31:09:848 MiRam/(9453:9456): Asigne esta posicion 3
 
-[INFO] 18:39:53:091 MiRam/(22725:22728): Asigne esta posicion 4
+[INFO] 23:31:09:848 MiRam/(9453:9456): Asigne esta posicion 4
 
-[INFO] 18:39:53:091 MiRam/(22725:22728): Asigne esta posicion 5
+[INFO] 23:31:09:848 MiRam/(9453:9456): Asigne esta posicion 5
 
-[INFO] 18:50:28:519 MiRam/(22725:22728): Ingresa nueva patota, necesito 6 marcos
-[INFO] 18:50:28:519 MiRam/(22725:22728): Guardando info
-[INFO] 18:50:28:519 MiRam/(22725:22728): Asigne esta posicion 6
+[INFO] 23:31:09:848 MiRam/(9453:9456): Asigne esta posicion 6
 
-[INFO] 18:50:28:519 MiRam/(22725:22728): Asigne esta posicion 7
+[INFO] 23:31:09:848 MiRam/(9453:9456): Asigne esta posicion 7
 
-[INFO] 18:50:28:519 MiRam/(22725:22728): Asigne esta posicion 8
+[INFO] 23:31:09:848 MiRam/(9453:9456): Asigne esta posicion 8
 
-[INFO] 18:50:28:520 MiRam/(22725:22728): Asigne esta posicion 9
+[INFO] 23:31:09:848 MiRam/(9453:9456): EL puntero a tareas escrito es 121 y el offset es 25
+[INFO] 23:31:09:849 MiRam/(9453:9456): Tarea GENERAR_COMIDA 2;3;3;1
 
-[INFO] 18:50:28:520 MiRam/(22725:22728): Asigne esta posicion 10
-
-[INFO] 18:50:28:520 MiRam/(22725:22728): Asigne esta posicion 11
-
-[INFO] 18:50:37:508 MiRam/(22725:22728): Ingresa nueva patota, necesito 6 marcos
-[INFO] 18:50:37:508 MiRam/(22725:22728): Guardando info
-[INFO] 18:50:37:508 MiRam/(22725:22728): Asigne esta posicion 12
-
-[INFO] 18:50:37:508 MiRam/(22725:22728): Asigne esta posicion 13
-
-[INFO] 18:50:37:508 MiRam/(22725:22728): Asigne esta posicion 14
-
-[INFO] 18:50:37:508 MiRam/(22725:22728): Asigne esta posicion 15
-
-[INFO] 18:50:37:508 MiRam/(22725:22728): Algoritmo de reemplazo es clock
-
-[INFO] 18:50:37:509 MiRam/(22725:22728): Asigne esta posicion 0
-
-[INFO] 18:50:37:509 MiRam/(22725:22728): Algoritmo de reemplazo es clock
-
-[INFO] 18:50:37:509 MiRam/(22725:22728): Asigne esta posicion 1
-
-[INFO] 18:50:49:516 MiRam/(22725:22728): Ingresa nueva patota, necesito 6 marcos
-[INFO] 18:50:49:516 MiRam/(22725:22728): No hay suficientes marcos, no se puede almacenar nada mas
-[ERROR] 18:51:03:948 MiRam/(22725:22728): el discordiador finalizo el programa. Terminando servidor
