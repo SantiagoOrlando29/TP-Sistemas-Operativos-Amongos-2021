@@ -32,7 +32,7 @@ int main(void)
 				printf("Not yet\n");
 				break;
 			case INICIAR_FSCK:
-				printf("Not yet pero ya casi (EN DESARROLLO\n");//fsck_iniciar();
+				printf("Not yet pero ya casi (EN DESARROLLO)\n");//fsck_iniciar();
 				break;
 			case SALIR:
 				printf("Gracias, vuelva prontos\n");
@@ -63,4 +63,5 @@ int main(void)
 	//mapeo();
 	return EXIT_SUCCESS;
 }*/
+
 

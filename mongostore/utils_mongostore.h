@@ -21,6 +21,7 @@
 //#include <unistd.h>
 //#include <sys/types.h>
 #include <openssl/md5.h>
+#include <dirent.h>
 /*
 #include<netdb.h>
 #include<math.h>
@@ -84,6 +85,11 @@ typedef enum {
 	SALIR
 } op_code;
 
+enum {
+	ERROR = -1,
+	OK
+};
+
 struct {
 	uint32_t block_size;
 	uint32_t blocks;
@@ -109,42 +115,43 @@ size_t blocks_size;
 //pthread_mutex_t mutex_blocks;
 //char* bloques_copia;
 
-
-
-//Prototipos  16 julio
-void crear_directorio_si_no_existe(char*);
-int existe_en_disco(char*);
-int abrir_archivo_para_lectura_escritura(char*);
-void crear_archivo(char*);
-FILE* abrir_archivo_para_escritura(char*);
-void dar_tamanio_a_archivo(char*, size_t);
-int cadena_cantidad_elementos_en_lista(char*);
-void cadena_sacar_ultimo_caracter(char*);
-void cadena_eliminar_array_de_cadenas(char***, int);
-void cadena_calcular_md5(const char *cadena, int, char*);
-char* cadena_calcular_md5_alter(const char *cadena, int );
+//Prototipos  21 julio
 void leer_config();
 void file_system_iniciar();
 void file_system_generar_rutas_completas();
 void files_cargar_rutas_de_recursos();
 void file_system_crear_directorios_inexistentes();
+void crear_directorio_si_no_existe(char* path);
+int existe_en_disco(char* path);
 void superbloque_validar_existencia();
-void superbloque_generar_estructura();
+void verificar_superbloque_temporal();//borrar
 void superbloque_generar_estructura_desde_archivo();
+int abrir_archivo_para_lectura_escritura(char* path);
 void superbloque_asignar_memoria_a_bitmap();
-void superbloque_generar_estructura_con_valores_ingresados_por_consola();
-void superbloque_tomar_valores_desde_consola();
-void superbloque_setear_bitmap_a_cero();
-void superbloque_validar_existencia_del_archivo();
-void superbloque_cargar_archivo();
+void superbloque_setear_tamanio();
 void superbloque_mapear_archivo_a_memoria();
+void file_system_eliminar_archivos_previos();
+void files_eliminar_carpeta_completa();
+void crear_archivo(char* path);
+void superbloque_generar_estructura_con_valores_tomados_por_consola();
+void superbloque_setear_bitmap_a_cero();
+void dar_tamanio_a_archivo(char* path, size_t length);
+void superbloque_cargar_mapeo_desde_estructura();
 void superbloque_actualizar_archivo();
-int superbloque_obtener_bloque_libre();
 void blocks_validar_existencia();
 void blocks_validar_existencia_del_archivo();
 void blocks_mapear_archivo_a_memoria();
+
+int cadena_cantidad_elementos_en_lista(char*);
+void cadena_sacar_ultimo_caracter(char*);
+void cadena_eliminar_array_de_cadenas(char***, int);
+void cadena_calcular_md5(const char *cadena, int, char*);
+char* cadena_calcular_md5_alter(const char *cadena, int );
+int files_cantidad_recursos();
+
+int superbloque_obtener_bloque_libre();
 void blocks_actualizar_archivo();
-int blocks_obtener_concatenado_segun_lista(t_recurso_md*, char**);
+int blocks_obtener_concatenado_de_recurso(t_recurso_md* recurso_md, char** concatenado);
 void recurso_generar_cantidad(recurso_code, int);
 void recurso_validar_existencia_metadata_en_memoria(t_recurso_data*);
 void recurso_actualizar_archivo(t_recurso_data*);
@@ -154,21 +161,16 @@ void metadata_agregar_bloque_a_lista_de_blocks(t_recurso_md*, int);
 int metadata_tiene_espacio_en_ultimo_bloque(t_recurso_md*);
 void metadata_cargar_en_bloque(t_recurso_md*, int*, int);
 void metadata_cargar_en_bloque2(t_recurso_md*, int*, int);
-void metadata_cargar_en_ultimo_bloque(t_recurso_md*, int*, int);
-void metadata_cargar_en_ultimo_bloque2(t_recurso_md*, int*, int);
 int metadata_ultimo_bloque_usado(t_recurso_md*);
 void metadata_levantar_de_archivo_a_memoria_valores_variables(t_recurso_md*, char*);
 void metadata_setear_con_valores_default_en_memoria(t_recurso_md*);
 void metadata_actualizar_md5(t_recurso_md*);
-void metadata_actualizar_md5_alter(t_recurso_md*);
 
 //Recientemente agregadas
 int recurso_es_valido(recurso_code codigo_recurso);
 int files_cantidad_recursos();
-void superbloque_actualizar_mapeo();
 void file_system_eliminar_archivos_previos();
 void blocks_eliminar_archivo();
-void files_eliminar_archivos();
 void superbloque_actualizar_bitmap_en_archivo();
 void superbloque_actualizar_blocks_en_archivo();
 void superbloque_liberar_bloques_en_bitmap(char* blocks);
@@ -182,7 +184,7 @@ void fsck_iniciar();
 void fsck_chequeo_de_sabotajes_en_superbloque();
 void superbloque_validar_integridad_cantidad_de_bloques();
 void superbloque_validar_integridad_bitmap();
-char* files_obtener_cadena_con_bloques_ocupados();
+char* files_obtener_cadena_con_el_total_de_bloques_ocupados();
 void superbloque_setear_bloques_en_bitmap(char* bloques_ocupados);
 void fsck_chequeo_de_sabotajes_en_files();
 void recurso_validar_size(t_recurso_data* recurso_data);
@@ -192,6 +194,20 @@ int recurso_obtener_block_count_real(t_recurso_data* recurso_data);
 void recurso_validar_blocks(t_recurso_data* recurso_data);
 char* recurso_obtener_blocks_real(t_recurso_data* recurso_data);
 
+
+char* files_obtener_cadena_con_bloques_ocupados_por_recursos();
+char* files_obtener_bloques_de_archivo_metadata(char* path);
+char* files_obtener_cadena_con_bloques_ocupados_por_bitacoras();
+int files_cantidad_bitacoras();
+
+//YA NO SE USAN
+void superbloque_generar_estructura();
+
+void superbloque_generar_estructura_con_valores_ingresados_por_consola();
+void superbloque_tomar_valores_desde_consola();
+void superbloque_validar_existencia_del_archivo();
+void superbloque_cargar_archivo();
+FILE* abrir_archivo_para_escritura(char*);
 
 
 #endif /* CONEXIONES_H_ */

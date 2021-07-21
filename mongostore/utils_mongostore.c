@@ -15,7 +15,7 @@ t_recurso_data lista_recursos[] = {
 //TODO EN DESARROLLO FSCK (AL FONDO Y A LA DERECHA DE ESTE ARCHIVO) Y CONSUMIR_RECURSO (NO TERMINADO 2)
 
 //Funcion temporal solo para verificar falla
-void verificar_superbloque_temporal();
+void verificar_superbloque_temporal(); //borrar
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////FUNCIONES ORDENADAS "CRONOLOGICAMENTE"//////////////////////////////////////////////////////////////
@@ -51,10 +51,11 @@ void file_system_iniciar()
 	log_debug(logger, "Info-Comienza iniciar_file_system");
 
 	file_system_generar_rutas_completas();
-	file_system_crear_directorios_inexistentes(); //Esto se asegura de que ya esten o los crea
 
 	superbloque_validar_existencia();
 	blocks_validar_existencia();
+
+	file_system_crear_directorios_inexistentes(); //Esto se asegura de que ya esten o los crea
 
 	log_info(logger, "File System iniciado");
 }
@@ -83,20 +84,16 @@ void files_cargar_rutas_de_recursos()
 //Crea las carpetas necesarias para persistir la informacion delasignar File System
 void file_system_crear_directorios_inexistentes()
 {
-	log_debug(logger, "Info-Se ingresa a file_system_crear_directorios_inexistentes");
-
 	crear_directorio_si_no_existe(configuracion.punto_montaje);
 	crear_directorio_si_no_existe(files_path);
 	crear_directorio_si_no_existe(bitacoras_path);
 
-	log_info(logger, "Directorios del File System confirmados");
+	log_debug(logger, "Directorios del File System confirmados");
 }
 
 //Crea el directorio indicado por path, en caso de no poder finaliza con error
 void crear_directorio_si_no_existe(char* path)
 {
-	log_debug(logger, "IO-Se ingresa a crear_directorio_si_no_existe para %s", path);
-
 	//Si no existe el directorio lo crea con el mkdir y automaticamente pregunta si se creo correctamente, si no fue asi finaliza con error
 	if (existe_en_disco(path) == 0 && mkdir(path, 0777) == -1)
 	{
@@ -114,42 +111,49 @@ int existe_en_disco(char* path)
 //Verifica la existencia de la estructura superbloque, el archivo SuperBloque.ims y de su mapeo a la memoria. Si no existieran se generan
 void superbloque_validar_existencia()
 {
-	log_debug(logger, "Info-Se ingresa a superbloque_validar_existencia");
-
-	superbloque_generar_estructura();
-	superbloque_validar_existencia_del_archivo();
-	verificar_superbloque_temporal();
-	log_info(logger, "Existencia de SuperBloque validada");
-}
-
-//Dispatcher se como se generara la estructura en memoria del superbloque
-void superbloque_generar_estructura()
-{
-	log_debug(logger, "I-Se ingresa a superbloque_generar_estructura");
+	log_debug(logger, "I-Se ingresa a superbloque_validar_existencia");
 
 	if(existe_en_disco(superbloque_path))
 	{
-		verificar_superbloque_temporal();
 		superbloque_generar_estructura_desde_archivo();
+		superbloque_mapear_archivo_a_memoria();
 	}
 	else
 	{
-		superbloque_generar_estructura_con_valores_ingresados_por_consola();
-		file_system_eliminar_archivos_previos();//DANGER!!!
+		file_system_eliminar_archivos_previos(); //WARNING!!! Elimina t.odo lo previo por no estar el superbloque
+		crear_archivo(superbloque_path);
+		superbloque_generar_estructura_con_valores_tomados_por_consola();
+
+		dar_tamanio_a_archivo(superbloque_path, superbloque_size);
+		superbloque_mapear_archivo_a_memoria();
+		superbloque_cargar_mapeo_desde_estructura();
+		superbloque_actualizar_archivo();
 	}
 
-	log_debug(logger, "O-Estructura de superbloque generada con tamanio de bloque %d y cantidad de bloques %d",
-			superbloque.block_size, superbloque.blocks);
+	verificar_superbloque_temporal(); //borrar
+	log_info(logger, "Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion");
 }
 
-//Genera la estructura en memoria del superbloque levantandola del archivo
+//Funcion solo para encontrar falla//borrar
+void verificar_superbloque_temporal()
+{
+	int fd = abrir_archivo_para_lectura_escritura(superbloque_path);
+	lseek(fd, 0, SEEK_SET);
+	int sb_b_s, sb_b;
+	read(fd, &sb_b_s, sizeof(uint32_t));
+	lseek(fd, sizeof(uint32_t), SEEK_SET);
+	read(fd, &sb_b, sizeof(uint32_t));
+	log_info(logger, "PARA DEBUG SB.B_S %d Y SB.BLOCKS %d y en archivo SB.B_S %d Y SB.BLOCKS %d", superbloque.block_size, superbloque.blocks, sb_b_s, sb_b);
+	close(fd);
+}
+
+//Genera la estructura en memoria del superbloque levantandola del archivo//TODO agregar
 void superbloque_generar_estructura_desde_archivo()
 {
 	log_debug(logger, "I-Se ingresa a superbloque_generar_estructura_desde_archivo");
 
 	int superbloque_fd = abrir_archivo_para_lectura_escritura(superbloque_path);
 
-	verificar_superbloque_temporal();
 	//Los siguientes datos UNICAMENTE podrian ser levantados correctamente del archivo
 	//si previamente se almacenaron en el orden definido por el enunciado
 	int desplazamiento = 0;
@@ -160,144 +164,15 @@ void superbloque_generar_estructura_desde_archivo()
 	read(superbloque_fd, &superbloque.blocks, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
-	bitmap_size = 1 + (superbloque.blocks - 1) / CHAR_BIT;
-	superbloque.bitmap = malloc(bitmap_size);
+	superbloque_asignar_memoria_a_bitmap();
 	lseek(superbloque_fd, desplazamiento, SEEK_SET);
 	read(superbloque_fd, superbloque.bitmap, bitmap_size);
 
 	close(superbloque_fd);
 
-	verificar_superbloque_temporal();
+	superbloque_setear_tamanio();
+	verificar_superbloque_temporal(); //borrar
 	log_debug(logger, "O-Superbloque generado desde archivo");
-}
-
-//Genera la estructura en memoria del superbloque tomando los valores de block_size y blocks por consola
-void superbloque_generar_estructura_con_valores_ingresados_por_consola()
-{
-	log_debug(logger, "I-Se ingresa a superbloque_generar_estructura_con_valores_ingresados_por_consola");
-
-	//Obtencion de block_size y blocks por consola que se guardan directamente en la estructura superbloque
-	superbloque_tomar_valores_desde_consola();
-
-	superbloque_asignar_memoria_a_bitmap();
-	superbloque_setear_bitmap_a_cero();
-
-	log_debug(logger, "O-Superbloque generado con valores ingresados por consola");
-}
-
-//Toma por consola los valores del tamanio de bloques y de cantidad de bloques que setearan a Superbloque.ims
-void superbloque_tomar_valores_desde_consola()
-{
-	log_debug(logger, "I-Se ingresa a superbloque_tomar_valores abriendo la consola para recibir del usuario el tamanio y la cantidad de bloques");
-
-	printf("Se procedera a crear el File System del modulo i-Mongo-Store para AmongOs...\n"
-			"Indique por favor cual sera el tamanio que tendran los bloques en el sistema:\n");
-	scanf("%d", &superbloque.block_size);
-
-	printf("Cual sera la cantidad de bloques:\n");
-	scanf("%d", &superbloque.blocks);
-
-	printf("Muchas gracias!\n");
-	log_debug(logger, "O-Se cierra consola. Se ingreso por el usuario block_size %d y blocks %d", superbloque.block_size, superbloque.blocks);
-}
-
-//Setea el tamanio del bitmap en bytes en base a la cantidad de bloques que tendra Blocks.ims y le asigna dicho espacio en memoria
-void superbloque_asignar_memoria_a_bitmap()
-{
-	//Tamanio del bitmap teniendo en cuenta que pueda haber un byte incompleto
-	bitmap_size = 1 + (superbloque.blocks - 1) / CHAR_BIT;
-	superbloque.bitmap = malloc(bitmap_size);
-	log_debug(logger, "IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene superbloque.blocks %d y bitmap_size %d",
-			superbloque.blocks, bitmap_size);
-}
-
-//Setea el total de bytes del bitmap en el SuperBloque en memoria a 0
-void superbloque_setear_bitmap_a_cero()
-{
-	memset(superbloque.bitmap, 0, bitmap_size);
-}
-
-//Verifico si existe el archivo del superbloque y si no existe se crea con los valores de la estructura superbloque generada
-void superbloque_validar_existencia_del_archivo()
-{
-	log_debug(logger, "I-Se ingresa a superbloque_validar_existencia_del_archivo");
-
-	if(existe_en_disco(superbloque_path) == 0)
-	{
-		crear_archivo(superbloque_path);
-		superbloque_cargar_archivo();
-	}
-	verificar_superbloque_temporal();
-	log_debug(logger, "O-Existencia del archivo SuperBloque.ims validada");
-}
-
-//Crea el archivo indicado por path. Si no es posible finaliza con error
-void crear_archivo(char* path)
-{
-	int file_descriptor;
-
-	file_descriptor = open(path, O_CREAT|O_RDWR, 0777);
-	if(file_descriptor == -1)
-	{
-		log_error(logger, "El archivo con ruta completa %s no pudo ser creado. Se finaliza el programa", path);
-		exit(EXIT_FAILURE);
-	}
-
-	close(file_descriptor);
-	log_debug(logger, "IO-Se creo el archivo dado por la ruta completa \"%s\"", path);
-}
-
-//Se carga el archivo SuperBloque.ims con los valores de la estructura superbloque
-void superbloque_cargar_archivo()
-{
-	log_debug(logger, "I-Se ingresa a superbloque_cargar_archivo");
-
-	int superbloque_fd;
-	superbloque_fd = abrir_archivo_para_lectura_escritura(superbloque_path);
-
-	int desplazamiento = 0;
-	lseek(superbloque_fd, desplazamiento, SEEK_SET);
-	write(superbloque_fd, &superbloque.block_size, sizeof(uint32_t));
-	desplazamiento += sizeof(uint32_t);
-	lseek(superbloque_fd, desplazamiento, SEEK_SET);
-	write(superbloque_fd, &superbloque.blocks, sizeof(uint32_t));
-	desplazamiento += sizeof(uint32_t);
-	lseek(superbloque_fd, desplazamiento, SEEK_SET);
-	write(superbloque_fd, superbloque.bitmap, bitmap_size);
-
-	close(superbloque_fd);
-	verificar_superbloque_temporal();
-	log_debug(logger, "O-Archivo SuperBloque.ims cargado");
-}
-
-//DEPREC Mapea a memoria el contenido del archivo SuperBloque.ims
-void superbloque_mapear_bitmap_en_archivo_a_memoria()
-{
-	log_debug(logger, "I-Se ingresa a superbloque_mapear_bitmap_en_archivo_a_memoria");
-
-	int superbloque_fd = abrir_archivo_para_lectura_escritura(superbloque_path);
-
-	bitmap_address = mmap(NULL, bitmap_size, PROT_WRITE | PROT_READ, MAP_SHARED, superbloque_fd, 2 * sizeof(uint32_t));
-
-	close(superbloque_fd);
-
-	log_debug(logger, "O-Bitmap de Superbloque mapeado del archivo a la memoria");
-}
-
-//DEPREC Mapea a memoria el contenido del archivo SuperBloque.ims
-void superbloque_mapear_archivo_a_memoria()
-{
-	log_debug(logger, "I-Se ingresa a superbloque_mapear_archivo_a_memoria");
-
-	int superbloque_fd = abrir_archivo_para_lectura_escritura(superbloque_path);
-
-	size_t superbloque_size = sizeof(superbloque.block_size) + sizeof(superbloque.blocks) + bitmap_size;
-
-	superbloque_address = mmap(NULL, superbloque_size, PROT_WRITE | PROT_READ, MAP_SHARED, superbloque_fd, 0);
-
-	close(superbloque_fd);
-
-	log_debug(logger, "O-Superbloque mapeado del archivo a la memoria");
 }
 
 //Abre el archivo indicado por path para lectura/escritura retornando el file descriptor. Finaliza en caso de error
@@ -315,28 +190,141 @@ int abrir_archivo_para_lectura_escritura(char* path)
 	return file_descriptor;
 }
 
+//Setea el tamanio del bitmap en bytes en base a la cantidad de bloques de superbloque.blocks y le asigna dicho espacio en memoria
+void superbloque_asignar_memoria_a_bitmap()
+{
+	//Tamanio del bitmap teniendo en cuenta que pueda haber un byte incompleto
+	bitmap_size = 1 + (superbloque.blocks - 1) / CHAR_BIT;
+	superbloque.bitmap = malloc(bitmap_size);
+	log_debug(logger, "IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size %d", bitmap_size);
+}
+
+//Calcula y setea el tamanio del superbloque
+void superbloque_setear_tamanio()
+{
+	superbloque_size = sizeof(uint32_t) + sizeof(uint32_t) + bitmap_size;
+}
+
+//Mapea a memoria el contenido del archivo SuperBloque.ims
+void superbloque_mapear_archivo_a_memoria()
+{
+	log_debug(logger, "I-Se ingresa a superbloque_mapear_archivo_a_memoria");
+
+	int superbloque_fd = abrir_archivo_para_lectura_escritura(superbloque_path);
+
+	size_t superbloque_size = sizeof(superbloque.block_size) + sizeof(superbloque.blocks) + bitmap_size;
+
+	superbloque_address = mmap(NULL, superbloque_size, PROT_WRITE | PROT_READ, MAP_SHARED, superbloque_fd, 0);
+
+	close(superbloque_fd);
+	memcpy(superbloque_address, &superbloque_size, 4);
+	superbloque_actualizar_archivo();
+	log_debug(logger, "O-Superbloque mapeado del archivo a la memoria");
+	log_debug(logger, "O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap");
+}
+
+//Elimina los archivos que pudieran estar desde antes en el File System (para el caso en que deba iniciarse limpio)
 void file_system_eliminar_archivos_previos()
 {
-	blocks_eliminar_archivo();
-	files_eliminar_archivos();
+	remove(blocks_path); //Elimina el archivo Blocks.ims//ex blocks_eliminar_archivo();
+	files_eliminar_carpeta_completa();
+	log_info(logger, "Se eliminan archivos previos ya que el superbloque no existe desde antes y por lo tanto no se puede levantar lo existente");
 }
 
-void blocks_eliminar_archivo()
+//si existe, limina la carpeta Files y t.odo su contenido (incluyendo la carpeta Bitacoras y su contenido)
+void files_eliminar_carpeta_completa()
 {
-	remove(blocks_path);
-}
-
-void files_eliminar_archivos()
-{
-	int cantidad_recursos = files_cantidad_recursos();
-
-	for(int i = 0; i < cantidad_recursos; i++)
+	if(existe_en_disco(files_path))
 	{
-		remove(lista_recursos[i].ruta_completa);
+		char* buffer = string_from_format("rm -r %s", files_path);
+		system(buffer);
+		free(buffer);
 	}
 }
 
-//Verifica la existencia de Blocks y su copia en la memoria. Si no existiera se generan
+//Devuelve la cantidad de recursos que estan ingresados en el array lista_recursos
+//FIXME Agregar archivos de bitacoras //Elimina los archivos de los recursos
+//Crea el archivo indicado por path. Si no es posible finaliza con error
+void crear_archivo(char* path)
+{
+	int file_descriptor;
+
+	file_descriptor = open(path, O_CREAT|O_RDWR, 0777);
+	if(file_descriptor == -1)
+	{
+		log_error(logger, "El archivo con ruta completa %s no pudo ser creado. Se finaliza el programa", path);
+		exit(EXIT_FAILURE);
+	}
+
+	close(file_descriptor);
+	log_debug(logger, "IO-Se creo el archivo dado por la ruta completa \"%s\"", path);
+}
+
+//Toma por consola los valores del tamanio de bloques y de cantidad de bloques que setearan a SuperBloque.ims
+void superbloque_generar_estructura_con_valores_tomados_por_consola()
+{
+	log_debug(logger, "I-Se ingresa a superbloque_generar_estructura_con_valores_tomados_por_consola para tomar por consola el tamanio y la cantidad de bloques");
+
+	printf("Se procedera a crear el File System del modulo i-Mongo-Store para AmongOs...\n"
+			"Indique por favor cual sera el tamanio que tendran los bloques en el sistema:\n");
+	scanf("%d", &superbloque.block_size);
+
+	printf("Cual sera la cantidad de bloques:\n");
+	scanf("%d", &superbloque.blocks);
+
+	printf("Muchas gracias!\n");
+
+	superbloque_asignar_memoria_a_bitmap();
+	superbloque_setear_bitmap_a_cero();
+	superbloque_setear_tamanio();
+
+	log_debug(logger, "Se ingreso por block_size %d y blocks %d. superbloque_size es %d. Ademas se genero el bitmap seteado a vacio",
+			superbloque.block_size, superbloque.blocks, superbloque_size);
+	log_debug(logger, "O-Se cierra consola");
+}
+
+//Setea el total de bytes del bitmap en el SuperBloque en memoria a 0
+void superbloque_setear_bitmap_a_cero()
+{
+	memset(superbloque.bitmap, 0, bitmap_size);
+}
+
+void dar_tamanio_a_archivo(char* path, size_t length)
+{
+	log_debug(logger, "I-Se ingresa a dar_tamanio_a_archivo");
+
+	if(truncate(path, length) == -1)
+	{
+		log_error(logger, "No se puede asignar el tamanio %d al archivo de ruta %s", length, path);
+		exit(EXIT_FAILURE);
+	}
+
+	log_debug(logger, "O-Se da el tamanio exitosamente a archivo con ruta %s", path);
+}
+
+//Carga el mapeo del archivo los datos existentes en la estructura del superbloque
+void superbloque_cargar_mapeo_desde_estructura()
+{
+	int desplazamiento = 0;
+	memcpy(superbloque_address + desplazamiento, &superbloque.block_size, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(superbloque_address + desplazamiento, &superbloque.blocks, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(superbloque_address + desplazamiento, superbloque.bitmap, bitmap_size);
+}
+
+//Sincroniza de manera forzosa SuperBloque.ims con el espacio de memoria mapeado
+void superbloque_actualizar_archivo()
+{
+	log_debug(logger, "I-Se ingresa a superbloque_actualizar_archivo");
+	verificar_superbloque_temporal(); //borrar
+	msync(superbloque_address, superbloque_size, MS_SYNC);
+	verificar_superbloque_temporal(); //borrar
+	log_debug(logger, "O-Archivo SuperBloque.ims actualizado");
+
+}
+
+//Verifica la existencia del archivo Blocks.ims y su copia en la memoria. Si no existieran se generan
 void blocks_validar_existencia()
 {
 	log_debug(logger, "Info-Se ingresa a blocks_validar_existencia");
@@ -365,19 +353,6 @@ void blocks_validar_existencia_del_archivo()
 }
 
 //Da el tamanio indicado por length al archivo dado por la ruta path. Finaliza si no puede realizarse con exito
-void dar_tamanio_a_archivo(char* path, size_t length)
-{
-	log_debug(logger, "I-Se ingresa a dar_tamanio_a_archivo");
-
-	if(truncate(path, length) == -1)
-	{
-		log_error(logger, "No se puede asignar el tamanio %d al archivo de ruta %s", length, path);
-		exit(EXIT_FAILURE);
-	}
-
-	log_debug(logger, "O-Se da el tamanio exitosamente a archivo con ruta %s", path);
-}
-
 //Mapea a memoria el contenido del archivo Blocks.ims
 void blocks_mapear_archivo_a_memoria()
 {
@@ -415,7 +390,7 @@ void recurso_generar_cantidad(recurso_code codigo_recurso, int cantidad)
 		//wait superbloque y blocks
 		metadata_generar_cantidad(recurso_data->metadata, cantidad);
 
-		superbloque_actualizar_bitmap_en_archivo();
+		superbloque_actualizar_archivo();
 		blocks_actualizar_archivo();
 		recurso_actualizar_archivo(recurso_data);
 		//signal recurso_data superbloque y blocks //quiza se puede ser mas especifico
@@ -423,7 +398,7 @@ void recurso_generar_cantidad(recurso_code codigo_recurso, int cantidad)
 		log_info(logger, "Finaliza recurso_generar_cantidad de %s", recurso_data->nombre);
 
 		//FIXME Despues borrar lo siguiente
-		verificar_superbloque_temporal();
+		verificar_superbloque_temporal(); //borrar
 	}
 	else
 	{
@@ -432,27 +407,10 @@ void recurso_generar_cantidad(recurso_code codigo_recurso, int cantidad)
 
 }
 
-//Funcion solo para encontrar falla
-void verificar_superbloque_temporal()
-{
-	int fd = abrir_archivo_para_lectura_escritura(superbloque_path);
-	lseek(fd, 0, SEEK_SET);
-	int sb_b_s, sb_b;
-	read(fd, &sb_b_s, sizeof(uint32_t));
-	lseek(fd, sizeof(uint32_t), SEEK_SET);
-	read(fd, &sb_b, sizeof(uint32_t));
-	log_info(logger, "PARA DEBUG SB.B_S %d Y SB.BLOCKS %d y en archivo SB.B_S %d Y SB.BLOCKS %d", superbloque.block_size, superbloque.blocks, sb_b_s, sb_b);
-	close(fd);
-}
-
+//Devuelve un valor entero distinto de cero en caso de que el codigo_recurso este entre 0 y la cantidad de recursos
 int recurso_es_valido(recurso_code codigo_recurso)
 {
 	return (codigo_recurso >= 0 && codigo_recurso <= files_cantidad_recursos());
-}
-
-int files_cantidad_recursos()
-{
-	return (sizeof(lista_recursos) / sizeof(t_recurso_data));
 }
 
 //Si no existe la metadata en memoria, la genera con los valores del archivo o con sus valores default si este ultimo tampoco estuviera
@@ -522,7 +480,7 @@ void metadata_generar_cantidad(t_recurso_md* recurso_md, int cantidad)
 
 	while(cantidad > 0)
 	{
-		log_debug(logger, "Valores de metadata en iteracion while, antes de generar recursos: SIZE %d, BLOCK_COUNT %d, BLOCKS %s y MD5 %s. "
+		log_debug(logger, "En while, antes de generar recursos: SIZE %d, BLOCK_COUNT %d, BLOCKS %s y MD5 %s. "
 				"Bloque a cargar %d", recurso_md->size, recurso_md->block_count, recurso_md->blocks, recurso_md->md5_archivo, bloque_a_cargar);
 
 		if(bloque_a_cargar >= 0 || metadata_tiene_espacio_en_ultimo_bloque(recurso_md))
@@ -540,15 +498,26 @@ void metadata_generar_cantidad(t_recurso_md* recurso_md, int cantidad)
 			else
 			{
 				//FIXME log_error+return o no dar bola a la condicion de que no hayan bloques libres ya que sino habria que se hacer un rollback trabajando en un buffer
-				log_debug(logger, "No se puede generar la cantidad solicitada ya que no hay bloques libres");
+				log_error(logger, "No se puede generar la cantidad solicitada ya que no hay bloques libres");
 				break;
 			}
 		}
 	}
 	metadata_actualizar_md5(recurso_md);
 
-	log_info(logger, "Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL %s, SIZE %d, BLOCKS %s y el MD5 %s",
-			recurso_md->caracter_llenado, recurso_md->size, recurso_md->blocks, recurso_md->md5_archivo);
+	log_debug(logger, "Recurso con C_LL %s, SIZE %d, BLOCKS %s y el MD5 %s", recurso_md->caracter_llenado,
+					recurso_md->size, recurso_md->blocks, recurso_md->md5_archivo);
+	if(cantidad == 0)
+	{
+		log_debug(logger, "O-Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL %s, SIZE %d, BLOCKS %s y el MD5 %s",
+				recurso_md->caracter_llenado, recurso_md->size, recurso_md->blocks, recurso_md->md5_archivo);
+	}
+	else
+	{
+		log_error(logger, "O-No se llego a generar completamente la cantidad solicitada debido a falta de bloques libres, quedaron sin cargar %d",
+				cantidad);
+	}
+
 }
 
 //Verifica si el ultimo bloque usado por el recurso tiene espacio disponible
@@ -601,7 +570,7 @@ int metadata_ultimo_bloque_usado(t_recurso_md* recurso_md)
 	cadena_eliminar_array_de_cadenas(&lista_bloques, cantidad_bloques);
 
 	log_debug(logger, "O-Ultimo_bloque usado %d", ultimo_bloque);
-	verificar_superbloque_temporal();
+	verificar_superbloque_temporal(); //borrar
 	return ultimo_bloque;
 }
 
@@ -630,7 +599,7 @@ void metadata_cargar_en_bloque(t_recurso_md* recurso_md, int* cantidad, int bloq
 	}
 
 	log_debug(logger, "O-Se cargo en bloque %d con caracter %s quedando por cargar %d recurso(s)", bloque, recurso_md->caracter_llenado, *cantidad);
-	verificar_superbloque_temporal();
+	verificar_superbloque_temporal(); //borrar
 }
 
 //ALTER Carga recursos en el bloque dado hasta que no quede espacio en el o no hayan mas recursos para cargar
@@ -658,62 +627,6 @@ void metadata_cargar_en_bloque2(t_recurso_md* recurso_md, int* cantidad, int blo
 	log_debug(logger, "O-Se cargo en bloque con caracter %s quedando por cargar %d recurso(s)", bloque, recurso_md->caracter_llenado, cantidad);
 }
 
-//DEPREC Carga recursos en el ultimo bloque registrado hasta que no quede espacio en el o no hayan mas recursos para cargar
-void metadata_cargar_en_ultimo_bloque(t_recurso_md* recurso_md, int* cantidad, int nuevo_bloque)
-{
-	log_debug(logger, "I-Se ingresa a recurso_cargar_en_ultimo_bloque con caracter %s y cantidad %d", recurso_md->caracter_llenado, cantidad);
-
-	//Si el valor del nuevo_bloque no es el valor default es porque ese bloque es el nuevo ultimo de la lista y no necesita calcularse
-	int ultimo_bloque = nuevo_bloque == -1 ? metadata_ultimo_bloque_usado(recurso_md) : nuevo_bloque;
-	int posicion_en_bloque = recurso_md->size % superbloque.block_size;
-	int posicion_inicio_bloque = ultimo_bloque * superbloque.block_size; //se toma en cuenta que los bloques comienzan en 0
-	char* posicion_absoluta = blocks_address + posicion_inicio_bloque + posicion_en_bloque; //esta ok sumar un puntero con 2 ints?
-
-	log_debug(logger, "Ultimo_bloque %d, posicion_en_bloque %d, posicion_inicio_bloque %d posicion absoluta %p o %d",
-			*cantidad, ultimo_bloque, posicion_en_bloque, posicion_inicio_bloque, posicion_absoluta, posicion_absoluta);
-
-	char caracter_llenado = recurso_md->caracter_llenado[0];
-
-	while(posicion_en_bloque < superbloque.block_size && (*cantidad) > 0)
-	{
-		*posicion_absoluta = caracter_llenado;
-
-		(*cantidad)--;
-		recurso_md->size++;
-		posicion_absoluta++;
-		posicion_en_bloque++;
-	}
-
-	log_debug(logger, "O-Se cargo en ultimo bloque con caracter %s quedando por cargar %d recurso(s)", recurso_md->caracter_llenado, cantidad);
-}
-
-//DEPREC Carga recursos en el ultimo bloque registrado hasta que no quede espacio en el o no hayan mas recursos para cargar
-void metadata_cargar_en_ultimo_bloque2(t_recurso_md* recurso_md, int* cantidad, int nuevo_bloque)
-{
-	log_debug(logger, "I-Se ingresa a recurso_cargar_en_ultimo_bloque con caracter %s y cantidad %d", recurso_md->caracter_llenado, cantidad);
-
-	//Si el valor del nuevo_bloque no es el valor default es porque ese bloque es el nuevo ultimo de la lista y no necesita calcularse
-	int ultimo_bloque = nuevo_bloque == -1 ? metadata_ultimo_bloque_usado(recurso_md) : nuevo_bloque;
-	int posicion_en_bloque = recurso_md->size % superbloque.block_size;
-	int posicion_inicio_bloque = ultimo_bloque * superbloque.block_size; //se toma en cuenta que los bloques comienzan en 0
-	char* posicion_absoluta = blocks_address + posicion_inicio_bloque + posicion_en_bloque; //esta ok sumar un puntero con 2 ints?
-
-	log_debug(logger, "Ultimo_bloque %d, posicion_en_bloque %d, posicion_inicio_bloque %d posicion absoluta %p o %d",
-			*cantidad, ultimo_bloque, posicion_en_bloque, posicion_inicio_bloque, posicion_absoluta, posicion_absoluta);
-
-	char caracter_llenado = recurso_md->caracter_llenado[0];
-
-	int espacio_libre_en_bloque = superbloque.block_size - posicion_en_bloque;
-	int cantidad_a_cargar = espacio_libre_en_bloque < *cantidad ? espacio_libre_en_bloque : *cantidad;
-	*cantidad -= cantidad_a_cargar;
-
-	memset(posicion_absoluta, caracter_llenado, cantidad_a_cargar);
-
-	recurso_md->size += cantidad_a_cargar;
-
-	log_debug(logger, "O-Se cargo en ultimo bloque con caracter %s quedando por cargar %d recurso(s)", recurso_md->caracter_llenado, cantidad);
-}
-
 //Busca y devuelve el primer bloque libre en el bitmap, si no existiera finaliza con error
 int superbloque_obtener_bloque_libre()
 {
@@ -727,17 +640,16 @@ int superbloque_obtener_bloque_libre()
 
 	if(bitarray_test_bit(bitmap, posicion))
 	{
-		log_error(logger, "No hay bloques libres para almacenar nuevos recursos en el bitmap del superbloque");//. Se finaliza por falta de espacio en los bloques"); exit(EXIT_FAILURE);
-		posicion = -1; //VALOR DE ERROR
+		log_error(logger, "O-No hay bloques libres para almacenar nuevos recursos en el bitmap del superbloque");//. Se finaliza por falta de espacio en los bloques"); exit(EXIT_FAILURE);
+		posicion = ERROR; //VALOR DE ERROR
 	}
 	else
 	{
 		bitarray_set_bit(bitmap, posicion);
+		log_debug(logger, "O-Bloque libre obtenido %d", posicion);
 	}
 
 	bitarray_destroy(bitmap);
-
-	log_debug(logger, "O-Bloque libre obtenido %d", posicion);
 	return posicion;
 }
 
@@ -778,81 +690,61 @@ void metadata_actualizar_md5(t_recurso_md* recurso_md)
 	char* concatenado;
 	char md5_str[33];
 
-	int tamanio_concatenado = blocks_obtener_concatenado_segun_lista(recurso_md, &concatenado);
-
-	if(tamanio_concatenado >= 0)
+	if(recurso_md->size > 0)
 	{
-		cadena_calcular_md5(concatenado, tamanio_concatenado, md5_str);
-		strcpy(recurso_md->md5_archivo, md5_str);
+		if(blocks_obtener_concatenado_de_recurso(recurso_md, &concatenado) == 0)
+		{
+			cadena_calcular_md5(concatenado, recurso_md->size, md5_str);
+			strcpy(recurso_md->md5_archivo, md5_str);
+		}
+		else
+		{
+			log_error(logger, "No hay memoria suficiente como para calcular el MD5 del recurso con caracter de llenado %s", recurso_md-> caracter_llenado);
+		}
+		free(concatenado);
 	}
 	else
 	{
-		log_error(logger, "No hay memoria suficiente como para calcular el MD5 del recurso con caracter de llenado %s", recurso_md-> caracter_llenado);
+		strcpy(recurso_md->md5_archivo, "d41d8cd98f00b204e9800998ecf8427e");
 	}
-	free(concatenado);
-
-	log_debug(logger, "O-MD5 en metadata actualizado a %s", recurso_md->md5_archivo);
-}
-
-//Calcula y actualiza el valor del md5 del archivo teniendo en cuenta el conjunto de bloques que ocupa el recurso en el archivo de Blocks.ims
-void metadata_actualizar_md5_alter(t_recurso_md* recurso_md)
-{
-	log_debug(logger, "I-Se ingresa a metadata_actualizar_md5");
-
-	char* concatenado = NULL;
-	char md5_str[33];
-	char* md5_buffer;
-
-	int tamanio_concatenado = blocks_obtener_concatenado_segun_lista(recurso_md, &concatenado);
-
-	if(tamanio_concatenado >= 0)
-	{
-		 md5_buffer = cadena_calcular_md5_alter(concatenado, tamanio_concatenado);
-		 strcpy(recurso_md->md5_archivo, md5_buffer);
-		 free(md5_buffer);
-	}
-	else
-	{
-		log_error(logger,"O-No hay memoria suficiente como para calcular el MD5 del recurso con caracter de llenado %s", recurso_md-> caracter_llenado);
-		return;
-	}
-	free(concatenado);
-
 	log_debug(logger, "O-MD5 en metadata actualizado a %s", recurso_md->md5_archivo);
 }
 
 //Obtiene el conjunto de bloques concatenado que el recurso esta ocupando en el archivo de Blocks.ims devolviendo el tamanio del mismo
-int blocks_obtener_concatenado_segun_lista(t_recurso_md* recurso_md, char** concatenado)
+int blocks_obtener_concatenado_de_recurso(t_recurso_md* recurso_md, char** concatenado)
 {
-	log_debug(logger, "I-Se ingresa a blocks_obtener_concatenado_segun_lista");
+	log_debug(logger, "I-Se ingresa a blocks_obtener_concatenado_de_recurso");
 
-	int cantidad_bloques = cadena_cantidad_elementos_en_lista(recurso_md->blocks);
-	int tamanio_concatenado = superbloque.block_size * cantidad_bloques;
-	*concatenado = malloc(tamanio_concatenado);
-
+	*concatenado = malloc(recurso_md->size);
 	if(*concatenado == NULL)
 	{
-		tamanio_concatenado = -1; //Valor de retorno con error manejado en la funcion que hace el llamado
+		return ERROR; //Valor de retorno con error manejado en la funcion que hace el llamado
 	}
 	else
 	{
-		int bloque;
-		char** lista_de_bloques = string_get_string_as_array(recurso_md->blocks);
-		char* posicion_desde;
-		char* posicion_hacia = *concatenado;
+		int cantidad_bloques = cadena_cantidad_elementos_en_lista(recurso_md->blocks);
+		int i, indice_ultimo_bloque = cantidad_bloques - 1; //Indice en base a la cantidad de bloques de la lista en el recurso
+		int bloque;//Numero de bloque en base al total de bloques del sistema
+		char** lista_bloques = string_get_string_as_array(recurso_md->blocks);
+		char* posicion_desde; //Posicion de la copia de Blocks.ims desde la que arranca el bloque que se copiara
+		char* posicion_hacia = *concatenado; //Posicion del espacio de memoria donde se almacenara cada bloque con memcpy
 
-		for(int i = 0; i < cantidad_bloques; i++)
+		for(i = 0; i < indice_ultimo_bloque; i++)
 		{
-			bloque = atoi(lista_de_bloques[i]);
+			bloque = atoi(lista_bloques[i]);
 			posicion_desde = blocks_address + bloque * superbloque.block_size;
 			memcpy(posicion_hacia, posicion_desde, superbloque.block_size);
 			posicion_hacia += superbloque.block_size;
 		}
-		cadena_eliminar_array_de_cadenas(&lista_de_bloques, cantidad_bloques);
+		bloque = atoi(lista_bloques[i]);
+		posicion_desde = blocks_address + bloque * superbloque.block_size;
+		int cantidad_en_ultimo_bloque = recurso_md->size % superbloque.block_size;
+		memcpy(posicion_hacia, posicion_desde, cantidad_en_ultimo_bloque);
+		cadena_eliminar_array_de_cadenas(&lista_bloques, cantidad_bloques);
 	}
 
-	log_debug(logger, "O-Bloques concatenados en direccion de memoria %p con tamanio %d", *concatenado, tamanio_concatenado);
-	return tamanio_concatenado;
+	log_debug(logger, "O-Total de caracteres del recurso concatenados en direccion de memoria %p", *concatenado);
+	return OK;
 }
 
 //Calcula el valor de md5 de la cadena de texto apuntada por el puntero cadena y de tamanio length, y lo guarda en el char array apuntado por md5_str
@@ -884,56 +776,6 @@ void cadena_calcular_md5(const char *cadena, int length, char* md5_33str)
     {
         snprintf(&(md5_33str[n*2]), 16*2, "%02x", (unsigned int)digest[n]);
     }
-}
-
-//DEPREC Calcula el valor de md5 de la cadena de texto apuntada por el puntero cadena y de tamanio length, y devuelve el puntero a donde se almacena
-char* cadena_calcular_md5_alter(const char *cadena, int length)
-{
-    MD5_CTX c;
-    unsigned char digest[16];
-    char *md5_str = (char*)malloc(33);
-
-    MD5_Init(&c);
-
-    while(length > 0)
-    {
-        if(length > 512)
-        {
-            MD5_Update(&c, cadena, 512);
-        }
-        else
-        {
-            MD5_Update(&c, cadena, length);
-        }
-
-        length -= 512;
-        cadena += 512;
-    }
-
-    MD5_Final(digest, &c);
-
-    for(int n = 0; n < 16; ++n)
-    {
-        snprintf(&(md5_str[n*2]), 16*2, "%02x", (unsigned int)digest[n]);
-    }
-
-    return md5_str;
-}
-
-//Sincroniza de manera forzosa SuperBloque.ims con el espacio de memoria mapeado
-void superbloque_actualizar_bitmap_en_archivo()
-{
-	log_debug(logger, "I-Se ingresa a superbloque_actualizar_bitmap_en_archivo");
-	verificar_superbloque_temporal();
-	int superbloque_fd = abrir_archivo_para_lectura_escritura(superbloque_path);
-
-	lseek(superbloque_fd, 2 * sizeof(uint32_t), SEEK_SET);
-	write(superbloque_fd, superbloque.bitmap, bitmap_size);
-
-	close(superbloque_fd);
-	verificar_superbloque_temporal();
-	log_debug(logger, "O-Bitmap en archivo SuperBloque.ims actualizado");
-
 }
 
 //TODO AGREGAR LO DE LA COPIA DE LA COPIA EN MEMORIA
@@ -988,6 +830,8 @@ void recurso_descartar_cantidad(recurso_code codigo_recurso, int cantidad)
 
 	if(cantidad == 0)
 	{
+		recurso_validar_existencia_metadata_en_memoria(recurso_data);
+
 		if(existe_en_disco(recurso_data->ruta_completa) == 0)
 		{
 			log_info(logger, "No existe el archivo %s como para descartarlo", recurso_data->nombre_archivo);
@@ -995,16 +839,13 @@ void recurso_descartar_cantidad(recurso_code codigo_recurso, int cantidad)
 		else
 		{
 			remove(recurso_data->ruta_completa);
-			log_info(logger, "Se elimino el archivo de la metadata del recurso %s", recurso_data->nombre);
-		}
-
-		if(recurso_data->metadata != NULL)
-		{
 			superbloque_liberar_bloques_en_bitmap(recurso_data->metadata->blocks);
+			superbloque_actualizar_archivo();
 			free(recurso_data->metadata->blocks);
 			metadata_setear_con_valores_default_en_memoria(recurso_data->metadata);
-			log_debug(logger, "Se seteo a los valores default la metadata en memoria del recurso %s", recurso_data->nombre);
+			log_info(logger, "Se elimino el archivo de la metadata del recurso %s", recurso_data->nombre);
 		}
+		log_debug(logger, "Se seteo a los valores default la metadata en memoria del recurso %s", recurso_data->nombre);
 	}
 	else
 	{
@@ -1033,22 +874,7 @@ void superbloque_liberar_bloques_en_bitmap(char* blocks)
 	log_debug(logger, "O-Bloques liberados en bitmap del superbloque");
 }
 
-//Abre el archivo indicado por path para escritura retornando el puntero a FILE. Finaliza en caso de error
-FILE* abrir_archivo_para_escritura(char* path)
-{
-	FILE* file = fopen(path, "w");
-
-	if(file == NULL)
-	{
-		log_error(logger, "%s no pudo ser abierto para escritura. Se finaliza el programa", path);
-		exit(EXIT_FAILURE);
-	}
-
-	return file;
-}
-
-
-//Sincroniza de manera forzosa SuperBloque.ims con el espacio de memoria mapeado
+//DEPREC?? Sincroniza de manera forzosa SuperBloque.ims con el espacio de memoria mapeado
 void superbloque_actualizar_blocks_en_archivo()
 {
 	log_debug(logger, "I-Se ingresa a superbloque_actualizar_blocks_en_archivo");
@@ -1058,7 +884,7 @@ void superbloque_actualizar_blocks_en_archivo()
 	write(superbloque_fd, &superbloque.blocks, sizeof(uint32_t));
 
 	close(superbloque_fd);
-	verificar_superbloque_temporal();
+	verificar_superbloque_temporal(); //borrar
 	log_debug(logger, "O-Blocks en archivo SuperBloque.ims actualizado");
 }
 
@@ -1103,62 +929,160 @@ void fsck_iniciar()
 	fsck_chequeo_de_sabotajes_en_files();
 }
 
-//Realiza los chequeos propios del superbloque
+//Realiza los chequeos propios del superbloque (en campos blocks y bitmap)
 void fsck_chequeo_de_sabotajes_en_superbloque()
 {
 	superbloque_validar_integridad_cantidad_de_bloques();
 	superbloque_validar_integridad_bitmap();
-	//agregar aca la actualizacion del archivo
 }
 
-//FIXME hacerlo en base a recursos fisicos! Valida que la cantidad de bloques en el archivo Superbloque.ims se corresponda con la cantidad real en el recurso fisico
+//Valida que la cantidad de bloques en el archivo Superbloque.ims se corresponda con la cantidad real en el recurso fisico de Blocks.ims
 void superbloque_validar_integridad_cantidad_de_bloques()
 {
-	superbloque.blocks = blocks_size / superbloque.block_size; //TODO usar el tamanio de bloque real del archivo Blocs.ims el cual debe ser equivalente
-	memcpy(superbloque_address, &superbloque.blocks, sizeof(uint32_t));
-	msync(superbloque_address, sizeof(uint32_t), MS_SYNC);
+	struct stat *blocks_stat;
+	if(stat(blocks_path, blocks_stat) != 0)
+	{
+		log_error(logger, "No se pudo acceder a la informacion del archivo Blocks.ims, por lo tanto no podra validarse si hubo un sabotaje a la cantidad de bloques");
+		exit(EXIT_FAILURE);
+	}
+	//blocks_size es tamanio del archivo de Blocks.ims a diferencia de block_size que es el tamanio de cada unidad de block
+	int blocks_size_real = blocks_stat->st_size; //Tamanio real del archivo //no se podria usar directamente blocks_size??
+
+	int desplazamiento = 0;
+	int superbloque_fd = abrir_archivo_para_lectura_escritura(superbloque_path);
+	lseek(superbloque_fd, desplazamiento, SEEK_SET);
+	read(superbloque_fd, &superbloque.block_size, sizeof(uint32_t));//aca lo mismo, la estructura en memoria no pudo ser alterada, no se podria directamente tomar sus datos??
+	desplazamiento += sizeof(uint32_t);
+	lseek(superbloque_fd, desplazamiento, SEEK_SET);
+	read(superbloque_fd, &superbloque.blocks, sizeof(uint32_t));
+
+	int blocks_real = blocks_size_real / superbloque.block_size;
+
+	if(superbloque.blocks != blocks_real)
+	{
+		superbloque.blocks = blocks_real;
+		lseek(superbloque_fd, desplazamiento, SEEK_SET);
+		write(superbloque_fd, &superbloque.blocks, sizeof(uint32_t));
+		close(superbloque_fd);
+		log_info(logger, "Alguien saboteo la cantidad de bloques en el SuperBloque.ims, pero no te preocupes, ya esta arreglado");
+	}
+	else
+	{
+		close(superbloque_fd);
+		log_info(logger, "Parece que esta vez nadie se animo a sabotear la cantidad de bloques en el SuperBloque.ims");
+	}
 }
 
 //Valida que los bloques indicados en el bitmap del superbloque realmente sean los unicos ocupados
-//TODO Agregar logs
 void superbloque_validar_integridad_bitmap()
 {
-	char* bloques_ocupados = files_obtener_cadena_con_bloques_ocupados(); //TODO
+	log_debug(logger, "Info-Se ingresa a superbloque_validar_integridad_bitmap");
+	char* bloques_ocupados = files_obtener_cadena_con_el_total_de_bloques_ocupados();
 
+	bitmap_size = 1 + (superbloque.blocks - 1) / CHAR_BIT; //Innecesario seguramente porque se supone que la estructura superbloque no puede corromperse
 	superbloque_setear_bitmap_a_cero();
 	superbloque_setear_bloques_en_bitmap(bloques_ocupados);
-	superbloque_actualizar_bitmap_en_archivo();
+	superbloque_actualizar_archivo();
 
 	free(bloques_ocupados);
+	log_info(logger, "Se actualizo el bitmap en el archivo SuperBloque.ims ante un probable sabotaje a este");
 }
 
-//FIXME Debe hacerse en base a los blocks en los archivos (creo) Devuelve una lista en formato cadena con los bloques ocupados por el total de recursos
-char* files_obtener_cadena_con_bloques_ocupados()
+//Devuelve una lista en formato cadena con los bloques ocupados por el total de archivos en Files (recursos + bitacoras)
+char* files_obtener_cadena_con_el_total_de_bloques_ocupados()
 {
 	log_debug(logger, "Se ingresa a files_obtener_cadena_con_bloques_ocupados");
-	char* bloques;
+
+	char* bloques_de_recursos = files_obtener_cadena_con_bloques_ocupados_por_recursos();
+	char* bloques_de_bitacoras = files_obtener_cadena_con_bloques_ocupados_por_bitacoras();
+
+	char* bloques_ocupados = bloques_de_recursos;
+	cadena_sacar_ultimo_caracter(bloques_ocupados);
+	bloques_de_bitacoras[0] = ',';
+	string_append(&bloques_ocupados, bloques_de_bitacoras);
+
+	free(bloques_de_recursos);
+	free(bloques_de_bitacoras);
+
+	log_debug(logger, "El total de bloques ocupados es %s", bloques_ocupados);
+	return bloques_ocupados;
+}
+
+//Devuelve una lista en formato cadena con los bloques ocupados por el total de recursos
+char* files_obtener_cadena_con_bloques_ocupados_por_recursos()
+{
+	log_debug(logger, "Se ingresa a files_obtener_cadena_con_bloques_ocupados_por_recursos");
+
 	int cantidad_recursos = files_cantidad_recursos();
 	int posicion_ultimo_recurso = cantidad_recursos - 1;
-	bloques = string_duplicate(lista_recursos[0].metadata->blocks);
+	//char* bloques = string_duplicate(lista_recursos[0].metadata->blocks);//Se podría usar la informacion de los recursos en memoria??
+	char* bloques = files_obtener_bloques_de_archivo_metadata(lista_recursos[0].ruta_completa);
 
 	for(int i = 1; i < cantidad_recursos; i++)
 	{
 		cadena_sacar_ultimo_caracter(bloques);
 		char* string_buffer = string_duplicate(lista_recursos[i].metadata->blocks);
 		string_buffer[0] = ',';
-		string_append_with_format(&bloques, "%s", string_buffer);
+		string_append(&bloques, string_buffer);
 		free(string_buffer);
 	}
+
 	log_debug(logger, "Los bloques ocupados por el total de recursos son %s"), bloques;
 	return bloques;
 }
 
+//Devuelve una lista en formato cadena con los bloques indicados por la key "BLOCKS" en el archivo metadata de la ruta path
+char* files_obtener_bloques_de_archivo_metadata(char* path)
+{
+	t_config* path_config = config_create(path);
+	char* bloques = string_duplicate(config_get_string_value(path_config, "BLOCKS"));
+	config_destroy(path_config);
+
+	return bloques;
+}
+
+//FIXME (en base a la forma de recorrer las bitacoras) //Devuelve una lista en formato cadena con los bloques ocupados por el total de bitacoras
+char* files_obtener_cadena_con_bloques_ocupados_por_bitacoras()
+{
+	log_debug(logger, "Se ingresa a files_obtener_cadena_con_bloques_ocupados_por_bitacoras");
+
+	int cantidad_bitacoras = files_cantidad_bitacoras(); //tal vez sirva
+	int posicion_ultimo_bitacora = cantidad_bitacoras - 1; //tal vez sirva
+	char* tripulante_path = string_from_format("%s/%s", bitacoras_path, "Tripulante1.ims");
+	char* bloques = files_obtener_bloques_de_archivo_metadata(tripulante_path);
+
+	for(int i = 1; i < cantidad_bitacoras; i++)
+	{
+		cadena_sacar_ultimo_caracter(bloques);
+		char* string_buffer = string_duplicate("otraBitacora");
+		string_buffer[0] = ',';
+		string_append_with_format(&bloques, "%s", string_buffer);
+		free(string_buffer);
+	}
+
+	log_debug(logger, "Los bloques ocupados por el total de bitacoras son %s"), bloques;
+	return bloques;
+}
+
+//TODO//Devuelve la cantidad de bitacoras que tiene la carpeta Bitacoras
+int files_cantidad_recursos()
+{
+	return (sizeof(lista_recursos) / sizeof(t_recurso_data));
+}
+
+
+int files_cantidad_bitacoras()
+{
+
+	return 1;
+}
+
+//Setea al bitmap apuntado por el campo bitmap de la estructura superbloque segun los bloques ocupados que recibe como parametro
 void superbloque_setear_bloques_en_bitmap(char* bloques_ocupados)
 {
 	log_debug(logger, "Ingreso a superbloque_setear_bloques_en_bitmap");
 
-	char** lista_bloques = malloc(sizeof(string_get_string_as_array(bloques_ocupados)));
-	lista_bloques = string_get_string_as_array(bloques_ocupados);
+	char** lista_bloques = string_get_string_as_array(bloques_ocupados);
 	t_bitarray* bitmap = bitarray_create_with_mode(superbloque.bitmap, bitmap_size, LSB_FIRST);
 
 	int cantidad_bloques = cadena_cantidad_elementos_en_lista(bloques_ocupados);
@@ -1286,7 +1210,6 @@ char* recurso_obtener_blocks_real(t_recurso_data* recurso_data)
 //TODO actualizar_metadata_inicial en base a SB+B? ENTIENDO QUE NO SERIA NECESARIO Y HASTA ESTARIA MAL (PREGUNTAR)
 
 /*////////COMIENZO DE NO TERMINADO 2
-
 //Elimina la cantidad cantidad de caracteres de llenado del archivo y de la metadata correspondiente al recurso dado
 void recurso_consumir_cantidad(recurso_code codigo_recurso, int cantidad)
 {
@@ -1305,7 +1228,6 @@ void recurso_consumir_cantidad(recurso_code codigo_recurso, int cantidad)
 	}
 	log_info(logger, "Finaliza recurso_consumir_cantidad de %s", recurso_data->nombre);
 }
-
 //Actualiza la metadata del recurso en memoria al archivo. Si este no existe lo crea con los valores actualizados
 void recurso_actualizar_archivo(t_recurso_data* recurso_data)//para modificar
 {
@@ -1435,4 +1357,86 @@ int metadata_ultimo_bloque_usado(t_recurso_md* recurso_md)
 /////////////////////FUNCION DEL BLOCKS RELATIVAS AL USO POSTERIOR A LA INICIALIZACION DEL FILE SYSTEM/////////////////////
 
 /////////////////////FUNCIONES DE LOS RECURSOS RELATIVAS A LA REALIZACION DE LAS TAREAS//////////////////////////////////////
+
+
+//Abre el archivo indicado por path para escritura retornando el puntero a FILE. Finaliza en caso de error
+FILE* abrir_archivo_para_escritura(char* path)
+{
+	FILE* file = fopen(path, "w");
+
+	if(file == NULL)
+	{
+		log_error(logger, "%s no pudo ser abierto para escritura. Se finaliza el programa", path);
+		exit(EXIT_FAILURE);
+	}
+
+	return file;
+}
+
+//DEPREC Genera la estructura en memoria del superbloque tomando los valores de block_size y blocks por consola
+void superbloque_generar_estructura_con_valores_ingresados_por_consola()
+{
+	log_debug(logger, "I-Se ingresa a superbloque_generar_estructura_con_valores_ingresados_por_consola");
+
+	//Obtencion de block_size y blocks por consola que se guardan directamente en la estructura superbloque
+	//superbloque_tomar_valores_desde_consola();
+
+	superbloque_asignar_memoria_a_bitmap();
+	superbloque_setear_bitmap_a_cero();
+
+	log_debug(logger, "O-Superbloque generado con valores ingresados por consola");
+}
+
+//DEPRE//Verifica la existencia de la estructura superbloque, el archivo SuperBloque.ims y de su mapeo a la memoria. Si no existieran se generan
+void superbloque_validar_existencia_0()
+{
+	log_debug(logger, "Info-Se ingresa a superbloque_validar_existencia");
+
+	//superbloque_generar_estructura();
+	superbloque_validar_existencia_del_archivo();
+	superbloque_mapear_archivo_a_memoria();
+
+
+}
+
+//DEPREC Verifico si existe el archivo del superbloque y si no existe se crea con los valores de la estructura superbloque generada
+void superbloque_validar_existencia_del_archivo()
+{
+	log_debug(logger, "I-Se ingresa a superbloque_validar_existencia_del_archivo");
+
+	if(existe_en_disco(superbloque_path) == 0)
+	{
+		crear_archivo(superbloque_path);
+		superbloque_cargar_archivo();
+	}
+	verificar_superbloque_temporal(); //borrar
+	log_debug(logger, "O-Existencia del archivo SuperBloque.ims validada");
+}
+
+//DEPREC Se carga el archivo SuperBloque.ims con los valores de la estructura superbloque
+void superbloque_cargar_archivo()
+{
+	log_debug(logger, "I-Se ingresa a superbloque_cargar_archivo");
+
+	int superbloque_fd;
+	superbloque_fd = abrir_archivo_para_lectura_escritura(superbloque_path);
+
+	int desplazamiento = 0;
+	lseek(superbloque_fd, desplazamiento, SEEK_SET);
+	write(superbloque_fd, &superbloque.block_size, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	lseek(superbloque_fd, desplazamiento, SEEK_SET);
+	write(superbloque_fd, &superbloque.blocks, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	lseek(superbloque_fd, desplazamiento, SEEK_SET);
+	write(superbloque_fd, superbloque.bitmap, bitmap_size);
+
+	close(superbloque_fd);
+	verificar_superbloque_temporal(); //borrar
+	log_debug(logger, "O-Archivo SuperBloque.ims cargado");
+}
+
+
+
+
 
