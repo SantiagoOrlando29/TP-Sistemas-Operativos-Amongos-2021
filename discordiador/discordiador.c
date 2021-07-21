@@ -183,6 +183,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 		if(tripulante->fui_expulsado == false){
 			if((void*)tripulante->tarea_posta->parametro != NULL){ //tarea de E/S
 				printf("hilo %d, iniciar tarea e/s \n", tripulante->tid);
+				//ACA VA IR EL PEDIDO DE TAREA A MONGO CREEEO
 				sleep(configuracion.retardo_cpu); //sleep para eso de iniciar tarea E/S (simula peticion al SO)
 
 				planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);

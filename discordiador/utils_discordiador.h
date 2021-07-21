@@ -47,7 +47,8 @@ typedef enum
 	INFORMAR_MOVIMIENTO,
 	NO_HAY_NADA_PARA_LISTAR,
 	INFORMAR_BITACORA,
-	INFORMAR_BITACORA_MOVIMIENTO
+	TAREA_MONGO,
+	FSCK
 }tipoMensaje;
 
 typedef enum
@@ -57,6 +58,20 @@ typedef enum
 	CORRER_A_SABOTAJE,
 	RESOLVER_SABOTAJE
 }mensaje_bitacora;
+
+typedef enum
+{
+	OXIGENO,
+	COMIDA,
+	BASURA
+} recurso_code;
+
+typedef enum
+{
+	GENERAR,
+	CONSUMIR,
+	DESCARTAR
+} accion_code;
 
 typedef struct
 {

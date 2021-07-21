@@ -1,13 +1,18 @@
-[INFO] 00:06:38:476 discordiador/(19895:19895): Memoria asignada
-[INFO] 00:06:43:213 discordiador/(19895:19904): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 00:06:43:214 discordiador/(19895:19905): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 00:06:43:215 discordiador/(19895:19906): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 00:06:46:216 discordiador/(19895:19902): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 00:06:48:219 discordiador/(19895:19902): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 00:06:49:220 discordiador/(19895:19902): TRIPU 2  tarea recibida: ABC;5;6;4
-[INFO] 00:06:57:226 discordiador/(19895:19904): TRIPU 1  tarea recibida: DEF;3;3;4
-[INFO] 00:06:58:227 discordiador/(19895:19906): TRIPU 3  tarea recibida: DEF;3;3;4
-[INFO] 00:07:00:228 discordiador/(19895:19905): TRIPU 2  tarea recibida: DEF;3;3;4
-[INFO] 00:07:10:237 discordiador/(19895:19904): TRIPU 1  tarea recibida: no hay mas tareas
-[INFO] 00:07:10:237 discordiador/(19895:19904): tripu_misma_patota_exit 1
-[INFO] 00:07:10:918 discordiador/(19895:19895): aaaaaaaa
+[INFO] 00:16:24:347 discordiador/(20418:20418): Memoria asignada
+[INFO] 00:16:28:617 discordiador/(20418:20429): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:16:28:621 discordiador/(20418:20430): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:16:28:622 discordiador/(20418:20431): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:16:31:623 discordiador/(20418:20425): TRIPU 1  tarea recibida: ABC;5;6;4
+[INFO] 00:16:33:625 discordiador/(20418:20425): TRIPU 3  tarea recibida: ABC;5;6;4
+[INFO] 00:16:34:626 discordiador/(20418:20425): TRIPU 2  tarea recibida: ABC;5;6;4
+[INFO] 00:16:42:631 discordiador/(20418:20429): TRIPU 1  tarea recibida: DEF;3;3;4
+[INFO] 00:16:43:632 discordiador/(20418:20431): TRIPU 3  tarea recibida: DEF;3;3;4
+[INFO] 00:16:45:633 discordiador/(20418:20430): TRIPU 2  tarea recibida: DEF;3;3;4
+[INFO] 00:16:55:642 discordiador/(20418:20429): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 00:16:55:642 discordiador/(20418:20429): tripu_misma_patota_exit 1
+[INFO] 00:16:56:643 discordiador/(20418:20431): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 00:16:56:643 discordiador/(20418:20431): tripu_misma_patota_exit 2
+[INFO] 00:16:57:643 discordiador/(20418:20430): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 00:16:57:644 discordiador/(20418:20430): tripu_misma_patota_exit 3
+[INFO] 00:16:57:644 discordiador/(20418:20430): size exit 0
+[INFO] 00:18:02:168 discordiador/(20418:20418): aaaaaaaa

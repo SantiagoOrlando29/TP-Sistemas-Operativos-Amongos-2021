@@ -323,17 +323,6 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				list_destroy(lista_pr);
 				break;
 
-			case INFORMAR_BITACORA_MOVIMIENTO:; //PARA PROBAR LO DE MONGO
-				t_list* lista_pru = recibir_paquete(socket_cliente);
-				tripulante_id = (int)atoi(list_get(lista_pru,0));
-				char* mens1 = list_get(lista_pru,1);
-				//char* mens2 = list_get(lista_pru,2);
-				log_info(logger, "tid %d  mens1 %s",tripulante_id, mens1);
-
-				list_clean_and_destroy_elements(lista_pru, (void*)destruir_lista_paquete);
-				list_destroy(lista_pru);
-				break;
-
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
 				variable_servidor = 0;
