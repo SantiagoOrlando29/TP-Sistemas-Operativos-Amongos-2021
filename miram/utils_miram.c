@@ -96,6 +96,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 	int patota_id;
 	char* pid_char;
 	char* tid_char;
+	int cant_sabotaje = 0;//para probar mongo
 
 	int tipoMensajeRecibido = -1;
 	log_info(logger, "Se conecto este socket a mi %d",socket_cliente);
@@ -201,6 +202,9 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				tid_char = list_get(lista,0);
 				tripulante_id = (int)atoi(tid_char);
 				//free(tid_char);
+				pid_char = list_get(lista,0);
+				patota_id = (int)atoi(pid_char);
+				log_info(logger, "tid %d  pid %d", tripulante_id, patota_id);
 
 				if(strcmp(configuracion.squema_memoria,"SEGMENTACION")==0){
 					bool tripulante_expulsado_con_exito = funcion_expulsar_tripulante(tripulante_id);
@@ -321,6 +325,54 @@ int funcion_cliente_segmentacion(int socket_cliente){
 
 				list_clean_and_destroy_elements(lista_pr, (void*)destruir_lista_paquete);
 				list_destroy(lista_pr);
+				break;
+
+			case TAREA_MONGO:;
+				t_list* lista_pru = recibir_paquete(socket_cliente);
+				char* nombre_tarea = list_get(lista_pru,0);
+				int parametro = (int)atoi(list_get(lista_pru,1));
+
+				log_info(logger, "tarea %s  param %d", nombre_tarea, parametro);
+
+				if(strcmp(nombre_tarea, "GENERAR_OXIGENO") == 0){
+
+				}else if(strcmp(nombre_tarea, "CONSUMIR_OXIGENO") == 0){
+
+				}else if(strcmp(nombre_tarea, "GENERAR_COMIDA") == 0){
+
+				}else if(strcmp(nombre_tarea, "CONSUMIR_COMIDA") == 0){
+
+				}else if(strcmp(nombre_tarea, "GENERAR_BASURA") == 0){
+
+				}else if(strcmp(nombre_tarea, "DESCARTAR_BASURA") == 0){
+
+				}else{
+					log_debug(logger, "se recibio una tarea distinta a las 6 de E/S");
+				}
+
+				char* mensaje2 = "ok";
+				enviar_mensaje(mensaje2, socket_cliente);
+
+				list_clean_and_destroy_elements(lista_pru, (void*)destruir_lista_paquete);
+				list_destroy(lista_pru);
+
+				break;
+
+			case FSCK:
+				log_info(logger, "en fsck");
+				char* mensaje3 = "ok";
+				enviar_mensaje(mensaje3, socket_cliente);
+
+				break;
+
+			case PRUEBA://para probar mongo
+				log_info(logger, "PRUEBA");
+
+				char* mensaje4 = configuracion.posiciones_sabotaje[cant_sabotaje];
+				enviar_mensaje(mensaje4, socket_cliente);
+
+				cant_sabotaje++;
+
 				break;
 
 			case FIN:

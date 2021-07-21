@@ -48,7 +48,8 @@ typedef enum
 	NO_HAY_NADA_PARA_LISTAR,
 	INFORMAR_BITACORA,
 	TAREA_MONGO,
-	FSCK
+	FSCK,
+	SALIR_MONGO
 }tipoMensaje;
 
 typedef enum
@@ -75,7 +76,7 @@ typedef enum
 
 typedef struct
 {
-	int size;
+	int size;//tendria q ser uint32
 	void* stream;
 } t_buffer;
 
@@ -133,7 +134,7 @@ typedef enum
 
 typedef struct{
 	char* tarea;
-	int parametro;
+	uint32_t parametro;
 	int pos_x;
 	int pos_y;
 	int tiempo;
@@ -204,6 +205,7 @@ void informar_movimiento_mongo_X (tcbTripulante* tripulante, int x_viejo);
 void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo);
 void informar_atencion_sabotaje(tcbTripulante* tripulante);
 void informar_sabotaje_resuelto(tcbTripulante* tripulante);
+void mongo_tarea(tcbTripulante* tripu);
 
 void planificacion_pausada_o_no();
 void planificacion_pausada_o_no_exec(tcbTripulante* tripulante, int* quantums_ejecutados);

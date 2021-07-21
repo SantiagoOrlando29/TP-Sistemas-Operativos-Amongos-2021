@@ -845,6 +845,50 @@ void informar_sabotaje_resuelto(tcbTripulante* tripulante){
 	//free(mensaje_recibido);
 }
 
+void mongo_tarea(tcbTripulante* tripu){
+	t_paquete* paquete = crear_paquete(TAREA_MONGO);
+
+	agregar_a_paquete(paquete, tripu->tarea_posta->tarea, strlen(tripu->tarea_posta->tarea)+1);
+
+	char* parametro_char = malloc(sizeof(char));
+	sprintf(parametro_char, "%d", tripu->tarea_posta->parametro);
+	agregar_a_paquete(paquete, parametro_char, strlen(parametro_char)+1);
+
+	/*t_buffer* buffer = malloc(sizeof(t_buffer));
+	buffer->size = sizeof(uint32_t)*2;
+	void* stream = malloc(buffer->size);
+	int offset = 0;*/
+
+	/*if(strcmp(tripu->tarea_posta->tarea, "GENERAR_OXIGENO") == 0){
+
+	}else if(strcmp(tripu->tarea_posta->tarea, "CONSUMIR_OXIGENO") == 0){
+
+	}else if(strcmp(tripu->tarea_posta->tarea, "GENERAR_COMIDA") == 0){
+
+	}else if(strcmp(tripu->tarea_posta->tarea, "CONSUMIR_COMIDA") == 0){
+
+	}else if(strcmp(tripu->tarea_posta->tarea, "GENERAR_BASURA") == 0){
+
+	}else if(strcmp(tripu->tarea_posta->tarea, "DESCARTAR_BASURA") == 0){
+
+	}*/
+
+
+	/*memcpy(stream + offset, &persona.dni, sizeof(uint32_t));
+	offset += sizeof(uint32_t);*/
+
+	enviar_paquete(paquete, tripu->socket_miram);
+	//enviar_paquete(paquete, tripu->socket_mongo);
+
+	//char* mensaje_recibido = recibir_mensaje(tripu->socket_mongo);
+	char* mensaje_recibido = recibir_mensaje(tripu->socket_miram);
+
+	free(mensaje_recibido);
+
+	eliminar_paquete(paquete);
+	free(parametro_char);
+}
+
 void liberar_memoria_tripu(tcbTripulante* tripu){
 	free(tripu->tarea_posta);
 	free(tripu);

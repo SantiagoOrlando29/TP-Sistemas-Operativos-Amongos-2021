@@ -144,6 +144,8 @@ typedef struct{
 	int cant_lugares_swap;
 	t_list* swap_libre;
 
+	//para probar mongo
+	char** posiciones_sabotaje;
 }config_struct;
 
 

@@ -211,6 +211,9 @@ void leer_config(){
     configuracion.criterio_seleccion = config_get_string_value(archConfig, "CRITERIO_SELECCION");
     //Parametros utiles (No obtenidos del archivo de configuracion)
     configuracion.cant_marcos=0;
+
+    //para prbar mongo:
+    configuracion.posiciones_sabotaje = config_get_array_value(archConfig,"POSICIONES_SABOTAJE");
 }
 
 

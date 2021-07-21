@@ -182,18 +182,18 @@ void tripulante_hilo (tcbTripulante* tripulante){
 
 		if(tripulante->fui_expulsado == false){
 			if((void*)tripulante->tarea_posta->parametro != NULL){ //tarea de E/S
-				printf("hilo %d, iniciar tarea e/s \n", tripulante->tid);
-				//ACA VA IR EL PEDIDO DE TAREA A MONGO CREEEO
-				sleep(configuracion.retardo_cpu); //sleep para eso de iniciar tarea E/S (simula peticion al SO)
-
 				planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);
+
+				printf("hilo %d, inicio tarea e/s \n", tripulante->tid);
+				mongo_tarea(tripulante);
+				sleep(configuracion.retardo_cpu); //sleep para eso de iniciar tarea E/S (simula peticion al SO)
 
 				if(tripulante->fui_expulsado == true){
 					tripulante->tarea_posta = NULL;
 					tripulante->estado = 'X';
 					sem_post(&HABILITA_GRADO_MULTITAREA);
 				}else{
-					//planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);
+					planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);
 					quantums_ejecutados = 0;
 
 					if(tripulante->posicionX == tripulante->tarea_posta->pos_x && tripulante->posicionY == tripulante->tarea_posta->pos_y){//veo si esta en la posicion de tarea por si resolvio sabotaje
@@ -247,7 +247,11 @@ void tripulante_hilo (tcbTripulante* tripulante){
 							quantums_ejecutados++;
 
 							if(contador_ciclos_trabajando != tripulante->tarea_posta->tiempo){ //todavia no termino la tarea
-								termina_quantum(&quantums_ejecutados, tripulante);
+								planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados); //NO LO PENSE MUCHO
+								if(quantums_ejecutados > 0){ //si es =0 significa que hubo sabotaje, entonces no me fijo si termino quantum porque se reinicia
+									termina_quantum(&quantums_ejecutados, tripulante);
+								}
+//								termina_quantum(&quantums_ejecutados, tripulante);
 							}
 						}
 
@@ -404,13 +408,13 @@ void bloqueado_ready() {
 
 			planificacion_pausada_o_no();
 
-			printf("hilo %d, haciendo I/O \n", tripulante->tid);
+			printf("hilo %d, empieza tiempo en Bloq \n", tripulante->tid);
 			informar_inicio_tarea(tripulante);
 
 			int ciclos_consumidos = 0;
 			while(ciclos_consumidos < tripulante->tarea_posta->tiempo){
-				planificacion_pausada_o_no();
 				sleep(configuracion.retardo_cpu);
+				planificacion_pausada_o_no();
 
 				if(tripulante->fui_expulsado == true){
 					ciclos_consumidos = tripulante->tarea_posta->tiempo; //para cortar el while
@@ -425,7 +429,7 @@ void bloqueado_ready() {
 				sem_post(&(tripulante->semaforo_tripulante));
 			}else{
 				informar_fin_tarea(tripulante);
-				printf("hilo %d, termino I/O \n", tripulante->tid);
+				printf("hilo %d, termina tiempo en Bloq \n", tripulante->tid);
 				fflush(stdout);
 
 				planificacion_pausada_o_no();
@@ -687,8 +691,8 @@ INICIAR_PATOTA 3 tareas_corta.txt 3|4 9|2 4|5
 INICIAR_PATOTA 5 tareas.txt 3|4 1|2 4|5
 INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 INICIAR_PATOTA 3 tareas_corta.txt 3|4 5|2 4|5
+INICIAR_PLANIFICACION
 */
-
 			case OBTENER_BITACORA:
 				enviar_header(OBTENER_BITACORA, conexionMongoStore);
 				int tipoMensaje = recibir_operacion(conexionMongoStore);
@@ -704,6 +708,7 @@ INICIAR_PATOTA 3 tareas_corta.txt 3|4 5|2 4|5
 				char** parametro = string_split(leido," ");
 				char* tripulante_id = parametro[1];
 				int int_tid = atoi(parametro[1]);
+				char* pid_char = parametro[2];
 				bool encontre_tripu = false;
 
 				//primero expulso de discordiador:
@@ -787,6 +792,7 @@ INICIAR_PATOTA 3 tareas_corta.txt 3|4 5|2 4|5
 
 				//luego expulso de la memoria miram
 				agregar_a_paquete(paquete, tripulante_id, strlen(tripulante_id)+1);
+				agregar_a_paquete(paquete, pid_char, strlen(pid_char)+1);
 				enviar_paquete(paquete, conexionMiRam);
 				eliminar_paquete(paquete);
 				limpiar_array(parametro);
@@ -796,9 +802,20 @@ INICIAR_PATOTA 3 tareas_corta.txt 3|4 5|2 4|5
 INICIAR_PATOTA 5 tareas.txt 3|4 1|2 4|5
 INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 INICIAR_PATOTA 3 tareas_corta.txt 2|2 2|2 4|5
+INICIAR_PLANIFICACION
 */
 			case PRUEBA: //para probar el sabotaje por ahora
 				sem_wait(&CONTINUAR_PLANIFICACION);
+
+				//para probar mongo
+				enviar_header(PRUEBA, conexionMiRam);
+				char* posicion_sabotaje_char = recibir_mensaje(conexionMiRam);
+				log_info(logger, "posicion_sabotaje_char %s", posicion_sabotaje_char);
+
+				int posx = atoi(strtok(posicion_sabotaje_char,"|"));
+			    int posy = atoi(strtok(NULL,""));
+				log_info(logger, "posx %d   posy %d", posx, posy);
+
 				flag_sabotaje = configuracion.grado_multitarea;
 
 				if(list_size(lista_tripulantes_trabajando) > 0){
@@ -833,14 +850,14 @@ INICIAR_PATOTA 3 tareas_corta.txt 2|2 2|2 4|5
 					tcbTripulante* tripu1 = malloc(sizeof(tcbTripulante));
 					tripu1 = (tcbTripulante*)list_get(lista_bloq_emergencia, 0);
 					tcbTripulante* tripu2 = malloc(sizeof(tcbTripulante));
-					int dif_x = abs(tripu1->posicionX - 5);//NO ES 5, ES LO Q RECIBA DE POSICION
-					int dif_y = abs(tripu1->posicionY - 5);
+					int dif_x = abs(tripu1->posicionX - posx);//NO ES 5, ES LO Q RECIBA DE POSICION
+					int dif_y = abs(tripu1->posicionY - posy);
 
 					for(int i=1; i < list_size(lista_bloq_emergencia); i++){
 						tripu2 = (tcbTripulante*)list_get(lista_bloq_emergencia, i);
 
-						int dif_x_2 = abs(tripu2->posicionX - 5);
-						int dif_y_2 = abs(tripu2->posicionY - 5);
+						int dif_x_2 = abs(tripu2->posicionX - posx);
+						int dif_y_2 = abs(tripu2->posicionY - posy);
 
 						if( dif_x + dif_y >= dif_x_2 + dif_y_2 ){ //esta mas cerca el segundo
 							dif_x = dif_x_2;
@@ -852,9 +869,9 @@ INICIAR_PATOTA 3 tareas_corta.txt 2|2 2|2 4|5
 					log_info(logger, "Tripu elegido: tid %d  posx %d  posy %d", tripu1->tid, tripu1->posicionX, tripu1->posicionY);
 					informar_atencion_sabotaje(tripu1);
 					//mover al tripu1 que es el mas cercano
-					while(tripu1->posicionX != 5){ //muevo en X
+					while(tripu1->posicionX != posx){ //muevo en X
 						int x_viejo = tripulante->posicionX;
-						if(tripu1->posicionX > 5){ //mayor a la posicion del sabotaje -> se mueve para la izq
+						if(tripu1->posicionX > posx){ //mayor a la posicion del sabotaje -> se mueve para la izq
 							tripu1->posicionX--;
 						} else{
 							tripu1->posicionX++;
@@ -864,9 +881,9 @@ INICIAR_PATOTA 3 tareas_corta.txt 2|2 2|2 4|5
 						sleep(configuracion.retardo_cpu);
 					}
 
-					while(tripu1->posicionY != 5){ //muevo en Y
+					while(tripu1->posicionY != posy){ //muevo en Y
 						int y_viejo = tripulante->posicionY;
-						if(tripu1->posicionY > 5){ //mayor a la posicion del sabotaje -> se mueve para abajo
+						if(tripu1->posicionY > posy){ //mayor a la posicion del sabotaje -> se mueve para abajo
 							tripu1->posicionY--;
 						} else{
 							tripu1->posicionY++;
@@ -878,6 +895,13 @@ INICIAR_PATOTA 3 tareas_corta.txt 2|2 2|2 4|5
 
 					sleep(configuracion.duracion_sabotaje);
 					informar_sabotaje_resuelto(tripu1);
+
+					enviar_header(FSCK, tripu1->socket_miram);
+					//enviar_header(FSCK, tripu1->socket_mongo);
+
+					char* mensaje_recibido = recibir_mensaje(tripu1->socket_miram);
+					//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
+					free(mensaje_recibido);
 
 					if(configuracion.grado_multitarea > list_size(lista_bloq_emergencia)){
 						flag_sabotaje = list_size(lista_bloq_emergencia);
@@ -898,6 +922,7 @@ INICIAR_PATOTA 3 tareas_corta.txt 2|2 2|2 4|5
 					flag_sabotaje = 0;
 				}
 
+				free(posicion_sabotaje_char);
 				sem_post(&CONTINUAR_PLANIFICACION);
 				break;
 
@@ -906,6 +931,7 @@ INICIAR_PATOTA 3 tareas_corta.txt 2|2 2|2 4|5
 				enviar_paquete(paquete, conexionMiRam);
 				//enviar_paquete(paquete, conexionMongoStore);
 				eliminar_paquete(paquete);
+				//enviar_header(SALIR_MONGO, conexionMongoStore);
 				flag_fin = 1;   //VER SI HACE FALTA TODO ESTO. LO HAGO POR LO DE LA MEMORIA PERO CAPAZ NI HACE FALTA.
 				/*sem_post(&HABILITA_GRADO_MULTITAREA);
 				sem_post(&HABILITA_EJECUTAR);
