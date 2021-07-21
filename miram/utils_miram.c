@@ -307,9 +307,17 @@ int funcion_cliente_segmentacion(int socket_cliente){
 			case INFORMAR_BITACORA:; //PARA PROBAR LO DE MONGO
 				t_list* lista_pr = recibir_paquete(socket_cliente);
 				tripulante_id = (int)atoi(list_get(lista_pr,0));
-				//char* mens = list_get(lista_pr,1);
-				int tipo_mensaje_bitacora = (int)atoi(list_get(lista_pr,1));
-				//log_info(logger, "tid %d  mens %d",tripulante_id, tipo_mensaje_bitacora);
+				char* mens = list_get(lista_pr,1);
+				if(list_size(lista) == 3){
+					char* mens2 = list_get(lista_pr,2);
+					//strcat(mens, mens2);
+					log_info(logger, "tid %d  %s%s",tripulante_id, mens, mens2);
+				}else{
+					log_info(logger, "tid %d  %s",tripulante_id, mens);
+				}
+
+				char* mensaje = "ok";
+				enviar_mensaje(mensaje, socket_cliente);
 
 				list_clean_and_destroy_elements(lista_pr, (void*)destruir_lista_paquete);
 				list_destroy(lista_pr);
@@ -319,8 +327,8 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				t_list* lista_pru = recibir_paquete(socket_cliente);
 				tripulante_id = (int)atoi(list_get(lista_pru,0));
 				char* mens1 = list_get(lista_pru,1);
-				char* mens2 = list_get(lista_pru,2);
-				//log_info(logger, "tid %d  mens1 %s, mens2 %s",tripulante_id, mens1, mens2);
+				//char* mens2 = list_get(lista_pru,2);
+				log_info(logger, "tid %d  mens1 %s",tripulante_id, mens1);
 
 				list_clean_and_destroy_elements(lista_pru, (void*)destruir_lista_paquete);
 				list_destroy(lista_pru);

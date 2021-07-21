@@ -1,32 +1,13 @@
-[INFO] 20:10:01:399 discordiador/(14593:14593): Memoria asignada
-[INFO] 20:10:19:260 discordiador/(14593:14598): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 20:10:19:293 discordiador/(14593:14599): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 20:10:19:308 discordiador/(14593:14600): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 20:10:19:333 discordiador/(14593:14601): TRIPU 4  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 20:10:19:348 discordiador/(14593:14602): TRIPU 5  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 20:10:22:335 discordiador/(14593:14597): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 20:10:24:343 discordiador/(14593:14597): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 20:10:28:825 discordiador/(14593:14593): tripu expulsado: 3 
-[INFO] 20:10:29:373 discordiador/(14593:14600): tripu_misma_patota_exit 1
-[INFO] 20:10:35:411 discordiador/(14593:14597): TRIPU 2  tarea recibida: ABC;5;6;4
-[INFO] 20:10:38:054 discordiador/(14593:14593): lista bloq emer
-[INFO] 20:10:38:054 discordiador/(14593:14593): tid 1  posx 5  posy 6
-[INFO] 20:10:38:055 discordiador/(14593:14593): tid 5  posx 4  posy 4
-[INFO] 20:10:38:055 discordiador/(14593:14593): tid 2  posx 4  posy 4
-[INFO] 20:10:38:057 discordiador/(14593:14593): Tripu elegido: tid 1  posx 5  posy 6
-[INFO] 20:10:42:107 discordiador/(14593:14597): TRIPU 4  tarea recibida: ABC;5;6;4
-[INFO] 20:10:42:146 discordiador/(14593:14598): TRIPU 1  tarea recibida: DEF;3;3;4
-[INFO] 20:10:43:115 discordiador/(14593:14597): TRIPU 5  tarea recibida: ABC;5;6;4
-[INFO] 20:10:55:178 discordiador/(14593:14599): TRIPU 2  tarea recibida: DEF;3;3;4
-[INFO] 20:10:56:219 discordiador/(14593:14598): TRIPU 1  tarea recibida: no hay mas tareas
-[INFO] 20:10:56:221 discordiador/(14593:14598): tripu_misma_patota_exit 2
-[INFO] 20:10:57:262 discordiador/(14593:14601): TRIPU 4  tarea recibida: DEF;3;3;4
-[INFO] 20:10:58:226 discordiador/(14593:14602): TRIPU 5  tarea recibida: DEF;3;3;4
-[INFO] 20:11:09:327 discordiador/(14593:14599): TRIPU 2  tarea recibida: no hay mas tareas
-[INFO] 20:11:09:329 discordiador/(14593:14599): tripu_misma_patota_exit 3
-[INFO] 20:11:10:291 discordiador/(14593:14601): TRIPU 4  tarea recibida: no hay mas tareas
-[INFO] 20:11:10:291 discordiador/(14593:14601): tripu_misma_patota_exit 4
-[INFO] 20:11:10:370 discordiador/(14593:14602): TRIPU 5  tarea recibida: no hay mas tareas
-[INFO] 20:11:10:370 discordiador/(14593:14602): tripu_misma_patota_exit 5
-[INFO] 20:11:10:371 discordiador/(14593:14602): size exit 0
-[INFO] 20:23:09:249 discordiador/(14593:14593): aaaaaaaa
+[INFO] 00:06:38:476 discordiador/(19895:19895): Memoria asignada
+[INFO] 00:06:43:213 discordiador/(19895:19904): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:06:43:214 discordiador/(19895:19905): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:06:43:215 discordiador/(19895:19906): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 00:06:46:216 discordiador/(19895:19902): TRIPU 1  tarea recibida: ABC;5;6;4
+[INFO] 00:06:48:219 discordiador/(19895:19902): TRIPU 3  tarea recibida: ABC;5;6;4
+[INFO] 00:06:49:220 discordiador/(19895:19902): TRIPU 2  tarea recibida: ABC;5;6;4
+[INFO] 00:06:57:226 discordiador/(19895:19904): TRIPU 1  tarea recibida: DEF;3;3;4
+[INFO] 00:06:58:227 discordiador/(19895:19906): TRIPU 3  tarea recibida: DEF;3;3;4
+[INFO] 00:07:00:228 discordiador/(19895:19905): TRIPU 2  tarea recibida: DEF;3;3;4
+[INFO] 00:07:10:237 discordiador/(19895:19904): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 00:07:10:237 discordiador/(19895:19904): tripu_misma_patota_exit 1
+[INFO] 00:07:10:918 discordiador/(19895:19895): aaaaaaaa
