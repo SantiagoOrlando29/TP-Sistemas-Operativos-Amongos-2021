@@ -1,15 +1,15 @@
 #include "utils_discordiador.h"
 
 
-void* serializar_paquete(t_paquete* paquete, int bytes)
+void* serializar_paquete(t_paquete* paquete, uint32_t bytes)
 {
 	void * magic = malloc(bytes);
 	int desplazamiento = 0;
 
-	memcpy(magic + desplazamiento, &(paquete->mensajeOperacion), sizeof(int));
-	desplazamiento+= sizeof(int);
-	memcpy(magic + desplazamiento, &(paquete->buffer->size), sizeof(int));
-	desplazamiento+= sizeof(int);
+	memcpy(magic + desplazamiento, &(paquete->mensajeOperacion), sizeof(uint32_t));
+	desplazamiento+= sizeof(uint32_t);
+	memcpy(magic + desplazamiento, &(paquete->buffer->size), sizeof(uint32_t));
+	desplazamiento+= sizeof(uint32_t);
 	memcpy(magic + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
 	desplazamiento+= paquete->buffer->size;
 
@@ -82,19 +82,19 @@ tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, u
 //	return patota;
 //}
 
-void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio)
+void agregar_a_paquete(t_paquete* paquete, void* valor, uint32_t tamanio)
 {
-	paquete->buffer->stream = realloc(paquete->buffer->stream, paquete->buffer->size + tamanio + sizeof(int));
+	paquete->buffer->stream = realloc(paquete->buffer->stream, paquete->buffer->size + tamanio + sizeof(uint32_t));
 
-	memcpy(paquete->buffer->stream + paquete->buffer->size, &tamanio, sizeof(int));
-	memcpy(paquete->buffer->stream + paquete->buffer->size + sizeof(int), valor, tamanio);
+	memcpy(paquete->buffer->stream + paquete->buffer->size, &tamanio, sizeof(uint32_t));
+	memcpy(paquete->buffer->stream + paquete->buffer->size + sizeof(uint32_t), valor, tamanio);
 
-	paquete->buffer->size += tamanio + sizeof(int);
+	paquete->buffer->size += tamanio + sizeof(uint32_t);
 }
 
 void enviar_paquete(t_paquete* paquete, int socket_cliente)
 {
-	int bytes = paquete->buffer->size + 2*sizeof(int);
+	int bytes = paquete->buffer->size + 2*sizeof(uint32_t);
 	void* a_enviar = serializar_paquete(paquete, bytes);
 
 	send(socket_cliente, a_enviar, bytes, 0);
@@ -109,7 +109,7 @@ void enviar_header(tipoMensaje tipo, int socket_cliente)
 	paquete->mensajeOperacion = tipo;
 
 	void * magic = malloc(sizeof(paquete->mensajeOperacion));
-	memcpy(magic, &(paquete->mensajeOperacion), sizeof(int));
+	memcpy(magic, &(paquete->mensajeOperacion), sizeof(uint32_t));
 
 	send(socket_cliente, magic, sizeof(paquete->mensajeOperacion), 0);
 
@@ -164,7 +164,7 @@ void mensajeError (t_log* logger) {
 int recibir_operacion(int socket_cliente)
 {
 	int tipoMensaje;
-	if(recv(socket_cliente, &tipoMensaje, sizeof(int), MSG_WAITALL) != 0)
+	if(recv(socket_cliente, &tipoMensaje, sizeof(uint32_t), MSG_WAITALL) != 0)
 		return tipoMensaje;
 	else
 	{
@@ -173,11 +173,11 @@ int recibir_operacion(int socket_cliente)
 	}
 }
 
-void* recibir_buffer(int* size, int socket_cliente)
+void* recibir_buffer(uint32_t* size, int socket_cliente)
 {
 	void * buffer;
 
-	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
+	recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL);
 	buffer = malloc(*size);
 	recv(socket_cliente, buffer, *size, MSG_WAITALL);
 
@@ -188,17 +188,17 @@ void* recibir_buffer(int* size, int socket_cliente)
 //podemos usar la lista de valores para poder hablar del for y de como recorrer la lista
 t_list* recibir_paquete(int socket_cliente)
 {
-	int size;
-	int desplazamiento = 0;
+	uint32_t size;
+	uint32_t desplazamiento = 0;
 	void * buffer;
 	t_list* valores = list_create();
-	int tamanio;
+	uint32_t tamanio;
 
 	buffer = recibir_buffer(&size, socket_cliente);
 	while(desplazamiento < size)
 	{
-		memcpy(&tamanio, buffer + desplazamiento, sizeof(int));
-		desplazamiento+=sizeof(int);
+		memcpy(&tamanio, buffer + desplazamiento, sizeof(uint32_t));
+		desplazamiento+=sizeof(uint32_t);
 		char* valor = malloc(tamanio);
 		memcpy(valor, buffer+desplazamiento, tamanio);
 		desplazamiento+=tamanio;
@@ -211,7 +211,7 @@ t_list* recibir_paquete(int socket_cliente)
 
 char* recibir_mensaje(int socket_cliente)
 {
-	int size;
+	uint32_t size;
 	char* buffer = recibir_buffer(&size, socket_cliente);
 	return buffer;
 }
@@ -229,7 +229,7 @@ char* recibir_mensaje(int socket_cliente)
 		//list_add(lista, 3);
 		//list_add(lista, 4);
 		//lista = recibir_paquete(conexionMiRam);
-		/*tripulante = (nuevoTripulante*)list_get(lista, 0);
+		tripulante = (nuevoTripulante*)list_get(lista, 0);
 		printf("\n ID: %d \n", tripulante->id );
 		printf("Posicion X: %d \n", tripulante->posicionX );
 		printf("Posicion Y: %d \n", tripulante->posicionY );

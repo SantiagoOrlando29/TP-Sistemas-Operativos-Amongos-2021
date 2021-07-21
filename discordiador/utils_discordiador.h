@@ -76,7 +76,7 @@ typedef enum
 
 typedef struct
 {
-	int size;//tendria q ser uint32
+	uint32_t size;//tendria q ser uint32
 	void* stream;
 } t_buffer;
 
@@ -168,7 +168,8 @@ typedef struct{
 void leer_config();
 int crear_conexion(char* ip, char* puerto);
 t_paquete* crear_paquete(tipoMensaje tipo);
-void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
+//void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
+void agregar_a_paquete(t_paquete* paquete, void* valor, uint32_t tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);

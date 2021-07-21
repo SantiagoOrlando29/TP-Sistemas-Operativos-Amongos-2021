@@ -86,7 +86,7 @@ typedef enum //PARA PROBAR LO DE MONGO
 
 typedef struct
 {
-	int size;
+	uint32_t size;
 	void* stream;
 } t_buffer;
 
@@ -202,7 +202,8 @@ t_list* tabla_espacios_de_memoria;
 
 t_list* lista_tablas_segmentos;
 
-void* recibir_buffer(int*, int);
+//void* recibir_buffer(int*, int);
+void* recibir_buffer(uint32_t* size, int socket_cliente);
 void iniciar_servidor(config_struct*);
 int esperar_cliente(int);
 t_list* recibir_paquete(int);
@@ -234,7 +235,8 @@ tcbTripulante* obtener_tripulante(void* inicio_tripulantes);
 
 /*Operaciones para enviar mensajes desde miram a discordiador*/
 t_paquete* crear_paquete(tipoMensaje tipo);
-void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
+//void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
+void agregar_a_paquete(t_paquete* paquete, void* valor, uint32_t tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 void enviar_header(tipoMensaje , int );
