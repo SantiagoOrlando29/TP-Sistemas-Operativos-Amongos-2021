@@ -154,32 +154,38 @@ int funcion_cliente_segmentacion(int socket_cliente){
 			case LISTAR_TRIPULANTES:;
 				t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
 
-				if(strcmp(configuracion.squema_memoria,"SEGMENTACION")==0){
-					for(int i=0; i < list_size(lista_tablas_segmentos); i++){
-						tabla_segmentacion* tabla_segmentos = (tabla_segmentacion*)list_get(lista_tablas_segmentos, i);
-						int pid = tabla_segmentos->id_patota;
+				log_info(logger, "------ Lista Tripulantes ---------");
+				for(int i=0; i < list_size(lista_tablas_segmentos); i++){
+					tabla_segmentacion* tabla_segmentos = (tabla_segmentacion*)list_get(lista_tablas_segmentos, i);
+					int pid = tabla_segmentos->id_patota;
 
-						for(int j=2; j < list_size(tabla_segmentos->lista_segmentos); j++){
-							segmento* segmento = list_get(tabla_segmentos->lista_segmentos, j);
+					for(int j=2; j < list_size(tabla_segmentos->lista_segmentos); j++){
+						segmento* segmento = list_get(tabla_segmentos->lista_segmentos, j);
 
-							sem_wait(&MUTEX_TABLA_MEMORIA);
-							for(int k=0; k < list_size(tabla_espacios_de_memoria); k++){
-								espacio_de_memoria* espacio = (espacio_de_memoria*)list_get(tabla_espacios_de_memoria, k);
-								if(espacio->base == segmento->base){
-									tcbTripulante* tripulante = espacio->contenido;
+						sem_wait(&MUTEX_TABLA_MEMORIA);
+						for(int k=0; k < list_size(tabla_espacios_de_memoria); k++){
+							espacio_de_memoria* espacio = (espacio_de_memoria*)list_get(tabla_espacios_de_memoria, k);
+							if(espacio->base == segmento->base){
+								tcbTripulante* tripulante = espacio->contenido;
 
-									agregar_a_paquete(paquete, tripulante, tamanio_TCB);
+								log_info(logger, "Tripulante: %d     Patota: %d     Status: %c", tripulante->tid, pid, tripulante->estado);
+								/*for(int i=0; i < list_size(lista_tripulantes); i+=2){
+									tripulante = (tcbTripulante*)list_get(lista_tripulantes, i);
+									int numero_patota = (int)atoi(list_get(lista_tripulantes,i+1));
+									printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, numero_patota, tripulante->estado);
+								}*/
 
-									char* pid_char = malloc(sizeof(char)+1);
-									sprintf(pid_char, "%d", pid);
-									agregar_a_paquete(paquete, pid_char, strlen(pid_char)+1);
+								agregar_a_paquete(paquete, tripulante, tamanio_TCB);
 
-									//printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, pid, tripulante->estado);
-									k = list_size(tabla_espacios_de_memoria); //para que corte el for
-								}
+								char* pid_char = malloc(sizeof(char)+1);
+								sprintf(pid_char, "%d", pid);
+								agregar_a_paquete(paquete, pid_char, strlen(pid_char)+1);
+
+								//printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, pid, tripulante->estado);
+								k = list_size(tabla_espacios_de_memoria); //para que corte el for
 							}
-							sem_post(&MUTEX_TABLA_MEMORIA);
 						}
+						sem_post(&MUTEX_TABLA_MEMORIA);
 					}
 				}
 
@@ -308,7 +314,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				break;
 
 			case INFORMAR_BITACORA:; //PARA PROBAR LO DE MONGO
-				t_list* lista_pr = recibir_paquete(socket_cliente);
+				t_list* lista_pr = recibir_paquete(socket_cliente); //se recibe el string directo para poner en la bitacora
 				tripulante_id = (int)atoi(list_get(lista_pr,0));
 				char* mens = list_get(lista_pr,1);
 				if(list_size(lista) == 3){
@@ -318,6 +324,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				}else{
 					log_info(logger, "tid %d  %s",tripulante_id, mens);
 				}
+				//cargar bitacora()
 
 				char* mensaje = "ok";
 				enviar_mensaje(mensaje, socket_cliente);
@@ -768,16 +775,17 @@ void eliminar_espacio_de_memoria(int base){
     ordenar_memoria();
 }
 
-void ordenar_memoria(){
+int ordenar_memoria(){
     bool espacio_anterior(espacio_de_memoria* espacio_menor, espacio_de_memoria* espacio_mayor) {
         return espacio_menor->base < espacio_mayor->base;
     }
     sem_wait(&MUTEX_TABLA_MEMORIA);
     list_sort(tabla_espacios_de_memoria, (void*) espacio_anterior);
     sem_post(&MUTEX_TABLA_MEMORIA);
+    return 1;
 }
 
-void unir_espacios_contiguos_libres(){
+int unir_espacios_contiguos_libres(){
 	sem_wait(&MUTEX_TABLA_MEMORIA);
 	for(int i=0; i < list_size(tabla_espacios_de_memoria) -1; i++){
 
@@ -804,6 +812,7 @@ void unir_espacios_contiguos_libres(){
     	}
     }
 	sem_post(&MUTEX_TABLA_MEMORIA);
+	return 1;
 }
 
 void eliminar_segmento(int nro_segmento, tabla_segmentacion* tabla_segmentos_patota){
@@ -903,7 +912,7 @@ espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) {
 
 	if(espacio_libre == NULL){ //NO PROBE ESTE IF
 		log_info(logger, "No hay espacio libre de memoria. Hacemos Compactacion");
-		compactar_memoria();
+		int compact = compactar_memoria();
 		espacio_libre = buscar_espacio_de_memoria_libre(tam);
 	}
 
@@ -924,7 +933,7 @@ espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) {
             espacio_libre->tam -= tam;
 
             ordenar_memoria();
-            unir_espacios_contiguos_libres();
+            //unir_espacios_contiguos_libres();
 
             return nuevo_espacio_de_memoria;
         }
@@ -944,9 +953,12 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 
 	espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea)+1);
 	if (espacio_de_memoria_tareas == NULL){
+		log_info(logger, "espacio tareas todo mal");
 		eliminar_espacio_de_memoria(espacio_de_memoria_pcb_patota->base);
+		log_info(logger, "espacio tareas todo mal 2");
 		return false;
 	}
+	log_info(logger, "espacio tareas todo ok");
 	espacio_de_memoria_tareas->contenido = tarea;
 
 	pcb_patota->tareas = 1; //direccion logica del inicio de las tareas. Segmento de tareas es el 1
@@ -1060,7 +1072,7 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 					}
 					sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 
-					unir_espacios_contiguos_libres();
+					//unir_espacios_contiguos_libres();
 					imprimir_tabla_espacios_de_memoria();
 					if(se_elimina_toda_la_tabla == false){
 						imprimir_tabla_segmentos_patota(tabla_segmentos);
@@ -1077,14 +1089,15 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 	return false;
 }
 
-void compactar_memoria(){
+int compactar_memoria(){
     log_info(logger, "Empieza compactacion");
-    ordenar_memoria();
-    unir_espacios_contiguos_libres();
+    int listo = ordenar_memoria();
+    int listo2 = unir_espacios_contiguos_libres();
 
     bool compacto_algo = false;
 
     sem_wait(&MUTEX_TABLA_MEMORIA);
+    sem_wait(&MUTEX_LISTA_TABLAS_SEGMENTOS);
     for(int i=0; i < list_size(tabla_espacios_de_memoria)-1; i++){ //-1 para que no se fije en el ultimo espacio que es el libre
     	espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, i);
 
@@ -1105,8 +1118,9 @@ void compactar_memoria(){
         		}
         	}
         	//sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
-        	//list_remove(tabla_espacios_de_memoria, i);
-        	list_remove_and_destroy_element(tabla_espacios_de_memoria, i, (void*)destruir_espacio_memoria);
+        	list_remove(tabla_espacios_de_memoria, i);
+log_info(logger, "qqqqqqqqqqqqq");
+        	//list_remove_and_destroy_element(tabla_espacios_de_memoria, i, (void*)destruir_espacio_memoria);
 
         	for(int j = i; j < list_size(tabla_espacios_de_memoria); j++){
         		espacio_de_memoria* espacio_temp = list_get(tabla_espacios_de_memoria, j);
@@ -1116,16 +1130,20 @@ void compactar_memoria(){
         			espacio_temp->tam += espacio->tam; //entonces le amplia el tamanio porque es el espacio libre
         		}
         	}
-        	sem_post(&MUTEX_TABLA_MEMORIA);
-            imprimir_tabla_espacios_de_memoria();
+
+        	//sem_post(&MUTEX_TABLA_MEMORIA);//MMM CREO Q ESTA MAL. LO VA A HACER MUCHAS VECES.
+            //imprimir_tabla_espacios_de_memoria();
         }
     }
     if(compacto_algo == false){
-    	sem_post(&MUTEX_TABLA_MEMORIA);
     	log_info(logger, "No hay nada para compactar");
     }
+    sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
+    sem_post(&MUTEX_TABLA_MEMORIA);//OK?
+    imprimir_tabla_espacios_de_memoria();
 
     log_info(logger, "Termina compactacion");
+    return 1;
 }
 
 bool cambiar_estado(int numero_patota, char nuevo_estado, int tid){
@@ -1289,7 +1307,7 @@ bool cambiar_posicion(int tid, int posx, int posy, int pid){
 void sig_handler(int signum){
     if (signum == SIGUSR2){
     	log_info(logger, "SIGUSR2\n");
-        compactar_memoria();
+        int compact = compactar_memoria();
     }
     if(signum == SIGUSR1){
     	log_info(logger, "SIGUSR1\n");

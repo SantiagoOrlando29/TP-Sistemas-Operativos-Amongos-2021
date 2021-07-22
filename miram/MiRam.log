@@ -1,164 +1,308 @@
-[INFO] 16:29:59:890 MiRam/(30826:30826): pid 30826  
+[INFO] 23:17:28:558 MiRam/(5472:5472): pid 5472  
 
-[INFO] 16:29:59:890 MiRam/(30826:30826): ---------  MEMORIA  --------------------
-[INFO] 16:29:59:890 MiRam/(30826:30826): base: 0, tam: 512, libre: true 
-[INFO] 16:29:59:890 MiRam/(30826:30826): ----------------------------------------
-[INFO] 16:29:59:890 MiRam/(30826:30827): Servidor iniciando
-[INFO] 16:29:59:890 MiRam/(30826:30827): Servidor MiRam encendido
-[INFO] 16:30:04:458 MiRam/(30826:30827): Estableciendo conexión desde 8334
-[INFO] 16:30:04:458 MiRam/(30826:30827): Creando hilo
-[INFO] 16:30:04:459 MiRam/(30826:30841): Se conecto este socket a mi 5
-[INFO] 16:30:10:731 MiRam/(30826:30841): 
+[INFO] 23:17:28:558 MiRam/(5472:5472): ---------  MEMORIA  --------------------
+[INFO] 23:17:28:558 MiRam/(5472:5472): base: 0, tam: 256, libre: true 
+[INFO] 23:17:28:559 MiRam/(5472:5472): ----------------------------------------
+[INFO] 23:17:28:559 MiRam/(5472:5473): Servidor iniciando
+[INFO] 23:17:28:559 MiRam/(5472:5473): Servidor MiRam encendido
+[INFO] 23:17:34:113 MiRam/(5472:5473): Estableciendo conexión desde 46224
+[INFO] 23:17:34:113 MiRam/(5472:5473): Creando hilo
+[INFO] 23:17:34:118 MiRam/(5472:5487): Se conecto este socket a mi 5
+[INFO] 23:17:36:822 MiRam/(5472:5487): 
 El numero de la patota recibida es 1
-[INFO] 16:30:10:731 MiRam/(30826:30841): ID 1 
-[INFO] 16:30:10:731 MiRam/(30826:30841): posicion x: 2 
-[INFO] 16:30:10:731 MiRam/(30826:30841): posicion y: 2 
-[INFO] 16:30:10:731 MiRam/(30826:30841): Status: N 
-[INFO] 16:30:10:731 MiRam/(30826:30841): n patota: 1 
+[INFO] 23:17:36:823 MiRam/(5472:5487): ID 1 
+[INFO] 23:17:36:823 MiRam/(5472:5487): posicion x: 0 
+[INFO] 23:17:36:823 MiRam/(5472:5487): posicion y: 0 
+[INFO] 23:17:36:823 MiRam/(5472:5487): Status: N 
+[INFO] 23:17:36:823 MiRam/(5472:5487): n patota: 1 
 
-[INFO] 16:30:10:731 MiRam/(30826:30841): ID 2 
-[INFO] 16:30:10:731 MiRam/(30826:30841): posicion x: 2 
-[INFO] 16:30:10:731 MiRam/(30826:30841): posicion y: 2 
-[INFO] 16:30:10:731 MiRam/(30826:30841): Status: N 
-[INFO] 16:30:10:731 MiRam/(30826:30841): n patota: 1 
+[INFO] 23:17:36:823 MiRam/(5472:5487): ID 2 
+[INFO] 23:17:36:823 MiRam/(5472:5487): posicion x: 0 
+[INFO] 23:17:36:823 MiRam/(5472:5487): posicion y: 0 
+[INFO] 23:17:36:823 MiRam/(5472:5487): Status: N 
+[INFO] 23:17:36:823 MiRam/(5472:5487): n patota: 1 
 
-[INFO] 16:30:10:731 MiRam/(30826:30841): ID 3 
-[INFO] 16:30:10:731 MiRam/(30826:30841): posicion x: 4 
-[INFO] 16:30:10:731 MiRam/(30826:30841): posicion y: 5 
-[INFO] 16:30:10:731 MiRam/(30826:30841): Status: N 
-[INFO] 16:30:10:731 MiRam/(30826:30841): n patota: 1 
+[INFO] 23:17:36:823 MiRam/(5472:5487): ID 3 
+[INFO] 23:17:36:823 MiRam/(5472:5487): posicion x: 0 
+[INFO] 23:17:36:823 MiRam/(5472:5487): posicion y: 0 
+[INFO] 23:17:36:823 MiRam/(5472:5487): Status: N 
+[INFO] 23:17:36:823 MiRam/(5472:5487): n patota: 1 
 
-[INFO] 16:30:10:731 MiRam/(30826:30841): ---------  MEMORIA  --------------------
-[INFO] 16:30:10:731 MiRam/(30826:30841): base: 0, tam: 8, libre: false 
-[INFO] 16:30:10:731 MiRam/(30826:30841): base: 8, tam: 59, libre: false 
-[INFO] 16:30:10:731 MiRam/(30826:30841): base: 67, tam: 21, libre: false 
-[INFO] 16:30:10:731 MiRam/(30826:30841): base: 88, tam: 21, libre: false 
-[INFO] 16:30:10:731 MiRam/(30826:30841): base: 109, tam: 21, libre: false 
-[INFO] 16:30:10:731 MiRam/(30826:30841): base: 130, tam: 382, libre: true 
-[INFO] 16:30:10:731 MiRam/(30826:30841): ----------------------------------------
-[INFO] 16:30:10:731 MiRam/(30826:30841): Tabla de segmentos correspondiente a patota 1
-[INFO] 16:30:10:731 MiRam/(30826:30841): Base 0   Tamanio 8
-[INFO] 16:30:10:731 MiRam/(30826:30841): Base 8   Tamanio 59
-[INFO] 16:30:10:731 MiRam/(30826:30841): Base 67   Tamanio 21
-[INFO] 16:30:10:731 MiRam/(30826:30841): Base 88   Tamanio 21
-[INFO] 16:30:10:731 MiRam/(30826:30841): Base 109   Tamanio 21
-[INFO] 16:30:10:731 MiRam/(30826:30841): ---------------------------------------
-[INFO] 16:30:10:731 MiRam/(30826:30841): Se asigno espacio de memoria a todo 
+[INFO] 23:17:36:823 MiRam/(5472:5487): ID 4 
+[INFO] 23:17:36:823 MiRam/(5472:5487): posicion x: 0 
+[INFO] 23:17:36:823 MiRam/(5472:5487): posicion y: 0 
+[INFO] 23:17:36:823 MiRam/(5472:5487): Status: N 
+[INFO] 23:17:36:823 MiRam/(5472:5487): n patota: 1 
 
-[INFO] 16:30:14:410 MiRam/(30826:30827): Estableciendo conexión desde 9358
-[INFO] 16:30:14:410 MiRam/(30826:30827): Creando hilo
-[INFO] 16:30:14:413 MiRam/(30826:30845): Se conecto este socket a mi 7
-[INFO] 16:30:14:413 MiRam/(30826:30827): Estableciendo conexión desde 9870
-[INFO] 16:30:14:413 MiRam/(30826:30827): Creando hilo
-[INFO] 16:30:14:413 MiRam/(30826:30845): tid 1  Se mueve de 2|2 a 3|2
-[INFO] 16:30:14:414 MiRam/(30826:30846): Se conecto este socket a mi 8
-[INFO] 16:30:14:414 MiRam/(30826:30827): Estableciendo conexión desde 10382
-[INFO] 16:30:14:414 MiRam/(30826:30827): Creando hilo
-[INFO] 16:30:14:414 MiRam/(30826:30846): tid 2  Se mueve de 2|2 a 3|2
-[INFO] 16:30:14:414 MiRam/(30826:30847): Se conecto este socket a mi 9
-[INFO] 16:30:15:414 MiRam/(30826:30845): tid 1  Se mueve de 3|2 a 3|3
-[INFO] 16:30:15:414 MiRam/(30826:30846): tid 2  Se mueve de 3|2 a 3|3
-[INFO] 16:30:16:415 MiRam/(30826:30846): tid 2  Se mueve de 3|3 a 4|3
-[INFO] 16:30:16:415 MiRam/(30826:30845): tid 1  Se mueve de 3|3 a 4|3
-[INFO] 16:30:17:416 MiRam/(30826:30847): tid 3  Se mueve de 4|5 a 4|4
-[INFO] 16:30:17:416 MiRam/(30826:30846): tid 2  Se mueve de 4|3 a 4|4
-[INFO] 16:30:18:417 MiRam/(30826:30847): tarea GENERAR_OXIGENO  param 5
-[INFO] 16:30:18:417 MiRam/(30826:30846): tarea GENERAR_OXIGENO  param 5
-[INFO] 16:30:19:418 MiRam/(30826:30847): tid 3  Comienza ejecución de tarea GENERAR_OXIGENO
-[INFO] 16:30:19:418 MiRam/(30826:30845): tid 1  Se mueve de 4|3 a 4|4
-[INFO] 16:30:20:419 MiRam/(30826:30847): tid 3  Se finaliza la tarea GENERAR_OXIGENO
-[INFO] 16:30:20:419 MiRam/(30826:30845): tarea GENERAR_OXIGENO  param 5
-[INFO] 16:30:20:419 MiRam/(30826:30846): tid 2  Comienza ejecución de tarea GENERAR_OXIGENO
-[INFO] 16:30:20:419 MiRam/(30826:30847): tid 3  Se mueve de 4|4 a 5|4
-[INFO] 16:30:21:419 MiRam/(30826:30846): tid 2  Se finaliza la tarea GENERAR_OXIGENO
-[INFO] 16:30:21:420 MiRam/(30826:30847): tid 3  Se mueve de 5|4 a 5|5
-[INFO] 16:30:21:420 MiRam/(30826:30845): tid 1  Comienza ejecución de tarea GENERAR_OXIGENO
-[INFO] 16:30:21:420 MiRam/(30826:30846): tid 2  Se mueve de 4|4 a 5|4
-[INFO] 16:30:22:421 MiRam/(30826:30847): tid 3  Se mueve de 5|5 a 5|6
-[INFO] 16:30:22:421 MiRam/(30826:30845): tid 1  Se finaliza la tarea GENERAR_OXIGENO
-[INFO] 16:30:22:421 MiRam/(30826:30846): tid 2  Se mueve de 5|4 a 5|5
-[INFO] 16:30:23:421 MiRam/(30826:30845): tid 1  Se mueve de 4|4 a 5|4
-[INFO] 16:30:23:422 MiRam/(30826:30846): tid 2  Se mueve de 5|5 a 5|6
-[INFO] 16:30:24:422 MiRam/(30826:30845): tid 1  Se mueve de 5|4 a 5|5
-[INFO] 16:30:24:422 MiRam/(30826:30847): tid 3  Comienza ejecución de tarea ABC
-[INFO] 16:30:25:422 MiRam/(30826:30845): tid 1  Se mueve de 5|5 a 5|6
-[INFO] 16:30:26:423 MiRam/(30826:30846): tid 2  Comienza ejecución de tarea ABC
-[INFO] 16:30:27:424 MiRam/(30826:30845): tid 1  Comienza ejecución de tarea ABC
-[INFO] 16:30:30:428 MiRam/(30826:30847): tid 3  Se finaliza la tarea ABC
-[INFO] 16:30:30:428 MiRam/(30826:30847): tid 3  Se mueve de 5|6 a 4|6
-[INFO] 16:30:31:428 MiRam/(30826:30846): tid 2  Se finaliza la tarea ABC
-[INFO] 16:30:31:429 MiRam/(30826:30847): tid 3  Se mueve de 4|6 a 4|5
-[INFO] 16:30:31:429 MiRam/(30826:30846): tid 2  Se mueve de 5|6 a 4|6
-[INFO] 16:30:32:430 MiRam/(30826:30846): tid 2  Se mueve de 4|6 a 4|5
-[INFO] 16:30:33:431 MiRam/(30826:30845): tid 1  Se finaliza la tarea ABC
-[INFO] 16:30:33:431 MiRam/(30826:30847): tid 3  Se mueve de 4|5 a 3|5
-[INFO] 16:30:33:431 MiRam/(30826:30845): tid 1  Se mueve de 5|6 a 4|6
-[INFO] 16:30:34:431 MiRam/(30826:30845): tid 1  Se mueve de 4|6 a 4|5
-[INFO] 16:30:34:431 MiRam/(30826:30847): tid 3  Se mueve de 3|5 a 3|4
-[INFO] 16:30:35:432 MiRam/(30826:30847): tid 3  Se mueve de 3|4 a 3|3
-[INFO] 16:30:35:432 MiRam/(30826:30846): tid 2  Se mueve de 4|5 a 3|5
-[INFO] 16:30:36:129 MiRam/(30826:30841): PRUEBA
-[INFO] 16:30:36:129 MiRam/(30826:30847): tid 3  Se corre en pánico hacia 
-[INFO] 16:30:36:130 MiRam/(30826:30847): tid 3  Se mueve de 4|3 a 2|3
-[INFO] 16:30:37:134 MiRam/(30826:30847): tid 3  Se mueve de 4|3 a 1|3
-[INFO] 16:30:38:135 MiRam/(30826:30847): tid 3  Se mueve de 1|5 a 1|2
-[INFO] 16:30:39:136 MiRam/(30826:30847): tid 3  Se mueve de 1|5 a 1|1
-[INFO] 16:30:43:136 MiRam/(30826:30847): tid 3  Se resuelve el sabotaje
-[INFO] 16:30:43:136 MiRam/(30826:30847): en fsck
-[INFO] 16:30:43:137 MiRam/(30826:30846): tid 2  Se mueve de 3|5 a 3|4
-[INFO] 16:30:43:137 MiRam/(30826:30847): tid 3  Se mueve de 1|1 a 2|1
-[INFO] 16:30:44:138 MiRam/(30826:30847): tid 3  Se mueve de 2|1 a 2|2
-[INFO] 16:30:44:138 MiRam/(30826:30846): tid 2  Se mueve de 3|4 a 3|3
-[INFO] 16:30:45:138 MiRam/(30826:30847): tid 3  Se mueve de 2|2 a 3|2
-[INFO] 16:30:45:138 MiRam/(30826:30846): tarea CONSUMIR_OXIGENO  param 2
-[INFO] 16:30:46:139 MiRam/(30826:30846): tid 2  Comienza ejecución de tarea CONSUMIR_OXIGENO
-[INFO] 16:30:46:139 MiRam/(30826:30845): tid 1  Se mueve de 4|5 a 3|5
-[INFO] 16:30:46:139 MiRam/(30826:30847): tid 3  Se mueve de 3|2 a 3|3
-[INFO] 16:30:46:849 MiRam/(30826:30841): tid 1  pid 1
-[INFO] 16:30:46:849 MiRam/(30826:30841): Se expulso segmento 2
-[INFO] 16:30:46:849 MiRam/(30826:30841): ---------  MEMORIA  --------------------
-[INFO] 16:30:46:849 MiRam/(30826:30841): base: 0, tam: 8, libre: false 
-[INFO] 16:30:46:849 MiRam/(30826:30841): base: 8, tam: 59, libre: false 
-[INFO] 16:30:46:849 MiRam/(30826:30841): base: 67, tam: 21, libre: true 
-[INFO] 16:30:46:849 MiRam/(30826:30841): base: 88, tam: 21, libre: false 
-[INFO] 16:30:46:849 MiRam/(30826:30841): base: 109, tam: 21, libre: false 
-[INFO] 16:30:46:849 MiRam/(30826:30841): base: 130, tam: 382, libre: true 
-[INFO] 16:30:46:849 MiRam/(30826:30841): ----------------------------------------
-[INFO] 16:30:46:849 MiRam/(30826:30841): Tabla de segmentos correspondiente a patota 1
-[INFO] 16:30:46:849 MiRam/(30826:30841): Base 0   Tamanio 8
-[INFO] 16:30:46:849 MiRam/(30826:30841): Base 8   Tamanio 59
-[INFO] 16:30:46:849 MiRam/(30826:30841): Base 88   Tamanio 21
-[INFO] 16:30:46:849 MiRam/(30826:30841): Base 109   Tamanio 21
-[INFO] 16:30:46:849 MiRam/(30826:30841): ---------------------------------------
-[WARNING] 16:30:47:140 MiRam/(30826:30845): el cliente se desconecto.
-[INFO] 16:30:47:140 MiRam/(30826:30847): tarea CONSUMIR_OXIGENO  param 2
-[INFO] 16:30:50:140 MiRam/(30826:30846): tid 2  Se finaliza la tarea CONSUMIR_OXIGENO
-[INFO] 16:30:50:141 MiRam/(30826:30846): no hay mas tareas
-[INFO] 16:30:50:141 MiRam/(30826:30846): Se expulso segmento 3
-[INFO] 16:30:50:141 MiRam/(30826:30846): ---------  MEMORIA  --------------------
-[INFO] 16:30:50:141 MiRam/(30826:30846): base: 0, tam: 8, libre: false 
-[INFO] 16:30:50:141 MiRam/(30826:30846): base: 8, tam: 59, libre: false 
-[INFO] 16:30:50:141 MiRam/(30826:30846): base: 67, tam: 42, libre: true 
-[INFO] 16:30:50:141 MiRam/(30826:30846): base: 109, tam: 21, libre: false 
-[INFO] 16:30:50:141 MiRam/(30826:30846): base: 130, tam: 382, libre: true 
-[INFO] 16:30:50:141 MiRam/(30826:30846): ----------------------------------------
-[INFO] 16:30:50:141 MiRam/(30826:30846): Tabla de segmentos correspondiente a patota 1
-[INFO] 16:30:50:141 MiRam/(30826:30846): Base 0   Tamanio 8
-[INFO] 16:30:50:141 MiRam/(30826:30846): Base 8   Tamanio 59
-[INFO] 16:30:50:141 MiRam/(30826:30846): Base 109   Tamanio 21
-[INFO] 16:30:50:141 MiRam/(30826:30846): ---------------------------------------
-[INFO] 16:30:50:141 MiRam/(30826:30847): tid 3  Comienza ejecución de tarea CONSUMIR_OXIGENO
-[WARNING] 16:30:50:141 MiRam/(30826:30846): el cliente se desconecto.
-[INFO] 16:30:54:143 MiRam/(30826:30847): tid 3  Se finaliza la tarea CONSUMIR_OXIGENO
-[INFO] 16:30:54:143 MiRam/(30826:30847): no hay mas tareas
-[INFO] 16:30:54:143 MiRam/(30826:30847): Se expulso segmento 4
-[INFO] 16:30:54:143 MiRam/(30826:30847): ---------  MEMORIA  --------------------
-[INFO] 16:30:54:143 MiRam/(30826:30847): base: 0, tam: 512, libre: true 
-[INFO] 16:30:54:143 MiRam/(30826:30847): ----------------------------------------
-[INFO] 16:30:54:143 MiRam/(30826:30847): Tabla de segmentos de patota ya no existe
-[WARNING] 16:30:54:143 MiRam/(30826:30847): el cliente se desconecto.
-[ERROR] 16:31:14:913 MiRam/(30826:30841): el discordiador finalizo el programa. Terminando servidor
-[INFO] 16:31:14:913 MiRam/(30826:30841): aaaaaaaaaa
-[INFO] 16:31:14:913 MiRam/(30826:30841): bbbbbbbb
-[INFO] 16:31:14:913 MiRam/(30826:30841): bbbbbbbb
-[INFO] 16:31:14:913 MiRam/(30826:30841): aaaaaaAAAAA
+[INFO] 23:17:36:823 MiRam/(5472:5487): espacio tareas todo ok
+[INFO] 23:17:36:823 MiRam/(5472:5487): ---------  MEMORIA  --------------------
+[INFO] 23:17:36:823 MiRam/(5472:5487): base: 0, tam: 8, libre: false 
+[INFO] 23:17:36:823 MiRam/(5472:5487): base: 8, tam: 100, libre: false 
+[INFO] 23:17:36:823 MiRam/(5472:5487): base: 108, tam: 21, libre: false 
+[INFO] 23:17:36:823 MiRam/(5472:5487): base: 129, tam: 21, libre: false 
+[INFO] 23:17:36:823 MiRam/(5472:5487): base: 150, tam: 21, libre: false 
+[INFO] 23:17:36:823 MiRam/(5472:5487): base: 171, tam: 21, libre: false 
+[INFO] 23:17:36:823 MiRam/(5472:5487): base: 192, tam: 64, libre: true 
+[INFO] 23:17:36:823 MiRam/(5472:5487): ----------------------------------------
+[INFO] 23:17:36:823 MiRam/(5472:5487): Tabla de segmentos correspondiente a patota 1
+[INFO] 23:17:36:823 MiRam/(5472:5487): Base 0   Tamanio 8
+[INFO] 23:17:36:823 MiRam/(5472:5487): Base 8   Tamanio 100
+[INFO] 23:17:36:823 MiRam/(5472:5487): Base 108   Tamanio 21
+[INFO] 23:17:36:823 MiRam/(5472:5487): Base 129   Tamanio 21
+[INFO] 23:17:36:823 MiRam/(5472:5487): Base 150   Tamanio 21
+[INFO] 23:17:36:823 MiRam/(5472:5487): Base 171   Tamanio 21
+[INFO] 23:17:36:823 MiRam/(5472:5487): ---------------------------------------
+[INFO] 23:17:36:823 MiRam/(5472:5487): Se asigno espacio de memoria a todo 
+
+[INFO] 23:17:41:431 MiRam/(5472:5487): 
+El numero de la patota recibida es 2
+[INFO] 23:17:41:431 MiRam/(5472:5487): ID 5 
+[INFO] 23:17:41:431 MiRam/(5472:5487): posicion x: 0 
+[INFO] 23:17:41:431 MiRam/(5472:5487): posicion y: 0 
+[INFO] 23:17:41:431 MiRam/(5472:5487): Status: N 
+[INFO] 23:17:41:431 MiRam/(5472:5487): n patota: 2 
+
+[INFO] 23:17:41:431 MiRam/(5472:5487): espacio tareas todo ok
+[INFO] 23:17:41:431 MiRam/(5472:5487): ---------  MEMORIA  --------------------
+[INFO] 23:17:41:431 MiRam/(5472:5487): base: 0, tam: 8, libre: false 
+[INFO] 23:17:41:431 MiRam/(5472:5487): base: 8, tam: 100, libre: false 
+[INFO] 23:17:41:431 MiRam/(5472:5487): base: 108, tam: 21, libre: false 
+[INFO] 23:17:41:431 MiRam/(5472:5487): base: 129, tam: 21, libre: false 
+[INFO] 23:17:41:432 MiRam/(5472:5487): base: 150, tam: 21, libre: false 
+[INFO] 23:17:41:432 MiRam/(5472:5487): base: 171, tam: 21, libre: false 
+[INFO] 23:17:41:432 MiRam/(5472:5487): base: 192, tam: 8, libre: false 
+[INFO] 23:17:41:432 MiRam/(5472:5487): base: 200, tam: 10, libre: false 
+[INFO] 23:17:41:432 MiRam/(5472:5487): base: 210, tam: 21, libre: false 
+[INFO] 23:17:41:432 MiRam/(5472:5487): base: 231, tam: 25, libre: true 
+[INFO] 23:17:41:432 MiRam/(5472:5487): ----------------------------------------
+[INFO] 23:17:41:432 MiRam/(5472:5487): Tabla de segmentos correspondiente a patota 2
+[INFO] 23:17:41:432 MiRam/(5472:5487): Base 192   Tamanio 8
+[INFO] 23:17:41:432 MiRam/(5472:5487): Base 200   Tamanio 10
+[INFO] 23:17:41:432 MiRam/(5472:5487): Base 210   Tamanio 21
+[INFO] 23:17:41:432 MiRam/(5472:5487): ---------------------------------------
+[INFO] 23:17:41:432 MiRam/(5472:5487): Se asigno espacio de memoria a todo 
+
+[INFO] 23:17:45:589 MiRam/(5472:5473): Estableciendo conexión desde 47760
+[INFO] 23:17:45:589 MiRam/(5472:5473): Creando hilo
+[INFO] 23:17:45:591 MiRam/(5472:5498): Se conecto este socket a mi 7
+[INFO] 23:17:45:592 MiRam/(5472:5473): Estableciendo conexión desde 48272
+[INFO] 23:17:45:592 MiRam/(5472:5473): Creando hilo
+[INFO] 23:17:45:592 MiRam/(5472:5498): tid 1  Se mueve de 0|0 a 1|0
+[INFO] 23:17:45:598 MiRam/(5472:5499): Se conecto este socket a mi 8
+[INFO] 23:17:45:599 MiRam/(5472:5473): Estableciendo conexión desde 48784
+[INFO] 23:17:45:599 MiRam/(5472:5473): Creando hilo
+[INFO] 23:17:45:599 MiRam/(5472:5499): tid 2  Se mueve de 0|0 a 1|0
+[INFO] 23:17:45:599 MiRam/(5472:5500): Se conecto este socket a mi 9
+[INFO] 23:17:45:600 MiRam/(5472:5473): Estableciendo conexión desde 49296
+[INFO] 23:17:45:600 MiRam/(5472:5473): Creando hilo
+[INFO] 23:17:45:600 MiRam/(5472:5501): Se conecto este socket a mi 10
+[INFO] 23:17:45:601 MiRam/(5472:5473): Estableciendo conexión desde 49808
+[INFO] 23:17:45:601 MiRam/(5472:5473): Creando hilo
+[INFO] 23:17:45:606 MiRam/(5472:5502): Se conecto este socket a mi 11
+[INFO] 23:17:47:594 MiRam/(5472:5498): tid 1  Se mueve de 1|0 a 1|1
+[INFO] 23:17:47:600 MiRam/(5472:5499): tid 2  Se mueve de 1|0 a 1|1
+[INFO] 23:17:49:594 MiRam/(5472:5498): tid 1  Comienza ejecución de tarea A00
+[INFO] 23:17:49:601 MiRam/(5472:5499): tid 2  Comienza ejecución de tarea A00
+[INFO] 23:17:51:597 MiRam/(5472:5500): tid 3  Se mueve de 0|0 a 1|0
+[INFO] 23:17:51:602 MiRam/(5472:5501): tid 4  Se mueve de 0|0 a 1|0
+[INFO] 23:17:53:598 MiRam/(5472:5500): tid 3  Se mueve de 1|0 a 1|1
+[INFO] 23:17:53:603 MiRam/(5472:5501): tid 4  Se mueve de 1|0 a 1|1
+[INFO] 23:17:55:599 MiRam/(5472:5500): tid 3  Comienza ejecución de tarea A00
+[INFO] 23:17:55:603 MiRam/(5472:5501): tid 4  Comienza ejecución de tarea A00
+[INFO] 23:17:57:600 MiRam/(5472:5502): tid 5  Se mueve de 0|0 a 1|0
+[INFO] 23:17:59:601 MiRam/(5472:5502): tid 5  Se mueve de 1|0 a 1|1
+[INFO] 23:18:01:603 MiRam/(5472:5502): tid 5  Comienza ejecución de tarea C00
+[INFO] 23:18:03:604 MiRam/(5472:5502): tid 5  Se finaliza la tarea C00
+[INFO] 23:18:03:605 MiRam/(5472:5502): no hay mas tareas
+[INFO] 23:18:03:605 MiRam/(5472:5502): Se expulso segmento 2
+[INFO] 23:18:03:605 MiRam/(5472:5502): ---------  MEMORIA  --------------------
+[INFO] 23:18:03:605 MiRam/(5472:5502): base: 0, tam: 8, libre: false 
+[INFO] 23:18:03:605 MiRam/(5472:5502): base: 8, tam: 100, libre: false 
+[INFO] 23:18:03:605 MiRam/(5472:5502): base: 108, tam: 21, libre: false 
+[INFO] 23:18:03:605 MiRam/(5472:5502): base: 129, tam: 21, libre: false 
+[INFO] 23:18:03:605 MiRam/(5472:5502): base: 150, tam: 21, libre: false 
+[INFO] 23:18:03:605 MiRam/(5472:5502): base: 171, tam: 21, libre: false 
+[INFO] 23:18:03:605 MiRam/(5472:5502): base: 192, tam: 8, libre: true 
+[INFO] 23:18:03:605 MiRam/(5472:5502): base: 200, tam: 10, libre: true 
+[INFO] 23:18:03:605 MiRam/(5472:5502): base: 210, tam: 21, libre: true 
+[INFO] 23:18:03:605 MiRam/(5472:5502): base: 231, tam: 25, libre: true 
+[INFO] 23:18:03:605 MiRam/(5472:5502): ----------------------------------------
+[INFO] 23:18:03:605 MiRam/(5472:5502): Tabla de segmentos de patota ya no existe
+[WARNING] 23:18:03:606 MiRam/(5472:5502): el cliente se desconecto.
+[WARNING] 23:18:06:828 MiRam/(5472:5498): el cliente se desconecto.
+[INFO] 23:18:06:828 MiRam/(5472:5487): tid 1  pid 1
+[INFO] 23:18:06:828 MiRam/(5472:5487): Se expulso segmento 2
+[INFO] 23:18:06:828 MiRam/(5472:5487): ---------  MEMORIA  --------------------
+[INFO] 23:18:06:828 MiRam/(5472:5487): base: 0, tam: 8, libre: false 
+[INFO] 23:18:06:828 MiRam/(5472:5487): base: 8, tam: 100, libre: false 
+[INFO] 23:18:06:828 MiRam/(5472:5487): base: 108, tam: 21, libre: true 
+[INFO] 23:18:06:828 MiRam/(5472:5487): base: 129, tam: 21, libre: false 
+[INFO] 23:18:06:828 MiRam/(5472:5487): base: 150, tam: 21, libre: false 
+[INFO] 23:18:06:828 MiRam/(5472:5487): base: 171, tam: 21, libre: false 
+[INFO] 23:18:06:828 MiRam/(5472:5487): base: 192, tam: 8, libre: true 
+[INFO] 23:18:06:828 MiRam/(5472:5487): base: 200, tam: 10, libre: true 
+[INFO] 23:18:06:828 MiRam/(5472:5487): base: 210, tam: 21, libre: true 
+[INFO] 23:18:06:828 MiRam/(5472:5487): base: 231, tam: 25, libre: true 
+[INFO] 23:18:06:828 MiRam/(5472:5487): ----------------------------------------
+[INFO] 23:18:06:828 MiRam/(5472:5487): Tabla de segmentos correspondiente a patota 1
+[INFO] 23:18:06:828 MiRam/(5472:5487): Base 0   Tamanio 8
+[INFO] 23:18:06:828 MiRam/(5472:5487): Base 8   Tamanio 100
+[INFO] 23:18:06:828 MiRam/(5472:5487): Base 129   Tamanio 21
+[INFO] 23:18:06:828 MiRam/(5472:5487): Base 150   Tamanio 21
+[INFO] 23:18:06:828 MiRam/(5472:5487): Base 171   Tamanio 21
+[INFO] 23:18:06:828 MiRam/(5472:5487): ---------------------------------------
+[INFO] 23:18:11:608 MiRam/(5472:5499): tid 2  Se finaliza la tarea A00
+[INFO] 23:18:11:609 MiRam/(5472:5499): tid 2  Comienza ejecución de tarea A01
+[WARNING] 23:18:11:804 MiRam/(5472:5500): el cliente se desconecto.
+[INFO] 23:18:11:804 MiRam/(5472:5487): tid 3  pid 3
+[INFO] 23:18:11:804 MiRam/(5472:5487): Se expulso segmento 4
+[INFO] 23:18:11:804 MiRam/(5472:5487): ---------  MEMORIA  --------------------
+[INFO] 23:18:11:804 MiRam/(5472:5487): base: 0, tam: 8, libre: false 
+[INFO] 23:18:11:804 MiRam/(5472:5487): base: 8, tam: 100, libre: false 
+[INFO] 23:18:11:804 MiRam/(5472:5487): base: 108, tam: 21, libre: true 
+[INFO] 23:18:11:804 MiRam/(5472:5487): base: 129, tam: 21, libre: false 
+[INFO] 23:18:11:804 MiRam/(5472:5487): base: 150, tam: 21, libre: true 
+[INFO] 23:18:11:804 MiRam/(5472:5487): base: 171, tam: 21, libre: false 
+[INFO] 23:18:11:804 MiRam/(5472:5487): base: 192, tam: 8, libre: true 
+[INFO] 23:18:11:804 MiRam/(5472:5487): base: 200, tam: 10, libre: true 
+[INFO] 23:18:11:804 MiRam/(5472:5487): base: 210, tam: 21, libre: true 
+[INFO] 23:18:11:804 MiRam/(5472:5487): base: 231, tam: 25, libre: true 
+[INFO] 23:18:11:804 MiRam/(5472:5487): ----------------------------------------
+[INFO] 23:18:11:804 MiRam/(5472:5487): Tabla de segmentos correspondiente a patota 1
+[INFO] 23:18:11:804 MiRam/(5472:5487): Base 0   Tamanio 8
+[INFO] 23:18:11:804 MiRam/(5472:5487): Base 8   Tamanio 100
+[INFO] 23:18:11:804 MiRam/(5472:5487): Base 129   Tamanio 21
+[INFO] 23:18:11:804 MiRam/(5472:5487): Base 171   Tamanio 21
+[INFO] 23:18:11:804 MiRam/(5472:5487): ---------------------------------------
+[INFO] 23:18:16:666 MiRam/(5472:5487): 
+El numero de la patota recibida es 3
+[INFO] 23:18:16:666 MiRam/(5472:5487): ID 6 
+[INFO] 23:18:16:666 MiRam/(5472:5487): posicion x: 0 
+[INFO] 23:18:16:666 MiRam/(5472:5487): posicion y: 0 
+[INFO] 23:18:16:666 MiRam/(5472:5487): Status: N 
+[INFO] 23:18:16:666 MiRam/(5472:5487): n patota: 3 
+
+[INFO] 23:18:16:666 MiRam/(5472:5487): ID 7 
+[INFO] 23:18:16:666 MiRam/(5472:5487): posicion x: 0 
+[INFO] 23:18:16:666 MiRam/(5472:5487): posicion y: 0 
+[INFO] 23:18:16:666 MiRam/(5472:5487): Status: N 
+[INFO] 23:18:16:666 MiRam/(5472:5487): n patota: 3 
+
+[WARNING] 23:18:16:666 MiRam/(5472:5487): No hay espacios de memoria libres
+[INFO] 23:18:16:666 MiRam/(5472:5487): No hay espacio libre de memoria. Hacemos Compactacion
+[INFO] 23:18:16:666 MiRam/(5472:5487): Empieza compactacion
+[INFO] 23:18:16:666 MiRam/(5472:5487): espacio libre econtrado 116
+[INFO] 23:18:16:666 MiRam/(5472:5487): qqqqqqqqqqqqq
+[INFO] 23:18:16:666 MiRam/(5472:5487): espacio libre econtrado 137
+[INFO] 23:18:16:666 MiRam/(5472:5487): qqqqqqqqqqqqq
+[INFO] 23:18:16:666 MiRam/(5472:5487): ---------  MEMORIA  --------------------
+[INFO] 23:18:16:666 MiRam/(5472:5487): base: 0, tam: 8, libre: false 
+[INFO] 23:18:16:666 MiRam/(5472:5487): base: 8, tam: 100, libre: false 
+[INFO] 23:18:16:666 MiRam/(5472:5487): base: 108, tam: 8, libre: false 
+[INFO] 23:18:16:666 MiRam/(5472:5487): base: 116, tam: 21, libre: false 
+[INFO] 23:18:16:666 MiRam/(5472:5487): base: 137, tam: 21, libre: false 
+[INFO] 23:18:16:666 MiRam/(5472:5487): base: 158, tam: 98, libre: true 
+[INFO] 23:18:16:666 MiRam/(5472:5487): ----------------------------------------
+[INFO] 23:18:16:666 MiRam/(5472:5487): Termina compactacion
+[INFO] 23:18:16:666 MiRam/(5472:5487): espacio tareas todo ok
+[INFO] 23:18:16:667 MiRam/(5472:5487): ---------  MEMORIA  --------------------
+[INFO] 23:18:16:667 MiRam/(5472:5487): base: 0, tam: 8, libre: false 
+[INFO] 23:18:16:667 MiRam/(5472:5487): base: 8, tam: 100, libre: false 
+[INFO] 23:18:16:667 MiRam/(5472:5487): base: 108, tam: 8, libre: false 
+[INFO] 23:18:16:667 MiRam/(5472:5487): base: 116, tam: 21, libre: false 
+[INFO] 23:18:16:667 MiRam/(5472:5487): base: 137, tam: 21, libre: false 
+[INFO] 23:18:16:667 MiRam/(5472:5487): base: 158, tam: 30, libre: false 
+[INFO] 23:18:16:667 MiRam/(5472:5487): base: 188, tam: 21, libre: false 
+[INFO] 23:18:16:667 MiRam/(5472:5487): base: 209, tam: 21, libre: false 
+[INFO] 23:18:16:667 MiRam/(5472:5487): base: 230, tam: 26, libre: true 
+[INFO] 23:18:16:667 MiRam/(5472:5487): ----------------------------------------
+[INFO] 23:18:16:667 MiRam/(5472:5487): Tabla de segmentos correspondiente a patota 3
+[INFO] 23:18:16:667 MiRam/(5472:5487): Base 108   Tamanio 8
+[INFO] 23:18:16:667 MiRam/(5472:5487): Base 158   Tamanio 30
+[INFO] 23:18:16:667 MiRam/(5472:5487): Base 188   Tamanio 21
+[INFO] 23:18:16:667 MiRam/(5472:5487): Base 209   Tamanio 21
+[INFO] 23:18:16:667 MiRam/(5472:5487): ---------------------------------------
+[INFO] 23:18:16:667 MiRam/(5472:5487): Se asigno espacio de memoria a todo 
+
+[INFO] 23:18:16:674 MiRam/(5472:5473): Estableciendo conexión desde 50320
+[INFO] 23:18:16:674 MiRam/(5472:5473): Creando hilo
+[INFO] 23:18:16:674 MiRam/(5472:5505): Se conecto este socket a mi 12
+[INFO] 23:18:16:675 MiRam/(5472:5473): Estableciendo conexión desde 50832
+[INFO] 23:18:16:675 MiRam/(5472:5473): Creando hilo
+[INFO] 23:18:16:675 MiRam/(5472:5506): Se conecto este socket a mi 7
+[INFO] 23:18:17:618 MiRam/(5472:5501): tid 4  Se finaliza la tarea A00
+[INFO] 23:18:17:619 MiRam/(5472:5501): tid 4  Comienza ejecución de tarea A01
+[INFO] 23:18:21:619 MiRam/(5472:5499): tid 2  Se finaliza la tarea A01
+[INFO] 23:18:21:624 MiRam/(5472:5505): tid 6  Se mueve de 0|0 a 1|0
+[INFO] 23:18:21:624 MiRam/(5472:5506): tid 7  Se mueve de 0|0 a 1|0
+[INFO] 23:18:23:625 MiRam/(5472:5505): tid 6  Se mueve de 1|0 a 1|1
+[INFO] 23:18:23:625 MiRam/(5472:5506): tid 7  Se mueve de 1|0 a 1|1
+[INFO] 23:18:25:626 MiRam/(5472:5505): tid 6  Se mueve de 1|1 a 2|1
+[INFO] 23:18:25:626 MiRam/(5472:5506): tid 7  Se mueve de 1|1 a 2|1
+[INFO] 23:18:27:627 MiRam/(5472:5499): tid 2  Comienza ejecución de tarea A02
+[INFO] 23:18:33:630 MiRam/(5472:5501): tid 4  Se finaliza la tarea A01
+[INFO] 23:18:33:631 MiRam/(5472:5505): tid 6  Se mueve de 2|1 a 2|2
+[INFO] 23:18:33:632 MiRam/(5472:5506): tid 7  Se mueve de 2|1 a 2|2
+[INFO] 23:18:35:632 MiRam/(5472:5505): tid 6  Se mueve de 2|2 a 3|2
+[INFO] 23:18:35:632 MiRam/(5472:5506): tid 7  Se mueve de 2|2 a 3|2
+[INFO] 23:18:37:635 MiRam/(5472:5506): tid 7  Se mueve de 3|2 a 3|3
+[INFO] 23:18:37:635 MiRam/(5472:5505): tid 6  Se mueve de 3|2 a 3|3
+[INFO] 23:18:39:639 MiRam/(5472:5501): tid 4  Comienza ejecución de tarea A02
+[INFO] 23:18:43:640 MiRam/(5472:5499): tid 2  Se finaliza la tarea A02
+[INFO] 23:18:43:641 MiRam/(5472:5499): tid 2  Comienza ejecución de tarea A03
+[INFO] 23:18:45:642 MiRam/(5472:5506): tid 7  Comienza ejecución de tarea B00
+[INFO] 23:18:45:642 MiRam/(5472:5505): tid 6  Comienza ejecución de tarea B00
+[INFO] 23:18:55:646 MiRam/(5472:5501): tid 4  Se finaliza la tarea A02
+[INFO] 23:18:55:647 MiRam/(5472:5501): tid 4  Comienza ejecución de tarea A03
+[INFO] 23:19:01:649 MiRam/(5472:5506): tid 7  Se finaliza la tarea B00
+[INFO] 23:19:01:649 MiRam/(5472:5505): tid 6  Se finaliza la tarea B00
+[INFO] 23:19:01:649 MiRam/(5472:5505): tid 6  Comienza ejecución de tarea B01
+[INFO] 23:19:01:650 MiRam/(5472:5506): tid 7  Comienza ejecución de tarea B01
+[INFO] 23:19:05:651 MiRam/(5472:5499): tid 2  Se finaliza la tarea A03
+[INFO] 23:19:05:652 MiRam/(5472:5499): tid 2  Comienza ejecución de tarea A04
+[INFO] 23:19:17:657 MiRam/(5472:5501): tid 4  Se finaliza la tarea A03
+[INFO] 23:19:17:658 MiRam/(5472:5501): tid 4  Comienza ejecución de tarea A04
+[INFO] 23:19:21:659 MiRam/(5472:5499): tid 2  Se finaliza la tarea A04
+[INFO] 23:19:23:660 MiRam/(5472:5505): tid 6  Se finaliza la tarea B01
+[INFO] 23:19:23:660 MiRam/(5472:5506): tid 7  Se finaliza la tarea B01
+[INFO] 23:19:23:661 MiRam/(5472:5506): tid 7  Comienza ejecución de tarea B02
+[INFO] 23:19:23:661 MiRam/(5472:5505): tid 6  Comienza ejecución de tarea B02
+[INFO] 23:19:27:663 MiRam/(5472:5499): tid 2  Comienza ejecución de tarea A05
+[INFO] 23:19:33:664 MiRam/(5472:5501): tid 4  Se finaliza la tarea A04
+[INFO] 23:19:39:666 MiRam/(5472:5506): tid 7  Se finaliza la tarea B02
+[INFO] 23:19:39:666 MiRam/(5472:5505): tid 6  Se finaliza la tarea B02
+[INFO] 23:19:39:666 MiRam/(5472:5505): no hay mas tareas
+[INFO] 23:19:39:666 MiRam/(5472:5505): Se expulso segmento 2
+[INFO] 23:19:39:666 MiRam/(5472:5505): ---------  MEMORIA  --------------------
+[INFO] 23:19:39:666 MiRam/(5472:5505): base: 0, tam: 8, libre: false 
+[INFO] 23:19:39:666 MiRam/(5472:5505): base: 8, tam: 100, libre: false 
+[INFO] 23:19:39:666 MiRam/(5472:5505): base: 108, tam: 8, libre: false 
+[INFO] 23:19:39:666 MiRam/(5472:5505): base: 116, tam: 21, libre: false 
+[INFO] 23:19:39:666 MiRam/(5472:5505): base: 137, tam: 21, libre: false 
+[INFO] 23:19:39:666 MiRam/(5472:5505): base: 158, tam: 30, libre: false 
+[INFO] 23:19:39:666 MiRam/(5472:5505): base: 188, tam: 21, libre: true 
+[INFO] 23:19:39:666 MiRam/(5472:5505): base: 209, tam: 21, libre: false 
+[INFO] 23:19:39:666 MiRam/(5472:5505): base: 230, tam: 26, libre: true 
+[INFO] 23:19:39:666 MiRam/(5472:5505): ----------------------------------------
+[INFO] 23:19:39:666 MiRam/(5472:5505): Tabla de segmentos correspondiente a patota 3
+[INFO] 23:19:39:666 MiRam/(5472:5505): Base 108   Tamanio 8
+[INFO] 23:19:39:667 MiRam/(5472:5505): Base 158   Tamanio 30
+[INFO] 23:19:39:667 MiRam/(5472:5505): Base 209   Tamanio 21
+[INFO] 23:19:39:667 MiRam/(5472:5505): ---------------------------------------
+[INFO] 23:19:39:667 MiRam/(5472:5506): no hay mas tareas
+[INFO] 23:19:39:667 MiRam/(5472:5506): Se expulso segmento 3
+[INFO] 23:19:39:667 MiRam/(5472:5506): ---------  MEMORIA  --------------------
+[INFO] 23:19:39:667 MiRam/(5472:5506): base: 0, tam: 8, libre: false 
+[INFO] 23:19:39:667 MiRam/(5472:5506): base: 8, tam: 100, libre: false 
+[INFO] 23:19:39:667 MiRam/(5472:5506): base: 108, tam: 8, libre: true 
+[INFO] 23:19:39:667 MiRam/(5472:5506): base: 116, tam: 21, libre: false 
+[INFO] 23:19:39:667 MiRam/(5472:5506): base: 137, tam: 21, libre: false 
+[INFO] 23:19:39:667 MiRam/(5472:5506): base: 158, tam: 30, libre: true 
+[INFO] 23:19:39:667 MiRam/(5472:5506): base: 188, tam: 21, libre: true 
+[INFO] 23:19:39:667 MiRam/(5472:5506): base: 209, tam: 21, libre: true 
+[INFO] 23:19:39:667 MiRam/(5472:5506): base: 230, tam: 26, libre: true 
+[INFO] 23:19:39:667 MiRam/(5472:5506): ----------------------------------------
+[INFO] 23:19:39:667 MiRam/(5472:5506): Tabla de segmentos de patota ya no existe
+[INFO] 23:19:39:667 MiRam/(5472:5501): tid 4  Comienza ejecución de tarea A05
+[WARNING] 23:19:39:668 MiRam/(5472:5505): el cliente se desconecto.
+[WARNING] 23:19:39:668 MiRam/(5472:5506): el cliente se desconecto.
