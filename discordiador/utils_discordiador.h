@@ -47,14 +47,37 @@ typedef enum
 	INFORMAR_MOVIMIENTO,
 	NO_HAY_NADA_PARA_LISTAR,
 	INFORMAR_BITACORA,
-	INFORMAR_BITACORA_MOVIMIENTO
+	TAREA_MONGO,
+	FSCK,
+	SALIR_MONGO,
+	SABOTAJE
 }tipoMensaje;
 
+typedef enum
+{
+	INICIO_TAREA,
+	FIN_TAREA,
+	CORRER_A_SABOTAJE,
+	RESOLVER_SABOTAJE
+}mensaje_bitacora;
 
+typedef enum
+{
+	OXIGENO,
+	COMIDA,
+	BASURA
+} recurso_code;
+
+typedef enum
+{
+	GENERAR,
+	CONSUMIR,
+	DESCARTAR
+} accion_code;
 
 typedef struct
 {
-	int size;
+	uint32_t size;//tendria q ser uint32
 	void* stream;
 } t_buffer;
 
@@ -99,6 +122,25 @@ typedef enum{
 	B	// BREAK interrumpido
 }estado;
 */
+
+typedef enum
+{
+	GENERAR_OXIGENO,
+	CONSUMIR_OXIGENO,
+	GENERAR_COMIDA,
+	CONSUMIR_COMIDA,
+	GENERAR_BASURA,
+	DESCARTAR_BASURA,
+}tarea_tripulante;
+
+typedef struct{
+	char* tarea;
+	uint32_t parametro;
+	int pos_x;
+	int pos_y;
+	int tiempo;
+}tarea;
+
 typedef struct{
 	uint32_t pid;  // ID PATOTA
 	uint32_t tareas; // DIR. LOGICA INCIO DE TAREAS
@@ -114,27 +156,12 @@ typedef struct{
 	sem_t semaforo_tripulante;
 	int socket_miram;
 	int socket_mongo;
+	tarea* tarea_posta;
+	bool fui_expulsado;
+	int cant_tripus_patota;
 }tcbTripulante;
 
 // fin estructuras tripulantes
-
-typedef enum
-{
-	GENERAR_OXIGENO,
-	CONSUMIR_OXIGENO,
-	GENERAR_COMIDA,
-	CONSUMIR_COMIDA,
-	GENERAR_BASURA,
-	DESCARTAR_BASURA,
-}tarea_tripulante;
-
-typedef struct{
-	char* tarea;
-	int parametro;
-	int pos_x;
-	int pos_y;
-	int tiempo;
-}tarea;
 
 
 /*FINALIZACION DE ESCTRUCTURAS PARA DISCORDIADOR*/
@@ -142,32 +169,35 @@ typedef struct{
 void leer_config();
 int crear_conexion(char* ip, char* puerto);
 t_paquete* crear_paquete(tipoMensaje tipo);
-void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
+//void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
+void agregar_a_paquete(t_paquete* paquete, void* valor, uint32_t tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 char* recibir_mensaje(int socket_cliente);
 
 int menu_discordiador(int , int, t_log* );
-tcbTripulante* crear_tripulante(uint32_t, char, uint32_t, uint32_t, uint32_t, uint32_t);
-pcbPatota* crear_patota(uint32_t , uint32_t);
+tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, uint32_t posicionY, uint32_t puntero_pcb, int cantidad_tripulantes);
+//pcbPatota* crear_patota(uint32_t , uint32_t);
 int codigoOperacion (const char*);
 void enviar_header(tipoMensaje tipo, int socket_cliente);
 
 void remover_tripulante_de_lista(tcbTripulante* tripulante, t_list* lista);
 
 //TAREAS
-char* imprimirTarea(tarea*);
+//char* imprimirTarea(tarea*);
 tarea_tripulante codigoTarea(char*);
-void leer_tareas(char* archTarea, char* *tareas);
+//void leer_tareas(char* archTarea, char* *tareas);
 //tarea* crear_tarea(tarea_tripulante,int,int,int,int);
-tarea* crear_tarea(char*,int,int,int,int);
+//tarea* crear_tarea(char*,int,int,int,int);
 tcbTripulante* hacer_tarea(tcbTripulante*,tarea*);
-void ejecutar_tarea(tarea_tripulante,int);
+//void ejecutar_tarea(tarea_tripulante,int);
 tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante);
 
 char* leer_tareas_archivo(char* archTarea);
 tarea* transformar_char_tarea(char* char_tarea);
+
+void termina_quantum(int* quantums_ejecutados, tcbTripulante* tripulante);
 
 void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado);
 void informar_movimiento(int conexion_miram, tcbTripulante* tripulante);
@@ -177,8 +207,10 @@ void informar_movimiento_mongo_X (tcbTripulante* tripulante, int x_viejo);
 void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo);
 void informar_atencion_sabotaje(tcbTripulante* tripulante);
 void informar_sabotaje_resuelto(tcbTripulante* tripulante);
+void mongo_tarea(tcbTripulante* tripu);
 
 void planificacion_pausada_o_no();
+void planificacion_pausada_o_no_exec(tcbTripulante* tripulante, int* quantums_ejecutados);
 
 /*Calcular el tamaño de las diferentes estructuras o paquetes a enviar*/
 size_t tamanio_tcb(tcbTripulante*);
@@ -199,7 +231,7 @@ void leer_config();
  * Pre: Recibo el tipo de mensaje y la conexion de donde lo recibo
  * Post: Muestro por pantalla la informacion dada de la lista de los tripulantes
  * */
-t_list* recibir_lista_tripulantes(int , int, t_log*);
+//t_list* recibir_lista_tripulantes(int , int, t_log*);
 
 /*
  * Pre: Recibo un logger
@@ -207,6 +239,10 @@ t_list* recibir_lista_tripulantes(int , int, t_log*);
  * */
 
 void mensajeError (t_log* logger);
+
+void limpiar_array(char** array);
+
+void liberar_memoria_tripu(tcbTripulante* tripu);
 /*FINALIZACION*/
 
 

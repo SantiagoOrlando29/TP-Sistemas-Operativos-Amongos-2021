@@ -10,6 +10,12 @@ t_recurso_data lista_recursos[] = {
 	{"BASURA", 'B', "Basura.ims", NULL, NULL}
 };
 
+int variable_servidor = -1;
+int socket_servidor;
+int cant_sabotaje = 0;
+int primer_hilo = 0;
+int socket_primer_hilo = 0;
+
 //TODO BITACORA, SIGNAL (LINKEADO A mandar_primer_ubicacion_sabotaje)
 
 //TODO EN DESARROLLO FSCK (AL FONDO Y A LA DERECHA DE ESTE ARCHIVO) Y CONSUMIR_RECURSO (NO TERMINADO 2)
@@ -1436,7 +1442,277 @@ void superbloque_cargar_archivo()
 	log_debug(logger, "O-Archivo SuperBloque.ims cargado");
 }
 
+t_list* recibir_paquete(int socket_cliente)
+{
+	uint32_t size;
+	uint32_t desplazamiento = 0;
+	void * buffer;
+	t_list* valores = list_create();
+	uint32_t tamanio;
+
+	buffer = recibir_buffer(&size, socket_cliente);
+	while(desplazamiento < size)
+	{
+		memcpy(&tamanio, buffer + desplazamiento, sizeof(int));
+		desplazamiento+=sizeof(int);
+		char* valor = malloc(tamanio);
+		memcpy(valor, buffer+desplazamiento, tamanio);
+		desplazamiento+=tamanio;
+		list_add(valores, valor);
+	}
+	free(buffer);
+	return valores;
+	return NULL;
+}
+
+void* recibir_buffer(uint32_t* size, int socket_cliente)
+{
+	void * buffer;
+
+	recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL);
+	buffer = malloc(*size);
+	recv(socket_cliente, buffer, *size, MSG_WAITALL);
+
+	return buffer;
+}
+
+void destruir_lista_paquete(char* contenido){
+	free(contenido);
+}
+
+void enviar_mensaje(char* mensaje, int socket_cliente)
+{
+	t_paquete* paquete = malloc(sizeof(t_paquete));
+
+	paquete->buffer = malloc(sizeof(t_buffer));
+	paquete->buffer->size = strlen(mensaje) + 1;
+	paquete->buffer->stream = malloc(paquete->buffer->size);
+	memcpy(paquete->buffer->stream, mensaje, paquete->buffer->size);
+
+	int bytes = paquete->buffer->size + sizeof(uint32_t);
+
+	void* a_enviar = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(a_enviar + desplazamiento, &(paquete->buffer->size), sizeof(uint32_t));
+	desplazamiento+= sizeof(uint32_t);
+	memcpy(a_enviar + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
+
+	send(socket_cliente, a_enviar, bytes, 0);
+
+	free(a_enviar);
+	eliminar_paquete(paquete);
+}
+
+void eliminar_paquete(t_paquete* paquete)
+{
+	free(paquete->buffer->stream);
+	free(paquete->buffer);
+	free(paquete);
+}
+
+int recibir_operacion(int socket_cliente)
+{
+    int cod_op;
+    if(recv(socket_cliente, &cod_op, sizeof(uint32_t), MSG_WAITALL) !=0 ){
+        //log_info(logger, "cod_op %d",cod_op);
+        return cod_op;
+    }
+    else{
+        close(socket_cliente);
+        return -1;
+    }
+}
+
+void iniciar_servidor(t_configuracion* config_servidor)
+{
+
+	log_info(logger, "Servidor iniciando");
+
+	//int socket_servidor;
+
+    struct addrinfo hints, *servinfo, *p;
+
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_family = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_flags = AI_PASSIVE;
+
+    getaddrinfo(configuracion.ip, configuracion.puerto, &hints, &servinfo);
+
+    for (p=servinfo; p != NULL; p = p->ai_next)
+    {
+        if ((socket_servidor = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1)
+            continue;
+
+        int activado = 1;
+        setsockopt(socket_servidor, SOL_SOCKET, SO_REUSEADDR, &activado, sizeof(activado)); //para que si se cierra sin el close no haya que esperar
+
+        if (bind(socket_servidor, p->ai_addr, p->ai_addrlen) == -1) {
+            close(socket_servidor);
+            continue;
+        }
+        break;
+    }
+
+	listen(socket_servidor, SOMAXCONN);
+
+	freeaddrinfo(servinfo);
+
+	log_info(logger, "Servidor MiRam encendido");
+
+
+	struct sockaddr_in dir_cliente;
+	int tam_direccion = sizeof(struct sockaddr_in);
+	int socket_cliente = 0;
 
 
 
+	int hilo;
+	while(variable_servidor != 0){
+
+		socket_cliente = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
+
+		if(primer_hilo == 0){
+			socket_primer_hilo = socket_cliente;
+			primer_hilo = 1;
+		}
+
+		if(socket_cliente>0){
+			hilo ++ ;
+			log_info(logger, "Estableciendo conexión desde %d", dir_cliente.sin_port);
+			log_info(logger, "Creando hilo");
+
+			pthread_t hilo_cliente=(char)hilo;
+			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente,(void*)socket_cliente);
+			pthread_detach(hilo_cliente);
+
+		}
+	}
+	//printf("me fui");
+
+	//log_destroy(logger);
+
+}
+
+void funcion_cliente(int socket_cliente)
+{
+
+
+	int tipoMensajeRecibido = -1;
+	log_info(logger, "Se conecto este socket a mi %d",socket_cliente);
+	//printf("Elegi un tipo de operacion (0 para una tarea, 1 para cargar una bitacora, 2 para iniciar el fsck, 3 para salir)\n");
+	//scanf("%d", &operacion);
+	int tripulante_id;
+	t_list* lista;
+
+
+	while(1)
+	{
+		tipoMensajeRecibido = recibir_operacion(socket_cliente);
+
+		switch(tipoMensajeRecibido)
+		{
+			case REALIZAR_TAREA:
+				//recurso_realizar_tarea();
+				lista = recibir_paquete(socket_cliente);
+				char* nombre_tarea = list_get(lista,0);
+				int parametro = (int)atoi(list_get(lista,1));
+
+				log_info(logger, "tarea %s  param %d", nombre_tarea, parametro);
+
+				if(strcmp(nombre_tarea, "GENERAR_OXIGENO") == 0){
+
+				}else if(strcmp(nombre_tarea, "CONSUMIR_OXIGENO") == 0){
+
+				}else if(strcmp(nombre_tarea, "GENERAR_COMIDA") == 0){
+
+				}else if(strcmp(nombre_tarea, "CONSUMIR_COMIDA") == 0){
+
+				}else if(strcmp(nombre_tarea, "GENERAR_BASURA") == 0){
+
+				}else if(strcmp(nombre_tarea, "DESCARTAR_BASURA") == 0){
+
+				}else{
+					log_debug(logger, "se recibio una tarea distinta a las 6 de E/S");
+				}
+
+				char* mensaje2 = "ok";
+				enviar_mensaje(mensaje2, socket_cliente);
+
+				list_clean_and_destroy_elements(lista, (void*)destruir_lista_paquete);
+				list_destroy(lista);
+
+				break;
+
+
+			case CARGAR_BITACORA:; //PARA PROBAR LO DE MONGO
+				lista = recibir_paquete(socket_cliente);
+				tripulante_id = (int)atoi(list_get(lista,0));
+				char* mens = list_get(lista,1);
+				if(list_size(lista) == 3){
+					char* mens2 = list_get(lista,2);
+					//strcat(mens, mens2);
+					log_info(logger, "tid %d  %s%s",tripulante_id, mens, mens2);
+				}else{
+					log_info(logger, "tid %d  %s",tripulante_id, mens);
+				}
+
+				char* mensaje = "ok";
+				enviar_mensaje(mensaje, socket_cliente);
+
+				list_clean_and_destroy_elements(lista, (void*)destruir_lista_paquete);
+				list_destroy(lista);
+				break;
+
+			case INICIAR_FSCK:
+				log_info(logger, "En fsck");
+				char* mensaje3 = "ok";
+				enviar_mensaje(mensaje3, socket_cliente);
+
+				break;
+
+			case SALIR:
+				printf("Gracias, vuelva prontos\n");
+				break;
+			default:
+				printf("A esa operacion no la tengo, proba con otra\n");
+		}
+	}
+
+}
+
+void enviar_header(op_code tipo, int socket_cliente)
+{
+    t_paquete* paquete = malloc(sizeof(t_paquete));
+    paquete->mensajeOperacion = tipo;
+
+    void * magic = malloc(sizeof(paquete->mensajeOperacion));
+    memcpy(magic, &(paquete->mensajeOperacion), sizeof(uint32_t));
+
+    send(socket_cliente, magic, sizeof(paquete->mensajeOperacion), 0);
+
+    free(magic);
+}
+
+
+void sig_handler(int signum){
+    if(signum == SIGUSR1){
+        log_info(logger, "SIGUSR1\n");
+        notificar_sabotaje();
+    }
+}
+
+void notificar_sabotaje(){
+
+	enviar_header(SABOTAJE, socket_primer_hilo);
+
+	char* mensaje4 = configuracion.posiciones_sabotaje[cant_sabotaje];
+		/*for(int i = 0; configuracion.posiciones_sabotaje[i]!=NULL;i++){
+			log_info(logger, "Posicion %s", configuracion.posiciones_sabotaje[i]); //Para ver las posiciones nomas
+		}*/
+		enviar_mensaje(mensaje4, socket_primer_hilo);
+		cant_sabotaje++;
+
+}
 

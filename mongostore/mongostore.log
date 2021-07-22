@@ -1,0 +1,336 @@
+[DEBUG] 20:30:28:246 mongostore/(13539:13539): LOGGER OK
+[INFO] 20:30:28:254 mongostore/(13539:13539): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 20:30:28:254 mongostore/(13539:13539): Testeo config, la IP es: 127.0.0.1
+[INFO] 20:30:28:256 mongostore/(13539:13539): pid 13539  
+
+[INFO] 20:30:28:266 mongostore/(13539:13544): Servidor iniciando
+[INFO] 20:30:28:267 mongostore/(13539:13544): Servidor MiRam encendido
+[DEBUG] 20:30:52:896 mongostore/(13605:13605): LOGGER OK
+[INFO] 20:30:52:896 mongostore/(13605:13605): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 20:30:52:896 mongostore/(13605:13605): Testeo config, la IP es: 127.0.0.1
+[INFO] 20:30:52:897 mongostore/(13605:13605): pid 13605  
+
+[INFO] 20:30:52:902 mongostore/(13605:13615): Servidor iniciando
+[INFO] 20:30:52:902 mongostore/(13605:13615): Servidor MiRam encendido
+[INFO] 20:31:45:968 mongostore/(13605:13605): SIGUSR1
+
+[INFO] 20:31:45:969 mongostore/(13605:13605): Posicion 1|1
+[INFO] 20:31:45:969 mongostore/(13605:13605): Posicion 2|2
+[INFO] 20:31:45:969 mongostore/(13605:13605): Posicion 3|3
+[INFO] 20:31:45:969 mongostore/(13605:13605): Posicion 4|4
+[INFO] 20:31:45:969 mongostore/(13605:13605): Posicion 5|5
+[INFO] 20:31:45:969 mongostore/(13605:13605): Posicion 6|6
+[INFO] 20:31:45:969 mongostore/(13605:13605): Posicion 7|7
+[DEBUG] 20:52:20:621 mongostore/(16670:16670): LOGGER OK
+[INFO] 20:52:20:621 mongostore/(16670:16670): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 20:52:20:621 mongostore/(16670:16670): Testeo config, la IP es: 127.0.0.1
+[INFO] 20:52:20:622 mongostore/(16670:16670): pid 16670  
+
+[INFO] 20:52:20:622 mongostore/(16670:16671): Servidor iniciando
+[INFO] 20:52:20:622 mongostore/(16670:16671): Servidor MiRam encendido
+[INFO] 20:52:43:567 mongostore/(16670:16671): Estableciendo conexión desde 42659
+[INFO] 20:52:43:567 mongostore/(16670:16671): Creando hilo
+[INFO] 20:53:27:309 mongostore/(16670:16671): Estableciendo conexión desde 43683
+[INFO] 20:53:27:309 mongostore/(16670:16671): Creando hilo
+[INFO] 20:53:27:311 mongostore/(16670:16671): Estableciendo conexión desde 44707
+[INFO] 20:53:27:311 mongostore/(16670:16671): Creando hilo
+[INFO] 20:53:27:312 mongostore/(16670:16671): Estableciendo conexión desde 45731
+[INFO] 20:53:27:312 mongostore/(16670:16671): Creando hilo
+[DEBUG] 20:59:30:555 mongostore/(17658:17658): LOGGER OK
+[INFO] 20:59:30:555 mongostore/(17658:17658): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 20:59:30:555 mongostore/(17658:17658): Testeo config, la IP es: 127.0.0.1
+[INFO] 20:59:30:555 mongostore/(17658:17658): pid 17658  
+
+[INFO] 20:59:30:555 mongostore/(17658:17659): Servidor iniciando
+[INFO] 20:59:30:555 mongostore/(17658:17659): Servidor MiRam encendido
+[INFO] 20:59:46:746 mongostore/(17658:17659): Estableciendo conexión desde 48291
+[INFO] 20:59:46:746 mongostore/(17658:17659): Creando hilo
+[INFO] 20:59:46:747 mongostore/(17658:17703): Se conecto este socket a mi 5
+[INFO] 21:00:14:012 mongostore/(17658:17659): Estableciendo conexión desde 49315
+[INFO] 21:00:14:012 mongostore/(17658:17659): Creando hilo
+[INFO] 21:00:14:016 mongostore/(17658:17767): Se conecto este socket a mi 7
+[INFO] 21:00:14:016 mongostore/(17658:17659): Estableciendo conexión desde 50339
+[INFO] 21:00:14:016 mongostore/(17658:17659): Creando hilo
+[INFO] 21:00:14:019 mongostore/(17658:17767): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 21:00:14:019 mongostore/(17658:17769): Se conecto este socket a mi 8
+[INFO] 21:00:14:019 mongostore/(17658:17659): Estableciendo conexión desde 51363
+[INFO] 21:00:14:019 mongostore/(17658:17659): Creando hilo
+[INFO] 21:00:14:020 mongostore/(17658:17769): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 21:00:14:020 mongostore/(17658:17771): Se conecto este socket a mi 9
+[INFO] 21:00:15:022 mongostore/(17658:17769): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 21:00:16:023 mongostore/(17658:17769): tid 2  Se mueve de 4|3 a 4|4
+[DEBUG] 21:01:14:224 mongostore/(17890:17890): LOGGER OK
+[INFO] 21:01:14:224 mongostore/(17890:17890): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 21:01:14:224 mongostore/(17890:17890): Testeo config, la IP es: 127.0.0.1
+[INFO] 21:01:14:225 mongostore/(17890:17890): pid 17890  
+
+[INFO] 21:01:14:225 mongostore/(17890:17891): Servidor iniciando
+[INFO] 21:01:14:225 mongostore/(17890:17891): Servidor MiRam encendido
+[INFO] 21:01:20:364 mongostore/(17890:17891): Estableciendo conexión desde 52899
+[INFO] 21:01:20:364 mongostore/(17890:17891): Creando hilo
+[INFO] 21:01:20:364 mongostore/(17890:17917): Se conecto este socket a mi 5
+[INFO] 21:01:32:479 mongostore/(17890:17891): Estableciendo conexión desde 53923
+[INFO] 21:01:32:479 mongostore/(17890:17891): Creando hilo
+[INFO] 21:01:32:487 mongostore/(17890:17951): Se conecto este socket a mi 7
+[INFO] 21:01:32:487 mongostore/(17890:17891): Estableciendo conexión desde 54947
+[INFO] 21:01:32:487 mongostore/(17890:17891): Creando hilo
+[INFO] 21:01:32:487 mongostore/(17890:17951): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 21:01:32:487 mongostore/(17890:17953): Se conecto este socket a mi 8
+[INFO] 21:01:32:488 mongostore/(17890:17891): Estableciendo conexión desde 55971
+[INFO] 21:01:32:488 mongostore/(17890:17891): Creando hilo
+[INFO] 21:01:32:488 mongostore/(17890:17953): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 21:01:32:489 mongostore/(17890:17955): Se conecto este socket a mi 9
+[INFO] 21:01:33:490 mongostore/(17890:17953): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 21:01:34:492 mongostore/(17890:17953): tid 2  Se mueve de 4|3 a 4|4
+[DEBUG] 21:02:41:692 mongostore/(18133:18133): LOGGER OK
+[INFO] 21:02:41:692 mongostore/(18133:18133): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 21:02:41:692 mongostore/(18133:18133): Testeo config, la IP es: 127.0.0.1
+[INFO] 21:02:41:692 mongostore/(18133:18133): pid 18133  
+
+[INFO] 21:02:41:692 mongostore/(18133:18134): Servidor iniciando
+[INFO] 21:02:41:692 mongostore/(18133:18134): Servidor MiRam encendido
+[INFO] 21:02:46:851 mongostore/(18133:18134): Estableciendo conexión desde 57507
+[INFO] 21:02:46:851 mongostore/(18133:18134): Creando hilo
+[INFO] 21:02:46:864 mongostore/(18133:18157): Se conecto este socket a mi 5
+[INFO] 21:02:55:619 mongostore/(18133:18134): Estableciendo conexión desde 58531
+[INFO] 21:02:55:619 mongostore/(18133:18134): Creando hilo
+[INFO] 21:02:55:621 mongostore/(18133:18179): Se conecto este socket a mi 7
+[INFO] 21:02:55:621 mongostore/(18133:18134): Estableciendo conexión desde 59555
+[INFO] 21:02:55:621 mongostore/(18133:18134): Creando hilo
+[INFO] 21:02:55:622 mongostore/(18133:18179): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 21:02:55:622 mongostore/(18133:18181): Se conecto este socket a mi 8
+[INFO] 21:02:55:622 mongostore/(18133:18134): Estableciendo conexión desde 60579
+[INFO] 21:02:55:622 mongostore/(18133:18134): Creando hilo
+[INFO] 21:02:55:622 mongostore/(18133:18181): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 21:02:55:622 mongostore/(18133:18183): Se conecto este socket a mi 9
+[INFO] 21:02:56:623 mongostore/(18133:18179): tarea GENERAR_OXIGENO  param 1
+[INFO] 21:02:56:623 mongostore/(18133:18181): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 21:02:57:625 mongostore/(18133:18179): tid 1  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 21:02:57:626 mongostore/(18133:18183): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 21:02:57:626 mongostore/(18133:18181): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 21:02:58:626 mongostore/(18133:18179): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 21:02:58:628 mongostore/(18133:18183): tarea GENERAR_OXIGENO  param 1
+[INFO] 21:02:58:628 mongostore/(18133:18181): tarea GENERAR_OXIGENO  param 1
+[INFO] 21:02:59:633 mongostore/(18133:18181): tid 2  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 21:02:59:633 mongostore/(18133:18179): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 21:03:00:634 mongostore/(18133:18181): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 21:03:00:634 mongostore/(18133:18179): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 21:03:00:634 mongostore/(18133:18183): tid 3  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 21:03:00:634 mongostore/(18133:18181): tid 2  Se mueve de 4|4 a 5|4
+[INFO] 21:03:01:635 mongostore/(18133:18179): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 21:03:01:635 mongostore/(18133:18183): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 21:03:01:635 mongostore/(18133:18181): tid 2  Se mueve de 5|4 a 5|5
+[INFO] 21:03:02:635 mongostore/(18133:18179): tid 1  Comienza ejecución de tarea ABC
+[INFO] 21:03:02:635 mongostore/(18133:18181): tid 2  Se mueve de 5|5 a 5|6
+[INFO] 21:03:03:636 mongostore/(18133:18181): tid 2  Comienza ejecución de tarea ABC
+[INFO] 21:03:06:637 mongostore/(18133:18179): tid 1  Se finaliza la tarea ABC
+[INFO] 21:03:06:637 mongostore/(18133:18179): tid 1  Se mueve de 5|6 a 4|6
+[INFO] 21:03:07:641 mongostore/(18133:18181): tid 2  Se finaliza la tarea ABC
+[INFO] 21:03:07:642 mongostore/(18133:18179): tid 1  Se mueve de 4|6 a 4|5
+[INFO] 21:03:07:642 mongostore/(18133:18181): tid 2  Se mueve de 5|6 a 4|6
+[INFO] 21:03:08:642 mongostore/(18133:18179): tid 1  Se mueve de 4|5 a 3|5
+[INFO] 21:03:08:643 mongostore/(18133:18181): tid 2  Se mueve de 4|6 a 4|5
+[INFO] 21:03:09:643 mongostore/(18133:18179): tid 1  Se mueve de 3|5 a 3|4
+[INFO] 21:03:09:643 mongostore/(18133:18181): tid 2  Se mueve de 4|5 a 3|5
+[INFO] 21:03:10:644 mongostore/(18133:18181): tid 2  Se mueve de 3|5 a 3|4
+[INFO] 21:03:10:644 mongostore/(18133:18179): tid 1  Se mueve de 3|4 a 2|4
+[INFO] 21:03:11:644 mongostore/(18133:18181): tid 2  Se mueve de 3|4 a 2|4
+[INFO] 21:03:11:645 mongostore/(18133:18179): tid 1  Se mueve de 2|4 a 2|3
+[INFO] 21:03:12:645 mongostore/(18133:18181): tid 2  Se mueve de 2|4 a 2|3
+[INFO] 21:03:12:645 mongostore/(18133:18179): tid 1  Se mueve de 2|3 a 2|2
+[INFO] 21:03:13:647 mongostore/(18133:18179): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 21:03:13:648 mongostore/(18133:18181): tid 2  Se mueve de 2|3 a 2|2
+[INFO] 21:03:14:648 mongostore/(18133:18179): tid 1  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 21:03:14:648 mongostore/(18133:18183): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 21:03:14:648 mongostore/(18133:18181): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 21:03:15:648 mongostore/(18133:18179): tid 1  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 21:03:15:648 mongostore/(18133:18183): tid 3  Se mueve de 5|4 a 5|5
+[INFO] 21:03:15:649 mongostore/(18133:18181): tid 2  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 21:03:16:649 mongostore/(18133:18183): tid 3  Se mueve de 5|5 a 5|6
+[INFO] 21:03:16:649 mongostore/(18133:18181): tid 2  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 21:03:17:652 mongostore/(18133:18183): tid 3  Comienza ejecución de tarea ABC
+[INFO] 21:03:21:653 mongostore/(18133:18183): tid 3  Se finaliza la tarea ABC
+[INFO] 21:03:21:654 mongostore/(18133:18183): tid 3  Se mueve de 5|6 a 4|6
+[INFO] 21:03:22:654 mongostore/(18133:18183): tid 3  Se mueve de 4|6 a 4|5
+[INFO] 21:03:23:655 mongostore/(18133:18183): tid 3  Se mueve de 4|5 a 3|5
+[INFO] 21:03:24:656 mongostore/(18133:18183): tid 3  Se mueve de 3|5 a 3|4
+[INFO] 21:03:25:656 mongostore/(18133:18183): tid 3  Se mueve de 3|4 a 2|4
+[INFO] 21:03:26:657 mongostore/(18133:18183): tid 3  Se mueve de 2|4 a 2|3
+[INFO] 21:03:27:657 mongostore/(18133:18183): tid 3  Se mueve de 2|3 a 2|2
+[INFO] 21:03:28:658 mongostore/(18133:18183): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 21:03:29:658 mongostore/(18133:18183): tid 3  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 21:03:30:659 mongostore/(18133:18183): tid 3  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 21:04:51:942 mongostore/(18133:18134): Estableciendo conexión desde 62115
+[INFO] 21:04:51:942 mongostore/(18133:18134): Creando hilo
+[INFO] 21:04:51:942 mongostore/(18133:18530): Se conecto este socket a mi 10
+[INFO] 21:04:51:943 mongostore/(18133:18134): Estableciendo conexión desde 63139
+[INFO] 21:04:51:943 mongostore/(18133:18134): Creando hilo
+[INFO] 21:04:51:943 mongostore/(18133:18530): tid 4  Se mueve de 3|4 a 4|4
+[INFO] 21:04:51:943 mongostore/(18133:18532): Se conecto este socket a mi 11
+[INFO] 21:04:51:944 mongostore/(18133:18134): Estableciendo conexión desde 64163
+[INFO] 21:04:51:944 mongostore/(18133:18134): Creando hilo
+[INFO] 21:04:51:944 mongostore/(18133:18532): tid 5  Se mueve de 5|2 a 4|2
+[INFO] 21:04:51:944 mongostore/(18133:18534): Se conecto este socket a mi 12
+[INFO] 21:04:52:944 mongostore/(18133:18530): tarea GENERAR_OXIGENO  param 1
+[INFO] 21:04:52:945 mongostore/(18133:18532): tid 5  Se mueve de 4|2 a 4|3
+[INFO] 21:04:53:945 mongostore/(18133:18532): tid 5  Se mueve de 4|3 a 4|4
+[INFO] 21:04:53:945 mongostore/(18133:18530): tid 4  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 21:04:53:946 mongostore/(18133:18534): tid 6  Se mueve de 4|5 a 4|4
+[INFO] 21:04:54:946 mongostore/(18133:18530): tid 4  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 21:04:54:946 mongostore/(18133:18532): tarea GENERAR_OXIGENO  param 1
+[INFO] 21:04:54:946 mongostore/(18133:18534): tarea GENERAR_OXIGENO  param 1
+[INFO] 21:04:55:947 mongostore/(18133:18534): tid 6  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 21:04:55:947 mongostore/(18133:18530): tid 4  Se mueve de 4|4 a 5|4
+[INFO] 21:04:56:947 mongostore/(18133:18534): tid 6  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 21:04:56:947 mongostore/(18133:18530): tid 4  Se mueve de 5|4 a 5|5
+[INFO] 21:04:56:948 mongostore/(18133:18532): tid 5  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 21:04:56:948 mongostore/(18133:18534): tid 6  Se mueve de 4|4 a 5|4
+[INFO] 21:04:57:371 mongostore/(18133:18133): SIGUSR1
+
+[INFO] 21:04:57:948 mongostore/(18133:18532): tid 5  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 21:04:57:948 mongostore/(18133:18534): tid 6  Se mueve de 5|4 a 5|5
+[INFO] 21:04:57:948 mongostore/(18133:18530): tid 4  Se mueve de 5|5 a 5|6
+[INFO] 21:04:58:949 mongostore/(18133:18534): tid 6  Se mueve de 5|5 a 5|6
+[INFO] 21:04:58:949 mongostore/(18133:18530): tid 4  Comienza ejecución de tarea ABC
+[INFO] 21:04:59:949 mongostore/(18133:18534): tid 6  Comienza ejecución de tarea ABC
+[INFO] 21:05:02:952 mongostore/(18133:18530): tid 4  Se finaliza la tarea ABC
+[INFO] 21:05:02:952 mongostore/(18133:18530): tid 4  Se mueve de 5|6 a 4|6
+[INFO] 21:05:03:952 mongostore/(18133:18534): tid 6  Se finaliza la tarea ABC
+[INFO] 21:05:03:952 mongostore/(18133:18534): tid 6  Se mueve de 5|6 a 4|6
+[INFO] 21:05:03:952 mongostore/(18133:18530): tid 4  Se mueve de 4|6 a 4|5
+[INFO] 21:05:04:953 mongostore/(18133:18530): tid 4  Se mueve de 4|5 a 3|5
+[INFO] 21:05:04:953 mongostore/(18133:18534): tid 6  Se mueve de 4|6 a 4|5
+[INFO] 21:05:05:955 mongostore/(18133:18534): tid 6  Se mueve de 4|5 a 3|5
+[INFO] 21:05:05:956 mongostore/(18133:18530): tid 4  Se mueve de 3|5 a 3|4
+[INFO] 21:05:06:957 mongostore/(18133:18530): tid 4  Se mueve de 3|4 a 2|4
+[INFO] 21:05:06:957 mongostore/(18133:18534): tid 6  Se mueve de 3|5 a 3|4
+[INFO] 21:05:07:958 mongostore/(18133:18534): tid 6  Se mueve de 3|4 a 2|4
+[INFO] 21:05:07:958 mongostore/(18133:18530): tid 4  Se mueve de 2|4 a 2|3
+[INFO] 21:05:08:958 mongostore/(18133:18530): tid 4  Se mueve de 2|3 a 2|2
+[INFO] 21:05:08:958 mongostore/(18133:18534): tid 6  Se mueve de 2|4 a 2|3
+[INFO] 21:05:09:959 mongostore/(18133:18530): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 21:05:09:959 mongostore/(18133:18534): tid 6  Se mueve de 2|3 a 2|2
+[INFO] 21:05:10:960 mongostore/(18133:18534): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 21:05:10:961 mongostore/(18133:18530): tid 4  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 21:05:10:961 mongostore/(18133:18532): tid 5  Se mueve de 4|4 a 5|4
+[INFO] 21:05:11:961 mongostore/(18133:18530): tid 4  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 21:05:11:963 mongostore/(18133:18532): tid 5  Se mueve de 5|4 a 5|5
+[INFO] 21:05:11:964 mongostore/(18133:18534): tid 6  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 21:05:12:964 mongostore/(18133:18532): tid 5  Se mueve de 5|5 a 5|6
+[INFO] 21:05:12:971 mongostore/(18133:18534): tid 6  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 21:05:13:964 mongostore/(18133:18532): tid 5  Comienza ejecución de tarea ABC
+[INFO] 21:05:17:968 mongostore/(18133:18532): tid 5  Se finaliza la tarea ABC
+[INFO] 21:05:17:969 mongostore/(18133:18532): tid 5  Se mueve de 5|6 a 4|6
+[INFO] 21:05:18:969 mongostore/(18133:18532): tid 5  Se mueve de 4|6 a 4|5
+[INFO] 21:05:19:970 mongostore/(18133:18532): tid 5  Se mueve de 4|5 a 3|5
+[INFO] 21:05:20:970 mongostore/(18133:18532): tid 5  Se mueve de 3|5 a 3|4
+[INFO] 21:05:21:971 mongostore/(18133:18532): tid 5  Se mueve de 3|4 a 2|4
+[INFO] 21:05:22:972 mongostore/(18133:18532): tid 5  Se mueve de 2|4 a 2|3
+[INFO] 21:05:23:973 mongostore/(18133:18532): tid 5  Se mueve de 2|3 a 2|2
+[INFO] 21:05:24:974 mongostore/(18133:18532): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 21:05:25:974 mongostore/(18133:18532): tid 5  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 21:05:26:975 mongostore/(18133:18532): tid 5  Se finaliza la tarea CONSUMIR_OXIGENO
+[DEBUG] 21:19:16:793 mongostore/(20319:20319): LOGGER OK
+[INFO] 21:19:16:794 mongostore/(20319:20319): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 21:19:16:794 mongostore/(20319:20319): Testeo config, la IP es: 127.0.0.1
+[INFO] 21:19:16:794 mongostore/(20319:20319): pid 20319  
+
+[INFO] 21:19:16:794 mongostore/(20319:20320): Servidor iniciando
+[INFO] 21:19:16:794 mongostore/(20319:20320): Servidor MiRam encendido
+[INFO] 21:19:27:818 mongostore/(20319:20320): Estableciendo conexión desde 3236
+[INFO] 21:19:27:818 mongostore/(20319:20320): Creando hilo
+[INFO] 21:19:27:820 mongostore/(20319:20357): Se conecto este socket a mi 5
+[DEBUG] 21:20:32:891 mongostore/(20526:20526): LOGGER OK
+[INFO] 21:20:32:891 mongostore/(20526:20526): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 21:20:32:891 mongostore/(20526:20526): Testeo config, la IP es: 127.0.0.1
+[INFO] 21:20:32:891 mongostore/(20526:20526): pid 20526  
+
+[INFO] 21:20:32:891 mongostore/(20526:20527): Servidor iniciando
+[INFO] 21:20:32:891 mongostore/(20526:20527): Servidor MiRam encendido
+[DEBUG] 21:21:13:386 mongostore/(20617:20617): LOGGER OK
+[INFO] 21:21:13:386 mongostore/(20617:20617): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 21:21:13:386 mongostore/(20617:20617): Testeo config, la IP es: 127.0.0.1
+[INFO] 21:21:13:386 mongostore/(20617:20617): pid 20617  
+
+[INFO] 21:21:13:386 mongostore/(20617:20618): Servidor iniciando
+[INFO] 21:21:13:386 mongostore/(20617:20618): Servidor MiRam encendido
+[DEBUG] 21:21:44:026 mongostore/(20700:20700): LOGGER OK
+[INFO] 21:21:44:026 mongostore/(20700:20700): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 21:21:44:026 mongostore/(20700:20700): Testeo config, la IP es: 127.0.0.1
+[INFO] 21:21:44:026 mongostore/(20700:20700): pid 20700  
+
+[INFO] 21:21:44:026 mongostore/(20700:20701): Servidor iniciando
+[INFO] 21:21:44:026 mongostore/(20700:20701): Servidor MiRam encendido
+[INFO] 21:22:04:807 mongostore/(20700:20701): Estableciendo conexión desde 6820
+[INFO] 21:22:04:816 mongostore/(20700:20701): Creando hilo
+[INFO] 21:22:04:819 mongostore/(20700:20762): Se conecto este socket a mi 5
+[INFO] 21:22:31:819 mongostore/(20700:20701): Estableciendo conexión desde 8356
+[INFO] 21:22:31:820 mongostore/(20700:20701): Creando hilo
+[INFO] 21:22:31:821 mongostore/(20700:20825): Se conecto este socket a mi 7
+[INFO] 21:22:31:822 mongostore/(20700:20701): Estableciendo conexión desde 9380
+[INFO] 21:22:31:822 mongostore/(20700:20701): Creando hilo
+[INFO] 21:22:31:822 mongostore/(20700:20825): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 21:22:31:822 mongostore/(20700:20827): Se conecto este socket a mi 8
+[INFO] 21:22:31:823 mongostore/(20700:20701): Estableciendo conexión desde 10404
+[INFO] 21:22:31:823 mongostore/(20700:20701): Creando hilo
+[INFO] 21:22:31:823 mongostore/(20700:20827): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 21:22:31:823 mongostore/(20700:20829): Se conecto este socket a mi 9
+[INFO] 21:22:32:823 mongostore/(20700:20825): tarea GENERAR_OXIGENO  param 1
+[INFO] 21:22:32:823 mongostore/(20700:20827): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 21:22:33:824 mongostore/(20700:20827): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 21:22:33:824 mongostore/(20700:20825): tid 1  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 21:22:33:825 mongostore/(20700:20829): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 21:22:34:824 mongostore/(20700:20827): tarea GENERAR_OXIGENO  param 1
+[INFO] 21:22:34:825 mongostore/(20700:20825): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 21:22:34:825 mongostore/(20700:20829): tarea GENERAR_OXIGENO  param 1
+[INFO] 21:22:35:826 mongostore/(20700:20827): tid 2  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 21:22:35:827 mongostore/(20700:20825): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 21:22:36:827 mongostore/(20700:20827): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 21:22:36:827 mongostore/(20700:20825): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 21:22:36:827 mongostore/(20700:20829): tid 3  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 21:22:36:827 mongostore/(20700:20827): tid 2  Se mueve de 4|4 a 5|4
+[INFO] 21:22:37:828 mongostore/(20700:20829): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 21:22:37:828 mongostore/(20700:20825): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 21:22:37:828 mongostore/(20700:20827): tid 2  Se mueve de 5|4 a 5|5
+[INFO] 21:22:38:829 mongostore/(20700:20825): tid 1  Comienza ejecución de tarea ABC
+[INFO] 21:22:38:829 mongostore/(20700:20827): tid 2  Se mueve de 5|5 a 5|6
+[INFO] 21:22:39:830 mongostore/(20700:20827): tid 2  Comienza ejecución de tarea ABC
+[INFO] 21:22:40:446 mongostore/(20700:20700): SIGUSR1
+
+[INFO] 21:22:42:831 mongostore/(20700:20825): tid 1  Se finaliza la tarea ABC
+[INFO] 21:22:42:832 mongostore/(20700:20825): tid 1  Se mueve de 5|6 a 4|6
+[INFO] 21:22:43:832 mongostore/(20700:20827): tid 2  Se finaliza la tarea ABC
+[INFO] 21:22:43:833 mongostore/(20700:20827): tid 2  Se mueve de 5|6 a 4|6
+[INFO] 21:22:43:833 mongostore/(20700:20825): tid 1  Se mueve de 4|6 a 4|5
+[INFO] 21:22:44:833 mongostore/(20700:20825): tid 1  Se mueve de 4|5 a 3|5
+[INFO] 21:22:44:834 mongostore/(20700:20827): tid 2  Se mueve de 4|6 a 4|5
+[INFO] 21:22:45:834 mongostore/(20700:20827): tid 2  Se mueve de 4|5 a 3|5
+[INFO] 21:22:45:834 mongostore/(20700:20825): tid 1  Se mueve de 3|5 a 3|4
+[INFO] 21:22:46:835 mongostore/(20700:20825): tid 1  Se mueve de 3|4 a 2|4
+[INFO] 21:22:46:835 mongostore/(20700:20827): tid 2  Se mueve de 3|5 a 3|4
+[INFO] 21:22:47:836 mongostore/(20700:20827): tid 2  Se mueve de 3|4 a 2|4
+[INFO] 21:22:47:836 mongostore/(20700:20825): tid 1  Se mueve de 2|4 a 2|3
+[INFO] 21:22:48:837 mongostore/(20700:20825): tid 1  Se mueve de 2|3 a 2|2
+[INFO] 21:22:48:837 mongostore/(20700:20827): tid 2  Se mueve de 2|4 a 2|3
+[INFO] 21:22:49:837 mongostore/(20700:20825): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 21:22:49:837 mongostore/(20700:20827): tid 2  Se mueve de 2|3 a 2|2
+[INFO] 21:22:50:837 mongostore/(20700:20825): tid 1  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 21:22:50:838 mongostore/(20700:20829): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 21:22:50:838 mongostore/(20700:20827): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 21:22:51:853 mongostore/(20700:20825): tid 1  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 21:22:51:853 mongostore/(20700:20829): tid 3  Se mueve de 5|4 a 5|5
+[INFO] 21:22:51:854 mongostore/(20700:20827): tid 2  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 21:22:52:854 mongostore/(20700:20829): tid 3  Se mueve de 5|5 a 5|6
+[INFO] 21:22:52:854 mongostore/(20700:20827): tid 2  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 21:22:53:857 mongostore/(20700:20829): tid 3  Comienza ejecución de tarea ABC
+[INFO] 21:22:57:858 mongostore/(20700:20829): tid 3  Se finaliza la tarea ABC
+[INFO] 21:22:57:859 mongostore/(20700:20829): tid 3  Se mueve de 5|6 a 4|6
+[INFO] 21:22:58:859 mongostore/(20700:20829): tid 3  Se mueve de 4|6 a 4|5
+[INFO] 21:22:59:860 mongostore/(20700:20829): tid 3  Se mueve de 4|5 a 3|5
+[INFO] 21:23:00:861 mongostore/(20700:20829): tid 3  Se mueve de 3|5 a 3|4
+[INFO] 21:23:01:861 mongostore/(20700:20829): tid 3  Se mueve de 3|4 a 2|4
+[INFO] 21:23:02:863 mongostore/(20700:20829): tid 3  Se mueve de 2|4 a 2|3
+[INFO] 21:23:03:895 mongostore/(20700:20829): tid 3  Se mueve de 2|3 a 2|2
+[INFO] 21:23:04:898 mongostore/(20700:20829): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 21:23:05:899 mongostore/(20700:20829): tid 3  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 21:23:06:899 mongostore/(20700:20829): tid 3  Se finaliza la tarea CONSUMIR_OXIGENO

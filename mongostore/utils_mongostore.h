@@ -22,6 +22,9 @@
 //#include <sys/types.h>
 #include <openssl/md5.h>
 #include <dirent.h>
+#include<commons/collections/list.h>
+#include<netdb.h>
+#include <signal.h>
 /*
 #include<netdb.h>
 #include<math.h>
@@ -79,11 +82,25 @@ typedef enum {
 } accion_code;
 
 typedef enum {
-	REALIZAR_TAREA,
-	CARGAR_BITACORA,
-	INICIAR_FSCK,
-	SALIR
+	CARGAR_BITACORA = 12,
+	REALIZAR_TAREA = 13,
+	INICIAR_FSCK = 14,
+	SALIR = 15,
+	SABOTAJE = 16
+
 } op_code;
+
+typedef struct
+{
+    uint32_t size;
+    void* stream;
+} t_buffer;
+
+typedef struct
+{
+	op_code mensajeOperacion;
+    t_buffer* buffer;
+}t_paquete;
 
 enum {
 	ERROR = -1,
@@ -174,6 +191,17 @@ void blocks_eliminar_archivo();
 void superbloque_actualizar_bitmap_en_archivo();
 void superbloque_actualizar_blocks_en_archivo();
 void superbloque_liberar_bloques_en_bitmap(char* blocks);
+void iniciar_servidor(t_configuracion*);
+void funcion_cliente(int);
+t_list* recibir_paquete(int);
+void* recibir_buffer(uint32_t*, int);
+void destruir_lista_paquete(char*);
+void enviar_mensaje(char*, int);
+void eliminar_paquete(t_paquete*);
+void sig_handler(int);
+void notificar_sabotaje();
+int recibir_operacion(int);
+void enviar_header(op_code, int);
 
 //Prototipos de funciones sujetas a cambios al linkearse con discordiador
 void recurso_realizar_tarea();
