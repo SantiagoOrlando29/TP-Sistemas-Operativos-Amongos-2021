@@ -188,6 +188,9 @@ int main(void)
 	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){
 		log_info(logger, "Falla al crearse el hilo");
 	}
+	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor2,&configuracion))!=0){
+		log_info(logger, "Falla al crearse el hilo");
+	}
 	pthread_join(servidor,NULL);
 
 

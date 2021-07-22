@@ -205,6 +205,9 @@ t_list* lista_tablas_segmentos;
 //void* recibir_buffer(int*, int);
 void* recibir_buffer(uint32_t* size, int socket_cliente);
 void iniciar_servidor(config_struct*);
+void iniciar_servidor2(config_struct* config_servidor);
+int funcionx();
+
 int esperar_cliente(int);
 t_list* recibir_paquete(int);
 void recibir_mensaje(int);

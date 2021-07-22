@@ -31,6 +31,7 @@ int flag_sabotaje;
 int flag_fin;
 int conexionMiRam;
 int conexionMongoStore;
+int conexionMiRamPrueba;
 
 
 bool sigue_ejecutando(int quantums_ejecutados){
@@ -494,6 +495,8 @@ int main(int argc, char* argv[]) {
 	conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
 
+	conexionMiRamPrueba = crear_conexion(configuracion.ip_miram,"5003");
+
 	pthread_t hilo_principal;
 	pthread_t hilo_sabotaje;
 	pthread_create(&hilo_principal,NULL,(void*)menu_discordiador,NULL);
@@ -512,6 +515,7 @@ int main(int argc, char* argv[]) {
 
 void funcion_sabotaje(){
 	log_info(logger, "in funcion_sabotaje");
+
 	//char* posicion_sabotaje_char = recibir_mensaje(conexionMiRam);
 	//log_info(logger, "posicion_sabotaje_char %s", posicion_sabotaje_char);
 
@@ -735,6 +739,15 @@ DUMP
 compactar
 DUMP de la memoria
 */
+/*
+INICIAR_PATOTA 3 ES3_Patota1.txt 9|9 0|0 5|5
+INICIAR_PATOTA 3 ES3_Patota2.txt 4|0 2|6 8|2
+INICIAR_PATOTA 3 ES3_Patota3.txt 2|3 5|8 5|3
+INICIAR_PATOTA 3 ES3_Patota4.txt 0|9 4|4 9|0
+INICIAR_PATOTA 3 ES3_Patota5.txt 0|2 9|6 3|5
+INICIAR_PLANIFICACION
+LISTAR_TRIPULANTES
+ */
 			case OBTENER_BITACORA:
 				//
 				enviar_header(OBTENER_BITACORA, conexionMiRam);

@@ -1,19 +1,2 @@
-[INFO] 16:22:16:132 discordiador/(14977:14980): in funcion_sabotaje
-[INFO] 16:22:16:122 discordiador/(14977:14979): in menu_discordiador
-[INFO] 16:22:28:593 discordiador/(14977:14979): Memoria asignada
-[INFO] 16:22:35:149 discordiador/(14977:14984): TRIPU 1  tarea recibida: GENERAR_OXIGENO 5;4;4;1
-[INFO] 16:22:35:159 discordiador/(14977:14985): TRIPU 2  tarea recibida: GENERAR_OXIGENO 5;4;4;1
-[INFO] 16:22:35:162 discordiador/(14977:14986): TRIPU 3  tarea recibida: GENERAR_OXIGENO 5;4;4;1
-[INFO] 16:22:38:207 discordiador/(14977:14983): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 16:22:40:210 discordiador/(14977:14983): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 16:22:41:213 discordiador/(14977:14983): TRIPU 2  tarea recibida: ABC;5;6;4
-[INFO] 16:22:48:239 discordiador/(14977:14984): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 2;3;3;4
-[INFO] 16:22:48:649 discordiador/(14977:14979): tripu expulsado: 1 
-[INFO] 16:22:49:245 discordiador/(14977:14984): tripu_misma_patota_exit 1
-[INFO] 16:22:50:225 discordiador/(14977:14986): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 2;3;3;4
-[INFO] 16:22:50:246 discordiador/(14977:14985): TRIPU 2  tarea recibida: CONSUMIR_OXIGENO 2;3;3;4
-[INFO] 16:23:00:240 discordiador/(14977:14983): TRIPU 3  tarea recibida: no hay mas tareas
-[INFO] 16:23:00:242 discordiador/(14977:14986): tripu_misma_patota_exit 2
-[INFO] 16:23:04:247 discordiador/(14977:14983): TRIPU 2  tarea recibida: no hay mas tareas
-[INFO] 16:23:04:248 discordiador/(14977:14985): tripu_misma_patota_exit 3
-[INFO] 16:23:04:251 discordiador/(14977:14985): size exit 0
+[INFO] 17:39:30:344 discordiador/(17121:17129): in funcion_sabotaje
+[INFO] 17:39:30:344 discordiador/(17121:17128): in menu_discordiador
