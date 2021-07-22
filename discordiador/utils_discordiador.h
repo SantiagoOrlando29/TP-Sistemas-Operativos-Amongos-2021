@@ -175,7 +175,9 @@ void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 char* recibir_mensaje(int socket_cliente);
 
-int menu_discordiador(int , int, t_log* );
+void menu_discordiador();
+void funcion_sabotaje();
+
 tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, uint32_t posicionY, uint32_t puntero_pcb, int cantidad_tripulantes);
 //pcbPatota* crear_patota(uint32_t , uint32_t);
 int codigoOperacion (const char*);

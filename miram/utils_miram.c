@@ -177,10 +177,10 @@ int funcion_cliente_segmentacion(int socket_cliente){
 
 								agregar_a_paquete(paquete, tripulante, tamanio_TCB);
 
-								char* pid_char = malloc(sizeof(char)+1);
-								sprintf(pid_char, "%d", pid);
-								agregar_a_paquete(paquete, pid_char, strlen(pid_char)+1);
-
+								char* pidd_char = malloc(sizeof(char)+1);
+								sprintf(pidd_char, "%d", pid);
+								agregar_a_paquete(paquete, pidd_char, strlen(pidd_char)+1);
+								free(pidd_char);
 								//printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, pid, tripulante->estado);
 								k = list_size(tabla_espacios_de_memoria); //para que corte el for
 							}
@@ -317,7 +317,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				t_list* lista_pr = recibir_paquete(socket_cliente); //se recibe el string directo para poner en la bitacora
 				tripulante_id = (int)atoi(list_get(lista_pr,0));
 				char* mens = list_get(lista_pr,1);
-				if(list_size(lista) == 3){
+				if(list_size(lista_pr) == 3){
 					char* mens2 = list_get(lista_pr,2);
 					//strcat(mens, mens2);
 					log_info(logger, "tid %d  %s%s",tripulante_id, mens, mens2);
@@ -381,6 +381,14 @@ int funcion_cliente_segmentacion(int socket_cliente){
 
 				break;
 
+			case OBTENER_BITACORA:
+				log_info(logger, "bitacooooora");
+
+				char* mensaje5 = "mensaje 5";
+				enviar_mensaje(mensaje5, socket_cliente);
+
+				break;
+
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
 				variable_servidor = 0;
@@ -401,7 +409,14 @@ int funcion_cliente_segmentacion(int socket_cliente){
 
 				list_destroy_and_destroy_elements(lista_tablas_segmentos, (void*)destruir_tabla_segmentacion);
 				if(list_size(tabla_espacios_de_memoria) > 1){ //todavia tiene algun espacio de memoria ocupado
-					list_destroy_and_destroy_elements(tabla_espacios_de_memoria, (void*)destruir_espacio_memoria);
+					//list_destroy_and_destroy_elements(tabla_espacios_de_memoria, (void*)destruir_espacio_memoria);
+					for(int i=0; i < list_size(tabla_espacios_de_memoria); i++){
+						espacio_de_memoria* espacio = list_remove(tabla_espacios_de_memoria, i);
+						void* content = espacio->contenido;
+						free(content);
+						free(espacio);
+						i--;
+					}
 				}else{ //solo tiene el espacio entero de la memoria total
 					espacio_de_memoria* espacio = (espacio_de_memoria*)list_remove(tabla_espacios_de_memoria, 0);
 					free(espacio);
@@ -866,6 +881,7 @@ espacio_de_memoria* busqueda_best_fit(int tam){
 
             if(tam == espacio->tam){ //si encuentra uno justo de su tamanio
             	sem_post(&MUTEX_TABLA_MEMORIA);
+            	list_destroy(espacios_libres);
             	return espacio;
             }
             list_add(espacios_libres, espacio);
@@ -886,11 +902,13 @@ espacio_de_memoria* busqueda_best_fit(int tam){
 
         //log_info(logger, "El espacio de memoria encontrado con Best Fit (base:%d)", espacio_best_fit->base);
     	sem_post(&MUTEX_TABLA_MEMORIA);
+    	list_destroy(espacios_libres);
     	return espacio_best_fit;
 
     }else{
         log_warning(logger, "No hay espacios de memoria libres");
         sem_post(&MUTEX_TABLA_MEMORIA);
+        list_destroy(espacios_libres);
         return NULL;
     }
 }
@@ -1341,7 +1359,9 @@ void destruir_segmentos(segmento* seg){
 	free(seg);
 }
 void destruir_espacio_memoria(espacio_de_memoria* espacio){
-	free(espacio->contenido);
+	//free(espacio->contenido);
+	void* content = espacio->contenido;
+	free(content);
 	free(espacio);
 }
 void destruir_tabla_segmentacion(tabla_segmentacion* tabla){ //ESTARA BIEN???

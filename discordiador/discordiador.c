@@ -18,6 +18,7 @@ sem_t CONTINUAR_PLANIFICACION;
 sem_t ORDENA_FUNCION_QUANTUM;
 sem_t FINALIZA_HILOS;
 sem_t LISTA_READY_NO_VACIA;
+sem_t TERMINO;
 int id_tripulante = 0;
 t_list* lista_tripulantes_nuevo;
 t_list* lista_tripulantes_ready;
@@ -28,6 +29,8 @@ t_list* lista_bloq_emergencia;
 t_list* lista_aux;
 int flag_sabotaje;
 int flag_fin;
+int conexionMiRam;
+int conexionMongoStore;
 
 
 bool sigue_ejecutando(int quantums_ejecutados){
@@ -189,6 +192,8 @@ void tripulante_hilo (tcbTripulante* tripulante){
 				sleep(configuracion.retardo_cpu); //sleep para eso de iniciar tarea E/S (simula peticion al SO)
 
 				if(tripulante->fui_expulsado == true){
+					free(tripulante->tarea_posta->tarea);
+					free(tripulante->tarea_posta);
 					tripulante->tarea_posta = NULL;
 					tripulante->estado = 'X';
 					sem_post(&HABILITA_GRADO_MULTITAREA);
@@ -262,6 +267,8 @@ void tripulante_hilo (tcbTripulante* tripulante){
 
 				if(tripulante->fui_expulsado == true){
 					tripulante->estado = 'X';
+					free(tripulante->tarea_posta->tarea);
+					free(tripulante->tarea_posta);
 					tripulante->tarea_posta = NULL;
 					sem_post(&HABILITA_GRADO_MULTITAREA);
 				}else{
@@ -269,6 +276,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 
 					if(flag_no_esta_en_posicion == 0){ // termino la tarea. Si esta en 1 -> va a moverse de nuevo
 						informar_fin_tarea(tripulante);
+						free(tripulante->tarea_posta->tarea);
 						free(tripulante->tarea_posta);
 						tripulante->tarea_posta = pedir_tarea(tripulante->socket_miram, tripulante);
 
@@ -281,6 +289,8 @@ void tripulante_hilo (tcbTripulante* tripulante){
 				}
 			}
 		}else{ //si tripu fue expulsado
+			free(tripulante->tarea_posta->tarea);
+			free(tripulante->tarea_posta);
 			tripulante->tarea_posta = NULL;
 			sem_post(&HABILITA_GRADO_MULTITAREA);
 		}
@@ -331,7 +341,6 @@ void tripulante_hilo (tcbTripulante* tripulante){
 
 			if(tripu->puntero_pcb == nro_patota){
 				list_remove(lista_tripulantes_exit, i);
-				//liberar_memoria_tripu(tripu);
 				free(tripu);
 				i--;
 			}
@@ -439,6 +448,7 @@ void bloqueado_ready() {
 				sem_post(&MUTEX_LISTA_BLOQUEADO);
 
 				//tarea* tarea = pedir_tarea(tripulante->socket_miram, tripulante);
+				free(tripulante->tarea_posta->tarea);
 				free(tripulante->tarea_posta);
 				tripulante->tarea_posta = pedir_tarea(tripulante->socket_miram, tripulante);
 
@@ -481,20 +491,35 @@ int main(int argc, char* argv[]) {
 	leer_config();
 	//leer numeros random
 	//leer_tareas("tareas.txt");
-	int conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
-	int conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
+	conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
+	conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
 
-	menu_discordiador(conexionMiRam, conexionMongoStore,logger);
+	pthread_t hilo_principal;
+	pthread_t hilo_sabotaje;
+	pthread_create(&hilo_principal,NULL,(void*)menu_discordiador,NULL);
+	pthread_detach(hilo_principal);
+	pthread_create(&hilo_sabotaje,NULL,(void*)funcion_sabotaje,NULL);
+	pthread_detach(hilo_sabotaje);
+
+	sem_init(&TERMINO, 0,0);
+	//menu_discordiador();
 
 	//terminar_discordiador(conexionMiRam, conexionMongoStore, logger);
 
-
+	sem_wait(&TERMINO);
 	return 0;
-
-
 }
 
-int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
+void funcion_sabotaje(){
+	log_info(logger, "in funcion_sabotaje");
+	//char* posicion_sabotaje_char = recibir_mensaje(conexionMiRam);
+	//log_info(logger, "posicion_sabotaje_char %s", posicion_sabotaje_char);
+
+	//return 1;
+}
+
+void menu_discordiador() {
+	log_info(logger, "in menu_discordiador");
 
 	sem_init(&HABILITA_EJECUTAR, 0,1);
 	sem_init(&NUEVO_READY, 0,0);
@@ -708,17 +733,22 @@ DUMP
 Esperar el fin de las tareas de los tripulantes.
 DUMP
 compactar
-DUMP de la memoria.
-
+DUMP de la memoria
 */
 			case OBTENER_BITACORA:
-				enviar_header(OBTENER_BITACORA, conexionMongoStore);
+				//
+				enviar_header(OBTENER_BITACORA, conexionMiRam);
+				char* message = recibir_mensaje(conexionMiRam);
+				log_info(logger, "mesaage %s", message);
+
+				//t_list* lista = recibir_paquete(conexionMiRam);
+				/*enviar_header(OBTENER_BITACORA, conexionMongoStore);
 				int tipoMensaje = recibir_operacion(conexionMongoStore);
 				log_info(logger, "tipoMensaje %d", tipoMensaje);
-				t_list* lista = recibir_paquete(conexionMongoStore);
-				char* mensaje = (char*)list_get(lista, 0);
-				log_info(logger, mensaje);
-				list_destroy(lista);
+				t_list* lista = recibir_paquete(conexionMongoStore);*/
+				//char* mensaje = (char*)list_get(lista, 0);
+				//log_info(logger, mensaje);
+				//list_destroy(lista);
 				break;
 
 			case EXPULSAR_TRIPULANTE:
@@ -779,6 +809,8 @@ DUMP de la memoria.
 
 				if(tripulante->estado == 'R'){
 					close(tripulante->socket_miram);
+					free(tripulante->tarea_posta->tarea);
+					free(tripulante->tarea_posta);
 
 					int tripu_misma_patota_exit = 0;
 					sem_wait(&MUTEX_LISTA_EXIT);
@@ -798,7 +830,7 @@ DUMP de la memoria.
 							tcbTripulante* tripu = (tcbTripulante*)list_get(lista_tripulantes_exit, i);
 							if(tripu->puntero_pcb == tripulante->puntero_pcb){
 								list_remove(lista_tripulantes_exit, i);
-								free(tripu->tarea_posta);
+								//free(tripu->tarea_posta);
 								free(tripu);
 								i--;
 							}
@@ -981,7 +1013,9 @@ INICIAR_PLANIFICACION
 				config_destroy(archConfig);
 				log_info(logger, "aaaaaaaa");
 				terminar_discordiador(conexionMiRam, conexionMongoStore, logger);
-				return EXIT_FAILURE;
+				//return EXIT_FAILURE;
+				sem_post(&TERMINO);
+				break;
 
 			default:
 				mensajeError(logger);

@@ -363,7 +363,7 @@ tarea* transformar_char_tarea(char* char_tarea){
 			i++;
 		}
 		free(partes[i]);
-		//free(partes);
+		free(partes);
 	   return tarea_leida;
 }
 
@@ -471,10 +471,14 @@ tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
 	log_info(logger, "TRIPU %d  tarea recibida: %s", tripulante->tid, tarea_recibida_miram);
 
 	if(strcmp("no hay mas tareas", tarea_recibida_miram) ==0){
+		free(tarea_recibida_miram);
+		free(tid_char);
+		free(numero_patota_char);
 		return NULL;
 	}
 
-	tripulante->tarea_posta = transformar_char_tarea(tarea_recibida_miram);
+	//tripulante->tarea_posta = transformar_char_tarea(tarea_recibida_miram);
+	tarea* tareaa = transformar_char_tarea(tarea_recibida_miram);
 
 	tripulante->prox_instruccion++;
 
@@ -483,7 +487,8 @@ tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
 	free(tid_char);
 	free(tarea_recibida_miram);
 
-	return tripulante->tarea_posta;
+	//return tripulante->tarea_posta;
+	return tareaa;
 }
 
 void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado){
@@ -558,19 +563,19 @@ void informar_movimiento_mongo_X (tcbTripulante* tripulante, int x_viejo){
 	//Se mueve de X|Y a X’|Y’
 	strcpy(a_enviar,"Se mueve de ");
 
-	char* x_viejo_char = malloc(sizeof(char));
+	char* x_viejo_char = malloc(sizeof(char)+1);
 	//char* x_viejo_char;
 	sprintf(x_viejo_char, "%d", x_viejo);
 	strcat(a_enviar,x_viejo_char);
 	strcat(a_enviar, "|");
-	char* y_actual = malloc(sizeof(char));
+	char* y_actual = malloc(sizeof(char)+1);
 	//char* y_actual;
 	sprintf(y_actual, "%d", tripulante->posicionY);
 	strcat(a_enviar, y_actual);
 
 	strcat(a_enviar, " a ");
 
-	char* x_actual = malloc(sizeof(char));
+	char* x_actual = malloc(sizeof(char)+1);
 	//char* x_actual;
 	sprintf(x_actual, "%d", tripulante->posicionX);
 	strcat(a_enviar, x_actual);
@@ -612,11 +617,11 @@ void informar_movimiento_mongo_X (tcbTripulante* tripulante, int x_viejo){
 
 	free(mensaje_recibido);
 
-	//eliminar_paquete(paquete);
+	eliminar_paquete(paquete);
 	free(tid_char);
-	//free(x_viejo_char);
-	//free(y_actual);
-	//free(x_actual);
+	free(x_viejo_char);
+	free(y_actual);
+	free(x_actual);
 	free(a_enviar);
 }
 
@@ -631,13 +636,13 @@ void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo){
 	//Se mueve de X|Y a X’|Y’
 	strcpy(a_enviar,"Se mueve de ");
 
-	char* x_actual = malloc(sizeof(char));
+	char* x_actual = malloc(sizeof(char)+1);
 	//char* x_actual;
 	sprintf(x_actual, "%d", tripulante->posicionX);
 	strcat(a_enviar,x_actual);
 
 	strcat(a_enviar, "|");
-	char* y_viejo_char = malloc(sizeof(char));
+	char* y_viejo_char = malloc(sizeof(char)+1);
 	//char* y_viejo_char;
 	sprintf(y_viejo_char, "%d", y_viejo);
 	strcat(a_enviar, y_viejo_char);
@@ -647,7 +652,7 @@ void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo){
 	strcat(a_enviar, x_actual);
 	strcat(a_enviar, "|");
 
-	char* y_actual = malloc(sizeof(char));
+	char* y_actual = malloc(sizeof(char)+1);
 	//char* y_actual;
 	sprintf(y_actual, "%d", tripulante->posicionY);
 	strcat(a_enviar, y_actual);
@@ -689,9 +694,9 @@ void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo){
 
 	eliminar_paquete(paquete);
 	free(tid_char);
-	//free(x_actual);
-	//free(y_viejo_char);
-	//free(y_actual);
+	free(x_actual);
+	free(y_viejo_char);
+	free(y_actual);
 	free(a_enviar);
 }
 
@@ -706,7 +711,7 @@ void informar_inicio_tarea(tcbTripulante* tripulante){
 	char* nombre_tarea = tripulante->tarea_posta->tarea;
 	//char* a_enviar = malloc(29 + strlen(nombre_tarea));
 	char* a_enviar = malloc(29);
-	strcpy(a_enviar, "Comienza ejecución de tarea ");
+	strcpy(a_enviar, "Comienza ejecucion de tarea ");
 	agregar_a_paquete(paquete, a_enviar, strlen(a_enviar)+1);
 	//strcat(a_enviar, nombre_tarea);
 	//log_info(logger, "a enviar %s", a_enviar);
@@ -728,6 +733,7 @@ void informar_inicio_tarea(tcbTripulante* tripulante){
 
 	eliminar_paquete(paquete);
 	free(tid_char);
+	free(a_enviar);
 	//free(mensaje_bitacora_char);
 	//free(mensaje);
 	//free(largo_mensaje_char);
@@ -762,6 +768,7 @@ void informar_fin_tarea(tcbTripulante* tripulante){
 
 	eliminar_paquete(paquete);
 	free(tid_char);
+	free(a_enviar);
 	//free(mensaje_bitacora_char);
 	//free(mensaje);
 	//free(largo_mensaje_char);
@@ -806,6 +813,7 @@ void informar_atencion_sabotaje(tcbTripulante* tripulante){
 
 	eliminar_paquete(paquete);
 	free(tid_char);
+	free(a_enviar);
 	//free(mensaje_bitacora_char);
 	//free(mensaje);
 	//free(largo_mensaje_char);
@@ -850,7 +858,7 @@ void mongo_tarea(tcbTripulante* tripu){
 
 	agregar_a_paquete(paquete, tripu->tarea_posta->tarea, strlen(tripu->tarea_posta->tarea)+1);
 
-	char* parametro_char = malloc(sizeof(char));
+	char* parametro_char = malloc(sizeof(char)+1);
 	sprintf(parametro_char, "%d", tripu->tarea_posta->parametro);
 	agregar_a_paquete(paquete, parametro_char, strlen(parametro_char)+1);
 
