@@ -692,7 +692,7 @@ INICIAR_PATOTA 5 tareas.txt 3|4 1|2 4|5
 INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 INICIAR_PATOTA 3 tareas_corta.txt 3|4 5|2 4|5
 INICIAR_PLANIFICACION
------
+----- prueba segmentacion:
 INICIAR_PATOTA 4 SEG_PatotaA.txt
 INICIAR_PATOTA 1 SEG_PatotaC.txt
 INICIAR_PLANIFICACION

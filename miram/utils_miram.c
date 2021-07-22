@@ -875,18 +875,6 @@ espacio_de_memoria* busqueda_best_fit(int tam){
     int espacios_libres_size = list_size(espacios_libres);
 
     if(espacios_libres_size != 0){
-    	/*espacio_de_memoria* espacio_best_fit;
-        int best_fit_diff = 999999; //revisar esto
-
-        for(int i=0; i < espacios_libres_size; i++){
-        	espacio_de_memoria* y = list_get(espacios_libres, i);
-            int diff = y->tam - tam;
-
-            if(best_fit_diff > diff){
-                best_fit_diff = diff;
-                espacio_best_fit = y;
-            }
-        }*/
     	espacio_de_memoria* espacio_best_fit = list_get(espacios_libres, 0);
     	for(int i=1; i < espacios_libres_size; i++){
 			espacio_de_memoria* espacio_a_comparar = list_get(espacios_libres, i);
@@ -951,7 +939,7 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 		return false;
 	}
 
-	espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea)+1);
+	espacio_de_memoria* espacio_de_memoria_tareas = asignar_espacio_de_memoria(strlen(tarea));
 	if (espacio_de_memoria_tareas == NULL){
 		log_info(logger, "espacio tareas todo mal");
 		eliminar_espacio_de_memoria(espacio_de_memoria_pcb_patota->base);
@@ -1119,7 +1107,7 @@ int compactar_memoria(){
         	}
         	//sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
         	list_remove(tabla_espacios_de_memoria, i);
-log_info(logger, "qqqqqqqqqqqqq");
+
         	//list_remove_and_destroy_element(tabla_espacios_de_memoria, i, (void*)destruir_espacio_memoria);
 
         	for(int j = i; j < list_size(tabla_espacios_de_memoria); j++){
