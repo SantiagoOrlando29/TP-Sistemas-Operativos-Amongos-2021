@@ -510,7 +510,7 @@ void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_es
 
 	char* mensaje_recibido = recibir_mensaje(conexion_miram);
 	if(strcmp(mensaje_recibido, "fallo cambio de estado") ==0){
-		log_info(logger, "fallo cambio estado");
+		//log_info(logger, "fallo cambio estado");
 	}
 
 	eliminar_paquete(paquete);

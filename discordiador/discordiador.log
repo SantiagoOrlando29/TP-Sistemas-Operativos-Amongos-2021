@@ -1,33 +1,32 @@
-[INFO] 10:35:27:906 discordiador/(24672:24680): in funcion_sabotaje
-[INFO] 10:35:27:891 discordiador/(24672:24679): in menu_discordiador
-[INFO] 10:35:28:980 discordiador/(24672:24679): Memoria asignada
-[INFO] 10:35:29:524 discordiador/(24672:24684): TRIPU 1  tarea recibida: GENERAR_OXIGENO 5;4;4;1
-[INFO] 10:35:29:543 discordiador/(24672:24685): TRIPU 2  tarea recibida: GENERAR_OXIGENO 5;4;4;1
-[INFO] 10:35:29:548 discordiador/(24672:24686): TRIPU 3  tarea recibida: GENERAR_OXIGENO 5;4;4;1
-[INFO] 10:35:33:652 discordiador/(24672:24679): posicion_sabotaje_char 1|1
-[INFO] 10:35:33:653 discordiador/(24672:24679): posx 1   posy 1
-[INFO] 10:35:33:662 discordiador/(24672:24679): lista bloq emer
-[INFO] 10:35:33:672 discordiador/(24672:24679): tid 1  posx 4  posy 4
-[INFO] 10:35:33:673 discordiador/(24672:24679): tid 2  posx 4  posy 4
-[INFO] 10:35:33:674 discordiador/(24672:24679): tid 3  posx 4  posy 5
-[INFO] 10:35:33:678 discordiador/(24672:24679): Tripu elegido: tid 2  posx 4  posy 4
-[INFO] 10:35:50:722 discordiador/(24672:24683): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 10:35:52:718 discordiador/(24672:24683): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 10:35:54:019 discordiador/(24672:24679): posicion_sabotaje_char 7|1
-[INFO] 10:35:54:021 discordiador/(24672:24679): posx 7   posy 1
-[INFO] 10:35:54:022 discordiador/(24672:24679): lista bloq emer
-[INFO] 10:35:54:023 discordiador/(24672:24679): tid 1  posx 5  posy 6
-[INFO] 10:35:54:030 discordiador/(24672:24679): tid 2  posx 4  posy 3
-[INFO] 10:35:54:033 discordiador/(24672:24679): tid 3  posx 4  posy 4
-[INFO] 10:35:54:039 discordiador/(24672:24679): Tripu elegido: tid 2  posx 4  posy 3
-[INFO] 10:36:13:054 discordiador/(24672:24684): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 2;3;3;4
-[INFO] 10:36:17:060 discordiador/(24672:24683): TRIPU 2  tarea recibida: ABC;5;6;4
-[INFO] 10:36:23:067 discordiador/(24672:24686): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 2;3;3;4
-[INFO] 10:36:23:067 discordiador/(24672:24683): TRIPU 1  tarea recibida: no hay mas tareas
-[INFO] 10:36:23:071 discordiador/(24672:24684): tripu_misma_patota_exit 1
-[INFO] 10:36:26:069 discordiador/(24672:24685): TRIPU 2  tarea recibida: CONSUMIR_OXIGENO 2;3;3;4
-[INFO] 10:36:33:079 discordiador/(24672:24683): TRIPU 3  tarea recibida: no hay mas tareas
-[INFO] 10:36:33:080 discordiador/(24672:24686): tripu_misma_patota_exit 2
-[INFO] 10:36:37:083 discordiador/(24672:24683): TRIPU 2  tarea recibida: no hay mas tareas
-[INFO] 10:36:37:084 discordiador/(24672:24685): tripu_misma_patota_exit 3
-[INFO] 10:36:37:086 discordiador/(24672:24685): size exit 0
+[INFO] 10:47:12:069 discordiador/(25038:25046): in funcion_sabotaje
+[INFO] 10:47:12:070 discordiador/(25038:25045): in menu_discordiador
+[INFO] 10:47:20:544 discordiador/(25038:25045): Memoria asignada
+[INFO] 10:47:21:417 discordiador/(25038:25050): TRIPU 1  tarea recibida: GENERAR_OXIGENO 5;4;4;1
+[INFO] 10:47:21:417 discordiador/(25038:25051): TRIPU 2  tarea recibida: GENERAR_OXIGENO 5;4;4;1
+[INFO] 10:47:21:418 discordiador/(25038:25052): TRIPU 3  tarea recibida: GENERAR_OXIGENO 5;4;4;1
+[INFO] 10:47:27:423 discordiador/(25038:25049): TRIPU 1  tarea recibida: ABC;5;6;4
+[INFO] 10:47:28:425 discordiador/(25038:25049): TRIPU 2  tarea recibida: ABC;5;6;4
+[INFO] 10:47:28:644 discordiador/(25038:25045): posicion_sabotaje_char 1|1
+[INFO] 10:47:28:644 discordiador/(25038:25045): posx 1   posy 1
+[INFO] 10:47:28:644 discordiador/(25038:25045): lista bloq emer
+[INFO] 10:47:28:644 discordiador/(25038:25045): tid 1  posx 5  posy 5
+[INFO] 10:47:28:644 discordiador/(25038:25045): tid 2  posx 5  posy 4
+[INFO] 10:47:28:644 discordiador/(25038:25045): Tripu elegido: tid 2  posx 5  posy 4
+[INFO] 10:47:45:650 discordiador/(25038:25049): TRIPU 3  tarea recibida: ABC;5;6;4
+[INFO] 10:47:50:617 discordiador/(25038:25045): posicion_sabotaje_char 7|1
+[INFO] 10:47:50:617 discordiador/(25038:25045): posx 7   posy 1
+[INFO] 10:47:50:617 discordiador/(25038:25045): lista bloq emer
+[INFO] 10:47:50:617 discordiador/(25038:25045): tid 1  posx 5  posy 6
+[INFO] 10:47:50:618 discordiador/(25038:25045): tid 2  posx 3  posy 4
+[INFO] 10:47:50:618 discordiador/(25038:25045): tid 3  posx 4  posy 4
+[INFO] 10:47:50:618 discordiador/(25038:25045): Tripu elegido: tid 3  posx 4  posy 4
+[INFO] 10:48:06:622 discordiador/(25038:25050): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 2;3;3;4
+[INFO] 10:48:14:630 discordiador/(25038:25051): TRIPU 2  tarea recibida: CONSUMIR_OXIGENO 2;3;3;4
+[INFO] 10:48:16:631 discordiador/(25038:25049): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 10:48:16:631 discordiador/(25038:25050): tripu_misma_patota_exit 1
+[INFO] 10:48:23:638 discordiador/(25038:25052): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 2;3;3;4
+[INFO] 10:48:24:639 discordiador/(25038:25049): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 10:48:24:639 discordiador/(25038:25051): tripu_misma_patota_exit 2
+[INFO] 10:48:33:647 discordiador/(25038:25049): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 10:48:33:647 discordiador/(25038:25052): tripu_misma_patota_exit 3
+[INFO] 10:48:33:647 discordiador/(25038:25052): size exit 0

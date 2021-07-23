@@ -330,7 +330,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				bool cambio_exitoso = cambiar_estado(patota_id, estado, tripulante_id);
 				if(cambio_exitoso == false){
 					char* mensaje = "fallo cambio de estado";
-					log_info(logger, "fallo cambio estado");
+					//log_info(logger, "fallo cambio estado");
 					enviar_mensaje(mensaje, socket_cliente);
 				}else{
 					char* mensaje = "cambio de estado exitoso";
@@ -380,13 +380,8 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				t_list* lista_pr = recibir_paquete(socket_cliente); //se recibe el string directo para poner en la bitacora
 				tripulante_id = (int)atoi(list_get(lista_pr,0));
 				char* mens = list_get(lista_pr,1);
-				if(list_size(lista_pr) == 3){
-					char* mens2 = list_get(lista_pr,2);
-					//strcat(mens, mens2);
-					log_info(logger, "tid %d  %s%s",tripulante_id, mens, mens2);
-				}else{
-					log_info(logger, "tid %d  %s",tripulante_id, mens);
-				}
+				log_info(logger, "tid %d  %s",tripulante_id, mens);
+
 				//cargar bitacora()
 
 				char* mensaje = "ok";
