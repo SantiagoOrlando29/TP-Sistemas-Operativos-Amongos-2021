@@ -206,6 +206,7 @@ void iniciar_servidor2(t_configuracion*);
 int funcionx(int);
 char* contar_archivos(char*);
 void destruir_lista(char*);
+void bitacora_crear_archivo(int);
 
 
 //Prototipos de funciones sujetas a cambios al linkearse con discordiador

@@ -15,9 +15,9 @@ int main(void)
 	leer_config();
 	log_debug(logger, "Testeo config, la IP es: %s", configuracion.ip);
 
-	//file_system_iniciar();
-	char* archivitos = contar_archivos("/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras");
-	//log_debug(logger, "ARCHIVOS PA %s", archivitos);
+	file_system_iniciar();
+	//char* archivitos = contar_archivos(bitacoras_path);  //Chequear caso que no hay archivos
+
 
 
 

@@ -15,6 +15,8 @@ int socket_servidor;
 int cant_sabotaje = 0;
 int primer_hilo = 0;
 int socket_cliente_sabotaje = 0;
+int no_es_discordiador = 0;
+int numero_tripulante = 1;
 
 //TODO BITACORA, SIGNAL (LINKEADO A mandar_primer_ubicacion_sabotaje)
 
@@ -1670,6 +1672,15 @@ void funcion_cliente(int socket_cliente)
 	int tripulante_id;
 	t_list* lista;
 
+	if(no_es_discordiador){
+
+		bitacora_crear_archivo(numero_tripulante);
+		numero_tripulante++;
+	}
+
+	no_es_discordiador = 1;
+
+
 
 	while(1)
 	{
@@ -1855,3 +1866,24 @@ char* contar_archivos(char* path){
 void destruir_lista(char* contenido){
     free(contenido);
 }
+
+void bitacora_crear_archivo(int numero_tripulante){
+
+
+	char *ruta = string_from_format("%s/Tripulante%d.ims", bitacoras_path, numero_tripulante);
+
+	crear_archivo(ruta);
+
+	t_config* bitacora_md = config_create(ruta);
+
+	config_set_value(bitacora_md, "SIZE", "0");
+	config_set_value(bitacora_md, "BLOCKS", "[]");
+
+	config_save(bitacora_md);
+
+	config_destroy(bitacora_md);
+
+
+}
+
+

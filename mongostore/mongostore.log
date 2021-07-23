@@ -825,3 +825,438 @@
 [INFO] 19:35:05:490 mongostore/(12790:12792): Servidor Mongo2 encendido
 [INFO] 19:35:05:490 mongostore/(12790:12791): Servidor iniciando
 [INFO] 19:35:05:490 mongostore/(12790:12791): Servidor Mongo encendido
+[DEBUG] 19:40:58:394 mongostore/(13633:13633): LOGGER OK
+[INFO] 19:40:58:394 mongostore/(13633:13633): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:40:58:394 mongostore/(13633:13633): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:40:58:394 mongostore/(13633:13633): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:40:58:395 mongostore/(13633:13633): PRIMER BLOQUE : [1,3,5]
+[DEBUG] 19:40:58:395 mongostore/(13633:13633): BLOQUE BUFFER : [6,7,9]
+[DEBUG] 19:40:58:395 mongostore/(13633:13633): BLOQUE BUFFER : [4,8,2]
+[DEBUG] 19:40:58:395 mongostore/(13633:13633): Los bloques ocupados por el total de las bitacoras son [1,3,5,6,7,9,4,8,2]
+[INFO] 19:40:58:395 mongostore/(13633:13633): pid 13633  
+
+[INFO] 19:40:58:395 mongostore/(13633:13635): Servidor iniciando 2
+[INFO] 19:40:58:395 mongostore/(13633:13635): Servidor Mongo2 encendido
+[INFO] 19:40:58:395 mongostore/(13633:13634): Servidor iniciando
+[INFO] 19:40:58:395 mongostore/(13633:13634): Servidor Mongo encendido
+[DEBUG] 19:51:52:972 mongostore/(15215:15215): LOGGER OK
+[INFO] 19:51:52:972 mongostore/(15215:15215): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:51:52:972 mongostore/(15215:15215): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:51:52:972 mongostore/(15215:15215): Info-Comienza iniciar_file_system
+[DEBUG] 19:51:52:972 mongostore/(15215:15215): I-Se ingresa a superbloque_validar_existencia
+[DEBUG] 19:51:52:972 mongostore/(15215:15215): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 19:51:52:972 mongostore/(15215:15215): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 3
+[INFO] 19:51:52:972 mongostore/(15215:15215): PARA DEBUG SB.B_S 13 Y SB.BLOCKS 17 y en archivo SB.B_S 13 Y SB.BLOCKS 17
+[DEBUG] 19:51:52:972 mongostore/(15215:15215): O-Superbloque generado desde archivo
+[DEBUG] 19:51:52:978 mongostore/(15215:15215): I-Se ingresa a superbloque_mapear_archivo_a_memoria
+[DEBUG] 19:51:52:978 mongostore/(15215:15215): I-Se ingresa a superbloque_actualizar_archivo
+[INFO] 19:51:52:978 mongostore/(15215:15215): PARA DEBUG SB.B_S 13 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 19:51:52:979 mongostore/(15215:15215): PARA DEBUG SB.B_S 13 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 19:51:52:979 mongostore/(15215:15215): O-Archivo SuperBloque.ims actualizado
+[DEBUG] 19:51:52:979 mongostore/(15215:15215): O-Superbloque mapeado del archivo a la memoria
+[DEBUG] 19:51:52:979 mongostore/(15215:15215): O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap
+[INFO] 19:51:52:979 mongostore/(15215:15215): PARA DEBUG SB.B_S 13 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 19:51:52:979 mongostore/(15215:15215): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 19:51:52:979 mongostore/(15215:15215): Info-Se ingresa a blocks_validar_existencia
+[DEBUG] 19:51:52:979 mongostore/(15215:15215): I-Se ingresa a blocks_validar_existencia_del_archivo
+[DEBUG] 19:51:52:979 mongostore/(15215:15215): O-Existencia del archivo Blocks.ims validada
+[DEBUG] 19:51:52:979 mongostore/(15215:15215): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 19:51:52:979 mongostore/(15215:15215): O-Blocks mapeado del archivo a la memoria
+[INFO] 19:51:52:979 mongostore/(15215:15215): Existencia de Blocks validada
+[DEBUG] 19:51:52:979 mongostore/(15215:15215): Directorios del File System confirmados
+[INFO] 19:51:52:979 mongostore/(15215:15215): File System iniciado
+[DEBUG] 19:51:52:980 mongostore/(15215:15215): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:51:52:980 mongostore/(15215:15215): PRIMER BLOQUE : [1,3,5]
+[DEBUG] 19:51:52:980 mongostore/(15215:15215): BLOQUE BUFFER : [6,7,9]
+[DEBUG] 19:51:52:980 mongostore/(15215:15215): BLOQUE BUFFER : [4,8,2]
+[DEBUG] 19:51:52:980 mongostore/(15215:15215): Los bloques ocupados por el total de las bitacoras son [1,3,5,6,7,9,4,8,2]
+[INFO] 19:51:52:980 mongostore/(15215:15215): pid 15215  
+
+[INFO] 19:51:52:980 mongostore/(15215:15217): Servidor iniciando 2
+[INFO] 19:51:52:980 mongostore/(15215:15217): Servidor Mongo2 encendido
+[INFO] 19:51:52:980 mongostore/(15215:15216): Servidor iniciando
+[INFO] 19:51:52:980 mongostore/(15215:15216): Servidor Mongo encendido
+[DEBUG] 19:53:05:453 mongostore/(15410:15410): LOGGER OK
+[INFO] 19:53:05:453 mongostore/(15410:15410): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:53:05:453 mongostore/(15410:15410): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:53:05:453 mongostore/(15410:15410): Info-Comienza iniciar_file_system
+[DEBUG] 19:53:05:454 mongostore/(15410:15410): I-Se ingresa a superbloque_validar_existencia
+[DEBUG] 19:53:05:454 mongostore/(15410:15410): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 19:53:05:454 mongostore/(15410:15410): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 3
+[INFO] 19:53:05:454 mongostore/(15410:15410): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 19:53:05:454 mongostore/(15410:15410): O-Superbloque generado desde archivo
+[DEBUG] 19:53:05:454 mongostore/(15410:15410): I-Se ingresa a superbloque_mapear_archivo_a_memoria
+[DEBUG] 19:53:05:454 mongostore/(15410:15410): I-Se ingresa a superbloque_actualizar_archivo
+[INFO] 19:53:05:454 mongostore/(15410:15410): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 19:53:05:456 mongostore/(15410:15410): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 19:53:05:456 mongostore/(15410:15410): O-Archivo SuperBloque.ims actualizado
+[DEBUG] 19:53:05:456 mongostore/(15410:15410): O-Superbloque mapeado del archivo a la memoria
+[DEBUG] 19:53:05:456 mongostore/(15410:15410): O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap
+[INFO] 19:53:05:456 mongostore/(15410:15410): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 19:53:05:456 mongostore/(15410:15410): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 19:53:05:456 mongostore/(15410:15410): Info-Se ingresa a blocks_validar_existencia
+[DEBUG] 19:53:05:456 mongostore/(15410:15410): I-Se ingresa a blocks_validar_existencia_del_archivo
+[DEBUG] 19:53:05:456 mongostore/(15410:15410): O-Existencia del archivo Blocks.ims validada
+[DEBUG] 19:53:05:456 mongostore/(15410:15410): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 19:53:05:456 mongostore/(15410:15410): O-Blocks mapeado del archivo a la memoria
+[INFO] 19:53:05:456 mongostore/(15410:15410): Existencia de Blocks validada
+[DEBUG] 19:53:05:456 mongostore/(15410:15410): Directorios del File System confirmados
+[INFO] 19:53:05:457 mongostore/(15410:15410): File System iniciado
+[DEBUG] 19:53:05:457 mongostore/(15410:15410): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:53:31:062 mongostore/(15477:15477): LOGGER OK
+[INFO] 19:53:31:062 mongostore/(15477:15477): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:53:31:062 mongostore/(15477:15477): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:53:31:062 mongostore/(15477:15477): Info-Comienza iniciar_file_system
+[DEBUG] 19:53:31:062 mongostore/(15477:15477): I-Se ingresa a superbloque_validar_existencia
+[DEBUG] 19:53:31:062 mongostore/(15477:15477): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 19:53:31:062 mongostore/(15477:15477): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 3
+[INFO] 19:53:31:062 mongostore/(15477:15477): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 19:53:31:063 mongostore/(15477:15477): O-Superbloque generado desde archivo
+[DEBUG] 19:53:31:063 mongostore/(15477:15477): I-Se ingresa a superbloque_mapear_archivo_a_memoria
+[DEBUG] 19:53:31:063 mongostore/(15477:15477): I-Se ingresa a superbloque_actualizar_archivo
+[INFO] 19:53:31:063 mongostore/(15477:15477): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 19:53:31:065 mongostore/(15477:15477): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 19:53:31:065 mongostore/(15477:15477): O-Archivo SuperBloque.ims actualizado
+[DEBUG] 19:53:31:065 mongostore/(15477:15477): O-Superbloque mapeado del archivo a la memoria
+[DEBUG] 19:53:31:065 mongostore/(15477:15477): O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap
+[INFO] 19:53:31:065 mongostore/(15477:15477): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 19:53:31:065 mongostore/(15477:15477): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 19:53:31:065 mongostore/(15477:15477): Info-Se ingresa a blocks_validar_existencia
+[DEBUG] 19:53:31:065 mongostore/(15477:15477): I-Se ingresa a blocks_validar_existencia_del_archivo
+[DEBUG] 19:53:31:065 mongostore/(15477:15477): O-Existencia del archivo Blocks.ims validada
+[DEBUG] 19:53:31:066 mongostore/(15477:15477): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 19:53:31:066 mongostore/(15477:15477): O-Blocks mapeado del archivo a la memoria
+[INFO] 19:53:31:066 mongostore/(15477:15477): Existencia de Blocks validada
+[DEBUG] 19:53:31:066 mongostore/(15477:15477): Directorios del File System confirmados
+[INFO] 19:53:31:066 mongostore/(15477:15477): File System iniciado
+[DEBUG] 19:53:31:066 mongostore/(15477:15477): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims"
+[DEBUG] 19:53:31:066 mongostore/(15477:15477): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante14.ims"
+[INFO] 19:53:31:066 mongostore/(15477:15477): pid 15477  
+
+[INFO] 19:53:31:066 mongostore/(15477:15479): Servidor iniciando 2
+[INFO] 19:53:31:067 mongostore/(15477:15479): Servidor Mongo2 encendido
+[INFO] 19:53:31:067 mongostore/(15477:15478): Servidor iniciando
+[INFO] 19:53:31:067 mongostore/(15477:15478): Servidor Mongo encendido
+[DEBUG] 20:06:16:367 mongostore/(17172:17172): LOGGER OK
+[INFO] 20:06:16:368 mongostore/(17172:17172): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 20:06:16:368 mongostore/(17172:17172): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 20:06:16:368 mongostore/(17172:17172): Info-Comienza iniciar_file_system
+[DEBUG] 20:06:16:368 mongostore/(17172:17172): I-Se ingresa a superbloque_validar_existencia
+[DEBUG] 20:06:16:368 mongostore/(17172:17172): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 20:06:16:368 mongostore/(17172:17172): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 3
+[INFO] 20:06:16:368 mongostore/(17172:17172): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 20:06:16:368 mongostore/(17172:17172): O-Superbloque generado desde archivo
+[DEBUG] 20:06:16:368 mongostore/(17172:17172): I-Se ingresa a superbloque_mapear_archivo_a_memoria
+[DEBUG] 20:06:16:368 mongostore/(17172:17172): I-Se ingresa a superbloque_actualizar_archivo
+[INFO] 20:06:16:368 mongostore/(17172:17172): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 20:06:16:370 mongostore/(17172:17172): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 20:06:16:370 mongostore/(17172:17172): O-Archivo SuperBloque.ims actualizado
+[DEBUG] 20:06:16:371 mongostore/(17172:17172): O-Superbloque mapeado del archivo a la memoria
+[DEBUG] 20:06:16:371 mongostore/(17172:17172): O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap
+[INFO] 20:06:16:371 mongostore/(17172:17172): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 20:06:16:371 mongostore/(17172:17172): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 20:06:16:371 mongostore/(17172:17172): Info-Se ingresa a blocks_validar_existencia
+[DEBUG] 20:06:16:371 mongostore/(17172:17172): I-Se ingresa a blocks_validar_existencia_del_archivo
+[DEBUG] 20:06:16:371 mongostore/(17172:17172): O-Existencia del archivo Blocks.ims validada
+[DEBUG] 20:06:16:371 mongostore/(17172:17172): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 20:06:16:371 mongostore/(17172:17172): O-Blocks mapeado del archivo a la memoria
+[INFO] 20:06:16:371 mongostore/(17172:17172): Existencia de Blocks validada
+[DEBUG] 20:06:16:371 mongostore/(17172:17172): Directorios del File System confirmados
+[INFO] 20:06:16:371 mongostore/(17172:17172): File System iniciado
+[DEBUG] 20:06:16:372 mongostore/(17172:17172): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims"
+[DEBUG] 20:07:36:397 mongostore/(17369:17369): LOGGER OK
+[INFO] 20:07:36:397 mongostore/(17369:17369): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 20:07:36:398 mongostore/(17369:17369): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 20:07:36:398 mongostore/(17369:17369): Info-Comienza iniciar_file_system
+[DEBUG] 20:07:36:398 mongostore/(17369:17369): I-Se ingresa a superbloque_validar_existencia
+[DEBUG] 20:07:36:398 mongostore/(17369:17369): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 20:07:36:398 mongostore/(17369:17369): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 3
+[INFO] 20:07:36:398 mongostore/(17369:17369): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 20:07:36:398 mongostore/(17369:17369): O-Superbloque generado desde archivo
+[DEBUG] 20:07:36:398 mongostore/(17369:17369): I-Se ingresa a superbloque_mapear_archivo_a_memoria
+[DEBUG] 20:07:36:398 mongostore/(17369:17369): I-Se ingresa a superbloque_actualizar_archivo
+[INFO] 20:07:36:398 mongostore/(17369:17369): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 20:07:36:404 mongostore/(17369:17369): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 20:07:36:404 mongostore/(17369:17369): O-Archivo SuperBloque.ims actualizado
+[DEBUG] 20:07:36:405 mongostore/(17369:17369): O-Superbloque mapeado del archivo a la memoria
+[DEBUG] 20:07:36:405 mongostore/(17369:17369): O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap
+[INFO] 20:07:36:405 mongostore/(17369:17369): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 20:07:36:405 mongostore/(17369:17369): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 20:07:36:405 mongostore/(17369:17369): Info-Se ingresa a blocks_validar_existencia
+[DEBUG] 20:07:36:405 mongostore/(17369:17369): I-Se ingresa a blocks_validar_existencia_del_archivo
+[DEBUG] 20:07:36:405 mongostore/(17369:17369): O-Existencia del archivo Blocks.ims validada
+[DEBUG] 20:07:36:405 mongostore/(17369:17369): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 20:07:36:405 mongostore/(17369:17369): O-Blocks mapeado del archivo a la memoria
+[INFO] 20:07:36:405 mongostore/(17369:17369): Existencia de Blocks validada
+[DEBUG] 20:07:36:405 mongostore/(17369:17369): Directorios del File System confirmados
+[INFO] 20:07:36:405 mongostore/(17369:17369): File System iniciado
+[DEBUG] 20:07:36:406 mongostore/(17369:17369): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims"
+[DEBUG] 20:07:58:699 mongostore/(17440:17440): LOGGER OK
+[INFO] 20:07:58:700 mongostore/(17440:17440): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 20:07:58:700 mongostore/(17440:17440): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 20:07:58:700 mongostore/(17440:17440): Info-Comienza iniciar_file_system
+[DEBUG] 20:07:58:700 mongostore/(17440:17440): I-Se ingresa a superbloque_validar_existencia
+[DEBUG] 20:07:58:700 mongostore/(17440:17440): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 20:07:58:700 mongostore/(17440:17440): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 3
+[INFO] 20:07:58:700 mongostore/(17440:17440): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 20:07:58:700 mongostore/(17440:17440): O-Superbloque generado desde archivo
+[DEBUG] 20:07:58:700 mongostore/(17440:17440): I-Se ingresa a superbloque_mapear_archivo_a_memoria
+[DEBUG] 20:07:58:700 mongostore/(17440:17440): I-Se ingresa a superbloque_actualizar_archivo
+[INFO] 20:07:58:700 mongostore/(17440:17440): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 20:07:58:706 mongostore/(17440:17440): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 20:07:58:706 mongostore/(17440:17440): O-Archivo SuperBloque.ims actualizado
+[DEBUG] 20:07:58:707 mongostore/(17440:17440): O-Superbloque mapeado del archivo a la memoria
+[DEBUG] 20:07:58:707 mongostore/(17440:17440): O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap
+[INFO] 20:07:58:707 mongostore/(17440:17440): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 20:07:58:707 mongostore/(17440:17440): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 20:07:58:707 mongostore/(17440:17440): Info-Se ingresa a blocks_validar_existencia
+[DEBUG] 20:07:58:707 mongostore/(17440:17440): I-Se ingresa a blocks_validar_existencia_del_archivo
+[DEBUG] 20:07:58:707 mongostore/(17440:17440): O-Existencia del archivo Blocks.ims validada
+[DEBUG] 20:07:58:707 mongostore/(17440:17440): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 20:07:58:708 mongostore/(17440:17440): O-Blocks mapeado del archivo a la memoria
+[INFO] 20:07:58:708 mongostore/(17440:17440): Existencia de Blocks validada
+[DEBUG] 20:07:58:708 mongostore/(17440:17440): Directorios del File System confirmados
+[INFO] 20:07:58:708 mongostore/(17440:17440): File System iniciado
+[DEBUG] 20:07:58:708 mongostore/(17440:17440): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims"
+[DEBUG] 20:07:58:710 mongostore/(17440:17440): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante14.ims"
+[INFO] 20:07:58:710 mongostore/(17440:17440): pid 17440  
+
+[INFO] 20:07:58:711 mongostore/(17440:17442): Servidor iniciando 2
+[INFO] 20:07:58:711 mongostore/(17440:17442): Servidor Mongo2 encendido
+[INFO] 20:07:58:711 mongostore/(17440:17441): Servidor iniciando
+[INFO] 20:07:58:711 mongostore/(17440:17441): Servidor Mongo encendido
+[DEBUG] 20:08:41:837 mongostore/(17582:17582): LOGGER OK
+[INFO] 20:08:41:837 mongostore/(17582:17582): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 20:08:41:837 mongostore/(17582:17582): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 20:08:41:837 mongostore/(17582:17582): Info-Comienza iniciar_file_system
+[DEBUG] 20:08:41:837 mongostore/(17582:17582): I-Se ingresa a superbloque_validar_existencia
+[DEBUG] 20:08:41:837 mongostore/(17582:17582): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 20:08:41:837 mongostore/(17582:17582): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 3
+[INFO] 20:08:41:838 mongostore/(17582:17582): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 20:08:41:838 mongostore/(17582:17582): O-Superbloque generado desde archivo
+[DEBUG] 20:08:41:838 mongostore/(17582:17582): I-Se ingresa a superbloque_mapear_archivo_a_memoria
+[DEBUG] 20:08:41:838 mongostore/(17582:17582): I-Se ingresa a superbloque_actualizar_archivo
+[INFO] 20:08:41:838 mongostore/(17582:17582): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 20:08:41:840 mongostore/(17582:17582): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 20:08:41:840 mongostore/(17582:17582): O-Archivo SuperBloque.ims actualizado
+[DEBUG] 20:08:41:840 mongostore/(17582:17582): O-Superbloque mapeado del archivo a la memoria
+[DEBUG] 20:08:41:840 mongostore/(17582:17582): O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap
+[INFO] 20:08:41:840 mongostore/(17582:17582): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 20:08:41:840 mongostore/(17582:17582): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 20:08:41:840 mongostore/(17582:17582): Info-Se ingresa a blocks_validar_existencia
+[DEBUG] 20:08:41:841 mongostore/(17582:17582): I-Se ingresa a blocks_validar_existencia_del_archivo
+[DEBUG] 20:08:41:841 mongostore/(17582:17582): O-Existencia del archivo Blocks.ims validada
+[DEBUG] 20:08:41:841 mongostore/(17582:17582): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 20:08:41:841 mongostore/(17582:17582): O-Blocks mapeado del archivo a la memoria
+[INFO] 20:08:41:841 mongostore/(17582:17582): Existencia de Blocks validada
+[DEBUG] 20:08:41:841 mongostore/(17582:17582): Directorios del File System confirmados
+[INFO] 20:08:41:841 mongostore/(17582:17582): File System iniciado
+[DEBUG] 20:08:41:844 mongostore/(17582:17582): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims"
+[DEBUG] 20:08:41:850 mongostore/(17582:17582): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante14.ims"
+[INFO] 20:08:41:852 mongostore/(17582:17582): pid 17582  
+
+[INFO] 20:08:41:854 mongostore/(17582:17585): Servidor iniciando 2
+[INFO] 20:08:41:854 mongostore/(17582:17585): Servidor Mongo2 encendido
+[INFO] 20:08:41:855 mongostore/(17582:17584): Servidor iniciando
+[INFO] 20:08:41:855 mongostore/(17582:17584): Servidor Mongo encendido
+[DEBUG] 20:12:58:140 mongostore/(18323:18323): LOGGER OK
+[INFO] 20:12:58:140 mongostore/(18323:18323): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 20:12:58:140 mongostore/(18323:18323): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 20:12:58:140 mongostore/(18323:18323): Info-Comienza iniciar_file_system
+[DEBUG] 20:12:58:141 mongostore/(18323:18323): I-Se ingresa a superbloque_validar_existencia
+[DEBUG] 20:12:58:141 mongostore/(18323:18323): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 20:12:58:141 mongostore/(18323:18323): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 3
+[INFO] 20:12:58:141 mongostore/(18323:18323): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 20:12:58:141 mongostore/(18323:18323): O-Superbloque generado desde archivo
+[DEBUG] 20:12:58:141 mongostore/(18323:18323): I-Se ingresa a superbloque_mapear_archivo_a_memoria
+[DEBUG] 20:12:58:141 mongostore/(18323:18323): I-Se ingresa a superbloque_actualizar_archivo
+[INFO] 20:12:58:141 mongostore/(18323:18323): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 20:12:58:143 mongostore/(18323:18323): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 20:12:58:143 mongostore/(18323:18323): O-Archivo SuperBloque.ims actualizado
+[DEBUG] 20:12:58:143 mongostore/(18323:18323): O-Superbloque mapeado del archivo a la memoria
+[DEBUG] 20:12:58:143 mongostore/(18323:18323): O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap
+[INFO] 20:12:58:143 mongostore/(18323:18323): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 20:12:58:143 mongostore/(18323:18323): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 20:12:58:143 mongostore/(18323:18323): Info-Se ingresa a blocks_validar_existencia
+[DEBUG] 20:12:58:143 mongostore/(18323:18323): I-Se ingresa a blocks_validar_existencia_del_archivo
+[DEBUG] 20:12:58:143 mongostore/(18323:18323): O-Existencia del archivo Blocks.ims validada
+[DEBUG] 20:12:58:143 mongostore/(18323:18323): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 20:12:58:143 mongostore/(18323:18323): O-Blocks mapeado del archivo a la memoria
+[INFO] 20:12:58:143 mongostore/(18323:18323): Existencia de Blocks validada
+[DEBUG] 20:12:58:143 mongostore/(18323:18323): Directorios del File System confirmados
+[INFO] 20:12:58:144 mongostore/(18323:18323): File System iniciado
+[INFO] 20:12:58:144 mongostore/(18323:18323): pid 18323  
+
+[INFO] 20:12:58:144 mongostore/(18323:18325): Servidor iniciando 2
+[INFO] 20:12:58:144 mongostore/(18323:18325): Servidor Mongo2 encendido
+[INFO] 20:12:58:144 mongostore/(18323:18324): Servidor iniciando
+[INFO] 20:12:58:144 mongostore/(18323:18324): Servidor Mongo encendido
+[INFO] 20:13:05:025 mongostore/(18323:18324): Estableciendo conexión desde 5347
+[INFO] 20:13:05:025 mongostore/(18323:18324): Creando hilo
+[INFO] 20:13:05:025 mongostore/(18323:18325): 2 Estableciendo conexión desde 30909
+[INFO] 20:13:05:025 mongostore/(18323:18325): 2 Creando hilo
+[INFO] 20:13:05:027 mongostore/(18323:18350): funcionx
+[INFO] 20:13:05:028 mongostore/(18323:18349): Se conecto este socket a mi 8
+[INFO] 20:13:22:839 mongostore/(18323:18324): Estableciendo conexión desde 6883
+[INFO] 20:13:22:839 mongostore/(18323:18324): Creando hilo
+[INFO] 20:13:22:846 mongostore/(18323:18398): Se conecto este socket a mi 9
+[DEBUG] 20:13:22:847 mongostore/(18323:18398): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims"
+[INFO] 20:13:22:847 mongostore/(18323:18324): Estableciendo conexión desde 7907
+[INFO] 20:13:22:847 mongostore/(18323:18324): Creando hilo
+[INFO] 20:13:22:847 mongostore/(18323:18398): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 20:13:22:848 mongostore/(18323:18400): Se conecto este socket a mi 10
+[DEBUG] 20:13:22:848 mongostore/(18323:18400): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims"
+[INFO] 20:13:22:848 mongostore/(18323:18324): Estableciendo conexión desde 8931
+[INFO] 20:13:22:848 mongostore/(18323:18324): Creando hilo
+[INFO] 20:13:22:848 mongostore/(18323:18400): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 20:13:22:849 mongostore/(18323:18402): Se conecto este socket a mi 11
+[DEBUG] 20:13:22:849 mongostore/(18323:18402): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante3.ims"
+[INFO] 20:13:23:848 mongostore/(18323:18398): tarea GENERAR_OXIGENO  param 1
+[INFO] 20:13:23:849 mongostore/(18323:18400): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 20:13:24:849 mongostore/(18323:18398): tid 1  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 20:13:24:849 mongostore/(18323:18400): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 20:13:24:849 mongostore/(18323:18402): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 20:13:25:850 mongostore/(18323:18398): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 20:13:25:850 mongostore/(18323:18400): tarea GENERAR_OXIGENO  param 1
+[INFO] 20:13:25:850 mongostore/(18323:18402): tarea GENERAR_OXIGENO  param 1
+[INFO] 20:13:26:851 mongostore/(18323:18402): tid 3  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 20:13:26:851 mongostore/(18323:18398): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 20:13:27:854 mongostore/(18323:18402): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 20:13:27:854 mongostore/(18323:18398): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 20:13:27:854 mongostore/(18323:18400): tid 2  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 20:13:27:855 mongostore/(18323:18402): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 20:13:28:855 mongostore/(18323:18398): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 20:13:28:855 mongostore/(18323:18400): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 20:13:28:855 mongostore/(18323:18402): tid 3  Se mueve de 5|4 a 5|5
+[INFO] 20:13:29:855 mongostore/(18323:18398): tid 1  Comienza ejecución de tarea ABC
+[INFO] 20:13:29:856 mongostore/(18323:18402): tid 3  Se mueve de 5|5 a 5|6
+[INFO] 20:13:30:857 mongostore/(18323:18402): tid 3  Comienza ejecución de tarea ABC
+[INFO] 20:13:33:856 mongostore/(18323:18398): tid 1  Se finaliza la tarea ABC
+[INFO] 20:13:33:857 mongostore/(18323:18398): tid 1  Se mueve de 5|6 a 4|6
+[INFO] 20:13:34:857 mongostore/(18323:18398): tid 1  Se mueve de 4|6 a 4|5
+[INFO] 20:13:34:858 mongostore/(18323:18402): tid 3  Se finaliza la tarea ABC
+[INFO] 20:13:34:858 mongostore/(18323:18402): tid 3  Se mueve de 5|6 a 4|6
+[INFO] 20:13:35:858 mongostore/(18323:18398): tid 1  Se mueve de 4|5 a 3|5
+[INFO] 20:13:35:858 mongostore/(18323:18402): tid 3  Se mueve de 4|6 a 4|5
+[INFO] 20:13:36:858 mongostore/(18323:18398): tid 1  Se mueve de 3|5 a 3|4
+[INFO] 20:13:36:859 mongostore/(18323:18402): tid 3  Se mueve de 4|5 a 3|5
+[INFO] 20:13:37:859 mongostore/(18323:18398): tid 1  Se mueve de 3|4 a 2|4
+[INFO] 20:13:37:859 mongostore/(18323:18402): tid 3  Se mueve de 3|5 a 3|4
+[INFO] 20:13:38:860 mongostore/(18323:18402): tid 3  Se mueve de 3|4 a 2|4
+[INFO] 20:13:38:860 mongostore/(18323:18398): tid 1  Se mueve de 2|4 a 2|3
+[INFO] 20:13:39:861 mongostore/(18323:18398): tid 1  Se mueve de 2|3 a 2|2
+[INFO] 20:13:39:861 mongostore/(18323:18402): tid 3  Se mueve de 2|4 a 2|3
+[INFO] 20:13:40:862 mongostore/(18323:18398): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 20:13:40:862 mongostore/(18323:18402): tid 3  Se mueve de 2|3 a 2|2
+[INFO] 20:13:41:862 mongostore/(18323:18402): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 20:13:41:862 mongostore/(18323:18398): tid 1  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 20:13:41:862 mongostore/(18323:18400): tid 2  Se mueve de 4|4 a 5|4
+[INFO] 20:13:42:863 mongostore/(18323:18398): tid 1  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 20:13:42:863 mongostore/(18323:18400): tid 2  Se mueve de 5|4 a 5|5
+[INFO] 20:13:42:864 mongostore/(18323:18402): tid 3  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 20:13:43:864 mongostore/(18323:18400): tid 2  Se mueve de 5|5 a 5|6
+[INFO] 20:13:43:864 mongostore/(18323:18402): tid 3  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 20:13:44:865 mongostore/(18323:18400): tid 2  Comienza ejecución de tarea ABC
+[INFO] 20:13:48:866 mongostore/(18323:18400): tid 2  Se finaliza la tarea ABC
+[INFO] 20:13:48:867 mongostore/(18323:18400): tid 2  Se mueve de 5|6 a 4|6
+[INFO] 20:13:49:867 mongostore/(18323:18400): tid 2  Se mueve de 4|6 a 4|5
+[INFO] 20:13:50:868 mongostore/(18323:18400): tid 2  Se mueve de 4|5 a 3|5
+[INFO] 20:13:51:869 mongostore/(18323:18400): tid 2  Se mueve de 3|5 a 3|4
+[INFO] 20:13:52:875 mongostore/(18323:18400): tid 2  Se mueve de 3|4 a 2|4
+[INFO] 20:13:53:877 mongostore/(18323:18400): tid 2  Se mueve de 2|4 a 2|3
+[INFO] 20:13:54:878 mongostore/(18323:18400): tid 2  Se mueve de 2|3 a 2|2
+[INFO] 20:13:55:878 mongostore/(18323:18400): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 20:13:56:879 mongostore/(18323:18400): tid 2  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 20:13:57:879 mongostore/(18323:18400): tid 2  Se finaliza la tarea CONSUMIR_OXIGENO
+[DEBUG] 20:14:18:483 mongostore/(18547:18547): LOGGER OK
+[INFO] 20:14:18:483 mongostore/(18547:18547): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 20:14:18:483 mongostore/(18547:18547): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 20:14:18:483 mongostore/(18547:18547): Info-Comienza iniciar_file_system
+[DEBUG] 20:14:18:483 mongostore/(18547:18547): I-Se ingresa a superbloque_validar_existencia
+[DEBUG] 20:14:18:483 mongostore/(18547:18547): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 20:14:18:483 mongostore/(18547:18547): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 3
+[INFO] 20:14:18:483 mongostore/(18547:18547): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 20:14:18:483 mongostore/(18547:18547): O-Superbloque generado desde archivo
+[DEBUG] 20:14:18:483 mongostore/(18547:18547): I-Se ingresa a superbloque_mapear_archivo_a_memoria
+[DEBUG] 20:14:18:483 mongostore/(18547:18547): I-Se ingresa a superbloque_actualizar_archivo
+[INFO] 20:14:18:484 mongostore/(18547:18547): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 20:14:18:487 mongostore/(18547:18547): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 20:14:18:487 mongostore/(18547:18547): O-Archivo SuperBloque.ims actualizado
+[DEBUG] 20:14:18:487 mongostore/(18547:18547): O-Superbloque mapeado del archivo a la memoria
+[DEBUG] 20:14:18:487 mongostore/(18547:18547): O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap
+[INFO] 20:14:18:487 mongostore/(18547:18547): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 20:14:18:487 mongostore/(18547:18547): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 20:14:18:487 mongostore/(18547:18547): Info-Se ingresa a blocks_validar_existencia
+[DEBUG] 20:14:18:487 mongostore/(18547:18547): I-Se ingresa a blocks_validar_existencia_del_archivo
+[DEBUG] 20:14:18:487 mongostore/(18547:18547): O-Existencia del archivo Blocks.ims validada
+[DEBUG] 20:14:18:487 mongostore/(18547:18547): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 20:14:18:487 mongostore/(18547:18547): O-Blocks mapeado del archivo a la memoria
+[INFO] 20:14:18:487 mongostore/(18547:18547): Existencia de Blocks validada
+[DEBUG] 20:14:18:487 mongostore/(18547:18547): Directorios del File System confirmados
+[INFO] 20:14:18:487 mongostore/(18547:18547): File System iniciado
+[INFO] 20:14:18:488 mongostore/(18547:18547): pid 18547  
+
+[INFO] 20:14:18:494 mongostore/(18547:18549): Servidor iniciando 2
+[INFO] 20:14:18:494 mongostore/(18547:18549): Servidor Mongo2 encendido
+[INFO] 20:14:18:494 mongostore/(18547:18548): Servidor iniciando
+[INFO] 20:14:18:495 mongostore/(18547:18548): Servidor Mongo encendido
+[INFO] 20:14:22:164 mongostore/(18547:18548): Estableciendo conexión desde 9955
+[INFO] 20:14:22:164 mongostore/(18547:18548): Creando hilo
+[INFO] 20:14:22:164 mongostore/(18547:18549): 2 Estableciendo conexión desde 35517
+[INFO] 20:14:22:164 mongostore/(18547:18549): 2 Creando hilo
+[INFO] 20:14:22:164 mongostore/(18547:18577): funcionx
+[INFO] 20:14:22:164 mongostore/(18547:18576): Se conecto este socket a mi 8
+[INFO] 20:14:28:498 mongostore/(18547:18548): Estableciendo conexión desde 11491
+[INFO] 20:14:28:498 mongostore/(18547:18548): Creando hilo
+[INFO] 20:14:28:499 mongostore/(18547:18598): Se conecto este socket a mi 9
+[DEBUG] 20:14:28:499 mongostore/(18547:18598): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims"
+[INFO] 20:14:28:500 mongostore/(18547:18548): Estableciendo conexión desde 12515
+[INFO] 20:14:28:500 mongostore/(18547:18548): Creando hilo
+[INFO] 20:14:28:500 mongostore/(18547:18598): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 20:14:28:500 mongostore/(18547:18600): Se conecto este socket a mi 10
+[DEBUG] 20:14:28:501 mongostore/(18547:18600): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims"
+[INFO] 20:14:28:501 mongostore/(18547:18548): Estableciendo conexión desde 13539
+[INFO] 20:14:28:501 mongostore/(18547:18548): Creando hilo
+[INFO] 20:14:28:501 mongostore/(18547:18600): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 20:14:28:501 mongostore/(18547:18602): Se conecto este socket a mi 11
+[DEBUG] 20:14:28:501 mongostore/(18547:18602): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante3.ims"
+[INFO] 20:14:29:501 mongostore/(18547:18598): tarea GENERAR_OXIGENO  param 1
+[INFO] 20:14:29:502 mongostore/(18547:18600): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 20:14:30:501 mongostore/(18547:18598): tid 1  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 20:14:30:501 mongostore/(18547:18602): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 20:14:30:502 mongostore/(18547:18600): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 20:14:31:502 mongostore/(18547:18598): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 20:14:31:502 mongostore/(18547:18602): tarea GENERAR_OXIGENO  param 1
+[INFO] 20:14:31:502 mongostore/(18547:18600): tarea GENERAR_OXIGENO  param 1
+[INFO] 20:14:32:502 mongostore/(18547:18602): tid 3  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 20:14:32:503 mongostore/(18547:18598): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 20:14:33:503 mongostore/(18547:18602): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 20:14:33:503 mongostore/(18547:18600): tid 2  Comienza ejecución de tarea GENERAR_OXIGENO
+[INFO] 20:14:33:503 mongostore/(18547:18602): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 20:14:33:504 mongostore/(18547:18598): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 20:14:34:504 mongostore/(18547:18600): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 20:14:34:505 mongostore/(18547:18598): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 20:14:34:505 mongostore/(18547:18602): tid 3  Se mueve de 5|4 a 5|5
+[INFO] 20:14:35:505 mongostore/(18547:18598): tid 1  Comienza ejecución de tarea ABC
+[INFO] 20:14:35:505 mongostore/(18547:18602): tid 3  Se mueve de 5|5 a 5|6
+[INFO] 20:14:36:506 mongostore/(18547:18602): tid 3  Comienza ejecución de tarea ABC
+[INFO] 20:14:39:520 mongostore/(18547:18598): tid 1  Se finaliza la tarea ABC
+[INFO] 20:14:39:520 mongostore/(18547:18598): tid 1  Se mueve de 5|6 a 4|6
+[INFO] 20:14:40:521 mongostore/(18547:18602): tid 3  Se finaliza la tarea ABC
+[INFO] 20:14:40:521 mongostore/(18547:18598): tid 1  Se mueve de 4|6 a 4|5
+[INFO] 20:14:40:522 mongostore/(18547:18602): tid 3  Se mueve de 5|6 a 4|6
+[INFO] 20:14:41:523 mongostore/(18547:18602): tid 3  Se mueve de 4|6 a 4|5
+[INFO] 20:14:41:523 mongostore/(18547:18598): tid 1  Se mueve de 4|5 a 3|5
+[INFO] 20:14:42:523 mongostore/(18547:18602): tid 3  Se mueve de 4|5 a 3|5
+[INFO] 20:14:42:523 mongostore/(18547:18598): tid 1  Se mueve de 3|5 a 3|4
+[INFO] 20:14:43:524 mongostore/(18547:18598): tid 1  Se mueve de 3|4 a 2|4
+[INFO] 20:14:43:524 mongostore/(18547:18602): tid 3  Se mueve de 3|5 a 3|4
+[INFO] 20:14:44:526 mongostore/(18547:18602): tid 3  Se mueve de 3|4 a 2|4
+[INFO] 20:14:44:526 mongostore/(18547:18598): tid 1  Se mueve de 2|4 a 2|3
+[INFO] 20:14:45:527 mongostore/(18547:18598): tid 1  Se mueve de 2|3 a 2|2
+[INFO] 20:14:45:527 mongostore/(18547:18602): tid 3  Se mueve de 2|4 a 2|3
+[INFO] 20:14:46:532 mongostore/(18547:18598): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 20:14:46:532 mongostore/(18547:18602): tid 3  Se mueve de 2|3 a 2|2
+[INFO] 20:14:47:532 mongostore/(18547:18602): tarea CONSUMIR_OXIGENO  param 4
+[INFO] 20:14:47:533 mongostore/(18547:18598): tid 1  Comienza ejecución de tarea CONSUMIR_OXIGENO
+[INFO] 20:14:47:533 mongostore/(18547:18600): tid 2  Se mueve de 4|4 a 5|4
