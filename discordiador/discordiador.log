@@ -1,2 +1,7 @@
-[INFO] 14:30:11:564 discordiador/(28853:28859): in funcion_sabotaje
-[INFO] 14:30:11:564 discordiador/(28853:28858): in menu_discordiador
+[INFO] 15:49:33:475 discordiador/(31277:31285): in menu_discordiador
+[INFO] 15:49:33:474 discordiador/(31277:31286): in funcion_sabotaje
+[INFO] 15:49:45:176 discordiador/(31277:31285): Memoria asignada
+[INFO] 15:49:50:126 discordiador/(31277:31306): TRIPU 1  tarea recibida: GENERAR_OXIGENO 5;4;4;1
+[INFO] 15:49:50:132 discordiador/(31277:31307): TRIPU 2  tarea recibida: GENERAR_OXIGENO 5;4;4;1
+[INFO] 15:49:50:133 discordiador/(31277:31308): TRIPU 3  tarea recibida: GENERAR_OXIGENO 5;4;4;1
+[INFO] 15:49:53:133 discordiador/(31277:31289): TRIPU 1  tarea recibida: ABC;5;6;4

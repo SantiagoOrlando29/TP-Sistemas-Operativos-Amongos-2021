@@ -493,9 +493,9 @@ int main(int argc, char* argv[]) {
 	//leer numeros random
 	//leer_tareas("tareas.txt");
 	conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
-	conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
+	//conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
 
-	conexionMiRamSabotaje = crear_conexion(configuracion.ip_miram,"5003");
+	//conexionMiRamSabotaje = crear_conexion(configuracion.ip_miram,"5003");
 	//conexionMongoSabotaje = crear_conexion(configuracion.ip_mongostore,"5003");
 
 	pthread_t hilo_principal;
