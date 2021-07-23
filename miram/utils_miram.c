@@ -58,6 +58,8 @@ void iniciar_servidor(config_struct* config_servidor)
 	int tam_direccion = sizeof(struct sockaddr_in);
 	int socket_cliente = 0;
 
+	log_info(logger, "aaaaaaaaa");
+
 	//se crea mapa
 	nivel_gui_inicializar();
 
@@ -65,13 +67,17 @@ void iniciar_servidor(config_struct* config_servidor)
 
 	nivel = nivel_crear("AMong-OS");
 
+	log_info(logger, "bbbbbbbbb");
 
 	int hilo;
 	while(variable_servidor != 0){
 
+		log_info(logger, "ccccccccc");
 		socket_cliente = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
+		log_info(logger, "ddddddddddd");
 
 		if(socket_cliente>0){
+			log_info(logger, "eeeeeeeeee");
 			hilo ++ ;
 			log_info(logger, "Estableciendo conexión desde %d", dir_cliente.sin_port);
 			log_info(logger, "Creando hilo");
