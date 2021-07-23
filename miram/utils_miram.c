@@ -61,11 +61,11 @@ void iniciar_servidor(config_struct* config_servidor)
 	log_info(logger, "socket_servidor %d", socket_servidor);
 
 	//se crea mapa
-	nivel_gui_inicializar();
+	//nivel_gui_inicializar();
 
-	nivel_gui_get_area_nivel(&cols, &rows);
+	//nivel_gui_get_area_nivel(&cols, &rows);
 
-	nivel = nivel_crear("AMong-OS");
+	//nivel = nivel_crear("AMong-OS");
 
 	log_info(logger, "bbbbbbbbb");
 
@@ -1106,8 +1106,8 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 		if(tripulante->tid > 9){ //desde el 10 el mapa tira ":" sino
 			letra = 55;
 		}
-		err = personaje_crear(nivel, letra+tripulante->tid, (int)tripulante->posicionX, (int)tripulante->posicionY);
-		ASSERT_CREATE(nivel, letra, err);
+		//err = personaje_crear(nivel, letra+tripulante->tid, (int)tripulante->posicionX, (int)tripulante->posicionY);
+		//ASSERT_CREATE(nivel, letra, err);
 	}
 
 	imprimir_tabla_espacios_de_memoria();
@@ -1166,7 +1166,7 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 						letra = 55;
 					}
 					//log_info(logger, "letra + tid: %c", letra + tripulante_id);
-					item_borrar(nivel, letra + tripulante_id);
+					//item_borrar(nivel, letra + tripulante_id);
 
 					sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 
@@ -1405,7 +1405,7 @@ bool cambiar_posicion(int tid, int posx, int posy, int pid){
 				if(tid > 9){ //desde el 10 el mapa tira ":" sino
 					letra = 55;
 				}
-			    item_desplazar(nivel, letra+ tid, difx, dify);
+			    //item_desplazar(nivel, letra+ tid, difx, dify);
 			    //sleep(1);
 
 				sem_post(&MUTEX_CAMBIAR_POSICION);
