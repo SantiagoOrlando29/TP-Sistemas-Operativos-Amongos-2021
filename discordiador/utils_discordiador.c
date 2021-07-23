@@ -29,6 +29,7 @@ int crear_conexion(char *ip, char* puerto)
 	getaddrinfo(ip, puerto, &hints, &server_info);
 
 	int socket_cliente = socket(server_info->ai_family, server_info->ai_socktype, server_info->ai_protocol);
+	printf("socket_cliente %d\n", socket_cliente);
 
 	if(connect(socket_cliente, server_info->ai_addr, server_info->ai_addrlen) == -1)
 		printf("error");
@@ -708,7 +709,7 @@ void informar_inicio_tarea(tcbTripulante* tripulante){
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
 	//Comienza ejecución de tarea X
-	char* nombre_tarea = tripulante->tarea_posta->tarea;
+	/*char* nombre_tarea = tripulante->tarea_posta->tarea;
 	//char* a_enviar = malloc(29 + strlen(nombre_tarea));
 	char* a_enviar = malloc(29);
 	strcpy(a_enviar, "Comienza ejecucion de tarea ");
@@ -716,7 +717,13 @@ void informar_inicio_tarea(tcbTripulante* tripulante){
 	//strcat(a_enviar, nombre_tarea);
 	//log_info(logger, "a enviar %s", a_enviar);
 	//agregar_a_paquete(paquete, a_enviar, strlen(a_enviar)+1);
-	agregar_a_paquete(paquete, nombre_tarea, strlen(nombre_tarea)+1);
+	agregar_a_paquete(paquete, nombre_tarea, strlen(nombre_tarea)+1);*/
+
+	char* nombre_tarea = tripulante->tarea_posta->tarea;
+	char* a_enviar = malloc(29 + strlen(nombre_tarea));
+	strcpy(a_enviar, "Comienza ejecucion de tarea ");
+	strcat(a_enviar, nombre_tarea);
+	agregar_a_paquete(paquete, a_enviar, strlen(a_enviar)+1);
 
 
 	/*char* mensaje_bitacora_char = malloc(sizeof(char)+1);
@@ -786,18 +793,27 @@ void remover_tripulante_de_lista(tcbTripulante* tripulante, t_list* lista){
 	}
 }
 
-void informar_atencion_sabotaje(tcbTripulante* tripulante){
+void informar_atencion_sabotaje(tcbTripulante* tripulante, char* posicion_char){
 	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
 
+	log_info(logger, "posic sabo: %s", posicion_char);
 	char* tid_char = malloc(sizeof(char));
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
 //Se corre en pánico hacia la ubicación del sabotaje
-	char* a_enviar = malloc(26);//+ la posicion me falta todavia
-	strcpy(a_enviar, "Se corre en pánico hacia ");
+	//char* a_enviar = malloc(26);//+ la posicion me falta todavia
+	//strcpy(a_enviar, "Se corre en pánico hacia ");
 
+	//agregar_a_paquete(paquete, a_enviar, strlen(a_enviar)+1);
+
+
+	char* a_enviar = malloc(26 + strlen(posicion_char));
+	strcpy(a_enviar, "Se corre en pánico hacia ");
+	strcat(a_enviar, posicion_char);
 	agregar_a_paquete(paquete, a_enviar, strlen(a_enviar)+1);
+
+	log_info(logger, "a enviar: %s", a_enviar);
 
 	/*char* mensaje_bitacora_char = malloc(sizeof(char));
 	sprintf(mensaje_bitacora_char, "%d", CORRER_A_SABOTAJE);

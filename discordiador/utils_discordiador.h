@@ -206,7 +206,7 @@ void informar_inicio_tarea(tcbTripulante* tripulante);
 void informar_fin_tarea(tcbTripulante* tripulante);
 void informar_movimiento_mongo_X (tcbTripulante* tripulante, int x_viejo);
 void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo);
-void informar_atencion_sabotaje(tcbTripulante* tripulante);
+void informar_atencion_sabotaje(tcbTripulante* tripulante, char* posicion_char);
 void informar_sabotaje_resuelto(tcbTripulante* tripulante);
 void mongo_tarea(tcbTripulante* tripu);
 

@@ -75,7 +75,8 @@ void iniciar_servidor(config_struct* config_servidor)
 		    }
 		}
 	}
-	//printf("me fui");
+	log_info(logger, "tttttttt");
+	printf("me fui");
 
 	//log_destroy(logger);
 
@@ -83,11 +84,7 @@ void iniciar_servidor(config_struct* config_servidor)
 
 void iniciar_servidor2(config_struct* config_servidor)
 {
-		//tabla_paginacion_ppal=list_create();
-
-	log_info(logger, "Servidor iniciando");
-
-	//int socket_servidor;
+	log_info(logger, "Servidor iniciando 2");
 
     struct addrinfo hints, *servinfo, *p;
 
@@ -122,32 +119,32 @@ void iniciar_servidor2(config_struct* config_servidor)
 
 	struct sockaddr_in dir_cliente;
 	int tam_direccion = sizeof(struct sockaddr_in);
-	int socket_cliente = 0;
+	int socket_cliente_sabotaje = 0;
 
-	int hilo;
-	while(variable_servidor != 0){
+	//int hilo;
+	//while(variable_servidor != 0){
 
-		socket_cliente = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
+	socket_cliente_sabotaje = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
 
-		if(socket_cliente>0){
-			hilo ++ ;
-			log_info(logger, "Estableciendo conexión desde %d", dir_cliente.sin_port);
-			log_info(logger, "Creando hilo");
+		if(socket_cliente_sabotaje>0){
+			//hilo ++ ;
+			log_info(logger, "2 Estableciendo conexión desde %d", dir_cliente.sin_port);
+			log_info(logger, "2 Creando hilo");
 
-			pthread_t hilo_cliente=(char)hilo;
-			if(strcmp(configuracion.squema_memoria, "SEGMENTACION")==0){
-			pthread_create(&hilo_cliente,NULL,(void*)funcionx ,(void*)socket_cliente);
-			pthread_detach(hilo_cliente);
-		    }
+			pthread_t hilo_cliente_discordiador_sabotaje;
+			pthread_create(&hilo_cliente_discordiador_sabotaje,NULL,(void*)funcionx ,(void*)socket_cliente_sabotaje);
+			log_info(logger, "zzzzzzzzzzzzz");
+			pthread_detach(hilo_cliente_discordiador_sabotaje);
+			log_info(logger, "rrrrrrrrrr");
 		}
-	}
+	//}
 	//printf("me fui");
 
 	//log_destroy(logger);
 
 }
 
-int funcionx(){
+int funcionx(int socket_cliente_sabotaje){
 	log_info(logger, "funcionx");
 	return 1;
 }

@@ -1,2 +1,15 @@
-[INFO] 17:39:30:344 discordiador/(17121:17129): in funcion_sabotaje
-[INFO] 17:39:30:344 discordiador/(17121:17128): in menu_discordiador
+[INFO] 22:36:55:645 discordiador/(20608:20616): in funcion_sabotaje
+[INFO] 22:36:55:649 discordiador/(20608:20615): in menu_discordiador
+[INFO] 22:37:08:666 discordiador/(20608:20615): Memoria asignada
+[INFO] 22:37:13:303 discordiador/(20608:20620): TRIPU 1  tarea recibida: GENERAR_OXIGENO 5;4;4;1
+[INFO] 22:37:13:304 discordiador/(20608:20621): TRIPU 2  tarea recibida: GENERAR_OXIGENO 5;4;4;1
+[INFO] 22:37:13:304 discordiador/(20608:20622): TRIPU 3  tarea recibida: GENERAR_OXIGENO 5;4;4;1
+[INFO] 22:37:18:136 discordiador/(20608:20615): posicion_sabotaje_char 1|1
+[INFO] 22:37:18:136 discordiador/(20608:20615): posx 1   posy 1
+[INFO] 22:37:18:139 discordiador/(20608:20615): lista bloq emer
+[INFO] 22:37:18:139 discordiador/(20608:20615): tid 1  posx 4  posy 4
+[INFO] 22:37:18:139 discordiador/(20608:20615): tid 2  posx 4  posy 4
+[INFO] 22:37:18:139 discordiador/(20608:20615): tid 3  posx 4  posy 5
+[INFO] 22:37:18:139 discordiador/(20608:20615): Tripu elegido: tid 2  posx 4  posy 4
+[INFO] 22:37:18:139 discordiador/(20608:20615): posic sabo: 1
+[INFO] 22:37:18:139 discordiador/(20608:20615): a enviar: Se corre en pánico hacia 1

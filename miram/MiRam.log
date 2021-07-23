@@ -1,16 +1,86 @@
-[INFO] 17:39:22:193 MiRam/(17095:17095): pid 17095  
+[INFO] 22:36:46:349 MiRam/(20599:20599): pid 20599  
 
-[INFO] 17:39:22:207 MiRam/(17095:17095): ---------  MEMORIA  --------------------
-[INFO] 17:39:22:207 MiRam/(17095:17095): base: 0, tam: 16384, libre: true 
-[INFO] 17:39:22:207 MiRam/(17095:17095): ----------------------------------------
-[INFO] 17:39:22:244 MiRam/(17095:17099): Servidor iniciando
-[INFO] 17:39:22:244 MiRam/(17095:17099): Servidor MiRam2 encendido
-[INFO] 17:39:22:244 MiRam/(17095:17098): Servidor iniciando
-[INFO] 17:39:22:244 MiRam/(17095:17098): Servidor MiRam encendido
-[INFO] 17:39:30:339 MiRam/(17095:17098): Estableciendo conexión desde 25236
-[INFO] 17:39:30:339 MiRam/(17095:17098): Creando hilo
-[INFO] 17:39:30:339 MiRam/(17095:17099): Estableciendo conexión desde 5834
-[INFO] 17:39:30:339 MiRam/(17095:17099): Creando hilo
-[INFO] 17:39:30:344 MiRam/(17095:17127): funcionx
-[INFO] 17:39:30:344 MiRam/(17095:17126): Se conecto este socket a mi 8
-[WARNING] 17:53:33:949 MiRam/(17095:17126): el cliente se desconecto.
+[INFO] 22:36:46:349 MiRam/(20599:20599): ---------  MEMORIA  --------------------
+[INFO] 22:36:46:349 MiRam/(20599:20599): base: 0, tam: 16384, libre: true 
+[INFO] 22:36:46:349 MiRam/(20599:20599): ----------------------------------------
+[INFO] 22:36:46:349 MiRam/(20599:20601): Servidor iniciando 2
+[INFO] 22:36:46:349 MiRam/(20599:20601): Servidor MiRam2 encendido
+[INFO] 22:36:46:349 MiRam/(20599:20600): Servidor iniciando
+[INFO] 22:36:46:349 MiRam/(20599:20600): Servidor MiRam encendido
+[INFO] 22:36:55:642 MiRam/(20599:20600): Estableciendo conexión desde 43157
+[INFO] 22:36:55:642 MiRam/(20599:20600): Creando hilo
+[INFO] 22:36:55:644 MiRam/(20599:20601): 2 Estableciendo conexión desde 23755
+[INFO] 22:36:55:644 MiRam/(20599:20601): 2 Creando hilo
+[INFO] 22:36:55:644 MiRam/(20599:20601): zzzzzzzzzzzzz
+[INFO] 22:36:55:644 MiRam/(20599:20601): rrrrrrrrrr
+[INFO] 22:36:55:645 MiRam/(20599:20613): Se conecto este socket a mi 8
+[INFO] 22:36:55:647 MiRam/(20599:20614): funcionx
+[INFO] 22:37:08:666 MiRam/(20599:20613): 
+El numero de la patota recibida es 1
+[INFO] 22:37:08:666 MiRam/(20599:20613): ID 1 
+[INFO] 22:37:08:666 MiRam/(20599:20613): posicion x: 2 
+[INFO] 22:37:08:666 MiRam/(20599:20613): posicion y: 2 
+[INFO] 22:37:08:666 MiRam/(20599:20613): Status: N 
+[INFO] 22:37:08:666 MiRam/(20599:20613): n patota: 1 
+
+[INFO] 22:37:08:666 MiRam/(20599:20613): ID 2 
+[INFO] 22:37:08:666 MiRam/(20599:20613): posicion x: 2 
+[INFO] 22:37:08:666 MiRam/(20599:20613): posicion y: 2 
+[INFO] 22:37:08:666 MiRam/(20599:20613): Status: N 
+[INFO] 22:37:08:666 MiRam/(20599:20613): n patota: 1 
+
+[INFO] 22:37:08:666 MiRam/(20599:20613): ID 3 
+[INFO] 22:37:08:666 MiRam/(20599:20613): posicion x: 4 
+[INFO] 22:37:08:666 MiRam/(20599:20613): posicion y: 5 
+[INFO] 22:37:08:666 MiRam/(20599:20613): Status: N 
+[INFO] 22:37:08:666 MiRam/(20599:20613): n patota: 1 
+
+[INFO] 22:37:08:666 MiRam/(20599:20613): espacio tareas todo ok
+[INFO] 22:37:08:666 MiRam/(20599:20613): ---------  MEMORIA  --------------------
+[INFO] 22:37:08:666 MiRam/(20599:20613): base: 0, tam: 8, libre: false 
+[INFO] 22:37:08:666 MiRam/(20599:20613): base: 8, tam: 58, libre: false 
+[INFO] 22:37:08:666 MiRam/(20599:20613): base: 66, tam: 21, libre: false 
+[INFO] 22:37:08:666 MiRam/(20599:20613): base: 87, tam: 21, libre: false 
+[INFO] 22:37:08:666 MiRam/(20599:20613): base: 108, tam: 21, libre: false 
+[INFO] 22:37:08:666 MiRam/(20599:20613): base: 129, tam: 16255, libre: true 
+[INFO] 22:37:08:666 MiRam/(20599:20613): ----------------------------------------
+[INFO] 22:37:08:666 MiRam/(20599:20613): Tabla de segmentos correspondiente a patota 1
+[INFO] 22:37:08:666 MiRam/(20599:20613): Base 0   Tamanio 8
+[INFO] 22:37:08:666 MiRam/(20599:20613): Base 8   Tamanio 58
+[INFO] 22:37:08:666 MiRam/(20599:20613): Base 66   Tamanio 21
+[INFO] 22:37:08:666 MiRam/(20599:20613): Base 87   Tamanio 21
+[INFO] 22:37:08:666 MiRam/(20599:20613): Base 108   Tamanio 21
+[INFO] 22:37:08:666 MiRam/(20599:20613): ---------------------------------------
+[INFO] 22:37:08:666 MiRam/(20599:20613): Se asigno espacio de memoria a todo 
+
+[INFO] 22:37:13:298 MiRam/(20599:20600): Estableciendo conexión desde 44693
+[INFO] 22:37:13:298 MiRam/(20599:20600): Creando hilo
+[INFO] 22:37:13:303 MiRam/(20599:20623): Se conecto este socket a mi 9
+[INFO] 22:37:13:303 MiRam/(20599:20600): Estableciendo conexión desde 45205
+[INFO] 22:37:13:303 MiRam/(20599:20600): Creando hilo
+[INFO] 22:37:13:303 MiRam/(20599:20623): tid 1  Se mueve de 2|2 a 3|2
+[INFO] 22:37:13:303 MiRam/(20599:20624): Se conecto este socket a mi 10
+[INFO] 22:37:13:304 MiRam/(20599:20600): Estableciendo conexión desde 45717
+[INFO] 22:37:13:304 MiRam/(20599:20600): Creando hilo
+[INFO] 22:37:13:304 MiRam/(20599:20624): tid 2  Se mueve de 2|2 a 3|2
+[INFO] 22:37:13:304 MiRam/(20599:20625): Se conecto este socket a mi 11
+[INFO] 22:37:14:304 MiRam/(20599:20623): tid 1  Se mueve de 3|2 a 3|3
+[INFO] 22:37:14:304 MiRam/(20599:20624): tid 2  Se mueve de 3|2 a 3|3
+[INFO] 22:37:15:305 MiRam/(20599:20624): tid 2  Se mueve de 3|3 a 4|3
+[INFO] 22:37:15:306 MiRam/(20599:20623): tid 1  Se mueve de 3|3 a 4|3
+[INFO] 22:37:16:308 MiRam/(20599:20623): tid 1  Se mueve de 4|3 a 4|4
+[INFO] 22:37:16:308 MiRam/(20599:20624): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 22:37:17:310 MiRam/(20599:20623): tarea GENERAR_OXIGENO  param 5
+[INFO] 22:37:17:310 MiRam/(20599:20624): tarea GENERAR_OXIGENO  param 5
+[INFO] 22:37:18:136 MiRam/(20599:20613): PRUEBA
+[INFO] 22:37:18:139 MiRam/(20599:20624): tid 2  Se corre en pánico hacia 1
+[INFO] 22:37:18:139 MiRam/(20599:20624): tid 2  Se mueve de 4|4 a 3|4
+[INFO] 22:37:19:141 MiRam/(20599:20624): tid 2  Se mueve de 4|4 a 2|4
+[INFO] 22:37:20:141 MiRam/(20599:20624): tid 2  Se mueve de 4|4 a 1|4
+[INFO] 22:37:21:142 MiRam/(20599:20624): tid 2  Se mueve de 1|5 a 1|3
+[INFO] 22:37:22:142 MiRam/(20599:20624): tid 2  Se mueve de 1|5 a 1|2
+[INFO] 22:37:23:143 MiRam/(20599:20624): tid 2  Se mueve de 1|5 a 1|1
+[WARNING] 22:37:25:758 MiRam/(20599:20625): el cliente se desconecto.
+[WARNING] 22:37:25:758 MiRam/(20599:20624): el cliente se desconecto.
+[WARNING] 22:37:25:758 MiRam/(20599:20623): el cliente se desconecto.
+[WARNING] 22:37:25:758 MiRam/(20599:20613): el cliente se desconecto.
