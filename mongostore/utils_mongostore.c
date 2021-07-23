@@ -14,7 +14,7 @@ int variable_servidor = -1;
 int socket_servidor;
 int cant_sabotaje = 0;
 int primer_hilo = 0;
-int socket_primer_hilo = 0;
+int socket_cliente_sabotaje = 0;
 
 //TODO BITACORA, SIGNAL (LINKEADO A mandar_primer_ubicacion_sabotaje)
 
@@ -1559,7 +1559,7 @@ void iniciar_servidor(t_configuracion* config_servidor)
 
 	freeaddrinfo(servinfo);
 
-	log_info(logger, "Servidor MiRam encendido");
+	log_info(logger, "Servidor Mongo encendido");
 
 
 	struct sockaddr_in dir_cliente;
@@ -1574,7 +1574,6 @@ void iniciar_servidor(t_configuracion* config_servidor)
 		socket_cliente = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
 
 		if(primer_hilo == 0){
-			socket_primer_hilo = socket_cliente;
 			primer_hilo = 1;
 		}
 
@@ -1593,6 +1592,71 @@ void iniciar_servidor(t_configuracion* config_servidor)
 
 	//log_destroy(logger);
 
+}
+
+void iniciar_servidor2(t_configuracion* config_servidor)
+{
+    log_info(logger, "Servidor iniciando 2");
+
+    struct addrinfo hints, *servinfo, *p;
+
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_family = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_flags = AI_PASSIVE;
+
+    getaddrinfo(config_servidor->ip, "5003", &hints, &servinfo);
+
+    for (p=servinfo; p != NULL; p = p->ai_next)
+    {
+        if ((socket_servidor = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1)
+            continue;
+
+        int activado = 1;
+        setsockopt(socket_servidor, SOL_SOCKET, SO_REUSEADDR, &activado, sizeof(activado)); //para que si se cierra sin el close no haya que esperar
+
+        if (bind(socket_servidor, p->ai_addr, p->ai_addrlen) == -1) {
+            close(socket_servidor);
+            continue;
+        }
+        break;
+    }
+
+    listen(socket_servidor, SOMAXCONN);
+
+    freeaddrinfo(servinfo);
+
+    log_info(logger, "Servidor Mongo2 encendido");
+
+
+    struct sockaddr_in dir_cliente;
+    int tam_direccion = sizeof(struct sockaddr_in);
+
+    //int hilo;
+    //while(variable_servidor != 0){
+
+    socket_cliente_sabotaje = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
+
+        if(socket_cliente_sabotaje>0){
+            //hilo ++ ;
+            log_info(logger, "2 Estableciendo conexión desde %d", dir_cliente.sin_port);
+            log_info(logger, "2 Creando hilo");
+
+            pthread_t hilo_cliente_discordiador_sabotaje;
+            pthread_create(&hilo_cliente_discordiador_sabotaje,NULL,(void*)funcionx ,(void*)socket_cliente_sabotaje);
+            pthread_detach(hilo_cliente_discordiador_sabotaje);
+
+        }
+    //}
+    //printf("me fui");
+
+    //log_destroy(logger);
+
+}
+
+int funcionx(int socket_cliente_sabotaje){
+    log_info(logger, "funcionx");
+    return 1;
 }
 
 void funcion_cliente(int socket_cliente)
@@ -1705,13 +1769,11 @@ void sig_handler(int signum){
 
 void notificar_sabotaje(){
 
-	enviar_header(SABOTAJE, socket_primer_hilo);
-
 	char* mensaje4 = configuracion.posiciones_sabotaje[cant_sabotaje];
 		/*for(int i = 0; configuracion.posiciones_sabotaje[i]!=NULL;i++){
 			log_info(logger, "Posicion %s", configuracion.posiciones_sabotaje[i]); //Para ver las posiciones nomas
 		}*/
-		enviar_mensaje(mensaje4, socket_primer_hilo);
+		enviar_mensaje(mensaje4, socket_cliente_sabotaje);
 		cant_sabotaje++;
 
 }

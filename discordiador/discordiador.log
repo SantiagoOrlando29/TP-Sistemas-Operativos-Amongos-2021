@@ -1,17 +1,37 @@
-[INFO] 21:22:24:410 discordiador/(20756:20756): Memoria asignada
-[INFO] 21:22:31:822 discordiador/(20756:20810): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 21:22:31:823 discordiador/(20756:20811): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 21:22:31:823 discordiador/(20756:20812): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
-[INFO] 21:22:34:825 discordiador/(20756:20765): TRIPU 1  tarea recibida: ABC;5;6;4
-[INFO] 21:22:36:827 discordiador/(20756:20765): TRIPU 2  tarea recibida: ABC;5;6;4
-[INFO] 21:22:37:829 discordiador/(20756:20765): TRIPU 3  tarea recibida: ABC;5;6;4
-[INFO] 21:22:42:832 discordiador/(20756:20810): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 21:22:43:833 discordiador/(20756:20811): TRIPU 2  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 21:22:51:854 discordiador/(20756:20765): TRIPU 1  tarea recibida: no hay mas tareas
-[INFO] 21:22:51:854 discordiador/(20756:20810): tripu_misma_patota_exit 1
-[INFO] 21:22:52:854 discordiador/(20756:20765): TRIPU 2  tarea recibida: no hay mas tareas
-[INFO] 21:22:52:855 discordiador/(20756:20811): tripu_misma_patota_exit 2
-[INFO] 21:22:57:858 discordiador/(20756:20812): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
-[INFO] 21:23:06:902 discordiador/(20756:20765): TRIPU 3  tarea recibida: no hay mas tareas
-[INFO] 21:23:06:902 discordiador/(20756:20812): tripu_misma_patota_exit 3
-[INFO] 21:23:06:902 discordiador/(20756:20812): size exit 0
+[INFO] 23:16:20:800 discordiador/(9097:9107): in funcion_sabotaje
+[INFO] 23:16:30:458 discordiador/(9097:9106): Memoria asignada
+[INFO] 23:16:39:755 discordiador/(9097:9136): TRIPU 1  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 23:16:39:756 discordiador/(9097:9137): TRIPU 2  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 23:16:39:756 discordiador/(9097:9138): TRIPU 3  tarea recibida: GENERAR_OXIGENO 1;4;4;1
+[INFO] 23:16:42:761 discordiador/(9097:9110): TRIPU 1  tarea recibida: ABC;5;6;4
+[INFO] 23:16:44:778 discordiador/(9097:9110): TRIPU 2  tarea recibida: ABC;5;6;4
+[INFO] 23:16:45:779 discordiador/(9097:9110): TRIPU 3  tarea recibida: ABC;5;6;4
+[INFO] 23:16:48:190 discordiador/(9097:9107): posicion_sabotaje_char 1|1
+[INFO] 23:16:48:190 discordiador/(9097:9107): posx 1   posy 1
+[INFO] 23:16:48:190 discordiador/(9097:9107): lista bloq emer
+[INFO] 23:16:48:190 discordiador/(9097:9107): tid 1  posx 5  posy 6
+[INFO] 23:16:48:190 discordiador/(9097:9107): tid 2  posx 5  posy 6
+[INFO] 23:16:48:190 discordiador/(9097:9107): tid 3  posx 4  posy 4
+[INFO] 23:16:48:190 discordiador/(9097:9107): Tripu elegido: tid 3  posx 4  posy 4
+[INFO] 23:16:59:197 discordiador/(9097:9136): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 23:17:00:197 discordiador/(9097:9137): TRIPU 2  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 23:17:01:969 discordiador/(9097:9107): posicion_sabotaje_char 2|2
+[INFO] 23:17:01:969 discordiador/(9097:9107): posx 2   posy 2
+[INFO] 23:17:01:969 discordiador/(9097:9107): lista bloq emer
+[INFO] 23:17:01:969 discordiador/(9097:9107): tid 1  posx 3  posy 5
+[INFO] 23:17:01:969 discordiador/(9097:9107): tid 2  posx 4  posy 5
+[INFO] 23:17:01:969 discordiador/(9097:9107): tid 3  posx 1  posy 1
+[INFO] 23:17:01:969 discordiador/(9097:9107): Tripu elegido: tid 3  posx 1  posy 1
+[INFO] 23:17:12:976 discordiador/(9097:9110): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 23:17:12:976 discordiador/(9097:9136): tripu_misma_patota_exit 1
+[INFO] 23:17:13:977 discordiador/(9097:9110): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 23:17:13:977 discordiador/(9097:9137): tripu_misma_patota_exit 2
+[INFO] 23:17:14:525 discordiador/(9097:9107): posicion_sabotaje_char 3|3
+[INFO] 23:17:14:525 discordiador/(9097:9107): posx 3   posy 3
+[INFO] 23:17:14:525 discordiador/(9097:9107): lista bloq emer
+[INFO] 23:17:14:525 discordiador/(9097:9107): tid 3  posx 4  posy 3
+[INFO] 23:17:14:525 discordiador/(9097:9107): Tripu elegido: tid 3  posx 4  posy 3
+[INFO] 23:17:27:536 discordiador/(9097:9138): TRIPU 3  tarea recibida: CONSUMIR_OXIGENO 4;2;2;1
+[INFO] 23:17:36:544 discordiador/(9097:9110): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 23:17:36:544 discordiador/(9097:9138): tripu_misma_patota_exit 3
+[INFO] 23:17:36:544 discordiador/(9097:9138): size exit 0

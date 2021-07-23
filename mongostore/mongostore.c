@@ -23,12 +23,18 @@ int main(void)
 	signal(SIGUSR1, sig_handler);
 
 
-	pthread_t servidor;
-	int hilo_servidor = 1;
-	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){
-		log_info(logger, "Falla al crearse el hilo");
-	}
-	pthread_join(servidor,NULL);
+    pthread_t servidor;
+    if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){
+        log_info(logger, "Falla al crearse el hilo");
+    }
+
+    pthread_t servidor_sabotaje;
+    if((pthread_create(&servidor_sabotaje,NULL,(void*)iniciar_servidor2,&configuracion))!=0){
+        log_info(logger, "Falla al crearse el hilo 2");
+    }
+
+    pthread_join(servidor,NULL);
+    pthread_join(servidor_sabotaje,NULL);
 
 
 

@@ -18,6 +18,7 @@ sem_t CONTINUAR_PLANIFICACION;
 sem_t ORDENA_FUNCION_QUANTUM;
 sem_t FINALIZA_HILOS;
 sem_t LISTA_READY_NO_VACIA;
+sem_t TERMINO;
 int id_tripulante = 0;
 t_list* lista_tripulantes_nuevo;
 t_list* lista_tripulantes_ready;
@@ -29,6 +30,8 @@ t_list* lista_aux;
 int flag_sabotaje;
 int flag_fin;
 int conexionMongoStore;
+int conexionMongoSabotaje;
+int conexionMiRam;
 
 bool sigue_ejecutando(int quantums_ejecutados){
 	if(strcmp(configuracion.algoritmo, "FIFO") ==0){
@@ -481,20 +484,158 @@ int main(int argc, char* argv[]) {
 	leer_config();
 	//leer numeros random
 	//leer_tareas("tareas.txt");
-	int conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
+	conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
 	conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
-
-	menu_discordiador(conexionMiRam, conexionMongoStore,logger);
 
 	//terminar_discordiador(conexionMiRam, conexionMongoStore, logger);
 
+
+	conexionMongoSabotaje = crear_conexion(configuracion.ip_mongostore,"5003");
+
+	pthread_t hilo_principal;
+	pthread_t hilo_sabotaje;
+	pthread_create(&hilo_principal,NULL,(void*)menu_discordiador,NULL);
+	pthread_detach(hilo_principal);
+	pthread_create(&hilo_sabotaje,NULL,(void*)funcion_sabotaje,NULL);
+	pthread_detach(hilo_sabotaje);
+
+	sem_init(&TERMINO, 0,0);
+
+	sem_wait(&TERMINO);
 
 	return 0;
 
 
 }
 
-int menu_discordiador(int conexionMiRam, int conexionMongoStore,  t_log* logger) {
+void funcion_sabotaje(){
+	log_info(logger, "in funcion_sabotaje");
+
+	tcbTripulante* tripulante;
+
+	while(1){
+		char* posicion_sabotaje_char = recibir_mensaje(conexionMongoSabotaje);
+		log_info(logger, "posicion_sabotaje_char %s", posicion_sabotaje_char);
+		sem_wait(&CONTINUAR_PLANIFICACION);
+
+		int posx = atoi(strtok(posicion_sabotaje_char,"|"));
+		int posy = atoi(strtok(NULL,""));
+		log_info(logger, "posx %d   posy %d", posx, posy);
+
+		flag_sabotaje = configuracion.grado_multitarea;
+
+		if(list_size(lista_tripulantes_trabajando) > 0){
+			lista_bloq_emergencia = list_take_and_remove(lista_tripulantes_trabajando, list_size(lista_tripulantes_trabajando));
+		}
+
+		bool tid_anterior(tcbTripulante* tid_menor, tcbTripulante* tid_mayor) {
+			return tid_menor->tid < tid_mayor->tid;
+		}
+
+		list_sort(lista_bloq_emergencia, (void*) tid_anterior);
+
+		for(int i=0; i < list_size(lista_tripulantes_ready); i++){
+			tripulante = (tcbTripulante*)list_remove(lista_tripulantes_ready, i);
+			list_add(lista_aux,tripulante);
+			i = -1;
+		}
+		list_sort(lista_aux, (void*) tid_anterior);
+
+		list_add_all(lista_bloq_emergencia, lista_aux);
+		list_clean(lista_aux);
+
+
+		if(list_size(lista_bloq_emergencia) > 0){
+			log_info(logger, "lista bloq emer");
+			for(int i=0; i < list_size(lista_bloq_emergencia); i++){
+				tripulante = (tcbTripulante*)list_get(lista_bloq_emergencia, i);
+				log_info(logger, "tid %d  posx %d  posy %d", tripulante->tid, tripulante->posicionX, tripulante->posicionY);
+				cambiar_estado(tripulante->socket_miram, tripulante, 'B');
+			}
+
+			tcbTripulante* tripu1 = malloc(sizeof(tcbTripulante));
+			tripu1 = (tcbTripulante*)list_get(lista_bloq_emergencia, 0);
+			tcbTripulante* tripu2 = malloc(sizeof(tcbTripulante));
+			int dif_x = abs(tripu1->posicionX - posx);
+			int dif_y = abs(tripu1->posicionY - posy);
+
+			for(int i=1; i < list_size(lista_bloq_emergencia); i++){
+				tripu2 = (tcbTripulante*)list_get(lista_bloq_emergencia, i);
+
+				int dif_x_2 = abs(tripu2->posicionX - posx);
+				int dif_y_2 = abs(tripu2->posicionY - posy);
+
+				if( dif_x + dif_y >= dif_x_2 + dif_y_2 ){ //esta mas cerca el segundo
+					dif_x = dif_x_2;
+					dif_y = dif_y_2;
+					tripu1 = tripu2;
+				}
+
+			}
+			log_info(logger, "Tripu elegido: tid %d  posx %d  posy %d", tripu1->tid, tripu1->posicionX, tripu1->posicionY);
+			informar_atencion_sabotaje(tripu1);
+			//mover al tripu1 que es el mas cercano
+			while(tripu1->posicionX != posx){ //muevo en X
+				int x_viejo = tripulante->posicionX;
+				if(tripu1->posicionX > posx){ //mayor a la posicion del sabotaje -> se mueve para la izq
+					tripu1->posicionX--;
+				} else{
+					tripu1->posicionX++;
+				}
+				informar_movimiento(tripu1->socket_miram, tripu1);
+				informar_movimiento_mongo_X (tripu1, x_viejo);
+				sleep(configuracion.retardo_cpu);
+			}
+
+			while(tripu1->posicionY != posy){ //muevo en Y
+				int y_viejo = tripulante->posicionY;
+				if(tripu1->posicionY > posy){ //mayor a la posicion del sabotaje -> se mueve para abajo
+					tripu1->posicionY--;
+				} else{
+					tripu1->posicionY++;
+				}
+				informar_movimiento(tripu1->socket_miram, tripu1);
+				informar_movimiento_mongo_Y (tripu1, y_viejo);
+				sleep(configuracion.retardo_cpu);
+			}
+
+			sleep(configuracion.duracion_sabotaje);
+			informar_sabotaje_resuelto(tripu1);
+
+			//enviar_header(FSCK, tripu1->socket_miram);
+			enviar_header(FSCK, tripu1->socket_mongo);
+
+			//char* mensaje_recibido = recibir_mensaje(tripu1->socket_miram);
+			char* mensaje_recibido = recibir_mensaje(tripu1->socket_mongo);
+			free(mensaje_recibido);
+
+			if(configuracion.grado_multitarea > list_size(lista_bloq_emergencia)){
+				flag_sabotaje = list_size(lista_bloq_emergencia);
+			}
+
+			lista_tripulantes_ready = list_take_and_remove(lista_bloq_emergencia, list_size(lista_bloq_emergencia));
+
+			for(int i=0; i < list_size(lista_tripulantes_ready); i++){
+				tripulante = (tcbTripulante*)list_get(lista_tripulantes_ready, i);
+				cambiar_estado(tripulante->socket_miram, tripulante, 'R');
+				sem_post(&LISTA_READY_NO_VACIA);
+			}
+
+			//free(tripu1);
+			//free(tripu2);
+		}else{
+			log_info(logger, "no hay tripulantes disponibles para resolver sabotaje");
+			flag_sabotaje = 0;
+		}
+
+		free(posicion_sabotaje_char);
+		sem_post(&CONTINUAR_PLANIFICACION);
+	}
+
+	//return 1;
+}
+
+void menu_discordiador() {
 
 	sem_init(&HABILITA_EJECUTAR, 0,1);
 	sem_init(&NUEVO_READY, 0,0);
@@ -965,7 +1106,8 @@ INICIAR_PLANIFICACION
 				config_destroy(archConfig);
 				log_info(logger, "aaaaaaaa");
 				terminar_discordiador(conexionMiRam, conexionMongoStore, logger);
-				return EXIT_FAILURE;
+				sem_post(&TERMINO);
+				break;
 
 			default:
 				mensajeError(logger);
@@ -997,7 +1139,7 @@ void terminar_discordiador (int conexionMiRam, int conexionMongoStore, t_log* lo
 	liberar_conexion(conexionMongoStore);
 }
 
-void caca(){
+/*void caca(){
 	sem_wait(&CONTINUAR_PLANIFICACION);
 
 	char* auxiliar_mensaje = recibir_mensaje(conexionMongoStore);
@@ -1122,5 +1264,5 @@ void caca(){
 	free(posicion_sabotaje_char);
 	sem_post(&CONTINUAR_PLANIFICACION);
 
-}
+}*/
 

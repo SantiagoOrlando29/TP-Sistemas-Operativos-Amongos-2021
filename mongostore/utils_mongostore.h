@@ -202,6 +202,9 @@ void sig_handler(int);
 void notificar_sabotaje();
 int recibir_operacion(int);
 void enviar_header(op_code, int);
+void iniciar_servidor2(t_configuracion*);
+int funcionx(int);
+
 
 //Prototipos de funciones sujetas a cambios al linkearse con discordiador
 void recurso_realizar_tarea();

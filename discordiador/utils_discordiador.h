@@ -176,7 +176,7 @@ void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 char* recibir_mensaje(int socket_cliente);
 
-int menu_discordiador(int , int, t_log* );
+void menu_discordiador();
 tcbTripulante* crear_tripulante(uint32_t tid, char estado, uint32_t posicionX, uint32_t posicionY, uint32_t puntero_pcb, int cantidad_tripulantes);
 //pcbPatota* crear_patota(uint32_t , uint32_t);
 int codigoOperacion (const char*);
@@ -208,6 +208,8 @@ void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo);
 void informar_atencion_sabotaje(tcbTripulante* tripulante);
 void informar_sabotaje_resuelto(tcbTripulante* tripulante);
 void mongo_tarea(tcbTripulante* tripu);
+
+void funcion_sabotaje();
 
 void planificacion_pausada_o_no();
 void planificacion_pausada_o_no_exec(tcbTripulante* tripulante, int* quantums_ejecutados);
