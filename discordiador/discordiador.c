@@ -989,6 +989,9 @@ INICIAR_PLANIFICACION
 				char* posicion_sabotaje_char = recibir_mensaje(conexionMiRam);
 				log_info(logger, "posicion_sabotaje_char %s", posicion_sabotaje_char);
 
+				char* posicion_sabotaje_char_2 = malloc(strlen(posicion_sabotaje_char)+1);
+				strcpy(posicion_sabotaje_char_2, posicion_sabotaje_char);
+
 				int posx = atoi(strtok(posicion_sabotaje_char,"|"));
 			    int posy = atoi(strtok(NULL,""));
 				log_info(logger, "posx %d   posy %d", posx, posy);
@@ -996,7 +999,12 @@ INICIAR_PLANIFICACION
 				flag_sabotaje = configuracion.grado_multitarea;
 
 				if(list_size(lista_tripulantes_trabajando) > 0){
-					lista_bloq_emergencia = list_take_and_remove(lista_tripulantes_trabajando, list_size(lista_tripulantes_trabajando));
+					//lista_bloq_emergencia = list_take_and_remove(lista_tripulantes_trabajando, list_size(lista_tripulantes_trabajando));
+					for(int i=0; i < list_size(lista_tripulantes_trabajando); i++){
+						tripulante = (tcbTripulante*)list_remove(lista_tripulantes_trabajando, i);
+						list_add(lista_bloq_emergencia,tripulante);
+						i = -1;
+					}
 				}
 
 			    bool tid_anterior(tcbTripulante* tid_menor, tcbTripulante* tid_mayor) {
@@ -1024,9 +1032,11 @@ INICIAR_PLANIFICACION
 						cambiar_estado(tripulante->socket_miram, tripulante, 'B');
 					}
 
-					tcbTripulante* tripu1 = malloc(sizeof(tcbTripulante));
+					//tcbTripulante* tripu1 = malloc(sizeof(tcbTripulante));
+					tcbTripulante* tripu1;
 					tripu1 = (tcbTripulante*)list_get(lista_bloq_emergencia, 0);
-					tcbTripulante* tripu2 = malloc(sizeof(tcbTripulante));
+					//tcbTripulante* tripu2 = malloc(sizeof(tcbTripulante));
+					tcbTripulante* tripu2;
 					int dif_x = abs(tripu1->posicionX - posx);//NO ES 5, ES LO Q RECIBA DE POSICION
 					int dif_y = abs(tripu1->posicionY - posy);
 
@@ -1044,7 +1054,7 @@ INICIAR_PLANIFICACION
 
 					}
 					log_info(logger, "Tripu elegido: tid %d  posx %d  posy %d", tripu1->tid, tripu1->posicionX, tripu1->posicionY);
-					informar_atencion_sabotaje(tripu1, posicion_sabotaje_char);
+					informar_atencion_sabotaje(tripu1, posicion_sabotaje_char_2);
 					//mover al tripu1 que es el mas cercano
 					while(tripu1->posicionX != posx){ //muevo en X
 						int x_viejo = tripulante->posicionX;
@@ -1084,7 +1094,13 @@ INICIAR_PLANIFICACION
 						flag_sabotaje = list_size(lista_bloq_emergencia);
 					}
 
-					lista_tripulantes_ready = list_take_and_remove(lista_bloq_emergencia, list_size(lista_bloq_emergencia));
+					//lista_tripulantes_ready = list_take_and_remove(lista_bloq_emergencia, list_size(lista_bloq_emergencia));
+					for(int i=0; i < list_size(lista_bloq_emergencia); i++){
+						tripulante = (tcbTripulante*)list_remove(lista_bloq_emergencia, i);
+						list_add(lista_tripulantes_ready,tripulante);
+						i = -1;
+					}
+
 
 					for(int i=0; i < list_size(lista_tripulantes_ready); i++){
 						tripulante = (tcbTripulante*)list_get(lista_tripulantes_ready, i);
@@ -1092,8 +1108,7 @@ INICIAR_PLANIFICACION
 						sem_post(&LISTA_READY_NO_VACIA);
 					}
 
-					//free(tripu1);
-					//free(tripu2);
+					free(posicion_sabotaje_char_2);
 				}else{
 					log_info(logger, "no hay tripulantes disponibles para resolver sabotaje");
 					flag_sabotaje = 0;

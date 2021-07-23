@@ -133,9 +133,7 @@ void iniciar_servidor2(config_struct* config_servidor)
 
 			pthread_t hilo_cliente_discordiador_sabotaje;
 			pthread_create(&hilo_cliente_discordiador_sabotaje,NULL,(void*)funcionx ,(void*)socket_cliente_sabotaje);
-			log_info(logger, "zzzzzzzzzzzzz");
 			pthread_detach(hilo_cliente_discordiador_sabotaje);
-			log_info(logger, "rrrrrrrrrr");
 		}
 	//}
 	//printf("me fui");
