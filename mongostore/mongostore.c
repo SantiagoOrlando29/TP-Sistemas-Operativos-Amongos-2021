@@ -16,6 +16,9 @@ int main(void)
 	log_debug(logger, "Testeo config, la IP es: %s", configuracion.ip);
 
 	//file_system_iniciar();
+	char* archivitos = contar_archivos("/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras");
+	//log_debug(logger, "ARCHIVOS PA %s", archivitos);
+
 
 
 	int piddd = getpid();

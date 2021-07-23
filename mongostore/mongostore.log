@@ -622,3 +622,206 @@
 [INFO] 23:17:34:543 mongostore/(9035:9161): tarea CONSUMIR_OXIGENO  param 4
 [INFO] 23:17:35:543 mongostore/(9035:9161): tid 3  Comienza ejecuciÃ³n de tarea CONSUMIR_OXIGENO
 [INFO] 23:17:36:543 mongostore/(9035:9161): tid 3  Se finaliza la tarea CONSUMIR_OXIGENO
+[DEBUG] 18:49:44:252 mongostore/(5952:5952): LOGGER OK
+[INFO] 18:49:44:258 mongostore/(5952:5952): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 18:49:44:258 mongostore/(5952:5952): Testeo config, la IP es: 127.0.0.1
+[INFO] 18:49:44:258 mongostore/(5952:5952): pid 5952  
+
+[INFO] 18:49:44:258 mongostore/(5952:5954): Servidor iniciando 2
+[INFO] 18:49:44:259 mongostore/(5952:5954): Servidor Mongo2 encendido
+[INFO] 18:49:44:259 mongostore/(5952:5953): Servidor iniciando
+[INFO] 18:49:44:259 mongostore/(5952:5953): Servidor Mongo encendido
+[DEBUG] 18:51:05:502 mongostore/(6133:6133): LOGGER OK
+[INFO] 18:51:05:502 mongostore/(6133:6133): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 18:51:05:502 mongostore/(6133:6133): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 18:51:05:502 mongostore/(6133:6133): ARCHIVOS PA 3
+[INFO] 18:51:05:502 mongostore/(6133:6133): pid 6133  
+
+[INFO] 18:51:05:502 mongostore/(6133:6135): Servidor iniciando 2
+[INFO] 18:51:05:503 mongostore/(6133:6135): Servidor Mongo2 encendido
+[INFO] 18:51:05:503 mongostore/(6133:6134): Servidor iniciando
+[INFO] 18:51:05:503 mongostore/(6133:6134): Servidor Mongo encendido
+[DEBUG] 19:04:12:324 mongostore/(8062:8062): LOGGER OK
+[INFO] 19:04:12:324 mongostore/(8062:8062): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:04:12:324 mongostore/(8062:8062): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:04:12:324 mongostore/(8062:8062): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:05:34:057 mongostore/(8263:8263): LOGGER OK
+[INFO] 19:05:34:057 mongostore/(8263:8263): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:05:34:057 mongostore/(8263:8263): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:05:34:057 mongostore/(8263:8263): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:05:34:057 mongostore/(8263:8263): ARCHIVOS PA 3
+[INFO] 19:05:34:057 mongostore/(8263:8263): pid 8263  
+
+[INFO] 19:05:34:057 mongostore/(8263:8265): Servidor iniciando 2
+[INFO] 19:05:34:058 mongostore/(8263:8265): Servidor Mongo2 encendido
+[INFO] 19:05:34:058 mongostore/(8263:8264): Servidor iniciando
+[INFO] 19:05:34:058 mongostore/(8263:8264): Servidor Mongo encendido
+[DEBUG] 19:06:18:819 mongostore/(8364:8364): LOGGER OK
+[INFO] 19:06:18:819 mongostore/(8364:8364): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:06:18:819 mongostore/(8364:8364): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:06:18:820 mongostore/(8364:8364): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:06:18:820 mongostore/(8364:8364): ARCHIVOS PA 3
+[INFO] 19:06:18:820 mongostore/(8364:8364): pid 8364  
+
+[INFO] 19:06:18:820 mongostore/(8364:8366): Servidor iniciando 2
+[INFO] 19:06:18:820 mongostore/(8364:8366): Servidor Mongo2 encendido
+[INFO] 19:06:18:820 mongostore/(8364:8365): Servidor iniciando
+[INFO] 19:06:18:820 mongostore/(8364:8365): Servidor Mongo encendido
+[DEBUG] 19:09:20:985 mongostore/(8848:8848): LOGGER OK
+[INFO] 19:09:20:986 mongostore/(8848:8848): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:09:20:986 mongostore/(8848:8848): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:09:20:986 mongostore/(8848:8848): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:10:21:124 mongostore/(9019:9019): LOGGER OK
+[INFO] 19:10:21:124 mongostore/(9019:9019): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:10:21:124 mongostore/(9019:9019): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:10:21:124 mongostore/(9019:9019): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:11:39:046 mongostore/(9228:9228): LOGGER OK
+[INFO] 19:11:39:047 mongostore/(9228:9228): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:11:39:047 mongostore/(9228:9228): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:11:39:047 mongostore/(9228:9228): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:11:52:197 mongostore/(9258:9258): LOGGER OK
+[INFO] 19:11:52:198 mongostore/(9258:9258): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:11:52:198 mongostore/(9258:9258): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:11:52:198 mongostore/(9258:9258): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:12:16:096 mongostore/(9320:9320): LOGGER OK
+[INFO] 19:12:16:097 mongostore/(9320:9320): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:12:16:097 mongostore/(9320:9320): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:12:16:097 mongostore/(9320:9320): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:12:56:133 mongostore/(9423:9423): LOGGER OK
+[INFO] 19:12:56:133 mongostore/(9423:9423): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:12:56:134 mongostore/(9423:9423): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:12:56:134 mongostore/(9423:9423): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:15:07:926 mongostore/(9747:9747): LOGGER OK
+[INFO] 19:15:07:926 mongostore/(9747:9747): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:15:07:926 mongostore/(9747:9747): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:15:07:927 mongostore/(9747:9747): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:15:07:927 mongostore/(9747:9747): Los bloques ocupados por el total de recursos son ¨í¿’–
+[DEBUG] 19:15:07:927 mongostore/(9747:9747): ARCHIVOS PA [1,3,5,home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante3.im,home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims
+[INFO] 19:15:07:927 mongostore/(9747:9747): pid 9747  
+
+[INFO] 19:15:07:927 mongostore/(9747:9749): Servidor iniciando 2
+[INFO] 19:15:07:927 mongostore/(9747:9749): Servidor Mongo2 encendido
+[INFO] 19:15:07:927 mongostore/(9747:9748): Servidor iniciando
+[INFO] 19:15:07:927 mongostore/(9747:9748): Servidor Mongo encendido
+[DEBUG] 19:16:28:817 mongostore/(9944:9944): LOGGER OK
+[INFO] 19:16:28:817 mongostore/(9944:9944): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:16:28:817 mongostore/(9944:9944): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:16:28:817 mongostore/(9944:9944): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:16:28:817 mongostore/(9944:9944): Los bloques ocupados por el total de recursos son ˆâÁ¿’–
+[DEBUG] 19:16:28:817 mongostore/(9944:9944): ARCHIVOS PA [1,3,5,home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante3.im,home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims
+[INFO] 19:16:28:818 mongostore/(9944:9944): pid 9944  
+
+[INFO] 19:16:28:818 mongostore/(9944:9946): Servidor iniciando 2
+[INFO] 19:16:28:818 mongostore/(9944:9946): Servidor Mongo2 encendido
+[INFO] 19:16:28:818 mongostore/(9944:9945): Servidor iniciando
+[INFO] 19:16:28:818 mongostore/(9944:9945): Servidor Mongo encendido
+[DEBUG] 19:19:21:235 mongostore/(10366:10366): LOGGER OK
+[INFO] 19:19:21:235 mongostore/(10366:10366): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:19:21:235 mongostore/(10366:10366): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:19:21:235 mongostore/(10366:10366): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:19:21:235 mongostore/(10366:10366): PRIMER BLOQUE : [1,3,5]
+[DEBUG] 19:19:21:236 mongostore/(10366:10366): BLOQUE BUFFER : /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante3.ims
+[DEBUG] 19:19:21:236 mongostore/(10366:10366): BLOQUE BUFFER : /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims
+[INFO] 19:19:21:236 mongostore/(10366:10366): pid 10366  
+
+[INFO] 19:19:21:236 mongostore/(10366:10368): Servidor iniciando 2
+[INFO] 19:19:21:236 mongostore/(10366:10368): Servidor Mongo2 encendido
+[INFO] 19:19:21:236 mongostore/(10366:10367): Servidor iniciando
+[INFO] 19:19:21:236 mongostore/(10366:10367): Servidor Mongo encendido
+[DEBUG] 19:21:54:950 mongostore/(10720:10720): LOGGER OK
+[INFO] 19:21:54:951 mongostore/(10720:10720): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:21:54:951 mongostore/(10720:10720): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:21:54:951 mongostore/(10720:10720): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:21:54:952 mongostore/(10720:10720): PRIMER BLOQUE : [1,3,5]
+[DEBUG] 19:21:54:952 mongostore/(10720:10720): BLOQUE BUFFER : /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante3.ims
+[DEBUG] 19:21:54:952 mongostore/(10720:10720): BLOQUE BUFFER : /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims
+[INFO] 19:21:54:952 mongostore/(10720:10720): pid 10720  
+
+[INFO] 19:21:54:952 mongostore/(10720:10722): Servidor iniciando 2
+[INFO] 19:21:54:952 mongostore/(10720:10722): Servidor Mongo2 encendido
+[INFO] 19:21:54:952 mongostore/(10720:10721): Servidor iniciando
+[INFO] 19:21:54:952 mongostore/(10720:10721): Servidor Mongo encendido
+[DEBUG] 19:21:59:318 mongostore/(10737:10737): LOGGER OK
+[INFO] 19:21:59:318 mongostore/(10737:10737): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:21:59:318 mongostore/(10737:10737): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:21:59:318 mongostore/(10737:10737): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:21:59:319 mongostore/(10737:10737): PRIMER BLOQUE : [1,3,5]
+[DEBUG] 19:21:59:319 mongostore/(10737:10737): BLOQUE BUFFER : [6,7,9]
+[DEBUG] 19:21:59:319 mongostore/(10737:10737): BLOQUE BUFFER : [4,8,2]
+[DEBUG] 19:21:59:319 mongostore/(10737:10737): Los bloques ocupados por el total de recursos son [1,3,5,6,7,9,4,8,2]
+[INFO] 19:21:59:319 mongostore/(10737:10737): pid 10737  
+
+[INFO] 19:21:59:319 mongostore/(10737:10739): Servidor iniciando 2
+[INFO] 19:21:59:319 mongostore/(10737:10739): Servidor Mongo2 encendido
+[INFO] 19:21:59:319 mongostore/(10737:10738): Servidor iniciando
+[INFO] 19:21:59:319 mongostore/(10737:10738): Servidor Mongo encendido
+[DEBUG] 19:25:13:828 mongostore/(11213:11213): LOGGER OK
+[INFO] 19:25:13:828 mongostore/(11213:11213): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:25:13:828 mongostore/(11213:11213): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:25:13:828 mongostore/(11213:11213): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:25:41:943 mongostore/(11294:11294): LOGGER OK
+[INFO] 19:25:41:943 mongostore/(11294:11294): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:25:41:943 mongostore/(11294:11294): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:25:41:943 mongostore/(11294:11294): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:26:35:877 mongostore/(11429:11429): LOGGER OK
+[INFO] 19:26:35:877 mongostore/(11429:11429): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:26:35:877 mongostore/(11429:11429): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:26:35:877 mongostore/(11429:11429): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:26:53:412 mongostore/(11478:11478): LOGGER OK
+[INFO] 19:26:53:412 mongostore/(11478:11478): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:26:53:412 mongostore/(11478:11478): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:26:53:412 mongostore/(11478:11478): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:28:46:300 mongostore/(11784:11784): LOGGER OK
+[INFO] 19:28:46:300 mongostore/(11784:11784): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:28:46:300 mongostore/(11784:11784): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:28:46:300 mongostore/(11784:11784): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:29:24:766 mongostore/(11905:11905): LOGGER OK
+[INFO] 19:29:24:766 mongostore/(11905:11905): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:29:24:767 mongostore/(11905:11905): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:29:24:767 mongostore/(11905:11905): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:30:26:353 mongostore/(12086:12086): LOGGER OK
+[INFO] 19:30:26:354 mongostore/(12086:12086): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:30:26:354 mongostore/(12086:12086): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:30:26:354 mongostore/(12086:12086): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:31:23:492 mongostore/(12208:12208): LOGGER OK
+[INFO] 19:31:23:492 mongostore/(12208:12208): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:31:23:492 mongostore/(12208:12208): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:31:23:493 mongostore/(12208:12208): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:31:23:493 mongostore/(12208:12208): PRIMER BLOQUE : [1,3,5]
+[DEBUG] 19:31:23:493 mongostore/(12208:12208): BLOQUE BUFFER : [6,7,9]
+[DEBUG] 19:31:23:493 mongostore/(12208:12208): BLOQUE BUFFER : [4,8,2]
+[DEBUG] 19:31:23:493 mongostore/(12208:12208): Los bloques ocupados por el total de las bitacoras son [1,3,5,6,7,9,4,8,2]
+[INFO] 19:31:23:493 mongostore/(12208:12208): pid 12208  
+
+[INFO] 19:31:23:493 mongostore/(12208:12210): Servidor iniciando 2
+[INFO] 19:31:23:493 mongostore/(12208:12210): Servidor Mongo2 encendido
+[INFO] 19:31:23:493 mongostore/(12208:12209): Servidor iniciando
+[INFO] 19:31:23:494 mongostore/(12208:12209): Servidor Mongo encendido
+[DEBUG] 19:34:54:112 mongostore/(12752:12752): LOGGER OK
+[INFO] 19:34:54:112 mongostore/(12752:12752): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:34:54:112 mongostore/(12752:12752): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:34:54:112 mongostore/(12752:12752): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:34:54:113 mongostore/(12752:12752): PRIMER BLOQUE : [1,3,5]
+[DEBUG] 19:34:54:113 mongostore/(12752:12752): BLOQUE BUFFER : [6,7,9]
+[DEBUG] 19:34:54:113 mongostore/(12752:12752): BLOQUE BUFFER : [4,8,2]
+[DEBUG] 19:34:54:113 mongostore/(12752:12752): Los bloques ocupados por el total de las bitacoras son [1,3,5,6,7,9,4,8,2]
+[INFO] 19:34:54:113 mongostore/(12752:12752): pid 12752  
+
+[INFO] 19:34:54:113 mongostore/(12752:12754): Servidor iniciando 2
+[INFO] 19:34:54:113 mongostore/(12752:12754): Servidor Mongo2 encendido
+[INFO] 19:34:54:113 mongostore/(12752:12753): Servidor iniciando
+[INFO] 19:34:54:113 mongostore/(12752:12753): Servidor Mongo encendido
+[DEBUG] 19:35:05:488 mongostore/(12790:12790): LOGGER OK
+[INFO] 19:35:05:488 mongostore/(12790:12790): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:35:05:489 mongostore/(12790:12790): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:35:05:489 mongostore/(12790:12790): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 19:35:05:489 mongostore/(12790:12790): PRIMER BLOQUE : [1,3,5]
+[DEBUG] 19:35:05:489 mongostore/(12790:12790): BLOQUE BUFFER : [6,7,9]
+[DEBUG] 19:35:05:489 mongostore/(12790:12790): BLOQUE BUFFER : [4,8,2]
+[DEBUG] 19:35:05:489 mongostore/(12790:12790): Los bloques ocupados por el total de las bitacoras son [1,3,5,6,7,9,4,8,2]
+[INFO] 19:35:05:489 mongostore/(12790:12790): pid 12790  
+
+[INFO] 19:35:05:489 mongostore/(12790:12792): Servidor iniciando 2
+[INFO] 19:35:05:490 mongostore/(12790:12792): Servidor Mongo2 encendido
+[INFO] 19:35:05:490 mongostore/(12790:12791): Servidor iniciando
+[INFO] 19:35:05:490 mongostore/(12790:12791): Servidor Mongo encendido

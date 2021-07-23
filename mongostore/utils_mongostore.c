@@ -1779,3 +1779,79 @@ void notificar_sabotaje(){
 }
 
 
+char* contar_archivos(char* path){
+
+	t_list* lista_paths = list_create();
+
+	log_debug(logger, "Se ingresa a obtener todos los bloques de bitacoras");
+
+    size_t count = 0;
+    struct dirent *res;
+    struct stat sb;
+    printf("El path es: %s\n", path);
+
+    char *path_local = string_new();
+	string_append(&path_local, path);
+	string_append(&path_local, "/");
+    printf("El path local es: %s\n", path_local);
+
+    if (stat(path, &sb) == 0 && S_ISDIR(sb.st_mode)){
+        DIR *folder = opendir ( path );
+
+        if (access ( path, F_OK ) != -1 ){
+            if ( folder ){
+                while ( ( res = readdir ( folder ) ) ){
+                    if ( strcmp( res->d_name, "." ) && strcmp( res->d_name, ".." ) ){
+
+                        char *ruta_temporal = string_new();
+                        string_append(&ruta_temporal, path_local);
+                        string_append(&ruta_temporal, res->d_name);
+                        list_add(lista_paths, ruta_temporal);
+                        printf("La ruta queda: %s\n", ruta_temporal);
+                        count++;
+                    }
+                }
+
+                closedir ( folder );
+            }else{
+                perror( "No se pudo abrir el directorio\n" );
+                exit( EXIT_FAILURE);
+            }
+        }
+
+    }else{
+        printf("%s no se pudo abrir o no es un directorio\n", path);
+        exit( EXIT_FAILURE);
+    }
+
+    int cantidad_bitacoras = count;
+
+
+    char* listita = list_get(lista_paths, 0);
+
+
+	char* bloques = files_obtener_bloques_de_archivo_metadata(listita);
+	log_debug(logger, "PRIMER BLOQUE : %s", bloques);
+
+
+
+	for(int i = 1; i < cantidad_bitacoras; i++)
+	{
+		cadena_sacar_ultimo_caracter(bloques);
+		listita = list_get(lista_paths, i);
+		char* string_buffer = files_obtener_bloques_de_archivo_metadata(listita);
+		log_debug(logger, "BLOQUE BUFFER : %s", string_buffer);
+		string_buffer[0] = ',';
+		string_append(&bloques, string_buffer);
+		free(string_buffer);
+	}
+
+	log_debug(logger, "Los bloques ocupados por el total de las bitacoras son %s", bloques);
+	list_destroy_and_destroy_elements(lista_paths,(void*)destruir_lista);
+	return bloques;
+
+}
+
+void destruir_lista(char* contenido){
+    free(contenido);
+}

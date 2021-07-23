@@ -204,6 +204,8 @@ int recibir_operacion(int);
 void enviar_header(op_code, int);
 void iniciar_servidor2(t_configuracion*);
 int funcionx(int);
+char* contar_archivos(char*);
+void destruir_lista(char*);
 
 
 //Prototipos de funciones sujetas a cambios al linkearse con discordiador
