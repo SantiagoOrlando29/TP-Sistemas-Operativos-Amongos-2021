@@ -58,7 +58,7 @@ void iniciar_servidor(config_struct* config_servidor)
 	int tam_direccion = sizeof(struct sockaddr_in);
 	int socket_cliente = 0;
 
-	log_info(logger, "aaaaaaaaa");
+	log_info(logger, "socket_servidor %d", socket_servidor);
 
 	//se crea mapa
 	nivel_gui_inicializar();
@@ -74,7 +74,7 @@ void iniciar_servidor(config_struct* config_servidor)
 
 		log_info(logger, "ccccccccc");
 		socket_cliente = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
-		log_info(logger, "ddddddddddd");
+		log_info(logger, "socket_cliente %d", socket_cliente);
 
 		if(socket_cliente>0){
 			log_info(logger, "eeeeeeeeee");
