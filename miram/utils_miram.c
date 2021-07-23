@@ -6,12 +6,18 @@ t_list* tabla_paginacion_ppal;
 
 int borrar = 1;
 
+t_list* memoria_aux;
+NIVEL* nivel;
+int err;
+int numero_mapa = 0;
+int cols=10;
+int rows=10;
+
 void iniciar_servidor(config_struct* config_servidor)
 {
 
 //Inicializacion de estructuras de memoria
-
-		tabla_paginacion_ppal=list_create();
+	tabla_paginacion_ppal=list_create();
 
 	log_info(logger, "Servidor iniciando");
 
@@ -52,6 +58,12 @@ void iniciar_servidor(config_struct* config_servidor)
 	int tam_direccion = sizeof(struct sockaddr_in);
 	int socket_cliente = 0;
 
+	//se crea mapa
+	nivel_gui_inicializar();
+
+	nivel_gui_get_area_nivel(&cols, &rows);
+
+	nivel = nivel_crear("AMong-OS");
 
 
 	int hilo;
@@ -1009,6 +1021,8 @@ espacio_de_memoria* asignar_espacio_de_memoria(size_t tam) {
 }
 
 bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_list* lista){
+	char letra = 48;
+
 	pcbPatota* pcb_patota = crear_pcb(pid);
 	espacio_de_memoria* espacio_de_memoria_pcb_patota = asignar_espacio_de_memoria(tamanio_PCB);
 	if (espacio_de_memoria_pcb_patota == NULL){
@@ -1082,6 +1096,12 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 		if(i == cantidad_tripulantes +2 -1){ //es el ultimo tripulante de la lista
 			tabla_segmentos_patota->ultimo_tripulante = tripulante->tid;
 		}
+
+		if(tripulante->tid > 9){ //desde el 10 el mapa tira ":" sino
+			letra = 55;
+		}
+		err = personaje_crear(nivel, letra+tripulante->tid, (int)tripulante->posicionX, (int)tripulante->posicionY);
+		ASSERT_CREATE(nivel, letra, err);
 	}
 
 	imprimir_tabla_espacios_de_memoria();
@@ -1096,6 +1116,7 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 
 bool funcion_expulsar_tripulante(int tripulante_id){
 	sem_wait(&MUTEX_LISTA_TABLAS_SEGMENTOS);
+	char letra = 48;
 	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
 		tabla_segmentacion* tabla_segmentos = (tabla_segmentacion*)list_get(lista_tablas_segmentos, i);
 
@@ -1134,6 +1155,13 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 						}
 						list_remove_and_destroy_element(lista_tablas_segmentos, i, (void*)destruir_una_tabla_seg);*/
 					}
+
+					if(tripulante_id > 9){ //desde el 10 el mapa tira ":" sino
+						letra = 55;
+					}
+					//log_info(logger, "letra + tid: %c", letra + tripulante_id);
+					item_borrar(nivel, letra + tripulante_id);
+
 					sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 
 					//unir_espacios_contiguos_libres();
@@ -1344,6 +1372,7 @@ void limpiar_array(char** array){
 
 bool cambiar_posicion(int tid, int posx, int posy, int pid){
 	sem_wait(&MUTEX_CAMBIAR_POSICION);
+	char letra = 48;
 	tabla_segmentacion* tabla_segmentos = buscar_tabla_segmentos(pid);
 
 	if(tabla_segmentos != NULL){
@@ -1355,9 +1384,24 @@ bool cambiar_posicion(int tid, int posx, int posy, int pid){
 			if(seg_a_buscar == segmento->numero_segmento -2){ //CREO QUE ESTA BIEN PERO NO PROBE MUCHO
 				espacio_de_memoria* espacio = buscar_espacio(segmento); //encontro la base en memoria del tcb del tripulante
 				tcbTripulante* tripulante = espacio->contenido;
+
+				int posx_vieja = tripulante->posicionX;
+				int posy_vieja = tripulante->posicionY;
+
+				int difx = posx - posx_vieja;
+				int dify = posy - posy_vieja;
+
 				tripulante->posicionX = posx;
 				tripulante->posicionY = posy;
+
 				espacio->contenido = tripulante;
+
+				if(tid > 9){ //desde el 10 el mapa tira ":" sino
+					letra = 55;
+				}
+			    item_desplazar(nivel, letra+ tid, difx, dify);
+			    //sleep(1);
+
 				sem_post(&MUTEX_CAMBIAR_POSICION);
 				return true;
 			}
@@ -2376,6 +2420,20 @@ char* obtener_tarea(int id_patota, int nro_tarea){
 	}
 
 
-}
+	}
 	return una_tarea;
 }
+
+void* crear_mapa(){
+	while (numero_mapa!=1) {
+			nivel_gui_dibujar(nivel);
+			fflush(stdout);
+			sleep(0.5);
+	if(err){
+		printf("WARN: %s\n", nivel_gui_string_error(err));
+	}
+
+	}
+	printf("\n Termino");
+}
+

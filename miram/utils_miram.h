@@ -17,10 +17,20 @@
 #include<stdbool.h>
 #include <semaphore.h>
 #include <signal.h>
+#include <nivel-gui/nivel-gui.h>
+#include <nivel-gui/tad_nivel.h>
 
 #define tamanio_PCB  8
 #define tamanio_tarea 10
 #define tamanio_TCB  21
+
+#define ASSERT_CREATE(nivel, id, err)                                                   \
+    if(err) {                                                                           \
+        nivel_destruir(nivel);                                                          \
+        nivel_gui_terminar();                                                           \
+        fprintf(stderr, "Error al crear '%c': %s\n", id, nivel_gui_string_error(err));  \
+        return EXIT_FAILURE;                                                            \
+    }
 
 sem_t MUTEX_PEDIR_TAREA;
 sem_t MUTEX_CAMBIAR_ESTADO;
@@ -333,6 +343,10 @@ void destruir_tabla_segmentacion(tabla_segmentacion* tabla);
 
 void sig_handler(int signum);
 
+//Mapa
+
+int iniciar_mapa(int * cols, int * rows);
+void* crear_mapa();
 
 #endif /* CONEXIONES_H_ */
 
