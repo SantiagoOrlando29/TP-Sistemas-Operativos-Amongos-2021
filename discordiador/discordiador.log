@@ -1,7 +1,30 @@
-[INFO] 11:37:41:760 discordiador/(13474:13480): in menu_discordiador
-[INFO] 11:37:41:759 discordiador/(13474:13481): in funcion_sabotaje
-[INFO] 11:37:44:149 discordiador/(13474:13480): Memoria asignada
-[INFO] 11:37:53:917 discordiador/(13474:13490): TRIPU 1  tarea recibida: GENERAR_OXIGENO 5;4;4;1
-[INFO] 11:37:53:920 discordiador/(13474:13491): TRIPU 2  tarea recibida: GENERAR_OXIGENO 5;4;4;1
-[INFO] 11:37:53:927 discordiador/(13474:13492): TRIPU 3  tarea recibida: GENERAR_OXIGENO 5;4;4;1
-[INFO] 11:37:54:328 discordiador/(13474:13481): posicion_sabotaje_char (null)
+[INFO] 14:17:40:753 discordiador/(17878:17884): in funcion_sabotaje
+[INFO] 14:17:40:754 discordiador/(17878:17883): in menu_discordiador
+[INFO] 14:17:44:862 discordiador/(17878:17883): Memoria asignada
+[INFO] 14:17:46:870 discordiador/(17878:17883): Memoria asignada
+[INFO] 14:17:49:872 discordiador/(17878:17883): Memoria asignada
+[INFO] 14:17:55:446 discordiador/(17878:17891): TRIPU 1  tarea recibida: A00;1;1;5
+[INFO] 14:17:55:449 discordiador/(17878:17894): TRIPU 2  tarea recibida: B00;3;3;5
+[INFO] 14:17:55:451 discordiador/(17878:17895): TRIPU 3  tarea recibida: C00;5;5;5
+[INFO] 14:18:00:454 discordiador/(17878:17891): TRIPU 1  tarea recibida: A01;1;1;5
+[INFO] 14:18:03:454 discordiador/(17878:17894): TRIPU 2  tarea recibida: B01;3;3;5
+[INFO] 14:18:03:455 discordiador/(17878:17895): TRIPU 3  tarea recibida: C01;5;5;5
+[INFO] 14:18:08:459 discordiador/(17878:17891): TRIPU 1  tarea recibida: A02;1;1;5
+[INFO] 14:18:11:461 discordiador/(17878:17894): TRIPU 2  tarea recibida: B02;3;3;5
+[INFO] 14:18:11:461 discordiador/(17878:17895): TRIPU 3  tarea recibida: C02;5;5;5
+[INFO] 14:18:16:466 discordiador/(17878:17895): TRIPU 3  tarea recibida: C03;5;5;5
+[INFO] 14:18:16:467 discordiador/(17878:17891): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 14:18:16:467 discordiador/(17878:17891): tripu_misma_patota_exit 1
+[INFO] 14:18:16:467 discordiador/(17878:17891): size exit 0
+[INFO] 14:18:19:470 discordiador/(17878:17894): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 14:18:19:470 discordiador/(17878:17894): tripu_misma_patota_exit 1
+[INFO] 14:18:19:470 discordiador/(17878:17894): size exit 0
+[INFO] 14:18:21:473 discordiador/(17878:17895): TRIPU 3  tarea recibida: C04;5;5;5
+[INFO] 14:18:26:478 discordiador/(17878:17895): TRIPU 3  tarea recibida: C05;5;5;5
+[INFO] 14:18:31:482 discordiador/(17878:17895): TRIPU 3  tarea recibida: C06;5;5;5
+[INFO] 14:18:36:488 discordiador/(17878:17895): TRIPU 3  tarea recibida: C07;5;5;5
+[INFO] 14:18:41:495 discordiador/(17878:17895): TRIPU 3  tarea recibida: C08;5;5;5
+[INFO] 14:18:46:500 discordiador/(17878:17895): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 14:18:46:500 discordiador/(17878:17895): tripu_misma_patota_exit 1
+[INFO] 14:18:46:501 discordiador/(17878:17895): size exit 0
+[INFO] 14:18:52:694 discordiador/(17878:17884): posicion_sabotaje_char (null)

@@ -609,7 +609,9 @@ void funcion_sabotaje(){
 				sleep(configuracion.retardo_cpu);
 			}
 
+			log_info(logger, "comienza tiempo sabotaje");
 			sleep(configuracion.duracion_sabotaje);
+			log_info(logger, "finaliza tiempo sabotaje");
 			informar_sabotaje_resuelto(tripu1);
 
 			enviar_header(FSCK, tripu1->socket_mongo);
@@ -713,10 +715,7 @@ void menu_discordiador() {
 
 				//char* tareas = malloc(sizeof(char)+1);
 				char* tareas = leer_tareas_archivo(parametros[2]);
-/*
-INICIAR_PATOTA 5 tareas.txt 3|4 1|2 4|5
-INICIAR_PATOTA 3 tareas_corta.txt 3|4 9|2 4|5
-*/
+
 				bool hay_mas_parametros = true;
 				for(int i = 0; i < cantidad_tripulantes ; i++){
 					if (hay_mas_parametros == true){

@@ -1565,3 +1565,1994 @@
 [DEBUG] 11:37:53:922 mongostore/(13455:13497): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) []
 [INFO] 11:37:53:922 mongostore/(13455:13497): Aaaaaaaaa
 [INFO] 11:37:53:922 mongostore/(13455:13497): BBBBBBBB
+[DEBUG] 11:59:05:190 mongostore/(14092:14092): LOGGER OK
+[INFO] 11:59:05:192 mongostore/(14092:14092): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:59:05:192 mongostore/(14092:14092): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:59:05:192 mongostore/(14092:14092): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:59:05:193 mongostore/(14092:14092): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:59:05:193 mongostore/(14092:14092): O-Superbloque generado desde archivo
+[INFO] 11:59:05:193 mongostore/(14092:14092): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:59:05:193 mongostore/(14092:14092): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:59:05:193 mongostore/(14092:14092): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:59:05:193 mongostore/(14092:14092): Existencia de Blocks validada
+[DEBUG] 11:59:05:193 mongostore/(14092:14092): Directorios del File System confirmados
+[INFO] 11:59:05:193 mongostore/(14092:14092): File System iniciado
+[INFO] 11:59:05:193 mongostore/(14092:14092): pid 14092  
+
+[INFO] 11:59:05:194 mongostore/(14092:14094): Servidor iniciando 2
+[INFO] 11:59:05:194 mongostore/(14092:14094): Servidor Mongo2 encendido
+[INFO] 11:59:05:194 mongostore/(14092:14093): Servidor iniciando
+[INFO] 11:59:05:194 mongostore/(14092:14093): Servidor Mongo encendido
+[INFO] 11:59:10:904 mongostore/(14092:14094): socket_cliente_sabotaje 5
+[INFO] 11:59:10:904 mongostore/(14092:14093): Estableciendo conexión desde 3209
+[INFO] 11:59:10:904 mongostore/(14092:14094): 2 Estableciendo conexión desde 65234
+[INFO] 11:59:10:905 mongostore/(14092:14094): 2 Creando hilo
+[INFO] 11:59:10:905 mongostore/(14092:14093): Creando hilo
+[INFO] 11:59:10:906 mongostore/(14092:14109): in funcion_cliente
+[INFO] 11:59:10:906 mongostore/(14092:14109): Se conecto este socket a mi 8
+[INFO] 11:59:10:906 mongostore/(14092:14108): funcionx
+[INFO] 11:59:18:158 mongostore/(14092:14093): Estableciendo conexión desde 4745
+[INFO] 11:59:18:159 mongostore/(14092:14093): Creando hilo
+[INFO] 11:59:18:160 mongostore/(14092:14127): in funcion_cliente
+[INFO] 11:59:18:160 mongostore/(14092:14127): Se conecto este socket a mi 9
+[INFO] 11:59:31:868 mongostore/(14092:14093): Estableciendo conexión desde 6793
+[INFO] 11:59:31:868 mongostore/(14092:14093): Creando hilo
+[INFO] 11:59:31:868 mongostore/(14092:14139): in funcion_cliente
+[INFO] 11:59:31:869 mongostore/(14092:14139): Se conecto este socket a mi 10
+[INFO] 11:59:31:872 mongostore/(14092:14093): Estableciendo conexión desde 7817
+[INFO] 11:59:31:872 mongostore/(14092:14093): Creando hilo
+[INFO] 11:59:31:873 mongostore/(14092:14139): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 11:59:31:873 mongostore/(14092:14141): in funcion_cliente
+[INFO] 11:59:31:873 mongostore/(14092:14141): Se conecto este socket a mi 11
+[INFO] 11:59:31:873 mongostore/(14092:14093): Estableciendo conexión desde 8841
+[INFO] 11:59:31:873 mongostore/(14092:14093): Creando hilo
+[INFO] 11:59:31:874 mongostore/(14092:14141): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 11:59:31:874 mongostore/(14092:14143): in funcion_cliente
+[INFO] 11:59:31:874 mongostore/(14092:14143): Se conecto este socket a mi 12
+[INFO] 11:59:32:873 mongostore/(14092:14139): tarea GENERAR_OXIGENO  param 5
+[INFO] 11:59:32:874 mongostore/(14092:14141): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 11:59:33:874 mongostore/(14092:14139): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 11:59:33:874 mongostore/(14092:14143): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 11:59:33:874 mongostore/(14092:14141): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 11:59:34:875 mongostore/(14092:14139): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 11:59:34:875 mongostore/(14092:14143): tarea GENERAR_OXIGENO  param 5
+[INFO] 11:59:34:875 mongostore/(14092:14141): tarea GENERAR_OXIGENO  param 5
+[INFO] 11:59:35:876 mongostore/(14092:14141): tid 2  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 11:59:35:876 mongostore/(14092:14139): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 11:59:36:877 mongostore/(14092:14141): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 11:59:36:877 mongostore/(14092:14139): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 11:59:36:877 mongostore/(14092:14143): tid 3  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 11:59:36:878 mongostore/(14092:14141): tid 2  Se mueve de 4|4 a 5|4
+[INFO] 11:59:37:878 mongostore/(14092:14139): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 11:59:37:878 mongostore/(14092:14143): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 11:59:37:878 mongostore/(14092:14141): tid 2  Se mueve de 5|4 a 5|5
+[INFO] 11:59:38:879 mongostore/(14092:14139): tid 1  Comienza ejecucion de tarea ABC
+[INFO] 11:59:38:879 mongostore/(14092:14141): tid 2  Se mueve de 5|5 a 5|6
+[INFO] 11:59:39:880 mongostore/(14092:14141): tid 2  Comienza ejecucion de tarea ABC
+[INFO] 11:59:42:882 mongostore/(14092:14139): tid 1  Se finaliza la tarea ABC
+[INFO] 11:59:42:882 mongostore/(14092:14139): tid 1  Se mueve de 5|6 a 4|6
+[INFO] 11:59:43:883 mongostore/(14092:14141): tid 2  Se finaliza la tarea ABC
+[INFO] 11:59:43:883 mongostore/(14092:14139): tid 1  Se mueve de 4|6 a 4|5
+[INFO] 11:59:43:883 mongostore/(14092:14141): tid 2  Se mueve de 5|6 a 4|6
+[INFO] 11:59:44:884 mongostore/(14092:14139): tid 1  Se mueve de 4|5 a 3|5
+[INFO] 11:59:44:884 mongostore/(14092:14141): tid 2  Se mueve de 4|6 a 4|5
+[INFO] 11:59:45:885 mongostore/(14092:14139): tid 1  Se mueve de 3|5 a 3|4
+[INFO] 11:59:45:885 mongostore/(14092:14141): tid 2  Se mueve de 4|5 a 3|5
+[INFO] 11:59:46:885 mongostore/(14092:14139): tid 1  Se mueve de 3|4 a 3|3
+[INFO] 11:59:46:886 mongostore/(14092:14141): tid 2  Se mueve de 3|5 a 3|4
+[INFO] 11:59:47:886 mongostore/(14092:14139): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 11:59:47:886 mongostore/(14092:14141): tid 2  Se mueve de 3|4 a 3|3
+[INFO] 11:59:48:888 mongostore/(14092:14141): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 11:59:48:888 mongostore/(14092:14139): tid 1  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 11:59:48:888 mongostore/(14092:14143): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 11:59:49:889 mongostore/(14092:14143): tid 3  Se mueve de 5|4 a 5|5
+[INFO] 11:59:50:889 mongostore/(14092:14143): tid 3  Se mueve de 5|5 a 5|6
+[INFO] 11:59:51:889 mongostore/(14092:14143): tid 3  Comienza ejecucion de tarea ABC
+[INFO] 11:59:52:889 mongostore/(14092:14139): tid 1  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 11:59:52:890 mongostore/(14092:14141): tid 2  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 11:59:55:894 mongostore/(14092:14143): tid 3  Se finaliza la tarea ABC
+[INFO] 11:59:55:895 mongostore/(14092:14143): tid 3  Se mueve de 5|6 a 4|6
+[INFO] 11:59:56:891 mongostore/(14092:14141): tid 2  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 11:59:56:895 mongostore/(14092:14143): tid 3  Se mueve de 4|6 a 4|5
+[INFO] 11:59:57:896 mongostore/(14092:14143): tid 3  Se mueve de 4|5 a 3|5
+[INFO] 11:59:58:897 mongostore/(14092:14143): tid 3  Se mueve de 3|5 a 3|4
+[INFO] 11:59:59:897 mongostore/(14092:14143): tid 3  Se mueve de 3|4 a 3|3
+[INFO] 12:00:00:898 mongostore/(14092:14143): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 12:00:01:899 mongostore/(14092:14143): tid 3  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 12:00:05:901 mongostore/(14092:14143): tid 3  Se finaliza la tarea CONSUMIR_OXIGENO
+[DEBUG] 12:08:03:503 mongostore/(14220:14220): LOGGER OK
+[INFO] 12:08:03:506 mongostore/(14220:14220): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 12:08:03:506 mongostore/(14220:14220): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 12:08:03:506 mongostore/(14220:14220): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 12:08:03:507 mongostore/(14220:14220): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 12:08:03:507 mongostore/(14220:14220): O-Superbloque generado desde archivo
+[INFO] 12:08:03:507 mongostore/(14220:14220): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 12:08:03:508 mongostore/(14220:14220): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 12:08:03:509 mongostore/(14220:14220): O-Blocks mapeado del archivo a la memoria
+[INFO] 12:08:03:509 mongostore/(14220:14220): Existencia de Blocks validada
+[DEBUG] 12:08:03:511 mongostore/(14220:14220): Directorios del File System confirmados
+[INFO] 12:08:03:511 mongostore/(14220:14220): File System iniciado
+[INFO] 12:08:03:511 mongostore/(14220:14220): pid 14220  
+
+[INFO] 12:08:03:512 mongostore/(14220:14222): Servidor iniciando 2
+[INFO] 12:08:03:513 mongostore/(14220:14222): Servidor Mongo2 encendido
+[INFO] 12:08:03:513 mongostore/(14220:14221): Servidor iniciando
+[INFO] 12:08:03:513 mongostore/(14220:14221): Servidor Mongo encendido
+[INFO] 12:08:10:420 mongostore/(14220:14222): socket_cliente_sabotaje 5
+[INFO] 12:08:10:420 mongostore/(14220:14221): Estableciendo conexión desde 11913
+[INFO] 12:08:10:421 mongostore/(14220:14222): 2 Estableciendo conexión desde 8403
+[INFO] 12:08:10:421 mongostore/(14220:14222): 2 Creando hilo
+[INFO] 12:08:10:422 mongostore/(14220:14221): Creando hilo
+[INFO] 12:08:10:422 mongostore/(14220:14257): in funcion_cliente
+[INFO] 12:08:10:422 mongostore/(14220:14257): Se conecto este socket a mi 8
+[INFO] 12:08:10:422 mongostore/(14220:14256): funcionx
+[INFO] 12:08:38:813 mongostore/(14220:14221): Estableciendo conexión desde 13449
+[INFO] 12:08:38:813 mongostore/(14220:14221): Creando hilo
+[INFO] 12:08:38:817 mongostore/(14220:14276): in funcion_cliente
+[INFO] 12:08:38:817 mongostore/(14220:14276): Se conecto este socket a mi 9
+[INFO] 12:08:38:818 mongostore/(14220:14221): Estableciendo conexión desde 14473
+[INFO] 12:08:38:818 mongostore/(14220:14221): Creando hilo
+[INFO] 12:08:38:818 mongostore/(14220:14276): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 12:08:38:819 mongostore/(14220:14221): Estableciendo conexión desde 15497
+[INFO] 12:08:38:819 mongostore/(14220:14221): Creando hilo
+[INFO] 12:08:38:819 mongostore/(14220:14278): in funcion_cliente
+[INFO] 12:08:38:819 mongostore/(14220:14278): Se conecto este socket a mi 10
+[INFO] 12:08:38:819 mongostore/(14220:14278): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 12:08:38:819 mongostore/(14220:14280): in funcion_cliente
+[INFO] 12:08:38:819 mongostore/(14220:14280): Se conecto este socket a mi 11
+[INFO] 12:08:39:819 mongostore/(14220:14276): tarea GENERAR_OXIGENO  param 5
+[INFO] 12:08:39:819 mongostore/(14220:14278): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 12:08:40:820 mongostore/(14220:14278): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 12:08:40:820 mongostore/(14220:14276): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 12:08:40:821 mongostore/(14220:14280): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 12:08:41:821 mongostore/(14220:14278): tarea GENERAR_OXIGENO  param 5
+[INFO] 12:08:41:821 mongostore/(14220:14276): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 12:08:41:821 mongostore/(14220:14280): tarea GENERAR_OXIGENO  param 5
+[INFO] 12:08:42:822 mongostore/(14220:14278): tid 2  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 12:08:42:822 mongostore/(14220:14276): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 12:08:43:822 mongostore/(14220:14278): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 12:08:43:823 mongostore/(14220:14276): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 12:08:43:823 mongostore/(14220:14280): tid 3  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 12:08:43:823 mongostore/(14220:14278): tid 2  Se mueve de 4|4 a 5|4
+[INFO] 12:08:44:823 mongostore/(14220:14280): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 12:08:44:824 mongostore/(14220:14278): tid 2  Se mueve de 5|4 a 5|5
+[INFO] 12:08:44:824 mongostore/(14220:14276): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 12:08:45:825 mongostore/(14220:14276): tid 1  Comienza ejecucion de tarea ABC
+[INFO] 12:08:45:825 mongostore/(14220:14278): tid 2  Se mueve de 5|5 a 5|6
+[DEBUG] 12:08:51:952 mongostore/(14284:14284): LOGGER OK
+[INFO] 12:08:51:952 mongostore/(14284:14284): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 12:08:51:952 mongostore/(14284:14284): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 12:08:51:953 mongostore/(14284:14284): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 12:08:51:955 mongostore/(14284:14284): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 12:08:51:955 mongostore/(14284:14284): O-Superbloque generado desde archivo
+[INFO] 12:08:51:955 mongostore/(14284:14284): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 12:08:51:955 mongostore/(14284:14284): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 12:08:51:955 mongostore/(14284:14284): O-Blocks mapeado del archivo a la memoria
+[INFO] 12:08:51:956 mongostore/(14284:14284): Existencia de Blocks validada
+[DEBUG] 12:08:51:956 mongostore/(14284:14284): Directorios del File System confirmados
+[INFO] 12:08:51:956 mongostore/(14284:14284): File System iniciado
+[INFO] 12:08:51:958 mongostore/(14284:14284): pid 14284  
+
+[INFO] 12:08:51:958 mongostore/(14284:14286): Servidor iniciando 2
+[INFO] 12:08:51:958 mongostore/(14284:14286): Servidor Mongo2 encendido
+[INFO] 12:08:51:958 mongostore/(14284:14285): Servidor iniciando
+[INFO] 12:08:51:959 mongostore/(14284:14285): Servidor Mongo encendido
+[INFO] 12:09:32:924 mongostore/(14284:14285): Estableciendo conexión desde 17033
+[INFO] 12:09:32:925 mongostore/(14284:14285): Creando hilo
+[INFO] 12:09:32:926 mongostore/(14284:14286): socket_cliente_sabotaje 5
+[INFO] 12:09:32:926 mongostore/(14284:14286): 2 Estableciendo conexión desde 13523
+[INFO] 12:09:32:926 mongostore/(14284:14286): 2 Creando hilo
+[INFO] 12:09:32:929 mongostore/(14284:14443): in funcion_cliente
+[INFO] 12:09:32:929 mongostore/(14284:14444): funcionx
+[INFO] 12:09:32:930 mongostore/(14284:14443): Se conecto este socket a mi 8
+[INFO] 12:09:36:141 mongostore/(14284:14285): Estableciendo conexión desde 18569
+[INFO] 12:09:36:141 mongostore/(14284:14285): Creando hilo
+[INFO] 12:09:36:141 mongostore/(14284:14454): in funcion_cliente
+[INFO] 12:09:36:141 mongostore/(14284:14454): Se conecto este socket a mi 9
+[INFO] 12:09:36:143 mongostore/(14284:14285): Estableciendo conexión desde 19593
+[INFO] 12:09:36:143 mongostore/(14284:14285): Creando hilo
+[INFO] 12:09:36:146 mongostore/(14284:14454): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 12:09:36:147 mongostore/(14284:14456): in funcion_cliente
+[INFO] 12:09:36:147 mongostore/(14284:14456): Se conecto este socket a mi 10
+[INFO] 12:09:36:148 mongostore/(14284:14285): Estableciendo conexión desde 20617
+[INFO] 12:09:36:149 mongostore/(14284:14285): Creando hilo
+[INFO] 12:09:36:149 mongostore/(14284:14456): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 12:09:36:150 mongostore/(14284:14458): in funcion_cliente
+[INFO] 12:09:36:150 mongostore/(14284:14458): Se conecto este socket a mi 11
+[INFO] 12:09:37:147 mongostore/(14284:14454): tarea GENERAR_OXIGENO  param 5
+[INFO] 12:09:37:149 mongostore/(14284:14456): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 12:09:38:149 mongostore/(14284:14454): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 12:09:38:149 mongostore/(14284:14458): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 12:09:38:150 mongostore/(14284:14456): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 12:09:39:149 mongostore/(14284:14454): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 12:09:39:150 mongostore/(14284:14458): tarea GENERAR_OXIGENO  param 5
+[INFO] 12:09:39:150 mongostore/(14284:14456): tarea GENERAR_OXIGENO  param 5
+[INFO] 12:09:40:150 mongostore/(14284:14458): tid 3  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 12:09:40:150 mongostore/(14284:14454): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 12:09:41:151 mongostore/(14284:14458): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 12:09:41:151 mongostore/(14284:14454): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 12:09:41:151 mongostore/(14284:14456): tid 2  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 12:09:41:151 mongostore/(14284:14458): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 12:09:41:786 mongostore/(14284:14284): SIGUSR1
+
+[INFO] 12:09:41:787 mongostore/(14284:14458): tid 3  Se corre en pánico hacia 1|1
+[INFO] 12:09:41:787 mongostore/(14284:14458): tid 3  Se mueve de 5|4 a 4|4
+[INFO] 12:09:42:788 mongostore/(14284:14458): tid 3  Se mueve de 4|4 a 3|4
+[INFO] 12:09:43:789 mongostore/(14284:14458): tid 3  Se mueve de 3|4 a 2|4
+[INFO] 12:09:44:790 mongostore/(14284:14458): tid 3  Se mueve de 2|4 a 1|4
+[INFO] 12:09:45:791 mongostore/(14284:14458): tid 3  Se mueve de 1|4 a 1|3
+[INFO] 12:09:46:792 mongostore/(14284:14458): tid 3  Se mueve de 1|3 a 1|2
+[INFO] 12:09:47:792 mongostore/(14284:14458): tid 3  Se mueve de 1|2 a 1|1
+[INFO] 12:09:53:794 mongostore/(14284:14458): tid 3  Se resuelve el sabotaje
+[INFO] 12:09:53:794 mongostore/(14284:14458): En fsck
+[INFO] 12:09:53:795 mongostore/(14284:14456): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 12:09:53:796 mongostore/(14284:14454): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 12:09:53:796 mongostore/(14284:14458): tid 3  Se mueve de 1|1 a 1|2
+[INFO] 12:09:54:797 mongostore/(14284:14454): tid 1  Comienza ejecucion de tarea ABC
+[INFO] 12:09:54:797 mongostore/(14284:14458): tid 3  Se mueve de 1|2 a 2|2
+[INFO] 12:09:55:798 mongostore/(14284:14458): tid 3  Se mueve de 2|2 a 2|3
+[INFO] 12:09:56:799 mongostore/(14284:14458): tid 3  Se mueve de 2|3 a 3|3
+[INFO] 12:09:57:114 mongostore/(14284:14284): SIGUSR1
+
+[INFO] 12:09:57:115 mongostore/(14284:14458): tid 3  Se corre en pánico hacia 2|2
+[INFO] 12:09:57:115 mongostore/(14284:14458): tid 3  Se mueve de 4|3 a 2|3
+[INFO] 12:09:58:116 mongostore/(14284:14458): tid 3  Se mueve de 2|4 a 2|2
+[INFO] 12:10:04:118 mongostore/(14284:14458): tid 3  Se resuelve el sabotaje
+[INFO] 12:10:04:118 mongostore/(14284:14458): En fsck
+[INFO] 12:10:04:119 mongostore/(14284:14458): tid 3  Se mueve de 2|2 a 2|3
+[INFO] 12:10:05:119 mongostore/(14284:14454): tid 1  Se finaliza la tarea ABC
+[INFO] 12:10:05:119 mongostore/(14284:14458): tid 3  Se mueve de 2|3 a 3|3
+[INFO] 12:10:05:120 mongostore/(14284:14454): tid 1  Se mueve de 5|6 a 4|6
+[INFO] 12:10:06:120 mongostore/(14284:14458): tid 3  Se mueve de 3|3 a 3|4
+[INFO] 12:10:06:120 mongostore/(14284:14454): tid 1  Se mueve de 4|6 a 4|5
+[INFO] 12:10:07:121 mongostore/(14284:14454): tid 1  Se mueve de 4|5 a 3|5
+[INFO] 12:10:07:121 mongostore/(14284:14458): tid 3  Se mueve de 3|4 a 4|4
+[INFO] 12:10:08:122 mongostore/(14284:14458): tid 3  Se mueve de 4|4 a 4|5
+[INFO] 12:10:08:122 mongostore/(14284:14454): tid 1  Se mueve de 3|5 a 3|4
+[INFO] 12:10:09:123 mongostore/(14284:14454): tid 1  Se mueve de 3|4 a 3|3
+[INFO] 12:10:09:124 mongostore/(14284:14458): tid 3  Se mueve de 4|5 a 5|5
+[INFO] 12:10:10:110 mongostore/(14284:14284): SIGUSR1
+
+[INFO] 12:10:10:112 mongostore/(14284:14454): tid 1  Se corre en pánico hacia 3|3
+[INFO] 12:10:15:113 mongostore/(14284:14454): tid 1  Se resuelve el sabotaje
+[INFO] 12:10:15:113 mongostore/(14284:14454): En fsck
+[INFO] 12:10:15:113 mongostore/(14284:14458): tid 3  Se mueve de 5|5 a 5|6
+[INFO] 12:10:15:113 mongostore/(14284:14454): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 12:10:16:114 mongostore/(14284:14458): tid 3  Comienza ejecucion de tarea ABC
+[INFO] 12:10:16:114 mongostore/(14284:14454): tid 1  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 12:10:16:114 mongostore/(14284:14456): tid 2  Se mueve de 4|4 a 5|4
+[INFO] 12:10:17:115 mongostore/(14284:14456): tid 2  Se mueve de 5|4 a 5|5
+[INFO] 12:10:18:117 mongostore/(14284:14456): tid 2  Se mueve de 5|5 a 5|6
+[INFO] 12:10:19:117 mongostore/(14284:14456): tid 2  Comienza ejecucion de tarea ABC
+[INFO] 12:10:20:117 mongostore/(14284:14454): tid 1  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 12:10:20:117 mongostore/(14284:14458): tid 3  Se finaliza la tarea ABC
+[INFO] 12:10:20:118 mongostore/(14284:14458): tid 3  Se mueve de 5|6 a 4|6
+[INFO] 12:10:21:119 mongostore/(14284:14458): tid 3  Se mueve de 4|6 a 4|5
+[INFO] 12:10:22:119 mongostore/(14284:14458): tid 3  Se mueve de 4|5 a 3|5
+[INFO] 12:10:23:120 mongostore/(14284:14456): tid 2  Se finaliza la tarea ABC
+[INFO] 12:10:23:120 mongostore/(14284:14458): tid 3  Se mueve de 3|5 a 3|4
+[INFO] 12:10:23:120 mongostore/(14284:14456): tid 2  Se mueve de 5|6 a 4|6
+[INFO] 12:10:24:121 mongostore/(14284:14456): tid 2  Se mueve de 4|6 a 4|5
+[INFO] 12:10:24:121 mongostore/(14284:14458): tid 3  Se mueve de 3|4 a 3|3
+[DEBUG] 12:10:54:956 mongostore/(14484:14484): LOGGER OK
+[INFO] 12:10:54:958 mongostore/(14484:14484): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 12:10:54:959 mongostore/(14484:14484): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 12:10:54:959 mongostore/(14484:14484): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 12:10:54:959 mongostore/(14484:14484): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 12:10:54:959 mongostore/(14484:14484): O-Superbloque generado desde archivo
+[INFO] 12:10:54:959 mongostore/(14484:14484): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 12:10:54:960 mongostore/(14484:14484): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 12:10:54:960 mongostore/(14484:14484): O-Blocks mapeado del archivo a la memoria
+[INFO] 12:10:54:960 mongostore/(14484:14484): Existencia de Blocks validada
+[DEBUG] 12:10:54:961 mongostore/(14484:14484): Directorios del File System confirmados
+[INFO] 12:10:54:961 mongostore/(14484:14484): File System iniciado
+[INFO] 12:10:54:961 mongostore/(14484:14484): pid 14484  
+
+[INFO] 12:10:54:961 mongostore/(14484:14486): Servidor iniciando 2
+[INFO] 12:10:54:962 mongostore/(14484:14486): Servidor Mongo2 encendido
+[INFO] 12:10:54:962 mongostore/(14484:14485): Servidor iniciando
+[INFO] 12:10:54:962 mongostore/(14484:14485): Servidor Mongo encendido
+[INFO] 12:11:07:851 mongostore/(14484:14486): socket_cliente_sabotaje 5
+[INFO] 12:11:07:851 mongostore/(14484:14485): Estableciendo conexión desde 21641
+[INFO] 12:11:07:852 mongostore/(14484:14486): 2 Estableciendo conexión desde 18131
+[INFO] 12:11:07:852 mongostore/(14484:14486): 2 Creando hilo
+[INFO] 12:11:07:852 mongostore/(14484:14485): Creando hilo
+[INFO] 12:11:07:855 mongostore/(14484:14506): in funcion_cliente
+[INFO] 12:11:07:856 mongostore/(14484:14506): Se conecto este socket a mi 8
+[INFO] 12:11:07:855 mongostore/(14484:14505): funcionx
+[INFO] 12:11:10:671 mongostore/(14484:14485): Estableciendo conexión desde 23177
+[INFO] 12:11:10:671 mongostore/(14484:14485): Creando hilo
+[INFO] 12:11:10:673 mongostore/(14484:14485): Estableciendo conexión desde 24201
+[INFO] 12:11:10:673 mongostore/(14484:14485): Creando hilo
+[INFO] 12:11:10:677 mongostore/(14484:14519): in funcion_cliente
+[INFO] 12:11:10:678 mongostore/(14484:14519): Se conecto este socket a mi 9
+[INFO] 12:11:10:678 mongostore/(14484:14519): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 12:11:10:679 mongostore/(14484:14521): in funcion_cliente
+[INFO] 12:11:10:680 mongostore/(14484:14485): Estableciendo conexión desde 25225
+[INFO] 12:11:10:680 mongostore/(14484:14485): Creando hilo
+[INFO] 12:11:10:680 mongostore/(14484:14521): Se conecto este socket a mi 10
+[INFO] 12:11:10:681 mongostore/(14484:14521): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 12:11:10:683 mongostore/(14484:14523): in funcion_cliente
+[INFO] 12:11:10:684 mongostore/(14484:14523): Se conecto este socket a mi 11
+[INFO] 12:11:11:680 mongostore/(14484:14519): tarea GENERAR_OXIGENO  param 5
+[INFO] 12:11:11:681 mongostore/(14484:14521): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 12:11:12:681 mongostore/(14484:14519): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 12:11:12:682 mongostore/(14484:14523): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 12:11:12:682 mongostore/(14484:14521): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 12:11:13:682 mongostore/(14484:14519): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 12:11:13:683 mongostore/(14484:14521): tarea GENERAR_OXIGENO  param 5
+[INFO] 12:11:13:683 mongostore/(14484:14523): tarea GENERAR_OXIGENO  param 5
+[INFO] 12:11:14:683 mongostore/(14484:14523): tid 3  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 12:11:14:683 mongostore/(14484:14519): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 12:11:15:685 mongostore/(14484:14523): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 12:11:15:685 mongostore/(14484:14519): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 12:11:15:686 mongostore/(14484:14521): tid 2  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 12:11:15:686 mongostore/(14484:14523): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 12:11:16:671 mongostore/(14484:14484): SIGUSR1
+
+[INFO] 12:11:16:672 mongostore/(14484:14523): tid 3  Se corre en pánico hacia 1|1
+[INFO] 12:11:16:672 mongostore/(14484:14523): tid 3  Se mueve de 5|4 a 4|4
+[INFO] 12:11:17:672 mongostore/(14484:14523): tid 3  Se mueve de 4|4 a 3|4
+[INFO] 12:11:18:673 mongostore/(14484:14523): tid 3  Se mueve de 3|4 a 2|4
+[INFO] 12:11:19:674 mongostore/(14484:14523): tid 3  Se mueve de 2|4 a 1|4
+[INFO] 12:11:20:675 mongostore/(14484:14523): tid 3  Se mueve de 1|4 a 1|3
+[INFO] 12:11:21:676 mongostore/(14484:14523): tid 3  Se mueve de 1|3 a 1|2
+[INFO] 12:11:22:678 mongostore/(14484:14523): tid 3  Se mueve de 1|2 a 1|1
+[INFO] 12:11:28:679 mongostore/(14484:14523): tid 3  Se resuelve el sabotaje
+[INFO] 12:11:28:679 mongostore/(14484:14523): En fsck
+[INFO] 12:11:28:680 mongostore/(14484:14523): Parece que esta vez nadie se animo a sabotear la cantidad de bloques en el SuperBloque.ims
+[DEBUG] 12:11:28:680 mongostore/(14484:14523): Info-Se ingresa a superbloque_validar_integridad_bitmap
+[DEBUG] 12:11:28:681 mongostore/(14484:14523): Se ingresa a files_obtener_cadena_con_bloques_ocupados
+[DEBUG] 12:11:28:681 mongostore/(14484:14523): Se ingresa a files_obtener_cadena_con_bloques_ocupados_por_recursos
+[DEBUG] 12:18:10:364 mongostore/(14670:14670): LOGGER OK
+[INFO] 12:18:10:505 mongostore/(14670:14670): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 12:18:10:511 mongostore/(14670:14670): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 12:18:10:519 mongostore/(14670:14670): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 12:18:10:525 mongostore/(14670:14670): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 12:18:10:530 mongostore/(14670:14670): O-Superbloque generado desde archivo
+[INFO] 12:18:10:533 mongostore/(14670:14670): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 12:18:10:535 mongostore/(14670:14670): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 12:18:10:539 mongostore/(14670:14670): O-Blocks mapeado del archivo a la memoria
+[INFO] 12:18:10:539 mongostore/(14670:14670): Existencia de Blocks validada
+[DEBUG] 12:18:10:540 mongostore/(14670:14670): Directorios del File System confirmados
+[INFO] 12:18:10:541 mongostore/(14670:14670): File System iniciado
+[INFO] 12:18:10:543 mongostore/(14670:14670): pid 14670  
+
+[INFO] 12:18:10:574 mongostore/(14670:14675): Servidor iniciando
+[INFO] 12:18:10:577 mongostore/(14670:14676): Servidor iniciando 2
+[INFO] 12:18:10:608 mongostore/(14670:14675): Servidor Mongo encendido
+[INFO] 12:18:10:609 mongostore/(14670:14676): Servidor Mongo2 encendido
+[INFO] 12:18:31:338 mongostore/(14670:14675): Estableciendo conexión desde 24787
+[INFO] 12:18:31:338 mongostore/(14670:14675): Creando hilo
+[INFO] 12:18:31:341 mongostore/(14670:14706): in funcion_cliente
+[INFO] 12:18:31:345 mongostore/(14670:14706): Se conecto este socket a mi 7
+[WARNING] 12:19:16:574 mongostore/(14670:14706): el cliente se desconecto.
+[DEBUG] 12:19:35:513 mongostore/(14723:14723): LOGGER OK
+[INFO] 12:19:35:774 mongostore/(14723:14723): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 12:19:35:782 mongostore/(14723:14723): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 12:19:35:785 mongostore/(14723:14723): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 12:19:35:789 mongostore/(14723:14723): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 12:19:35:798 mongostore/(14723:14723): O-Superbloque generado desde archivo
+[INFO] 12:19:35:799 mongostore/(14723:14723): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 12:19:35:801 mongostore/(14723:14723): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 12:19:35:803 mongostore/(14723:14723): O-Blocks mapeado del archivo a la memoria
+[INFO] 12:19:35:809 mongostore/(14723:14723): Existencia de Blocks validada
+[DEBUG] 12:19:35:815 mongostore/(14723:14723): Directorios del File System confirmados
+[INFO] 12:19:35:815 mongostore/(14723:14723): File System iniciado
+[INFO] 12:19:35:816 mongostore/(14723:14723): pid 14723  
+
+[INFO] 12:19:35:837 mongostore/(14723:14724): Servidor iniciando
+[INFO] 12:19:35:842 mongostore/(14723:14725): Servidor iniciando 2
+[INFO] 12:19:35:861 mongostore/(14723:14724): Servidor Mongo encendido
+[INFO] 12:19:35:866 mongostore/(14723:14725): Servidor Mongo2 encendido
+[INFO] 12:19:47:772 mongostore/(14723:14724): Estableciendo conexión desde 29907
+[INFO] 12:19:47:776 mongostore/(14723:14724): Creando hilo
+[INFO] 12:19:47:786 mongostore/(14723:14752): in funcion_cliente
+[INFO] 12:19:47:794 mongostore/(14723:14752): Se conecto este socket a mi 7
+[DEBUG] 13:05:27:065 mongostore/(15631:15631): LOGGER OK
+[INFO] 13:05:27:067 mongostore/(15631:15631): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 13:05:27:067 mongostore/(15631:15631): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 13:05:27:067 mongostore/(15631:15631): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 13:05:27:067 mongostore/(15631:15631): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 13:05:27:068 mongostore/(15631:15631): O-Superbloque generado desde archivo
+[INFO] 13:05:27:068 mongostore/(15631:15631): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 13:05:27:068 mongostore/(15631:15631): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 13:05:27:068 mongostore/(15631:15631): O-Blocks mapeado del archivo a la memoria
+[INFO] 13:05:27:068 mongostore/(15631:15631): Existencia de Blocks validada
+[DEBUG] 13:05:27:069 mongostore/(15631:15631): Directorios del File System confirmados
+[INFO] 13:05:27:069 mongostore/(15631:15631): File System iniciado
+[INFO] 13:05:27:069 mongostore/(15631:15631): pid 15631  
+
+[INFO] 13:05:27:069 mongostore/(15631:15633): Servidor iniciando 2
+[INFO] 13:05:27:069 mongostore/(15631:15633): Servidor Mongo2 encendido
+[INFO] 13:05:27:070 mongostore/(15631:15632): Servidor iniciando
+[INFO] 13:05:27:070 mongostore/(15631:15632): Servidor Mongo encendido
+[INFO] 13:05:35:090 mongostore/(15631:15632): Estableciendo conexión desde 49801
+[INFO] 13:05:35:090 mongostore/(15631:15632): Creando hilo
+[INFO] 13:05:35:092 mongostore/(15631:15633): socket_cliente_sabotaje 5
+[INFO] 13:05:35:092 mongostore/(15631:15633): 2 Estableciendo conexión desde 46291
+[INFO] 13:05:35:092 mongostore/(15631:15633): 2 Creando hilo
+[INFO] 13:05:35:095 mongostore/(15631:15655): in funcion_cliente
+[INFO] 13:05:35:096 mongostore/(15631:15656): funcionx
+[INFO] 13:05:35:097 mongostore/(15631:15655): Se conecto este socket a mi 8
+[INFO] 13:05:46:365 mongostore/(15631:15632): Estableciendo conexión desde 51337
+[INFO] 13:05:46:365 mongostore/(15631:15632): Creando hilo
+[INFO] 13:05:46:368 mongostore/(15631:15684): in funcion_cliente
+[INFO] 13:05:46:369 mongostore/(15631:15684): Se conecto este socket a mi 9
+[INFO] 13:05:46:370 mongostore/(15631:15632): Estableciendo conexión desde 52361
+[INFO] 13:05:46:371 mongostore/(15631:15632): Creando hilo
+[INFO] 13:05:46:371 mongostore/(15631:15684): tid 1  Se mueve de 0|0 a 1|0
+[INFO] 13:05:46:371 mongostore/(15631:15686): in funcion_cliente
+[INFO] 13:05:46:371 mongostore/(15631:15686): Se conecto este socket a mi 10
+[INFO] 13:05:46:372 mongostore/(15631:15632): Estableciendo conexión desde 53385
+[INFO] 13:05:46:372 mongostore/(15631:15632): Creando hilo
+[INFO] 13:05:46:373 mongostore/(15631:15686): tid 2  Se mueve de 0|0 a 1|0
+[INFO] 13:05:46:373 mongostore/(15631:15688): in funcion_cliente
+[INFO] 13:05:46:374 mongostore/(15631:15688): Se conecto este socket a mi 11
+[INFO] 13:05:46:374 mongostore/(15631:15632): Estableciendo conexión desde 54409
+[INFO] 13:05:46:374 mongostore/(15631:15632): Creando hilo
+[INFO] 13:05:46:375 mongostore/(15631:15690): in funcion_cliente
+[INFO] 13:05:46:375 mongostore/(15631:15690): Se conecto este socket a mi 12
+[INFO] 13:05:46:375 mongostore/(15631:15632): Estableciendo conexión desde 55433
+[INFO] 13:05:46:376 mongostore/(15631:15632): Creando hilo
+[INFO] 13:05:46:378 mongostore/(15631:15692): in funcion_cliente
+[INFO] 13:05:46:378 mongostore/(15631:15692): Se conecto este socket a mi 13
+[INFO] 13:05:47:372 mongostore/(15631:15684): tid 1  Se mueve de 1|0 a 1|1
+[INFO] 13:05:47:373 mongostore/(15631:15686): tid 2  Se mueve de 1|0 a 1|1
+[INFO] 13:05:48:375 mongostore/(15631:15684): tid 1  Comienza ejecucion de tarea A00
+[INFO] 13:05:48:375 mongostore/(15631:15686): tid 2  Comienza ejecucion de tarea A00
+[INFO] 13:05:53:378 mongostore/(15631:15684): tid 1  Se finaliza la tarea A00
+[INFO] 13:05:53:379 mongostore/(15631:15686): tid 2  Se finaliza la tarea A00
+[INFO] 13:05:53:379 mongostore/(15631:15686): tid 2  Comienza ejecucion de tarea A01
+[INFO] 13:05:53:379 mongostore/(15631:15684): tid 1  Comienza ejecucion de tarea A01
+[INFO] 13:05:58:383 mongostore/(15631:15686): tid 2  Se finaliza la tarea A01
+[INFO] 13:05:58:383 mongostore/(15631:15684): tid 1  Se finaliza la tarea A01
+[INFO] 13:05:58:384 mongostore/(15631:15684): tid 1  Comienza ejecucion de tarea A02
+[INFO] 13:05:58:384 mongostore/(15631:15686): tid 2  Comienza ejecucion de tarea A02
+[INFO] 13:06:03:387 mongostore/(15631:15684): tid 1  Se finaliza la tarea A02
+[INFO] 13:06:03:387 mongostore/(15631:15686): tid 2  Se finaliza la tarea A02
+[INFO] 13:06:03:388 mongostore/(15631:15686): tid 2  Comienza ejecucion de tarea A03
+[INFO] 13:06:03:388 mongostore/(15631:15684): tid 1  Comienza ejecucion de tarea A03
+[INFO] 13:06:07:392 mongostore/(15631:15688): tid 3  Se mueve de 0|0 a 1|0
+[INFO] 13:06:08:392 mongostore/(15631:15686): tid 2  Se finaliza la tarea A03
+[INFO] 13:06:08:393 mongostore/(15631:15686): tid 2  Comienza ejecucion de tarea A04
+[INFO] 13:06:08:393 mongostore/(15631:15688): tid 3  Se mueve de 1|0 a 1|1
+[INFO] 13:06:09:394 mongostore/(15631:15688): tid 3  Comienza ejecucion de tarea A00
+[WARNING] 13:06:09:701 mongostore/(15631:15692): el cliente se desconecto.
+[WARNING] 13:06:09:701 mongostore/(15631:15690): el cliente se desconecto.
+[WARNING] 13:06:09:701 mongostore/(15631:15688): el cliente se desconecto.
+[WARNING] 13:06:09:701 mongostore/(15631:15686): el cliente se desconecto.
+[WARNING] 13:06:09:701 mongostore/(15631:15684): el cliente se desconecto.
+[WARNING] 13:06:09:701 mongostore/(15631:15655): el cliente se desconecto.
+[DEBUG] 13:08:15:371 mongostore/(15982:15982): LOGGER OK
+[INFO] 13:08:15:374 mongostore/(15982:15982): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 13:08:15:374 mongostore/(15982:15982): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 13:08:15:375 mongostore/(15982:15982): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 13:08:15:376 mongostore/(15982:15982): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 13:08:15:376 mongostore/(15982:15982): O-Superbloque generado desde archivo
+[INFO] 13:08:15:376 mongostore/(15982:15982): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 13:08:15:376 mongostore/(15982:15982): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 13:08:15:376 mongostore/(15982:15982): O-Blocks mapeado del archivo a la memoria
+[INFO] 13:08:15:376 mongostore/(15982:15982): Existencia de Blocks validada
+[DEBUG] 13:08:15:377 mongostore/(15982:15982): Directorios del File System confirmados
+[INFO] 13:08:15:377 mongostore/(15982:15982): File System iniciado
+[INFO] 13:08:15:377 mongostore/(15982:15982): pid 15982  
+
+[INFO] 13:08:15:377 mongostore/(15982:15984): Servidor iniciando 2
+[INFO] 13:08:15:378 mongostore/(15982:15984): Servidor Mongo2 encendido
+[INFO] 13:08:15:378 mongostore/(15982:15983): Servidor iniciando
+[INFO] 13:08:15:378 mongostore/(15982:15983): Servidor Mongo encendido
+[INFO] 13:08:21:367 mongostore/(15982:15984): socket_cliente_sabotaje 5
+[INFO] 13:08:21:367 mongostore/(15982:15983): Estableciendo conexión desde 57993
+[INFO] 13:08:21:369 mongostore/(15982:15984): 2 Estableciendo conexión desde 54483
+[INFO] 13:08:21:369 mongostore/(15982:15984): 2 Creando hilo
+[INFO] 13:08:21:370 mongostore/(15982:15983): Creando hilo
+[INFO] 13:08:21:371 mongostore/(15982:15999): funcionx
+[INFO] 13:08:21:371 mongostore/(15982:16000): in funcion_cliente
+[INFO] 13:08:21:374 mongostore/(15982:16000): Se conecto este socket a mi 8
+[INFO] 13:08:25:750 mongostore/(15982:15983): Estableciendo conexión desde 59529
+[INFO] 13:08:25:750 mongostore/(15982:15983): Creando hilo
+[INFO] 13:08:25:754 mongostore/(15982:16010): in funcion_cliente
+[INFO] 13:08:25:754 mongostore/(15982:16010): Se conecto este socket a mi 9
+[INFO] 13:08:25:755 mongostore/(15982:15983): Estableciendo conexión desde 60553
+[INFO] 13:08:25:755 mongostore/(15982:15983): Creando hilo
+[INFO] 13:08:25:757 mongostore/(15982:16010): tid 1  Se mueve de 0|0 a 1|0
+[INFO] 13:08:25:758 mongostore/(15982:16012): in funcion_cliente
+[INFO] 13:08:25:758 mongostore/(15982:15983): Estableciendo conexión desde 61577
+[INFO] 13:08:25:759 mongostore/(15982:15983): Creando hilo
+[INFO] 13:08:25:759 mongostore/(15982:16012): Se conecto este socket a mi 10
+[INFO] 13:08:25:759 mongostore/(15982:16012): tid 2  Se mueve de 0|0 a 1|0
+[INFO] 13:08:25:760 mongostore/(15982:15983): Estableciendo conexión desde 62601
+[INFO] 13:08:25:760 mongostore/(15982:15983): Creando hilo
+[INFO] 13:08:25:761 mongostore/(15982:16014): in funcion_cliente
+[INFO] 13:08:25:761 mongostore/(15982:16014): Se conecto este socket a mi 11
+[INFO] 13:08:25:761 mongostore/(15982:16016): in funcion_cliente
+[INFO] 13:08:25:761 mongostore/(15982:16016): Se conecto este socket a mi 12
+[INFO] 13:08:25:763 mongostore/(15982:15983): Estableciendo conexión desde 63625
+[INFO] 13:08:25:763 mongostore/(15982:15983): Creando hilo
+[INFO] 13:08:25:768 mongostore/(15982:16018): in funcion_cliente
+[INFO] 13:08:25:768 mongostore/(15982:16018): Se conecto este socket a mi 13
+[INFO] 13:08:27:758 mongostore/(15982:16010): tid 1  Se mueve de 1|0 a 1|1
+[INFO] 13:08:27:759 mongostore/(15982:16012): tid 2  Se mueve de 1|0 a 1|1
+[INFO] 13:08:29:759 mongostore/(15982:16010): tid 1  Comienza ejecucion de tarea A00
+[INFO] 13:08:29:760 mongostore/(15982:16012): tid 2  Comienza ejecucion de tarea A00
+[INFO] 13:08:31:760 mongostore/(15982:16016): tid 4  Se mueve de 0|0 a 1|0
+[INFO] 13:08:31:761 mongostore/(15982:16014): tid 3  Se mueve de 0|0 a 1|0
+[INFO] 13:08:33:762 mongostore/(15982:16014): tid 3  Se mueve de 1|0 a 1|1
+[INFO] 13:08:33:762 mongostore/(15982:16016): tid 4  Se mueve de 1|0 a 1|1
+[INFO] 13:08:35:763 mongostore/(15982:16014): tid 3  Comienza ejecucion de tarea A00
+[INFO] 13:08:35:763 mongostore/(15982:16016): tid 4  Comienza ejecucion de tarea A00
+[INFO] 13:08:37:764 mongostore/(15982:16018): tid 5  Se mueve de 0|0 a 1|0
+[INFO] 13:08:39:765 mongostore/(15982:16018): tid 5  Se mueve de 1|0 a 1|1
+[INFO] 13:08:41:766 mongostore/(15982:16018): tid 5  Comienza ejecucion de tarea C00
+[INFO] 13:08:43:766 mongostore/(15982:16018): tid 5  Se finaliza la tarea C00
+[INFO] 13:08:51:769 mongostore/(15982:16012): tid 2  Se finaliza la tarea A00
+[INFO] 13:08:51:770 mongostore/(15982:16012): tid 2  Comienza ejecucion de tarea A01
+[INFO] 13:08:53:770 mongostore/(15982:16016): tid 4  Se finaliza la tarea A00
+[INFO] 13:08:53:771 mongostore/(15982:16016): tid 4  Comienza ejecucion de tarea A01
+[INFO] 13:08:58:785 mongostore/(15982:15983): Estableciendo conexión desde 64649
+[INFO] 13:08:58:785 mongostore/(15982:15983): Creando hilo
+[INFO] 13:08:58:787 mongostore/(15982:16034): in funcion_cliente
+[INFO] 13:08:58:788 mongostore/(15982:16034): Se conecto este socket a mi 14
+[INFO] 13:08:58:789 mongostore/(15982:15983): Estableciendo conexión desde 138
+[INFO] 13:08:58:789 mongostore/(15982:15983): Creando hilo
+[INFO] 13:08:58:789 mongostore/(15982:16036): in funcion_cliente
+[INFO] 13:08:58:789 mongostore/(15982:16036): Se conecto este socket a mi 15
+[INFO] 13:09:01:777 mongostore/(15982:16012): tid 2  Se finaliza la tarea A01
+[INFO] 13:09:01:778 mongostore/(15982:16034): tid 6  Se mueve de 0|0 a 1|0
+[INFO] 13:09:03:778 mongostore/(15982:16016): tid 4  Se finaliza la tarea A01
+[INFO] 13:09:03:779 mongostore/(15982:16034): tid 6  Se mueve de 1|0 a 1|1
+[INFO] 13:09:03:779 mongostore/(15982:16036): tid 7  Se mueve de 0|0 a 1|0
+[INFO] 13:09:05:780 mongostore/(15982:16036): tid 7  Se mueve de 1|0 a 1|1
+[INFO] 13:09:05:780 mongostore/(15982:16034): tid 6  Se mueve de 1|1 a 2|1
+[INFO] 13:09:07:781 mongostore/(15982:16036): tid 7  Se mueve de 1|1 a 2|1
+[INFO] 13:09:07:781 mongostore/(15982:16012): tid 2  Comienza ejecucion de tarea A02
+[INFO] 13:09:09:783 mongostore/(15982:16016): tid 4  Comienza ejecucion de tarea A02
+[INFO] 13:09:13:784 mongostore/(15982:16034): tid 6  Se mueve de 2|1 a 2|2
+[INFO] 13:09:15:785 mongostore/(15982:16036): tid 7  Se mueve de 2|1 a 2|2
+[INFO] 13:09:15:785 mongostore/(15982:16034): tid 6  Se mueve de 2|2 a 3|2
+[INFO] 13:09:17:787 mongostore/(15982:16034): tid 6  Se mueve de 3|2 a 3|3
+[INFO] 13:09:17:787 mongostore/(15982:16036): tid 7  Se mueve de 2|2 a 3|2
+[INFO] 13:09:19:788 mongostore/(15982:16036): tid 7  Se mueve de 3|2 a 3|3
+[INFO] 13:09:23:790 mongostore/(15982:16012): tid 2  Se finaliza la tarea A02
+[INFO] 13:09:23:791 mongostore/(15982:16012): tid 2  Comienza ejecucion de tarea A03
+[INFO] 13:09:25:791 mongostore/(15982:16016): tid 4  Se finaliza la tarea A02
+[INFO] 13:09:25:791 mongostore/(15982:16016): tid 4  Comienza ejecucion de tarea A03
+[INFO] 13:09:25:792 mongostore/(15982:16034): tid 6  Comienza ejecucion de tarea B00
+[INFO] 13:09:27:793 mongostore/(15982:16036): tid 7  Comienza ejecucion de tarea B00
+[INFO] 13:09:41:796 mongostore/(15982:16034): tid 6  Se finaliza la tarea B00
+[INFO] 13:09:41:797 mongostore/(15982:16034): tid 6  Comienza ejecucion de tarea B01
+[INFO] 13:09:43:798 mongostore/(15982:16036): tid 7  Se finaliza la tarea B00
+[INFO] 13:09:43:799 mongostore/(15982:16036): tid 7  Comienza ejecucion de tarea B01
+[INFO] 13:09:45:800 mongostore/(15982:16012): tid 2  Se finaliza la tarea A03
+[INFO] 13:09:45:800 mongostore/(15982:16012): tid 2  Comienza ejecucion de tarea A04
+[INFO] 13:09:47:801 mongostore/(15982:16016): tid 4  Se finaliza la tarea A03
+[INFO] 13:09:47:802 mongostore/(15982:16016): tid 4  Comienza ejecucion de tarea A04
+[INFO] 13:10:01:806 mongostore/(15982:16012): tid 2  Se finaliza la tarea A04
+[INFO] 13:10:03:812 mongostore/(15982:16016): tid 4  Se finaliza la tarea A04
+[INFO] 13:10:03:812 mongostore/(15982:16034): tid 6  Se finaliza la tarea B01
+[INFO] 13:10:03:813 mongostore/(15982:16034): tid 6  Comienza ejecucion de tarea B02
+[INFO] 13:10:05:815 mongostore/(15982:16036): tid 7  Se finaliza la tarea B01
+[INFO] 13:10:05:815 mongostore/(15982:16036): tid 7  Comienza ejecucion de tarea B02
+[INFO] 13:10:07:816 mongostore/(15982:16012): tid 2  Comienza ejecucion de tarea A05
+[INFO] 13:10:09:817 mongostore/(15982:16016): tid 4  Comienza ejecucion de tarea A05
+[INFO] 13:10:19:822 mongostore/(15982:16034): tid 6  Se finaliza la tarea B02
+[INFO] 13:10:21:823 mongostore/(15982:16036): tid 7  Se finaliza la tarea B02
+[INFO] 13:10:23:824 mongostore/(15982:16012): tid 2  Se finaliza la tarea A05
+[INFO] 13:10:23:825 mongostore/(15982:16012): tid 2  Comienza ejecucion de tarea A06
+[INFO] 13:10:25:825 mongostore/(15982:16016): tid 4  Se finaliza la tarea A05
+[INFO] 13:10:25:827 mongostore/(15982:16016): tid 4  Comienza ejecucion de tarea A06
+[INFO] 13:10:33:828 mongostore/(15982:16012): tid 2  Se finaliza la tarea A06
+[INFO] 13:10:33:830 mongostore/(15982:16012): tid 2  Comienza ejecucion de tarea A07
+[INFO] 13:10:35:830 mongostore/(15982:16016): tid 4  Se finaliza la tarea A06
+[INFO] 13:10:35:831 mongostore/(15982:16016): tid 4  Comienza ejecucion de tarea A07
+[INFO] 13:10:43:837 mongostore/(15982:16012): tid 2  Se finaliza la tarea A07
+[INFO] 13:10:43:838 mongostore/(15982:16012): tid 2  Comienza ejecucion de tarea A08
+[INFO] 13:10:45:838 mongostore/(15982:16016): tid 4  Se finaliza la tarea A07
+[INFO] 13:10:45:839 mongostore/(15982:16016): tid 4  Comienza ejecucion de tarea A08
+[INFO] 13:10:53:842 mongostore/(15982:16012): tid 2  Se finaliza la tarea A08
+[INFO] 13:10:53:843 mongostore/(15982:16012): tid 2  Comienza ejecucion de tarea A09
+[INFO] 13:10:55:843 mongostore/(15982:16016): tid 4  Se finaliza la tarea A08
+[INFO] 13:10:55:844 mongostore/(15982:16016): tid 4  Comienza ejecucion de tarea A09
+[INFO] 13:11:03:847 mongostore/(15982:16012): tid 2  Se finaliza la tarea A09
+[INFO] 13:11:05:848 mongostore/(15982:16016): tid 4  Se finaliza la tarea A09
+[DEBUG] 13:12:13:809 mongostore/(16067:16067): LOGGER OK
+[INFO] 13:12:13:810 mongostore/(16067:16067): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 13:12:13:811 mongostore/(16067:16067): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 13:12:13:811 mongostore/(16067:16067): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 13:12:13:812 mongostore/(16067:16067): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 13:12:13:812 mongostore/(16067:16067): O-Superbloque generado desde archivo
+[INFO] 13:12:13:812 mongostore/(16067:16067): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 13:12:13:812 mongostore/(16067:16067): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 13:12:13:812 mongostore/(16067:16067): O-Blocks mapeado del archivo a la memoria
+[INFO] 13:12:13:812 mongostore/(16067:16067): Existencia de Blocks validada
+[DEBUG] 13:12:13:813 mongostore/(16067:16067): Directorios del File System confirmados
+[INFO] 13:12:13:813 mongostore/(16067:16067): File System iniciado
+[INFO] 13:12:13:813 mongostore/(16067:16067): pid 16067  
+
+[INFO] 13:12:13:813 mongostore/(16067:16069): Servidor iniciando 2
+[INFO] 13:12:13:813 mongostore/(16067:16069): Servidor Mongo2 encendido
+[INFO] 13:12:13:814 mongostore/(16067:16068): Servidor iniciando
+[INFO] 13:12:13:814 mongostore/(16067:16068): Servidor Mongo encendido
+[INFO] 13:12:19:332 mongostore/(16067:16069): socket_cliente_sabotaje 5
+[INFO] 13:12:19:332 mongostore/(16067:16068): Estableciendo conexión desde 2186
+[INFO] 13:12:19:333 mongostore/(16067:16069): 2 Estableciendo conexión desde 64211
+[INFO] 13:12:19:333 mongostore/(16067:16069): 2 Creando hilo
+[INFO] 13:12:19:333 mongostore/(16067:16068): Creando hilo
+[INFO] 13:12:19:335 mongostore/(16067:16084): funcionx
+[INFO] 13:12:19:335 mongostore/(16067:16085): in funcion_cliente
+[INFO] 13:12:19:337 mongostore/(16067:16085): Se conecto este socket a mi 8
+[INFO] 13:12:23:570 mongostore/(16067:16068): Estableciendo conexión desde 3722
+[INFO] 13:12:23:570 mongostore/(16067:16068): Creando hilo
+[INFO] 13:12:23:571 mongostore/(16067:16095): in funcion_cliente
+[INFO] 13:12:23:571 mongostore/(16067:16095): Se conecto este socket a mi 9
+[INFO] 13:12:23:573 mongostore/(16067:16068): Estableciendo conexión desde 4746
+[INFO] 13:12:23:573 mongostore/(16067:16068): Creando hilo
+[INFO] 13:12:23:574 mongostore/(16067:16095): tid 1  Se mueve de 0|0 a 1|0
+[INFO] 13:12:23:574 mongostore/(16067:16097): in funcion_cliente
+[INFO] 13:12:23:575 mongostore/(16067:16097): Se conecto este socket a mi 10
+[INFO] 13:12:23:576 mongostore/(16067:16068): Estableciendo conexión desde 5770
+[INFO] 13:12:23:576 mongostore/(16067:16068): Creando hilo
+[INFO] 13:12:23:577 mongostore/(16067:16097): tid 2  Se mueve de 0|0 a 1|0
+[INFO] 13:12:23:579 mongostore/(16067:16099): in funcion_cliente
+[INFO] 13:12:23:579 mongostore/(16067:16099): Se conecto este socket a mi 11
+[INFO] 13:12:23:580 mongostore/(16067:16068): Estableciendo conexión desde 6794
+[INFO] 13:12:23:581 mongostore/(16067:16068): Creando hilo
+[INFO] 13:12:23:583 mongostore/(16067:16101): in funcion_cliente
+[INFO] 13:12:23:583 mongostore/(16067:16101): Se conecto este socket a mi 12
+[INFO] 13:12:23:584 mongostore/(16067:16068): Estableciendo conexión desde 7818
+[INFO] 13:12:23:584 mongostore/(16067:16068): Creando hilo
+[INFO] 13:12:23:586 mongostore/(16067:16103): in funcion_cliente
+[INFO] 13:12:23:586 mongostore/(16067:16103): Se conecto este socket a mi 13
+[INFO] 13:12:25:575 mongostore/(16067:16095): tid 1  Se mueve de 1|0 a 1|1
+[INFO] 13:12:25:579 mongostore/(16067:16097): tid 2  Se mueve de 1|0 a 1|1
+[INFO] 13:12:27:576 mongostore/(16067:16095): tid 1  Comienza ejecucion de tarea A00
+[INFO] 13:12:27:580 mongostore/(16067:16097): tid 2  Comienza ejecucion de tarea A00
+[INFO] 13:12:29:577 mongostore/(16067:16099): tid 3  Se mueve de 0|0 a 1|0
+[INFO] 13:12:29:580 mongostore/(16067:16101): tid 4  Se mueve de 0|0 a 1|0
+[INFO] 13:12:31:578 mongostore/(16067:16099): tid 3  Se mueve de 1|0 a 1|1
+[INFO] 13:12:31:581 mongostore/(16067:16101): tid 4  Se mueve de 1|0 a 1|1
+[INFO] 13:12:33:579 mongostore/(16067:16099): tid 3  Comienza ejecucion de tarea A00
+[INFO] 13:12:33:582 mongostore/(16067:16101): tid 4  Comienza ejecucion de tarea A00
+[INFO] 13:12:35:580 mongostore/(16067:16103): tid 5  Se mueve de 0|0 a 1|0
+[INFO] 13:12:37:581 mongostore/(16067:16103): tid 5  Se mueve de 1|0 a 1|1
+[INFO] 13:12:39:582 mongostore/(16067:16103): tid 5  Comienza ejecucion de tarea C00
+[INFO] 13:12:41:582 mongostore/(16067:16103): tid 5  Se finaliza la tarea C00
+[INFO] 13:12:49:586 mongostore/(16067:16097): tid 2  Se finaliza la tarea A00
+[INFO] 13:12:49:587 mongostore/(16067:16097): tid 2  Comienza ejecucion de tarea A01
+[INFO] 13:12:55:287 mongostore/(16067:16068): Estableciendo conexión desde 8842
+[INFO] 13:12:55:287 mongostore/(16067:16068): Creando hilo
+[INFO] 13:12:55:288 mongostore/(16067:16115): in funcion_cliente
+[INFO] 13:12:55:288 mongostore/(16067:16115): Se conecto este socket a mi 14
+[INFO] 13:12:55:289 mongostore/(16067:16068): Estableciendo conexión desde 9866
+[INFO] 13:12:55:289 mongostore/(16067:16068): Creando hilo
+[INFO] 13:12:55:290 mongostore/(16067:16117): in funcion_cliente
+[INFO] 13:12:55:290 mongostore/(16067:16117): Se conecto este socket a mi 15
+[INFO] 13:12:55:589 mongostore/(16067:16101): tid 4  Se finaliza la tarea A00
+[INFO] 13:12:55:590 mongostore/(16067:16101): tid 4  Comienza ejecucion de tarea A01
+[INFO] 13:12:59:590 mongostore/(16067:16097): tid 2  Se finaliza la tarea A01
+[INFO] 13:12:59:591 mongostore/(16067:16115): tid 6  Se mueve de 0|0 a 1|0
+[INFO] 13:12:59:592 mongostore/(16067:16117): tid 7  Se mueve de 0|0 a 1|0
+[INFO] 13:13:01:592 mongostore/(16067:16115): tid 6  Se mueve de 1|0 a 1|1
+[INFO] 13:13:01:593 mongostore/(16067:16117): tid 7  Se mueve de 1|0 a 1|1
+[INFO] 13:13:03:594 mongostore/(16067:16117): tid 7  Se mueve de 1|1 a 2|1
+[INFO] 13:13:03:594 mongostore/(16067:16115): tid 6  Se mueve de 1|1 a 2|1
+[INFO] 13:13:05:595 mongostore/(16067:16097): tid 2  Comienza ejecucion de tarea A02
+[INFO] 13:13:11:598 mongostore/(16067:16101): tid 4  Se finaliza la tarea A01
+[INFO] 13:13:11:598 mongostore/(16067:16117): tid 7  Se mueve de 2|1 a 2|2
+[INFO] 13:13:11:599 mongostore/(16067:16115): tid 6  Se mueve de 2|1 a 2|2
+[INFO] 13:13:13:599 mongostore/(16067:16117): tid 7  Se mueve de 2|2 a 3|2
+[INFO] 13:13:13:600 mongostore/(16067:16115): tid 6  Se mueve de 2|2 a 3|2
+[INFO] 13:13:15:600 mongostore/(16067:16117): tid 7  Se mueve de 3|2 a 3|3
+[INFO] 13:13:15:601 mongostore/(16067:16115): tid 6  Se mueve de 3|2 a 3|3
+[INFO] 13:13:17:602 mongostore/(16067:16101): tid 4  Comienza ejecucion de tarea A02
+[INFO] 13:13:21:603 mongostore/(16067:16097): tid 2  Se finaliza la tarea A02
+[INFO] 13:13:21:604 mongostore/(16067:16097): tid 2  Comienza ejecucion de tarea A03
+[INFO] 13:13:23:605 mongostore/(16067:16117): tid 7  Comienza ejecucion de tarea B00
+[INFO] 13:13:23:606 mongostore/(16067:16115): tid 6  Comienza ejecucion de tarea B00
+[INFO] 13:13:33:635 mongostore/(16067:16101): tid 4  Se finaliza la tarea A02
+[INFO] 13:13:33:638 mongostore/(16067:16101): tid 4  Comienza ejecucion de tarea A03
+[INFO] 13:13:39:610 mongostore/(16067:16117): tid 7  Se finaliza la tarea B00
+[INFO] 13:13:39:611 mongostore/(16067:16117): tid 7  Comienza ejecucion de tarea B01
+[INFO] 13:13:39:640 mongostore/(16067:16115): tid 6  Se finaliza la tarea B00
+[INFO] 13:13:39:640 mongostore/(16067:16115): tid 6  Comienza ejecucion de tarea B01
+[INFO] 13:13:43:613 mongostore/(16067:16097): tid 2  Se finaliza la tarea A03
+[INFO] 13:13:43:614 mongostore/(16067:16097): tid 2  Comienza ejecucion de tarea A04
+[INFO] 13:13:55:645 mongostore/(16067:16101): tid 4  Se finaliza la tarea A03
+[INFO] 13:13:55:646 mongostore/(16067:16101): tid 4  Comienza ejecucion de tarea A04
+[INFO] 13:13:59:619 mongostore/(16067:16097): tid 2  Se finaliza la tarea A04
+[INFO] 13:14:01:620 mongostore/(16067:16117): tid 7  Se finaliza la tarea B01
+[INFO] 13:14:01:621 mongostore/(16067:16117): tid 7  Comienza ejecucion de tarea B02
+[INFO] 13:14:01:648 mongostore/(16067:16115): tid 6  Se finaliza la tarea B01
+[INFO] 13:14:01:649 mongostore/(16067:16115): tid 6  Comienza ejecucion de tarea B02
+[INFO] 13:14:05:623 mongostore/(16067:16097): tid 2  Comienza ejecucion de tarea A05
+[INFO] 13:14:11:651 mongostore/(16067:16101): tid 4  Se finaliza la tarea A04
+[INFO] 13:14:17:626 mongostore/(16067:16117): tid 7  Se finaliza la tarea B02
+[INFO] 13:14:17:653 mongostore/(16067:16115): tid 6  Se finaliza la tarea B02
+[INFO] 13:14:17:654 mongostore/(16067:16101): tid 4  Comienza ejecucion de tarea A05
+[INFO] 13:14:21:635 mongostore/(16067:16097): tid 2  Se finaliza la tarea A05
+[INFO] 13:14:21:636 mongostore/(16067:16097): tid 2  Comienza ejecucion de tarea A06
+[INFO] 13:14:27:657 mongostore/(16067:16101): tid 4  Se finaliza la tarea A05
+[INFO] 13:14:27:658 mongostore/(16067:16101): tid 4  Comienza ejecucion de tarea A06
+[INFO] 13:14:31:640 mongostore/(16067:16097): tid 2  Se finaliza la tarea A06
+[INFO] 13:14:31:640 mongostore/(16067:16097): tid 2  Comienza ejecucion de tarea A07
+[INFO] 13:14:37:660 mongostore/(16067:16101): tid 4  Se finaliza la tarea A06
+[INFO] 13:14:37:661 mongostore/(16067:16101): tid 4  Comienza ejecucion de tarea A07
+[INFO] 13:14:41:645 mongostore/(16067:16097): tid 2  Se finaliza la tarea A07
+[INFO] 13:14:41:646 mongostore/(16067:16097): tid 2  Comienza ejecucion de tarea A08
+[INFO] 13:14:47:664 mongostore/(16067:16101): tid 4  Se finaliza la tarea A07
+[INFO] 13:14:47:665 mongostore/(16067:16101): tid 4  Comienza ejecucion de tarea A08
+[INFO] 13:14:51:649 mongostore/(16067:16097): tid 2  Se finaliza la tarea A08
+[INFO] 13:14:51:650 mongostore/(16067:16097): tid 2  Comienza ejecucion de tarea A09
+[INFO] 13:14:57:668 mongostore/(16067:16101): tid 4  Se finaliza la tarea A08
+[INFO] 13:14:57:669 mongostore/(16067:16101): tid 4  Comienza ejecucion de tarea A09
+[INFO] 13:15:01:653 mongostore/(16067:16097): tid 2  Se finaliza la tarea A09
+[INFO] 13:15:07:675 mongostore/(16067:16101): tid 4  Se finaliza la tarea A09
+[DEBUG] 13:19:45:009 mongostore/(16204:16204): LOGGER OK
+[INFO] 13:19:45:024 mongostore/(16204:16204): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 13:19:45:025 mongostore/(16204:16204): Testeo config, la IP es: 127.0.0.1
+[INFO] 13:19:45:027 mongostore/(16204:16204): Se eliminan archivos previos ya que el superbloque no existe desde antes y por lo tanto no se puede levantar lo existente
+[DEBUG] 13:19:45:028 mongostore/(16204:16204): I-Se ingresa a superbloque_generar_estructura_con_valores_tomados_por_consola para tomar por consola el tamanio y la cantidad de bloques
+[DEBUG] 13:19:56:278 mongostore/(16204:16204): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 13:19:56:280 mongostore/(16204:16204): Se ingreso por block_size 256 y blocks 32768. Ademas se genero el bitmap seteado a vacio
+[DEBUG] 13:19:56:280 mongostore/(16204:16204): O-Se cierra consola
+[DEBUG] 13:19:56:280 mongostore/(16204:16204): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/SuperBloque.ims"
+[DEBUG] 13:19:56:280 mongostore/(16204:16204): O-Archivo SuperBloque.ims cargado
+[INFO] 13:19:56:281 mongostore/(16204:16204): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 13:19:56:281 mongostore/(16204:16204): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Blocks.ims"
+[DEBUG] 13:19:56:281 mongostore/(16204:16204): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 13:19:56:281 mongostore/(16204:16204): O-Blocks mapeado del archivo a la memoria
+[INFO] 13:19:56:281 mongostore/(16204:16204): Existencia de Blocks validada
+[DEBUG] 13:19:56:285 mongostore/(16204:16204): Directorios del File System confirmados
+[INFO] 13:19:56:285 mongostore/(16204:16204): File System iniciado
+[INFO] 13:19:56:285 mongostore/(16204:16204): pid 16204  
+
+[INFO] 13:19:56:286 mongostore/(16204:16209): Servidor iniciando 2
+[INFO] 13:19:56:286 mongostore/(16204:16209): Servidor Mongo2 encendido
+[INFO] 13:19:56:286 mongostore/(16204:16208): Servidor iniciando
+[INFO] 13:19:56:286 mongostore/(16204:16208): Servidor Mongo encendido
+[DEBUG] 13:21:27:826 mongostore/(16581:16581): LOGGER OK
+[INFO] 13:21:27:827 mongostore/(16581:16581): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 13:21:27:828 mongostore/(16581:16581): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 13:21:27:828 mongostore/(16581:16581): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 13:21:27:829 mongostore/(16581:16581): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 13:21:27:829 mongostore/(16581:16581): O-Superbloque generado desde archivo
+[INFO] 13:21:27:829 mongostore/(16581:16581): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 13:21:27:829 mongostore/(16581:16581): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 13:21:27:829 mongostore/(16581:16581): O-Blocks mapeado del archivo a la memoria
+[INFO] 13:21:27:829 mongostore/(16581:16581): Existencia de Blocks validada
+[DEBUG] 13:21:27:830 mongostore/(16581:16581): Directorios del File System confirmados
+[INFO] 13:21:27:830 mongostore/(16581:16581): File System iniciado
+[INFO] 13:21:27:830 mongostore/(16581:16581): pid 16581  
+
+[INFO] 13:21:27:830 mongostore/(16581:16583): Servidor iniciando 2
+[INFO] 13:21:27:830 mongostore/(16581:16583): Servidor Mongo2 encendido
+[INFO] 13:21:27:831 mongostore/(16581:16582): Servidor iniciando
+[INFO] 13:21:27:831 mongostore/(16581:16582): Servidor Mongo encendido
+[INFO] 13:22:04:721 mongostore/(16581:16583): socket_cliente_sabotaje 5
+[INFO] 13:22:04:721 mongostore/(16581:16582): Estableciendo conexión desde 13962
+[INFO] 13:22:04:722 mongostore/(16581:16583): 2 Estableciendo conexión desde 10452
+[INFO] 13:22:04:723 mongostore/(16581:16583): 2 Creando hilo
+[INFO] 13:22:04:723 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:04:724 mongostore/(16581:16602): funcionx
+[INFO] 13:22:04:725 mongostore/(16581:16603): in funcion_cliente
+[INFO] 13:22:04:725 mongostore/(16581:16603): Se conecto este socket a mi 8
+[INFO] 13:22:15:747 mongostore/(16581:16582): Estableciendo conexión desde 15498
+[INFO] 13:22:15:747 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:750 mongostore/(16581:16623): in funcion_cliente
+[INFO] 13:22:15:750 mongostore/(16581:16623): Se conecto este socket a mi 9
+[INFO] 13:22:15:752 mongostore/(16581:16582): Estableciendo conexión desde 16522
+[INFO] 13:22:15:752 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:752 mongostore/(16581:16623): tid 1  Se mueve de 9|9 a 8|9
+[INFO] 13:22:15:752 mongostore/(16581:16625): in funcion_cliente
+[INFO] 13:22:15:752 mongostore/(16581:16625): Se conecto este socket a mi 10
+[INFO] 13:22:15:753 mongostore/(16581:16582): Estableciendo conexión desde 17546
+[INFO] 13:22:15:753 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:753 mongostore/(16581:16625): tid 2  Se mueve de 0|0 a 1|0
+[INFO] 13:22:15:754 mongostore/(16581:16582): Estableciendo conexión desde 18570
+[INFO] 13:22:15:754 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:755 mongostore/(16581:16627): in funcion_cliente
+[INFO] 13:22:15:755 mongostore/(16581:16627): Se conecto este socket a mi 11
+[INFO] 13:22:15:755 mongostore/(16581:16629): in funcion_cliente
+[INFO] 13:22:15:755 mongostore/(16581:16629): Se conecto este socket a mi 12
+[INFO] 13:22:15:755 mongostore/(16581:16582): Estableciendo conexión desde 19594
+[INFO] 13:22:15:755 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:756 mongostore/(16581:16631): in funcion_cliente
+[INFO] 13:22:15:756 mongostore/(16581:16631): Se conecto este socket a mi 13
+[INFO] 13:22:15:756 mongostore/(16581:16582): Estableciendo conexión desde 20618
+[INFO] 13:22:15:756 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:756 mongostore/(16581:16633): in funcion_cliente
+[INFO] 13:22:15:757 mongostore/(16581:16633): Se conecto este socket a mi 14
+[INFO] 13:22:15:757 mongostore/(16581:16582): Estableciendo conexión desde 21642
+[INFO] 13:22:15:757 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:757 mongostore/(16581:16635): in funcion_cliente
+[INFO] 13:22:15:758 mongostore/(16581:16635): Se conecto este socket a mi 15
+[INFO] 13:22:15:758 mongostore/(16581:16582): Estableciendo conexión desde 22666
+[INFO] 13:22:15:758 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:758 mongostore/(16581:16637): in funcion_cliente
+[INFO] 13:22:15:758 mongostore/(16581:16637): Se conecto este socket a mi 16
+[INFO] 13:22:15:758 mongostore/(16581:16582): Estableciendo conexión desde 23690
+[INFO] 13:22:15:758 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:759 mongostore/(16581:16639): in funcion_cliente
+[INFO] 13:22:15:759 mongostore/(16581:16639): Se conecto este socket a mi 17
+[INFO] 13:22:15:759 mongostore/(16581:16582): Estableciendo conexión desde 24714
+[INFO] 13:22:15:759 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:759 mongostore/(16581:16641): in funcion_cliente
+[INFO] 13:22:15:759 mongostore/(16581:16641): Se conecto este socket a mi 18
+[INFO] 13:22:15:760 mongostore/(16581:16582): Estableciendo conexión desde 25738
+[INFO] 13:22:15:760 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:760 mongostore/(16581:16643): in funcion_cliente
+[INFO] 13:22:15:760 mongostore/(16581:16643): Se conecto este socket a mi 19
+[INFO] 13:22:15:761 mongostore/(16581:16582): Estableciendo conexión desde 26762
+[INFO] 13:22:15:761 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:761 mongostore/(16581:16645): in funcion_cliente
+[INFO] 13:22:15:761 mongostore/(16581:16645): Se conecto este socket a mi 20
+[INFO] 13:22:15:761 mongostore/(16581:16582): Estableciendo conexión desde 27786
+[INFO] 13:22:15:761 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:761 mongostore/(16581:16647): in funcion_cliente
+[INFO] 13:22:15:761 mongostore/(16581:16647): Se conecto este socket a mi 21
+[INFO] 13:22:15:762 mongostore/(16581:16582): Estableciendo conexión desde 28810
+[INFO] 13:22:15:762 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:762 mongostore/(16581:16649): in funcion_cliente
+[INFO] 13:22:15:762 mongostore/(16581:16649): Se conecto este socket a mi 22
+[INFO] 13:22:15:763 mongostore/(16581:16582): Estableciendo conexión desde 29834
+[INFO] 13:22:15:764 mongostore/(16581:16582): Creando hilo
+[INFO] 13:22:15:767 mongostore/(16581:16651): in funcion_cliente
+[INFO] 13:22:15:767 mongostore/(16581:16651): Se conecto este socket a mi 23
+[INFO] 13:22:16:753 mongostore/(16581:16627): tid 3  Se mueve de 5|5 a 6|5
+[INFO] 13:22:16:754 mongostore/(16581:16629): tid 4  Se mueve de 4|0 a 3|0
+[INFO] 13:22:17:754 mongostore/(16581:16631): tid 5  Se mueve de 2|6 a 1|6
+[INFO] 13:22:17:754 mongostore/(16581:16633): tid 6  Se mueve de 8|2 a 7|2
+[INFO] 13:22:18:755 mongostore/(16581:16635): tid 7  Se mueve de 2|3 a 1|3
+[INFO] 13:22:18:756 mongostore/(16581:16637): tid 8  Se mueve de 5|8 a 4|8
+[INFO] 13:22:19:757 mongostore/(16581:16639): tid 9  Se mueve de 5|3 a 4|3
+[INFO] 13:22:19:757 mongostore/(16581:16641): tid 10  Se mueve de 0|9 a 0|8
+[INFO] 13:22:20:758 mongostore/(16581:16645): tid 12  Se mueve de 9|0 a 8|0
+[INFO] 13:22:20:759 mongostore/(16581:16643): tid 11  Se mueve de 4|4 a 3|4
+[INFO] 13:22:21:761 mongostore/(16581:16649): tid 14  Se mueve de 9|6 a 8|6
+[INFO] 13:22:21:761 mongostore/(16581:16647): tid 13  Se mueve de 0|2 a 0|1
+[INFO] 13:22:22:762 mongostore/(16581:16651): tid 15  Se mueve de 3|5 a 2|5
+[INFO] 13:22:22:762 mongostore/(16581:16623): tid 1  Se mueve de 8|9 a 8|8
+[INFO] 13:22:23:763 mongostore/(16581:16625): tid 2  Se mueve de 1|0 a 1|1
+[INFO] 13:22:23:764 mongostore/(16581:16627): tid 3  Se mueve de 6|5 a 6|4
+[INFO] 13:22:24:764 mongostore/(16581:16629): tid 4  Se mueve de 3|0 a 3|1
+[INFO] 13:22:24:765 mongostore/(16581:16631): tid 5  Se mueve de 1|6 a 1|5
+[INFO] 13:22:25:767 mongostore/(16581:16637): tid 8  Se mueve de 4|8 a 4|7
+[INFO] 13:22:25:767 mongostore/(16581:16633): tid 6  Se mueve de 7|2 a 7|1
+[INFO] 13:22:26:769 mongostore/(16581:16639): tid 9  Se mueve de 4|3 a 4|2
+[INFO] 13:22:26:769 mongostore/(16581:16635): tid 7  Se mueve de 1|3 a 1|2
+[INFO] 13:22:27:771 mongostore/(16581:16645): tid 12  Se mueve de 8|0 a 7|0
+[INFO] 13:22:27:771 mongostore/(16581:16641): tid 10  Se mueve de 0|8 a 0|7
+[INFO] 13:22:28:772 mongostore/(16581:16649): tid 14  Se mueve de 8|6 a 8|5
+[INFO] 13:22:28:773 mongostore/(16581:16643): tid 11  Se mueve de 3|4 a 3|3
+[INFO] 13:22:29:774 mongostore/(16581:16647): tid 13  Se mueve de 0|1 a 0|0
+[INFO] 13:22:29:774 mongostore/(16581:16651): tid 15  Se mueve de 2|5 a 2|4
+[INFO] 13:22:30:776 mongostore/(16581:16623): tid 1  Se mueve de 8|8 a 7|8
+[INFO] 13:22:30:776 mongostore/(16581:16625): tid 2  Se mueve de 1|1 a 2|1
+[INFO] 13:22:31:777 mongostore/(16581:16631): tid 5  Se mueve de 1|5 a 1|4
+[INFO] 13:22:31:777 mongostore/(16581:16627): tid 3  Se mueve de 6|4 a 7|4
+[INFO] 13:22:32:779 mongostore/(16581:16637): tid 8  Se mueve de 4|7 a 3|7
+[INFO] 13:22:32:779 mongostore/(16581:16629): tid 4  Se mueve de 3|1 a 2|1
+[INFO] 13:22:33:780 mongostore/(16581:16635): tid 7  Se mueve de 1|2 a 0|2
+[INFO] 13:22:33:780 mongostore/(16581:16633): tid 6  Se mueve de 7|1 a 6|1
+[INFO] 13:22:34:782 mongostore/(16581:16645): tid 12  Se mueve de 7|0 a 6|0
+[INFO] 13:22:34:782 mongostore/(16581:16639): tid 9  Se mueve de 4|2 a 3|2
+[INFO] 13:22:35:783 mongostore/(16581:16649): tid 14  Se mueve de 8|5 a 7|5
+[INFO] 13:22:35:783 mongostore/(16581:16641): tid 10  Se mueve de 0|7 a 0|6
+[INFO] 13:22:36:784 mongostore/(16581:16647): tid 13  Comienza ejecucion de tarea REALIZAR_PRIMER_COMMIT
+[INFO] 13:22:36:784 mongostore/(16581:16643): tid 11  Se mueve de 3|3 a 2|3
+[INFO] 13:22:37:786 mongostore/(16581:16623): tid 1  Se mueve de 7|8 a 7|7
+[INFO] 13:22:37:786 mongostore/(16581:16651): tid 15  Se mueve de 2|4 a 1|4
+[INFO] 13:22:38:788 mongostore/(16581:16631): tid 5  Se mueve de 1|4 a 1|3
+[INFO] 13:22:38:789 mongostore/(16581:16625): tid 2  Se mueve de 2|1 a 2|2
+[INFO] 13:22:39:790 mongostore/(16581:16637): tid 8  Se mueve de 3|7 a 3|6
+[INFO] 13:22:39:790 mongostore/(16581:16627): tid 3  Se mueve de 7|4 a 7|3
+[INFO] 13:22:40:791 mongostore/(16581:16635): tid 7  Se mueve de 0|2 a 0|1
+[INFO] 13:22:40:792 mongostore/(16581:16629): tid 4  Se mueve de 2|1 a 1|1
+[INFO] 13:22:41:793 mongostore/(16581:16633): tid 6  Se mueve de 6|1 a 5|1
+[INFO] 13:22:41:794 mongostore/(16581:16645): tid 12  Se mueve de 6|0 a 5|0
+[INFO] 13:22:42:795 mongostore/(16581:16649): tid 14  Se mueve de 7|5 a 7|4
+[INFO] 13:22:42:795 mongostore/(16581:16639): tid 9  Se mueve de 3|2 a 3|1
+[INFO] 13:22:43:796 mongostore/(16581:16641): tid 10  Se mueve de 0|6 a 0|5
+[INFO] 13:22:44:797 mongostore/(16581:16643): tid 11  Se mueve de 2|3 a 2|2
+[INFO] 13:22:44:797 mongostore/(16581:16623): tid 1  Se mueve de 7|7 a 7|6
+[INFO] 13:22:45:799 mongostore/(16581:16631): tid 5  Se mueve de 1|3 a 1|2
+[INFO] 13:22:45:799 mongostore/(16581:16651): tid 15  Se mueve de 1|4 a 1|3
+[INFO] 13:22:46:800 mongostore/(16581:16625): tid 2  Se mueve de 2|2 a 3|2
+[INFO] 13:22:46:801 mongostore/(16581:16637): tid 8  Se mueve de 3|6 a 2|6
+[INFO] 13:22:47:801 mongostore/(16581:16627): tid 3  Se mueve de 7|3 a 7|2
+[INFO] 13:22:47:802 mongostore/(16581:16635): tid 7  Se mueve de 0|1 a 0|0
+[INFO] 13:22:48:803 mongostore/(16581:16629): tid 4  Comienza ejecucion de tarea COMPRAR_FACTURAS
+[INFO] 13:22:48:803 mongostore/(16581:16645): tid 12  Se mueve de 5|0 a 4|0
+[INFO] 13:22:49:804 mongostore/(16581:16649): tid 14  Se mueve de 7|4 a 6|4
+[INFO] 13:22:49:805 mongostore/(16581:16633): tid 6  Se mueve de 5|1 a 4|1
+[INFO] 13:22:50:806 mongostore/(16581:16639): tid 9  Se mueve de 3|1 a 2|1
+[INFO] 13:22:51:806 mongostore/(16581:16641): tid 10  Se mueve de 0|5 a 0|4
+[INFO] 13:22:51:807 mongostore/(16581:16643): tid 11  Se mueve de 2|2 a 1|2
+[INFO] 13:22:52:808 mongostore/(16581:16631): tid 5  Se mueve de 1|2 a 1|1
+[INFO] 13:22:52:808 mongostore/(16581:16623): tid 1  Se mueve de 7|6 a 7|5
+[INFO] 13:22:53:812 mongostore/(16581:16625): tid 2  Se mueve de 3|2 a 4|2
+[INFO] 13:22:53:812 mongostore/(16581:16651): tid 15  Se mueve de 1|3 a 0|3
+[INFO] 13:22:54:813 mongostore/(16581:16627): tid 3  Comienza ejecucion de tarea ARREGLAR_REACTOR
+[INFO] 13:22:54:813 mongostore/(16581:16637): tid 8  Se mueve de 2|6 a 2|5
+[INFO] 13:22:55:814 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:22:56:815 mongostore/(16581:16645): tid 12  Se mueve de 4|0 a 3|0
+[INFO] 13:22:56:816 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:22:56:817 mongostore/(16581:16649): tid 14  Se mueve de 6|4 a 6|3
+[INFO] 13:22:57:816 mongostore/(16581:16633): tid 6  Se mueve de 4|1 a 3|1
+[INFO] 13:22:58:817 mongostore/(16581:16639): tid 9  Se mueve de 2|1 a 2|0
+[INFO] 13:22:58:818 mongostore/(16581:16643): tid 11  Se mueve de 1|2 a 1|1
+[INFO] 13:22:59:819 mongostore/(16581:16631): tid 5  Comienza ejecucion de tarea COMPRAR_FACTURAS
+[INFO] 13:22:59:819 mongostore/(16581:16641): tid 10  Se mueve de 0|4 a 0|3
+[INFO] 13:23:00:821 mongostore/(16581:16625): tid 2  Se mueve de 4|2 a 5|2
+[INFO] 13:23:00:821 mongostore/(16581:16623): tid 1  Se mueve de 7|5 a 7|4
+[INFO] 13:23:01:823 mongostore/(16581:16651): tid 15  Se mueve de 0|3 a 0|2
+[INFO] 13:23:02:825 mongostore/(16581:16637): tid 8  Se mueve de 2|5 a 1|5
+[INFO] 13:23:03:826 mongostore/(16581:16645): tid 12  Se mueve de 3|0 a 2|0
+[INFO] 13:23:03:827 mongostore/(16581:16635): tid 7  Se mueve de 0|0 a 0|1
+[INFO] 13:23:04:828 mongostore/(16581:16633): tid 6  Se mueve de 3|1 a 2|1
+[INFO] 13:23:04:828 mongostore/(16581:16649): tid 14  Se mueve de 6|3 a 5|3
+[INFO] 13:23:05:830 mongostore/(16581:16639): tid 9  Se mueve de 2|0 a 1|0
+[INFO] 13:23:06:830 mongostore/(16581:16643): tid 11  Se mueve de 1|1 a 0|1
+[INFO] 13:23:07:832 mongostore/(16581:16623): tid 1  Se mueve de 7|4 a 7|3
+[INFO] 13:23:07:832 mongostore/(16581:16641): tid 10  Se mueve de 0|3 a 0|2
+[INFO] 13:23:08:833 mongostore/(16581:16625): tid 2  Se mueve de 5|2 a 6|2
+[INFO] 13:23:09:834 mongostore/(16581:16651): tid 15  Se mueve de 0|2 a 0|1
+[INFO] 13:23:10:836 mongostore/(16581:16645): tid 12  Se mueve de 2|0 a 1|0
+[INFO] 13:23:10:836 mongostore/(16581:16637): tid 8  Se mueve de 1|5 a 1|4
+[INFO] 13:23:11:837 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:23:11:838 mongostore/(16581:16633): tid 6  Se mueve de 2|1 a 1|1
+[INFO] 13:23:12:839 mongostore/(16581:16649): tid 14  Se mueve de 5|3 a 5|2
+[INFO] 13:23:13:840 mongostore/(16581:16639): tid 9  Se mueve de 1|0 a 0|0
+[INFO] 13:23:13:840 mongostore/(16581:16643): tid 11  Se mueve de 0|1 a 0|0
+[INFO] 13:23:14:841 mongostore/(16581:16623): tid 1  Se mueve de 7|3 a 7|2
+[INFO] 13:23:15:843 mongostore/(16581:16641): tid 10  Se mueve de 0|2 a 0|1
+[INFO] 13:23:16:843 mongostore/(16581:16627): tid 3  Se finaliza la tarea ARREGLAR_REACTOR
+[INFO] 13:23:16:844 mongostore/(16581:16625): tid 2  Se mueve de 6|2 a 7|2
+[INFO] 13:23:17:845 mongostore/(16581:16651): tid 15  Se mueve de 0|1 a 0|0
+[INFO] 13:23:17:845 mongostore/(16581:16629): tid 4  Se finaliza la tarea COMPRAR_FACTURAS
+[INFO] 13:23:17:846 mongostore/(16581:16645): tid 12  Se mueve de 1|0 a 0|0
+[INFO] 13:23:18:847 mongostore/(16581:16637): tid 8  Se mueve de 1|4 a 0|4
+[INFO] 13:23:19:847 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:23:19:848 mongostore/(16581:16633): tid 6  Comienza ejecucion de tarea COMPRAR_FACTURAS
+[INFO] 13:23:20:849 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:23:20:850 mongostore/(16581:16649): tid 14  Se mueve de 5|2 a 4|2
+[INFO] 13:23:21:850 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:23:22:851 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:23:22:852 mongostore/(16581:16623): tid 1  Comienza ejecucion de tarea ARREGLAR_REACTOR
+[INFO] 13:23:22:853 mongostore/(16581:16627): tid 3  Se mueve de 7|2 a 7|3
+[INFO] 13:23:23:853 mongostore/(16581:16625): tid 2  Comienza ejecucion de tarea ARREGLAR_REACTOR
+[INFO] 13:23:23:854 mongostore/(16581:16641): tid 10  Se mueve de 0|1 a 0|0
+[INFO] 13:23:24:855 mongostore/(16581:16651): tid 15  Comienza ejecucion de tarea REALIZAR_PRIMER_COMMIT
+[INFO] 13:23:24:856 mongostore/(16581:16629): tid 4  Se mueve de 1|1 a 2|1
+[INFO] 13:23:25:856 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:23:25:857 mongostore/(16581:16637): tid 8  Se mueve de 0|4 a 0|3
+[INFO] 13:23:26:859 mongostore/(16581:16635): tid 7  Se mueve de 0|1 a 0|2
+[INFO] 13:23:28:861 mongostore/(16581:16649): tid 14  Se mueve de 4|2 a 4|1
+[INFO] 13:23:28:861 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:23:29:862 mongostore/(16581:16631): tid 5  Se finaliza la tarea COMPRAR_FACTURAS
+[INFO] 13:23:29:862 mongostore/(16581:16639): tid 9  Se mueve de 0|0 a 0|1
+[INFO] 13:23:30:864 mongostore/(16581:16627): tid 3  Se mueve de 7|3 a 7|4
+[INFO] 13:23:31:864 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:23:32:865 mongostore/(16581:16629): tid 4  Se mueve de 2|1 a 2|2
+[INFO] 13:23:32:866 mongostore/(16581:16637): tid 8  Se mueve de 0|3 a 0|2
+[INFO] 13:23:34:867 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:23:34:868 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:23:35:869 mongostore/(16581:16643): tid 11  Se mueve de 0|0 a 1|0
+[INFO] 13:23:35:870 mongostore/(16581:16649): tid 14  Se mueve de 4|1 a 3|1
+[INFO] 13:23:36:871 mongostore/(16581:16631): tid 5  Se mueve de 1|1 a 2|1
+[INFO] 13:23:36:871 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:23:38:873 mongostore/(16581:16627): tid 3  Se mueve de 7|4 a 7|5
+[INFO] 13:23:39:874 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:23:39:875 mongostore/(16581:16637): tid 8  Se mueve de 0|2 a 0|1
+[INFO] 13:23:40:876 mongostore/(16581:16629): tid 4  Se mueve de 2|2 a 3|2
+[INFO] 13:23:41:877 mongostore/(16581:16645): tid 12  Se mueve de 0|0 a 1|0
+[INFO] 13:23:42:879 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:23:43:880 mongostore/(16581:16647): tid 13  Se finaliza la tarea REALIZAR_PRIMER_COMMIT
+[INFO] 13:23:43:881 mongostore/(16581:16649): tid 14  Se mueve de 3|1 a 3|0
+[INFO] 13:23:43:882 mongostore/(16581:16631): tid 5  Se mueve de 2|1 a 2|2
+[INFO] 13:23:45:882 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:23:45:883 mongostore/(16581:16623): tid 1  Se finaliza la tarea ARREGLAR_REACTOR
+[INFO] 13:23:45:884 mongostore/(16581:16627): tid 3  Se mueve de 7|5 a 7|6
+[INFO] 13:23:46:884 mongostore/(16581:16625): tid 2  Se finaliza la tarea ARREGLAR_REACTOR
+[INFO] 13:23:46:886 mongostore/(16581:16641): tid 10  Se mueve de 0|0 a 1|0
+[INFO] 13:23:47:887 mongostore/(16581:16637): tid 8  Se mueve de 0|1 a 0|0
+[INFO] 13:23:48:887 mongostore/(16581:16633): tid 6  Se finaliza la tarea COMPRAR_FACTURAS
+[INFO] 13:23:48:888 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:23:48:888 mongostore/(16581:16629): tid 4  Se mueve de 3|2 a 3|3
+[INFO] 13:23:50:890 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:23:50:890 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:23:50:892 mongostore/(16581:16647): tid 13  Se mueve de 0|0 a 1|0
+[INFO] 13:23:50:892 mongostore/(16581:16649): tid 14  Se mueve de 3|0 a 2|0
+[INFO] 13:23:51:893 mongostore/(16581:16631): tid 5  Se mueve de 2|2 a 3|2
+[INFO] 13:23:51:893 mongostore/(16581:16623): tid 1  Se mueve de 7|2 a 7|3
+[INFO] 13:23:52:894 mongostore/(16581:16639): tid 9  Se mueve de 0|1 a 0|2
+[INFO] 13:23:52:895 mongostore/(16581:16625): tid 2  Se mueve de 7|2 a 7|3
+[INFO] 13:23:53:895 mongostore/(16581:16627): tid 3  Se mueve de 7|6 a 7|7
+[INFO] 13:23:54:896 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:23:54:897 mongostore/(16581:16633): tid 6  Se mueve de 1|1 a 2|1
+[INFO] 13:23:55:898 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:23:56:899 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:23:56:899 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:23:56:900 mongostore/(16581:16629): tid 4  Se mueve de 3|3 a 4|3
+[INFO] 13:23:56:901 mongostore/(16581:16643): tid 11  Se mueve de 1|0 a 2|0
+[INFO] 13:23:57:901 mongostore/(16581:16635): tid 7  Se mueve de 0|2 a 0|3
+[INFO] 13:23:57:902 mongostore/(16581:16647): tid 13  Se mueve de 1|0 a 1|1
+[INFO] 13:23:58:902 mongostore/(16581:16649): tid 14  Se mueve de 2|0 a 1|0
+[INFO] 13:23:58:902 mongostore/(16581:16631): tid 5  Se mueve de 3|2 a 3|3
+[INFO] 13:23:59:904 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:23:59:904 mongostore/(16581:16623): tid 1  Se mueve de 7|3 a 7|4
+[INFO] 13:24:00:905 mongostore/(16581:16627): tid 3  Comienza ejecucion de tarea BARRER
+[INFO] 13:24:00:905 mongostore/(16581:16625): tid 2  Se mueve de 7|3 a 7|4
+[INFO] 13:24:02:908 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:24:02:909 mongostore/(16581:16633): tid 6  Se mueve de 2|1 a 2|2
+[INFO] 13:24:02:910 mongostore/(16581:16637): tid 8  Se mueve de 0|0 a 0|1
+[INFO] 13:24:03:911 mongostore/(16581:16629): tid 4  Se mueve de 4|3 a 5|3
+[INFO] 13:24:03:911 mongostore/(16581:16645): tid 12  Se mueve de 1|0 a 2|0
+[INFO] 13:24:04:912 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:24:04:913 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:24:05:914 mongostore/(16581:16631): tid 5  Se mueve de 3|3 a 4|3
+[INFO] 13:24:05:915 mongostore/(16581:16647): tid 13  Se mueve de 1|1 a 2|1
+[INFO] 13:24:06:916 mongostore/(16581:16649): tid 14  Se mueve de 1|0 a 0|0
+[INFO] 13:24:07:917 mongostore/(16581:16623): tid 1  Se mueve de 7|4 a 7|5
+[INFO] 13:24:08:919 mongostore/(16581:16625): tid 2  Se mueve de 7|4 a 7|5
+[INFO] 13:24:09:920 mongostore/(16581:16633): tid 6  Se mueve de 2|2 a 3|2
+[INFO] 13:24:09:920 mongostore/(16581:16641): tid 10  Se mueve de 1|0 a 2|0
+[INFO] 13:24:10:922 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:24:10:922 mongostore/(16581:16629): tid 4  Se mueve de 5|3 a 6|3
+[INFO] 13:24:11:924 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:24:12:925 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:24:12:926 mongostore/(16581:16631): tid 5  Se mueve de 4|3 a 5|3
+[INFO] 13:24:13:927 mongostore/(16581:16647): tid 13  Se mueve de 2|1 a 2|2
+[INFO] 13:24:14:929 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:24:14:929 mongostore/(16581:16649): tid 14  Comienza ejecucion de tarea REALIZAR_PRIMER_COMMIT
+[INFO] 13:24:15:930 mongostore/(16581:16623): tid 1  Se mueve de 7|5 a 7|6
+[INFO] 13:24:15:931 mongostore/(16581:16625): tid 2  Se mueve de 7|5 a 7|6
+[INFO] 13:24:16:933 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:24:17:934 mongostore/(16581:16633): tid 6  Se mueve de 3|2 a 3|3
+[INFO] 13:24:18:934 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:24:18:935 mongostore/(16581:16629): tid 4  Se mueve de 6|3 a 7|3
+[INFO] 13:24:19:936 mongostore/(16581:16643): tid 11  Se mueve de 2|0 a 3|0
+[INFO] 13:24:19:936 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:24:20:937 mongostore/(16581:16631): tid 5  Se mueve de 5|3 a 6|3
+[INFO] 13:24:20:938 mongostore/(16581:16647): tid 13  Se mueve de 2|2 a 3|2
+[INFO] 13:24:21:939 mongostore/(16581:16639): tid 9  Se mueve de 0|2 a 0|3
+[INFO] 13:24:22:940 mongostore/(16581:16623): tid 1  Se mueve de 7|6 a 7|7
+[INFO] 13:24:23:941 mongostore/(16581:16627): tid 3  Se finaliza la tarea BARRER
+[INFO] 13:24:23:942 mongostore/(16581:16625): tid 2  Se mueve de 7|6 a 7|7
+[INFO] 13:24:24:944 mongostore/(16581:16633): tid 6  Se mueve de 3|3 a 4|3
+[INFO] 13:24:25:944 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:24:25:945 mongostore/(16581:16637): tid 8  Se mueve de 0|1 a 0|2
+[INFO] 13:24:25:946 mongostore/(16581:16629): tid 4  Comienza ejecucion de tarea HACER_EJERCICIO
+[INFO] 13:24:26:946 mongostore/(16581:16645): tid 12  Se mueve de 2|0 a 3|0
+[INFO] 13:24:26:947 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:24:27:947 mongostore/(16581:16631): tid 5  Se mueve de 6|3 a 7|3
+[INFO] 13:24:28:947 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:24:28:948 mongostore/(16581:16647): tid 13  Se mueve de 3|2 a 3|3
+[INFO] 13:24:29:949 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:24:29:949 mongostore/(16581:16623): tid 1  Comienza ejecucion de tarea BARRER
+[INFO] 13:24:30:951 mongostore/(16581:16625): tid 2  Comienza ejecucion de tarea BARRER
+[INFO] 13:24:30:952 mongostore/(16581:16627): tid 3  Se mueve de 7|7 a 6|7
+[INFO] 13:24:31:954 mongostore/(16581:16641): tid 10  Se mueve de 2|0 a 3|0
+[INFO] 13:24:32:954 mongostore/(16581:16651): tid 15  Se finaliza la tarea REALIZAR_PRIMER_COMMIT
+[INFO] 13:24:32:955 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:24:32:955 mongostore/(16581:16633): tid 6  Se mueve de 4|3 a 5|3
+[INFO] 13:24:33:956 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:24:34:957 mongostore/(16581:16635): tid 7  Se mueve de 0|3 a 0|4
+[INFO] 13:24:35:957 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:24:35:958 mongostore/(16581:16631): tid 5  Comienza ejecucion de tarea HACER_EJERCICIO
+[INFO] 13:24:36:959 mongostore/(16581:16647): tid 13  Se mueve de 3|3 a 4|3
+[INFO] 13:24:38:961 mongostore/(16581:16627): tid 3  Se mueve de 6|7 a 6|6
+[INFO] 13:24:38:961 mongostore/(16581:16651): tid 15  Se mueve de 0|0 a 1|0
+[INFO] 13:24:39:963 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:24:40:964 mongostore/(16581:16633): tid 6  Se mueve de 5|3 a 6|3
+[INFO] 13:24:41:965 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:24:42:966 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:24:42:967 mongostore/(16581:16643): tid 11  Se mueve de 3|0 a 4|0
+[INFO] 13:24:43:969 mongostore/(16581:16647): tid 13  Se mueve de 4|3 a 4|4
+[INFO] 13:24:45:971 mongostore/(16581:16627): tid 3  Se mueve de 6|6 a 5|6
+[INFO] 13:24:46:972 mongostore/(16581:16651): tid 15  Se mueve de 1|0 a 1|1
+[INFO] 13:24:47:973 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:24:48:973 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:24:48:974 mongostore/(16581:16645): tid 12  Se mueve de 3|0 a 4|0
+[INFO] 13:24:48:974 mongostore/(16581:16633): tid 6  Se mueve de 6|3 a 7|3
+[INFO] 13:24:50:976 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:24:51:979 mongostore/(16581:16647): tarea GENERAR_OXIGENO  param 100
+[INFO] 13:24:52:980 mongostore/(16581:16623): tid 1  Se finaliza la tarea BARRER
+[INFO] 13:24:52:981 mongostore/(16581:16647): tid 13  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 13:24:53:981 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:24:53:981 mongostore/(16581:16625): tid 2  Se finaliza la tarea BARRER
+[INFO] 13:24:53:982 mongostore/(16581:16627): tid 3  Se mueve de 5|6 a 5|5
+[INFO] 13:24:53:983 mongostore/(16581:16651): tid 15  Se mueve de 1|1 a 2|1
+[INFO] 13:24:54:984 mongostore/(16581:16641): tid 10  Se mueve de 3|0 a 4|0
+[INFO] 13:24:54:985 mongostore/(16581:16637): tid 8  Se mueve de 0|2 a 0|3
+[INFO] 13:24:55:986 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:24:56:987 mongostore/(16581:16633): tid 6  Comienza ejecucion de tarea HACER_EJERCICIO
+[INFO] 13:24:58:989 mongostore/(16581:16623): tid 1  Se mueve de 7|7 a 6|7
+[INFO] 13:24:59:990 mongostore/(16581:16625): tid 2  Se mueve de 7|7 a 6|7
+[INFO] 13:24:59:991 mongostore/(16581:16639): tid 9  Se mueve de 0|3 a 0|4
+[INFO] 13:25:00:992 mongostore/(16581:16651): tid 15  Se mueve de 2|1 a 2|2
+[INFO] 13:25:00:992 mongostore/(16581:16627): tid 3  Se mueve de 5|5 a 4|5
+[INFO] 13:25:01:993 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:25:01:994 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:25:02:983 mongostore/(16581:16647): tid 13  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 13:25:05:999 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:25:06:001 mongostore/(16581:16623): tid 1  Se mueve de 6|7 a 6|6
+[INFO] 13:25:07:000 mongostore/(16581:16625): tid 2  Se mueve de 6|7 a 6|6
+[INFO] 13:25:07:002 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:25:08:001 mongostore/(16581:16651): tid 15  Se mueve de 2|2 a 3|2
+[INFO] 13:25:08:002 mongostore/(16581:16627): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 13:25:09:003 mongostore/(16581:16647): tid 13  Se mueve de 4|4 a 5|4
+[INFO] 13:25:12:005 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:25:13:006 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:25:13:007 mongostore/(16581:16643): tid 11  Se mueve de 4|0 a 5|0
+[INFO] 13:25:14:008 mongostore/(16581:16623): tid 1  Se mueve de 6|6 a 5|6
+[INFO] 13:25:14:009 mongostore/(16581:16625): tid 2  Se mueve de 6|6 a 5|6
+[INFO] 13:25:15:010 mongostore/(16581:16651): tid 15  Se mueve de 3|2 a 3|3
+[INFO] 13:25:16:010 mongostore/(16581:16627): tid 3  Se mueve de 4|4 a 3|4
+[INFO] 13:25:17:012 mongostore/(16581:16647): tid 13  Se mueve de 5|4 a 5|5
+[INFO] 13:25:18:013 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:25:19:014 mongostore/(16581:16635): tid 7  Se mueve de 0|4 a 0|5
+[INFO] 13:25:19:015 mongostore/(16581:16645): tid 12  Se mueve de 4|0 a 5|0
+[INFO] 13:25:21:016 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:25:21:016 mongostore/(16581:16649): tid 14  Se finaliza la tarea REALIZAR_PRIMER_COMMIT
+[INFO] 13:25:21:017 mongostore/(16581:16623): tid 1  Se mueve de 5|6 a 5|5
+[INFO] 13:25:22:017 mongostore/(16581:16625): tid 2  Se mueve de 5|6 a 5|5
+[INFO] 13:25:23:020 mongostore/(16581:16627): tid 3  Se mueve de 3|4 a 3|3
+[INFO] 13:25:23:020 mongostore/(16581:16651): tid 15  Se mueve de 3|3 a 4|3
+[INFO] 13:25:24:021 mongostore/(16581:16647): tid 13  Comienza ejecucion de tarea HACER_EJERCICIO
+[INFO] 13:25:25:022 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:25:25:023 mongostore/(16581:16641): tid 10  Se mueve de 4|0 a 5|0
+[INFO] 13:25:26:024 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:25:27:025 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:25:28:027 mongostore/(16581:16649): tid 14  Se mueve de 0|0 a 1|0
+[INFO] 13:25:29:028 mongostore/(16581:16625): tid 2  Se mueve de 5|5 a 4|5
+[INFO] 13:25:29:028 mongostore/(16581:16623): tid 1  Se mueve de 5|5 a 4|5
+[INFO] 13:25:30:029 mongostore/(16581:16627): tid 3  Se mueve de 3|3 a 2|3
+[INFO] 13:25:31:030 mongostore/(16581:16651): tid 15  Se mueve de 4|3 a 4|4
+[INFO] 13:25:32:031 mongostore/(16581:16637): tid 8  Se mueve de 0|3 a 0|4
+[INFO] 13:25:32:032 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:25:34:034 mongostore/(16581:16629): tid 4  Se finaliza la tarea HACER_EJERCICIO
+[INFO] 13:25:35:035 mongostore/(16581:16649): tid 14  Se mueve de 1|0 a 1|1
+[INFO] 13:25:36:037 mongostore/(16581:16625): tid 2  Se mueve de 4|5 a 4|4
+[INFO] 13:25:37:037 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:25:37:038 mongostore/(16581:16623): tid 1  Se mueve de 4|5 a 4|4
+[INFO] 13:25:38:039 mongostore/(16581:16627): tid 3  Se mueve de 2|3 a 2|2
+[INFO] 13:25:38:039 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:25:38:040 mongostore/(16581:16651): tarea GENERAR_OXIGENO  param 100
+[INFO] 13:25:39:041 mongostore/(16581:16651): tid 15  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 13:25:39:041 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:25:41:043 mongostore/(16581:16629): tid 4  Comienza ejecucion de tarea SUBIR_FOTOS_A_IG
+[INFO] 13:25:43:044 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:25:43:045 mongostore/(16581:16631): tid 5  Se finaliza la tarea HACER_EJERCICIO
+[INFO] 13:25:43:045 mongostore/(16581:16649): tid 14  Se mueve de 1|1 a 2|1
+[INFO] 13:25:43:045 mongostore/(16581:16625): tid 2  Se mueve de 4|4 a 3|4
+[INFO] 13:25:44:046 mongostore/(16581:16623): tid 1  Se mueve de 4|4 a 3|4
+[INFO] 13:25:44:046 mongostore/(16581:16643): tid 11  Se mueve de 5|0 a 6|0
+[INFO] 13:25:45:048 mongostore/(16581:16627): tid 3  Se mueve de 2|2 a 1|2
+[INFO] 13:25:45:048 mongostore/(16581:16639): tid 9  Se mueve de 0|4 a 0|5
+[INFO] 13:25:48:050 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:25:49:044 mongostore/(16581:16651): tid 15  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 13:25:49:051 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:25:49:052 mongostore/(16581:16645): tid 12  Se mueve de 5|0 a 6|0
+[INFO] 13:25:49:052 mongostore/(16581:16631): tid 5  Comienza ejecucion de tarea SUBIR_FOTOS_A_IG
+[INFO] 13:25:50:053 mongostore/(16581:16649): tid 14  Se mueve de 2|1 a 2|2
+[INFO] 13:25:50:053 mongostore/(16581:16625): tid 2  Se mueve de 3|4 a 3|3
+[INFO] 13:25:51:055 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:25:51:055 mongostore/(16581:16623): tid 1  Se mueve de 3|4 a 3|3
+[INFO] 13:25:52:058 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:25:52:058 mongostore/(16581:16627): tid 3  Se mueve de 1|2 a 1|1
+[INFO] 13:25:54:061 mongostore/(16581:16641): tid 10  Se mueve de 5|0 a 6|0
+[INFO] 13:25:55:061 mongostore/(16581:16651): tid 15  Se mueve de 4|4 a 5|4
+[INFO] 13:25:55:062 mongostore/(16581:16635): tid 7  Se mueve de 0|5 a 0|6
+[INFO] 13:25:56:063 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:25:57:064 mongostore/(16581:16625): tid 2  Se mueve de 3|3 a 2|3
+[INFO] 13:25:58:065 mongostore/(16581:16649): tid 14  Se mueve de 2|2 a 3|2
+[INFO] 13:25:59:066 mongostore/(16581:16623): tid 1  Se mueve de 3|3 a 2|3
+[INFO] 13:26:00:066 mongostore/(16581:16627): tid 3  Se mueve de 1|1 a 0|1
+[INFO] 13:26:02:068 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:26:02:069 mongostore/(16581:16633): tid 6  Se finaliza la tarea HACER_EJERCICIO
+[INFO] 13:26:02:070 mongostore/(16581:16651): tid 15  Se mueve de 5|4 a 5|5
+[INFO] 13:26:03:070 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:26:05:073 mongostore/(16581:16649): tid 14  Se mueve de 3|2 a 3|3
+[INFO] 13:26:05:073 mongostore/(16581:16625): tid 2  Se mueve de 2|3 a 2|2
+[INFO] 13:26:07:075 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:26:07:075 mongostore/(16581:16623): tid 1  Se mueve de 2|3 a 2|2
+[INFO] 13:26:08:077 mongostore/(16581:16627): tid 3  Se mueve de 0|1 a 0|0
+[INFO] 13:26:09:077 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:26:09:078 mongostore/(16581:16633): tid 6  Comienza ejecucion de tarea SUBIR_FOTOS_A_IG
+[INFO] 13:26:10:080 mongostore/(16581:16651): tid 15  Comienza ejecucion de tarea HACER_EJERCICIO
+[INFO] 13:26:12:082 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:26:12:084 mongostore/(16581:16649): tid 14  Se mueve de 3|3 a 4|3
+[INFO] 13:26:13:083 mongostore/(16581:16625): tid 2  Se mueve de 2|2 a 1|2
+[INFO] 13:26:14:085 mongostore/(16581:16643): tid 11  Se mueve de 6|0 a 7|0
+[INFO] 13:26:14:085 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:26:14:086 mongostore/(16581:16623): tid 1  Se mueve de 2|2 a 1|2
+[INFO] 13:26:15:086 mongostore/(16581:16637): tid 8  Se mueve de 0|4 a 0|5
+[INFO] 13:26:16:087 mongostore/(16581:16627): tarea GENERAR_OXIGENO  param 12
+[INFO] 13:26:17:088 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:26:17:089 mongostore/(16581:16627): tid 3  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 13:26:19:090 mongostore/(16581:16645): tid 12  Se mueve de 6|0 a 7|0
+[INFO] 13:26:19:091 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:26:20:091 mongostore/(16581:16649): tid 14  Se mueve de 4|3 a 4|4
+[INFO] 13:26:20:092 mongostore/(16581:16625): tid 2  Se mueve de 1|2 a 1|1
+[INFO] 13:26:21:093 mongostore/(16581:16639): tid 9  Se mueve de 0|5 a 0|6
+[INFO] 13:26:21:093 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:26:22:090 mongostore/(16581:16627): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 13:26:22:094 mongostore/(16581:16623): tid 1  Se mueve de 1|2 a 1|1
+[INFO] 13:26:23:095 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:26:23:095 mongostore/(16581:16641): tid 10  Se mueve de 6|0 a 7|0
+[INFO] 13:26:25:097 mongostore/(16581:16635): tid 7  Se mueve de 0|6 a 0|7
+[INFO] 13:26:26:099 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:26:27:101 mongostore/(16581:16649): tarea GENERAR_OXIGENO  param 100
+[INFO] 13:26:27:101 mongostore/(16581:16625): tid 2  Se mueve de 1|1 a 0|1
+[INFO] 13:26:28:102 mongostore/(16581:16627): tid 3  Se mueve de 0|0 a 1|0
+[INFO] 13:26:28:103 mongostore/(16581:16649): tid 14  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 13:26:29:104 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:26:30:104 mongostore/(16581:16647): tid 13  Se finaliza la tarea HACER_EJERCICIO
+[INFO] 13:26:30:105 mongostore/(16581:16623): tid 1  Se mueve de 1|1 a 0|1
+[INFO] 13:26:31:106 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:26:33:109 mongostore/(16581:16629): tid 4  Se finaliza la tarea SUBIR_FOTOS_A_IG
+[INFO] 13:26:33:110 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:26:34:112 mongostore/(16581:16625): tid 2  Se mueve de 0|1 a 0|0
+[INFO] 13:26:35:113 mongostore/(16581:16627): tid 3  Se mueve de 1|0 a 1|1
+[INFO] 13:26:36:113 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:26:36:114 mongostore/(16581:16647): tarea CONSUMIR_OXIGENO  param 20
+[INFO] 13:26:37:114 mongostore/(16581:16623): tid 1  Se mueve de 0|1 a 0|0
+[INFO] 13:26:38:107 mongostore/(16581:16649): tid 14  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 13:26:38:108 mongostore/(16581:16647): tid 13  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 13:26:39:117 mongostore/(16581:16629): tid 4  Se mueve de 7|3 a 6|3
+[INFO] 13:26:41:118 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:26:41:118 mongostore/(16581:16631): tid 5  Se finaliza la tarea SUBIR_FOTOS_A_IG
+[INFO] 13:26:41:119 mongostore/(16581:16625): tarea GENERAR_OXIGENO  param 12
+[INFO] 13:26:42:120 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:26:42:122 mongostore/(16581:16643): tid 11  Se mueve de 7|0 a 8|0
+[INFO] 13:26:42:124 mongostore/(16581:16627): tid 3  Se mueve de 1|1 a 2|1
+[INFO] 13:26:43:124 mongostore/(16581:16649): tid 14  Se mueve de 4|4 a 5|4
+[INFO] 13:26:44:124 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:26:44:126 mongostore/(16581:16623): tarea GENERAR_OXIGENO  param 12
+[INFO] 13:26:45:126 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:26:46:128 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:26:46:130 mongostore/(16581:16629): tid 4  Se mueve de 6|3 a 6|4
+[INFO] 13:26:47:130 mongostore/(16581:16631): tid 5  Se mueve de 7|3 a 6|3
+[INFO] 13:26:47:131 mongostore/(16581:16635): tid 7  Se mueve de 0|7 a 0|8
+[INFO] 13:26:48:112 mongostore/(16581:16647): tid 13  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 13:26:48:113 mongostore/(16581:16625): tid 2  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 13:26:48:131 mongostore/(16581:16645): tid 12  Se mueve de 7|0 a 8|0
+[INFO] 13:26:48:131 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:26:49:132 mongostore/(16581:16627): tid 3  Se mueve de 2|1 a 2|2
+[INFO] 13:26:49:133 mongostore/(16581:16639): tid 9  Se mueve de 0|6 a 0|7
+[INFO] 13:26:50:134 mongostore/(16581:16637): tid 8  Se mueve de 0|5 a 0|6
+[INFO] 13:26:50:134 mongostore/(16581:16649): tid 14  Se mueve de 5|4 a 5|5
+[INFO] 13:26:51:135 mongostore/(16581:16641): tid 10  Se mueve de 7|0 a 8|0
+[INFO] 13:26:52:136 mongostore/(16581:16629): tid 4  Se mueve de 6|4 a 5|4
+[INFO] 13:26:53:115 mongostore/(16581:16625): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 13:26:53:116 mongostore/(16581:16623): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 13:26:53:137 mongostore/(16581:16647): tid 13  Se mueve de 5|5 a 6|5
+[INFO] 13:26:53:137 mongostore/(16581:16631): tid 5  Se mueve de 6|3 a 6|4
+[INFO] 13:26:54:137 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:26:54:138 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:26:55:139 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:26:55:142 mongostore/(16581:16627): tid 3  Comienza ejecucion de tarea CAMINAR
+[INFO] 13:26:56:142 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:26:56:143 mongostore/(16581:16627): tid 3  Se finaliza la tarea CAMINAR
+[INFO] 13:26:56:143 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:26:57:143 mongostore/(16581:16649): tid 14  Comienza ejecucion de tarea HACER_EJERCICIO
+[INFO] 13:26:58:117 mongostore/(16581:16623): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 13:26:58:144 mongostore/(16581:16633): tid 6  Se finaliza la tarea SUBIR_FOTOS_A_IG
+[INFO] 13:26:58:145 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:26:58:145 mongostore/(16581:16625): tid 2  Se mueve de 0|0 a 1|0
+[INFO] 13:26:59:147 mongostore/(16581:16629): tid 4  Se mueve de 5|4 a 5|5
+[INFO] 13:27:00:148 mongostore/(16581:16647): tid 13  Se mueve de 6|5 a 6|6
+[INFO] 13:27:00:148 mongostore/(16581:16631): tid 5  Se mueve de 6|4 a 5|4
+[INFO] 13:27:01:150 mongostore/(16581:16635): tid 7  Se mueve de 0|8 a 0|9
+[INFO] 13:27:02:153 mongostore/(16581:16627): tid 3  Se mueve de 2|2 a 3|2
+[INFO] 13:27:04:152 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:27:04:153 mongostore/(16581:16623): tid 1  Se mueve de 0|0 a 1|0
+[INFO] 13:27:05:153 mongostore/(16581:16633): tid 6  Se mueve de 7|3 a 6|3
+[INFO] 13:27:06:155 mongostore/(16581:16625): tid 2  Se mueve de 1|0 a 1|1
+[INFO] 13:27:07:157 mongostore/(16581:16629): tid 4  Se mueve de 5|5 a 4|5
+[INFO] 13:27:07:157 mongostore/(16581:16647): tid 13  Se mueve de 6|6 a 7|6
+[INFO] 13:27:08:158 mongostore/(16581:16631): tid 5  Se mueve de 5|4 a 5|5
+[INFO] 13:27:09:159 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:27:10:160 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:27:10:161 mongostore/(16581:16627): tid 3  Se mueve de 3|2 a 3|3
+[INFO] 13:27:10:161 mongostore/(16581:16639): tid 9  Se mueve de 0|7 a 0|8
+[INFO] 13:27:11:162 mongostore/(16581:16623): tid 1  Se mueve de 1|0 a 1|1
+[INFO] 13:27:12:162 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:27:12:164 mongostore/(16581:16633): tid 6  Se mueve de 6|3 a 6|4
+[INFO] 13:27:14:166 mongostore/(16581:16651): tid 15  Se finaliza la tarea HACER_EJERCICIO
+[INFO] 13:27:14:166 mongostore/(16581:16625): tid 2  Se mueve de 1|1 a 2|1
+[INFO] 13:27:14:167 mongostore/(16581:16629): tid 4  Se mueve de 4|5 a 4|6
+[INFO] 13:27:15:167 mongostore/(16581:16647): tid 13  Se mueve de 7|6 a 7|7
+[INFO] 13:27:16:168 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:27:16:169 mongostore/(16581:16631): tid 5  Se mueve de 5|5 a 4|5
+[INFO] 13:27:17:170 mongostore/(16581:16643): tid 11  Se mueve de 8|0 a 9|0
+[INFO] 13:27:17:171 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:27:17:172 mongostore/(16581:16627): tid 3  Se mueve de 3|3 a 3|4
+[INFO] 13:27:18:171 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:27:18:172 mongostore/(16581:16637): tid 8  Se mueve de 0|6 a 0|7
+[INFO] 13:27:19:172 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:27:19:173 mongostore/(16581:16623): tid 1  Se mueve de 1|1 a 2|1
+[INFO] 13:27:20:174 mongostore/(16581:16633): tid 6  Se mueve de 6|4 a 5|4
+[INFO] 13:27:21:174 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:27:21:175 mongostore/(16581:16651): tarea CONSUMIR_OXIGENO  param 20
+[INFO] 13:27:21:176 mongostore/(16581:16625): tid 2  Se mueve de 2|1 a 2|2
+[INFO] 13:27:22:177 mongostore/(16581:16651): tid 15  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 13:27:22:177 mongostore/(16581:16647): tid 13  Se mueve de 7|7 a 8|7
+[INFO] 13:27:22:177 mongostore/(16581:16629): tid 4  Se mueve de 4|6 a 3|6
+[INFO] 13:27:23:178 mongostore/(16581:16631): tid 5  Se mueve de 4|5 a 4|6
+[INFO] 13:27:23:179 mongostore/(16581:16645): tid 12  Se mueve de 8|0 a 9|0
+[INFO] 13:27:24:180 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:27:24:180 mongostore/(16581:16635): tid 7  Se mueve de 0|9 a 1|9
+[INFO] 13:27:25:181 mongostore/(16581:16627): tarea GENERAR_COMIDA  param 12
+[INFO] 13:27:25:182 mongostore/(16581:16639): tid 9  Se mueve de 0|8 a 0|9
+[INFO] 13:27:26:183 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:27:27:185 mongostore/(16581:16633): tid 6  Se mueve de 5|4 a 5|5
+[INFO] 13:27:27:185 mongostore/(16581:16623): tid 1  Se mueve de 2|1 a 2|2
+[INFO] 13:27:28:187 mongostore/(16581:16625): tid 2  Comienza ejecucion de tarea CAMINAR
+[INFO] 13:27:28:187 mongostore/(16581:16641): tid 10  Se mueve de 8|0 a 9|0
+[INFO] 13:27:29:189 mongostore/(16581:16625): tid 2  Se finaliza la tarea CAMINAR
+[INFO] 13:27:29:189 mongostore/(16581:16647): tid 13  Se mueve de 8|7 a 8|8
+[INFO] 13:27:29:190 mongostore/(16581:16629): tid 4  Se mueve de 3|6 a 3|7
+[INFO] 13:27:30:190 mongostore/(16581:16631): tid 5  Se mueve de 4|6 a 3|6
+[INFO] 13:27:30:191 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:27:31:193 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:27:32:180 mongostore/(16581:16651): tid 15  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 13:27:32:181 mongostore/(16581:16627): tid 3  Comienza ejecucion de tarea GENERAR_COMIDA
+[INFO] 13:27:32:193 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:27:33:198 mongostore/(16581:16623): tid 1  Comienza ejecucion de tarea CAMINAR
+[INFO] 13:27:34:199 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:27:34:199 mongostore/(16581:16623): tid 1  Se finaliza la tarea CAMINAR
+[INFO] 13:27:34:200 mongostore/(16581:16633): tid 6  Se mueve de 5|5 a 4|5
+[INFO] 13:27:34:200 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:27:35:201 mongostore/(16581:16647): tid 13  Se mueve de 8|8 a 9|8
+[INFO] 13:27:35:201 mongostore/(16581:16625): tid 2  Se mueve de 2|2 a 3|2
+[INFO] 13:27:36:203 mongostore/(16581:16631): tid 5  Se mueve de 3|6 a 3|7
+[INFO] 13:27:36:203 mongostore/(16581:16629): tid 4  Se mueve de 3|7 a 2|7
+[INFO] 13:27:37:183 mongostore/(16581:16627): tid 3  Se finaliza la tarea GENERAR_COMIDA
+[INFO] 13:27:37:205 mongostore/(16581:16651): tid 15  Se mueve de 5|5 a 6|5
+[INFO] 13:27:40:207 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:27:40:208 mongostore/(16581:16623): tid 1  Se mueve de 2|2 a 3|2
+[INFO] 13:27:40:208 mongostore/(16581:16637): tid 8  Se mueve de 0|7 a 0|8
+[INFO] 13:27:41:209 mongostore/(16581:16633): tid 6  Se mueve de 4|5 a 4|6
+[INFO] 13:27:42:210 mongostore/(16581:16647): tid 13  Se mueve de 9|8 a 9|9
+[INFO] 13:27:42:210 mongostore/(16581:16625): tid 2  Se mueve de 3|2 a 3|3
+[INFO] 13:27:43:212 mongostore/(16581:16631): tid 5  Se mueve de 3|7 a 2|7
+[INFO] 13:27:43:212 mongostore/(16581:16627): tid 3  Se mueve de 3|4 a 4|4
+[INFO] 13:27:44:214 mongostore/(16581:16629): tid 4  Se mueve de 2|7 a 2|8
+[INFO] 13:27:45:215 mongostore/(16581:16651): tid 15  Se mueve de 6|5 a 6|6
+[INFO] 13:27:46:216 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:27:47:218 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:27:47:219 mongostore/(16581:16639): tid 9  Se mueve de 0|9 a 1|9
+[INFO] 13:27:47:219 mongostore/(16581:16623): tid 1  Se mueve de 3|2 a 3|3
+[INFO] 13:27:48:220 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:27:49:225 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:27:49:225 mongostore/(16581:16633): tid 6  Se mueve de 4|6 a 3|6
+[INFO] 13:27:49:226 mongostore/(16581:16625): tid 2  Se mueve de 3|3 a 3|4
+[INFO] 13:27:50:227 mongostore/(16581:16647): tid 13  Comienza ejecucion de tarea CAMBIARSE_DE_NAVE
+[INFO] 13:27:50:227 mongostore/(16581:16631): tid 5  Se mueve de 2|7 a 2|8
+[INFO] 13:27:51:228 mongostore/(16581:16627): tid 3  Se mueve de 4|4 a 4|5
+[INFO] 13:27:52:229 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:27:52:230 mongostore/(16581:16629): tid 4  Se mueve de 2|8 a 1|8
+[INFO] 13:27:52:230 mongostore/(16581:16651): tid 15  Se mueve de 6|6 a 7|6
+[INFO] 13:27:53:231 mongostore/(16581:16643): tid 11  Se mueve de 9|0 a 9|1
+[INFO] 13:27:53:231 mongostore/(16581:16635): tid 7  Se mueve de 1|9 a 2|9
+[INFO] 13:27:54:232 mongostore/(16581:16623): tid 1  Se mueve de 3|3 a 3|4
+[INFO] 13:27:55:233 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:27:56:234 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:27:56:235 mongostore/(16581:16637): tid 8  Se mueve de 0|8 a 0|9
+[INFO] 13:27:56:236 mongostore/(16581:16633): tid 6  Se mueve de 3|6 a 3|7
+[INFO] 13:27:57:236 mongostore/(16581:16625): tarea GENERAR_COMIDA  param 12
+[INFO] 13:27:58:238 mongostore/(16581:16631): tid 5  Se mueve de 2|8 a 1|8
+[INFO] 13:27:58:238 mongostore/(16581:16625): tid 2  Comienza ejecucion de tarea GENERAR_COMIDA
+[INFO] 13:27:58:238 mongostore/(16581:16627): tid 3  Se mueve de 4|5 a 5|5
+[INFO] 13:27:59:240 mongostore/(16581:16629): tid 4  Comienza ejecucion de tarea ARREGLAR_CABLEADOS
+[INFO] 13:27:59:240 mongostore/(16581:16645): tid 12  Se mueve de 9|0 a 9|1
+[INFO] 13:28:00:241 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:28:00:241 mongostore/(16581:16651): tid 15  Se mueve de 7|6 a 7|7
+[INFO] 13:28:01:243 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:28:02:244 mongostore/(16581:16649): tid 14  Se finaliza la tarea HACER_EJERCICIO
+[INFO] 13:28:02:245 mongostore/(16581:16623): tarea GENERAR_COMIDA  param 12
+[INFO] 13:28:03:240 mongostore/(16581:16625): tid 2  Se finaliza la tarea GENERAR_COMIDA
+[INFO] 13:28:03:245 mongostore/(16581:16641): tid 10  Se mueve de 9|0 a 9|1
+[INFO] 13:28:03:246 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:28:03:246 mongostore/(16581:16623): tid 1  Comienza ejecucion de tarea GENERAR_COMIDA
+[INFO] 13:28:04:247 mongostore/(16581:16633): tid 6  Se mueve de 3|7 a 2|7
+[INFO] 13:28:05:248 mongostore/(16581:16631): tid 5  Comienza ejecucion de tarea ARREGLAR_CABLEADOS
+[INFO] 13:28:05:249 mongostore/(16581:16627): tid 3  Comienza ejecucion de tarea COMER
+[INFO] 13:28:06:249 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:28:07:250 mongostore/(16581:16651): tid 15  Se mueve de 7|7 a 8|7
+[INFO] 13:28:08:248 mongostore/(16581:16623): tid 1  Se finaliza la tarea GENERAR_COMIDA
+[INFO] 13:28:08:251 mongostore/(16581:16649): tarea CONSUMIR_OXIGENO  param 20
+[INFO] 13:28:09:250 mongostore/(16581:16625): tid 2  Se mueve de 3|4 a 4|4
+[INFO] 13:28:09:251 mongostore/(16581:16649): tid 14  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 13:28:10:251 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:28:10:252 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:28:11:253 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:28:11:254 mongostore/(16581:16633): tid 6  Se mueve de 2|7 a 2|8
+[INFO] 13:28:14:254 mongostore/(16581:16623): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 13:28:15:256 mongostore/(16581:16651): tid 15  Se mueve de 8|7 a 8|8
+[INFO] 13:28:16:257 mongostore/(16581:16625): tid 2  Se mueve de 4|4 a 4|5
+[INFO] 13:28:16:258 mongostore/(16581:16639): tid 9  Se mueve de 1|9 a 2|9
+[INFO] 13:28:17:259 mongostore/(16581:16637): tid 8  Se mueve de 0|9 a 1|9
+[INFO] 13:28:18:260 mongostore/(16581:16633): tid 6  Se mueve de 2|8 a 1|8
+[INFO] 13:28:19:255 mongostore/(16581:16649): tid 14  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 13:28:21:262 mongostore/(16581:16623): tid 1  Se mueve de 4|4 a 4|5
+[INFO] 13:28:22:262 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:28:22:263 mongostore/(16581:16651): tid 15  Se mueve de 8|8 a 9|8
+[INFO] 13:28:23:264 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:28:23:265 mongostore/(16581:16625): tid 2  Se mueve de 4|5 a 5|5
+[INFO] 13:28:23:265 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:28:24:266 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:28:25:267 mongostore/(16581:16649): tid 14  Se mueve de 5|5 a 6|5
+[INFO] 13:28:26:268 mongostore/(16581:16633): tid 6  Comienza ejecucion de tarea ARREGLAR_CABLEADOS
+[INFO] 13:28:28:272 mongostore/(16581:16643): tid 11  Se mueve de 9|1 a 9|2
+[INFO] 13:28:29:272 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:28:29:273 mongostore/(16581:16651): tid 15  Se mueve de 9|8 a 9|9
+[INFO] 13:28:29:273 mongostore/(16581:16623): tid 1  Se mueve de 4|5 a 5|5
+[INFO] 13:28:30:274 mongostore/(16581:16625): tid 2  Comienza ejecucion de tarea COMER
+[INFO] 13:28:30:275 mongostore/(16581:16635): tid 7  Se mueve de 2|9 a 3|9
+[INFO] 13:28:32:278 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:28:33:279 mongostore/(16581:16649): tid 14  Se mueve de 6|5 a 6|6
+[INFO] 13:28:35:281 mongostore/(16581:16627): tid 3  Se finaliza la tarea COMER
+[INFO] 13:28:35:282 mongostore/(16581:16645): tid 12  Se mueve de 9|1 a 9|2
+[INFO] 13:28:36:282 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:28:36:283 mongostore/(16581:16651): tid 15  Comienza ejecucion de tarea CAMBIARSE_DE_NAVE
+[INFO] 13:28:37:283 mongostore/(16581:16623): tid 1  Comienza ejecucion de tarea COMER
+[INFO] 13:28:38:285 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:28:39:286 mongostore/(16581:16641): tid 10  Se mueve de 9|1 a 9|2
+[INFO] 13:28:40:287 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:28:40:288 mongostore/(16581:16649): tid 14  Se mueve de 6|6 a 7|6
+[INFO] 13:28:42:289 mongostore/(16581:16627): tarea CONSUMIR_COMIDA  param 10
+[INFO] 13:28:43:291 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:28:43:291 mongostore/(16581:16627): tid 3  Comienza ejecucion de tarea CONSUMIR_COMIDA
+[INFO] 13:28:46:293 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:28:46:294 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:28:47:294 mongostore/(16581:16637): tid 8  Se mueve de 1|9 a 2|9
+[INFO] 13:28:48:293 mongostore/(16581:16627): tid 3  Se finaliza la tarea CONSUMIR_COMIDA
+[INFO] 13:28:48:295 mongostore/(16581:16649): tid 14  Se mueve de 7|6 a 7|7
+[INFO] 13:28:52:300 mongostore/(16581:16639): tid 9  Se mueve de 2|9 a 3|9
+[INFO] 13:28:54:301 mongostore/(16581:16627): tid 3  Comienza ejecucion de tarea TIRAR_TODO_AL_PISO
+[INFO] 13:28:54:301 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:28:55:302 mongostore/(16581:16627): tid 3  Se finaliza la tarea TIRAR_TODO_AL_PISO
+[INFO] 13:28:55:303 mongostore/(16581:16649): tid 14  Se mueve de 7|7 a 8|7
+[INFO] 13:28:59:306 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:29:00:308 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:29:00:308 mongostore/(16581:16625): tid 2  Se finaliza la tarea COMER
+[INFO] 13:29:02:310 mongostore/(16581:16627): tarea GENERAR_BASURA  param 30
+[INFO] 13:29:03:311 mongostore/(16581:16649): tid 14  Se mueve de 8|7 a 8|8
+[INFO] 13:29:03:312 mongostore/(16581:16627): tid 3  Comienza ejecucion de tarea GENERAR_BASURA
+[INFO] 13:29:04:312 mongostore/(16581:16627): tid 3  Se finaliza la tarea GENERAR_BASURA
+[INFO] 13:29:05:313 mongostore/(16581:16629): tid 4  Se finaliza la tarea ARREGLAR_CABLEADOS
+[INFO] 13:29:06:314 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:29:06:315 mongostore/(16581:16643): tid 11  Se mueve de 9|2 a 9|3
+[INFO] 13:29:07:316 mongostore/(16581:16623): tid 1  Se finaliza la tarea COMER
+[INFO] 13:29:07:317 mongostore/(16581:16625): tarea CONSUMIR_COMIDA  param 10
+[INFO] 13:29:08:318 mongostore/(16581:16625): tid 2  Comienza ejecucion de tarea CONSUMIR_COMIDA
+[INFO] 13:29:09:318 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:29:09:319 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:29:10:321 mongostore/(16581:16647): tid 13  Se finaliza la tarea CAMBIARSE_DE_NAVE
+[INFO] 13:29:10:321 mongostore/(16581:16649): tid 14  Se mueve de 8|8 a 9|8
+[INFO] 13:29:11:323 mongostore/(16581:16627): tid 3  Se mueve de 5|5 a 6|5
+[INFO] 13:29:12:323 mongostore/(16581:16631): tid 5  Se finaliza la tarea ARREGLAR_CABLEADOS
+[INFO] 13:29:12:323 mongostore/(16581:16629): tid 4  Se mueve de 1|8 a 0|8
+[INFO] 13:29:13:320 mongostore/(16581:16625): tid 2  Se finaliza la tarea CONSUMIR_COMIDA
+[INFO] 13:29:13:324 mongostore/(16581:16645): tid 12  Se mueve de 9|2 a 9|3
+[INFO] 13:29:13:325 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:29:14:325 mongostore/(16581:16623): tarea CONSUMIR_COMIDA  param 10
+[INFO] 13:29:15:326 mongostore/(16581:16623): tid 1  Comienza ejecucion de tarea CONSUMIR_COMIDA
+[INFO] 13:29:15:327 mongostore/(16581:16635): tid 7  Se mueve de 3|9 a 4|9
+[INFO] 13:29:15:327 mongostore/(16581:16641): tid 10  Se mueve de 9|2 a 9|3
+[INFO] 13:29:16:328 mongostore/(16581:16647): tid 13  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:29:17:328 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:29:17:329 mongostore/(16581:16647): tid 13  Se finaliza la tarea SALUDAR
+[INFO] 13:29:17:331 mongostore/(16581:16649): tid 14  Se mueve de 9|8 a 9|9
+[INFO] 13:29:18:332 mongostore/(16581:16631): tid 5  Se mueve de 1|8 a 0|8
+[INFO] 13:29:18:332 mongostore/(16581:16627): tid 3  Se mueve de 6|5 a 6|6
+[INFO] 13:29:19:333 mongostore/(16581:16625): tid 2  Comienza ejecucion de tarea TIRAR_TODO_AL_PISO
+[INFO] 13:29:19:334 mongostore/(16581:16629): tid 4  Se mueve de 0|8 a 0|7
+[INFO] 13:29:20:328 mongostore/(16581:16623): tid 1  Se finaliza la tarea CONSUMIR_COMIDA
+[INFO] 13:29:20:334 mongostore/(16581:16625): tid 2  Se finaliza la tarea TIRAR_TODO_AL_PISO
+[INFO] 13:29:20:335 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:29:22:337 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:29:22:337 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:29:23:339 mongostore/(16581:16649): tid 14  Comienza ejecucion de tarea CAMBIARSE_DE_NAVE
+[INFO] 13:29:23:339 mongostore/(16581:16637): tid 8  Se mueve de 2|9 a 3|9
+[INFO] 13:29:24:341 mongostore/(16581:16631): tid 5  Se mueve de 0|8 a 0|7
+[INFO] 13:29:25:341 mongostore/(16581:16627): tid 3  Comienza ejecucion de tarea BARRER
+[INFO] 13:29:25:341 mongostore/(16581:16623): tid 1  Comienza ejecucion de tarea TIRAR_TODO_AL_PISO
+[INFO] 13:29:26:342 mongostore/(16581:16623): tid 1  Se finaliza la tarea TIRAR_TODO_AL_PISO
+[INFO] 13:29:26:343 mongostore/(16581:16629): tid 4  Se mueve de 0|7 a 0|6
+[INFO] 13:29:26:343 mongostore/(16581:16625): tarea GENERAR_BASURA  param 30
+[INFO] 13:29:27:344 mongostore/(16581:16625): tid 2  Comienza ejecucion de tarea GENERAR_BASURA
+[INFO] 13:29:28:345 mongostore/(16581:16625): tid 2  Se finaliza la tarea GENERAR_BASURA
+[INFO] 13:29:29:347 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:29:30:349 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:29:31:350 mongostore/(16581:16631): tid 5  Se mueve de 0|7 a 0|6
+[INFO] 13:29:32:350 mongostore/(16581:16633): tid 6  Se finaliza la tarea ARREGLAR_CABLEADOS
+[INFO] 13:29:32:352 mongostore/(16581:16623): tarea GENERAR_BASURA  param 30
+[INFO] 13:29:33:353 mongostore/(16581:16623): tid 1  Comienza ejecucion de tarea GENERAR_BASURA
+[INFO] 13:29:33:353 mongostore/(16581:16629): tid 4  Se mueve de 0|6 a 0|5
+[INFO] 13:29:33:354 mongostore/(16581:16625): tid 2  Se mueve de 5|5 a 6|5
+[INFO] 13:29:34:354 mongostore/(16581:16623): tid 1  Se finaliza la tarea GENERAR_BASURA
+[INFO] 13:29:35:355 mongostore/(16581:16639): tid 9  Se mueve de 3|9 a 4|9
+[INFO] 13:29:38:358 mongostore/(16581:16631): tid 5  Se mueve de 0|6 a 0|5
+[INFO] 13:29:38:358 mongostore/(16581:16633): tid 6  Se mueve de 1|8 a 0|8
+[INFO] 13:29:39:360 mongostore/(16581:16629): tid 4  Se mueve de 0|5 a 0|4
+[INFO] 13:29:40:361 mongostore/(16581:16623): tid 1  Se mueve de 5|5 a 6|5
+[INFO] 13:29:40:361 mongostore/(16581:16625): tid 2  Se mueve de 6|5 a 6|6
+[INFO] 13:29:42:364 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:29:43:364 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:29:45:367 mongostore/(16581:16631): tid 5  Se mueve de 0|5 a 0|4
+[INFO] 13:29:45:367 mongostore/(16581:16633): tid 6  Se mueve de 0|8 a 0|7
+[INFO] 13:29:46:368 mongostore/(16581:16629): tid 4  Se mueve de 0|4 a 0|3
+[INFO] 13:29:47:369 mongostore/(16581:16625): tid 2  Comienza ejecucion de tarea BARRER
+[INFO] 13:29:47:370 mongostore/(16581:16623): tid 1  Se mueve de 6|5 a 6|6
+[INFO] 13:29:49:371 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:29:49:374 mongostore/(16581:16643): tid 11  Se mueve de 9|3 a 9|4
+[INFO] 13:29:51:375 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:29:52:376 mongostore/(16581:16631): tid 5  Se mueve de 0|4 a 0|3
+[INFO] 13:29:52:377 mongostore/(16581:16633): tid 6  Se mueve de 0|7 a 0|6
+[INFO] 13:29:53:378 mongostore/(16581:16629): tid 4  Se mueve de 0|3 a 0|2
+[INFO] 13:29:54:379 mongostore/(16581:16623): tid 1  Comienza ejecucion de tarea BARRER
+[INFO] 13:29:55:380 mongostore/(16581:16645): tid 12  Se mueve de 9|3 a 9|4
+[INFO] 13:29:56:381 mongostore/(16581:16651): tid 15  Se finaliza la tarea CAMBIARSE_DE_NAVE
+[INFO] 13:29:56:382 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:29:57:382 mongostore/(16581:16641): tid 10  Se mueve de 9|3 a 9|4
+[INFO] 13:29:58:382 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:29:59:384 mongostore/(16581:16633): tid 6  Se mueve de 0|6 a 0|5
+[INFO] 13:29:59:384 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:29:59:385 mongostore/(16581:16631): tid 5  Se mueve de 0|3 a 0|2
+[INFO] 13:30:00:388 mongostore/(16581:16629): tid 4  Se mueve de 0|2 a 0|1
+[INFO] 13:30:02:387 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:30:02:390 mongostore/(16581:16651): tid 15  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:30:03:390 mongostore/(16581:16651): tid 15  Se finaliza la tarea SALUDAR
+[INFO] 13:30:04:390 mongostore/(16581:16635): tid 7  Se mueve de 4|9 a 5|9
+[INFO] 13:30:04:392 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:30:05:392 mongostore/(16581:16637): tid 8  Se mueve de 3|9 a 4|9
+[INFO] 13:30:06:392 mongostore/(16581:16633): tid 6  Se mueve de 0|5 a 0|4
+[INFO] 13:30:06:393 mongostore/(16581:16631): tid 5  Se mueve de 0|2 a 0|1
+[INFO] 13:30:07:394 mongostore/(16581:16629): tid 4  Se mueve de 0|1 a 0|0
+[INFO] 13:30:10:397 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:30:12:399 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:30:12:400 mongostore/(16581:16633): tid 6  Se mueve de 0|4 a 0|3
+[INFO] 13:30:13:402 mongostore/(16581:16631): tid 5  Se mueve de 0|1 a 0|0
+[INFO] 13:30:14:403 mongostore/(16581:16629): tarea GENERAR_BASURA  param 1
+[INFO] 13:30:15:405 mongostore/(16581:16629): tid 4  Comienza ejecucion de tarea GENERAR_BASURA
+[INFO] 13:30:17:406 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:30:18:409 mongostore/(16581:16633): tid 6  Se mueve de 0|3 a 0|2
+[INFO] 13:30:20:407 mongostore/(16581:16629): tid 4  Se finaliza la tarea GENERAR_BASURA
+[INFO] 13:30:20:410 mongostore/(16581:16631): tarea GENERAR_BASURA  param 1
+[INFO] 13:30:21:412 mongostore/(16581:16631): tid 5  Comienza ejecucion de tarea GENERAR_BASURA
+[INFO] 13:30:22:413 mongostore/(16581:16639): tid 9  Se mueve de 4|9 a 5|9
+[INFO] 13:30:23:414 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:30:24:415 mongostore/(16581:16633): tid 6  Se mueve de 0|2 a 0|1
+[INFO] 13:30:25:417 mongostore/(16581:16629): tid 4  Se mueve de 0|0 a 1|0
+[INFO] 13:30:26:415 mongostore/(16581:16631): tid 5  Se finaliza la tarea GENERAR_BASURA
+[INFO] 13:30:27:417 mongostore/(16581:16627): tid 3  Se finaliza la tarea BARRER
+[INFO] 13:30:28:419 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:30:28:419 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:30:28:420 mongostore/(16581:16643): tid 11  Se mueve de 9|4 a 9|5
+[INFO] 13:30:30:421 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:30:30:423 mongostore/(16581:16633): tid 6  Se mueve de 0|1 a 0|0
+[INFO] 13:30:31:423 mongostore/(16581:16631): tid 5  Se mueve de 0|0 a 1|0
+[INFO] 13:30:32:424 mongostore/(16581:16629): tid 4  Se mueve de 1|0 a 1|1
+[INFO] 13:30:32:424 mongostore/(16581:16627): tid 3  Comienza ejecucion de tarea DESCARTAR_BASURA
+[INFO] 13:30:33:425 mongostore/(16581:16627): tid 3  Se finaliza la tarea DESCARTAR_BASURA
+[INFO] 13:30:34:426 mongostore/(16581:16645): tid 12  Se mueve de 9|4 a 9|5
+[INFO] 13:30:35:427 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:30:36:429 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:30:36:429 mongostore/(16581:16641): tid 10  Se mueve de 9|4 a 9|5
+[INFO] 13:30:37:430 mongostore/(16581:16633): tarea GENERAR_BASURA  param 1
+[INFO] 13:30:37:431 mongostore/(16581:16649): tid 14  Se finaliza la tarea CAMBIARSE_DE_NAVE
+[INFO] 13:30:38:432 mongostore/(16581:16631): tid 5  Se mueve de 1|0 a 1|1
+[INFO] 13:30:38:433 mongostore/(16581:16633): tid 6  Comienza ejecucion de tarea GENERAR_BASURA
+[INFO] 13:30:38:433 mongostore/(16581:16629): tid 4  Se mueve de 1|1 a 2|1
+[INFO] 13:30:39:433 mongostore/(16581:16627): tid 3  Se mueve de 6|6 a 7|6
+[INFO] 13:30:40:435 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:30:42:437 mongostore/(16581:16635): tid 7  Se mueve de 5|9 a 6|9
+[INFO] 13:30:42:437 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:30:43:436 mongostore/(16581:16633): tid 6  Se finaliza la tarea GENERAR_BASURA
+[INFO] 13:30:43:437 mongostore/(16581:16649): tid 14  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:30:44:438 mongostore/(16581:16649): tid 14  Se finaliza la tarea SALUDAR
+[INFO] 13:30:44:439 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:30:44:439 mongostore/(16581:16631): tid 5  Se mueve de 1|1 a 2|1
+[INFO] 13:30:44:440 mongostore/(16581:16629): tid 4  Se mueve de 2|1 a 2|2
+[INFO] 13:30:45:440 mongostore/(16581:16627): tid 3  Se mueve de 7|6 a 7|7
+[INFO] 13:30:46:442 mongostore/(16581:16625): tid 2  Se finaliza la tarea BARRER
+[INFO] 13:30:48:444 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:30:48:444 mongostore/(16581:16633): tid 6  Se mueve de 0|0 a 1|0
+[INFO] 13:30:49:445 mongostore/(16581:16637): tid 8  Se mueve de 4|9 a 5|9
+[INFO] 13:30:50:446 mongostore/(16581:16629): tid 4  Se mueve de 2|2 a 3|2
+[INFO] 13:30:50:447 mongostore/(16581:16631): tid 5  Se mueve de 2|1 a 2|2
+[INFO] 13:30:51:448 mongostore/(16581:16625): tid 2  Comienza ejecucion de tarea DESCARTAR_BASURA
+[INFO] 13:30:51:448 mongostore/(16581:16627): tid 3  Se mueve de 7|7 a 8|7
+[INFO] 13:30:52:449 mongostore/(16581:16625): tid 2  Se finaliza la tarea DESCARTAR_BASURA
+[INFO] 13:30:53:450 mongostore/(16581:16623): tid 1  Se finaliza la tarea BARRER
+[INFO] 13:30:54:452 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:30:54:453 mongostore/(16581:16633): tid 6  Se mueve de 1|0 a 1|1
+[INFO] 13:30:55:453 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:30:56:454 mongostore/(16581:16629): tid 4  Se mueve de 3|2 a 3|3
+[INFO] 13:30:56:455 mongostore/(16581:16631): tid 5  Se mueve de 2|2 a 3|2
+[INFO] 13:30:57:455 mongostore/(16581:16625): tid 2  Se mueve de 6|6 a 7|6
+[INFO] 13:30:57:456 mongostore/(16581:16627): tid 3  Se mueve de 8|7 a 8|8
+[INFO] 13:30:58:456 mongostore/(16581:16623): tid 1  Comienza ejecucion de tarea DESCARTAR_BASURA
+[INFO] 13:30:59:457 mongostore/(16581:16623): tid 1  Se finaliza la tarea DESCARTAR_BASURA
+[INFO] 13:30:59:458 mongostore/(16581:16639): tid 9  Se mueve de 5|9 a 6|9
+[INFO] 13:31:00:458 mongostore/(16581:16633): tid 6  Se mueve de 1|1 a 2|1
+[INFO] 13:31:02:459 mongostore/(16581:16629): tid 4  Se mueve de 3|3 a 4|3
+[INFO] 13:31:02:460 mongostore/(16581:16631): tid 5  Se mueve de 3|2 a 3|3
+[INFO] 13:31:03:459 mongostore/(16581:16625): tid 2  Se mueve de 7|6 a 7|7
+[INFO] 13:31:03:460 mongostore/(16581:16627): tid 3  Se mueve de 8|8 a 9|8
+[INFO] 13:31:04:461 mongostore/(16581:16623): tid 1  Se mueve de 6|6 a 7|6
+[INFO] 13:31:05:462 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:31:06:463 mongostore/(16581:16633): tid 6  Se mueve de 2|1 a 2|2
+[INFO] 13:31:07:463 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:31:08:465 mongostore/(16581:16631): tid 5  Se mueve de 3|3 a 4|3
+[INFO] 13:31:08:465 mongostore/(16581:16629): tid 4  Se mueve de 4|3 a 4|4
+[INFO] 13:31:09:467 mongostore/(16581:16627): tid 3  Se mueve de 9|8 a 9|9
+[INFO] 13:31:09:467 mongostore/(16581:16625): tid 2  Se mueve de 7|7 a 8|7
+[INFO] 13:31:10:468 mongostore/(16581:16623): tid 1  Se mueve de 7|6 a 7|7
+[INFO] 13:31:12:470 mongostore/(16581:16633): tid 6  Se mueve de 2|2 a 3|2
+[INFO] 13:31:12:470 mongostore/(16581:16635): tid 7  Se mueve de 6|9 a 7|9
+[INFO] 13:31:14:473 mongostore/(16581:16629): tid 4  Se mueve de 4|4 a 5|4
+[INFO] 13:31:14:473 mongostore/(16581:16631): tid 5  Se mueve de 4|3 a 4|4
+[INFO] 13:31:15:474 mongostore/(16581:16627): tid 3  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:31:15:475 mongostore/(16581:16625): tid 2  Se mueve de 8|7 a 8|8
+[INFO] 13:31:16:476 mongostore/(16581:16627): tid 3  Se finaliza la tarea SALUDAR
+[INFO] 13:31:16:477 mongostore/(16581:16623): tid 1  Se mueve de 7|7 a 8|7
+[INFO] 13:31:18:478 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:31:18:478 mongostore/(16581:16633): tid 6  Se mueve de 3|2 a 3|3
+[INFO] 13:31:20:481 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:31:20:482 mongostore/(16581:16629): tid 4  Se mueve de 5|4 a 5|5
+[INFO] 13:31:20:482 mongostore/(16581:16631): tid 5  Se mueve de 4|4 a 5|4
+[INFO] 13:31:21:483 mongostore/(16581:16625): tid 2  Se mueve de 8|8 a 9|8
+[INFO] 13:31:22:484 mongostore/(16581:16623): tid 1  Se mueve de 8|7 a 8|8
+[INFO] 13:31:24:486 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:31:24:486 mongostore/(16581:16633): tid 6  Se mueve de 3|3 a 4|3
+[INFO] 13:31:25:488 mongostore/(16581:16637): tid 8  Se mueve de 5|9 a 6|9
+[INFO] 13:31:25:489 mongostore/(16581:16629): tid 4  Se mueve de 5|5 a 6|5
+[INFO] 13:31:26:489 mongostore/(16581:16631): tid 5  Se mueve de 5|4 a 5|5
+[INFO] 13:31:27:491 mongostore/(16581:16623): tid 1  Se mueve de 8|8 a 9|8
+[INFO] 13:31:27:491 mongostore/(16581:16625): tid 2  Se mueve de 9|8 a 9|9
+[INFO] 13:31:29:493 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:31:29:494 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:31:29:495 mongostore/(16581:16639): tid 9  Se mueve de 6|9 a 7|9
+[INFO] 13:31:29:495 mongostore/(16581:16633): tid 6  Se mueve de 4|3 a 4|4
+[INFO] 13:31:30:496 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:31:31:496 mongostore/(16581:16629): tid 4  Se mueve de 6|5 a 6|6
+[INFO] 13:31:32:497 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:31:32:498 mongostore/(16581:16631): tid 5  Se mueve de 5|5 a 6|5
+[INFO] 13:31:32:498 mongostore/(16581:16623): tid 1  Se mueve de 9|8 a 9|9
+[INFO] 13:31:33:499 mongostore/(16581:16625): tid 2  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:31:33:500 mongostore/(16581:16643): tid 11  Se mueve de 9|5 a 9|6
+[INFO] 13:31:34:500 mongostore/(16581:16625): tid 2  Se finaliza la tarea SALUDAR
+[INFO] 13:31:34:502 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:31:34:502 mongostore/(16581:16635): tid 7  Se mueve de 7|9 a 8|9
+[INFO] 13:31:35:504 mongostore/(16581:16633): tid 6  Se mueve de 4|4 a 5|4
+[INFO] 13:31:36:504 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:31:36:505 mongostore/(16581:16629): tid 4  Se mueve de 6|6 a 7|6
+[INFO] 13:31:37:506 mongostore/(16581:16631): tid 5  Se mueve de 6|5 a 6|6
+[INFO] 13:31:37:506 mongostore/(16581:16645): tid 12  Se mueve de 9|5 a 9|6
+[INFO] 13:31:38:507 mongostore/(16581:16623): tid 1  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:31:38:508 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:31:39:509 mongostore/(16581:16623): tid 1  Se finaliza la tarea SALUDAR
+[INFO] 13:31:39:510 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:31:40:512 mongostore/(16581:16641): tid 10  Se mueve de 9|5 a 9|6
+[INFO] 13:31:40:513 mongostore/(16581:16633): tid 6  Se mueve de 5|4 a 5|5
+[INFO] 13:31:41:514 mongostore/(16581:16629): tid 4  Se mueve de 7|6 a 7|7
+[INFO] 13:31:42:515 mongostore/(16581:16631): tid 5  Se mueve de 6|6 a 7|6
+[INFO] 13:31:42:515 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:31:44:518 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:31:44:519 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:31:45:518 mongostore/(16581:16635): tid 7  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:31:45:519 mongostore/(16581:16633): tid 6  Se mueve de 5|5 a 6|5
+[INFO] 13:31:46:520 mongostore/(16581:16629): tid 4  Se mueve de 7|7 a 8|7
+[INFO] 13:31:46:521 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:31:46:521 mongostore/(16581:16631): tid 5  Se mueve de 7|6 a 7|7
+[INFO] 13:31:48:524 mongostore/(16581:16639): tid 9  Se mueve de 7|9 a 8|9
+[INFO] 13:31:49:524 mongostore/(16581:16635): tid 7  Se mueve de 8|9 a 9|9
+[INFO] 13:31:49:525 mongostore/(16581:16633): tid 6  Se mueve de 6|5 a 6|6
+[INFO] 13:31:50:526 mongostore/(16581:16629): tid 4  Se mueve de 8|7 a 8|8
+[INFO] 13:31:50:526 mongostore/(16581:16637): tid 8  Se mueve de 6|9 a 7|9
+[INFO] 13:31:51:527 mongostore/(16581:16631): tid 5  Se mueve de 7|7 a 8|7
+[INFO] 13:31:53:529 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:31:53:529 mongostore/(16581:16635): tid 7  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:31:54:530 mongostore/(16581:16635): tid 7  Se finaliza la tarea SALUDAR
+[INFO] 13:31:54:531 mongostore/(16581:16633): tid 6  Se mueve de 6|6 a 7|6
+[INFO] 13:31:54:532 mongostore/(16581:16629): tid 4  Se mueve de 8|8 a 9|8
+[INFO] 13:31:55:532 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:31:56:534 mongostore/(16581:16631): tid 5  Se mueve de 8|7 a 8|8
+[INFO] 13:31:58:536 mongostore/(16581:16633): tid 6  Se mueve de 7|6 a 7|7
+[INFO] 13:31:58:537 mongostore/(16581:16639): tid 9  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:31:58:537 mongostore/(16581:16629): tid 4  Se mueve de 9|8 a 9|9
+[INFO] 13:32:00:540 mongostore/(16581:16631): tid 5  Se mueve de 8|8 a 9|8
+[INFO] 13:32:01:541 mongostore/(16581:16639): tid 9  Se mueve de 8|9 a 9|9
+[INFO] 13:32:02:541 mongostore/(16581:16633): tid 6  Se mueve de 7|7 a 8|7
+[INFO] 13:32:02:542 mongostore/(16581:16629): tid 4  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:32:03:542 mongostore/(16581:16629): tid 4  Se finaliza la tarea SALUDAR
+[INFO] 13:32:04:544 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:32:04:545 mongostore/(16581:16631): tid 5  Se mueve de 9|8 a 9|9
+[INFO] 13:32:05:546 mongostore/(16581:16639): tid 9  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:32:06:546 mongostore/(16581:16633): tid 6  Se mueve de 8|7 a 8|8
+[INFO] 13:32:06:547 mongostore/(16581:16639): tid 9  Se finaliza la tarea SALUDAR
+[INFO] 13:32:07:547 mongostore/(16581:16637): tid 8  Se mueve de 7|9 a 8|9
+[INFO] 13:32:08:548 mongostore/(16581:16631): tid 5  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:32:09:550 mongostore/(16581:16631): tid 5  Se finaliza la tarea SALUDAR
+[INFO] 13:32:09:550 mongostore/(16581:16633): tid 6  Se mueve de 8|8 a 9|8
+[INFO] 13:32:10:552 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea CEBAR_MATES
+[INFO] 13:32:11:554 mongostore/(16581:16633): tid 6  Se mueve de 9|8 a 9|9
+[INFO] 13:32:13:556 mongostore/(16581:16637): tid 8  Se finaliza la tarea CEBAR_MATES
+[INFO] 13:32:14:557 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:32:14:558 mongostore/(16581:16633): tid 6  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:32:15:559 mongostore/(16581:16633): tid 6  Se finaliza la tarea SALUDAR
+[INFO] 13:32:15:559 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:32:15:561 mongostore/(16581:16637): tid 8  Se mueve de 8|9 a 9|9
+[INFO] 13:32:16:561 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:32:16:562 mongostore/(16581:16643): tid 11  Se mueve de 9|6 a 9|7
+[INFO] 13:32:16:563 mongostore/(16581:16645): tid 12  Se mueve de 9|6 a 9|7
+[INFO] 13:32:17:564 mongostore/(16581:16637): tid 8  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:32:17:564 mongostore/(16581:16641): tid 10  Se mueve de 9|6 a 9|7
+[INFO] 13:32:18:565 mongostore/(16581:16637): tid 8  Se finaliza la tarea SALUDAR
+[INFO] 13:32:18:565 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:32:18:566 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:32:19:566 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:32:47:592 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:32:48:593 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:32:48:593 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:32:48:594 mongostore/(16581:16643): tid 11  Se mueve de 9|7 a 9|8
+[INFO] 13:32:48:595 mongostore/(16581:16641): tid 10  Se mueve de 9|7 a 9|8
+[INFO] 13:32:49:595 mongostore/(16581:16645): tid 12  Se mueve de 9|7 a 9|8
+[INFO] 13:32:49:596 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:32:50:596 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:32:50:597 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea CODEAR_EL_TP
+[INFO] 13:33:19:626 mongostore/(16581:16643): tid 11  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:33:19:627 mongostore/(16581:16641): tid 10  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:33:19:628 mongostore/(16581:16641): tid 10  Se mueve de 9|8 a 9|9
+[INFO] 13:33:20:628 mongostore/(16581:16645): tid 12  Se finaliza la tarea CODEAR_EL_TP
+[INFO] 13:33:20:629 mongostore/(16581:16643): tid 11  Se mueve de 9|8 a 9|9
+[INFO] 13:33:20:630 mongostore/(16581:16645): tid 12  Se mueve de 9|8 a 9|9
+[INFO] 13:33:21:630 mongostore/(16581:16641): tid 10  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:33:21:631 mongostore/(16581:16643): tid 11  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:33:22:631 mongostore/(16581:16641): tid 10  Se finaliza la tarea SALUDAR
+[INFO] 13:33:22:632 mongostore/(16581:16643): tid 11  Se finaliza la tarea SALUDAR
+[INFO] 13:33:22:633 mongostore/(16581:16645): tid 12  Comienza ejecucion de tarea SALUDAR
+[INFO] 13:33:23:634 mongostore/(16581:16645): tid 12  Se finaliza la tarea SALUDAR
+[DEBUG] 14:09:08:005 mongostore/(17677:17677): LOGGER OK
+[INFO] 14:09:08:026 mongostore/(17677:17677): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 14:09:08:026 mongostore/(17677:17677): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 14:09:08:027 mongostore/(17677:17677): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 14:09:08:028 mongostore/(17677:17677): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 14:09:08:028 mongostore/(17677:17677): O-Superbloque generado desde archivo
+[INFO] 14:09:08:029 mongostore/(17677:17677): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 14:09:08:029 mongostore/(17677:17677): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 14:09:08:029 mongostore/(17677:17677): O-Blocks mapeado del archivo a la memoria
+[INFO] 14:09:08:029 mongostore/(17677:17677): Existencia de Blocks validada
+[DEBUG] 14:09:08:030 mongostore/(17677:17677): Directorios del File System confirmados
+[INFO] 14:09:08:030 mongostore/(17677:17677): File System iniciado
+[INFO] 14:09:08:030 mongostore/(17677:17677): pid 17677  
+
+[INFO] 14:09:08:031 mongostore/(17677:17679): Servidor iniciando 2
+[INFO] 14:09:08:031 mongostore/(17677:17679): Servidor Mongo2 encendido
+[INFO] 14:09:08:031 mongostore/(17677:17678): Servidor iniciando
+[INFO] 14:09:08:031 mongostore/(17677:17678): Servidor Mongo encendido
+[INFO] 14:09:16:291 mongostore/(17677:17678): Estableciendo conexión desde 42634
+[INFO] 14:09:16:293 mongostore/(17677:17678): Creando hilo
+[INFO] 14:09:16:294 mongostore/(17677:17679): socket_cliente_sabotaje 5
+[INFO] 14:09:16:294 mongostore/(17677:17679): 2 Estableciendo conexión desde 39124
+[INFO] 14:09:16:294 mongostore/(17677:17679): 2 Creando hilo
+[INFO] 14:09:16:296 mongostore/(17677:17693): funcionx
+[INFO] 14:09:16:298 mongostore/(17677:17692): in funcion_cliente
+[INFO] 14:09:16:299 mongostore/(17677:17692): Se conecto este socket a mi 8
+[INFO] 14:09:19:427 mongostore/(17677:17678): Estableciendo conexión desde 44170
+[INFO] 14:09:19:427 mongostore/(17677:17678): Creando hilo
+[INFO] 14:09:19:429 mongostore/(17677:17702): in funcion_cliente
+[INFO] 14:09:19:430 mongostore/(17677:17678): Estableciendo conexión desde 45194
+[INFO] 14:09:19:434 mongostore/(17677:17678): Creando hilo
+[INFO] 14:09:19:434 mongostore/(17677:17702): Se conecto este socket a mi 9
+[INFO] 14:09:19:435 mongostore/(17677:17702): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 14:09:19:437 mongostore/(17677:17678): Estableciendo conexión desde 46218
+[INFO] 14:09:19:437 mongostore/(17677:17678): Creando hilo
+[INFO] 14:09:19:443 mongostore/(17677:17705): in funcion_cliente
+[INFO] 14:09:19:444 mongostore/(17677:17705): Se conecto este socket a mi 10
+[INFO] 14:09:19:445 mongostore/(17677:17705): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 14:09:19:448 mongostore/(17677:17707): in funcion_cliente
+[INFO] 14:09:19:448 mongostore/(17677:17707): Se conecto este socket a mi 11
+[INFO] 14:09:20:437 mongostore/(17677:17707): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 14:09:20:447 mongostore/(17677:17702): tarea GENERAR_OXIGENO  param 5
+[INFO] 14:09:21:441 mongostore/(17677:17705): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 14:09:21:448 mongostore/(17677:17702): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 14:09:21:449 mongostore/(17677:17707): tarea GENERAR_OXIGENO  param 5
+[INFO] 14:09:22:442 mongostore/(17677:17705): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 14:09:22:451 mongostore/(17677:17702): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 14:09:22:455 mongostore/(17677:17707): tid 3  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 14:09:22:455 mongostore/(17677:17702): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 14:09:23:444 mongostore/(17677:17705): tarea GENERAR_OXIGENO  param 5
+[INFO] 14:09:23:459 mongostore/(17677:17707): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 14:09:23:460 mongostore/(17677:17702): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 14:09:24:446 mongostore/(17677:17705): tid 2  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 14:09:24:447 mongostore/(17677:17707): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 14:09:24:462 mongostore/(17677:17702): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 14:09:25:448 mongostore/(17677:17705): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 14:09:25:449 mongostore/(17677:17707): tid 3  Se mueve de 5|4 a 5|5
+[INFO] 14:09:25:463 mongostore/(17677:17705): tid 2  Se mueve de 4|4 a 5|4
+[INFO] 14:09:26:450 mongostore/(17677:17702): tid 1  Comienza ejecucion de tarea ABC
+[INFO] 14:09:26:465 mongostore/(17677:17707): tid 3  Se mueve de 5|5 a 5|6
+[INFO] 14:09:27:451 mongostore/(17677:17705): tid 2  Se mueve de 5|4 a 5|5
+[INFO] 14:09:28:452 mongostore/(17677:17707): tid 3  Comienza ejecucion de tarea ABC
+[INFO] 14:09:28:466 mongostore/(17677:17705): tid 2  Se mueve de 5|5 a 5|6
+[INFO] 14:09:30:454 mongostore/(17677:17705): tid 2  Comienza ejecucion de tarea ABC
+[INFO] 14:09:31:473 mongostore/(17677:17702): tid 1  Se finaliza la tarea ABC
+[INFO] 14:09:32:456 mongostore/(17677:17702): tid 1  Se mueve de 5|6 a 4|6
+[INFO] 14:09:33:476 mongostore/(17677:17707): tid 3  Se finaliza la tarea ABC
+[INFO] 14:09:33:477 mongostore/(17677:17702): tid 1  Se mueve de 4|6 a 4|5
+[INFO] 14:09:34:460 mongostore/(17677:17707): tid 3  Se mueve de 5|6 a 4|6
+[INFO] 14:09:35:461 mongostore/(17677:17702): tid 1  Se mueve de 4|5 a 3|5
+[INFO] 14:09:35:479 mongostore/(17677:17705): tid 2  Se finaliza la tarea ABC
+[INFO] 14:09:35:479 mongostore/(17677:17707): tid 3  Se mueve de 4|6 a 4|5
+[INFO] 14:09:36:463 mongostore/(17677:17705): tid 2  Se mueve de 5|6 a 4|6
+[INFO] 14:09:36:481 mongostore/(17677:17702): tid 1  Se mueve de 3|5 a 3|4
+[INFO] 14:09:37:464 mongostore/(17677:17707): tid 3  Se mueve de 4|5 a 3|5
+[INFO] 14:09:37:481 mongostore/(17677:17705): tid 2  Se mueve de 4|6 a 4|5
+[INFO] 14:09:38:465 mongostore/(17677:17702): tid 1  Se mueve de 3|4 a 3|3
+[INFO] 14:09:38:482 mongostore/(17677:17707): tid 3  Se mueve de 3|5 a 3|4
+[INFO] 14:09:39:466 mongostore/(17677:17705): tid 2  Se mueve de 4|5 a 3|5
+[INFO] 14:09:39:483 mongostore/(17677:17702): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 14:09:40:469 mongostore/(17677:17707): tid 3  Se mueve de 3|4 a 3|3
+[INFO] 14:09:40:485 mongostore/(17677:17705): tid 2  Se mueve de 3|5 a 3|4
+[INFO] 14:09:40:486 mongostore/(17677:17702): tid 1  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 14:09:41:471 mongostore/(17677:17707): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 14:09:41:487 mongostore/(17677:17705): tid 2  Se mueve de 3|4 a 3|3
+[INFO] 14:09:42:488 mongostore/(17677:17705): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 14:09:44:488 mongostore/(17677:17702): tid 1  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 14:09:44:492 mongostore/(17677:17707): tid 3  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 14:09:48:495 mongostore/(17677:17707): tid 3  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 14:09:48:496 mongostore/(17677:17705): tid 2  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 14:09:52:498 mongostore/(17677:17705): tid 2  Se finaliza la tarea CONSUMIR_OXIGENO
+[DEBUG] 14:10:20:167 mongostore/(17723:17723): LOGGER OK
+[INFO] 14:10:20:170 mongostore/(17723:17723): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 14:10:20:170 mongostore/(17723:17723): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 14:10:20:174 mongostore/(17723:17723): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 14:10:20:177 mongostore/(17723:17723): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 14:10:20:177 mongostore/(17723:17723): O-Superbloque generado desde archivo
+[INFO] 14:10:20:177 mongostore/(17723:17723): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 14:10:20:177 mongostore/(17723:17723): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 14:10:20:177 mongostore/(17723:17723): O-Blocks mapeado del archivo a la memoria
+[INFO] 14:10:20:177 mongostore/(17723:17723): Existencia de Blocks validada
+[DEBUG] 14:10:20:178 mongostore/(17723:17723): Directorios del File System confirmados
+[INFO] 14:10:20:178 mongostore/(17723:17723): File System iniciado
+[INFO] 14:10:20:178 mongostore/(17723:17723): pid 17723  
+
+[INFO] 14:10:20:184 mongostore/(17723:17725): Servidor iniciando 2
+[INFO] 14:10:20:184 mongostore/(17723:17725): Servidor Mongo2 encendido
+[INFO] 14:10:20:184 mongostore/(17723:17724): Servidor iniciando
+[INFO] 14:10:20:185 mongostore/(17723:17724): Servidor Mongo encendido
+[INFO] 14:10:29:127 mongostore/(17723:17725): socket_cliente_sabotaje 5
+[INFO] 14:10:29:127 mongostore/(17723:17724): Estableciendo conexión desde 48266
+[INFO] 14:10:29:128 mongostore/(17723:17725): 2 Estableciendo conexión desde 44756
+[INFO] 14:10:29:128 mongostore/(17723:17725): 2 Creando hilo
+[INFO] 14:10:29:129 mongostore/(17723:17724): Creando hilo
+[INFO] 14:10:29:131 mongostore/(17723:17739): funcionx
+[INFO] 14:10:29:132 mongostore/(17723:17740): in funcion_cliente
+[INFO] 14:10:29:133 mongostore/(17723:17740): Se conecto este socket a mi 8
+[INFO] 14:10:35:308 mongostore/(17723:17724): Estableciendo conexión desde 49802
+[INFO] 14:10:35:308 mongostore/(17723:17724): Creando hilo
+[INFO] 14:10:35:309 mongostore/(17723:17748): in funcion_cliente
+[INFO] 14:10:35:309 mongostore/(17723:17748): Se conecto este socket a mi 9
+[INFO] 14:10:35:314 mongostore/(17723:17724): Estableciendo conexión desde 50826
+[INFO] 14:10:35:314 mongostore/(17723:17724): Creando hilo
+[INFO] 14:10:35:315 mongostore/(17723:17748): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 14:10:35:316 mongostore/(17723:17750): in funcion_cliente
+[INFO] 14:10:35:316 mongostore/(17723:17750): Se conecto este socket a mi 10
+[WARNING] 14:11:37:196 mongostore/(17723:17740): el cliente se desconecto.
+[WARNING] 14:11:37:197 mongostore/(17723:17748): el cliente se desconecto.
+[WARNING] 14:11:37:197 mongostore/(17723:17750): el cliente se desconecto.
+[DEBUG] 14:13:44:330 mongostore/(17781:17781): LOGGER OK
+[INFO] 14:13:44:332 mongostore/(17781:17781): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 14:13:44:332 mongostore/(17781:17781): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 14:13:44:334 mongostore/(17781:17781): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 14:13:44:336 mongostore/(17781:17781): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 14:13:44:336 mongostore/(17781:17781): O-Superbloque generado desde archivo
+[INFO] 14:13:44:336 mongostore/(17781:17781): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 14:13:44:336 mongostore/(17781:17781): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 14:13:44:336 mongostore/(17781:17781): O-Blocks mapeado del archivo a la memoria
+[INFO] 14:13:44:337 mongostore/(17781:17781): Existencia de Blocks validada
+[DEBUG] 14:13:44:337 mongostore/(17781:17781): Directorios del File System confirmados
+[INFO] 14:13:44:337 mongostore/(17781:17781): File System iniciado
+[INFO] 14:13:44:337 mongostore/(17781:17781): pid 17781  
+
+[INFO] 14:13:44:338 mongostore/(17781:17783): Servidor iniciando 2
+[INFO] 14:13:44:338 mongostore/(17781:17783): Servidor Mongo2 encendido
+[INFO] 14:13:44:338 mongostore/(17781:17782): Servidor iniciando
+[INFO] 14:13:44:338 mongostore/(17781:17782): Servidor Mongo encendido
+[INFO] 14:13:54:701 mongostore/(17781:17783): socket_cliente_sabotaje 5
+[INFO] 14:13:54:702 mongostore/(17781:17782): Estableciendo conexión desde 53386
+[INFO] 14:13:54:702 mongostore/(17781:17783): 2 Estableciendo conexión desde 49876
+[INFO] 14:13:54:702 mongostore/(17781:17783): 2 Creando hilo
+[INFO] 14:13:54:703 mongostore/(17781:17782): Creando hilo
+[INFO] 14:13:54:704 mongostore/(17781:17799): funcionx
+[INFO] 14:13:54:705 mongostore/(17781:17800): in funcion_cliente
+[INFO] 14:13:54:705 mongostore/(17781:17800): Se conecto este socket a mi 8
+[INFO] 14:14:00:227 mongostore/(17781:17782): Estableciendo conexión desde 54922
+[INFO] 14:14:00:227 mongostore/(17781:17782): Creando hilo
+[INFO] 14:14:00:227 mongostore/(17781:17808): in funcion_cliente
+[INFO] 14:14:00:227 mongostore/(17781:17808): Se conecto este socket a mi 9
+[INFO] 14:14:00:228 mongostore/(17781:17782): Estableciendo conexión desde 55946
+[INFO] 14:14:00:228 mongostore/(17781:17782): Creando hilo
+[INFO] 14:14:00:228 mongostore/(17781:17808): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 14:14:00:228 mongostore/(17781:17810): in funcion_cliente
+[INFO] 14:14:00:228 mongostore/(17781:17810): Se conecto este socket a mi 10
+[INFO] 14:14:01:229 mongostore/(17781:17808): tarea GENERAR_OXIGENO  param 5
+[INFO] 14:16:20:325 mongostore/(17781:17808): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[WARNING] 14:16:20:987 mongostore/(17781:17800): el cliente se desconecto.
+[WARNING] 14:16:20:988 mongostore/(17781:17810): el cliente se desconecto.
+[WARNING] 14:16:20:988 mongostore/(17781:17808): el cliente se desconecto.
+[DEBUG] 14:16:36:620 mongostore/(17840:17840): LOGGER OK
+[INFO] 14:16:36:621 mongostore/(17840:17840): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 14:16:36:622 mongostore/(17840:17840): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 14:16:36:622 mongostore/(17840:17840): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 14:16:36:622 mongostore/(17840:17840): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 14:16:36:622 mongostore/(17840:17840): O-Superbloque generado desde archivo
+[INFO] 14:16:36:623 mongostore/(17840:17840): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 14:16:36:623 mongostore/(17840:17840): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 14:16:36:623 mongostore/(17840:17840): O-Blocks mapeado del archivo a la memoria
+[INFO] 14:16:36:623 mongostore/(17840:17840): Existencia de Blocks validada
+[DEBUG] 14:16:36:623 mongostore/(17840:17840): Directorios del File System confirmados
+[INFO] 14:16:36:624 mongostore/(17840:17840): File System iniciado
+[INFO] 14:16:36:624 mongostore/(17840:17840): pid 17840  
+
+[INFO] 14:16:36:624 mongostore/(17840:17842): Servidor iniciando 2
+[INFO] 14:16:36:624 mongostore/(17840:17842): Servidor Mongo2 encendido
+[INFO] 14:16:36:624 mongostore/(17840:17841): Servidor iniciando
+[INFO] 14:16:36:624 mongostore/(17840:17841): Servidor Mongo encendido
+[INFO] 14:17:40:748 mongostore/(17840:17842): socket_cliente_sabotaje 5
+[INFO] 14:17:40:748 mongostore/(17840:17841): Estableciendo conexión desde 57994
+[INFO] 14:17:40:750 mongostore/(17840:17842): 2 Estableciendo conexión desde 54484
+[INFO] 14:17:40:750 mongostore/(17840:17842): 2 Creando hilo
+[INFO] 14:17:40:750 mongostore/(17840:17841): Creando hilo
+[INFO] 14:17:40:751 mongostore/(17840:17886): funcionx
+[INFO] 14:17:40:752 mongostore/(17840:17887): in funcion_cliente
+[INFO] 14:17:40:752 mongostore/(17840:17887): Se conecto este socket a mi 8
+[INFO] 14:17:55:444 mongostore/(17840:17841): Estableciendo conexión desde 59530
+[INFO] 14:17:55:444 mongostore/(17840:17841): Creando hilo
+[INFO] 14:17:55:446 mongostore/(17840:17897): in funcion_cliente
+[INFO] 14:17:55:446 mongostore/(17840:17897): Se conecto este socket a mi 9
+[INFO] 14:17:55:447 mongostore/(17840:17841): Estableciendo conexión desde 60554
+[INFO] 14:17:55:447 mongostore/(17840:17841): Creando hilo
+[INFO] 14:17:55:448 mongostore/(17840:17897): tid 1  Comienza ejecucion de tarea A00
+[INFO] 14:17:55:448 mongostore/(17840:17899): in funcion_cliente
+[INFO] 14:17:55:448 mongostore/(17840:17899): Se conecto este socket a mi 10
+[INFO] 14:17:55:449 mongostore/(17840:17841): Estableciendo conexión desde 61578
+[INFO] 14:17:55:449 mongostore/(17840:17841): Creando hilo
+[INFO] 14:17:55:450 mongostore/(17840:17899): tid 2  Comienza ejecucion de tarea B00
+[INFO] 14:17:55:451 mongostore/(17840:17901): in funcion_cliente
+[INFO] 14:17:55:451 mongostore/(17840:17901): Se conecto este socket a mi 11
+[INFO] 14:17:58:450 mongostore/(17840:17901): tid 3  Comienza ejecucion de tarea C00
+[INFO] 14:18:00:452 mongostore/(17840:17897): tid 1  Se finaliza la tarea A00
+[INFO] 14:18:00:454 mongostore/(17840:17897): tid 1  Comienza ejecucion de tarea A01
+[INFO] 14:18:03:453 mongostore/(17840:17899): tid 2  Se finaliza la tarea B00
+[INFO] 14:18:03:455 mongostore/(17840:17899): tid 2  Comienza ejecucion de tarea B01
+[INFO] 14:18:03:455 mongostore/(17840:17901): tid 3  Se finaliza la tarea C00
+[INFO] 14:18:03:456 mongostore/(17840:17901): tid 3  Comienza ejecucion de tarea C01
+[INFO] 14:18:08:458 mongostore/(17840:17897): tid 1  Se finaliza la tarea A01
+[INFO] 14:18:08:460 mongostore/(17840:17897): tid 1  Comienza ejecucion de tarea A02
+[INFO] 14:18:11:460 mongostore/(17840:17899): tid 2  Se finaliza la tarea B01
+[INFO] 14:18:11:461 mongostore/(17840:17901): tid 3  Se finaliza la tarea C01
+[INFO] 14:18:11:462 mongostore/(17840:17901): tid 3  Comienza ejecucion de tarea C02
+[INFO] 14:18:11:462 mongostore/(17840:17899): tid 2  Comienza ejecucion de tarea B02
+[INFO] 14:18:16:465 mongostore/(17840:17897): tid 1  Se finaliza la tarea A02
+[INFO] 14:18:16:465 mongostore/(17840:17901): tid 3  Se finaliza la tarea C02
+[INFO] 14:18:16:469 mongostore/(17840:17901): tid 3  Comienza ejecucion de tarea C03
+[INFO] 14:18:19:469 mongostore/(17840:17899): tid 2  Se finaliza la tarea B02
+[INFO] 14:18:21:473 mongostore/(17840:17901): tid 3  Se finaliza la tarea C03
+[INFO] 14:18:21:473 mongostore/(17840:17901): tid 3  Comienza ejecucion de tarea C04
+[INFO] 14:18:26:478 mongostore/(17840:17901): tid 3  Se finaliza la tarea C04
+[INFO] 14:18:26:479 mongostore/(17840:17901): tid 3  Comienza ejecucion de tarea C05
+[INFO] 14:18:31:482 mongostore/(17840:17901): tid 3  Se finaliza la tarea C05
+[INFO] 14:18:31:483 mongostore/(17840:17901): tid 3  Comienza ejecucion de tarea C06
+[INFO] 14:18:36:486 mongostore/(17840:17901): tid 3  Se finaliza la tarea C06
+[INFO] 14:18:36:488 mongostore/(17840:17901): tid 3  Comienza ejecucion de tarea C07
+[INFO] 14:18:41:494 mongostore/(17840:17901): tid 3  Se finaliza la tarea C07
+[INFO] 14:18:41:496 mongostore/(17840:17901): tid 3  Comienza ejecucion de tarea C08
+[INFO] 14:18:46:499 mongostore/(17840:17901): tid 3  Se finaliza la tarea C08

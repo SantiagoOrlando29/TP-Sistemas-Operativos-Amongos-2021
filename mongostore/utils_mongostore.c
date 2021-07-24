@@ -12,7 +12,6 @@ int socket_servidor;
 int cant_sabotaje = 0;
 int primer_hilo = 0;
 int socket_cliente_sabotaje = 0;
-int no_es_discordiador = 0;
 int numero_tripulante = 1;
 
 
@@ -248,13 +247,6 @@ int funcion_cliente(int socket_cliente)
 	char* parametro_char;
 	char* tid_char;
 
-	/*if(no_es_discordiador){
-		bitacora_crear_archivo(numero_tripulante); //Crear default
-		numero_tripulante++;
-	}*/
-
-	//no_es_discordiador = 1;
-
 
 	while(1)
 	{
@@ -319,6 +311,9 @@ int funcion_cliente(int socket_cliente)
 
 			case INICIAR_FSCK:
 				log_info(logger, "En fsck");
+
+				fsck_iniciar();
+
 				char* mensaje3 = "ok";
 				enviar_mensaje(mensaje3, socket_cliente);
 
@@ -374,12 +369,11 @@ void sig_handler(int signum){
 void notificar_sabotaje(){
 
 	char* mensaje4 = configuracion.posiciones_sabotaje[cant_sabotaje];
-		/*for(int i = 0; configuracion.posiciones_sabotaje[i]!=NULL;i++){
-			log_info(logger, "Posicion %s", configuracion.posiciones_sabotaje[i]); //Para ver las posiciones nomas
-		}*/
-		enviar_mensaje(mensaje4, socket_cliente_sabotaje);
-		cant_sabotaje++;
-
+	/*for(int i = 0; configuracion.posiciones_sabotaje[i]!=NULL;i++){
+		log_info(logger, "Posicion %s", configuracion.posiciones_sabotaje[i]); //Para ver las posiciones nomas
+	}*/
+	enviar_mensaje(mensaje4, socket_cliente_sabotaje);
+	cant_sabotaje++;
 }
 
 
