@@ -61,23 +61,19 @@ void iniciar_servidor(config_struct* config_servidor)
 	log_info(logger, "socket_servidor %d", socket_servidor);
 
 	//se crea mapa
-	//nivel_gui_inicializar();
+	nivel_gui_inicializar();
 
-	//nivel_gui_get_area_nivel(&cols, &rows);
+	nivel_gui_get_area_nivel(&cols, &rows);
 
-	//nivel = nivel_crear("AMong-OS");
-
-	log_info(logger, "bbbbbbbbb");
+	nivel = nivel_crear("AMong-OS");
 
 	int hilo;
 	while(variable_servidor != 0){
 
-		log_info(logger, "ccccccccc");
 		socket_cliente = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
 		log_info(logger, "socket_cliente %d", socket_cliente);
 
 		if(socket_cliente>0){
-			log_info(logger, "eeeeeeeeee");
 			hilo ++ ;
 			log_info(logger, "Estableciendo conexión desde %d", dir_cliente.sin_port);
 			log_info(logger, "Creando hilo");
@@ -139,25 +135,21 @@ void iniciar_servidor2(config_struct* config_servidor)
 	int tam_direccion = sizeof(struct sockaddr_in);
 	int socket_cliente_sabotaje = 0;
 
-	//int hilo;
-	//while(variable_servidor != 0){
-
 	socket_cliente_sabotaje = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
 
-		if(socket_cliente_sabotaje>0){
-			//hilo ++ ;
-			log_info(logger, "2 Estableciendo conexión desde %d", dir_cliente.sin_port);
-			log_info(logger, "2 Creando hilo");
+	if(socket_cliente_sabotaje>0){
+		//hilo ++ ;
+		log_info(logger, "2 Estableciendo conexión desde %d", dir_cliente.sin_port);
+		log_info(logger, "2 Creando hilo");
 
-			pthread_t hilo_cliente_discordiador_sabotaje;
-			pthread_create(&hilo_cliente_discordiador_sabotaje,NULL,(void*)funcionx ,(void*)socket_cliente_sabotaje);
-			pthread_detach(hilo_cliente_discordiador_sabotaje);
-		}
-	//}
+		pthread_t hilo_cliente_discordiador_sabotaje;
+		pthread_create(&hilo_cliente_discordiador_sabotaje,NULL,(void*)funcionx ,(void*)socket_cliente_sabotaje);
+		pthread_detach(hilo_cliente_discordiador_sabotaje);
+	}
+
 	//printf("me fui");
 
 	//log_destroy(logger);
-
 }
 
 int funcionx(int socket_cliente_sabotaje){
@@ -177,7 +169,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 	int patota_id;
 	char* pid_char;
 	char* tid_char;
-	int cant_sabotaje = 0;//para probar mongo
+	//int cant_sabotaje = 0;//para probar mongo
 
 	int tipoMensajeRecibido = -1;
 	log_info(logger, "Se conecto este socket a mi %d",socket_cliente);
@@ -288,7 +280,7 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				tid_char = list_get(lista,0);
 				tripulante_id = (int)atoi(tid_char);
 				//free(tid_char);
-				pid_char = list_get(lista,0);
+				pid_char = list_get(lista,1);
 				patota_id = (int)atoi(pid_char);
 				log_info(logger, "tid %d  pid %d", tripulante_id, patota_id);
 
@@ -444,16 +436,6 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				log_info(logger, "en fsck");
 				char* mensaje3 = "ok";
 				enviar_mensaje(mensaje3, socket_cliente);
-
-				break;
-
-			case PRUEBA://para probar mongo
-				log_info(logger, "PRUEBA");
-
-				char* mensaje4 = configuracion.posiciones_sabotaje[cant_sabotaje];
-				enviar_mensaje(mensaje4, socket_cliente);
-
-				cant_sabotaje++;
 
 				break;
 
@@ -1069,7 +1051,6 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 	list_add(tabla_segmentos_patota->lista_segmentos, segmento_tareas);
 
 	for(int i=2; i < cantidad_tripulantes +2; i++){
-		//tcbTripulante* tripulante = malloc(tamanio_TCB);
 		tcbTripulante* tripulante = (tcbTripulante*)list_get(lista,i);
 
 		if(i == 2){//es el primer tripulante de la lista
@@ -1106,8 +1087,8 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 		if(tripulante->tid > 9){ //desde el 10 el mapa tira ":" sino
 			letra = 55;
 		}
-		//err = personaje_crear(nivel, letra+tripulante->tid, (int)tripulante->posicionX, (int)tripulante->posicionY);
-		//ASSERT_CREATE(nivel, letra, err);
+		err = personaje_crear(nivel, letra+tripulante->tid, (int)tripulante->posicionX, (int)tripulante->posicionY);
+		ASSERT_CREATE(nivel, letra, err);
 	}
 
 	imprimir_tabla_espacios_de_memoria();
@@ -1165,8 +1146,8 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 					if(tripulante_id > 9){ //desde el 10 el mapa tira ":" sino
 						letra = 55;
 					}
-					//log_info(logger, "letra + tid: %c", letra + tripulante_id);
-					//item_borrar(nivel, letra + tripulante_id);
+					log_info(logger, "letra + tid: %c", letra + tripulante_id);
+					item_borrar(nivel, letra + tripulante_id);
 
 					sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 
@@ -1405,8 +1386,8 @@ bool cambiar_posicion(int tid, int posx, int posy, int pid){
 				if(tid > 9){ //desde el 10 el mapa tira ":" sino
 					letra = 55;
 				}
-			    //item_desplazar(nivel, letra+ tid, difx, dify);
-			    //sleep(1);
+			    item_desplazar(nivel, letra+ tid, difx, dify);
+			    sleep(1);
 
 				sem_post(&MUTEX_CAMBIAR_POSICION);
 				return true;

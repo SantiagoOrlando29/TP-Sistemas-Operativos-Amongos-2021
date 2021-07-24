@@ -31,7 +31,7 @@ int flag_sabotaje;
 int flag_fin;
 int conexionMiRam;
 int conexionMongoStore;
-int conexionMiRamSabotaje;
+int conexionMongoSabotaje;
 
 
 bool sigue_ejecutando(int quantums_ejecutados){
@@ -95,7 +95,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 	sem_wait(&(tripulante->semaforo_tripulante));
 
 	tripulante->socket_miram = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
-	//tripulante->socket_mongo = crear_conexion(configuracion.ip_mongostore,configuracion.puerto_mongostore);
+	tripulante->socket_mongo = crear_conexion(configuracion.ip_mongostore,configuracion.puerto_mongostore);
 
 	tripulante->tarea_posta = pedir_tarea(tripulante->socket_miram, tripulante);
 
@@ -240,8 +240,6 @@ void tripulante_hilo (tcbTripulante* tripulante){
 					planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);
 
 					if(tripulante->posicionX == tripulante->tarea_posta->pos_x && tripulante->posicionY == tripulante->tarea_posta->pos_y){//veo si esta en la posicion de tarea por si resolvio sabotaje
-//						printf("hilo %d, estoy trabajando \n", tripulante->tid);
-//						sleep(configuracion.retardo_cpu);
 
 						if(tripulante->fui_expulsado == true){
 							contador_ciclos_trabajando = tripulante->tarea_posta->tiempo; //para cortar el while
@@ -490,13 +488,11 @@ int main(int argc, char* argv[]) {
 	logger = log_create("discordiador.log","discordiador",1,LOG_LEVEL_INFO);
 
 	leer_config();
-	//leer numeros random
-	//leer_tareas("tareas.txt");
-	conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
-	//conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
 
-	//conexionMiRamSabotaje = crear_conexion(configuracion.ip_miram,"5003");
-	//conexionMongoSabotaje = crear_conexion(configuracion.ip_mongostore,"5003");
+	conexionMiRam = crear_conexion(configuracion.ip_miram,configuracion.puerto_miram);
+	conexionMongoStore = crear_conexion(configuracion.ip_mongostore, configuracion.puerto_mongostore);
+
+	conexionMongoSabotaje = crear_conexion(configuracion.ip_mongostore,"5003");
 
 	pthread_t hilo_principal;
 	pthread_t hilo_sabotaje;
@@ -508,16 +504,22 @@ int main(int argc, char* argv[]) {
 	sem_init(&TERMINO, 0,0);
 
 	sem_wait(&TERMINO);
+
 	return 0;
 }
 
 void funcion_sabotaje(){
 	log_info(logger, "in funcion_sabotaje");
 
-	/*while(1){
+	tcbTripulante* tripulante;
+
+	while(1){
 		char* posicion_sabotaje_char = recibir_mensaje(conexionMongoSabotaje);
 		log_info(logger, "posicion_sabotaje_char %s", posicion_sabotaje_char);
 		sem_wait(&CONTINUAR_PLANIFICACION);
+
+		char* posicion_sabotaje_char_2 = malloc(strlen(posicion_sabotaje_char)+1);
+		strcpy(posicion_sabotaje_char_2, posicion_sabotaje_char);
 
 		int posx = atoi(strtok(posicion_sabotaje_char,"|"));
 		int posy = atoi(strtok(NULL,""));
@@ -526,7 +528,12 @@ void funcion_sabotaje(){
 		flag_sabotaje = configuracion.grado_multitarea;
 
 		if(list_size(lista_tripulantes_trabajando) > 0){
-			lista_bloq_emergencia = list_take_and_remove(lista_tripulantes_trabajando, list_size(lista_tripulantes_trabajando));
+			//lista_bloq_emergencia = list_take_and_remove(lista_tripulantes_trabajando, list_size(lista_tripulantes_trabajando));
+			for(int i=0; i < list_size(lista_tripulantes_trabajando); i++){
+				tripulante = (tcbTripulante*)list_remove(lista_tripulantes_trabajando, i);
+				list_add(lista_bloq_emergencia,tripulante);
+				i = -1;
+			}
 		}
 
 		bool tid_anterior(tcbTripulante* tid_menor, tcbTripulante* tid_mayor) {
@@ -540,6 +547,7 @@ void funcion_sabotaje(){
 			list_add(lista_aux,tripulante);
 			i = -1;
 		}
+
 		list_sort(lista_aux, (void*) tid_anterior);
 
 		list_add_all(lista_bloq_emergencia, lista_aux);
@@ -554,9 +562,9 @@ void funcion_sabotaje(){
 				cambiar_estado(tripulante->socket_miram, tripulante, 'B');
 			}
 
-			tcbTripulante* tripu1 = malloc(sizeof(tcbTripulante));
+			tcbTripulante* tripu1;
 			tripu1 = (tcbTripulante*)list_get(lista_bloq_emergencia, 0);
-			tcbTripulante* tripu2 = malloc(sizeof(tcbTripulante));
+			tcbTripulante* tripu2;
 			int dif_x = abs(tripu1->posicionX - posx);
 			int dif_y = abs(tripu1->posicionY - posy);
 
@@ -574,7 +582,8 @@ void funcion_sabotaje(){
 
 			}
 			log_info(logger, "Tripu elegido: tid %d  posx %d  posy %d", tripu1->tid, tripu1->posicionX, tripu1->posicionY);
-			informar_atencion_sabotaje(tripu1);
+			informar_atencion_sabotaje(tripu1, posicion_sabotaje_char_2);
+
 			//mover al tripu1 que es el mas cercano
 			while(tripu1->posicionX != posx){ //muevo en X
 				int x_viejo = tripulante->posicionX;
@@ -603,18 +612,21 @@ void funcion_sabotaje(){
 			sleep(configuracion.duracion_sabotaje);
 			informar_sabotaje_resuelto(tripu1);
 
-			//enviar_header(FSCK, tripu1->socket_miram);
 			enviar_header(FSCK, tripu1->socket_mongo);
 
-			//char* mensaje_recibido = recibir_mensaje(tripu1->socket_miram);
-			char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
+			char* mensaje_recibido = recibir_mensaje(tripu1->socket_mongo);
 			free(mensaje_recibido);
 
 			if(configuracion.grado_multitarea > list_size(lista_bloq_emergencia)){
 				flag_sabotaje = list_size(lista_bloq_emergencia);
 			}
 
-			lista_tripulantes_ready = list_take_and_remove(lista_bloq_emergencia, list_size(lista_bloq_emergencia));
+			//lista_tripulantes_ready = list_take_and_remove(lista_bloq_emergencia, list_size(lista_bloq_emergencia));
+			for(int i=0; i < list_size(lista_bloq_emergencia); i++){
+				tripulante = (tcbTripulante*)list_remove(lista_bloq_emergencia, i);
+				list_add(lista_tripulantes_ready,tripulante);
+				i = -1;
+			}
 
 			for(int i=0; i < list_size(lista_tripulantes_ready); i++){
 				tripulante = (tcbTripulante*)list_get(lista_tripulantes_ready, i);
@@ -622,8 +634,7 @@ void funcion_sabotaje(){
 				sem_post(&LISTA_READY_NO_VACIA);
 			}
 
-			//free(tripu1);
-			//free(tripu2);
+			free(posicion_sabotaje_char_2);
 		}else{
 			log_info(logger, "no hay tripulantes disponibles para resolver sabotaje");
 			flag_sabotaje = 0;
@@ -631,9 +642,7 @@ void funcion_sabotaje(){
 
 		free(posicion_sabotaje_char);
 		sem_post(&CONTINUAR_PLANIFICACION);
-	}*/
-
-	//return 1;
+	}
 }
 
 void menu_discordiador() {
@@ -679,12 +688,10 @@ void menu_discordiador() {
 	uint32_t posy = 0;
 	flag_sabotaje = 0;
 	flag_fin = 0;
-	//tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
 	tcbTripulante* tripulante;
 
 	while(1){
 		t_paquete* paquete;
-		//tcbTripulante* tripulante = malloc(sizeof(tcbTripulante));
 		//char* nombreHilo = "";
 		char* leido = readline("Iniciar consola: ");
 		printf("\n");
@@ -981,147 +988,10 @@ INICIAR_PATOTA 5 tareas_corta.txt 3|4 9|2 4|5
 INICIAR_PATOTA 3 tareas_corta.txt 2|2 2|2 4|5
 INICIAR_PLANIFICACION
 */
-			case PRUEBA: //para probar el sabotaje por ahora
-				sem_wait(&CONTINUAR_PLANIFICACION);
-
-				//para probar mongo
-				enviar_header(PRUEBA, conexionMiRam);
-				char* posicion_sabotaje_char = recibir_mensaje(conexionMiRam);
-				log_info(logger, "posicion_sabotaje_char %s", posicion_sabotaje_char);
-
-				char* posicion_sabotaje_char_2 = malloc(strlen(posicion_sabotaje_char)+1);
-				strcpy(posicion_sabotaje_char_2, posicion_sabotaje_char);
-
-				int posx = atoi(strtok(posicion_sabotaje_char,"|"));
-			    int posy = atoi(strtok(NULL,""));
-				log_info(logger, "posx %d   posy %d", posx, posy);
-
-				flag_sabotaje = configuracion.grado_multitarea;
-
-				if(list_size(lista_tripulantes_trabajando) > 0){
-					//lista_bloq_emergencia = list_take_and_remove(lista_tripulantes_trabajando, list_size(lista_tripulantes_trabajando));
-					for(int i=0; i < list_size(lista_tripulantes_trabajando); i++){
-						tripulante = (tcbTripulante*)list_remove(lista_tripulantes_trabajando, i);
-						list_add(lista_bloq_emergencia,tripulante);
-						i = -1;
-					}
-				}
-
-			    bool tid_anterior(tcbTripulante* tid_menor, tcbTripulante* tid_mayor) {
-			        return tid_menor->tid < tid_mayor->tid;
-			    }
-
-			    list_sort(lista_bloq_emergencia, (void*) tid_anterior);
-
-				for(int i=0; i < list_size(lista_tripulantes_ready); i++){
-					tripulante = (tcbTripulante*)list_remove(lista_tripulantes_ready, i);
-					list_add(lista_aux,tripulante);
-					i = -1;
-				}
-				list_sort(lista_aux, (void*) tid_anterior);
-
-				list_add_all(lista_bloq_emergencia, lista_aux);
-				list_clean(lista_aux);
-
-
-				if(list_size(lista_bloq_emergencia) > 0){
-					log_info(logger, "lista bloq emer");
-					for(int i=0; i < list_size(lista_bloq_emergencia); i++){
-						tripulante = (tcbTripulante*)list_get(lista_bloq_emergencia, i);
-						log_info(logger, "tid %d  posx %d  posy %d", tripulante->tid, tripulante->posicionX, tripulante->posicionY);
-						cambiar_estado(tripulante->socket_miram, tripulante, 'B');
-					}
-
-					//tcbTripulante* tripu1 = malloc(sizeof(tcbTripulante));
-					tcbTripulante* tripu1;
-					tripu1 = (tcbTripulante*)list_get(lista_bloq_emergencia, 0);
-					//tcbTripulante* tripu2 = malloc(sizeof(tcbTripulante));
-					tcbTripulante* tripu2;
-					int dif_x = abs(tripu1->posicionX - posx);//NO ES 5, ES LO Q RECIBA DE POSICION
-					int dif_y = abs(tripu1->posicionY - posy);
-
-					for(int i=1; i < list_size(lista_bloq_emergencia); i++){
-						tripu2 = (tcbTripulante*)list_get(lista_bloq_emergencia, i);
-
-						int dif_x_2 = abs(tripu2->posicionX - posx);
-						int dif_y_2 = abs(tripu2->posicionY - posy);
-
-						if( dif_x + dif_y >= dif_x_2 + dif_y_2 ){ //esta mas cerca el segundo
-							dif_x = dif_x_2;
-							dif_y = dif_y_2;
-							tripu1 = tripu2;
-						}
-
-					}
-					log_info(logger, "Tripu elegido: tid %d  posx %d  posy %d", tripu1->tid, tripu1->posicionX, tripu1->posicionY);
-					informar_atencion_sabotaje(tripu1, posicion_sabotaje_char_2);
-					//mover al tripu1 que es el mas cercano
-					while(tripu1->posicionX != posx){ //muevo en X
-						int x_viejo = tripulante->posicionX;
-						if(tripu1->posicionX > posx){ //mayor a la posicion del sabotaje -> se mueve para la izq
-							tripu1->posicionX--;
-						} else{
-							tripu1->posicionX++;
-						}
-						informar_movimiento(tripu1->socket_miram, tripu1);
-						informar_movimiento_mongo_X (tripu1, x_viejo);
-						sleep(configuracion.retardo_cpu);
-					}
-
-					while(tripu1->posicionY != posy){ //muevo en Y
-						int y_viejo = tripulante->posicionY;
-						if(tripu1->posicionY > posy){ //mayor a la posicion del sabotaje -> se mueve para abajo
-							tripu1->posicionY--;
-						} else{
-							tripu1->posicionY++;
-						}
-						informar_movimiento(tripu1->socket_miram, tripu1);
-						informar_movimiento_mongo_Y (tripu1, y_viejo);
-						sleep(configuracion.retardo_cpu);
-					}
-
-					sleep(configuracion.duracion_sabotaje);
-					informar_sabotaje_resuelto(tripu1);
-
-					enviar_header(FSCK, tripu1->socket_miram);
-					//enviar_header(FSCK, tripu1->socket_mongo);
-
-					char* mensaje_recibido = recibir_mensaje(tripu1->socket_miram);
-					//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
-					free(mensaje_recibido);
-
-					if(configuracion.grado_multitarea > list_size(lista_bloq_emergencia)){
-						flag_sabotaje = list_size(lista_bloq_emergencia);
-					}
-
-					//lista_tripulantes_ready = list_take_and_remove(lista_bloq_emergencia, list_size(lista_bloq_emergencia));
-					for(int i=0; i < list_size(lista_bloq_emergencia); i++){
-						tripulante = (tcbTripulante*)list_remove(lista_bloq_emergencia, i);
-						list_add(lista_tripulantes_ready,tripulante);
-						i = -1;
-					}
-
-
-					for(int i=0; i < list_size(lista_tripulantes_ready); i++){
-						tripulante = (tcbTripulante*)list_get(lista_tripulantes_ready, i);
-						cambiar_estado(tripulante->socket_miram, tripulante, 'R');
-						sem_post(&LISTA_READY_NO_VACIA);
-					}
-
-					free(posicion_sabotaje_char_2);
-				}else{
-					log_info(logger, "no hay tripulantes disponibles para resolver sabotaje");
-					flag_sabotaje = 0;
-				}
-
-				free(posicion_sabotaje_char);
-				sem_post(&CONTINUAR_PLANIFICACION);
-				break;
-
 			case FIN:
 				paquete = crear_paquete(FIN);
 				enviar_paquete(paquete, conexionMiRam);
-				//enviar_paquete(paquete, conexionMongoStore);
+				enviar_paquete(paquete, conexionMongoStore);
 				eliminar_paquete(paquete);
 				//enviar_header(SALIR_MONGO, conexionMongoStore);
 				flag_fin = 1;   //VER SI HACE FALTA TODO ESTO. LO HAGO POR LO DE LA MEMORIA PERO CAPAZ NI HACE FALTA.

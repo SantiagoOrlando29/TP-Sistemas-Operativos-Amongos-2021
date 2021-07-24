@@ -33,14 +33,7 @@ int main(void)
 		log_info(logger, "Falla al crearse el hilo");
 	}
 
-	pthread_t servidor_sabotaje;
-	if((pthread_create(&servidor_sabotaje,NULL,(void*)iniciar_servidor2,&configuracion))!=0){
-		log_info(logger, "Falla al crearse el hilo 2");
-	}
-
 	pthread_join(servidor,NULL);
-	pthread_join(servidor_sabotaje,NULL);
-
 
 	return 0;
 }
@@ -62,9 +55,6 @@ void leer_config(){
     configuracion.criterio_seleccion = config_get_string_value(archConfig, "CRITERIO_SELECCION");
     //Parametros utiles (No obtenidos del archivo de configuracion)
     configuracion.cant_marcos=0;
-
-    //para prbar mongo:
-    configuracion.posiciones_sabotaje = config_get_array_value(archConfig,"POSICIONES_SABOTAJE");
 }
 
 

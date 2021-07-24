@@ -585,11 +585,9 @@ void informar_movimiento_mongo_X (tcbTripulante* tripulante, int x_viejo){
 
 	agregar_a_paquete(paquete, a_enviar, strlen(a_enviar)+1);
 
-	//enviar_paquete(paquete, tripulante->socket_mongo);
-	enviar_paquete(paquete, tripulante->socket_miram);
+	enviar_paquete(paquete, tripulante->socket_mongo);
 
-	char* mensaje_recibido = recibir_mensaje(tripulante->socket_miram);
-
+	char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
 	free(mensaje_recibido);
 
 	eliminar_paquete(paquete);
@@ -633,11 +631,9 @@ void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo){
 
 	agregar_a_paquete(paquete, a_enviar, strlen(a_enviar)+1);
 
-	//enviar_paquete(paquete, tripulante->socket_mongo);
-	enviar_paquete(paquete, tripulante->socket_miram);
+	enviar_paquete(paquete, tripulante->socket_mongo);
 
-	char* mensaje_recibido = recibir_mensaje(tripulante->socket_miram);
-
+	char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
 	free(mensaje_recibido);
 
 	eliminar_paquete(paquete);
@@ -663,12 +659,9 @@ void informar_inicio_tarea(tcbTripulante* tripulante){
 
 	agregar_a_paquete(paquete, a_enviar, strlen(a_enviar)+1);
 
-	//enviar_paquete(paquete, tripulante->socket_mongo);
-	enviar_paquete(paquete, tripulante->socket_miram);
+	enviar_paquete(paquete, tripulante->socket_mongo);
 
-	//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
-	char* mensaje_recibido = recibir_mensaje(tripulante->socket_miram);
-
+	char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
 	free(mensaje_recibido);
 
 	eliminar_paquete(paquete);
@@ -690,11 +683,9 @@ void informar_fin_tarea(tcbTripulante* tripulante){
 	strcat(a_enviar, nombre_tarea);
 	agregar_a_paquete(paquete, a_enviar, strlen(a_enviar)+1);
 
-	//enviar_paquete(paquete, tripulante->socket_mongo);
-	enviar_paquete(paquete, tripulante->socket_miram);
+	enviar_paquete(paquete, tripulante->socket_mongo);
 
-	//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
-	char* mensaje_recibido = recibir_mensaje(tripulante->socket_miram);
+	char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
 
 	free(mensaje_recibido);
 
@@ -728,12 +719,9 @@ void informar_atencion_sabotaje(tcbTripulante* tripulante, char* posicion_char){
 
 	agregar_a_paquete(paquete, a_enviar, strlen(a_enviar)+1);
 
-	//enviar_paquete(paquete, tripulante->socket_mongo);
-	enviar_paquete(paquete, tripulante->socket_miram);
+	enviar_paquete(paquete, tripulante->socket_mongo);
 
-	//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
-	char* mensaje_recibido = recibir_mensaje(tripulante->socket_miram);
-
+	char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
 	free(mensaje_recibido);
 
 	eliminar_paquete(paquete);
@@ -754,12 +742,9 @@ void informar_sabotaje_resuelto(tcbTripulante* tripulante){
 
 	agregar_a_paquete(paquete, a_enviar, strlen(a_enviar)+1);
 
-	//enviar_paquete(paquete, tripulante->socket_mongo);
-	enviar_paquete(paquete, tripulante->socket_miram);
+	enviar_paquete(paquete, tripulante->socket_mongo);
 
-	//char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
-	char* mensaje_recibido = recibir_mensaje(tripulante->socket_miram);
-
+	char* mensaje_recibido = recibir_mensaje(tripulante->socket_mongo);
 	free(mensaje_recibido);
 
 	eliminar_paquete(paquete);
@@ -777,12 +762,9 @@ void mongo_tarea(tcbTripulante* tripu){
 
 	agregar_a_paquete(paquete, parametro_char, strlen(parametro_char)+1);
 
-	enviar_paquete(paquete, tripu->socket_miram);
-	//enviar_paquete(paquete, tripu->socket_mongo);
+	enviar_paquete(paquete, tripu->socket_mongo);
 
-	//char* mensaje_recibido = recibir_mensaje(tripu->socket_mongo);
-	char* mensaje_recibido = recibir_mensaje(tripu->socket_miram);
-
+	char* mensaje_recibido = recibir_mensaje(tripu->socket_mongo);
 	free(mensaje_recibido);
 
 	eliminar_paquete(paquete);
