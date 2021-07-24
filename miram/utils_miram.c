@@ -3379,6 +3379,9 @@ void swap_pagina(void* contenidoAEscribir,int numDeBloque){
 	fseek(swapfile,numDeBloque*configuracion.tamanio_pag*sizeof(char),SEEK_SET);
 	//char* aux = malloc(configuracion.tamanio_pag*sizeof(char));
 	//aux=completarBloque(contenidoAEscribir);
+	void * leido = calloc(configuracion.tamanio_pag, 1);
+	fwrite(leido, sizeof(char)*configuracion.tamanio_pag, 1, swapfile);
+
 	fwrite(contenidoAEscribir,sizeof(char)*configuracion.tamanio_pag,1,swapfile);
 	//free(aux);
 	fclose(swapfile);

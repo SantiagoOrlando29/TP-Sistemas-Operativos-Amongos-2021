@@ -1297,7 +1297,7 @@ void cadena_agregar_entero_a_lista_de_enteros(char** lista_de_enteros, int enter
 	{
 		string_append_with_format(lista_de_enteros, "%d]", entero);
 	}
-	log_debug(logger, "Entero %d agregado a lista_de_enteros quedando %s", *lista_de_enteros);
+	//log_debug(logger, "Entero %d agregado a lista_de_enteros quedando %s", *lista_de_enteros);  OJO QUE NOSE SI ANDA BIENN. IMPRIME RARO.
 }
 
 //Saca el ultimo caracter a una cadena de caracteres redimensionando el espacio de memoria
