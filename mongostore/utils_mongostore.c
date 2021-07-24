@@ -794,7 +794,10 @@ void blocks_actualizar_archivo()
 	log_debug(logger, "I-Se ingresa a blocks_actualizar_archivo");
 	msync(blocks_address, blocks_size, MS_SYNC);
 	log_debug(logger, "O-Archivo Blocks.ims actualizado con los valores de la memoria");
+
 }
+
+
 
 //Actualiza la metadata del recurso en memoria al archivo. Si este no existe lo crea con los valores actualizados
 void recurso_actualizar_archivo(t_recurso_data* recurso_data)
@@ -1674,12 +1677,11 @@ void funcion_cliente(int socket_cliente)
 
 	if(no_es_discordiador){
 
-		bitacora_crear_archivo(numero_tripulante);
+		bitacora_crear_archivo(numero_tripulante); //Crear default
 		numero_tripulante++;
 	}
 
 	no_es_discordiador = 1;
-
 
 
 	while(1)
@@ -1725,13 +1727,11 @@ void funcion_cliente(int socket_cliente)
 				lista = recibir_paquete(socket_cliente);
 				tripulante_id = (int)atoi(list_get(lista,0));
 				char* mens = list_get(lista,1);
-				if(list_size(lista) == 3){
-					char* mens2 = list_get(lista,2);
-					//strcat(mens, mens2);
-					log_info(logger, "tid %d  %s%s",tripulante_id, mens, mens2);
-				}else{
-					log_info(logger, "tid %d  %s",tripulante_id, mens);
-				}
+				log_info(logger, "tid %d  %s",tripulante_id, mens);  //Mens es lo que hay que cargar en blocks
+
+				//Nos devuelve que bloques usa
+				//strlength del mens es el ++ size en el archivo
+
 
 				char* mensaje = "ok";
 				enviar_mensaje(mensaje, socket_cliente);
@@ -1886,4 +1886,55 @@ void bitacora_crear_archivo(int numero_tripulante){
 
 }
 
+/*void escribir_bitacora_en_blocks(char* string_bitacora)
+{
+	log_debug(logger, "I-Se ingresa a escribir_bitacora_en_blocks con string_bitacora %s", string_bitacora);
 
+	int posicion_en_bloque = recurso_md->size % superbloque.block_size;
+	int posicion_inicio_bloque = bloque * superbloque.block_size; //se toma en cuenta que los bloques comienzan en 0
+	char* posicion_absoluta = blocks_address + posicion_inicio_bloque + posicion_en_bloque; //esta ok sumar un puntero con 2 ints?
+
+	log_debug(logger, "Posicion_en_bloque %d, posicion_inicio_bloque %d posicion block_addres %p posicion absoluta %p",
+			posicion_en_bloque, posicion_inicio_bloque, blocks_address, posicion_absoluta);
+
+	char caracter_llenado = recurso_md->caracter_llenado[0];
+
+	while(mientras haya caracteres del string)
+	{
+		while(mientras haya espacio en bloque){
+
+			*posicion_absoluta = *posicion_string;
+
+			(*cantidad)--;
+			recurso_md->size++;
+			posicion_absoluta++;
+			posicion_en_bloque++;
+		}
+	}
+
+	log_debug(logger, "O-Se cargo en bloque %d con caracter %s quedando por cargar %d recurso(s)", bloque, recurso_md->caracter_llenado, *cantidad);
+	verificar_superbloque_temporal(); //borrar
+}
+
+void bitacora_validar_existencia_metadata_en_memoria(char* path)
+{
+	log_debug(logger, "I-Entro a bitacora_validar_existencia_metadata_en_memoria para ruta %s", recurso_data->nombre);
+
+	if(recurso_data->metadata == NULL)
+	{
+		recurso_data->metadata = malloc(sizeof(t_recurso_md));
+
+		recurso_data->metadata->caracter_llenado = string_from_format("%c", recurso_data->caracter_llenado);
+
+		if(existe_en_disco(recurso_data->ruta_completa))
+		{
+			metadata_levantar_de_archivo_a_memoria_valores_variables(recurso_data->metadata, recurso_data->ruta_completa);
+		}
+		else
+		{
+			metadata_setear_con_valores_default_en_memoria(recurso_data->metadata);
+		}
+	}
+
+	log_debug(logger, "O-Existencia de metadata para el recurso %s validada", recurso_data->nombre);
+}*/

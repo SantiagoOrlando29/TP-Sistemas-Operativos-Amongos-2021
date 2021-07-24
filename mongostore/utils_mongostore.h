@@ -69,6 +69,17 @@ typedef struct {
 	t_recurso_md* metadata;
 } t_recurso_data;
 
+typedef struct {
+	int num_tripulante;
+	char* ruta_completa;
+	t_bitacora_md* metadata;
+} t_bitacora_data;
+
+typedef struct {
+	int size;
+	char* blocks;
+} t_bitacora_md;
+
 typedef enum {
 	OXIGENO,
 	COMIDA,
