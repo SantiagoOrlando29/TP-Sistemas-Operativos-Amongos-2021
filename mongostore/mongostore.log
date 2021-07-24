@@ -1260,3 +1260,67 @@
 [INFO] 20:14:47:532 mongostore/(18547:18602): tarea CONSUMIR_OXIGENO  param 4
 [INFO] 20:14:47:533 mongostore/(18547:18598): tid 1  Comienza ejecución de tarea CONSUMIR_OXIGENO
 [INFO] 20:14:47:533 mongostore/(18547:18600): tid 2  Se mueve de 4|4 a 5|4
+[DEBUG] 01:55:56:461 mongostore/(5930:5930): LOGGER OK
+[INFO] 01:55:56:464 mongostore/(5930:5930): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 01:55:56:464 mongostore/(5930:5930): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 01:55:56:464 mongostore/(5930:5930): Info-Comienza iniciar_file_system
+[DEBUG] 01:55:56:478 mongostore/(5930:5930): I-Se ingresa a superbloque_validar_existencia
+[DEBUG] 01:55:56:479 mongostore/(5930:5930): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 01:55:56:479 mongostore/(5930:5930): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 3
+[INFO] 01:55:56:479 mongostore/(5930:5930): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 01:55:56:479 mongostore/(5930:5930): O-Superbloque generado desde archivo
+[DEBUG] 01:55:56:480 mongostore/(5930:5930): I-Se ingresa a superbloque_mapear_archivo_a_memoria
+[DEBUG] 01:55:56:480 mongostore/(5930:5930): I-Se ingresa a superbloque_actualizar_archivo
+[INFO] 01:55:56:480 mongostore/(5930:5930): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 01:55:56:485 mongostore/(5930:5930): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 01:55:56:485 mongostore/(5930:5930): O-Archivo SuperBloque.ims actualizado
+[DEBUG] 01:55:56:486 mongostore/(5930:5930): O-Superbloque mapeado del archivo a la memoria
+[DEBUG] 01:55:56:486 mongostore/(5930:5930): O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap
+[INFO] 01:55:56:487 mongostore/(5930:5930): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 01:55:56:490 mongostore/(5930:5930): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 01:55:56:491 mongostore/(5930:5930): Info-Se ingresa a blocks_validar_existencia
+[DEBUG] 01:55:56:491 mongostore/(5930:5930): I-Se ingresa a blocks_validar_existencia_del_archivo
+[DEBUG] 01:55:56:491 mongostore/(5930:5930): O-Existencia del archivo Blocks.ims validada
+[DEBUG] 01:55:56:491 mongostore/(5930:5930): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 01:55:56:492 mongostore/(5930:5930): O-Blocks mapeado del archivo a la memoria
+[INFO] 01:55:56:492 mongostore/(5930:5930): Existencia de Blocks validada
+[DEBUG] 01:55:56:492 mongostore/(5930:5930): Directorios del File System confirmados
+[INFO] 01:55:56:493 mongostore/(5930:5930): File System iniciado
+[INFO] 01:55:56:493 mongostore/(5930:5930): pid 5930  
+
+[INFO] 01:55:56:502 mongostore/(5930:5932): Servidor iniciando 2
+[INFO] 01:55:56:503 mongostore/(5930:5932): Servidor Mongo2 encendido
+[INFO] 01:55:56:503 mongostore/(5930:5931): Servidor iniciando
+[INFO] 01:55:56:503 mongostore/(5930:5931): Servidor Mongo encendido
+[DEBUG] 02:09:20:176 mongostore/(6075:6075): LOGGER OK
+[INFO] 02:09:22:057 mongostore/(6075:6075): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 02:09:22:201 mongostore/(6075:6075): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 02:09:22:215 mongostore/(6075:6075): Info-Comienza iniciar_file_system
+[DEBUG] 02:09:22:288 mongostore/(6075:6075): I-Se ingresa a superbloque_validar_existencia
+[DEBUG] 02:09:22:320 mongostore/(6075:6075): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 02:09:22:394 mongostore/(6075:6075): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 3
+[INFO] 02:09:22:493 mongostore/(6075:6075): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 02:09:22:522 mongostore/(6075:6075): O-Superbloque generado desde archivo
+[DEBUG] 02:09:22:538 mongostore/(6075:6075): I-Se ingresa a superbloque_mapear_archivo_a_memoria
+[DEBUG] 02:09:22:604 mongostore/(6075:6075): I-Se ingresa a superbloque_actualizar_archivo
+[INFO] 02:09:22:622 mongostore/(6075:6075): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 02:09:22:691 mongostore/(6075:6075): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[DEBUG] 02:09:22:716 mongostore/(6075:6075): O-Archivo SuperBloque.ims actualizado
+[DEBUG] 02:09:22:734 mongostore/(6075:6075): O-Superbloque mapeado del archivo a la memoria
+[DEBUG] 02:09:22:756 mongostore/(6075:6075): O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap
+[INFO] 02:09:22:800 mongostore/(6075:6075): PARA DEBUG SB.B_S 11 Y SB.BLOCKS 17 y en archivo SB.B_S 11 Y SB.BLOCKS 17
+[INFO] 02:09:22:837 mongostore/(6075:6075): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 02:09:22:860 mongostore/(6075:6075): Info-Se ingresa a blocks_validar_existencia
+[DEBUG] 02:09:22:916 mongostore/(6075:6075): I-Se ingresa a blocks_validar_existencia_del_archivo
+[DEBUG] 02:09:22:941 mongostore/(6075:6075): O-Existencia del archivo Blocks.ims validada
+[DEBUG] 02:09:22:955 mongostore/(6075:6075): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 02:09:22:989 mongostore/(6075:6075): O-Blocks mapeado del archivo a la memoria
+[INFO] 02:09:23:022 mongostore/(6075:6075): Existencia de Blocks validada
+[DEBUG] 02:09:23:068 mongostore/(6075:6075): Directorios del File System confirmados
+[INFO] 02:09:23:076 mongostore/(6075:6075): File System iniciado
+[INFO] 02:09:23:123 mongostore/(6075:6075): pid 6075  
+
+[INFO] 02:09:23:500 mongostore/(6075:6076): Servidor iniciando
+[INFO] 02:09:23:517 mongostore/(6075:6077): Servidor iniciando 2
+[INFO] 02:09:23:877 mongostore/(6075:6076): Servidor Mongo encendido
+[INFO] 02:09:23:891 mongostore/(6075:6077): Servidor Mongo2 encendido

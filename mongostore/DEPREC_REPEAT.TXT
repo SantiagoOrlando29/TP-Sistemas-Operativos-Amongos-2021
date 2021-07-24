@@ -1,0 +1,269 @@
+/*
+//DEPREC Calcula y setea el tamanio del superbloque
+void superbloque_setear_tamanio()
+{
+	superbloque_size = sizeof(uint32_t) + sizeof(uint32_t) + bitmap_size;
+}
+
+//DEPREC Mapea a memoria el contenido del archivo SuperBloque.ims
+void superbloque_mapear_archivo_a_memoria()
+{
+	log_debug(logger, "I-Se ingresa a superbloque_mapear_archivo_a_memoria");
+
+	int superbloque_fd = abrir_archivo_para_lectura_escritura(superbloque_path);
+
+	size_t superbloque_size = sizeof(superbloque.block_size) + sizeof(superbloque.blocks) + bitmap_size;
+
+	superbloque_address = mmap(NULL, superbloque_size, PROT_WRITE | PROT_READ, MAP_SHARED, superbloque_fd, 0);
+
+	close(superbloque_fd);
+	memcpy(superbloque_address, &superbloque_size, 4);
+	superbloque_actualizar_archivo();
+	log_debug(logger, "O-Superbloque mapeado del archivo a la memoria");
+	log_debug(logger, "O-Superbloque mapeado del archivo a la memoria se agrego algo al bitmap");
+}
+
+//DEPREC Carga el mapeo del archivo los datos existentes en la estructura del superbloque
+void superbloque_cargar_mapeo_desde_estructura()
+{
+	int desplazamiento = 0;
+	memcpy(superbloque_address + desplazamiento, &superbloque.block_size, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(superbloque_address + desplazamiento, &superbloque.blocks, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(superbloque_address + desplazamiento, superbloque.bitmap, bitmap_size);
+}
+
+//DEPREC Sincroniza de manera forzosa SuperBloque.ims con el espacio de memoria mapeado
+void superbloque_actualizar_archivo()
+{
+	log_debug(logger, "I-Se ingresa a superbloque_actualizar_archivo");
+	verificar_superbloque_temporal(); //borrar
+	msync(superbloque_address, superbloque_size, MS_SYNC);
+	verificar_superbloque_temporal(); //borrar
+	log_debug(logger, "O-Archivo SuperBloque.ims actualizado");
+
+}
+
+//DEPREC Da el tamanio indicado por length al archivo dado por la ruta path. Finaliza si no puede realizarse con exito
+//Mapea a memoria el contenido del archivo Blocks.ims
+void blocks_mapear_archivo_a_memoria()
+{
+	log_debug(logger, "I-Se ingresa a blocks_mapear_archivo_a_memoria");
+
+	int blocks_fd = abrir_archivo_para_lectura_escritura(blocks_path);
+
+	blocks_address = mmap(NULL, blocks_size, PROT_WRITE | PROT_READ, MAP_SHARED, blocks_fd, 0);
+
+	close(blocks_fd);
+
+	log_debug(logger, "O-Blocks mapeado del archivo a la memoria");
+}
+
+//DEPREC O REPETIDA Verifica si el ultimo bloque usado por el recurso tiene espacio disponible
+int metadata_tiene_espacio_en_ultimo_bloque(t_recurso_md* recurso_md)
+{
+	log_debug(logger, "I-Ingreso a metadata_tiene_espacio_en_ultimo_bloque con SIZE %d, BLOCKS %s y superbloque.block_size %d",
+			recurso_md->size, recurso_md->blocks, superbloque.block_size);
+
+	int cantidad_bloques = cadena_cantidad_elementos_en_lista(recurso_md->blocks);
+	log_debug(logger, "O-Cantidad de bloques %d y tiene espacio en ultimo bloque: %d", cantidad_bloques, recurso_md->size < cantidad_bloques * superbloque.block_size);
+	return (recurso_md->size < cantidad_bloques * superbloque.block_size);
+}
+
+//REPEATED Calcula la cantidad de elementos de una lista en formato de cadena de texto. Ej: "[algo, y, otro, algo]" => 4 o "[4,6]" => 2
+int cadena_cantidad_elementos_en_lista(char* cadena)
+{
+	char** lista = string_get_string_as_array(cadena);
+	//int posicion; for(posicion = 0; lista[posicion] != NULL; posicion++); //alter
+	int posicion = -1;
+	while(lista[++posicion] != NULL);
+	cadena_eliminar_array_de_cadenas(&lista, posicion);
+
+	log_debug(logger, "IO-En cadena_cantidad_elementos_en_lista, la cantidad de elementos en cadena %s es %d", cadena, posicion);
+	return posicion;
+}
+
+//REPEATED Elimina un array con la cantidad de cadenas dada liberando la memoria
+void cadena_eliminar_array_de_cadenas(char*** puntero_a_array_de_punteros, int cantidad_cadenas)
+{
+	for(int i = 0; i < cantidad_cadenas; i++)
+	{
+		free((*puntero_a_array_de_punteros)[i]);
+	}
+
+	free(*puntero_a_array_de_punteros);
+	*puntero_a_array_de_punteros = NULL;
+}
+
+//DEPREC OR REPEATED Devuelve el ultimo bloque registrado en la lista de Blocks del metadata del recurso
+int metadata_ultimo_bloque_usado(t_recurso_md* recurso_md)
+{
+	log_debug(logger, "I-Ingreso a metadata_ultimo_bloque_usado con BLOCKS %s", recurso_md->blocks);
+
+	char** lista_bloques = string_get_string_as_array(recurso_md->blocks);
+
+	int cantidad_bloques = cadena_cantidad_elementos_en_lista(recurso_md->blocks);
+
+	int ultimo_bloque = atoi(lista_bloques[cantidad_bloques - 1]); //Probar strtol(data, NULL, 10);
+
+	cadena_eliminar_array_de_cadenas(&lista_bloques, cantidad_bloques);
+
+	log_debug(logger, "O-Ultimo_bloque usado %d", ultimo_bloque);
+	verificar_superbloque_temporal(); //borrar
+	return ultimo_bloque;
+}
+
+//Carga recursos en el bloque dado hasta que no quede espacio en el o no hayan mas recursos para cargar
+void metadata_cargar_en_bloque(t_recurso_md* recurso_md, int* cantidad, int bloque)
+{
+	log_debug(logger, "I-Se ingresa a recurso_cargar_en_bloque con caracter %s, cantidad %d y bloque %d", recurso_md->caracter_llenado, *cantidad, bloque);
+
+	int posicion_en_bloque = recurso_md->size % superbloque.block_size;
+	int posicion_inicio_bloque = bloque * superbloque.block_size; //se toma en cuenta que los bloques comienzan en 0
+	char* posicion_absoluta = blocks_address + posicion_inicio_bloque + posicion_en_bloque; //esta ok sumar un puntero con 2 ints?
+
+	log_debug(logger, "Posicion_en_bloque %d, posicion_inicio_bloque %d posicion block_addres %p posicion absoluta %p",
+			posicion_en_bloque, posicion_inicio_bloque, blocks_address, posicion_absoluta);
+
+	char caracter_llenado = recurso_md->caracter_llenado[0];
+
+	while(posicion_en_bloque < superbloque.block_size && (*cantidad) > 0)
+	{
+		*posicion_absoluta = caracter_llenado;
+
+		(*cantidad)--;
+		recurso_md->size++;
+		posicion_absoluta++;
+		posicion_en_bloque++;
+	}
+
+	log_debug(logger, "O-Se cargo en bloque %d con caracter %s quedando por cargar %d recurso(s)", bloque, recurso_md->caracter_llenado, *cantidad);
+	verificar_superbloque_temporal(); //borrar
+}
+
+//ALTER Carga recursos en el bloque dado hasta que no quede espacio en el o no hayan mas recursos para cargar
+void metadata_cargar_en_bloque2(t_recurso_md* recurso_md, int* cantidad, int bloque)
+{
+	log_debug(logger, "I-Se ingresa a recurso_cargar_en_bloque con caracter %s, cantidad %d y bloque %d", recurso_md->caracter_llenado, cantidad, bloque);
+
+	int posicion_en_bloque = recurso_md->size % superbloque.block_size;
+	int posicion_inicio_bloque = bloque * superbloque.block_size; //se toma en cuenta que los bloques comienzan en 0
+	char* posicion_absoluta = blocks_address + posicion_inicio_bloque + posicion_en_bloque; //esta ok sumar un puntero con 2 ints?
+
+	log_debug(logger, "Posicion_en_bloque %d, posicion_inicio_bloque %d posicion absoluta %p o %d",
+			posicion_en_bloque, posicion_inicio_bloque, posicion_absoluta, posicion_absoluta);
+
+	char caracter_llenado = recurso_md->caracter_llenado[0];
+
+	int espacio_libre_en_bloque = superbloque.block_size - posicion_en_bloque;
+	int cantidad_a_cargar = espacio_libre_en_bloque < *cantidad ? espacio_libre_en_bloque : *cantidad;
+	*cantidad -= cantidad_a_cargar;
+
+	memset(posicion_absoluta, caracter_llenado, cantidad_a_cargar);
+
+	recurso_md->size += cantidad_a_cargar;
+
+	log_debug(logger, "O-Se cargo en bloque con caracter %s quedando por cargar %d recurso(s)", bloque, recurso_md->caracter_llenado, cantidad);
+}
+
+//Agrega a la lista de blocks de la metadata un bloque nuevo obtenido a traves del bitmap del superbloque y a su vez lo devuelve
+void metadata_agregar_bloque_a_lista_de_blocks(t_recurso_md* recurso_md, int bloque)
+{
+	log_debug(logger, "I-Se ingresa a metadata_agregar_bloque_a_lista_de_blocks con blocks %s, block_count %d y bloque a agregar %d",
+			recurso_md->blocks, recurso_md->block_count, bloque);
+	int cantidad_bloques_original = cadena_cantidad_elementos_en_lista(recurso_md->blocks);
+	cadena_sacar_ultimo_caracter(recurso_md->blocks);
+
+	if(cantidad_bloques_original != 0)
+	{
+		string_append_with_format(&recurso_md->blocks, ",%d]", bloque);
+	}
+	else
+	{
+		string_append_with_format(&recurso_md->blocks, "%d]", bloque);
+	}
+	recurso_md->block_count++;
+
+	log_debug(logger, "O-Se agrega bloque libre %d a blocks quedando BLOCK_COUNT %d y BLOCKS %s",
+			bloque, recurso_md->block_count, recurso_md->blocks);
+}
+
+//DEPREC Abre el archivo indicado por path para escritura retornando el puntero a FILE. Finaliza en caso de error
+FILE* abrir_archivo_para_escritura(char* path)
+{
+	FILE* file = fopen(path, "w");
+
+	if(file == NULL)
+	{
+		log_error(logger, "%s no pudo ser abierto para escritura. Se finaliza el programa", path);
+		exit(EXIT_FAILURE);
+	}
+
+	return file;
+}
+
+//DEPREC Genera la estructura en memoria del superbloque tomando los valores de block_size y blocks por consola
+void superbloque_generar_estructura_con_valores_ingresados_por_consola()
+{
+	log_debug(logger, "I-Se ingresa a superbloque_generar_estructura_con_valores_ingresados_por_consola");
+
+	//Obtencion de block_size y blocks por consola que se guardan directamente en la estructura superbloque
+	//superbloque_tomar_valores_desde_consola();
+
+	superbloque_asignar_memoria_a_bitmap();
+	superbloque_setear_bitmap_a_cero();
+
+	log_debug(logger, "O-Superbloque generado con valores ingresados por consola");
+}
+
+//DEPRE//Verifica la existencia de la estructura superbloque, el archivo SuperBloque.ims y de su mapeo a la memoria. Si no existieran se generan
+void superbloque_validar_existencia_0()
+{
+	log_debug(logger, "Info-Se ingresa a superbloque_validar_existencia");
+
+	//superbloque_generar_estructura();
+	superbloque_validar_existencia_del_archivo();
+	superbloque_mapear_archivo_a_memoria();
+
+
+}
+
+//DEPREC Verifico si existe el archivo del superbloque y si no existe se crea con los valores de la estructura superbloque generada
+void superbloque_validar_existencia_del_archivo()
+{
+	log_debug(logger, "I-Se ingresa a superbloque_validar_existencia_del_archivo");
+
+	if(existe_en_disco(superbloque_path) == 0)
+	{
+		crear_archivo(superbloque_path);
+		superbloque_cargar_archivo();
+	}
+	verificar_superbloque_temporal(); //borrar
+	log_debug(logger, "O-Existencia del archivo SuperBloque.ims validada");
+}
+
+//DEPREC Se carga el archivo SuperBloque.ims con los valores de la estructura superbloque
+void superbloque_cargar_archivo()
+{
+	log_debug(logger, "I-Se ingresa a superbloque_cargar_archivo");
+
+	int superbloque_fd;
+	superbloque_fd = abrir_archivo_para_lectura_escritura(superbloque_path);
+
+	int desplazamiento = 0;
+	lseek(superbloque_fd, desplazamiento, SEEK_SET);
+	write(superbloque_fd, &superbloque.block_size, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	lseek(superbloque_fd, desplazamiento, SEEK_SET);
+	write(superbloque_fd, &superbloque.blocks, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	lseek(superbloque_fd, desplazamiento, SEEK_SET);
+	write(superbloque_fd, superbloque.bitmap, bitmap_size);
+
+	close(superbloque_fd);
+	verificar_superbloque_temporal(); //borrar
+	log_debug(logger, "O-Archivo SuperBloque.ims cargado");
+}
+
+ */

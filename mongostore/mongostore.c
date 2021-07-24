@@ -45,10 +45,3 @@ int main(void)
 
 	return EXIT_SUCCESS;
 }
-
-//TODO BITACORA, SIGNAL (LINKEADO A mandar_primer_ubicacion_sabotaje)
-
-//TODO EN UTILS.C EN DESARROLLO FSCK Y CONSUMIR_RECURSO (NO TERMINADO 2)
-
-
-
