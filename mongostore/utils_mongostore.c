@@ -10,9 +10,9 @@ t_recurso_data lista_recursos[] = {
 int variable_servidor = -1;
 int socket_servidor;
 int cant_sabotaje = 0;
-int primer_hilo = 0;
 int socket_cliente_sabotaje = 0;
 int numero_tripulante = 1;
+int hilo_discordiador = 1;
 
 
 //FUNCIONES MAS RECIENTES (AGUS + SANTI)
@@ -99,12 +99,9 @@ int recibir_operacion(int socket_cliente)
     }
 }
 
-void iniciar_servidor(t_configuracion* config_servidor)
+void iniciar_servidor()
 {
-
 	log_info(logger, "Servidor iniciando");
-
-	//int socket_servidor;
 
     struct addrinfo hints, *servinfo, *p;
 
@@ -148,10 +145,6 @@ void iniciar_servidor(t_configuracion* config_servidor)
 
 		socket_cliente = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
 
-		if(primer_hilo == 0){
-			primer_hilo = 1;
-		}
-
 		if(socket_cliente>0){
 			hilo ++ ;
 			log_info(logger, "Estableciendo conexión desde %d", dir_cliente.sin_port);
@@ -169,7 +162,7 @@ void iniciar_servidor(t_configuracion* config_servidor)
 
 }
 
-void iniciar_servidor2(t_configuracion* config_servidor)
+void iniciar_servidor2()
 {
     log_info(logger, "Servidor iniciando 2");
 
@@ -180,7 +173,7 @@ void iniciar_servidor2(t_configuracion* config_servidor)
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_PASSIVE;
 
-    getaddrinfo(config_servidor->ip, "5003", &hints, &servinfo);
+    getaddrinfo(configuracion.ip, "5003", &hints, &servinfo);
 
     for (p=servinfo; p != NULL; p = p->ai_next)
     {
@@ -207,36 +200,33 @@ void iniciar_servidor2(t_configuracion* config_servidor)
     struct sockaddr_in dir_cliente;
     int tam_direccion = sizeof(struct sockaddr_in);
 
-    //int hilo;
     //while(variable_servidor != 0){
 
     socket_cliente_sabotaje = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
-    log_info(logger, "socket_cliente_sabotaje %d", socket_cliente_sabotaje);
-        if(socket_cliente_sabotaje>0){
-            //hilo ++ ;
-            log_info(logger, "2 Estableciendo conexión desde %d", dir_cliente.sin_port);
-            log_info(logger, "2 Creando hilo");
 
-            pthread_t hilo_cliente_discordiador_sabotaje;
-            pthread_create(&hilo_cliente_discordiador_sabotaje,NULL,(void*)funcionx ,(void*)socket_cliente_sabotaje);
-            pthread_detach(hilo_cliente_discordiador_sabotaje);
+	if(socket_cliente_sabotaje>0){
+		log_info(logger, "2 Estableciendo conexión desde %d", dir_cliente.sin_port);
+		log_info(logger, "2 Creando hilo");
 
-        }
+		pthread_t hilo_cliente_discordiador_sabotaje;
+		pthread_create(&hilo_cliente_discordiador_sabotaje,NULL,(void*)funcionx ,(void*)socket_cliente_sabotaje);
+		pthread_detach(hilo_cliente_discordiador_sabotaje);
+
+	}
     //}
     //printf("me fui");
 
     //log_destroy(logger);
-
 }
 
 int funcionx(int socket_cliente_sabotaje){
-    log_info(logger, "funcionx");
+    //log_info(logger, "funcionx");
     return 1;
 }
 
 int funcion_cliente(int socket_cliente)
 {
-	log_info(logger, "in funcion_cliente");
+	//log_info(logger, "in funcion_cliente");
 
 	int tipoMensajeRecibido = -1;
 	log_info(logger, "Se conecto este socket a mi %d",socket_cliente);
@@ -246,6 +236,14 @@ int funcion_cliente(int socket_cliente)
 	t_list* lista;
 	char* parametro_char;
 	char* tid_char;
+
+	if(hilo_discordiador != 1){
+		//hacer cosas de bitacora
+	}
+	hilo_discordiador = 0;
+
+	t_bitacora_data* bitacora_data;
+	int primera_vez = 1;
 
 
 	while(1)
@@ -297,10 +295,16 @@ int funcion_cliente(int socket_cliente)
 				char* mens = list_get(lista,1);
 				log_info(logger, "tid %d  %s",tripulante_id, mens);  //Mens es lo que hay que cargar en blocks
 
-				//funcion_cliente_BITACORAS(tripulante_id, mens);
+				if(primera_vez == 1){ //solo entra la primera vez para crear la bitacora
+					bitacora_data = malloc(sizeof(t_bitacora_data));
 
-				//Nos devuelve que bloques usa
-				//strlength del mens es el ++ size en el archivo
+					bitacora_cargar_data_agregando_valores_default_en_metadata(bitacora_data, tripulante_id);
+					bitacora_levantar_metadata_de_archivo_si_existe(bitacora_data);
+					primera_vez = 0;
+				}
+
+				bitacora_guardar_log(bitacora_data, mens);
+
 
 				char* mensaje = "ok";
 				enviar_mensaje(mensaje, socket_cliente);
@@ -471,18 +475,86 @@ void funcion_cliente_BITACORAS(int tid, char* log)
 
 	t_bitacora_data* bitacora_data = malloc(sizeof(t_bitacora_data));
 
-	bitacora_cargar_numero_de_tripulante(bitacora_data, tid);
-	bitacora_cargar_ruta_completa(bitacora_data);
-	bitacora_crear_metadata_en_archivo_y_memoria_con_recupero(bitacora_data);
-	log_info(logger, "eeeeeeeeee");
-	bitacora_escribir_log_en_blocks(bitacora_data, log);
-	log_info(logger, "ffffffffff");
-	bitacora_actualizar_archivo(bitacora_data);
-	log_info(logger, "gggggggggg");
-	blocks_actualizar_archivo();
-	log_info(logger, "hhhhhhhhhhh");
+	bitacora_cargar_data_agregando_valores_default_en_metadata(bitacora_data, tid);
+	bitacora_levantar_metadata_de_archivo_si_existe(bitacora_data);
+	bitacora_guardar_log(bitacora_data, log);
 }
 
+void bitacora_cargar_data_agregando_valores_default_en_metadata(t_bitacora_data* bitacora_data, int tid)
+{
+	bitacora_data->tid = tid;
+	bitacora_data->ruta_completa = string_from_format("%s/Tripulante%d.ims", bitacoras_path, bitacora_data->tid);
+
+	t_bitacora_md* metadata = malloc(sizeof(t_bitacora_md));
+	metadata->size = (int)0;
+	metadata->blocks = string_duplicate("[]");
+	bitacora_data->metadata = metadata;
+	log_debug(logger, "Bitacora de tripulante %d cargada en memoria con size = %d y blocks = %s", bitacora_data->tid,
+			bitacora_data->metadata->size, bitacora_data->metadata->blocks);
+}
+
+void bitacora_levantar_metadata_de_archivo_si_existe(t_bitacora_data* bitacora_data)
+{
+	log_debug(logger, "en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: %s", bitacora_data->ruta_completa);
+	if(utils_existe_en_disco(bitacora_data->ruta_completa))
+	{
+		t_config* bitacora_config =  config_create(bitacora_data->ruta_completa);
+
+		bitacora_data->metadata->size = config_get_int_value(bitacora_config, "SIZE");
+		bitacora_data->metadata->blocks = string_duplicate(config_get_string_value(bitacora_config, "BLOCKS"));
+
+		config_destroy(bitacora_config);
+
+		log_debug(logger, "Bitacora de tripulante %d levantada en memoria con size = %d y blocks = %s", bitacora_data->tid,
+				bitacora_data->metadata->size, bitacora_data->metadata->blocks);
+	}
+}
+
+//Escribe el log reibido en el ultimo bloque escrito si tuviera espacio libre y si no o en los blocks del superbloque que se encuentren libres
+void bitacora_guardar_log(t_bitacora_data* bitacora_data, char* log)
+{
+	//log_debug(logger, "Info-Se ingresa a recurso_generar_cantidad, se debe generar %d %s(s)", cantidad, recurso_data->nombre);
+	if(strlen(log) == 0)
+	{
+		log_error(logger, "No me llego ningun log para guardar");
+		return;
+	}
+
+	t_bitacora_md* bitacora_md = bitacora_data->metadata;
+	int bloque;
+	//wait superbloque y blocks
+	if(bitacora_tiene_espacio_en_ultimo_bloque(bitacora_md))
+	{
+		bloque = cadena_ultimo_entero_en_lista_de_enteros(bitacora_md->blocks);
+		bitacora_escribir_en_bloque(bitacora_md, &log, bloque);
+	}
+	while(*log != '\0')
+	{
+		bloque = superbloque_obtener_bloque_libre();
+		cadena_agregar_entero_a_lista_de_enteros(&bitacora_md->blocks, bloque);
+		int j =0;
+		if(bloque >= 0)
+		{
+			bitacora_escribir_en_bloque(bitacora_md, &log, bloque);
+		}
+		else
+		{
+			log_error(logger, "No se puede escribir el log de la bitacora por no haber bloques libres (no deberia llegar aca)");
+		}
+	}
+	superbloque_actualizar_bitmap_en_archivo();
+	blocks_actualizar_archivo();
+	bitacora_actualizar_archivo(bitacora_data);
+}
+
+//Verifica si el ultimo bloque usado por el recurso tiene espacio disponible
+int bitacora_tiene_espacio_en_ultimo_bloque(t_bitacora_md* bitacora_md)
+{
+	int cantidad_bloques = cadena_cantidad_elementos_en_lista(bitacora_md->blocks);
+	log_debug(logger, "En bitacora tiene_espacio_en_ultimo_bloque con SIZE %d, BLOCKS %s y superbloque.block_size %d: (%d)",
+			bitacora_md->size, bitacora_md->blocks, superbloque.block_size, bitacora_md->size < cantidad_bloques * superbloque.block_size);
+	return (bitacora_md->size < cantidad_bloques * superbloque.block_size);
+}
 
 void bitacora_cargar_numero_de_tripulante(t_bitacora_data* bitacora_data, int tid)
 {
@@ -581,17 +653,41 @@ void bitacora_escribir_log_en_blocks(t_bitacora_data* bitacora_data, char* log)
     log_debug(logger, "O-Se cargo el log de la bitacora en la copia de blocks en memoria");
 }
 
+void bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+{
+	int posicion_en_bloque = bitacora_md->size % superbloque.block_size;
+	int posicion_inicio_bloque = bloque * superbloque.block_size; //se toma en cuenta que los bloques comienzan en 0
+	char* posicion_absoluta = blocks_address + posicion_inicio_bloque + posicion_en_bloque; //esta ok sumar un puntero con 2 ints?
+
+	log_debug(logger, "Posicion_en_bloque %d, posicion_inicio_bloque %d posicion block_addres %p posicion absoluta %p",
+			posicion_en_bloque, posicion_inicio_bloque, blocks_address, posicion_absoluta);
+	while(posicion_en_bloque < superbloque.block_size && **log != '\0')
+	{
+		*posicion_absoluta = **log;
+
+		bitacora_md->size++;
+		(*log)++;
+		posicion_absoluta++;
+		posicion_en_bloque++;
+	}
+	log_debug(logger, "pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)");
+}
+
 //Actualiza el archivo de la bitacora con la informacion que ya tiene en memoria
 void bitacora_actualizar_archivo(t_bitacora_data* bitacora_data)
 {
+	if(utils_existe_en_disco(bitacora_data->ruta_completa) == 0)
+	{
+		utils_crear_archivo(bitacora_data->ruta_completa);
+	}
+
 	t_config* bitacora_config = config_create(bitacora_data->ruta_completa);
-
-	char* size_str = string_itoa(bitacora_data->metadata->size);
-
+	char* size_str = string_duplicate(string_itoa(bitacora_data->metadata->size));
 	config_set_value(bitacora_config, "SIZE", size_str);
 	config_set_value(bitacora_config, "BLOCKS", bitacora_data->metadata->blocks);
-
 	free(size_str);
+
+	config_save(bitacora_config);
 	config_destroy(bitacora_config);
 	log_debug(logger, "Se actualizo el archivo bitacora del tripulante %d en la ruta %s", bitacora_data->tid, bitacora_data->ruta_completa);
 }
@@ -1104,14 +1200,14 @@ int cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros)
 	char** lista = string_get_string_as_array(lista_de_enteros);
 
 	int cantidad_enteros = cadena_cantidad_elementos_en_lista(lista_de_enteros);
-	log_info(logger, "cantidad_enteros %d", cantidad_enteros);
+	//log_info(logger, "cantidad_enteros %d", cantidad_enteros);
 
 	if(cantidad_enteros == 0){
 
 	}
 	int ultimo_entero = atoi(lista[cantidad_enteros - 1]);
 
-	log_info(logger, "ultimo_entero %d", ultimo_entero);
+	//log_info(logger, "ultimo_entero %d", ultimo_entero);
 
 	cadena_eliminar_array_de_cadenas(&lista, cantidad_enteros);
 

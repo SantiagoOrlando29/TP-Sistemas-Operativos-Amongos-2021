@@ -134,7 +134,7 @@ size_t blocks_size;
 //char* bloques_copia;
 
 //Recientemente agregadas
-void iniciar_servidor(t_configuracion*);
+void iniciar_servidor();
 int funcion_cliente(int);
 t_list* recibir_paquete(int);
 void* recibir_buffer(uint32_t*, int);
@@ -145,20 +145,32 @@ void sig_handler(int);
 void notificar_sabotaje();
 int recibir_operacion(int);
 void enviar_header(op_code, int);
-void iniciar_servidor2(t_configuracion*);
+void iniciar_servidor2();
 int funcionx(int);
 char* contar_archivos(char*);
 void destruir_lista(char*);
-void bitacora_crear_archivo(int);
 
-void funcion_cliente_BITACORAS(int, char*);
+/*void funcion_cliente_BITACORAS(int, char*);
 void bitacora_cargar_numero_de_tripulante(t_bitacora_data* bitacora_data, int tid);
 void bitacora_cargar_ruta_completa(t_bitacora_data* bitacora_data);
 void bitacora_crear_metadata_en_archivo_y_memoria_con_recupero(t_bitacora_data* bitacora_data);
 void bitacora_setear_con_valores_default_en_memoria(t_bitacora_data* bitacora_data);
 void bitacora_levantar_archivo(t_bitacora_data* bitacora_data);
 void bitacora_escribir_log_en_blocks(t_bitacora_data* bitacora_data, char* log);
+void bitacora_actualizar_archivo(t_bitacora_data* bitacora_data);*/
+
+void bitacora_crear_archivo(int);
+
+void funcion_cliente_BITACORAS(int, char*);
+void bitacora_cargar_data_agregando_valores_default_en_metadata(t_bitacora_data* bitacora_data, int tid);
+void bitacora_levantar_metadata_de_archivo_si_existe(t_bitacora_data* bitacora_data);
+void bitacora_guardar_log(t_bitacora_data* bitacora_data, char* log);
+int bitacora_tiene_espacio_en_ultimo_bloque(t_bitacora_md* bitacora_md);
+void bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque);
 void bitacora_actualizar_archivo(t_bitacora_data* bitacora_data);
+
+void bitacora_setear_con_valores_default_en_memoria(t_bitacora_data* bitacora_data);
+void bitacora_levantar_archivo(t_bitacora_data* bitacora_data);
 
 
 //Prototipos de funciones sujetas a cambios al linkearse con discordiador

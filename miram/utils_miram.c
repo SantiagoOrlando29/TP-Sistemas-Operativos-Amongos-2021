@@ -96,66 +96,6 @@ void iniciar_servidor(config_struct* config_servidor)
 
 }
 
-void iniciar_servidor2(config_struct* config_servidor)
-{
-	log_info(logger, "Servidor iniciando 2");
-
-    struct addrinfo hints, *servinfo, *p;
-
-    memset(&hints, 0, sizeof(hints));
-    hints.ai_family = AF_UNSPEC;
-    hints.ai_socktype = SOCK_STREAM;
-    hints.ai_flags = AI_PASSIVE;
-
-    getaddrinfo(config_servidor->ip_miram, "5003", &hints, &servinfo);
-
-    for (p=servinfo; p != NULL; p = p->ai_next)
-    {
-        if ((socket_servidor = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1)
-            continue;
-
-        int activado = 1;
-        setsockopt(socket_servidor, SOL_SOCKET, SO_REUSEADDR, &activado, sizeof(activado)); //para que si se cierra sin el close no haya que esperar
-
-        if (bind(socket_servidor, p->ai_addr, p->ai_addrlen) == -1) {
-            close(socket_servidor);
-            continue;
-        }
-        break;
-    }
-
-	listen(socket_servidor, SOMAXCONN);
-
-	freeaddrinfo(servinfo);
-
-	log_info(logger, "Servidor MiRam2 encendido");
-
-
-	struct sockaddr_in dir_cliente;
-	int tam_direccion = sizeof(struct sockaddr_in);
-	int socket_cliente_sabotaje = 0;
-
-	socket_cliente_sabotaje = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
-
-	if(socket_cliente_sabotaje>0){
-		//hilo ++ ;
-		log_info(logger, "2 Estableciendo conexión desde %d", dir_cliente.sin_port);
-		log_info(logger, "2 Creando hilo");
-
-		pthread_t hilo_cliente_discordiador_sabotaje;
-		pthread_create(&hilo_cliente_discordiador_sabotaje,NULL,(void*)funcionx ,(void*)socket_cliente_sabotaje);
-		pthread_detach(hilo_cliente_discordiador_sabotaje);
-	}
-
-	//printf("me fui");
-
-	//log_destroy(logger);
-}
-
-int funcionx(int socket_cliente_sabotaje){
-	log_info(logger, "funcionx");
-	return 1;
-}
 
 //Funcion cliente para segmentacion
 int funcion_cliente_segmentacion(int socket_cliente){
@@ -1542,7 +1482,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 				break;
 
 			case PEDIR_TAREA:;
-			sem_wait(&MUTEX_CASE);
+				sem_wait(&MUTEX_CASE);
 				lista = recibir_paquete(socket_cliente);
 
 				int tripulante_id = (int)atoi(list_get(lista, 0));
@@ -1611,8 +1551,6 @@ int funcion_cliente_paginacion(int socket_cliente){
 				enviar_mensaje(mensaje2, socket_cliente);
 
 
-
-
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 				sem_wait(&MUTEX_CASE);
@@ -1620,23 +1558,18 @@ int funcion_cliente_paginacion(int socket_cliente){
 
 			case LISTAR_TRIPULANTES:;
 				sem_wait(&MUTEX_CASE);
+
 				t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
-				tcbTripulante* tripulante = crear_tripulante(1,'N',5,6,1,1);
-				agregar_a_paquete(paquete, tripulante, tamanio_tcb(tripulante));
-				enviar_paquete(paquete,socket_cliente);
+				if(paquete->buffer->size == 0){ //no habia TCBs para mandar
+					enviar_header(NO_HAY_NADA_PARA_LISTAR , socket_cliente);
+				}else{
+					enviar_paquete(paquete, socket_cliente);
+				}
+
 				eliminar_paquete(paquete);
+
 				sem_post(&MUTEX_CASE);
 				break;
-
-
-			/*case INICIAR_PLANIFICACION:
-				log_info(logger, "Iniciando planificacion");
-				t_paquete* tarea_a_enviar;
-				tarea* tarea1 = crear_tarea(GENERAR_OXIGENO,5,2,2,5);
-				agregar_a_paquete(tarea_a_enviar, tarea1, sizeof(tarea));
-				enviar_paquete(tarea_a_enviar,socket_cliente);
-				eliminar_paquete(tarea_a_enviar);
-				break;*/
 
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
@@ -1655,7 +1588,6 @@ int funcion_cliente_paginacion(int socket_cliente){
 			default:
 				log_warning(logger, "Operacion desconocida. No quieras meter la pata");
 				break;
-
 		}
 	}
 
@@ -1671,7 +1603,7 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 
 		tabla_paginacion* una_tabla = list_get(tabla_paginacion_ppal,posicion_patota(patota_id, tabla_paginacion_ppal));
 
-			log_info(logger,"POS VECTOR %d\n", posicion_vector(tripulante_id-1));
+			log_info(logger,"POS VECTOR %d", posicion_vector(tripulante_id-1));
 
 			int ptro_tarea= 2*sizeof(uint32_t)+posicion_vector(tripulante_id-1)*21;
 
@@ -1683,8 +1615,8 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 			float parte_decimal = (decimal - parte_entera);
 			indice_marco=parte_entera;
 			uint32_t offset = configuracion.tamanio_pag*(parte_decimal);
-			log_info(logger,"El indice %d\n", indice_marco);
-			log_info(logger,"\nEl offset %d\n", offset);
+			log_info(logger,"El indice %d", indice_marco);
+			log_info(logger,"\nEl offset %d", offset);
 
 			marco* marcos =  (marco*)list_get(una_tabla->lista_marcos,indice_marco);
 
@@ -1696,9 +1628,9 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 				marcos->ultimo_uso=time(0);
 				list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 			}
-			log_info(logger,"MARCO %d\n",marcos->id_marco);
+			log_info(logger,"MARCO %d",marcos->id_marco);
 			fflush(stdout);
-			log_info(logger,"OFFSET %d\n",offset);
+			log_info(logger,"OFFSET %d",offset);
 			fflush(stdout);
 
 			uint32_t tid;
@@ -1764,12 +1696,12 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 			marcos->ultimo_uso = time(0);
 
 
-			log_info(logger,"TID magico %d\n",tid);
+			log_info(logger,"TID magico %d",tid);
 			fflush(stdout);
 
-			log_info(logger,"MARCO %d\n",marcos->id_marco);
+			log_info(logger,"MARCO %d",marcos->id_marco);
 			fflush(stdout);
-			log_info(logger,"OFFSET %d\n",offset);
+			log_info(logger,"OFFSET %d",offset);
 			fflush(stdout);
 			indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), sizeof(char));
 			marcos =  (marco*)list_get(una_tabla->lista_marcos,indice_marco);
@@ -1914,7 +1846,7 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 			marcos->bit_uso=1;
 			marcos->ultimo_uso = time(0);
 
-			log_info(logger,"Pos y magico %d\n",pos_y);
+			log_info(logger,"Pos y magico %d",pos_y);
 			fflush(stdout);
 
 
@@ -1979,7 +1911,7 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 			marcos->bit_uso=1;
 			marcos->ultimo_uso = time(0);
 
-			log_info(logger,"Prox instruccion %d\n",prox_in);
+			log_info(logger,"Prox instruccion %d",prox_in);
 			fflush(stdout);
 
 			uint32_t puntero_pcb;
@@ -2043,7 +1975,7 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 			marcos->bit_uso=1;
 			marcos->ultimo_uso = time(0);
 
-			log_info(logger,"Puntero magico  %d\n",puntero_pcb);
+			log_info(logger,"Puntero magico  %d",puntero_pcb);
 			fflush(stdout);
 
 
