@@ -25,7 +25,6 @@ int main(void)
 	log_info(logger, "pid %d  \n", piddd);
 	signal(SIGUSR1, sig_handler);
 
-
     pthread_t servidor;
     if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){
         log_info(logger, "Falla al crearse el hilo");

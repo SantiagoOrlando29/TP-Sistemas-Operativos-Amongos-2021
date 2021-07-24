@@ -61,11 +61,11 @@ void iniciar_servidor(config_struct* config_servidor)
 	log_info(logger, "socket_servidor %d", socket_servidor);
 
 	//se crea mapa
-	nivel_gui_inicializar();
+	/*nivel_gui_inicializar();
 
 	nivel_gui_get_area_nivel(&cols, &rows);
 
-	nivel = nivel_crear("AMong-OS");
+	nivel = nivel_crear("AMong-OS");*/
 
 	int hilo;
 	while(variable_servidor != 0){
@@ -383,67 +383,6 @@ int funcion_cliente_segmentacion(int socket_cliente){
 				}
 
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
-
-				break;
-
-			case INFORMAR_BITACORA:; //PARA PROBAR LO DE MONGO
-				t_list* lista_pr = recibir_paquete(socket_cliente); //se recibe el string directo para poner en la bitacora
-				tripulante_id = (int)atoi(list_get(lista_pr,0));
-				char* mens = list_get(lista_pr,1);
-				log_info(logger, "tid %d  %s",tripulante_id, mens);
-
-				//cargar bitacora()
-
-				char* mensaje = "ok";
-				enviar_mensaje(mensaje, socket_cliente);
-
-				list_clean_and_destroy_elements(lista_pr, (void*)destruir_lista_paquete);
-				list_destroy(lista_pr);
-				break;
-
-			case TAREA_MONGO:;
-				t_list* lista_pru = recibir_paquete(socket_cliente);
-				char* nombre_tarea = list_get(lista_pru,0);
-				int parametro = (int)atoi(list_get(lista_pru,1));
-
-				log_info(logger, "tarea %s  param %d", nombre_tarea, parametro);
-
-				if(strcmp(nombre_tarea, "GENERAR_OXIGENO") == 0){
-
-				}else if(strcmp(nombre_tarea, "CONSUMIR_OXIGENO") == 0){
-
-				}else if(strcmp(nombre_tarea, "GENERAR_COMIDA") == 0){
-
-				}else if(strcmp(nombre_tarea, "CONSUMIR_COMIDA") == 0){
-
-				}else if(strcmp(nombre_tarea, "GENERAR_BASURA") == 0){
-
-				}else if(strcmp(nombre_tarea, "DESCARTAR_BASURA") == 0){
-
-				}else{
-					log_debug(logger, "se recibio una tarea distinta a las 6 de E/S");
-				}
-
-				char* mensaje2 = "ok";
-				enviar_mensaje(mensaje2, socket_cliente);
-
-				list_clean_and_destroy_elements(lista_pru, (void*)destruir_lista_paquete);
-				list_destroy(lista_pru);
-
-				break;
-
-			case FSCK:
-				log_info(logger, "en fsck");
-				char* mensaje3 = "ok";
-				enviar_mensaje(mensaje3, socket_cliente);
-
-				break;
-
-			case OBTENER_BITACORA:
-				log_info(logger, "bitacooooora");
-
-				char* mensaje5 = "mensaje 5";
-				enviar_mensaje(mensaje5, socket_cliente);
 
 				break;
 
@@ -1084,11 +1023,11 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 			tabla_segmentos_patota->ultimo_tripulante = tripulante->tid;
 		}
 
-		if(tripulante->tid > 9){ //desde el 10 el mapa tira ":" sino
+		/*if(tripulante->tid > 9){ //desde el 10 el mapa tira ":" sino
 			letra = 55;
 		}
 		err = personaje_crear(nivel, letra+tripulante->tid, (int)tripulante->posicionX, (int)tripulante->posicionY);
-		ASSERT_CREATE(nivel, letra, err);
+		ASSERT_CREATE(nivel, letra, err);*/
 	}
 
 	imprimir_tabla_espacios_de_memoria();
@@ -1143,11 +1082,11 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 						list_remove_and_destroy_element(lista_tablas_segmentos, i, (void*)destruir_una_tabla_seg);*/
 					}
 
-					if(tripulante_id > 9){ //desde el 10 el mapa tira ":" sino
+					/*if(tripulante_id > 9){ //desde el 10 el mapa tira ":" sino
 						letra = 55;
 					}
 					log_info(logger, "letra + tid: %c", letra + tripulante_id);
-					item_borrar(nivel, letra + tripulante_id);
+					item_borrar(nivel, letra + tripulante_id);*/
 
 					sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 
@@ -1383,11 +1322,11 @@ bool cambiar_posicion(int tid, int posx, int posy, int pid){
 
 				espacio->contenido = tripulante;
 
-				if(tid > 9){ //desde el 10 el mapa tira ":" sino
+				/*if(tid > 9){ //desde el 10 el mapa tira ":" sino
 					letra = 55;
 				}
 			    item_desplazar(nivel, letra+ tid, difx, dify);
-			    sleep(1);
+			    sleep(1);*/
 
 				sem_post(&MUTEX_CAMBIAR_POSICION);
 				return true;
@@ -2411,7 +2350,7 @@ char* obtener_tarea(int id_patota, int nro_tarea){
 	return una_tarea;
 }
 
-void* crear_mapa(){
+/*void* crear_mapa(){
 	while (numero_mapa!=1) {
 			nivel_gui_dibujar(nivel);
 			fflush(stdout);
@@ -2422,5 +2361,5 @@ void* crear_mapa(){
 
 	}
 	printf("\n Termino");
-}
+}*/
 

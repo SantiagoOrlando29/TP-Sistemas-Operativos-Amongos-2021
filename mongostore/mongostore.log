@@ -406,3 +406,1162 @@
 [INFO] 10:05:59:972 mongostore/(9349:9392): tid 1  Se finaliza la tarea CONSUMIR_OXIGENO
 [INFO] 10:05:59:973 mongostore/(9349:9394): tid 2  Comienza ejecucion de tarea CONSUMIR_OXIGENO
 [INFO] 10:06:03:974 mongostore/(9349:9394): tid 2  Se finaliza la tarea CONSUMIR_OXIGENO
+[DEBUG] 10:16:06:799 mongostore/(9618:9618): LOGGER OK
+[INFO] 10:16:06:799 mongostore/(9618:9618): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:16:06:799 mongostore/(9618:9618): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:16:06:800 mongostore/(9618:9618): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:16:06:800 mongostore/(9618:9618): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:16:06:800 mongostore/(9618:9618): O-Superbloque generado desde archivo
+[INFO] 10:16:06:800 mongostore/(9618:9618): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:16:06:800 mongostore/(9618:9618): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:16:06:800 mongostore/(9618:9618): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:16:06:801 mongostore/(9618:9618): Existencia de Blocks validada
+[DEBUG] 10:16:06:801 mongostore/(9618:9618): Directorios del File System confirmados
+[INFO] 10:16:06:801 mongostore/(9618:9618): File System iniciado
+[INFO] 10:16:06:801 mongostore/(9618:9618): pid 9618  
+
+[INFO] 10:16:06:801 mongostore/(9618:9620): Servidor iniciando 2
+[INFO] 10:16:06:801 mongostore/(9618:9620): Servidor Mongo2 encendido
+[INFO] 10:16:06:801 mongostore/(9618:9619): Servidor iniciando
+[INFO] 10:16:06:801 mongostore/(9618:9619): Servidor Mongo encendido
+[DEBUG] 10:18:46:127 mongostore/(9783:9783): LOGGER OK
+[INFO] 10:18:46:128 mongostore/(9783:9783): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:18:46:128 mongostore/(9783:9783): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:18:46:129 mongostore/(9783:9783): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:18:46:129 mongostore/(9783:9783): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:18:46:129 mongostore/(9783:9783): O-Superbloque generado desde archivo
+[INFO] 10:18:46:129 mongostore/(9783:9783): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:18:46:129 mongostore/(9783:9783): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:18:46:129 mongostore/(9783:9783): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:18:46:129 mongostore/(9783:9783): Existencia de Blocks validada
+[DEBUG] 10:18:46:131 mongostore/(9783:9783): Directorios del File System confirmados
+[INFO] 10:18:46:132 mongostore/(9783:9783): File System iniciado
+[INFO] 10:18:46:132 mongostore/(9783:9783): pid 9783  
+
+[INFO] 10:18:46:136 mongostore/(9783:9785): Servidor iniciando 2
+[INFO] 10:18:46:137 mongostore/(9783:9785): Servidor Mongo2 encendido
+[INFO] 10:18:46:137 mongostore/(9783:9784): Servidor iniciando
+[INFO] 10:18:46:137 mongostore/(9783:9784): Servidor Mongo encendido
+[DEBUG] 10:20:05:279 mongostore/(9833:9833): LOGGER OK
+[INFO] 10:20:05:281 mongostore/(9833:9833): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:20:05:281 mongostore/(9833:9833): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:20:05:282 mongostore/(9833:9833): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:20:05:290 mongostore/(9833:9833): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:20:05:290 mongostore/(9833:9833): O-Superbloque generado desde archivo
+[INFO] 10:20:05:290 mongostore/(9833:9833): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:20:05:290 mongostore/(9833:9833): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:20:05:290 mongostore/(9833:9833): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:20:05:290 mongostore/(9833:9833): Existencia de Blocks validada
+[DEBUG] 10:20:05:291 mongostore/(9833:9833): Directorios del File System confirmados
+[INFO] 10:20:05:291 mongostore/(9833:9833): File System iniciado
+[INFO] 10:20:05:291 mongostore/(9833:9833): pid 9833  
+
+[INFO] 10:20:05:291 mongostore/(9833:9835): Servidor iniciando 2
+[INFO] 10:20:05:291 mongostore/(9833:9835): Servidor Mongo2 encendido
+[INFO] 10:20:05:292 mongostore/(9833:9834): Servidor iniciando
+[INFO] 10:20:05:292 mongostore/(9833:9834): Servidor Mongo encendido
+[INFO] 10:20:46:704 mongostore/(9833:9835): 2 Estableciendo conexión desde 14545
+[INFO] 10:20:46:704 mongostore/(9833:9834): Estableciendo conexión desde 18055
+[INFO] 10:20:46:705 mongostore/(9833:9835): 2 Creando hilo
+[INFO] 10:20:46:706 mongostore/(9833:9834): Creando hilo
+[INFO] 10:20:46:707 mongostore/(9833:9888): funcionx
+[INFO] 10:20:46:707 mongostore/(9833:9889): Se conecto este socket a mi 8
+[DEBUG] 10:21:11:547 mongostore/(9895:9895): LOGGER OK
+[INFO] 10:21:11:547 mongostore/(9895:9895): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:21:11:548 mongostore/(9895:9895): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:21:11:548 mongostore/(9895:9895): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:21:11:549 mongostore/(9895:9895): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:21:11:549 mongostore/(9895:9895): O-Superbloque generado desde archivo
+[INFO] 10:21:11:549 mongostore/(9895:9895): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:21:11:549 mongostore/(9895:9895): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:21:11:557 mongostore/(9895:9895): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:21:11:557 mongostore/(9895:9895): Existencia de Blocks validada
+[DEBUG] 10:21:11:558 mongostore/(9895:9895): Directorios del File System confirmados
+[INFO] 10:21:11:558 mongostore/(9895:9895): File System iniciado
+[INFO] 10:21:11:559 mongostore/(9895:9895): pid 9895  
+
+[INFO] 10:21:11:559 mongostore/(9895:9897): Servidor iniciando 2
+[INFO] 10:21:11:559 mongostore/(9895:9897): Servidor Mongo2 encendido
+[INFO] 10:21:11:560 mongostore/(9895:9896): Servidor iniciando
+[INFO] 10:21:11:560 mongostore/(9895:9896): Servidor Mongo encendido
+[DEBUG] 10:27:59:361 mongostore/(10141:10141): LOGGER OK
+[INFO] 10:27:59:362 mongostore/(10141:10141): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:27:59:362 mongostore/(10141:10141): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:27:59:363 mongostore/(10141:10141): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:27:59:363 mongostore/(10141:10141): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:27:59:364 mongostore/(10141:10141): O-Superbloque generado desde archivo
+[INFO] 10:27:59:364 mongostore/(10141:10141): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:27:59:364 mongostore/(10141:10141): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:27:59:364 mongostore/(10141:10141): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:27:59:364 mongostore/(10141:10141): Existencia de Blocks validada
+[DEBUG] 10:27:59:365 mongostore/(10141:10141): Directorios del File System confirmados
+[INFO] 10:27:59:365 mongostore/(10141:10141): File System iniciado
+[INFO] 10:27:59:365 mongostore/(10141:10141): pid 10141  
+
+[INFO] 10:27:59:365 mongostore/(10141:10143): Servidor iniciando 2
+[INFO] 10:27:59:365 mongostore/(10141:10143): Servidor Mongo2 encendido
+[INFO] 10:27:59:365 mongostore/(10141:10142): Servidor iniciando
+[INFO] 10:27:59:365 mongostore/(10141:10142): Servidor Mongo encendido
+[INFO] 10:28:14:829 mongostore/(10141:10142): Estableciendo conexión desde 21639
+[INFO] 10:28:14:829 mongostore/(10141:10143): 2 Estableciendo conexión desde 18129
+[INFO] 10:28:14:830 mongostore/(10141:10142): Creando hilo
+[INFO] 10:28:14:830 mongostore/(10141:10143): 2 Creando hilo
+[INFO] 10:28:14:832 mongostore/(10141:10163): Se conecto este socket a mi 8
+[INFO] 10:28:14:833 mongostore/(10141:10164): funcionx
+[INFO] 10:28:27:326 mongostore/(10141:10142): Estableciendo conexión desde 23175
+[INFO] 10:28:27:326 mongostore/(10141:10142): Creando hilo
+[INFO] 10:28:27:330 mongostore/(10141:10175): Se conecto este socket a mi 9
+[INFO] 10:28:27:356 mongostore/(10141:10142): Estableciendo conexión desde 24199
+[INFO] 10:28:27:356 mongostore/(10141:10142): Creando hilo
+[INFO] 10:28:27:359 mongostore/(10141:10177): Se conecto este socket a mi 10
+[INFO] 10:28:27:364 mongostore/(10141:10142): Estableciendo conexión desde 25223
+[INFO] 10:28:27:364 mongostore/(10141:10142): Creando hilo
+[INFO] 10:28:27:365 mongostore/(10141:10179): Se conecto este socket a mi 11
+[INFO] 10:28:27:401 mongostore/(10141:10177): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 10:28:27:405 mongostore/(10141:10175): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 10:28:28:421 mongostore/(10141:10175): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:28:28:422 mongostore/(10141:10177): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 10:28:29:427 mongostore/(10141:10177): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 10:28:29:432 mongostore/(10141:10175): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:28:29:438 mongostore/(10141:10179): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 10:28:30:428 mongostore/(10141:10177): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:28:30:443 mongostore/(10141:10179): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:28:30:443 mongostore/(10141:10175): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:28:31:430 mongostore/(10141:10177): tid 2  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:28:31:431 mongostore/(10141:10175): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 10:28:32:431 mongostore/(10141:10177): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:28:32:433 mongostore/(10141:10175): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 10:28:32:434 mongostore/(10141:10177): tid 2  Se mueve de 4|4 a 5|4
+[INFO] 10:28:32:435 mongostore/(10141:10179): tid 3  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:28:33:434 mongostore/(10141:10175): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 10:28:33:435 mongostore/(10141:10177): tid 2  Se mueve de 5|4 a 5|5
+[INFO] 10:28:33:435 mongostore/(10141:10179): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:28:34:435 mongostore/(10141:10175): tid 1  Comienza ejecucion de tarea ABC
+[INFO] 10:28:34:438 mongostore/(10141:10177): tid 2  Se mueve de 5|5 a 5|6
+[INFO] 10:28:35:440 mongostore/(10141:10177): tid 2  Comienza ejecucion de tarea ABC
+[INFO] 10:28:38:444 mongostore/(10141:10175): tid 1  Se finaliza la tarea ABC
+[INFO] 10:28:38:448 mongostore/(10141:10175): tid 1  Se mueve de 5|6 a 4|6
+[INFO] 10:28:39:445 mongostore/(10141:10177): tid 2  Se finaliza la tarea ABC
+[INFO] 10:28:39:447 mongostore/(10141:10177): tid 2  Se mueve de 5|6 a 4|6
+[INFO] 10:28:39:450 mongostore/(10141:10175): tid 1  Se mueve de 4|6 a 4|5
+[INFO] 10:28:40:448 mongostore/(10141:10177): tid 2  Se mueve de 4|6 a 4|5
+[INFO] 10:28:40:451 mongostore/(10141:10175): tid 1  Se mueve de 4|5 a 3|5
+[INFO] 10:28:41:449 mongostore/(10141:10177): tid 2  Se mueve de 4|5 a 3|5
+[INFO] 10:28:41:452 mongostore/(10141:10175): tid 1  Se mueve de 3|5 a 3|4
+[INFO] 10:28:42:450 mongostore/(10141:10177): tid 2  Se mueve de 3|5 a 3|4
+[INFO] 10:28:42:453 mongostore/(10141:10175): tid 1  Se mueve de 3|4 a 3|3
+[INFO] 10:28:43:451 mongostore/(10141:10177): tid 2  Se mueve de 3|4 a 3|3
+[INFO] 10:28:43:453 mongostore/(10141:10175): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:28:44:452 mongostore/(10141:10177): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:28:44:455 mongostore/(10141:10175): tid 1  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:28:44:455 mongostore/(10141:10179): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 10:28:45:456 mongostore/(10141:10179): tid 3  Se mueve de 5|4 a 5|5
+[INFO] 10:28:46:457 mongostore/(10141:10179): tid 3  Se mueve de 5|5 a 5|6
+[INFO] 10:28:47:459 mongostore/(10141:10179): tid 3  Comienza ejecucion de tarea ABC
+[INFO] 10:28:48:457 mongostore/(10141:10175): tid 1  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:28:48:472 mongostore/(10141:10177): tid 2  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:28:51:464 mongostore/(10141:10179): tid 3  Se finaliza la tarea ABC
+[INFO] 10:28:51:465 mongostore/(10141:10179): tid 3  Se mueve de 5|6 a 4|6
+[INFO] 10:28:52:466 mongostore/(10141:10179): tid 3  Se mueve de 4|6 a 4|5
+[INFO] 10:28:52:474 mongostore/(10141:10177): tid 2  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:28:53:468 mongostore/(10141:10179): tid 3  Se mueve de 4|5 a 3|5
+[INFO] 10:28:54:470 mongostore/(10141:10179): tid 3  Se mueve de 3|5 a 3|4
+[INFO] 10:28:55:471 mongostore/(10141:10179): tid 3  Se mueve de 3|4 a 3|3
+[INFO] 10:28:56:472 mongostore/(10141:10179): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:28:57:473 mongostore/(10141:10179): tid 3  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:29:01:475 mongostore/(10141:10179): tid 3  Se finaliza la tarea CONSUMIR_OXIGENO
+[DEBUG] 10:30:16:969 mongostore/(10239:10239): LOGGER OK
+[INFO] 10:30:16:970 mongostore/(10239:10239): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:30:16:970 mongostore/(10239:10239): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:30:16:972 mongostore/(10239:10239): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:30:16:973 mongostore/(10239:10239): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:30:16:973 mongostore/(10239:10239): O-Superbloque generado desde archivo
+[INFO] 10:30:16:973 mongostore/(10239:10239): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:30:16:974 mongostore/(10239:10239): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:30:16:974 mongostore/(10239:10239): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:30:16:974 mongostore/(10239:10239): Existencia de Blocks validada
+[DEBUG] 10:30:16:974 mongostore/(10239:10239): Directorios del File System confirmados
+[INFO] 10:30:16:974 mongostore/(10239:10239): File System iniciado
+[INFO] 10:30:16:974 mongostore/(10239:10239): pid 10239  
+
+[INFO] 10:30:16:975 mongostore/(10239:10241): Servidor iniciando 2
+[INFO] 10:30:16:975 mongostore/(10239:10241): Servidor Mongo2 encendido
+[INFO] 10:30:16:975 mongostore/(10239:10240): Servidor iniciando
+[INFO] 10:30:16:975 mongostore/(10239:10240): Servidor Mongo encendido
+[INFO] 10:30:35:487 mongostore/(10239:10240): Estableciendo conexión desde 26759
+[INFO] 10:30:35:487 mongostore/(10239:10240): Creando hilo
+[INFO] 10:30:35:488 mongostore/(10239:10241): 2 Estableciendo conexión desde 23249
+[INFO] 10:30:35:488 mongostore/(10239:10241): 2 Creando hilo
+[INFO] 10:30:35:488 mongostore/(10239:10248): funcionx
+[INFO] 10:30:35:490 mongostore/(10239:10247): Se conecto este socket a mi 8
+[INFO] 10:30:43:301 mongostore/(10239:10240): Estableciendo conexión desde 28295
+[INFO] 10:30:43:301 mongostore/(10239:10240): Creando hilo
+[INFO] 10:30:43:302 mongostore/(10239:10258): Se conecto este socket a mi 9
+[INFO] 10:30:43:314 mongostore/(10239:10240): Estableciendo conexión desde 29319
+[INFO] 10:30:43:314 mongostore/(10239:10240): Creando hilo
+[INFO] 10:30:43:322 mongostore/(10239:10260): Se conecto este socket a mi 10
+[INFO] 10:30:43:327 mongostore/(10239:10240): Estableciendo conexión desde 30343
+[INFO] 10:30:43:331 mongostore/(10239:10240): Creando hilo
+[INFO] 10:30:43:341 mongostore/(10239:10263): Se conecto este socket a mi 11
+[INFO] 10:30:43:355 mongostore/(10239:10258): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 10:30:43:355 mongostore/(10239:10260): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 10:30:44:356 mongostore/(10239:10258): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:30:44:357 mongostore/(10239:10260): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 10:30:45:359 mongostore/(10239:10258): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:30:45:359 mongostore/(10239:10260): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 10:30:45:360 mongostore/(10239:10263): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 10:30:46:359 mongostore/(10239:10258): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:30:46:361 mongostore/(10239:10260): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:30:46:361 mongostore/(10239:10263): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:30:47:363 mongostore/(10239:10260): tid 2  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:30:47:363 mongostore/(10239:10258): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 10:30:48:363 mongostore/(10239:10260): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:30:48:365 mongostore/(10239:10258): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 10:30:48:366 mongostore/(10239:10263): tid 3  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:30:48:367 mongostore/(10239:10260): tid 2  Se mueve de 4|4 a 5|4
+[INFO] 10:30:49:366 mongostore/(10239:10258): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 10:30:49:366 mongostore/(10239:10263): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:30:49:368 mongostore/(10239:10260): tid 2  Se mueve de 5|4 a 5|5
+[INFO] 10:30:50:368 mongostore/(10239:10258): tid 1  Comienza ejecucion de tarea ABC
+[INFO] 10:30:50:369 mongostore/(10239:10260): tid 2  Se mueve de 5|5 a 5|6
+[INFO] 10:30:51:370 mongostore/(10239:10260): tid 2  Comienza ejecucion de tarea ABC
+[INFO] 10:30:54:370 mongostore/(10239:10258): tid 1  Se finaliza la tarea ABC
+[INFO] 10:30:54:372 mongostore/(10239:10258): tid 1  Se mueve de 5|6 a 4|6
+[INFO] 10:30:55:372 mongostore/(10239:10260): tid 2  Se finaliza la tarea ABC
+[INFO] 10:30:55:376 mongostore/(10239:10258): tid 1  Se mueve de 4|6 a 4|5
+[INFO] 10:30:55:377 mongostore/(10239:10260): tid 2  Se mueve de 5|6 a 4|6
+[INFO] 10:30:56:379 mongostore/(10239:10260): tid 2  Se mueve de 4|6 a 4|5
+[INFO] 10:30:56:379 mongostore/(10239:10258): tid 1  Se mueve de 4|5 a 3|5
+[INFO] 10:30:57:381 mongostore/(10239:10258): tid 1  Se mueve de 3|5 a 3|4
+[INFO] 10:30:57:382 mongostore/(10239:10260): tid 2  Se mueve de 4|5 a 3|5
+[INFO] 10:30:58:383 mongostore/(10239:10260): tid 2  Se mueve de 3|5 a 3|4
+[INFO] 10:30:58:383 mongostore/(10239:10258): tid 1  Se mueve de 3|4 a 3|3
+[INFO] 10:30:59:384 mongostore/(10239:10258): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:30:59:385 mongostore/(10239:10260): tid 2  Se mueve de 3|4 a 3|3
+[INFO] 10:31:00:386 mongostore/(10239:10258): tid 1  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:31:00:386 mongostore/(10239:10260): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:31:00:387 mongostore/(10239:10263): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 10:31:01:388 mongostore/(10239:10263): tid 3  Se mueve de 5|4 a 5|5
+[INFO] 10:31:02:389 mongostore/(10239:10263): tid 3  Se mueve de 5|5 a 5|6
+[INFO] 10:31:03:390 mongostore/(10239:10263): tid 3  Comienza ejecucion de tarea ABC
+[INFO] 10:31:04:387 mongostore/(10239:10258): tid 1  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:31:04:390 mongostore/(10239:10260): tid 2  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:31:07:392 mongostore/(10239:10263): tid 3  Se finaliza la tarea ABC
+[INFO] 10:31:07:393 mongostore/(10239:10263): tid 3  Se mueve de 5|6 a 4|6
+[INFO] 10:31:08:392 mongostore/(10239:10260): tid 2  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:31:08:399 mongostore/(10239:10263): tid 3  Se mueve de 4|6 a 4|5
+[INFO] 10:31:09:401 mongostore/(10239:10263): tid 3  Se mueve de 4|5 a 3|5
+[INFO] 10:31:10:402 mongostore/(10239:10263): tid 3  Se mueve de 3|5 a 3|4
+[INFO] 10:31:11:404 mongostore/(10239:10263): tid 3  Se mueve de 3|4 a 3|3
+[INFO] 10:31:12:406 mongostore/(10239:10263): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:31:13:408 mongostore/(10239:10263): tid 3  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:31:17:409 mongostore/(10239:10263): tid 3  Se finaliza la tarea CONSUMIR_OXIGENO
+[DEBUG] 10:34:04:953 mongostore/(10333:10333): LOGGER OK
+[INFO] 10:34:05:252 mongostore/(10333:10333): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:34:05:274 mongostore/(10333:10333): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:34:05:284 mongostore/(10333:10333): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:34:05:297 mongostore/(10333:10333): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:34:05:301 mongostore/(10333:10333): O-Superbloque generado desde archivo
+[INFO] 10:34:05:303 mongostore/(10333:10333): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:34:05:304 mongostore/(10333:10333): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:34:05:310 mongostore/(10333:10333): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:34:05:311 mongostore/(10333:10333): Existencia de Blocks validada
+[DEBUG] 10:34:05:313 mongostore/(10333:10333): Directorios del File System confirmados
+[INFO] 10:34:05:313 mongostore/(10333:10333): File System iniciado
+[INFO] 10:34:05:315 mongostore/(10333:10333): pid 10333  
+
+[INFO] 10:34:05:355 mongostore/(10333:10338): Servidor iniciando
+[INFO] 10:34:05:357 mongostore/(10333:10339): Servidor iniciando 2
+[INFO] 10:34:05:376 mongostore/(10333:10338): Servidor Mongo encendido
+[INFO] 10:34:05:377 mongostore/(10333:10339): Servidor Mongo2 encendido
+[INFO] 10:34:11:555 mongostore/(10333:10338): Estableciendo conexión desde 28881
+[INFO] 10:34:11:557 mongostore/(10333:10338): Creando hilo
+[INFO] 10:34:11:567 mongostore/(10333:10343): Se conecto este socket a mi 7
+[DEBUG] 10:37:09:224 mongostore/(10431:10431): LOGGER OK
+[INFO] 10:37:09:386 mongostore/(10431:10431): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:37:09:411 mongostore/(10431:10431): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:37:09:418 mongostore/(10431:10431): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:37:09:421 mongostore/(10431:10431): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:37:09:423 mongostore/(10431:10431): O-Superbloque generado desde archivo
+[INFO] 10:37:09:424 mongostore/(10431:10431): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:37:09:425 mongostore/(10431:10431): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:37:09:427 mongostore/(10431:10431): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:37:09:428 mongostore/(10431:10431): Existencia de Blocks validada
+[DEBUG] 10:37:09:433 mongostore/(10431:10431): Directorios del File System confirmados
+[INFO] 10:37:09:434 mongostore/(10431:10431): File System iniciado
+[INFO] 10:37:09:435 mongostore/(10431:10431): pid 10431  
+
+[INFO] 10:37:09:453 mongostore/(10431:10436): Servidor iniciando
+[INFO] 10:37:09:454 mongostore/(10431:10437): Servidor iniciando 2
+[INFO] 10:37:09:470 mongostore/(10431:10436): Servidor Mongo encendido
+[INFO] 10:37:09:472 mongostore/(10431:10437): Servidor Mongo2 encendido
+[INFO] 10:37:17:267 mongostore/(10431:10436): Estableciendo conexión desde 34001
+[INFO] 10:37:17:274 mongostore/(10431:10436): Creando hilo
+[INFO] 10:37:17:289 mongostore/(10431:10445): in funcion_cliente
+[INFO] 10:37:17:300 mongostore/(10431:10445): Se conecto este socket a mi 7
+[DEBUG] 10:37:38:947 mongostore/(10455:10455): LOGGER OK
+[INFO] 10:37:38:947 mongostore/(10455:10455): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:37:38:947 mongostore/(10455:10455): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:37:38:947 mongostore/(10455:10455): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:37:38:947 mongostore/(10455:10455): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:37:38:948 mongostore/(10455:10455): O-Superbloque generado desde archivo
+[INFO] 10:37:38:948 mongostore/(10455:10455): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:37:38:948 mongostore/(10455:10455): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:37:38:948 mongostore/(10455:10455): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:37:38:948 mongostore/(10455:10455): Existencia de Blocks validada
+[DEBUG] 10:37:38:948 mongostore/(10455:10455): Directorios del File System confirmados
+[INFO] 10:37:38:948 mongostore/(10455:10455): File System iniciado
+[INFO] 10:37:38:948 mongostore/(10455:10455): pid 10455  
+
+[INFO] 10:37:38:948 mongostore/(10455:10457): Servidor iniciando 2
+[INFO] 10:37:38:948 mongostore/(10455:10457): Servidor Mongo2 encendido
+[INFO] 10:37:38:948 mongostore/(10455:10456): Servidor iniciando
+[INFO] 10:37:38:948 mongostore/(10455:10456): Servidor Mongo encendido
+[INFO] 10:37:48:812 mongostore/(10455:10456): Estableciendo conexión desde 39559
+[INFO] 10:37:48:812 mongostore/(10455:10456): Creando hilo
+[INFO] 10:37:48:813 mongostore/(10455:10457): socket_cliente_sabotaje 5
+[INFO] 10:37:48:813 mongostore/(10455:10457): 2 Estableciendo conexión desde 36049
+[INFO] 10:37:48:813 mongostore/(10455:10457): 2 Creando hilo
+[INFO] 10:37:48:816 mongostore/(10455:10473): funcionx
+[INFO] 10:37:48:816 mongostore/(10455:10472): in funcion_cliente
+[INFO] 10:37:48:816 mongostore/(10455:10472): Se conecto este socket a mi 8
+[DEBUG] 10:38:20:516 mongostore/(10489:10489): LOGGER OK
+[INFO] 10:38:20:636 mongostore/(10489:10489): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:38:20:643 mongostore/(10489:10489): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:38:20:651 mongostore/(10489:10489): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:38:20:655 mongostore/(10489:10489): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:38:20:657 mongostore/(10489:10489): O-Superbloque generado desde archivo
+[INFO] 10:38:20:658 mongostore/(10489:10489): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:38:20:659 mongostore/(10489:10489): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:38:20:661 mongostore/(10489:10489): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:38:20:661 mongostore/(10489:10489): Existencia de Blocks validada
+[DEBUG] 10:38:20:663 mongostore/(10489:10489): Directorios del File System confirmados
+[INFO] 10:38:20:663 mongostore/(10489:10489): File System iniciado
+[INFO] 10:38:20:664 mongostore/(10489:10489): pid 10489  
+
+[INFO] 10:38:20:685 mongostore/(10489:10490): Servidor iniciando
+[INFO] 10:38:20:687 mongostore/(10489:10491): Servidor iniciando 2
+[INFO] 10:38:20:701 mongostore/(10489:10490): Servidor Mongo encendido
+[INFO] 10:38:20:703 mongostore/(10489:10491): Servidor Mongo2 encendido
+[INFO] 10:38:34:003 mongostore/(10489:10490): Estableciendo conexión desde 41095
+[INFO] 10:38:34:004 mongostore/(10489:10491): socket_cliente_sabotaje 8
+[INFO] 10:38:34:005 mongostore/(10489:10491): 2 Estableciendo conexión desde 37585
+[INFO] 10:38:34:006 mongostore/(10489:10491): 2 Creando hilo
+[INFO] 10:38:34:017 mongostore/(10489:10490): Creando hilo
+[INFO] 10:38:34:037 mongostore/(10489:10513): funcionx
+[INFO] 10:38:34:037 mongostore/(10489:10514): in funcion_cliente
+[INFO] 10:38:34:056 mongostore/(10489:10514): Se conecto este socket a mi 5
+[DEBUG] 10:39:18:963 mongostore/(10527:10527): LOGGER OK
+[INFO] 10:39:18:964 mongostore/(10527:10527): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:39:18:964 mongostore/(10527:10527): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:39:18:964 mongostore/(10527:10527): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:39:18:966 mongostore/(10527:10527): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:39:18:966 mongostore/(10527:10527): O-Superbloque generado desde archivo
+[INFO] 10:39:18:966 mongostore/(10527:10527): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:39:18:966 mongostore/(10527:10527): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:39:18:966 mongostore/(10527:10527): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:39:18:966 mongostore/(10527:10527): Existencia de Blocks validada
+[DEBUG] 10:39:18:967 mongostore/(10527:10527): Directorios del File System confirmados
+[INFO] 10:39:18:967 mongostore/(10527:10527): File System iniciado
+[INFO] 10:39:18:968 mongostore/(10527:10527): pid 10527  
+
+[INFO] 10:39:18:968 mongostore/(10527:10529): Servidor iniciando 2
+[INFO] 10:39:18:968 mongostore/(10527:10529): Servidor Mongo2 encendido
+[INFO] 10:39:18:968 mongostore/(10527:10528): Servidor iniciando
+[INFO] 10:39:18:968 mongostore/(10527:10528): Servidor Mongo encendido
+[INFO] 10:39:22:475 mongostore/(10527:10529): socket_cliente_sabotaje 5
+[INFO] 10:39:22:475 mongostore/(10527:10529): 2 Estableciendo conexión desde 42193
+[INFO] 10:39:22:475 mongostore/(10527:10529): 2 Creando hilo
+[INFO] 10:39:22:476 mongostore/(10527:10528): Estableciendo conexión desde 45703
+[INFO] 10:39:22:476 mongostore/(10527:10528): Creando hilo
+[INFO] 10:39:22:478 mongostore/(10527:10546): in funcion_cliente
+[INFO] 10:39:22:479 mongostore/(10527:10545): funcionx
+[INFO] 10:39:22:480 mongostore/(10527:10546): Se conecto este socket a mi 8
+[INFO] 10:39:30:478 mongostore/(10527:10528): Estableciendo conexión desde 47751
+[INFO] 10:39:30:479 mongostore/(10527:10528): Creando hilo
+[INFO] 10:39:30:482 mongostore/(10527:10556): in funcion_cliente
+[INFO] 10:39:30:482 mongostore/(10527:10556): Se conecto este socket a mi 9
+[INFO] 10:39:30:483 mongostore/(10527:10528): Estableciendo conexión desde 48775
+[INFO] 10:39:30:483 mongostore/(10527:10528): Creando hilo
+[INFO] 10:39:30:483 mongostore/(10527:10556): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 10:39:30:484 mongostore/(10527:10558): in funcion_cliente
+[INFO] 10:39:30:485 mongostore/(10527:10558): Se conecto este socket a mi 10
+[INFO] 10:39:30:485 mongostore/(10527:10528): Estableciendo conexión desde 49799
+[INFO] 10:39:30:485 mongostore/(10527:10528): Creando hilo
+[INFO] 10:39:30:485 mongostore/(10527:10558): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 10:39:30:488 mongostore/(10527:10560): in funcion_cliente
+[INFO] 10:39:30:488 mongostore/(10527:10560): Se conecto este socket a mi 11
+[INFO] 10:39:31:485 mongostore/(10527:10556): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:39:31:486 mongostore/(10527:10558): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 10:39:32:486 mongostore/(10527:10556): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:39:32:486 mongostore/(10527:10560): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 10:39:32:486 mongostore/(10527:10558): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 10:39:33:486 mongostore/(10527:10556): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:39:33:487 mongostore/(10527:10560): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:39:33:487 mongostore/(10527:10558): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:39:34:488 mongostore/(10527:10560): tid 3  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:39:34:488 mongostore/(10527:10556): tid 1  Se mueve de 4|4 a 5|4
+[DEBUG] 10:39:57:011 mongostore/(10564:10564): LOGGER OK
+[INFO] 10:39:57:121 mongostore/(10564:10564): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:39:57:126 mongostore/(10564:10564): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:39:57:130 mongostore/(10564:10564): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:39:57:134 mongostore/(10564:10564): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:39:57:136 mongostore/(10564:10564): O-Superbloque generado desde archivo
+[INFO] 10:39:57:136 mongostore/(10564:10564): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:39:57:137 mongostore/(10564:10564): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:39:57:139 mongostore/(10564:10564): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:39:57:140 mongostore/(10564:10564): Existencia de Blocks validada
+[DEBUG] 10:39:57:141 mongostore/(10564:10564): Directorios del File System confirmados
+[INFO] 10:39:57:142 mongostore/(10564:10564): File System iniciado
+[INFO] 10:39:57:143 mongostore/(10564:10564): pid 10564  
+
+[INFO] 10:39:57:159 mongostore/(10564:10565): Servidor iniciando
+[INFO] 10:39:57:162 mongostore/(10564:10566): Servidor iniciando 2
+[INFO] 10:39:57:174 mongostore/(10564:10565): Servidor Mongo encendido
+[INFO] 10:39:57:175 mongostore/(10564:10566): Servidor Mongo2 encendido
+[INFO] 10:40:03:865 mongostore/(10564:10565): Estableciendo conexión desde 47313
+[INFO] 10:40:03:869 mongostore/(10564:10565): Creando hilo
+[INFO] 10:40:03:877 mongostore/(10564:10586): in funcion_cliente
+[INFO] 10:40:03:878 mongostore/(10564:10586): Se conecto este socket a mi 7
+[DEBUG] 10:42:08:982 mongostore/(11220:11220): LOGGER OK
+[INFO] 10:42:08:982 mongostore/(11220:11220): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:42:08:982 mongostore/(11220:11220): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:42:08:982 mongostore/(11220:11220): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:42:08:983 mongostore/(11220:11220): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:42:08:983 mongostore/(11220:11220): O-Superbloque generado desde archivo
+[INFO] 10:42:08:983 mongostore/(11220:11220): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:42:08:983 mongostore/(11220:11220): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:42:08:983 mongostore/(11220:11220): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:42:08:983 mongostore/(11220:11220): Existencia de Blocks validada
+[DEBUG] 10:42:08:984 mongostore/(11220:11220): Directorios del File System confirmados
+[INFO] 10:42:08:984 mongostore/(11220:11220): File System iniciado
+[INFO] 10:42:08:984 mongostore/(11220:11220): pid 11220  
+
+[INFO] 10:42:08:984 mongostore/(11220:11222): Servidor iniciando 2
+[INFO] 10:42:08:984 mongostore/(11220:11222): Servidor Mongo2 encendido
+[INFO] 10:42:08:984 mongostore/(11220:11221): Servidor iniciando
+[INFO] 10:42:08:985 mongostore/(11220:11221): Servidor Mongo encendido
+[INFO] 10:42:42:195 mongostore/(11220:11222): socket_cliente_sabotaje 5
+[INFO] 10:42:42:196 mongostore/(11220:11221): Estableciendo conexión desde 55943
+[INFO] 10:42:42:198 mongostore/(11220:11222): 2 Estableciendo conexión desde 52433
+[INFO] 10:42:42:198 mongostore/(11220:11222): 2 Creando hilo
+[INFO] 10:42:42:199 mongostore/(11220:11221): Creando hilo
+[INFO] 10:42:42:200 mongostore/(11220:11252): in funcion_cliente
+[INFO] 10:42:42:203 mongostore/(11220:11252): Se conecto este socket a mi 8
+[INFO] 10:42:42:203 mongostore/(11220:11251): funcionx
+[INFO] 10:43:26:090 mongostore/(11220:11221): Estableciendo conexión desde 57479
+[INFO] 10:43:26:091 mongostore/(11220:11221): Creando hilo
+[INFO] 10:43:26:092 mongostore/(11220:11284): in funcion_cliente
+[INFO] 10:43:26:094 mongostore/(11220:11284): Se conecto este socket a mi 9
+[INFO] 10:43:26:095 mongostore/(11220:11221): Estableciendo conexión desde 58503
+[INFO] 10:43:26:095 mongostore/(11220:11221): Creando hilo
+[INFO] 10:43:26:095 mongostore/(11220:11284): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 10:43:26:096 mongostore/(11220:11286): in funcion_cliente
+[INFO] 10:43:26:096 mongostore/(11220:11286): Se conecto este socket a mi 10
+[INFO] 10:43:26:096 mongostore/(11220:11221): Estableciendo conexión desde 59527
+[INFO] 10:43:26:096 mongostore/(11220:11221): Creando hilo
+[INFO] 10:43:26:096 mongostore/(11220:11286): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 10:43:26:097 mongostore/(11220:11288): in funcion_cliente
+[INFO] 10:43:26:097 mongostore/(11220:11288): Se conecto este socket a mi 11
+[INFO] 10:43:27:096 mongostore/(11220:11284): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:43:27:097 mongostore/(11220:11286): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 10:43:28:097 mongostore/(11220:11284): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:43:28:097 mongostore/(11220:11286): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 10:43:28:098 mongostore/(11220:11288): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 10:43:29:098 mongostore/(11220:11284): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:43:29:098 mongostore/(11220:11286): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:43:29:098 mongostore/(11220:11288): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:43:30:099 mongostore/(11220:11288): tid 3  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:43:30:099 mongostore/(11220:11284): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 10:43:31:100 mongostore/(11220:11288): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:43:31:100 mongostore/(11220:11284): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 10:43:31:101 mongostore/(11220:11286): tid 2  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:43:31:101 mongostore/(11220:11288): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 10:43:32:102 mongostore/(11220:11284): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 10:43:32:102 mongostore/(11220:11286): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:43:32:102 mongostore/(11220:11288): tid 3  Se mueve de 5|4 a 5|5
+[INFO] 10:43:33:102 mongostore/(11220:11284): tid 1  Comienza ejecucion de tarea ABC
+[INFO] 10:43:33:103 mongostore/(11220:11288): tid 3  Se mueve de 5|5 a 5|6
+[INFO] 10:43:34:103 mongostore/(11220:11288): tid 3  Comienza ejecucion de tarea ABC
+[INFO] 10:43:37:104 mongostore/(11220:11284): tid 1  Se finaliza la tarea ABC
+[INFO] 10:43:37:105 mongostore/(11220:11284): tid 1  Se mueve de 5|6 a 4|6
+[INFO] 10:43:38:105 mongostore/(11220:11288): tid 3  Se finaliza la tarea ABC
+[INFO] 10:43:38:106 mongostore/(11220:11284): tid 1  Se mueve de 4|6 a 4|5
+[INFO] 10:43:38:106 mongostore/(11220:11288): tid 3  Se mueve de 5|6 a 4|6
+[INFO] 10:43:39:106 mongostore/(11220:11288): tid 3  Se mueve de 4|6 a 4|5
+[INFO] 10:43:39:106 mongostore/(11220:11284): tid 1  Se mueve de 4|5 a 3|5
+[INFO] 10:43:40:108 mongostore/(11220:11284): tid 1  Se mueve de 3|5 a 3|4
+[INFO] 10:43:40:108 mongostore/(11220:11288): tid 3  Se mueve de 4|5 a 3|5
+[INFO] 10:43:41:109 mongostore/(11220:11288): tid 3  Se mueve de 3|5 a 3|4
+[INFO] 10:43:41:110 mongostore/(11220:11284): tid 1  Se mueve de 3|4 a 3|3
+[INFO] 10:43:42:111 mongostore/(11220:11284): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:43:42:111 mongostore/(11220:11288): tid 3  Se mueve de 3|4 a 3|3
+[INFO] 10:43:43:112 mongostore/(11220:11288): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:43:43:112 mongostore/(11220:11284): tid 1  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:43:43:113 mongostore/(11220:11286): tid 2  Se mueve de 4|4 a 5|4
+[INFO] 10:43:44:113 mongostore/(11220:11286): tid 2  Se mueve de 5|4 a 5|5
+[INFO] 10:43:45:114 mongostore/(11220:11286): tid 2  Se mueve de 5|5 a 5|6
+[INFO] 10:43:46:115 mongostore/(11220:11286): tid 2  Comienza ejecucion de tarea ABC
+[INFO] 10:43:47:114 mongostore/(11220:11284): tid 1  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:43:47:115 mongostore/(11220:11288): tid 3  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:43:50:118 mongostore/(11220:11286): tid 2  Se finaliza la tarea ABC
+[INFO] 10:43:50:119 mongostore/(11220:11286): tid 2  Se mueve de 5|6 a 4|6
+[INFO] 10:43:51:116 mongostore/(11220:11288): tid 3  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:43:51:119 mongostore/(11220:11286): tid 2  Se mueve de 4|6 a 4|5
+[INFO] 10:43:52:120 mongostore/(11220:11286): tid 2  Se mueve de 4|5 a 3|5
+[INFO] 10:43:53:121 mongostore/(11220:11286): tid 2  Se mueve de 3|5 a 3|4
+[INFO] 10:43:54:122 mongostore/(11220:11286): tid 2  Se mueve de 3|4 a 3|3
+[INFO] 10:43:55:122 mongostore/(11220:11286): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:43:56:123 mongostore/(11220:11286): tid 2  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:44:00:125 mongostore/(11220:11286): tid 2  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:44:01:813 mongostore/(11220:11221): Estableciendo conexión desde 61063
+[INFO] 10:44:01:813 mongostore/(11220:11221): Creando hilo
+[INFO] 10:44:01:813 mongostore/(11220:11296): in funcion_cliente
+[INFO] 10:44:01:813 mongostore/(11220:11296): Se conecto este socket a mi 12
+[INFO] 10:44:01:814 mongostore/(11220:11221): Estableciendo conexión desde 62087
+[INFO] 10:44:01:814 mongostore/(11220:11221): Creando hilo
+[INFO] 10:44:01:814 mongostore/(11220:11296): tid 4  Se mueve de 3|4 a 4|4
+[INFO] 10:44:01:814 mongostore/(11220:11221): Estableciendo conexión desde 63111
+[INFO] 10:44:01:815 mongostore/(11220:11221): Creando hilo
+[INFO] 10:44:01:815 mongostore/(11220:11298): in funcion_cliente
+[INFO] 10:44:01:815 mongostore/(11220:11298): Se conecto este socket a mi 13
+[INFO] 10:44:01:816 mongostore/(11220:11298): tid 5  Se mueve de 5|2 a 4|2
+[INFO] 10:44:01:816 mongostore/(11220:11300): in funcion_cliente
+[INFO] 10:44:01:816 mongostore/(11220:11300): Se conecto este socket a mi 14
+[INFO] 10:44:02:815 mongostore/(11220:11296): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:44:02:816 mongostore/(11220:11298): tid 5  Se mueve de 4|2 a 4|3
+[INFO] 10:44:03:815 mongostore/(11220:11296): tid 4  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:44:03:816 mongostore/(11220:11300): tid 6  Se mueve de 4|5 a 4|4
+[INFO] 10:44:03:817 mongostore/(11220:11298): tid 5  Se mueve de 4|3 a 4|4
+[INFO] 10:44:04:816 mongostore/(11220:11296): tid 4  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:44:04:817 mongostore/(11220:11300): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:44:04:817 mongostore/(11220:11298): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:44:05:817 mongostore/(11220:11300): tid 6  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:44:05:817 mongostore/(11220:11296): tid 4  Se mueve de 4|4 a 5|4
+[INFO] 10:44:06:818 mongostore/(11220:11300): tid 6  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:44:06:818 mongostore/(11220:11296): tid 4  Se mueve de 5|4 a 5|5
+[INFO] 10:44:06:819 mongostore/(11220:11298): tid 5  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:44:06:819 mongostore/(11220:11300): tid 6  Se mueve de 4|4 a 5|4
+[INFO] 10:44:07:819 mongostore/(11220:11296): tid 4  Se mueve de 5|5 a 5|6
+[INFO] 10:44:07:819 mongostore/(11220:11298): tid 5  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:44:07:819 mongostore/(11220:11300): tid 6  Se mueve de 5|4 a 5|5
+[INFO] 10:44:08:819 mongostore/(11220:11296): tid 4  Comienza ejecucion de tarea ABC
+[INFO] 10:44:08:819 mongostore/(11220:11300): tid 6  Se mueve de 5|5 a 5|6
+[INFO] 10:44:09:228 mongostore/(11220:11221): Estableciendo conexión desde 64135
+[INFO] 10:44:09:228 mongostore/(11220:11221): Creando hilo
+[INFO] 10:44:09:229 mongostore/(11220:11305): in funcion_cliente
+[INFO] 10:44:09:229 mongostore/(11220:11305): Se conecto este socket a mi 15
+[INFO] 10:44:09:229 mongostore/(11220:11221): Estableciendo conexión desde 65159
+[INFO] 10:44:09:229 mongostore/(11220:11221): Creando hilo
+[INFO] 10:44:09:229 mongostore/(11220:11307): in funcion_cliente
+[INFO] 10:44:09:230 mongostore/(11220:11307): Se conecto este socket a mi 16
+[INFO] 10:44:09:230 mongostore/(11220:11221): Estableciendo conexión desde 648
+[INFO] 10:44:09:230 mongostore/(11220:11221): Creando hilo
+[INFO] 10:44:09:230 mongostore/(11220:11309): in funcion_cliente
+[INFO] 10:44:09:230 mongostore/(11220:11309): Se conecto este socket a mi 17
+[INFO] 10:44:09:821 mongostore/(11220:11300): tid 6  Comienza ejecucion de tarea ABC
+[INFO] 10:44:12:822 mongostore/(11220:11296): tid 4  Se finaliza la tarea ABC
+[INFO] 10:44:12:823 mongostore/(11220:11296): tid 4  Se mueve de 5|6 a 4|6
+[INFO] 10:44:13:824 mongostore/(11220:11300): tid 6  Se finaliza la tarea ABC
+[INFO] 10:44:13:824 mongostore/(11220:11296): tid 4  Se mueve de 4|6 a 4|5
+[INFO] 10:44:13:824 mongostore/(11220:11300): tid 6  Se mueve de 5|6 a 4|6
+[INFO] 10:44:14:825 mongostore/(11220:11300): tid 6  Se mueve de 4|6 a 4|5
+[INFO] 10:44:14:826 mongostore/(11220:11296): tid 4  Se mueve de 4|5 a 3|5
+[INFO] 10:44:15:826 mongostore/(11220:11296): tid 4  Se mueve de 3|5 a 3|4
+[INFO] 10:44:15:826 mongostore/(11220:11300): tid 6  Se mueve de 4|5 a 3|5
+[INFO] 10:44:16:827 mongostore/(11220:11296): tid 4  Se mueve de 3|4 a 3|3
+[INFO] 10:44:16:827 mongostore/(11220:11300): tid 6  Se mueve de 3|5 a 3|4
+[INFO] 10:44:17:828 mongostore/(11220:11296): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:44:17:828 mongostore/(11220:11300): tid 6  Se mueve de 3|4 a 3|3
+[INFO] 10:44:18:828 mongostore/(11220:11300): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:44:18:829 mongostore/(11220:11296): tid 4  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:44:18:829 mongostore/(11220:11298): tid 5  Se mueve de 4|4 a 5|4
+[INFO] 10:44:19:829 mongostore/(11220:11298): tid 5  Se mueve de 5|4 a 5|5
+[INFO] 10:44:19:830 mongostore/(11220:11305): tid 7  Se mueve de 3|4 a 4|4
+[INFO] 10:44:20:830 mongostore/(11220:11305): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:44:20:831 mongostore/(11220:11298): tid 5  Se mueve de 5|5 a 5|6
+[INFO] 10:44:21:831 mongostore/(11220:11307): tid 8  Se mueve de 5|2 a 4|2
+[INFO] 10:44:21:831 mongostore/(11220:11298): tid 5  Comienza ejecucion de tarea ABC
+[INFO] 10:44:22:831 mongostore/(11220:11296): tid 4  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:44:22:832 mongostore/(11220:11300): tid 6  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:44:22:833 mongostore/(11220:11307): tid 8  Se mueve de 4|2 a 4|3
+[INFO] 10:44:23:833 mongostore/(11220:11307): tid 8  Se mueve de 4|3 a 4|4
+[INFO] 10:44:24:833 mongostore/(11220:11307): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:44:25:833 mongostore/(11220:11298): tid 5  Se finaliza la tarea ABC
+[INFO] 10:44:25:834 mongostore/(11220:11298): tid 5  Se mueve de 5|6 a 4|6
+[INFO] 10:44:25:834 mongostore/(11220:11309): tid 9  Se mueve de 4|5 a 4|4
+[INFO] 10:44:26:834 mongostore/(11220:11300): tid 6  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:44:26:835 mongostore/(11220:11305): tid 7  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:44:26:835 mongostore/(11220:11309): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:44:26:835 mongostore/(11220:11298): tid 5  Se mueve de 4|6 a 4|5
+[INFO] 10:44:27:835 mongostore/(11220:11305): tid 7  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:44:27:836 mongostore/(11220:11298): tid 5  Se mueve de 4|5 a 3|5
+[INFO] 10:44:27:836 mongostore/(11220:11307): tid 8  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:44:27:837 mongostore/(11220:11305): tid 7  Se mueve de 4|4 a 5|4
+[INFO] 10:44:28:836 mongostore/(11220:11298): tid 5  Se mueve de 3|5 a 3|4
+[INFO] 10:44:28:837 mongostore/(11220:11305): tid 7  Se mueve de 5|4 a 5|5
+[INFO] 10:44:28:837 mongostore/(11220:11307): tid 8  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:44:28:837 mongostore/(11220:11309): tid 9  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:44:29:837 mongostore/(11220:11298): tid 5  Se mueve de 3|4 a 3|3
+[INFO] 10:44:29:838 mongostore/(11220:11309): tid 9  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:44:29:838 mongostore/(11220:11305): tid 7  Se mueve de 5|5 a 5|6
+[INFO] 10:44:30:839 mongostore/(11220:11298): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:44:30:839 mongostore/(11220:11305): tid 7  Comienza ejecucion de tarea ABC
+[INFO] 10:44:31:841 mongostore/(11220:11298): tid 5  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:44:31:841 mongostore/(11220:11307): tid 8  Se mueve de 4|4 a 5|4
+[INFO] 10:44:32:841 mongostore/(11220:11307): tid 8  Se mueve de 5|4 a 5|5
+[INFO] 10:44:33:842 mongostore/(11220:11307): tid 8  Se mueve de 5|5 a 5|6
+[INFO] 10:44:34:841 mongostore/(11220:11305): tid 7  Se finaliza la tarea ABC
+[INFO] 10:44:34:842 mongostore/(11220:11305): tid 7  Se mueve de 5|6 a 4|6
+[INFO] 10:44:34:842 mongostore/(11220:11307): tid 8  Comienza ejecucion de tarea ABC
+[INFO] 10:44:35:843 mongostore/(11220:11298): tid 5  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:44:35:843 mongostore/(11220:11305): tid 7  Se mueve de 4|6 a 4|5
+[INFO] 10:44:36:845 mongostore/(11220:11305): tid 7  Se mueve de 4|5 a 3|5
+[INFO] 10:44:37:846 mongostore/(11220:11305): tid 7  Se mueve de 3|5 a 3|4
+[INFO] 10:44:38:846 mongostore/(11220:11307): tid 8  Se finaliza la tarea ABC
+[INFO] 10:44:38:847 mongostore/(11220:11307): tid 8  Se mueve de 5|6 a 4|6
+[INFO] 10:44:38:847 mongostore/(11220:11305): tid 7  Se mueve de 3|4 a 3|3
+[INFO] 10:44:39:847 mongostore/(11220:11307): tid 8  Se mueve de 4|6 a 4|5
+[INFO] 10:44:39:848 mongostore/(11220:11305): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:44:40:848 mongostore/(11220:11307): tid 8  Se mueve de 4|5 a 3|5
+[INFO] 10:44:40:849 mongostore/(11220:11305): tid 7  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:44:40:849 mongostore/(11220:11309): tid 9  Se mueve de 4|4 a 5|4
+[INFO] 10:44:41:849 mongostore/(11220:11309): tid 9  Se mueve de 5|4 a 5|5
+[INFO] 10:44:41:849 mongostore/(11220:11307): tid 8  Se mueve de 3|5 a 3|4
+[INFO] 10:44:42:850 mongostore/(11220:11309): tid 9  Se mueve de 5|5 a 5|6
+[INFO] 10:44:42:850 mongostore/(11220:11307): tid 8  Se mueve de 3|4 a 3|3
+[INFO] 10:44:43:850 mongostore/(11220:11309): tid 9  Comienza ejecucion de tarea ABC
+[INFO] 10:44:43:851 mongostore/(11220:11307): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:44:44:850 mongostore/(11220:11305): tid 7  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:44:44:851 mongostore/(11220:11307): tid 8  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:44:47:854 mongostore/(11220:11309): tid 9  Se finaliza la tarea ABC
+[INFO] 10:44:47:855 mongostore/(11220:11309): tid 9  Se mueve de 5|6 a 4|6
+[INFO] 10:44:48:855 mongostore/(11220:11307): tid 8  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:44:48:855 mongostore/(11220:11309): tid 9  Se mueve de 4|6 a 4|5
+[INFO] 10:44:49:856 mongostore/(11220:11309): tid 9  Se mueve de 4|5 a 3|5
+[INFO] 10:44:50:857 mongostore/(11220:11309): tid 9  Se mueve de 3|5 a 3|4
+[INFO] 10:44:51:858 mongostore/(11220:11309): tid 9  Se mueve de 3|4 a 3|3
+[INFO] 10:44:52:859 mongostore/(11220:11309): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:44:53:860 mongostore/(11220:11309): tid 9  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:44:57:862 mongostore/(11220:11309): tid 9  Se finaliza la tarea CONSUMIR_OXIGENO
+[DEBUG] 10:46:17:970 mongostore/(11320:11320): LOGGER OK
+[INFO] 10:46:17:970 mongostore/(11320:11320): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:46:17:970 mongostore/(11320:11320): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:46:17:970 mongostore/(11320:11320): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:46:17:971 mongostore/(11320:11320): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:46:17:971 mongostore/(11320:11320): O-Superbloque generado desde archivo
+[INFO] 10:46:17:971 mongostore/(11320:11320): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:46:17:971 mongostore/(11320:11320): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:46:17:971 mongostore/(11320:11320): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:46:17:971 mongostore/(11320:11320): Existencia de Blocks validada
+[DEBUG] 10:46:17:972 mongostore/(11320:11320): Directorios del File System confirmados
+[INFO] 10:46:17:972 mongostore/(11320:11320): File System iniciado
+[INFO] 10:46:17:972 mongostore/(11320:11320): pid 11320  
+
+[INFO] 10:46:17:972 mongostore/(11320:11322): Servidor iniciando 2
+[INFO] 10:46:17:972 mongostore/(11320:11322): Servidor Mongo2 encendido
+[INFO] 10:46:17:972 mongostore/(11320:11321): Servidor iniciando
+[INFO] 10:46:17:973 mongostore/(11320:11321): Servidor Mongo encendido
+[INFO] 10:46:23:921 mongostore/(11320:11322): socket_cliente_sabotaje 5
+[INFO] 10:46:23:922 mongostore/(11320:11321): Estableciendo conexión desde 2184
+[INFO] 10:46:23:922 mongostore/(11320:11322): 2 Estableciendo conexión desde 64209
+[INFO] 10:46:23:922 mongostore/(11320:11322): 2 Creando hilo
+[INFO] 10:46:23:923 mongostore/(11320:11321): Creando hilo
+[INFO] 10:46:23:926 mongostore/(11320:11339): funcionx
+[INFO] 10:46:23:926 mongostore/(11320:11340): in funcion_cliente
+[INFO] 10:46:23:927 mongostore/(11320:11340): Se conecto este socket a mi 8
+[INFO] 10:46:36:161 mongostore/(11320:11321): Estableciendo conexión desde 3720
+[INFO] 10:46:36:161 mongostore/(11320:11321): Creando hilo
+[INFO] 10:46:36:164 mongostore/(11320:11353): in funcion_cliente
+[INFO] 10:46:36:164 mongostore/(11320:11353): Se conecto este socket a mi 9
+[INFO] 10:46:36:179 mongostore/(11320:11321): Estableciendo conexión desde 4744
+[INFO] 10:46:36:179 mongostore/(11320:11321): Creando hilo
+[INFO] 10:46:36:180 mongostore/(11320:11356): in funcion_cliente
+[INFO] 10:46:36:181 mongostore/(11320:11356): Se conecto este socket a mi 10
+[INFO] 10:46:36:188 mongostore/(11320:11321): Estableciendo conexión desde 5768
+[INFO] 10:46:36:188 mongostore/(11320:11321): Creando hilo
+[INFO] 10:46:36:196 mongostore/(11320:11358): in funcion_cliente
+[INFO] 10:46:36:196 mongostore/(11320:11358): Se conecto este socket a mi 11
+[INFO] 10:46:36:202 mongostore/(11320:11356): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 10:46:36:203 mongostore/(11320:11353): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 10:46:37:203 mongostore/(11320:11356): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 10:46:37:204 mongostore/(11320:11353): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:46:38:205 mongostore/(11320:11353): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:46:38:205 mongostore/(11320:11356): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 10:46:38:206 mongostore/(11320:11358): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 10:46:39:206 mongostore/(11320:11353): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:46:39:206 mongostore/(11320:11356): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:46:39:207 mongostore/(11320:11358): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:46:40:208 mongostore/(11320:11356): tid 2  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:46:40:210 mongostore/(11320:11353): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 10:46:41:210 mongostore/(11320:11356): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:46:41:214 mongostore/(11320:11353): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 10:46:41:214 mongostore/(11320:11358): tid 3  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:46:41:231 mongostore/(11320:11356): tid 2  Se mueve de 4|4 a 5|4
+[INFO] 10:46:42:215 mongostore/(11320:11353): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 10:46:42:215 mongostore/(11320:11358): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:46:42:232 mongostore/(11320:11356): tid 2  Se mueve de 5|4 a 5|5
+[INFO] 10:46:43:217 mongostore/(11320:11353): tid 1  Comienza ejecucion de tarea ABC
+[INFO] 10:46:43:234 mongostore/(11320:11356): tid 2  Se mueve de 5|5 a 5|6
+[INFO] 10:46:44:235 mongostore/(11320:11356): tid 2  Comienza ejecucion de tarea ABC
+[INFO] 10:46:47:220 mongostore/(11320:11353): tid 1  Se finaliza la tarea ABC
+[INFO] 10:46:47:221 mongostore/(11320:11353): tid 1  Se mueve de 5|6 a 4|6
+[INFO] 10:46:48:222 mongostore/(11320:11353): tid 1  Se mueve de 4|6 a 4|5
+[INFO] 10:46:48:237 mongostore/(11320:11356): tid 2  Se finaliza la tarea ABC
+[INFO] 10:46:48:240 mongostore/(11320:11356): tid 2  Se mueve de 5|6 a 4|6
+[INFO] 10:46:49:224 mongostore/(11320:11353): tid 1  Se mueve de 4|5 a 3|5
+[INFO] 10:46:49:241 mongostore/(11320:11356): tid 2  Se mueve de 4|6 a 4|5
+[INFO] 10:46:50:225 mongostore/(11320:11353): tid 1  Se mueve de 3|5 a 3|4
+[INFO] 10:46:50:242 mongostore/(11320:11356): tid 2  Se mueve de 4|5 a 3|5
+[INFO] 10:46:51:227 mongostore/(11320:11353): tid 1  Se mueve de 3|4 a 3|3
+[INFO] 10:46:51:243 mongostore/(11320:11356): tid 2  Se mueve de 3|5 a 3|4
+[INFO] 10:46:52:228 mongostore/(11320:11353): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:46:52:244 mongostore/(11320:11356): tid 2  Se mueve de 3|4 a 3|3
+[INFO] 10:46:53:230 mongostore/(11320:11353): tid 1  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:46:53:231 mongostore/(11320:11358): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 10:46:53:244 mongostore/(11320:11356): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:46:54:232 mongostore/(11320:11358): tid 3  Se mueve de 5|4 a 5|5
+[INFO] 10:46:55:234 mongostore/(11320:11358): tid 3  Se mueve de 5|5 a 5|6
+[INFO] 10:46:56:235 mongostore/(11320:11358): tid 3  Comienza ejecucion de tarea ABC
+[INFO] 10:46:57:234 mongostore/(11320:11353): tid 1  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:46:57:236 mongostore/(11320:11356): tid 2  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:47:00:238 mongostore/(11320:11358): tid 3  Se finaliza la tarea ABC
+[INFO] 10:47:00:240 mongostore/(11320:11358): tid 3  Se mueve de 5|6 a 4|6
+[INFO] 10:47:01:249 mongostore/(11320:11356): tid 2  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:47:01:250 mongostore/(11320:11358): tid 3  Se mueve de 4|6 a 4|5
+[INFO] 10:47:02:252 mongostore/(11320:11358): tid 3  Se mueve de 4|5 a 3|5
+[INFO] 10:47:03:253 mongostore/(11320:11358): tid 3  Se mueve de 3|5 a 3|4
+[INFO] 10:47:04:255 mongostore/(11320:11358): tid 3  Se mueve de 3|4 a 3|3
+[INFO] 10:47:05:256 mongostore/(11320:11358): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:47:06:257 mongostore/(11320:11358): tid 3  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:47:10:258 mongostore/(11320:11358): tid 3  Se finaliza la tarea CONSUMIR_OXIGENO
+[DEBUG] 10:47:52:042 mongostore/(11479:11479): LOGGER OK
+[INFO] 10:47:52:043 mongostore/(11479:11479): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:47:52:043 mongostore/(11479:11479): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:47:52:043 mongostore/(11479:11479): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:47:52:043 mongostore/(11479:11479): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:47:52:044 mongostore/(11479:11479): O-Superbloque generado desde archivo
+[INFO] 10:47:52:044 mongostore/(11479:11479): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:47:52:044 mongostore/(11479:11479): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:47:52:044 mongostore/(11479:11479): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:47:52:044 mongostore/(11479:11479): Existencia de Blocks validada
+[DEBUG] 10:47:52:045 mongostore/(11479:11479): Directorios del File System confirmados
+[INFO] 10:47:52:045 mongostore/(11479:11479): File System iniciado
+[INFO] 10:47:52:045 mongostore/(11479:11479): pid 11479  
+
+[INFO] 10:47:52:045 mongostore/(11479:11481): Servidor iniciando 2
+[INFO] 10:47:52:045 mongostore/(11479:11481): Servidor Mongo2 encendido
+[INFO] 10:47:52:045 mongostore/(11479:11480): Servidor iniciando
+[INFO] 10:47:52:045 mongostore/(11479:11480): Servidor Mongo encendido
+[INFO] 10:47:59:499 mongostore/(11479:11480): Estableciendo conexión desde 7304
+[INFO] 10:47:59:499 mongostore/(11479:11480): Creando hilo
+[INFO] 10:47:59:500 mongostore/(11479:11481): socket_cliente_sabotaje 5
+[INFO] 10:47:59:500 mongostore/(11479:11481): 2 Estableciendo conexión desde 3794
+[INFO] 10:47:59:500 mongostore/(11479:11481): 2 Creando hilo
+[INFO] 10:47:59:504 mongostore/(11479:11486): in funcion_cliente
+[INFO] 10:47:59:504 mongostore/(11479:11486): Se conecto este socket a mi 8
+[INFO] 10:47:59:504 mongostore/(11479:11487): funcionx
+[INFO] 10:48:17:184 mongostore/(11479:11480): Estableciendo conexión desde 8840
+[INFO] 10:48:17:184 mongostore/(11479:11480): Creando hilo
+[INFO] 10:48:17:187 mongostore/(11479:11498): in funcion_cliente
+[INFO] 10:48:17:187 mongostore/(11479:11498): Se conecto este socket a mi 9
+[INFO] 10:48:17:195 mongostore/(11479:11480): Estableciendo conexión desde 9864
+[INFO] 10:48:17:197 mongostore/(11479:11480): Creando hilo
+[INFO] 10:48:17:200 mongostore/(11479:11500): in funcion_cliente
+[INFO] 10:48:17:200 mongostore/(11479:11500): Se conecto este socket a mi 10
+[INFO] 10:48:17:202 mongostore/(11479:11480): Estableciendo conexión desde 10888
+[INFO] 10:48:17:202 mongostore/(11479:11480): Creando hilo
+[INFO] 10:48:17:202 mongostore/(11479:11502): in funcion_cliente
+[INFO] 10:48:17:202 mongostore/(11479:11502): Se conecto este socket a mi 11
+[INFO] 10:48:17:224 mongostore/(11479:11498): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 10:48:17:224 mongostore/(11479:11500): tid 2  Se mueve de 5|2 a 4|2
+[INFO] 10:48:18:232 mongostore/(11479:11498): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:48:18:238 mongostore/(11479:11500): tid 2  Se mueve de 4|2 a 4|3
+[INFO] 10:48:19:245 mongostore/(11479:11500): tid 2  Se mueve de 4|3 a 4|4
+[INFO] 10:48:19:246 mongostore/(11479:11502): tid 3  Se mueve de 4|5 a 4|4
+[INFO] 10:48:19:251 mongostore/(11479:11498): tid 1  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:48:20:246 mongostore/(11479:11500): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:48:20:247 mongostore/(11479:11502): tarea GENERAR_OXIGENO  param 5
+[INFO] 10:48:20:255 mongostore/(11479:11498): tid 1  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:48:21:250 mongostore/(11479:11500): tid 2  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:48:21:251 mongostore/(11479:11498): tid 1  Se mueve de 4|4 a 5|4
+[INFO] 10:48:22:251 mongostore/(11479:11500): tid 2  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:48:22:253 mongostore/(11479:11498): tid 1  Se mueve de 5|4 a 5|5
+[INFO] 10:48:22:254 mongostore/(11479:11500): tid 2  Se mueve de 4|4 a 5|4
+[INFO] 10:48:22:255 mongostore/(11479:11502): tid 3  Comienza ejecucion de tarea GENERAR_OXIGENO
+[INFO] 10:48:23:255 mongostore/(11479:11498): tid 1  Se mueve de 5|5 a 5|6
+[INFO] 10:48:23:256 mongostore/(11479:11502): tid 3  Se finaliza la tarea GENERAR_OXIGENO
+[INFO] 10:48:23:256 mongostore/(11479:11500): tid 2  Se mueve de 5|4 a 5|5
+[INFO] 10:48:24:256 mongostore/(11479:11498): tid 1  Comienza ejecucion de tarea ABC
+[INFO] 10:48:24:257 mongostore/(11479:11500): tid 2  Se mueve de 5|5 a 5|6
+[INFO] 10:48:25:258 mongostore/(11479:11500): tid 2  Comienza ejecucion de tarea ABC
+[INFO] 10:48:28:260 mongostore/(11479:11498): tid 1  Se finaliza la tarea ABC
+[INFO] 10:48:28:263 mongostore/(11479:11498): tid 1  Se mueve de 5|6 a 4|6
+[INFO] 10:48:29:261 mongostore/(11479:11500): tid 2  Se finaliza la tarea ABC
+[INFO] 10:48:29:262 mongostore/(11479:11500): tid 2  Se mueve de 5|6 a 4|6
+[INFO] 10:48:29:264 mongostore/(11479:11498): tid 1  Se mueve de 4|6 a 4|5
+[INFO] 10:48:30:263 mongostore/(11479:11500): tid 2  Se mueve de 4|6 a 4|5
+[INFO] 10:48:30:266 mongostore/(11479:11498): tid 1  Se mueve de 4|5 a 3|5
+[INFO] 10:48:31:264 mongostore/(11479:11500): tid 2  Se mueve de 4|5 a 3|5
+[INFO] 10:48:31:267 mongostore/(11479:11498): tid 1  Se mueve de 3|5 a 3|4
+[INFO] 10:48:32:266 mongostore/(11479:11500): tid 2  Se mueve de 3|5 a 3|4
+[INFO] 10:48:32:268 mongostore/(11479:11498): tid 1  Se mueve de 3|4 a 3|3
+[INFO] 10:48:33:267 mongostore/(11479:11500): tid 2  Se mueve de 3|4 a 3|3
+[INFO] 10:48:33:268 mongostore/(11479:11498): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:48:34:268 mongostore/(11479:11500): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:48:34:270 mongostore/(11479:11498): tid 1  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:48:34:270 mongostore/(11479:11502): tid 3  Se mueve de 4|4 a 5|4
+[INFO] 10:48:35:270 mongostore/(11479:11502): tid 3  Se mueve de 5|4 a 5|5
+[INFO] 10:48:36:271 mongostore/(11479:11502): tid 3  Se mueve de 5|5 a 5|6
+[INFO] 10:48:37:272 mongostore/(11479:11502): tid 3  Comienza ejecucion de tarea ABC
+[INFO] 10:48:38:272 mongostore/(11479:11498): tid 1  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:48:38:282 mongostore/(11479:11500): tid 2  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:48:41:276 mongostore/(11479:11502): tid 3  Se finaliza la tarea ABC
+[INFO] 10:48:41:277 mongostore/(11479:11502): tid 3  Se mueve de 5|6 a 4|6
+[INFO] 10:48:42:278 mongostore/(11479:11502): tid 3  Se mueve de 4|6 a 4|5
+[INFO] 10:48:42:283 mongostore/(11479:11500): tid 2  Se finaliza la tarea CONSUMIR_OXIGENO
+[INFO] 10:48:43:279 mongostore/(11479:11502): tid 3  Se mueve de 4|5 a 3|5
+[INFO] 10:48:44:280 mongostore/(11479:11502): tid 3  Se mueve de 3|5 a 3|4
+[INFO] 10:48:45:282 mongostore/(11479:11502): tid 3  Se mueve de 3|4 a 3|3
+[INFO] 10:48:46:282 mongostore/(11479:11502): tarea CONSUMIR_OXIGENO  param 2
+[INFO] 10:48:47:285 mongostore/(11479:11502): tid 3  Comienza ejecucion de tarea CONSUMIR_OXIGENO
+[INFO] 10:48:51:288 mongostore/(11479:11502): tid 3  Se finaliza la tarea CONSUMIR_OXIGENO
+[DEBUG] 10:55:30:597 mongostore/(11619:11619): LOGGER OK
+[INFO] 10:55:30:714 mongostore/(11619:11619): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:55:30:722 mongostore/(11619:11619): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:55:30:726 mongostore/(11619:11619): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:55:30:734 mongostore/(11619:11619): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:55:30:735 mongostore/(11619:11619): O-Superbloque generado desde archivo
+[INFO] 10:55:30:736 mongostore/(11619:11619): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:55:30:737 mongostore/(11619:11619): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:55:30:739 mongostore/(11619:11619): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:55:30:740 mongostore/(11619:11619): Existencia de Blocks validada
+[DEBUG] 10:55:30:741 mongostore/(11619:11619): Directorios del File System confirmados
+[INFO] 10:55:30:741 mongostore/(11619:11619): File System iniciado
+[INFO] 10:55:30:742 mongostore/(11619:11619): pid 11619  
+
+[INFO] 10:55:30:759 mongostore/(11619:11620): Servidor iniciando
+[INFO] 10:55:30:764 mongostore/(11619:11621): Servidor iniciando 2
+[INFO] 10:55:30:778 mongostore/(11619:11620): Servidor Mongo encendido
+[INFO] 10:55:30:780 mongostore/(11619:11621): Servidor Mongo2 encendido
+[INFO] 10:55:40:850 mongostore/(11619:11620): Estableciendo conexión desde 10962
+[INFO] 10:55:40:854 mongostore/(11619:11620): Creando hilo
+[INFO] 10:55:40:870 mongostore/(11619:11645): in funcion_cliente
+[INFO] 10:55:40:871 mongostore/(11619:11645): Se conecto este socket a mi 7
+[DEBUG] 11:06:50:763 mongostore/(11962:11962): LOGGER OK
+[INFO] 11:06:50:764 mongostore/(11962:11962): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:06:50:764 mongostore/(11962:11962): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:06:50:764 mongostore/(11962:11962): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:06:50:764 mongostore/(11962:11962): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:06:50:765 mongostore/(11962:11962): O-Superbloque generado desde archivo
+[INFO] 11:06:50:765 mongostore/(11962:11962): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:06:50:765 mongostore/(11962:11962): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:06:50:765 mongostore/(11962:11962): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:06:50:765 mongostore/(11962:11962): Existencia de Blocks validada
+[DEBUG] 11:06:50:765 mongostore/(11962:11962): Directorios del File System confirmados
+[INFO] 11:06:50:765 mongostore/(11962:11962): File System iniciado
+[INFO] 11:06:50:765 mongostore/(11962:11962): pid 11962  
+
+[DEBUG] 11:06:50:765 mongostore/(11962:11962): Se ingresa a obtener todos los bloques de bitacoras
+[DEBUG] 11:06:50:765 mongostore/(11962:11962): PRIMER BLOQUE : [3,5,6]
+[DEBUG] 11:06:50:765 mongostore/(11962:11962): BLOQUE BUFFER : [1,2,4]
+[DEBUG] 11:06:50:765 mongostore/(11962:11962): Los bloques ocupados por el total de las bitacoras son [3,5,6,1,2,4]
+[INFO] 11:06:50:765 mongostore/(11962:11962): caca: [3,5,6,1,2,4]
+[INFO] 11:06:50:766 mongostore/(11962:11964): Servidor iniciando 2
+[INFO] 11:06:50:766 mongostore/(11962:11964): Servidor Mongo2 encendido
+[INFO] 11:06:50:766 mongostore/(11962:11963): Servidor iniciando
+[INFO] 11:06:50:766 mongostore/(11962:11963): Servidor Mongo encendido
+[DEBUG] 11:07:12:026 mongostore/(11980:11980): LOGGER OK
+[INFO] 11:07:12:027 mongostore/(11980:11980): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:07:12:027 mongostore/(11980:11980): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:07:12:027 mongostore/(11980:11980): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:07:12:027 mongostore/(11980:11980): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:07:12:027 mongostore/(11980:11980): O-Superbloque generado desde archivo
+[INFO] 11:07:12:027 mongostore/(11980:11980): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:07:12:027 mongostore/(11980:11980): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:07:12:027 mongostore/(11980:11980): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:07:12:027 mongostore/(11980:11980): Existencia de Blocks validada
+[DEBUG] 11:07:12:027 mongostore/(11980:11980): Directorios del File System confirmados
+[INFO] 11:07:12:028 mongostore/(11980:11980): File System iniciado
+[INFO] 11:07:12:028 mongostore/(11980:11980): pid 11980  
+
+[DEBUG] 11:07:12:028 mongostore/(11980:11980): Se ingresa a obtener todos los bloques de bitacoras
+[INFO] 11:07:12:028 mongostore/(11980:11980): no hay bitacoras
+[INFO] 11:07:12:028 mongostore/(11980:11980): caca: []
+[INFO] 11:07:12:028 mongostore/(11980:11982): Servidor iniciando 2
+[INFO] 11:07:12:028 mongostore/(11980:11982): Servidor Mongo2 encendido
+[INFO] 11:07:12:028 mongostore/(11980:11981): Servidor iniciando
+[INFO] 11:07:12:029 mongostore/(11980:11981): Servidor Mongo encendido
+[DEBUG] 11:19:03:764 mongostore/(12293:12293): LOGGER OK
+[INFO] 11:19:03:769 mongostore/(12293:12293): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:19:03:769 mongostore/(12293:12293): Testeo config, la IP es: 127.0.0.1
+[INFO] 11:19:03:777 mongostore/(12293:12293): Se eliminan archivos previos ya que el superbloque no existe desde antes y por lo tanto no se puede levantar lo existente
+[DEBUG] 11:19:03:777 mongostore/(12293:12293): I-Se ingresa a superbloque_generar_estructura_con_valores_tomados_por_consola para tomar por consola el tamanio y la cantidad de bloques
+[DEBUG] 11:19:23:296 mongostore/(12293:12293): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:19:23:296 mongostore/(12293:12293): Se ingreso por block_size 64 y blocks 32768. Ademas se genero el bitmap seteado a vacio
+[DEBUG] 11:19:23:296 mongostore/(12293:12293): O-Se cierra consola
+[DEBUG] 11:19:23:296 mongostore/(12293:12293): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/SuperBloque.ims"
+[DEBUG] 11:19:23:296 mongostore/(12293:12293): O-Archivo SuperBloque.ims cargado
+[INFO] 11:19:23:296 mongostore/(12293:12293): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:19:23:296 mongostore/(12293:12293): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Blocks.ims"
+[DEBUG] 11:19:23:296 mongostore/(12293:12293): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:19:23:297 mongostore/(12293:12293): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:19:23:297 mongostore/(12293:12293): Existencia de Blocks validada
+[DEBUG] 11:19:23:297 mongostore/(12293:12293): Directorios del File System confirmados
+[INFO] 11:19:23:297 mongostore/(12293:12293): File System iniciado
+[INFO] 11:19:23:297 mongostore/(12293:12293): pid 12293  
+
+[INFO] 11:19:23:297 mongostore/(12293:12311): Servidor iniciando 2
+[INFO] 11:19:23:297 mongostore/(12293:12311): Servidor Mongo2 encendido
+[INFO] 11:19:23:297 mongostore/(12293:12310): Servidor iniciando
+[INFO] 11:19:23:297 mongostore/(12293:12310): Servidor Mongo encendido
+[INFO] 11:19:30:818 mongostore/(12293:12311): socket_cliente_sabotaje 5
+[INFO] 11:19:30:818 mongostore/(12293:12310): Estableciendo conexión desde 25224
+[INFO] 11:19:30:821 mongostore/(12293:12311): 2 Estableciendo conexión desde 21714
+[INFO] 11:19:30:821 mongostore/(12293:12311): 2 Creando hilo
+[INFO] 11:19:30:825 mongostore/(12293:12310): Creando hilo
+[INFO] 11:19:30:826 mongostore/(12293:12330): funcionx
+[INFO] 11:19:30:829 mongostore/(12293:12331): in funcion_cliente
+[INFO] 11:19:30:832 mongostore/(12293:12331): Se conecto este socket a mi 8
+[INFO] 11:19:39:882 mongostore/(12293:12310): Estableciendo conexión desde 26760
+[INFO] 11:19:39:882 mongostore/(12293:12310): Creando hilo
+[INFO] 11:19:39:889 mongostore/(12293:12347): in funcion_cliente
+[INFO] 11:19:39:894 mongostore/(12293:12347): Se conecto este socket a mi 9
+[INFO] 11:19:39:896 mongostore/(12293:12310): Estableciendo conexión desde 27784
+[INFO] 11:19:39:896 mongostore/(12293:12310): Creando hilo
+[INFO] 11:19:39:896 mongostore/(12293:12347): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 11:19:39:896 mongostore/(12293:12349): in funcion_cliente
+[INFO] 11:19:39:896 mongostore/(12293:12349): Se conecto este socket a mi 10
+[INFO] 11:19:39:897 mongostore/(12293:12310): Estableciendo conexión desde 28808
+[INFO] 11:19:39:897 mongostore/(12293:12310): Creando hilo
+[INFO] 11:19:39:897 mongostore/(12293:12349): tid 2  Se mueve de 5|2 a 4|2
+[DEBUG] 11:23:53:715 mongostore/(12443:12443): LOGGER OK
+[INFO] 11:23:53:721 mongostore/(12443:12443): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:23:53:721 mongostore/(12443:12443): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:23:53:721 mongostore/(12443:12443): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:23:53:722 mongostore/(12443:12443): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:23:53:722 mongostore/(12443:12443): O-Superbloque generado desde archivo
+[INFO] 11:23:53:723 mongostore/(12443:12443): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:23:53:723 mongostore/(12443:12443): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:23:53:723 mongostore/(12443:12443): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:23:53:723 mongostore/(12443:12443): Existencia de Blocks validada
+[DEBUG] 11:23:53:724 mongostore/(12443:12443): Directorios del File System confirmados
+[INFO] 11:23:53:724 mongostore/(12443:12443): File System iniciado
+[INFO] 11:23:53:724 mongostore/(12443:12443): pid 12443  
+
+[INFO] 11:23:53:724 mongostore/(12443:12445): Servidor iniciando 2
+[INFO] 11:23:53:724 mongostore/(12443:12445): Servidor Mongo2 encendido
+[INFO] 11:23:53:724 mongostore/(12443:12444): Servidor iniciando
+[INFO] 11:23:53:725 mongostore/(12443:12444): Servidor Mongo encendido
+[INFO] 11:23:58:462 mongostore/(12443:12445): socket_cliente_sabotaje 5
+[INFO] 11:23:58:462 mongostore/(12443:12444): Estableciendo conexión desde 30856
+[INFO] 11:23:58:463 mongostore/(12443:12445): 2 Estableciendo conexión desde 27346
+[INFO] 11:23:58:463 mongostore/(12443:12445): 2 Creando hilo
+[INFO] 11:23:58:464 mongostore/(12443:12444): Creando hilo
+[INFO] 11:23:58:468 mongostore/(12443:12463): funcionx
+[INFO] 11:23:58:468 mongostore/(12443:12464): in funcion_cliente
+[INFO] 11:23:58:468 mongostore/(12443:12464): Se conecto este socket a mi 8
+[INFO] 11:24:06:873 mongostore/(12443:12444): Estableciendo conexión desde 32392
+[INFO] 11:24:06:873 mongostore/(12443:12444): Creando hilo
+[INFO] 11:24:06:877 mongostore/(12443:12474): in funcion_cliente
+[INFO] 11:24:06:879 mongostore/(12443:12474): Se conecto este socket a mi 9
+[INFO] 11:24:06:880 mongostore/(12443:12444): Estableciendo conexión desde 33416
+[INFO] 11:24:06:880 mongostore/(12443:12444): Creando hilo
+[INFO] 11:24:06:880 mongostore/(12443:12474): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 11:24:06:880 mongostore/(12443:12474): aaaaa
+[INFO] 11:24:06:881 mongostore/(12443:12474): bbbbbbbb
+[INFO] 11:24:06:881 mongostore/(12443:12474): ccccccccc
+[INFO] 11:24:06:881 mongostore/(12443:12474): dddddddd
+[INFO] 11:24:06:881 mongostore/(12443:12476): in funcion_cliente
+[INFO] 11:24:06:882 mongostore/(12443:12476): Se conecto este socket a mi 10
+[DEBUG] 11:25:58:246 mongostore/(12519:12519): LOGGER OK
+[INFO] 11:25:58:247 mongostore/(12519:12519): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:25:58:247 mongostore/(12519:12519): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:25:58:247 mongostore/(12519:12519): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:25:58:248 mongostore/(12519:12519): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:25:58:248 mongostore/(12519:12519): O-Superbloque generado desde archivo
+[INFO] 11:25:58:248 mongostore/(12519:12519): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:25:58:248 mongostore/(12519:12519): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:25:58:248 mongostore/(12519:12519): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:25:58:248 mongostore/(12519:12519): Existencia de Blocks validada
+[DEBUG] 11:25:58:248 mongostore/(12519:12519): Directorios del File System confirmados
+[INFO] 11:25:58:248 mongostore/(12519:12519): File System iniciado
+[INFO] 11:25:58:249 mongostore/(12519:12519): pid 12519  
+
+[INFO] 11:25:58:249 mongostore/(12519:12521): Servidor iniciando 2
+[INFO] 11:25:58:249 mongostore/(12519:12521): Servidor Mongo2 encendido
+[INFO] 11:25:58:249 mongostore/(12519:12520): Servidor iniciando
+[INFO] 11:25:58:249 mongostore/(12519:12520): Servidor Mongo encendido
+[INFO] 11:26:04:026 mongostore/(12519:12521): socket_cliente_sabotaje 5
+[INFO] 11:26:04:026 mongostore/(12519:12520): Estableciendo conexión desde 35976
+[INFO] 11:26:04:027 mongostore/(12519:12521): 2 Estableciendo conexión desde 32466
+[INFO] 11:26:04:027 mongostore/(12519:12521): 2 Creando hilo
+[INFO] 11:26:04:028 mongostore/(12519:12520): Creando hilo
+[INFO] 11:26:04:029 mongostore/(12519:12537): funcionx
+[INFO] 11:26:04:030 mongostore/(12519:12538): in funcion_cliente
+[INFO] 11:26:04:032 mongostore/(12519:12538): Se conecto este socket a mi 8
+[INFO] 11:26:11:832 mongostore/(12519:12520): Estableciendo conexión desde 37512
+[INFO] 11:26:11:832 mongostore/(12519:12520): Creando hilo
+[INFO] 11:26:11:836 mongostore/(12519:12520): Estableciendo conexión desde 38536
+[INFO] 11:26:11:836 mongostore/(12519:12520): Creando hilo
+[INFO] 11:26:11:836 mongostore/(12519:12551): in funcion_cliente
+[INFO] 11:26:11:836 mongostore/(12519:12551): Se conecto este socket a mi 9
+[INFO] 11:26:11:837 mongostore/(12519:12551): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 11:26:11:837 mongostore/(12519:12551): dddddddd
+[DEBUG] 11:26:11:837 mongostore/(12519:12551): bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims
+[INFO] 11:26:11:840 mongostore/(12519:12520): Estableciendo conexión desde 39560
+[INFO] 11:26:11:840 mongostore/(12519:12520): Creando hilo
+[DEBUG] 11:28:30:161 mongostore/(12610:12610): LOGGER OK
+[INFO] 11:28:30:161 mongostore/(12610:12610): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:28:30:161 mongostore/(12610:12610): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:28:30:162 mongostore/(12610:12610): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:28:30:162 mongostore/(12610:12610): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:28:30:162 mongostore/(12610:12610): O-Superbloque generado desde archivo
+[INFO] 11:28:30:162 mongostore/(12610:12610): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:28:30:163 mongostore/(12610:12610): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:28:30:163 mongostore/(12610:12610): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:28:30:163 mongostore/(12610:12610): Existencia de Blocks validada
+[DEBUG] 11:28:30:163 mongostore/(12610:12610): Directorios del File System confirmados
+[INFO] 11:28:30:163 mongostore/(12610:12610): File System iniciado
+[INFO] 11:28:30:163 mongostore/(12610:12610): pid 12610  
+
+[INFO] 11:28:30:164 mongostore/(12610:12612): Servidor iniciando 2
+[INFO] 11:28:30:164 mongostore/(12610:12612): Servidor Mongo2 encendido
+[INFO] 11:28:30:164 mongostore/(12610:12611): Servidor iniciando
+[INFO] 11:28:30:164 mongostore/(12610:12611): Servidor Mongo encendido
+[INFO] 11:28:35:623 mongostore/(12610:12612): socket_cliente_sabotaje 5
+[INFO] 11:28:35:623 mongostore/(12610:12611): Estableciendo conexión desde 43144
+[INFO] 11:28:35:623 mongostore/(12610:12612): 2 Estableciendo conexión desde 39634
+[INFO] 11:28:35:623 mongostore/(12610:12612): 2 Creando hilo
+[INFO] 11:28:35:624 mongostore/(12610:12611): Creando hilo
+[INFO] 11:28:35:626 mongostore/(12610:12631): in funcion_cliente
+[INFO] 11:28:35:627 mongostore/(12610:12631): Se conecto este socket a mi 8
+[INFO] 11:28:35:626 mongostore/(12610:12630): funcionx
+[INFO] 11:28:40:775 mongostore/(12610:12611): Estableciendo conexión desde 44680
+[INFO] 11:28:40:775 mongostore/(12610:12611): Creando hilo
+[INFO] 11:28:40:785 mongostore/(12610:12642): in funcion_cliente
+[INFO] 11:28:40:786 mongostore/(12610:12642): Se conecto este socket a mi 9
+[INFO] 11:28:40:788 mongostore/(12610:12611): Estableciendo conexión desde 45704
+[INFO] 11:28:40:788 mongostore/(12610:12611): Creando hilo
+[INFO] 11:28:40:789 mongostore/(12610:12642): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 11:28:40:789 mongostore/(12610:12642): dddddddd
+[DEBUG] 11:28:40:789 mongostore/(12610:12642): bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims
+[INFO] 11:28:40:790 mongostore/(12610:12611): Estableciendo conexión desde 46728
+[INFO] 11:28:40:790 mongostore/(12610:12611): Creando hilo
+[DEBUG] 11:28:40:791 mongostore/(12610:12642): rrrrrrrr
+[DEBUG] 11:28:40:791 mongostore/(12610:12642): tttttttt
+[DEBUG] 11:32:09:427 mongostore/(12733:12733): LOGGER OK
+[INFO] 11:32:09:427 mongostore/(12733:12733): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:32:09:427 mongostore/(12733:12733): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:32:09:427 mongostore/(12733:12733): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:32:09:428 mongostore/(12733:12733): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:32:09:428 mongostore/(12733:12733): O-Superbloque generado desde archivo
+[INFO] 11:32:09:428 mongostore/(12733:12733): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:32:09:428 mongostore/(12733:12733): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:32:09:428 mongostore/(12733:12733): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:32:09:428 mongostore/(12733:12733): Existencia de Blocks validada
+[DEBUG] 11:32:09:428 mongostore/(12733:12733): Directorios del File System confirmados
+[INFO] 11:32:09:428 mongostore/(12733:12733): File System iniciado
+[INFO] 11:32:09:429 mongostore/(12733:12733): pid 12733  
+
+[INFO] 11:32:09:429 mongostore/(12733:12735): Servidor iniciando 2
+[INFO] 11:32:09:429 mongostore/(12733:12735): Servidor Mongo2 encendido
+[INFO] 11:32:09:429 mongostore/(12733:12734): Servidor iniciando
+[INFO] 11:32:09:429 mongostore/(12733:12734): Servidor Mongo encendido
+[DEBUG] 11:32:15:450 mongostore/(12744:12744): LOGGER OK
+[INFO] 11:32:15:450 mongostore/(12744:12744): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:32:15:451 mongostore/(12744:12744): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:32:15:451 mongostore/(12744:12744): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:32:15:451 mongostore/(12744:12744): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:32:15:451 mongostore/(12744:12744): O-Superbloque generado desde archivo
+[INFO] 11:32:15:451 mongostore/(12744:12744): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:32:15:451 mongostore/(12744:12744): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:32:15:451 mongostore/(12744:12744): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:32:15:451 mongostore/(12744:12744): Existencia de Blocks validada
+[DEBUG] 11:32:15:451 mongostore/(12744:12744): Directorios del File System confirmados
+[INFO] 11:32:15:451 mongostore/(12744:12744): File System iniciado
+[INFO] 11:32:15:452 mongostore/(12744:12744): pid 12744  
+
+[INFO] 11:32:15:452 mongostore/(12744:12746): Servidor iniciando 2
+[INFO] 11:32:15:452 mongostore/(12744:12746): Servidor Mongo2 encendido
+[INFO] 11:32:15:452 mongostore/(12744:12745): Servidor iniciando
+[INFO] 11:32:15:452 mongostore/(12744:12745): Servidor Mongo encendido
+[INFO] 11:32:22:047 mongostore/(12744:12745): Estableciendo conexión desde 48776
+[INFO] 11:32:22:047 mongostore/(12744:12745): Creando hilo
+[INFO] 11:32:22:049 mongostore/(12744:12746): socket_cliente_sabotaje 5
+[INFO] 11:32:22:049 mongostore/(12744:12746): 2 Estableciendo conexión desde 45266
+[INFO] 11:32:22:049 mongostore/(12744:12746): 2 Creando hilo
+[INFO] 11:32:22:049 mongostore/(12744:12760): funcionx
+[INFO] 11:32:22:049 mongostore/(12744:12759): in funcion_cliente
+[INFO] 11:32:22:051 mongostore/(12744:12759): Se conecto este socket a mi 8
+[INFO] 11:32:28:379 mongostore/(12744:12745): Estableciendo conexión desde 50312
+[INFO] 11:32:28:379 mongostore/(12744:12745): Creando hilo
+[INFO] 11:32:28:382 mongostore/(12744:12776): in funcion_cliente
+[INFO] 11:32:28:384 mongostore/(12744:12776): Se conecto este socket a mi 9
+[INFO] 11:32:28:384 mongostore/(12744:12745): Estableciendo conexión desde 51336
+[INFO] 11:32:28:385 mongostore/(12744:12745): Creando hilo
+[INFO] 11:32:28:385 mongostore/(12744:12776): tid 1  Se mueve de 3|4 a 4|4
+[INFO] 11:32:28:385 mongostore/(12744:12776): dddddddd
+[DEBUG] 11:32:28:385 mongostore/(12744:12776): bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims
+[INFO] 11:32:28:386 mongostore/(12744:12778): in funcion_cliente
+[INFO] 11:32:28:386 mongostore/(12744:12778): Se conecto este socket a mi 10
+[DEBUG] 11:32:28:386 mongostore/(12744:12776): rrrrrrrr
+[INFO] 11:32:28:387 mongostore/(12744:12745): Estableciendo conexión desde 52360
+[INFO] 11:32:28:387 mongostore/(12744:12745): Creando hilo
+[DEBUG] 11:32:28:387 mongostore/(12744:12776): tttttttt
+[DEBUG] 11:32:28:387 mongostore/(12744:12776): uuuuu
+[DEBUG] 11:32:28:387 mongostore/(12744:12776): vvvvvvvvv
+[DEBUG] 11:32:28:387 mongostore/(12744:12776): Bitacora de tripulante en memoria 1 con size = 0 y blocks = []
+[INFO] 11:32:28:387 mongostore/(12744:12776): eeeeeeeeee
+[DEBUG] 11:32:28:388 mongostore/(12744:12776): I-Se ingresa a escribir_bitacora_en_blocks con log "Se mueve de 3|4 a 4|4"
+[DEBUG] 11:32:28:388 mongostore/(12744:12776): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) []
+[DEBUG] 11:37:21:907 mongostore/(13455:13455): LOGGER OK
+[INFO] 11:37:21:909 mongostore/(13455:13455): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:37:21:909 mongostore/(13455:13455): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:37:21:910 mongostore/(13455:13455): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:37:21:910 mongostore/(13455:13455): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:37:21:910 mongostore/(13455:13455): O-Superbloque generado desde archivo
+[INFO] 11:37:21:910 mongostore/(13455:13455): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:37:21:911 mongostore/(13455:13455): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:37:21:911 mongostore/(13455:13455): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:37:21:911 mongostore/(13455:13455): Existencia de Blocks validada
+[DEBUG] 11:37:21:911 mongostore/(13455:13455): Directorios del File System confirmados
+[INFO] 11:37:21:912 mongostore/(13455:13455): File System iniciado
+[INFO] 11:37:21:912 mongostore/(13455:13455): pid 13455  
+
+[INFO] 11:37:21:912 mongostore/(13455:13457): Servidor iniciando 2
+[INFO] 11:37:21:912 mongostore/(13455:13457): Servidor Mongo2 encendido
+[INFO] 11:37:21:913 mongostore/(13455:13456): Servidor iniciando
+[INFO] 11:37:21:913 mongostore/(13455:13456): Servidor Mongo encendido
+[INFO] 11:37:41:757 mongostore/(13455:13457): socket_cliente_sabotaje 5
+[INFO] 11:37:41:757 mongostore/(13455:13456): Estableciendo conexión desde 56968
+[INFO] 11:37:41:758 mongostore/(13455:13457): 2 Estableciendo conexión desde 53458
+[INFO] 11:37:41:758 mongostore/(13455:13457): 2 Creando hilo
+[INFO] 11:37:41:758 mongostore/(13455:13456): Creando hilo
+[INFO] 11:37:41:758 mongostore/(13455:13483): funcionx
+[INFO] 11:37:41:758 mongostore/(13455:13484): in funcion_cliente
+[INFO] 11:37:41:759 mongostore/(13455:13484): Se conecto este socket a mi 8
+[INFO] 11:37:53:913 mongostore/(13455:13456): Estableciendo conexión desde 58504
+[INFO] 11:37:53:913 mongostore/(13455:13456): Creando hilo
+[INFO] 11:37:53:916 mongostore/(13455:13497): in funcion_cliente
+[INFO] 11:37:53:916 mongostore/(13455:13497): Se conecto este socket a mi 9
+[INFO] 11:37:53:917 mongostore/(13455:13456): Estableciendo conexión desde 59528
+[INFO] 11:37:53:917 mongostore/(13455:13456): Creando hilo
+[INFO] 11:37:53:917 mongostore/(13455:13497): tid 1  Se mueve de 3|4 a 4|4
+[DEBUG] 11:37:53:918 mongostore/(13455:13497): bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims
+[INFO] 11:37:53:919 mongostore/(13455:13499): in funcion_cliente
+[INFO] 11:37:53:920 mongostore/(13455:13499): Se conecto este socket a mi 10
+[INFO] 11:37:53:920 mongostore/(13455:13456): Estableciendo conexión desde 60552
+[INFO] 11:37:53:920 mongostore/(13455:13456): Creando hilo
+[INFO] 11:37:53:921 mongostore/(13455:13499): tid 2  Se mueve de 5|2 a 4|2
+[DEBUG] 11:37:53:921 mongostore/(13455:13497): Bitacora de tripulante en memoria 1 con size = 0 y blocks = []
+[DEBUG] 11:37:53:921 mongostore/(13455:13499): bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 11:37:53:921 mongostore/(13455:13499): Bitacora de tripulante en memoria 2 con size = 0 y blocks = []
+[INFO] 11:37:53:921 mongostore/(13455:13499): eeeeeeeeee
+[DEBUG] 11:37:53:921 mongostore/(13455:13499): I-Se ingresa a escribir_bitacora_en_blocks con log "Se mueve de 5|2 a 4|2"
+[DEBUG] 11:37:53:921 mongostore/(13455:13499): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) []
+[INFO] 11:37:53:921 mongostore/(13455:13497): eeeeeeeeee
+[DEBUG] 11:37:53:922 mongostore/(13455:13497): I-Se ingresa a escribir_bitacora_en_blocks con log "Se mueve de 3|4 a 4|4"
+[DEBUG] 11:37:53:922 mongostore/(13455:13497): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) []
+[INFO] 11:37:53:922 mongostore/(13455:13497): Aaaaaaaaa
+[INFO] 11:37:53:922 mongostore/(13455:13497): BBBBBBBB

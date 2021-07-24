@@ -24,9 +24,9 @@ int main(void)
 
 	iniciar_miram(&configuracion);
 
-	pthread_t hilo_mapa;
+	/*pthread_t hilo_mapa;
 	pthread_create(&hilo_mapa,NULL,crear_mapa,NULL);
-	pthread_detach(hilo_mapa);
+	pthread_detach(hilo_mapa);*/
 
 	pthread_t servidor;
 	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){

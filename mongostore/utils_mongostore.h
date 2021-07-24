@@ -151,7 +151,7 @@ char* contar_archivos(char*);
 void destruir_lista(char*);
 void bitacora_crear_archivo(int);
 
-void  funcion_cliente_BITACORAS();
+void funcion_cliente_BITACORAS(int, char*);
 void bitacora_cargar_numero_de_tripulante(t_bitacora_data* bitacora_data, int tid);
 void bitacora_cargar_ruta_completa(t_bitacora_data* bitacora_data);
 void bitacora_crear_metadata_en_archivo_y_memoria_con_recupero(t_bitacora_data* bitacora_data);

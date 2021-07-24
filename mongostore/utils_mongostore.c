@@ -212,7 +212,7 @@ void iniciar_servidor2(t_configuracion* config_servidor)
     //while(variable_servidor != 0){
 
     socket_cliente_sabotaje = accept(socket_servidor, (struct sockaddr *) &dir_cliente, &tam_direccion);
-
+    log_info(logger, "socket_cliente_sabotaje %d", socket_cliente_sabotaje);
         if(socket_cliente_sabotaje>0){
             //hilo ++ ;
             log_info(logger, "2 Estableciendo conexión desde %d", dir_cliente.sin_port);
@@ -237,7 +237,7 @@ int funcionx(int socket_cliente_sabotaje){
 
 int funcion_cliente(int socket_cliente)
 {
-
+	log_info(logger, "in funcion_cliente");
 
 	int tipoMensajeRecibido = -1;
 	log_info(logger, "Se conecto este socket a mi %d",socket_cliente);
@@ -245,14 +245,15 @@ int funcion_cliente(int socket_cliente)
 	//scanf("%d", &operacion);
 	int tripulante_id;
 	t_list* lista;
+	char* parametro_char;
+	char* tid_char;
 
-//	if(no_es_discordiador){
+	/*if(no_es_discordiador){
+		bitacora_crear_archivo(numero_tripulante); //Crear default
+		numero_tripulante++;
+	}*/
 
-	//	bitacora_crear_archivo(numero_tripulante); //Crear default
-		//numero_tripulante++;
-	//}
-
-	no_es_discordiador = 1;
+	//no_es_discordiador = 1;
 
 
 	while(1)
@@ -265,7 +266,9 @@ int funcion_cliente(int socket_cliente)
 				//recurso_realizar_tarea();
 				lista = recibir_paquete(socket_cliente);
 				char* nombre_tarea = list_get(lista,0);
-				int parametro = (int)atoi(list_get(lista,1));
+
+				parametro_char = list_get(lista,1);
+				int parametro = (int)atoi(parametro_char);
 
 				log_info(logger, "tarea %s  param %d", nombre_tarea, parametro);
 
@@ -288,27 +291,30 @@ int funcion_cliente(int socket_cliente)
 				char* mensaje2 = "ok";
 				enviar_mensaje(mensaje2, socket_cliente);
 
-				list_clean_and_destroy_elements(lista, (void*)destruir_lista_paquete);
-				list_destroy(lista);
+				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 				break;
 
 
 			case CARGAR_BITACORA:; //PARA PROBAR LO DE MONGO
 				lista = recibir_paquete(socket_cliente);
-				tripulante_id = (int)atoi(list_get(lista,0));
+
+				tid_char = list_get(lista,0);
+				tripulante_id = (int)atoi(tid_char);
+
 				char* mens = list_get(lista,1);
 				log_info(logger, "tid %d  %s",tripulante_id, mens);  //Mens es lo que hay que cargar en blocks
+
+				//funcion_cliente_BITACORAS(tripulante_id, mens);
 
 				//Nos devuelve que bloques usa
 				//strlength del mens es el ++ size en el archivo
 
-
 				char* mensaje = "ok";
 				enviar_mensaje(mensaje, socket_cliente);
 
-				list_clean_and_destroy_elements(lista, (void*)destruir_lista_paquete);
-				list_destroy(lista);
+				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
+
 				break;
 
 			case INICIAR_FSCK:
@@ -328,6 +334,10 @@ int funcion_cliente(int socket_cliente)
 				log_info(logger, "aaaaaaAAAAA");
 				log_destroy(logger);
 				//config_destroy(archConfig);
+				return EXIT_FAILURE;
+
+			case -1:
+				log_warning(logger, "el cliente se desconecto.");
 				return EXIT_FAILURE;
 
 			case SALIR:
@@ -420,28 +430,35 @@ char* contar_archivos(char* path){
 
     int cantidad_bitacoras = count;
 
-
-    char* listita = list_get(lista_paths, 0);
-
-
-	char* bloques = files_obtener_bloques_de_archivo_metadata(listita);
-	log_debug(logger, "PRIMER BLOQUE : %s", bloques);
+    char* bloques;
+    if(cantidad_bitacoras > 0){
+        char* listita = list_get(lista_paths, 0);
 
 
+    	bloques = files_obtener_bloques_de_archivo_metadata(listita);
+    	log_debug(logger, "PRIMER BLOQUE : %s", bloques);
 
-	for(int i = 1; i < cantidad_bitacoras; i++)
-	{
-		cadena_sacar_ultimo_caracter(bloques);
-		listita = list_get(lista_paths, i);
-		char* string_buffer = files_obtener_bloques_de_archivo_metadata(listita);
-		log_debug(logger, "BLOQUE BUFFER : %s", string_buffer);
-		string_buffer[0] = ',';
-		string_append(&bloques, string_buffer);
-		free(string_buffer);
-	}
 
-	log_debug(logger, "Los bloques ocupados por el total de las bitacoras son %s", bloques);
-	list_destroy_and_destroy_elements(lista_paths,(void*)destruir_lista);
+
+    	for(int i = 1; i < cantidad_bitacoras; i++)
+    	{
+    		cadena_sacar_ultimo_caracter(bloques);
+    		listita = list_get(lista_paths, i);
+    		char* string_buffer = files_obtener_bloques_de_archivo_metadata(listita);
+    		log_debug(logger, "BLOQUE BUFFER : %s", string_buffer);
+    		string_buffer[0] = ',';
+    		string_append(&bloques, string_buffer);
+    		free(string_buffer);
+    	}
+
+    	log_debug(logger, "Los bloques ocupados por el total de las bitacoras son %s", bloques);
+    }else{
+    	log_info(logger, "no hay bitacoras");
+    	bloques = "[]";
+    }
+
+	free(path_local);
+	list_destroy_and_destroy_elements(lista_paths,(void*)destruir_lista_paquete);
 	return bloques;
 
 }
@@ -455,24 +472,21 @@ void destruir_lista(char* contenido){
 //Funciones agregadas para generar bitacoras
 
 
-void  funcion_cliente_BITACORAS()
+void funcion_cliente_BITACORAS(int tid, char* log)
 {
-	//
-	//
-	//
-	int tid;//recibido como fuere
-	char* log;
+
 	t_bitacora_data* bitacora_data = malloc(sizeof(t_bitacora_data));
 
 	bitacora_cargar_numero_de_tripulante(bitacora_data, tid);
 	bitacora_cargar_ruta_completa(bitacora_data);
 	bitacora_crear_metadata_en_archivo_y_memoria_con_recupero(bitacora_data);
+	log_info(logger, "eeeeeeeeee");
 	bitacora_escribir_log_en_blocks(bitacora_data, log);
+	log_info(logger, "ffffffffff");
 	bitacora_actualizar_archivo(bitacora_data);
+	log_info(logger, "gggggggggg");
 	blocks_actualizar_archivo();
-	//
-	//
-	//
+	log_info(logger, "hhhhhhhhhhh");
 }
 
 
@@ -490,6 +504,7 @@ void bitacora_cargar_ruta_completa(t_bitacora_data* bitacora_data)
 
 void bitacora_crear_metadata_en_archivo_y_memoria_con_recupero(t_bitacora_data* bitacora_data)
 {
+	log_debug(logger, "bitacora_data->ruta_completa: %s", bitacora_data->ruta_completa);
 	if(utils_existe_en_disco(bitacora_data->ruta_completa) == 0)
 	{
 		bitacora_setear_con_valores_default_en_memoria(bitacora_data);
@@ -505,8 +520,10 @@ void bitacora_crear_metadata_en_archivo_y_memoria_con_recupero(t_bitacora_data* 
 //Setea en memoria los valores variables de la metadata del recurso dado con los valores default
 void bitacora_setear_con_valores_default_en_memoria(t_bitacora_data* bitacora_data)
 {
-	bitacora_data->metadata->size = 0;
-	bitacora_data->metadata->blocks = string_duplicate("[]");
+	t_bitacora_md* metadata = malloc(sizeof(t_bitacora_md));
+	metadata->size = (int)0;
+	metadata->blocks = string_duplicate("[]");
+	bitacora_data->metadata = metadata;
 }
 
 
@@ -524,6 +541,20 @@ void bitacora_levantar_archivo(t_bitacora_data* bitacora_data)
 void bitacora_escribir_log_en_blocks(t_bitacora_data* bitacora_data, char* log)
 {
     log_debug(logger, "I-Se ingresa a escribir_bitacora_en_blocks con log \"%s\"", log);
+
+	if(bitacora_tiene_espacio_en_ultimo_bloque(bitacora_md))
+	{
+		bloque_a_cargar = metadata_ultimo_bloque_usado(bitacora_md);
+		bitacora_cargar_parcialmente_bloque(bitacora_md, &cantidad, bloque_a_cargar);
+	}
+	while(cantidad > 0)
+	{
+		bloque_a_cargar = superbloque_obtener_bloque_libre();
+		if(bloque_a_cargar >= 0)
+		{
+
+		}
+	}
 
     t_bitacora_md* bitacora_md = bitacora_data->metadata;
 
@@ -1079,8 +1110,14 @@ int cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros)
 	char** lista = string_get_string_as_array(lista_de_enteros);
 
 	int cantidad_enteros = cadena_cantidad_elementos_en_lista(lista_de_enteros);
+	log_info(logger, "cantidad_enteros %d", cantidad_enteros);
 
+	if(cantidad_enteros == 0){
+
+	}
 	int ultimo_entero = atoi(lista[cantidad_enteros - 1]);
+
+	log_info(logger, "ultimo_entero %d", ultimo_entero);
 
 	cadena_eliminar_array_de_cadenas(&lista, cantidad_enteros);
 
