@@ -1,66 +1,8 @@
-[INFO] 11:37:35:735 MiRam/(13464:13464): pid 13464  
+[INFO] 11:52:38:013 MiRam/(13817:13817): pid 13817  
 
-[INFO] 11:37:35:735 MiRam/(13464:13464): ---------  MEMORIA  --------------------
-[INFO] 11:37:35:735 MiRam/(13464:13464): base: 0, tam: 16384, libre: true 
-[INFO] 11:37:35:735 MiRam/(13464:13464): ----------------------------------------
-[INFO] 11:37:35:743 MiRam/(13464:13465): Servidor iniciando
-[INFO] 11:37:35:743 MiRam/(13464:13465): Servidor MiRam encendido
-[INFO] 11:37:35:743 MiRam/(13464:13465): socket_servidor 4
-[INFO] 11:37:41:757 MiRam/(13464:13465): socket_cliente 5
-[INFO] 11:37:41:757 MiRam/(13464:13465): Estableciendo conexión desde 7325
-[INFO] 11:37:41:757 MiRam/(13464:13465): Creando hilo
-[INFO] 11:37:41:759 MiRam/(13464:13482): Se conecto este socket a mi 5
-[INFO] 11:37:44:147 MiRam/(13464:13482): 
-El numero de la patota recibida es 1
-[INFO] 11:37:44:147 MiRam/(13464:13482): ID 1 
-[INFO] 11:37:44:147 MiRam/(13464:13482): posicion x: 3 
-[INFO] 11:37:44:147 MiRam/(13464:13482): posicion y: 4 
-[INFO] 11:37:44:147 MiRam/(13464:13482): Status: N 
-[INFO] 11:37:44:147 MiRam/(13464:13482): n patota: 1 
-
-[INFO] 11:37:44:148 MiRam/(13464:13482): ID 2 
-[INFO] 11:37:44:148 MiRam/(13464:13482): posicion x: 5 
-[INFO] 11:37:44:148 MiRam/(13464:13482): posicion y: 2 
-[INFO] 11:37:44:148 MiRam/(13464:13482): Status: N 
-[INFO] 11:37:44:148 MiRam/(13464:13482): n patota: 1 
-
-[INFO] 11:37:44:148 MiRam/(13464:13482): ID 3 
-[INFO] 11:37:44:148 MiRam/(13464:13482): posicion x: 4 
-[INFO] 11:37:44:148 MiRam/(13464:13482): posicion y: 5 
-[INFO] 11:37:44:148 MiRam/(13464:13482): Status: N 
-[INFO] 11:37:44:148 MiRam/(13464:13482): n patota: 1 
-
-[INFO] 11:37:44:148 MiRam/(13464:13482): espacio tareas todo ok
-[INFO] 11:37:44:148 MiRam/(13464:13482): ---------  MEMORIA  --------------------
-[INFO] 11:37:44:148 MiRam/(13464:13482): base: 0, tam: 8, libre: false 
-[INFO] 11:37:44:148 MiRam/(13464:13482): base: 8, tam: 58, libre: false 
-[INFO] 11:37:44:148 MiRam/(13464:13482): base: 66, tam: 21, libre: false 
-[INFO] 11:37:44:148 MiRam/(13464:13482): base: 87, tam: 21, libre: false 
-[INFO] 11:37:44:148 MiRam/(13464:13482): base: 108, tam: 21, libre: false 
-[INFO] 11:37:44:148 MiRam/(13464:13482): base: 129, tam: 16255, libre: true 
-[INFO] 11:37:44:148 MiRam/(13464:13482): ----------------------------------------
-[INFO] 11:37:44:148 MiRam/(13464:13482): Tabla de segmentos correspondiente a patota 1
-[INFO] 11:37:44:148 MiRam/(13464:13482): Base 0   Tamanio 8
-[INFO] 11:37:44:148 MiRam/(13464:13482): Base 8   Tamanio 58
-[INFO] 11:37:44:148 MiRam/(13464:13482): Base 66   Tamanio 21
-[INFO] 11:37:44:148 MiRam/(13464:13482): Base 87   Tamanio 21
-[INFO] 11:37:44:148 MiRam/(13464:13482): Base 108   Tamanio 21
-[INFO] 11:37:44:148 MiRam/(13464:13482): ---------------------------------------
-[INFO] 11:37:44:148 MiRam/(13464:13482): Se asigno espacio de memoria a todo 
-
-[INFO] 11:37:53:912 MiRam/(13464:13465): socket_cliente 7
-[INFO] 11:37:53:912 MiRam/(13464:13465): Estableciendo conexión desde 8861
-[INFO] 11:37:53:912 MiRam/(13464:13465): Creando hilo
-[INFO] 11:37:53:917 MiRam/(13464:13496): Se conecto este socket a mi 7
-[INFO] 11:37:53:917 MiRam/(13464:13465): socket_cliente 8
-[INFO] 11:37:53:917 MiRam/(13464:13465): Estableciendo conexión desde 9885
-[INFO] 11:37:53:917 MiRam/(13464:13465): Creando hilo
-[INFO] 11:37:53:920 MiRam/(13464:13498): Se conecto este socket a mi 8
-[INFO] 11:37:53:920 MiRam/(13464:13465): socket_cliente 9
-[INFO] 11:37:53:920 MiRam/(13464:13465): Estableciendo conexión desde 10909
-[INFO] 11:37:53:920 MiRam/(13464:13465): Creando hilo
-[INFO] 11:37:53:923 MiRam/(13464:13500): Se conecto este socket a mi 9
-[WARNING] 11:37:54:703 MiRam/(13464:13500): el cliente se desconecto.
-[WARNING] 11:37:54:703 MiRam/(13464:13498): el cliente se desconecto.
-[WARNING] 11:37:54:703 MiRam/(13464:13496): el cliente se desconecto.
-[WARNING] 11:37:54:703 MiRam/(13464:13482): el cliente se desconecto.
+[INFO] 11:52:38:013 MiRam/(13817:13817): ---------  MEMORIA  --------------------
+[INFO] 11:52:38:013 MiRam/(13817:13817): base: 0, tam: 16384, libre: true 
+[INFO] 11:52:38:013 MiRam/(13817:13817): ----------------------------------------
+[INFO] 11:52:38:013 MiRam/(13817:13818): Servidor iniciando
+[INFO] 11:52:38:014 MiRam/(13817:13818): Servidor MiRam encendido
+[INFO] 11:52:38:014 MiRam/(13817:13818): socket_servidor 4

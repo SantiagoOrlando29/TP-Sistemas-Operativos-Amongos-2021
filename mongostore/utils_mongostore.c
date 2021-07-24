@@ -542,7 +542,7 @@ void bitacora_escribir_log_en_blocks(t_bitacora_data* bitacora_data, char* log)
 {
     log_debug(logger, "I-Se ingresa a escribir_bitacora_en_blocks con log \"%s\"", log);
 
-	if(bitacora_tiene_espacio_en_ultimo_bloque(bitacora_md))
+	/*if(bitacora_tiene_espacio_en_ultimo_bloque(bitacora_md))
 	{
 		bloque_a_cargar = metadata_ultimo_bloque_usado(bitacora_md);
 		bitacora_cargar_parcialmente_bloque(bitacora_md, &cantidad, bloque_a_cargar);
@@ -554,7 +554,7 @@ void bitacora_escribir_log_en_blocks(t_bitacora_data* bitacora_data, char* log)
 		{
 
 		}
-	}
+	}*/
 
     t_bitacora_md* bitacora_md = bitacora_data->metadata;
 
