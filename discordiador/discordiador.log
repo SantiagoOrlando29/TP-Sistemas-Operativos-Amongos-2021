@@ -1,41 +1,30 @@
-[INFO] 16:33:35:256 discordiador/(23025:23033): in menu_discordiador
-[INFO] 16:33:35:256 discordiador/(23025:23034): in funcion_sabotaje
-[INFO] 16:33:37:048 discordiador/(23025:23033): Memoria asignada
-[INFO] 16:33:37:071 discordiador/(23025:23033): Memoria asignada
-[INFO] 16:33:37:086 discordiador/(23025:23033): Memoria asignada
-[INFO] 16:33:37:097 discordiador/(23025:23033): Memoria asignada
-[INFO] 16:33:37:110 discordiador/(23025:23033): Memoria asignada
-[INFO] 16:33:43:585 discordiador/(23025:23038): TRIPU 1  tarea recibida: ARREGLAR_REACTOR;7;2;4
-[INFO] 16:33:43:594 discordiador/(23025:23039): TRIPU 2  tarea recibida: ARREGLAR_REACTOR;7;2;4
-[INFO] 16:33:43:608 discordiador/(23025:23040): TRIPU 3  tarea recibida: ARREGLAR_REACTOR;7;2;4
-[INFO] 16:33:43:619 discordiador/(23025:23041): TRIPU 4  tarea recibida: COMPRAR_FACTURAS;1;1;5
-[INFO] 16:33:43:625 discordiador/(23025:23042): TRIPU 5  tarea recibida: COMPRAR_FACTURAS;1;1;5
-[INFO] 16:33:43:635 discordiador/(23025:23043): TRIPU 6  tarea recibida: COMPRAR_FACTURAS;1;1;5
-[INFO] 16:33:43:638 discordiador/(23025:23044): TRIPU 7  tarea recibida: CEBAR_MATES;0;0;1
-[INFO] 16:33:43:643 discordiador/(23025:23045): TRIPU 8  tarea recibida: CEBAR_MATES;0;0;1
-[INFO] 16:33:43:647 discordiador/(23025:23046): TRIPU 9  tarea recibida: CEBAR_MATES;0;0;1
-[INFO] 16:33:43:653 discordiador/(23025:23047): TRIPU 10  tarea recibida: CODEAR_EL_TP;0;0;2
-[INFO] 16:33:43:658 discordiador/(23025:23048): TRIPU 11  tarea recibida: CODEAR_EL_TP;0;0;2
-[INFO] 16:33:43:661 discordiador/(23025:23049): TRIPU 12  tarea recibida: CODEAR_EL_TP;0;0;2
-[INFO] 16:33:43:665 discordiador/(23025:23050): TRIPU 13  tarea recibida: REALIZAR_PRIMER_COMMIT;0;0;10
-[INFO] 16:33:43:669 discordiador/(23025:23051): TRIPU 14  tarea recibida: REALIZAR_PRIMER_COMMIT;0;0;10
-[INFO] 16:33:43:672 discordiador/(23025:23052): TRIPU 15  tarea recibida: REALIZAR_PRIMER_COMMIT;0;0;10
-[INFO] 16:33:56:667 discordiador/(23025:23038): TRIPU 1  tarea recibida: BARRER;7;7;4
-[INFO] 16:33:56:668 discordiador/(23025:23039): TRIPU 2  tarea recibida: BARRER;7;7;4
-[INFO] 16:34:05:699 discordiador/(23025:23039): TRIPU 2  tarea recibida: GENERAR_OXIGENO 12;0;0;5
-[INFO] 16:34:05:700 discordiador/(23025:23038): TRIPU 1  tarea recibida: GENERAR_OXIGENO 12;0;0;5
-[INFO] 16:34:25:775 discordiador/(23025:23037): TRIPU 1  tarea recibida: CAMINAR;2;2;1
-[INFO] 16:34:29:794 discordiador/(23025:23040): TRIPU 3  tarea recibida: BARRER;7;7;4
-[INFO] 16:34:29:796 discordiador/(23025:23041): TRIPU 4  tarea recibida: HACER_EJERCICIO;7;3;10
-[INFO] 16:34:30:782 discordiador/(23025:23037): TRIPU 2  tarea recibida: CAMINAR;2;2;1
-[INFO] 16:34:38:825 discordiador/(23025:23040): TRIPU 3  tarea recibida: GENERAR_OXIGENO 12;0;0;5
-[INFO] 16:34:47:838 discordiador/(23025:23041): TRIPU 4  tarea recibida: SUBIR_FOTOS_A_IG;7;3;8
-[INFO] 16:34:55:847 discordiador/(23025:23041): TRIPU 4  tarea recibida: ARREGLAR_CABLEADOS;1;8;10
-[INFO] 16:34:58:880 discordiador/(23025:23037): TRIPU 3  tarea recibida: CAMINAR;2;2;1
-[INFO] 16:35:04:896 discordiador/(23025:23042): TRIPU 5  tarea recibida: HACER_EJERCICIO;7;3;10
-[INFO] 16:35:16:898 discordiador/(23025:23041): TRIPU 4  tarea recibida: GENERAR_BASURA 1;0;0;5
-[INFO] 16:35:23:754 discordiador/(23025:23042): TRIPU 5  tarea recibida: SUBIR_FOTOS_A_IG;7;3;8
-[INFO] 16:35:31:761 discordiador/(23025:23042): TRIPU 5  tarea recibida: ARREGLAR_CABLEADOS;1;8;10
-[INFO] 16:35:32:769 discordiador/(23025:23037): TRIPU 4  tarea recibida: SALUDAR;9;9;1
-[INFO] 16:35:40:792 discordiador/(23025:23043): TRIPU 6  tarea recibida: HACER_EJERCICIO;7;3;10
-[INFO] 16:35:52:811 discordiador/(23025:23042): TRIPU 5  tarea recibida: 
+[INFO] 00:24:10:904 discordiador/(5085:5090): in funcion_sabotaje
+[INFO] 00:24:10:905 discordiador/(5085:5089): in menu_discordiador
+[INFO] 00:24:22:568 discordiador/(5085:5089): Memoria asignada
+[INFO] 00:24:30:601 discordiador/(5085:5089): Memoria asignada
+[INFO] 00:24:48:225 discordiador/(5085:5089): Memoria asignada
+[INFO] 00:24:59:388 discordiador/(5085:5102): TRIPU 1  tarea recibida: A00;1;1;5
+[INFO] 00:24:59:393 discordiador/(5085:5107): TRIPU 2  tarea recibida: B00;3;3;5
+[INFO] 00:24:59:404 discordiador/(5085:5126): TRIPU 3  tarea recibida: C00;5;5;5
+[INFO] 00:25:04:597 discordiador/(5085:5102): TRIPU 1  tarea recibida: A01;1;1;5
+[INFO] 00:25:04:664 discordiador/(5085:5107): TRIPU 2  tarea recibida: B01;3;3;5
+[INFO] 00:25:09:809 discordiador/(5085:5102): TRIPU 1  tarea recibida: A02;1;1;5
+[INFO] 00:25:09:875 discordiador/(5085:5107): TRIPU 2  tarea recibida: B02;3;3;5
+[INFO] 00:25:15:43 discordiador/(5085:5102): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 00:25:15:43 discordiador/(5085:5102): tripu_misma_patota_exit 1
+[INFO] 00:25:15:43 discordiador/(5085:5102): size exit 0
+[INFO] 00:25:15:110 discordiador/(5085:5107): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 00:25:15:110 discordiador/(5085:5107): tripu_misma_patota_exit 1
+[INFO] 00:25:15:110 discordiador/(5085:5107): size exit 0
+[INFO] 00:25:20:310 discordiador/(5085:5126): TRIPU 3  tarea recibida: C01;5;5;5
+[INFO] 00:25:25:455 discordiador/(5085:5126): TRIPU 3  tarea recibida: C02;5;5;5
+[INFO] 00:25:30:596 discordiador/(5085:5126): TRIPU 3  tarea recibida: C03;5;5;5
+[INFO] 00:25:35:754 discordiador/(5085:5126): TRIPU 3  tarea recibida: C04;5;5;5
+[INFO] 00:25:40:938 discordiador/(5085:5126): TRIPU 3  tarea recibida: C05;5;5;5
+[INFO] 00:25:46:114 discordiador/(5085:5126): TRIPU 3  tarea recibida: C06;5;5;5
+[INFO] 00:25:51:296 discordiador/(5085:5126): TRIPU 3  tarea recibida: C07;5;5;5
+[INFO] 00:25:56:423 discordiador/(5085:5126): TRIPU 3  tarea recibida: C08;5;5;5
+[INFO] 00:26:01:574 discordiador/(5085:5126): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 00:26:01:574 discordiador/(5085:5126): tripu_misma_patota_exit 1
+[INFO] 00:26:01:574 discordiador/(5085:5126): size exit 0
+[INFO] 00:26:29:805 discordiador/(5085:5089): aaaaaaaa
