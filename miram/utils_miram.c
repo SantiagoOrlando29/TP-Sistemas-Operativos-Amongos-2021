@@ -1326,6 +1326,14 @@ void dump_memoria_segmentacion(){
 	fclose(dump_file);
 }
 
+void destruir_marcos(marco* marcos){
+	free(marcos);
+}
+
+void destruir_tabla(tabla_paginacion* una_tabla){
+	list_destroy_and_destroy_elements(una_tabla->lista_marcos, (void*) destruir_marcos);
+}
+
 void destruir_lista_paquete(char* contenido){
 	free(contenido);
 }
@@ -1388,9 +1396,9 @@ int funcion_cliente_paginacion(int socket_cliente){
 
 
 					for(int i=0 ; i<cuantos_marcos_necesito; i++){
-						sem_wait(&MUTEX_PETICION_MARCOS);
+						sem_wait(&MUTEX_MEM_PRINCIPAL);
 						posicion_libre = posicion_marco();
-						sem_post(&MUTEX_PETICION_MARCOS);
+						sem_post(&MUTEX_MEM_PRINCIPAL);
 						log_info(logger, "Asigne esta posicion %d\n", posicion_libre);
 						marco* marco_nuevo = malloc (sizeof(marco));
 						marco_nuevo->id_marco=posicion_libre;
@@ -1401,86 +1409,36 @@ int funcion_cliente_paginacion(int socket_cliente){
 						sleep(1);
 
 					}
-
+					sem_wait(&MUTEX_MEM_PRINCIPAL);
 					almacenar_informacion2(&configuracion,lista, pid);
+					sem_post(&MUTEX_MEM_PRINCIPAL);
 
 					char* mensaje = "Memoria asignada";
 					enviar_mensaje(mensaje, socket_cliente);
-
-/*
-					marco* marcos = list_get(una_tabla->lista_marcos, 2);
-					void* contenidoAEscribir = malloc(configuracion.tamanio_pag*sizeof(char));
-					memcpy(contenidoAEscribir,configuracion.posicion_inicial + configuracion.tamanio_pag*2,configuracion.tamanio_pag*sizeof(char));
-					mem_hexdump(contenidoAEscribir, configuracion.tamanio_pag);
-					memcpy(configuracion.posicion_inicial+ configuracion.tamanio_pag*2,calloc(32,1),configuracion.tamanio_pag*sizeof(char));
-					swap_pagina(contenidoAEscribir,2);
-/*
-					if(marcos->ubicacion==MEM_SECUNDARIA){ log_info(logger,"ENTRE EN MS");
-												log_info(logger, "Entra mem sec");
-																int numBloque=marcos->id_marco;
-				marcos->id_marco=swap_a_memoria(numBloque);
-												marcos->ubicacion=MEM_PRINCIPAL;
-												marcos->bit_uso=1;
-												marcos->ultimo_uso=time(0);
-												list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
-											}
-								marcos->bit_uso=1;
-								marcos->ultimo_uso = time(0);
-				}
-					memcpy(configuracion.posicion_inicial+ configuracion.tamanio_pag*2,(recuperar_pag_swap(2)),configuracion.tamanio_pag*sizeof(char));
-					mem_hexdump(configuracion.posicion_inicial+ configuracion.tamanio_pag*2, configuracion.tamanio_pag);
-				    //memcpy(configuracion.posicion_inicial + 1*(configuracion.tamanio_pag), recuperar_pag_swap(1) ,configuracion.tamanio_pag);
-					leer_informacion2(&configuracion,  una_tabla, lista, pid);
-					/*
-					//int cols, rows;
-					leer_informacion2(&configuracion,  una_tabla, lista, pid);
-					void* contenidoAEscribir = malloc(configuracion.tamanio_pag*sizeof(char));
-					memcpy(contenidoAEscribir,configuracion.posicion_inicial,configuracion.tamanio_pag*sizeof(char));
-					//free(configuracion.posicion_inicial);
-					swap_pagina(contenidoAEscribir,0);
-					memcpy(configuracion.posicion_inicial,(recuperar_pag_swap(0)),configuracion.tamanio_pag*sizeof(char));
-				    //memcpy(configuracion.posicion_inicial + 1*(configuracion.tamanio_pag), recuperar_pag_swap(1) ,configuracion.tamanio_pag);
-					leer_informacion2(&configuracion,  una_tabla, lista, pid);
-					log_info(logger,"Cant trip 2, long tareas 10, marcos %d\n", cuantos_marcos2(2,10));
-					log_info(logger,"Cant trip 5, long tareas 22, marcos %d\n", cuantos_marcos2(5,22));
-					log_info(logger,"Cant trip 3, long tareas 100, marcos %d\n", cuantos_marcos2(3,100));
-					log_info(logger,"Cant trip 4, long tareas 60, marcos %d\n", cuantos_marcos2(4,60));
-					log_info(logger,"Cant trip 5, long tareas 40, marcos %d\n", cuantos_marcos2(5,40));
-					log_info(logger,"Cant trip 5, long tareas 50, marcos %d\n", cuantos_marcos2(5,50));*/
-
-					//actualizar_tripulante( tripulante3, 1);
-
-					//leer_informacion(&configuracion,  una_tabla, lista);
-					//mem_hexdump(configuracion.posicion_inicial, configuracion.tamanio_pag*sizeof(char));
-
-
-					/*borrar+=borrar;
-					imprimir_ocupacion_marcos(&configuracion);f
-					imprimir_tabla_paginacion();
-					dump_memoria_paginacion();*/
-
-				/*	tcbTripulante* tripulante2 = obtener_tripulante(1, 2);
-					log_info(logger,"El tripulante que recibi es el %d\n", tripulante2->tid);
-					log_info(logger,"La tarea es %s",obtener_tarea(1, 2));*/
-
-
-/*
-					void* contenidoAEscribir = malloc(configuracion.tamanio_pag*sizeof(char));
-					memcpy(contenidoAEscribir,configuracion.posicion_inicial,configuracion.tamanio_pag*sizeof(char));
-					free(configuracion.posicion_inicial);
-					swap_pagina(contenidoAEscribir,0);
-					memcpy(configuracion.posicion_inicial,(recuperar_pag_swap(0)),configuracion.tamanio_pag*sizeof(char));
-					mem_hexdump(configuracion.posicion_inicial, configuracion.tamanio_pag*sizeof(char));
-					leer_informacion(&configuracion,  una_tabla, lista);
-*/
+					dump_memoria_paginacion();
 
 				}
 
 
 				break;
 
+
+			case EXPULSAR_TRIPULANTE:;
+				lista = recibir_paquete(socket_cliente);
+
+
+				int tripulante_id_2 = (int)list_get(lista,0);
+				//free(tid_char);
+				int patota_id_2 = (int)list_get(lista,1);
+				log_info(logger, "tid %d  pid %d", tripulante_id_2, patota_id_2);
+
+
+
+				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
+				//return 0;//para que termine el hilo se supone
+				break;
+
 			case PEDIR_TAREA:;
-				sem_wait(&MUTEX_CASE);
 				lista = recibir_paquete(socket_cliente);
 
 				int tripulante_id = (int)atoi(list_get(lista, 0));
@@ -1490,28 +1448,28 @@ int funcion_cliente_paginacion(int socket_cliente){
 				tcbTripulante* tripulante1 = obtener_tripulante2(patota_id, tripulante_id, &configuracion);
 				log_info(logger,"El tripulante que recibi eSSSSSs el %d\n y %d", tripulante1->tid, tripulante1->prox_instruccion);
 				fflush(stdout);
-
+				sem_wait(&MUTEX_MEM_PRINCIPAL);
 				bool hay_mas_tareas = enviar_tarea_paginacion(socket_cliente, patota_id, tripulante1);
+				sem_post(&MUTEX_MEM_PRINCIPAL);
 
 				if(hay_mas_tareas == false){
-				//	funcion_expulsar_tripulante(tripulante_id);
-					//list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
-					//close(socket_cliente);
-					//NOSE SI TENDRIA Q HACER ESTO. EN DISCORDIADOR LO VA A HACER PERO CON ESTO QUE YA TERMINO ENTONCES NUNCA RECIBE ESTE CLOSE
-					//PERO SI LO HAGO ACA DIRIA Q ROMPE PQ CAPAZ EL OTRO NO RECIBIO TODAVIA Y YO YA CERRE CONEXION.
-					//return 0;//para que termine el hilo se supone
+					tabla_paginacion* una_tabla= (tabla_paginacion*)list_get(tabla_paginacion_ppal, posicion_patota(patota_id, tabla_paginacion_ppal));
+					una_tabla->cant_tripulantes--;
+					if(una_tabla->cant_tripulantes == 0){
+						sem_wait(&MUTEX_MEM_PRINCIPAL);
+						list_remove_and_destroy_element(tabla_paginacion_ppal, posicion_patota(patota_id, tabla_paginacion_ppal),(void*)destruir_tabla );
+						sem_post(&MUTEX_MEM_PRINCIPAL);
 					}
-				tabla_paginacion* una_tabla=list_get(tabla_paginacion_ppal,posicion_patota(patota_id,tabla_paginacion_ppal));
+				}
 
-				leer_informacion2(&configuracion,  una_tabla, lista, patota_id);
+				dump_memoria_paginacion();
 
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
-				sem_post(&MUTEX_CASE);
+
 				break;
 
 			case CAMBIAR_DE_ESTADO:;
-				sem_wait(&MUTEX_CASE);
 				lista = recibir_paquete(socket_cliente);
 				tripulante_id = (int)atoi(list_get(lista, 0));
 
@@ -1519,9 +1477,14 @@ int funcion_cliente_paginacion(int socket_cliente){
 				char estado = estado_recibido[0];
 
 				patota_id = (int)atoi(list_get(lista, 2));
+				sem_wait(&MUTEX_MEM_PRINCIPAL);
 				tcbTripulante* tripulante2 = obtener_tripulante2(patota_id, tripulante_id, &configuracion);
+				sem_post(&MUTEX_MEM_PRINCIPAL);
 				tripulante2->estado=estado;
+				sem_wait(&MUTEX_MEM_PRINCIPAL);
 				actualizar_tripulante(tripulante2,patota_id,&configuracion);
+				sem_post(&MUTEX_MEM_PRINCIPAL);
+
 
 
 				char* mensaje1 = "cambio de estado exitoso";
@@ -1530,18 +1493,17 @@ int funcion_cliente_paginacion(int socket_cliente){
 
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
-				sem_post(&MUTEX_CASE);
 				break;
 
 			case INFORMAR_MOVIMIENTO:;
-				sem_wait(&MUTEX_CASE);
 				lista = recibir_paquete(socket_cliente);
 				tripulante_id = (int)atoi(list_get(lista, 0));
 				int posx = (int)atoi(list_get(lista, 1));
 				int posy = (int)atoi(list_get(lista, 2));
 				patota_id = (int)atoi(list_get(lista, 3));
-
+				sem_wait(&MUTEX_MEM_PRINCIPAL);
 				tcbTripulante* tripulante3 = obtener_tripulante2(patota_id, tripulante_id, &configuracion);
+				sem_post(&MUTEX_MEM_PRINCIPAL);
 				tripulante3->posicionX=posx;
 				tripulante3->posicionY=posy;
 				actualizar_tripulante(tripulante3,patota_id,&configuracion);
@@ -1551,7 +1513,6 @@ int funcion_cliente_paginacion(int socket_cliente){
 
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
-				sem_wait(&MUTEX_CASE);
 				break;
 
 			case LISTAR_TRIPULANTES:;
@@ -1594,8 +1555,6 @@ int funcion_cliente_paginacion(int socket_cliente){
 
 tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struct* config_servidor){
 	tcbTripulante* un_tripu= malloc(sizeof(tcbTripulante));
-	sem_wait(&MUTEX_LISTA_TABLAS_PAGINAS);
-	sem_wait(&MUTEX_SWAP);
 
 	tabla_paginacion* una_tabla = list_get(tabla_paginacion_ppal,posicion_patota(patota_id, tabla_paginacion_ppal));
 
@@ -1660,7 +1619,7 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->bit_uso=1;
 		marcos->ultimo_uso=time(0);
 		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
-		}
+	}
 	marcos->bit_uso=1;
 	marcos->ultimo_uso = time(0);
 	leer_atributo_dos(&tid,offset,marcos->id_marco, config_servidor);
@@ -2005,8 +1964,6 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 
 
 
-	sem_post(&MUTEX_LISTA_TABLAS_PAGINAS);
-	sem_post(&MUTEX_SWAP);
 	return un_tripu;
 
 }
@@ -2019,10 +1976,8 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 
 void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista, int patota_id){
 
-	sem_wait(&MUTEX_SWAP);
 	uint32_t offset = 0;
 	uint32_t indice_marco =0;
-	sem_wait(&MUTEX_LISTA_TABLAS_PAGINAS);
 	for(int i=0; i<list_size(tabla_paginacion_ppal);i++){
 			if(una_tabla->id_patota==patota_id){
 				tabla_paginacion* una_tabla = list_get(tabla_paginacion_ppal,i);
@@ -2594,8 +2549,7 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 		fflush(stdout);
 
 	}
-	sem_post(&MUTEX_SWAP);
-	sem_post(&MUTEX_LISTA_TABLAS_PAGINAS);
+
 }
 
 
@@ -2604,8 +2558,7 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 	uint32_t offset = 0;
 	uint32_t indice_marco=0;
 	uint32_t pid = (uint32_t)atoi(list_get(lista,0));
-	sem_wait(&MUTEX_LISTA_TABLAS_PAGINAS);
-	sem_wait(&MUTEX_SWAP);
+
 
 	tabla_paginacion* una_tabla = list_get(tabla_paginacion_ppal,posicion_patota(patota_id,tabla_paginacion_ppal));
 
@@ -3135,10 +3088,8 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 		offset +=escribir_char_tarea(tarea[i],offset,marcos->id_marco, config_servidor);
 
 
-}
+	}
 
-	sem_post(&MUTEX_LISTA_TABLAS_PAGINAS);
-	sem_post(&MUTEX_SWAP);
 
 }
 
@@ -3172,12 +3123,7 @@ int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato){
 
 
 
-int escribir_atributo(uint32_t dato, int offset, int nro_marco, config_struct* config_s){
-	void* p = config_s->posicion_inicial;
-	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
-	memcpy(p+desplazamiento,&dato,sizeof(int));
-	return sizeof(int);
-}
+
 
 int escribir_atributo_cero(uint32_t dato, int offset, int nro_marco, config_struct* config_s){
 	void* p = config_s->posicion_inicial;
@@ -3297,7 +3243,6 @@ int posicion_marco(){
 
 
 int cuantos_marcos_libres(config_struct* config_servidor){
-	sem_wait(&MUTEX_MEM_PPAL);
 	int contador_marcos = 0;
 	for(int i=0;i<config_servidor->cant_marcos;i++){
 		if((int)(list_get(config_servidor->marcos_libres, i))==0){
@@ -3305,30 +3250,24 @@ int cuantos_marcos_libres(config_struct* config_servidor){
 		}
 
 	}
-	sem_post(&MUTEX_MEM_PPAL);
 	return contador_marcos;
 }
 
 void imprimir_ocupacion_marcos(config_struct* configuracion){
-	sem_wait(&MUTEX_MEM_PPAL);
 	log_info(logger,"Marcos ocupados:\n");
 	for(int i=0; i<(configuracion->cant_marcos);i++){
 			log_info(logger,"|%d|",(int) list_get(configuracion->marcos_libres,i));
 		}
 	log_info(logger,"\n");
-	sem_post(&MUTEX_MEM_PPAL);
 }
 
 int posicion_patota(int id_buscado,t_list* tabla_aux){
-	sem_wait(&MUTEX_MEM_PPAL);
 	for(int i=0; i<list_size(tabla_aux);i++){
 		tabla_paginacion* auxiliar= (tabla_paginacion*)list_get(tabla_aux, i);
 		if(auxiliar->id_patota==id_buscado){
-			sem_post(&MUTEX_MEM_PPAL);
 			return i;
 		}
 	}
-	sem_post(&MUTEX_MEM_PPAL);
 	return -1;
 
 	}
@@ -3445,7 +3384,6 @@ void imprimir_tabla_paginacion(){
 void swap_pagina(void* contenidoAEscribir,int numDeBloque){
 	mem_hexdump(contenidoAEscribir, configuracion.tamanio_pag);
 	log_info(logger, "Swappeando %d", numDeBloque);
-	sem_wait(&MUTEX_FILE);
 	FILE* swapfile;
 	swapfile = fopen("swap.bin","r+");
 	fseek(swapfile,numDeBloque*configuracion.tamanio_pag*sizeof(char),SEEK_SET);
@@ -3457,12 +3395,10 @@ void swap_pagina(void* contenidoAEscribir,int numDeBloque){
 	fwrite(contenidoAEscribir,sizeof(char)*configuracion.tamanio_pag,1,swapfile);
 	//free(aux);
 	fclose(swapfile);
-	sem_post(&MUTEX_FILE);
 }
 
 int swap_a_memoria(int numBloque){
 
-	sem_wait(&MUTEX_MEMORIA);
 	log_info(logger, "Recupero de %d", numBloque);
 	int nuevo_marco=posicion_marco();
 	void* leido = malloc(configuracion.tamanio_pag);
@@ -3470,7 +3406,6 @@ int swap_a_memoria(int numBloque){
 	mem_hexdump((void*)leido, configuracion.tamanio_pag);
 	memcpy(configuracion.posicion_inicial+(nuevo_marco*configuracion.tamanio_pag),leido,configuracion.tamanio_pag*sizeof(char));
 	free(leido);
-	sem_post(&MUTEX_MEMORIA);
 	return nuevo_marco;
 
 }
@@ -3480,14 +3415,12 @@ int swap_a_memoria(int numBloque){
 
 void* recuperar_pag_swap(int numDeBloque){
 	log_info(logger, "Recuperando este bloque de swap %d", numDeBloque);
-	sem_wait(&MUTEX_FILE);
 	FILE* swapfile = fopen("swap.bin","r+");
 	void* leido = malloc(configuracion.tamanio_pag);
 	fseek(swapfile,(numDeBloque*configuracion.tamanio_pag),SEEK_SET);
 	fread(leido,configuracion.tamanio_pag*sizeof(char),1,swapfile);
 	//char* aux = vaciar_bloque(leido);
 	fclose(swapfile);
-	sem_post(&MUTEX_FILE);
 	//free(leido);
 	return leido;
 }
@@ -3499,7 +3432,6 @@ int reemplazo_lru(){
 	   int marco_patota=0;
 	   time_t lru_actual = time(0);
 	   marco* lru_m=malloc(sizeof(marco*));
-	   sem_wait(&MUTEX_MEM_PPAL);
 	   for(int i=0; i<list_size(tabla_paginacion_ppal);i++){
 		   tabla_paginacion* una_tabla =(tabla_paginacion*)list_get(tabla_paginacion_ppal,i);
 		   for(int j=0; j<list_size(una_tabla->lista_marcos);j++){
@@ -3513,7 +3445,6 @@ int reemplazo_lru(){
 		   	}
 	   }
 
-	   sem_post(&MUTEX_MEM_PPAL);
 	   lru_m->ubicacion=MEM_SECUNDARIA;
 	   nro_marco=lru_m->id_marco;
 	   log_info(logger, "El marco elegido para reemplazar es %d", lru_m->id_marco);

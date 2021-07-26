@@ -4,7 +4,7 @@ int main(void)
 {
 	FILE* archivo = fopen("MiRam.log","w");
 	fclose(archivo);
-	logger = log_create("MiRam.log","MiRam",0,LOG_LEVEL_INFO);
+	logger = log_create("MiRam.log","MiRam",1,LOG_LEVEL_INFO);
 
 	int piddd = getpid();
 	log_info(logger, "pid %d  \n", piddd);
@@ -18,7 +18,7 @@ int main(void)
 	sem_init(&MUTEX_LISTA_TABLAS_SEGMENTOS, 0,1);
 	sem_init(&MUTEX_LISTA_TABLAS_PAGINAS, 0,1);
 	sem_init(&MUTEX_PETICION_MARCOS, 0,1);
-	sem_init(&MUTEX_MEM_PPAL, 0,1);
+	sem_init(&MUTEX_MEM_PRINCIPAL, 0,1);
 	sem_init(&MUTEX_MEM_SEC, 0,1);
 	sem_init(&MUTEX_MEMORIA,0,1);
 	sem_init(&MUTEX_SWAP,0,1);
