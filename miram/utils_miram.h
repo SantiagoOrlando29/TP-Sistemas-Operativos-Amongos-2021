@@ -288,7 +288,7 @@ void leer_atributo_uno(void* dato,int offset, int nro_marco, config_struct* conf
 void leer_atributo_dos(void* dato,int offset, int nro_marco, config_struct* config_s);
 void leer_atributo_tres(void* dato,int offset, int nro_marco, config_struct* config_s);
 int cuantos_marcos2(int cuantos_tripulantes, int longitud_tarea);
-
+void swap_pagina_iniciar();
 
 
 int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct* config_s);

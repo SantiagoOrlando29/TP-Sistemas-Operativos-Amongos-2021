@@ -1,753 +1,375 @@
-[INFO] 11:18:51:611 MiRam/(15296:15296): pid 15296  
+[INFO] 21:15:03:932 MiRam/(19064:19064): pid 19064  
 
-[INFO] 11:18:51:612 MiRam/(15296:15296): 
-Numero de marco es: 256 nro_marcos
+[INFO] 21:15:03:933 MiRam/(19064:19064): 
+Numero de marco es: 4 nro_marcos
 
-[INFO] 11:18:51:617 MiRam/(15296:15300): Servidor iniciando
-[INFO] 11:18:51:632 MiRam/(15296:15300): Servidor MiRam encendido
-[INFO] 11:18:51:632 MiRam/(15296:15300): socket_servidor 4
-[INFO] 11:18:54:605 MiRam/(15296:15300): socket_cliente 5
-[INFO] 11:18:54:606 MiRam/(15296:15300): Estableciendo conexión desde 29864
-[INFO] 11:18:54:606 MiRam/(15296:15300): Creando hilo
-[INFO] 11:18:54:611 MiRam/(15296:15302): Se conecto este socket a mi 5
+[INFO] 21:15:03:936 MiRam/(19064:19068): Servidor iniciando
+[INFO] 21:15:03:936 MiRam/(19064:19068): Servidor MiRam encendido
+[INFO] 21:15:03:936 MiRam/(19064:19068): socket_servidor 4
+[INFO] 21:15:08:301 MiRam/(19064:19068): socket_cliente 5
+[INFO] 21:15:08:301 MiRam/(19064:19068): Estableciendo conexión desde 4815
+[INFO] 21:15:08:301 MiRam/(19064:19068): Creando hilo
+[INFO] 21:15:08:301 MiRam/(19064:19068): Inicializo el archivo
+[INFO] 21:15:08:302 MiRam/(19064:19076): Se conecto este socket a mi 5
 
-[INFO] 11:19:00:339 MiRam/(15296:15302): PID es 1
-[INFO] 11:19:00:340 MiRam/(15296:15302): Ingresa nueva patota, necesito 2 marcos
-[INFO] 11:19:00:342 MiRam/(15296:15302): Guardando info
-[INFO] 11:19:00:342 MiRam/(15296:15302): Asigne esta posicion 0
+[INFO] 21:15:13:937 MiRam/(19064:19076): PID es 1
+[INFO] 21:15:13:937 MiRam/(19064:19076): Ingresa nueva patota, necesito 3 marcos
+[INFO] 21:15:13:938 MiRam/(19064:19076): Guardando info
+[INFO] 21:15:13:938 MiRam/(19064:19076): Asigne esta posicion 0
 
-[INFO] 11:19:01:342 MiRam/(15296:15302): Asigne esta posicion 1
+[INFO] 21:15:15:945 MiRam/(19064:19076): Asigne esta posicion 1
 
-[INFO] 11:19:04:34 MiRam/(15296:15302): PID es 2
-[INFO] 11:19:04:34 MiRam/(15296:15302): Ingresa nueva patota, necesito 2 marcos
-[INFO] 11:19:04:35 MiRam/(15296:15302): Guardando info
-[INFO] 11:19:04:35 MiRam/(15296:15302): Asigne esta posicion 2
+[INFO] 21:15:17:946 MiRam/(19064:19076): Asigne esta posicion 2
 
-[INFO] 11:19:05:35 MiRam/(15296:15302): Asigne esta posicion 3
+[INFO] 21:15:19:956 MiRam/(19064:19076): MARCO 0
 
-[INFO] 11:19:11:640 MiRam/(15296:15302): PID es 3
-[INFO] 11:19:11:640 MiRam/(15296:15302): Ingresa nueva patota, necesito 3 marcos
-[INFO] 11:19:11:642 MiRam/(15296:15302): Guardando info
-[INFO] 11:19:11:642 MiRam/(15296:15302): Asigne esta posicion 4
+[INFO] 21:15:19:956 MiRam/(19064:19076): OFFSET 0
 
-[INFO] 11:19:12:643 MiRam/(15296:15302): Asigne esta posicion 5
+[INFO] 21:15:19:956 MiRam/(19064:19076): ID magico 1
 
-[INFO] 11:19:13:644 MiRam/(15296:15302): Asigne esta posicion 6
+[INFO] 21:15:19:956 MiRam/(19064:19076): MARCO 0
 
-[INFO] 11:19:20:360 MiRam/(15296:15300): socket_cliente 7
-[INFO] 11:19:20:361 MiRam/(15296:15300): Estableciendo conexión desde 31400
-[INFO] 11:19:20:361 MiRam/(15296:15300): Creando hilo
-[INFO] 11:19:20:370 MiRam/(15296:15396): Se conecto este socket a mi 7
+[INFO] 21:15:19:956 MiRam/(19064:19076): OFFSET 4
 
-[INFO] 11:19:20:374 MiRam/(15296:15396): El tripulante que recibi es el 1
+[INFO] 21:15:19:956 MiRam/(19064:19076): Puntero magico 29
+
+[INFO] 21:15:19:956 MiRam/(19064:19076): MARCO 0
+
+[INFO] 21:15:19:956 MiRam/(19064:19076): OFFSET 8
+
+[INFO] 21:15:19:956 MiRam/(19064:19076): TID magico 1
+
+[INFO] 21:15:19:956 MiRam/(19064:19076): MARCO 0
+
+[INFO] 21:15:19:956 MiRam/(19064:19076): OFFSET 12
+
+[INFO] 21:15:19:956 MiRam/(19064:19076): Estado magico N
+
+[INFO] 21:15:19:956 MiRam/(19064:19076): Pos x magico 1
+
+[INFO] 21:15:19:956 MiRam/(19064:19076): Pos y magico 1
+
+[INFO] 21:15:19:956 MiRam/(19064:19076): Prox instruccion 29
+
+[INFO] 21:15:19:956 MiRam/(19064:19076): Puntero magico  1
+
+[INFO] 21:15:19:956 MiRam/(19064:19076): Patota 1
+
+[INFO] 21:15:19:957 MiRam/(19064:19076): ID MARCO 0
+
+[INFO] 21:15:19:957 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:19:957 MiRam/(19064:19076): Ubicacion 0
+
+[INFO] 21:15:19:957 MiRam/(19064:19076): ID MARCO 1
+
+[INFO] 21:15:19:957 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:19:957 MiRam/(19064:19076): Ubicacion 0
+
+[INFO] 21:15:19:957 MiRam/(19064:19076): ID MARCO 2
+
+[INFO] 21:15:19:957 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:19:957 MiRam/(19064:19076): Ubicacion 0
+
+[INFO] 21:15:21:483 MiRam/(19064:19076): PID es 2
+[INFO] 21:15:21:483 MiRam/(19064:19076): Ingresa nueva patota, necesito 3 marcos
+[INFO] 21:15:21:484 MiRam/(19064:19076): Guardando info
+[INFO] 21:15:21:484 MiRam/(19064:19076): Asigne esta posicion 3
+
+[INFO] 21:15:23:494 MiRam/(19064:19076): Algoritmo de reemplazo es LRU
+
+[INFO] 21:15:23:494 MiRam/(19064:19076): El marco elegido para reemplazar es 2
+[INFO] 21:15:23:494 MiRam/(19064:19076): Memoria -1240462632
+[INFO] 21:15:23:494 MiRam/(19064:19076): EL NUMERO DE BLOQUE ES 0
+[INFO] 21:15:23:495 MiRam/(19064:19076): Swappeando 0
+[INFO] 21:15:23:495 MiRam/(19064:19076): Asigne esta posicion 2
+
+[INFO] 21:15:25:500 MiRam/(19064:19076): Algoritmo de reemplazo es LRU
+
+[INFO] 21:15:25:500 MiRam/(19064:19076): El marco elegido para reemplazar es 0
+[INFO] 21:15:25:500 MiRam/(19064:19076): Memoria -1240462480
+[INFO] 21:15:25:500 MiRam/(19064:19076): EL NUMERO DE BLOQUE ES 1
+[INFO] 21:15:25:500 MiRam/(19064:19076): Swappeando 1
+[INFO] 21:15:25:501 MiRam/(19064:19076): Asigne esta posicion 0
+
+[INFO] 21:15:27:505 MiRam/(19064:19076): MARCO 3
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): OFFSET 0
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): ID magico 2
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): MARCO 3
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): OFFSET 4
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): Puntero magico 29
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): MARCO 3
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): OFFSET 8
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): TID magico 2
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): MARCO 3
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): OFFSET 12
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): Estado magico N
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): Pos x magico 3
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): Pos y magico 3
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): Prox instruccion 29
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): Puntero magico  1
+
+[INFO] 21:15:27:506 MiRam/(19064:19076): Patota 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 0
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 0
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 0
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Patota 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 0
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 0
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 0
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Patota 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 0
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 0
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 0
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Patota 2
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 3
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 0
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 2
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 0
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 0
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
+
+[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 0
+
+[INFO] 21:15:34:814 MiRam/(19064:19068): socket_cliente 7
+[INFO] 21:15:34:814 MiRam/(19064:19068): Estableciendo conexión desde 6351
+[INFO] 21:15:34:815 MiRam/(19064:19068): Creando hilo
+[INFO] 21:15:34:816 MiRam/(19064:19068): Inicializo el archivo
+[INFO] 21:15:34:829 MiRam/(19064:19162): Se conecto este socket a mi 7
+
+[INFO] 21:15:34:829 MiRam/(19064:19162): POS VECTOR 0
+[INFO] 21:15:34:829 MiRam/(19064:19162): El indice 0
+[INFO] 21:15:34:829 MiRam/(19064:19162): 
+El offset 8
+[INFO] 21:15:34:830 MiRam/(19064:19162): ENTRE EN MS
+[INFO] 21:15:34:830 MiRam/(19064:19162): Recupero de 1
+[INFO] 21:15:34:830 MiRam/(19064:19162): Algoritmo de reemplazo es LRU
+
+[INFO] 21:15:34:830 MiRam/(19064:19162): El marco elegido para reemplazar es 1
+[INFO] 21:15:34:830 MiRam/(19064:19162): Memoria 146334296
+[INFO] 21:15:34:830 MiRam/(19064:19162): EL NUMERO DE BLOQUE ES 2
+[INFO] 21:15:34:830 MiRam/(19064:19162): Swappeando 2
+[INFO] 21:15:34:830 MiRam/(19064:19162): Recuperando este bloque de swap 1
+[INFO] 21:15:34:831 MiRam/(19064:19162): MARCO 1
+[INFO] 21:15:34:831 MiRam/(19064:19162): OFFSET 8
+[INFO] 21:15:34:831 MiRam/(19064:19162): TID magico 0
+[INFO] 21:15:34:831 MiRam/(19064:19162): MARCO 1
+[INFO] 21:15:34:831 MiRam/(19064:19162): OFFSET 12
+[INFO] 21:15:34:831 MiRam/(19064:19162): Estado magico 
+[INFO] 21:15:34:831 MiRam/(19064:19162): Pos x magico 0
+
+[INFO] 21:15:34:831 MiRam/(19064:19162): Pos y magico 0
+[INFO] 21:15:34:831 MiRam/(19064:19162): Prox instruccion 0
+[INFO] 21:15:34:831 MiRam/(19064:19162): Puntero magico  0
+[INFO] 21:15:34:831 MiRam/(19064:19162): El tripulante que recibi es el 1
  y 1
-[INFO] 11:19:20:375 MiRam/(15296:15396): POS VECTOR 0
-[INFO] 11:19:20:375 MiRam/(15296:15396): El indice 0
-[INFO] 11:19:20:375 MiRam/(15296:15396): 
+[INFO] 21:15:34:831 MiRam/(19064:19162): El tripulante que recibi eSSSSSs el 0
+ y 0
+[INFO] 21:15:34:831 MiRam/(19064:19162): 
+ tareas : (null) 
+
+[INFO] 21:15:34:832 MiRam/(19064:19068): socket_cliente 8
+[INFO] 21:15:34:832 MiRam/(19064:19068): Estableciendo conexión desde 7375
+[INFO] 21:15:34:832 MiRam/(19064:19068): Creando hilo
+[INFO] 21:15:34:832 MiRam/(19064:19068): Inicializo el archivo
+[INFO] 21:15:34:832 MiRam/(19064:19162): POS VECTOR 0
+[INFO] 21:15:34:832 MiRam/(19064:19162): El indice 0
+[INFO] 21:15:34:832 MiRam/(19064:19162): 
 El offset 8
-[INFO] 11:19:20:376 MiRam/(15296:15396): MARCO 0
-[INFO] 11:19:20:376 MiRam/(15296:15396): OFFSET 8
-[INFO] 11:19:20:376 MiRam/(15296:15396): TID magico 1
-[INFO] 11:19:20:377 MiRam/(15296:15396): MARCO 0
-[INFO] 11:19:20:377 MiRam/(15296:15396): OFFSET 12
-[INFO] 11:19:20:377 MiRam/(15296:15396): Estado magico N
+[INFO] 21:15:34:832 MiRam/(19064:19162): MARCO 1
+[INFO] 21:15:34:832 MiRam/(19064:19162): OFFSET 8
+[INFO] 21:15:34:832 MiRam/(19064:19162): TID magico 0
+[INFO] 21:15:34:832 MiRam/(19064:19162): MARCO 1
+[INFO] 21:15:34:833 MiRam/(19064:19162): OFFSET 12
+[INFO] 21:15:34:833 MiRam/(19064:19162): Estado magico 
+[INFO] 21:15:34:833 MiRam/(19064:19162): Pos x magico 0
 
-[INFO] 11:19:20:378 MiRam/(15296:15396): Pos x magico 1
+[INFO] 21:15:34:833 MiRam/(19064:19162): Pos y magico 0
+[INFO] 21:15:34:833 MiRam/(19064:19162): Prox instruccion 0
+[INFO] 21:15:34:833 MiRam/(19064:19162): Puntero magico  0
+[INFO] 21:15:34:833 MiRam/(19064:19162): El indice 0
 
-[INFO] 11:19:20:395 MiRam/(15296:15396): Pos y magico 1
-[INFO] 11:19:20:395 MiRam/(15296:15396): Prox instruccion 29
-[INFO] 11:19:20:395 MiRam/(15296:15396): Puntero magico  1632790785
-[INFO] 11:19:20:395 MiRam/(15296:15396): El tripulante que recibi eSSSSSs el 1
- y 29
-[INFO] 11:19:20:395 MiRam/(15296:15396): 
-El punterin 29
-
-[INFO] 11:19:20:396 MiRam/(15296:15396): El indice 0
-
-[INFO] 11:19:20:396 MiRam/(15296:15396): 
-El offset 8
-
-[INFO] 11:19:20:396 MiRam/(15296:15396): MARCO 0
-
-[INFO] 11:19:20:396 MiRam/(15296:15396): OFFSET 8
-
-[INFO] 11:19:20:396 MiRam/(15296:15396): 
- tareas : A00;1;1;5 
-
-[INFO] 11:19:20:396 MiRam/(15296:15300): socket_cliente 8
-[INFO] 11:19:20:396 MiRam/(15296:15300): Estableciendo conexión desde 32424
-[INFO] 11:19:20:396 MiRam/(15296:15300): Creando hilo
-[INFO] 11:19:20:399 MiRam/(15296:15396): POS VECTOR 0
-[INFO] 11:19:20:399 MiRam/(15296:15396): El indice 0
-[INFO] 11:19:20:399 MiRam/(15296:15396): 
-El offset 8
-[INFO] 11:19:20:399 MiRam/(15296:15396): MARCO 0
-[INFO] 11:19:20:399 MiRam/(15296:15396): OFFSET 8
-[INFO] 11:19:20:399 MiRam/(15296:15398): Se conecto este socket a mi 8
-
-[INFO] 11:19:20:399 MiRam/(15296:15396): TID magico 1
-[INFO] 11:19:20:399 MiRam/(15296:15396): MARCO 0
-[INFO] 11:19:20:399 MiRam/(15296:15396): OFFSET 12
-[INFO] 11:19:20:399 MiRam/(15296:15396): Estado magico N
-
-[INFO] 11:19:20:399 MiRam/(15296:15396): Pos x magico 1
-
-[INFO] 11:19:20:399 MiRam/(15296:15396): Pos y magico 1
-[INFO] 11:19:20:399 MiRam/(15296:15396): Prox instruccion 39
-[INFO] 11:19:20:399 MiRam/(15296:15396): Puntero magico  1632790785
-[INFO] 11:19:20:399 MiRam/(15296:15396): El indice 0
-
-[INFO] 11:19:20:399 MiRam/(15296:15396): 
+[INFO] 21:15:34:833 MiRam/(19064:19162): 
 El offset 8
 
-[INFO] 11:19:20:400 MiRam/(15296:15396): MARCO 0
+[INFO] 21:15:34:833 MiRam/(19064:19162): MARCO 1
 
-[INFO] 11:19:20:400 MiRam/(15296:15396): OFFSET 8
+[INFO] 21:15:34:833 MiRam/(19064:19162): OFFSET 8
 
-[INFO] 11:19:20:402 MiRam/(15296:15398): El tripulante que recibi es el 2
+[ERROR] 21:15:34:833 MiRam/(19064:19162): el cliente se desconecto. Terminando servidor
+[INFO] 21:15:34:834 MiRam/(19064:19163): Se conecto este socket a mi 8
+
+[INFO] 21:15:34:834 MiRam/(19064:19163): POS VECTOR 0
+[INFO] 21:15:34:834 MiRam/(19064:19163): El indice 0
+[INFO] 21:15:34:834 MiRam/(19064:19163): 
+El offset 8
+[INFO] 21:15:34:834 MiRam/(19064:19163): MARCO 3
+[INFO] 21:15:34:834 MiRam/(19064:19163): OFFSET 8
+[INFO] 21:15:34:834 MiRam/(19064:19163): TID magico 2
+[INFO] 21:15:34:834 MiRam/(19064:19163): MARCO 3
+[INFO] 21:15:34:834 MiRam/(19064:19163): OFFSET 12
+[INFO] 21:15:34:834 MiRam/(19064:19163): Estado magico N
+
+[INFO] 21:15:34:834 MiRam/(19064:19163): Pos x magico 3
+
+[INFO] 21:15:34:834 MiRam/(19064:19163): Pos y magico 3
+[INFO] 21:15:34:834 MiRam/(19064:19163): Prox instruccion 29
+[INFO] 21:15:34:834 MiRam/(19064:19163): Puntero magico  1
+[INFO] 21:15:34:834 MiRam/(19064:19163): El tripulante que recibi es el 2
  y 2
-[INFO] 11:19:20:402 MiRam/(15296:15398): POS VECTOR 0
-[INFO] 11:19:20:403 MiRam/(15296:15398): El indice 0
-[INFO] 11:19:20:403 MiRam/(15296:15398): 
-El offset 8
-[INFO] 11:19:20:403 MiRam/(15296:15398): MARCO 2
-[INFO] 11:19:20:403 MiRam/(15296:15398): OFFSET 8
-[INFO] 11:19:20:403 MiRam/(15296:15398): TID magico 2
-[INFO] 11:19:20:403 MiRam/(15296:15398): MARCO 2
-[INFO] 11:19:20:403 MiRam/(15296:15398): OFFSET 12
-[INFO] 11:19:20:403 MiRam/(15296:15398): Estado magico N
-
-[INFO] 11:19:20:403 MiRam/(15296:15398): Pos x magico 3
-
-[INFO] 11:19:20:403 MiRam/(15296:15398): Pos y magico 3
-[INFO] 11:19:20:403 MiRam/(15296:15398): Prox instruccion 29
-[INFO] 11:19:20:403 MiRam/(15296:15398): Puntero magico  2
-[INFO] 11:19:20:403 MiRam/(15296:15398): El tripulante que recibi eSSSSSs el 2
+[INFO] 21:15:34:834 MiRam/(19064:19163): El tripulante que recibi eSSSSSs el 2
  y 29
-[INFO] 11:19:20:403 MiRam/(15296:15398): 
+[INFO] 21:15:34:834 MiRam/(19064:19163): 
 El punterin 29
 
-[INFO] 11:19:20:403 MiRam/(15296:15398): El indice 0
+[INFO] 21:15:34:834 MiRam/(19064:19163): El indice 0
 
-[INFO] 11:19:20:403 MiRam/(15296:15398): 
+[INFO] 21:15:34:834 MiRam/(19064:19163): 
 El offset 8
 
-[INFO] 11:19:20:403 MiRam/(15296:15398): MARCO 2
+[INFO] 21:15:34:834 MiRam/(19064:19163): MARCO 3
 
-[INFO] 11:19:20:403 MiRam/(15296:15398): OFFSET 8
+[INFO] 21:15:34:834 MiRam/(19064:19163): OFFSET 8
 
-[INFO] 11:19:20:403 MiRam/(15296:15398): 
+[INFO] 21:15:34:834 MiRam/(19064:19163): 
  tareas : B00;3;3;5 
 
-[INFO] 11:19:20:403 MiRam/(15296:15300): socket_cliente 9
-[INFO] 11:19:20:403 MiRam/(15296:15300): Estableciendo conexión desde 33448
-[INFO] 11:19:20:403 MiRam/(15296:15300): Creando hilo
-[INFO] 11:19:20:404 MiRam/(15296:15398): POS VECTOR 0
-[INFO] 11:19:20:404 MiRam/(15296:15398): El indice 0
-[INFO] 11:19:20:404 MiRam/(15296:15398): 
+[INFO] 21:15:34:835 MiRam/(19064:19163): POS VECTOR 0
+[INFO] 21:15:34:835 MiRam/(19064:19163): El indice 0
+[INFO] 21:15:34:835 MiRam/(19064:19163): 
 El offset 8
-[INFO] 11:19:20:404 MiRam/(15296:15398): MARCO 2
-[INFO] 11:19:20:404 MiRam/(15296:15398): OFFSET 8
-[INFO] 11:19:20:404 MiRam/(15296:15398): TID magico 2
-[INFO] 11:19:20:404 MiRam/(15296:15398): MARCO 2
-[INFO] 11:19:20:404 MiRam/(15296:15398): OFFSET 12
-[INFO] 11:19:20:405 MiRam/(15296:15398): Estado magico N
+[INFO] 21:15:34:835 MiRam/(19064:19163): MARCO 3
+[INFO] 21:15:34:835 MiRam/(19064:19163): OFFSET 8
+[INFO] 21:15:34:835 MiRam/(19064:19163): TID magico 2
+[INFO] 21:15:34:835 MiRam/(19064:19163): MARCO 3
+[INFO] 21:15:34:835 MiRam/(19064:19163): OFFSET 12
+[INFO] 21:15:34:835 MiRam/(19064:19163): Estado magico N
 
-[INFO] 11:19:20:405 MiRam/(15296:15398): Pos x magico 3
+[INFO] 21:15:34:835 MiRam/(19064:19163): Pos x magico 3
 
-[INFO] 11:19:20:405 MiRam/(15296:15398): Pos y magico 3
-[INFO] 11:19:20:405 MiRam/(15296:15398): Prox instruccion 39
-[INFO] 11:19:20:405 MiRam/(15296:15398): Puntero magico  2
-[INFO] 11:19:20:405 MiRam/(15296:15398): El indice 0
+[INFO] 21:15:34:835 MiRam/(19064:19163): Pos y magico 3
+[INFO] 21:15:34:835 MiRam/(19064:19163): Prox instruccion 39
+[INFO] 21:15:34:835 MiRam/(19064:19163): Puntero magico  1
+[INFO] 21:15:34:835 MiRam/(19064:19163): El indice 0
 
-[INFO] 11:19:20:405 MiRam/(15296:15398): 
+[INFO] 21:15:34:835 MiRam/(19064:19163): 
 El offset 8
 
-[INFO] 11:19:20:405 MiRam/(15296:15398): MARCO 2
+[INFO] 21:15:34:835 MiRam/(19064:19163): MARCO 3
 
-[INFO] 11:19:20:405 MiRam/(15296:15398): OFFSET 8
+[INFO] 21:15:34:835 MiRam/(19064:19163): OFFSET 8
 
-[INFO] 11:19:20:406 MiRam/(15296:15400): Se conecto este socket a mi 9
-
-[INFO] 11:19:20:406 MiRam/(15296:15400): El tripulante que recibi es el 3
- y 3
-[INFO] 11:19:20:406 MiRam/(15296:15400): POS VECTOR 0
-[INFO] 11:19:20:406 MiRam/(15296:15400): El indice 0
-[INFO] 11:19:20:406 MiRam/(15296:15400): 
-El offset 8
-[INFO] 11:19:20:406 MiRam/(15296:15400): MARCO 4
-[INFO] 11:19:20:406 MiRam/(15296:15400): OFFSET 8
-[INFO] 11:19:20:406 MiRam/(15296:15400): TID magico 3
-[INFO] 11:19:20:406 MiRam/(15296:15400): MARCO 4
-[INFO] 11:19:20:406 MiRam/(15296:15400): OFFSET 12
-[INFO] 11:19:20:406 MiRam/(15296:15400): Estado magico N
-
-[INFO] 11:19:20:406 MiRam/(15296:15400): Pos x magico 5
-
-[INFO] 11:19:20:406 MiRam/(15296:15400): Pos y magico 5
-[INFO] 11:19:20:406 MiRam/(15296:15400): Prox instruccion 29
-[INFO] 11:19:20:406 MiRam/(15296:15400): Puntero magico  3
-[INFO] 11:19:20:406 MiRam/(15296:15400): El tripulante que recibi eSSSSSs el 3
- y 29
-[INFO] 11:19:20:406 MiRam/(15296:15400): 
-El punterin 29
-
-[INFO] 11:19:20:406 MiRam/(15296:15400): El indice 0
-
-[INFO] 11:19:20:406 MiRam/(15296:15400): 
-El offset 8
-
-[INFO] 11:19:20:406 MiRam/(15296:15400): MARCO 4
-
-[INFO] 11:19:20:406 MiRam/(15296:15400): OFFSET 8
-
-[INFO] 11:19:20:406 MiRam/(15296:15400): 
- tareas : C00;5;5;5 
-
-[INFO] 11:19:25:577 MiRam/(15296:15396): El tripulante que recibi es el 1
- y 1
-[INFO] 11:19:25:578 MiRam/(15296:15396): POS VECTOR 0
-[INFO] 11:19:25:578 MiRam/(15296:15396): El indice 0
-[INFO] 11:19:25:578 MiRam/(15296:15396): 
-El offset 8
-[INFO] 11:19:25:578 MiRam/(15296:15396): MARCO 0
-[INFO] 11:19:25:578 MiRam/(15296:15396): OFFSET 8
-[INFO] 11:19:25:579 MiRam/(15296:15396): TID magico 1
-[INFO] 11:19:25:579 MiRam/(15296:15396): MARCO 0
-[INFO] 11:19:25:579 MiRam/(15296:15396): OFFSET 12
-[INFO] 11:19:25:579 MiRam/(15296:15396): Estado magico E
-
-[INFO] 11:19:25:579 MiRam/(15296:15396): Pos x magico 1
-
-[INFO] 11:19:25:579 MiRam/(15296:15396): Pos y magico 1
-[INFO] 11:19:25:579 MiRam/(15296:15396): Prox instruccion 39
-[INFO] 11:19:25:579 MiRam/(15296:15396): Puntero magico  1632790785
-[INFO] 11:19:25:579 MiRam/(15296:15396): El tripulante que recibi eSSSSSs el 1
- y 39
-[INFO] 11:19:25:580 MiRam/(15296:15396): 
-El punterin 39
-
-[INFO] 11:19:25:580 MiRam/(15296:15396): El indice 0
-
-[INFO] 11:19:25:580 MiRam/(15296:15396): 
-El offset 8
-
-[INFO] 11:19:25:580 MiRam/(15296:15396): MARCO 0
-
-[INFO] 11:19:25:580 MiRam/(15296:15396): OFFSET 8
-
-[INFO] 11:19:25:580 MiRam/(15296:15396): 
- tareas : A01;1;1;5 
-
-[INFO] 11:19:25:662 MiRam/(15296:15398): El tripulante que recibi es el 2
- y 2
-[INFO] 11:19:25:663 MiRam/(15296:15398): POS VECTOR 0
-[INFO] 11:19:25:663 MiRam/(15296:15398): El indice 0
-[INFO] 11:19:25:663 MiRam/(15296:15398): 
-El offset 8
-[INFO] 11:19:25:663 MiRam/(15296:15398): MARCO 2
-[INFO] 11:19:25:663 MiRam/(15296:15398): OFFSET 8
-[INFO] 11:19:25:663 MiRam/(15296:15398): TID magico 2
-[INFO] 11:19:25:663 MiRam/(15296:15398): MARCO 2
-[INFO] 11:19:25:663 MiRam/(15296:15398): OFFSET 12
-[INFO] 11:19:25:663 MiRam/(15296:15398): Estado magico E
-
-[INFO] 11:19:25:663 MiRam/(15296:15398): Pos x magico 3
-
-[INFO] 11:19:25:663 MiRam/(15296:15398): Pos y magico 3
-[INFO] 11:19:25:663 MiRam/(15296:15398): Prox instruccion 39
-[INFO] 11:19:25:663 MiRam/(15296:15398): Puntero magico  2
-[INFO] 11:19:25:663 MiRam/(15296:15398): El tripulante que recibi eSSSSSs el 2
- y 39
-[INFO] 11:19:25:663 MiRam/(15296:15398): 
-El punterin 39
-
-[INFO] 11:19:25:663 MiRam/(15296:15398): El indice 0
-
-[INFO] 11:19:25:664 MiRam/(15296:15398): 
-El offset 8
-
-[INFO] 11:19:25:664 MiRam/(15296:15398): MARCO 2
-
-[INFO] 11:19:25:664 MiRam/(15296:15398): OFFSET 8
-
-[INFO] 11:19:25:664 MiRam/(15296:15398): 
- tareas : B01;3;3;5 
-
-[INFO] 11:19:30:803 MiRam/(15296:15396): El tripulante que recibi es el 1
- y 1
-[INFO] 11:19:30:803 MiRam/(15296:15396): POS VECTOR 0
-[INFO] 11:19:30:804 MiRam/(15296:15396): El indice 0
-[INFO] 11:19:30:804 MiRam/(15296:15396): 
-El offset 8
-[INFO] 11:19:30:804 MiRam/(15296:15396): MARCO 0
-[INFO] 11:19:30:804 MiRam/(15296:15396): OFFSET 8
-[INFO] 11:19:30:804 MiRam/(15296:15396): TID magico 1
-[INFO] 11:19:30:804 MiRam/(15296:15396): MARCO 0
-[INFO] 11:19:30:804 MiRam/(15296:15396): OFFSET 12
-[INFO] 11:19:30:804 MiRam/(15296:15396): Estado magico E
-
-[INFO] 11:19:30:804 MiRam/(15296:15396): Pos x magico 1
-
-[INFO] 11:19:30:804 MiRam/(15296:15396): Pos y magico 1
-[INFO] 11:19:30:804 MiRam/(15296:15396): Prox instruccion 49
-[INFO] 11:19:30:804 MiRam/(15296:15396): Puntero magico  1632790785
-[INFO] 11:19:30:804 MiRam/(15296:15396): El tripulante que recibi eSSSSSs el 1
- y 49
-[INFO] 11:19:30:804 MiRam/(15296:15396): 
-El punterin 49
-
-[INFO] 11:19:30:804 MiRam/(15296:15396): El indice 0
-
-[INFO] 11:19:30:805 MiRam/(15296:15396): 
-El offset 8
-
-[INFO] 11:19:30:805 MiRam/(15296:15396): MARCO 0
-
-[INFO] 11:19:30:805 MiRam/(15296:15396): OFFSET 8
-
-[INFO] 11:19:30:805 MiRam/(15296:15396): El indice 0
-
-[INFO] 11:19:30:805 MiRam/(15296:15396): 
-El offset 8
-
-[INFO] 11:19:30:805 MiRam/(15296:15396): MARCO 0
-
-[INFO] 11:19:30:805 MiRam/(15296:15396): OFFSET 8
-
-[INFO] 11:19:30:805 MiRam/(15296:15396): 
- tareas : A02;1;1;5 
-
-[INFO] 11:19:30:870 MiRam/(15296:15398): El tripulante que recibi es el 2
- y 2
-[INFO] 11:19:30:870 MiRam/(15296:15398): POS VECTOR 0
-[INFO] 11:19:30:871 MiRam/(15296:15398): El indice 0
-[INFO] 11:19:30:871 MiRam/(15296:15398): 
-El offset 8
-[INFO] 11:19:30:871 MiRam/(15296:15398): MARCO 2
-[INFO] 11:19:30:871 MiRam/(15296:15398): OFFSET 8
-[INFO] 11:19:30:871 MiRam/(15296:15398): TID magico 2
-[INFO] 11:19:30:871 MiRam/(15296:15398): MARCO 2
-[INFO] 11:19:30:871 MiRam/(15296:15398): OFFSET 12
-[INFO] 11:19:30:871 MiRam/(15296:15398): Estado magico E
-
-[INFO] 11:19:30:871 MiRam/(15296:15398): Pos x magico 3
-
-[INFO] 11:19:30:871 MiRam/(15296:15398): Pos y magico 3
-[INFO] 11:19:30:871 MiRam/(15296:15398): Prox instruccion 49
-[INFO] 11:19:30:871 MiRam/(15296:15398): Puntero magico  2
-[INFO] 11:19:30:871 MiRam/(15296:15398): El tripulante que recibi eSSSSSs el 2
- y 49
-[INFO] 11:19:30:871 MiRam/(15296:15398): 
-El punterin 49
-
-[INFO] 11:19:30:871 MiRam/(15296:15398): El indice 0
-
-[INFO] 11:19:30:871 MiRam/(15296:15398): 
-El offset 8
-
-[INFO] 11:19:30:871 MiRam/(15296:15398): MARCO 2
-
-[INFO] 11:19:30:871 MiRam/(15296:15398): OFFSET 8
-
-[INFO] 11:19:30:872 MiRam/(15296:15398): El indice 0
-
-[INFO] 11:19:30:872 MiRam/(15296:15398): 
-El offset 8
-
-[INFO] 11:19:30:872 MiRam/(15296:15398): MARCO 2
-
-[INFO] 11:19:30:872 MiRam/(15296:15398): OFFSET 8
-
-[INFO] 11:19:30:872 MiRam/(15296:15398): 
- tareas : B02;3;3;5 
-
-[INFO] 11:19:36:19 MiRam/(15296:15396): El tripulante que recibi es el 1
- y 1
-[INFO] 11:19:36:19 MiRam/(15296:15396): POS VECTOR 0
-[INFO] 11:19:36:19 MiRam/(15296:15396): El indice 0
-[INFO] 11:19:36:19 MiRam/(15296:15396): 
-El offset 8
-[INFO] 11:19:36:19 MiRam/(15296:15396): MARCO 0
-[INFO] 11:19:36:19 MiRam/(15296:15396): OFFSET 8
-[INFO] 11:19:36:19 MiRam/(15296:15396): TID magico 1
-[INFO] 11:19:36:20 MiRam/(15296:15396): MARCO 0
-[INFO] 11:19:36:20 MiRam/(15296:15396): OFFSET 12
-[INFO] 11:19:36:20 MiRam/(15296:15396): Estado magico E
-
-[INFO] 11:19:36:20 MiRam/(15296:15396): Pos x magico 1
-
-[INFO] 11:19:36:20 MiRam/(15296:15396): Pos y magico 1
-[INFO] 11:19:36:20 MiRam/(15296:15396): Prox instruccion 0
-[INFO] 11:19:36:20 MiRam/(15296:15396): Puntero magico  1632790785
-[INFO] 11:19:36:20 MiRam/(15296:15396): El tripulante que recibi eSSSSSs el 1
- y 0
-[INFO] 11:19:36:20 MiRam/(15296:15396): 
- tareas : (null) 
-
-[INFO] 11:19:36:20 MiRam/(15296:15400): POS VECTOR 0
-[INFO] 11:19:36:20 MiRam/(15296:15400): El indice 0
-[INFO] 11:19:36:20 MiRam/(15296:15400): 
-El offset 8
-[INFO] 11:19:36:20 MiRam/(15296:15400): MARCO 4
-[INFO] 11:19:36:20 MiRam/(15296:15400): OFFSET 8
-[INFO] 11:19:36:20 MiRam/(15296:15400): TID magico 3
-[INFO] 11:19:36:20 MiRam/(15296:15400): MARCO 4
-[INFO] 11:19:36:20 MiRam/(15296:15400): OFFSET 12
-[INFO] 11:19:36:20 MiRam/(15296:15400): Estado magico N
-
-[INFO] 11:19:36:21 MiRam/(15296:15400): Pos x magico 5
-
-[INFO] 11:19:36:21 MiRam/(15296:15400): Pos y magico 5
-[INFO] 11:19:36:21 MiRam/(15296:15400): Prox instruccion 39
-[INFO] 11:19:36:21 MiRam/(15296:15400): Puntero magico  3
-[INFO] 11:19:36:21 MiRam/(15296:15400): El indice 0
-
-[INFO] 11:19:36:21 MiRam/(15296:15400): 
-El offset 8
-
-[INFO] 11:19:36:21 MiRam/(15296:15400): MARCO 4
-
-[INFO] 11:19:36:21 MiRam/(15296:15400): OFFSET 8
-
-[ERROR] 11:19:36:22 MiRam/(15296:15396): el cliente se desconecto. Terminando servidor
-[INFO] 11:19:36:137 MiRam/(15296:15398): El tripulante que recibi es el 2
- y 2
-[INFO] 11:19:36:137 MiRam/(15296:15398): POS VECTOR 0
-[INFO] 11:19:36:137 MiRam/(15296:15398): El indice 0
-[INFO] 11:19:36:138 MiRam/(15296:15398): 
-El offset 8
-[INFO] 11:19:36:138 MiRam/(15296:15398): MARCO 2
-[INFO] 11:19:36:138 MiRam/(15296:15398): OFFSET 8
-[INFO] 11:19:36:138 MiRam/(15296:15398): TID magico 2
-[INFO] 11:19:36:138 MiRam/(15296:15398): MARCO 2
-[INFO] 11:19:36:138 MiRam/(15296:15398): OFFSET 12
-[INFO] 11:19:36:138 MiRam/(15296:15398): Estado magico E
-
-[INFO] 11:19:36:138 MiRam/(15296:15398): Pos x magico 3
-
-[INFO] 11:19:36:138 MiRam/(15296:15398): Pos y magico 3
-[INFO] 11:19:36:138 MiRam/(15296:15398): Prox instruccion 0
-[INFO] 11:19:36:138 MiRam/(15296:15398): Puntero magico  2
-[INFO] 11:19:36:139 MiRam/(15296:15398): El tripulante que recibi eSSSSSs el 2
- y 0
-[INFO] 11:19:36:139 MiRam/(15296:15398): 
- tareas : (null) 
-
-[ERROR] 11:19:36:140 MiRam/(15296:15398): el cliente se desconecto. Terminando servidor
-[INFO] 11:19:41:148 MiRam/(15296:15400): El tripulante que recibi es el 3
- y 3
-[INFO] 11:19:41:148 MiRam/(15296:15400): POS VECTOR 0
-[INFO] 11:19:41:148 MiRam/(15296:15400): El indice 0
-[INFO] 11:19:41:148 MiRam/(15296:15400): 
-El offset 8
-[INFO] 11:19:41:149 MiRam/(15296:15400): MARCO 4
-[INFO] 11:19:41:149 MiRam/(15296:15400): OFFSET 8
-[INFO] 11:19:41:149 MiRam/(15296:15400): TID magico 3
-[INFO] 11:19:41:149 MiRam/(15296:15400): MARCO 4
-[INFO] 11:19:41:149 MiRam/(15296:15400): OFFSET 12
-[INFO] 11:19:41:149 MiRam/(15296:15400): Estado magico E
-
-[INFO] 11:19:41:149 MiRam/(15296:15400): Pos x magico 5
-
-[INFO] 11:19:41:149 MiRam/(15296:15400): Pos y magico 5
-[INFO] 11:19:41:149 MiRam/(15296:15400): Prox instruccion 39
-[INFO] 11:19:41:149 MiRam/(15296:15400): Puntero magico  3
-[INFO] 11:19:41:149 MiRam/(15296:15400): El tripulante que recibi eSSSSSs el 3
- y 39
-[INFO] 11:19:41:149 MiRam/(15296:15400): 
-El punterin 39
-
-[INFO] 11:19:41:149 MiRam/(15296:15400): El indice 0
-
-[INFO] 11:19:41:149 MiRam/(15296:15400): 
-El offset 8
-
-[INFO] 11:19:41:150 MiRam/(15296:15400): MARCO 4
-
-[INFO] 11:19:41:150 MiRam/(15296:15400): OFFSET 8
-
-[INFO] 11:19:41:150 MiRam/(15296:15400): 
- tareas : C01;5;5;5 
-
-[INFO] 11:19:46:303 MiRam/(15296:15400): El tripulante que recibi es el 3
- y 3
-[INFO] 11:19:46:303 MiRam/(15296:15400): POS VECTOR 0
-[INFO] 11:19:46:304 MiRam/(15296:15400): El indice 0
-[INFO] 11:19:46:304 MiRam/(15296:15400): 
-El offset 8
-[INFO] 11:19:46:304 MiRam/(15296:15400): MARCO 4
-[INFO] 11:19:46:304 MiRam/(15296:15400): OFFSET 8
-[INFO] 11:19:46:304 MiRam/(15296:15400): TID magico 3
-[INFO] 11:19:46:304 MiRam/(15296:15400): MARCO 4
-[INFO] 11:19:46:304 MiRam/(15296:15400): OFFSET 12
-[INFO] 11:19:46:304 MiRam/(15296:15400): Estado magico E
-
-[INFO] 11:19:46:304 MiRam/(15296:15400): Pos x magico 5
-
-[INFO] 11:19:46:305 MiRam/(15296:15400): Pos y magico 5
-[INFO] 11:19:46:305 MiRam/(15296:15400): Prox instruccion 49
-[INFO] 11:19:46:305 MiRam/(15296:15400): Puntero magico  3
-[INFO] 11:19:46:305 MiRam/(15296:15400): El tripulante que recibi eSSSSSs el 3
- y 49
-[INFO] 11:19:46:305 MiRam/(15296:15400): 
-El punterin 49
-
-[INFO] 11:19:46:305 MiRam/(15296:15400): El indice 0
-
-[INFO] 11:19:46:305 MiRam/(15296:15400): 
-El offset 8
-
-[INFO] 11:19:46:306 MiRam/(15296:15400): MARCO 4
-
-[INFO] 11:19:46:306 MiRam/(15296:15400): OFFSET 8
-
-[INFO] 11:19:46:306 MiRam/(15296:15400): 
- tareas : C02;5;5;5 
-
-[INFO] 11:19:51:440 MiRam/(15296:15400): El tripulante que recibi es el 3
- y 3
-[INFO] 11:19:51:441 MiRam/(15296:15400): POS VECTOR 0
-[INFO] 11:19:51:441 MiRam/(15296:15400): El indice 0
-[INFO] 11:19:51:441 MiRam/(15296:15400): 
-El offset 8
-[INFO] 11:19:51:441 MiRam/(15296:15400): MARCO 4
-[INFO] 11:19:51:441 MiRam/(15296:15400): OFFSET 8
-[INFO] 11:19:51:441 MiRam/(15296:15400): TID magico 3
-[INFO] 11:19:51:441 MiRam/(15296:15400): MARCO 4
-[INFO] 11:19:51:441 MiRam/(15296:15400): OFFSET 12
-[INFO] 11:19:51:441 MiRam/(15296:15400): Estado magico E
-
-[INFO] 11:19:51:441 MiRam/(15296:15400): Pos x magico 5
-
-[INFO] 11:19:51:442 MiRam/(15296:15400): Pos y magico 5
-[INFO] 11:19:51:442 MiRam/(15296:15400): Prox instruccion 59
-[INFO] 11:19:51:442 MiRam/(15296:15400): Puntero magico  3
-[INFO] 11:19:51:442 MiRam/(15296:15400): El tripulante que recibi eSSSSSs el 3
- y 59
-[INFO] 11:19:51:442 MiRam/(15296:15400): 
-El punterin 59
-
-[INFO] 11:19:51:442 MiRam/(15296:15400): El indice 0
-
-[INFO] 11:19:51:442 MiRam/(15296:15400): 
-El offset 8
-
-[INFO] 11:19:51:442 MiRam/(15296:15400): MARCO 4
-
-[INFO] 11:19:51:442 MiRam/(15296:15400): OFFSET 8
-
-[INFO] 11:19:51:442 MiRam/(15296:15400): 
- tareas : C03;5;5;5 
-
-[INFO] 11:19:56:581 MiRam/(15296:15400): El tripulante que recibi es el 3
- y 3
-[INFO] 11:19:56:581 MiRam/(15296:15400): POS VECTOR 0
-[INFO] 11:19:56:582 MiRam/(15296:15400): El indice 0
-[INFO] 11:19:56:582 MiRam/(15296:15400): 
-El offset 8
-[INFO] 11:19:56:582 MiRam/(15296:15400): MARCO 4
-[INFO] 11:19:56:582 MiRam/(15296:15400): OFFSET 8
-[INFO] 11:19:56:582 MiRam/(15296:15400): TID magico 3
-[INFO] 11:19:56:582 MiRam/(15296:15400): MARCO 4
-[INFO] 11:19:56:582 MiRam/(15296:15400): OFFSET 12
-[INFO] 11:19:56:582 MiRam/(15296:15400): Estado magico E
-
-[INFO] 11:19:56:583 MiRam/(15296:15400): Pos x magico 5
-
-[INFO] 11:19:56:583 MiRam/(15296:15400): Pos y magico 5
-[INFO] 11:19:56:583 MiRam/(15296:15400): Prox instruccion 69
-[INFO] 11:19:56:583 MiRam/(15296:15400): Puntero magico  3
-[INFO] 11:19:56:583 MiRam/(15296:15400): El tripulante que recibi eSSSSSs el 3
- y 69
-[INFO] 11:19:56:583 MiRam/(15296:15400): 
-El punterin 69
-
-[INFO] 11:19:56:583 MiRam/(15296:15400): El indice 0
-
-[INFO] 11:19:56:584 MiRam/(15296:15400): 
-El offset 8
-
-[INFO] 11:19:56:584 MiRam/(15296:15400): MARCO 4
-
-[INFO] 11:19:56:584 MiRam/(15296:15400): OFFSET 8
-
-[INFO] 11:19:56:584 MiRam/(15296:15400): 
- tareas : C04;5;5;5 
-
-[INFO] 11:20:01:706 MiRam/(15296:15400): El tripulante que recibi es el 3
- y 3
-[INFO] 11:20:01:706 MiRam/(15296:15400): POS VECTOR 0
-[INFO] 11:20:01:706 MiRam/(15296:15400): El indice 0
-[INFO] 11:20:01:706 MiRam/(15296:15400): 
-El offset 8
-[INFO] 11:20:01:706 MiRam/(15296:15400): MARCO 4
-[INFO] 11:20:01:706 MiRam/(15296:15400): OFFSET 8
-[INFO] 11:20:01:706 MiRam/(15296:15400): TID magico 3
-[INFO] 11:20:01:706 MiRam/(15296:15400): MARCO 4
-[INFO] 11:20:01:706 MiRam/(15296:15400): OFFSET 12
-[INFO] 11:20:01:707 MiRam/(15296:15400): Estado magico E
-
-[INFO] 11:20:01:707 MiRam/(15296:15400): Pos x magico 5
-
-[INFO] 11:20:01:707 MiRam/(15296:15400): Pos y magico 5
-[INFO] 11:20:01:707 MiRam/(15296:15400): Prox instruccion 79
-[INFO] 11:20:01:707 MiRam/(15296:15400): Puntero magico  3
-[INFO] 11:20:01:707 MiRam/(15296:15400): El tripulante que recibi eSSSSSs el 3
- y 79
-[INFO] 11:20:01:707 MiRam/(15296:15400): 
-El punterin 79
-
-[INFO] 11:20:01:707 MiRam/(15296:15400): El indice 0
-
-[INFO] 11:20:01:707 MiRam/(15296:15400): 
-El offset 8
-
-[INFO] 11:20:01:707 MiRam/(15296:15400): MARCO 4
-
-[INFO] 11:20:01:707 MiRam/(15296:15400): OFFSET 8
-
-[INFO] 11:20:01:707 MiRam/(15296:15400): 
- tareas : C05;5;5;5 
-
-[INFO] 11:20:06:851 MiRam/(15296:15400): El tripulante que recibi es el 3
- y 3
-[INFO] 11:20:06:852 MiRam/(15296:15400): POS VECTOR 0
-[INFO] 11:20:06:852 MiRam/(15296:15400): El indice 0
-[INFO] 11:20:06:852 MiRam/(15296:15400): 
-El offset 8
-[INFO] 11:20:06:852 MiRam/(15296:15400): MARCO 4
-[INFO] 11:20:06:852 MiRam/(15296:15400): OFFSET 8
-[INFO] 11:20:06:852 MiRam/(15296:15400): TID magico 3
-[INFO] 11:20:06:852 MiRam/(15296:15400): MARCO 4
-[INFO] 11:20:06:852 MiRam/(15296:15400): OFFSET 12
-[INFO] 11:20:06:852 MiRam/(15296:15400): Estado magico E
-
-[INFO] 11:20:06:852 MiRam/(15296:15400): Pos x magico 5
-
-[INFO] 11:20:06:852 MiRam/(15296:15400): Pos y magico 5
-[INFO] 11:20:06:852 MiRam/(15296:15400): Prox instruccion 89
-[INFO] 11:20:06:852 MiRam/(15296:15400): Puntero magico  3
-[INFO] 11:20:06:852 MiRam/(15296:15400): El tripulante que recibi eSSSSSs el 3
- y 89
-[INFO] 11:20:06:852 MiRam/(15296:15400): 
-El punterin 89
-
-[INFO] 11:20:06:853 MiRam/(15296:15400): El indice 0
-
-[INFO] 11:20:06:853 MiRam/(15296:15400): 
-El offset 8
-
-[INFO] 11:20:06:853 MiRam/(15296:15400): MARCO 4
-
-[INFO] 11:20:06:853 MiRam/(15296:15400): OFFSET 8
-
-[INFO] 11:20:06:853 MiRam/(15296:15400): 
- tareas : C06;5;5;5 
-
-[INFO] 11:20:12:23 MiRam/(15296:15400): El tripulante que recibi es el 3
- y 3
-[INFO] 11:20:12:24 MiRam/(15296:15400): POS VECTOR 0
-[INFO] 11:20:12:24 MiRam/(15296:15400): El indice 0
-[INFO] 11:20:12:24 MiRam/(15296:15400): 
-El offset 8
-[INFO] 11:20:12:24 MiRam/(15296:15400): MARCO 4
-[INFO] 11:20:12:24 MiRam/(15296:15400): OFFSET 8
-[INFO] 11:20:12:24 MiRam/(15296:15400): TID magico 3
-[INFO] 11:20:12:24 MiRam/(15296:15400): MARCO 4
-[INFO] 11:20:12:24 MiRam/(15296:15400): OFFSET 12
-[INFO] 11:20:12:24 MiRam/(15296:15400): Estado magico E
-
-[INFO] 11:20:12:24 MiRam/(15296:15400): Pos x magico 5
-
-[INFO] 11:20:12:24 MiRam/(15296:15400): Pos y magico 5
-[INFO] 11:20:12:24 MiRam/(15296:15400): Prox instruccion 99
-[INFO] 11:20:12:25 MiRam/(15296:15400): Puntero magico  3
-[INFO] 11:20:12:25 MiRam/(15296:15400): El tripulante que recibi eSSSSSs el 3
- y 99
-[INFO] 11:20:12:25 MiRam/(15296:15400): 
-El punterin 99
-
-[INFO] 11:20:12:25 MiRam/(15296:15400): El indice 0
-
-[INFO] 11:20:12:25 MiRam/(15296:15400): 
-El offset 8
-
-[INFO] 11:20:12:25 MiRam/(15296:15400): MARCO 4
-
-[INFO] 11:20:12:25 MiRam/(15296:15400): OFFSET 8
-
-[INFO] 11:20:12:25 MiRam/(15296:15400): 
- tareas : C07;5;5;5 
-
-[INFO] 11:20:17:192 MiRam/(15296:15400): El tripulante que recibi es el 3
- y 3
-[INFO] 11:20:17:192 MiRam/(15296:15400): POS VECTOR 0
-[INFO] 11:20:17:192 MiRam/(15296:15400): El indice 0
-[INFO] 11:20:17:192 MiRam/(15296:15400): 
-El offset 8
-[INFO] 11:20:17:193 MiRam/(15296:15400): MARCO 4
-[INFO] 11:20:17:193 MiRam/(15296:15400): OFFSET 8
-[INFO] 11:20:17:193 MiRam/(15296:15400): TID magico 3
-[INFO] 11:20:17:193 MiRam/(15296:15400): MARCO 4
-[INFO] 11:20:17:193 MiRam/(15296:15400): OFFSET 12
-[INFO] 11:20:17:193 MiRam/(15296:15400): Estado magico E
-
-[INFO] 11:20:17:193 MiRam/(15296:15400): Pos x magico 5
-
-[INFO] 11:20:17:194 MiRam/(15296:15400): Pos y magico 5
-[INFO] 11:20:17:194 MiRam/(15296:15400): Prox instruccion 109
-[INFO] 11:20:17:194 MiRam/(15296:15400): Puntero magico  3
-[INFO] 11:20:17:194 MiRam/(15296:15400): El tripulante que recibi eSSSSSs el 3
- y 109
-[INFO] 11:20:17:194 MiRam/(15296:15400): 
-El punterin 109
-
-[INFO] 11:20:17:196 MiRam/(15296:15400): El indice 0
-
-[INFO] 11:20:17:196 MiRam/(15296:15400): 
-El offset 8
-
-[INFO] 11:20:17:196 MiRam/(15296:15400): MARCO 4
-
-[INFO] 11:20:17:196 MiRam/(15296:15400): OFFSET 8
-
-[INFO] 11:20:17:197 MiRam/(15296:15400): El indice 0
-
-[INFO] 11:20:17:197 MiRam/(15296:15400): 
-El offset 8
-
-[INFO] 11:20:17:197 MiRam/(15296:15400): MARCO 4
-
-[INFO] 11:20:17:197 MiRam/(15296:15400): OFFSET 8
-
-[INFO] 11:20:17:197 MiRam/(15296:15400): 
- tareas : C08;5;5;5 
-
-[INFO] 11:20:22:342 MiRam/(15296:15400): El tripulante que recibi es el 3
- y 3
-[INFO] 11:20:22:342 MiRam/(15296:15400): POS VECTOR 0
-[INFO] 11:20:22:342 MiRam/(15296:15400): El indice 0
-[INFO] 11:20:22:342 MiRam/(15296:15400): 
-El offset 8
-[INFO] 11:20:22:343 MiRam/(15296:15400): MARCO 4
-[INFO] 11:20:22:343 MiRam/(15296:15400): OFFSET 8
-[INFO] 11:20:22:343 MiRam/(15296:15400): TID magico 3
-[INFO] 11:20:22:343 MiRam/(15296:15400): MARCO 4
-[INFO] 11:20:22:343 MiRam/(15296:15400): OFFSET 12
-[INFO] 11:20:22:343 MiRam/(15296:15400): Estado magico E
-
-[INFO] 11:20:22:343 MiRam/(15296:15400): Pos x magico 5
-
-[INFO] 11:20:22:343 MiRam/(15296:15400): Pos y magico 5
-[INFO] 11:20:22:343 MiRam/(15296:15400): Prox instruccion 0
-[INFO] 11:20:22:343 MiRam/(15296:15400): Puntero magico  3
-[INFO] 11:20:22:343 MiRam/(15296:15400): El tripulante que recibi eSSSSSs el 3
- y 0
-[INFO] 11:20:22:343 MiRam/(15296:15400): 
- tareas : (null) 
-
-[ERROR] 11:20:22:344 MiRam/(15296:15400): el cliente se desconecto. Terminando servidor
-[ERROR] 11:20:56:940 MiRam/(15296:15302): el discordiador finalizo el programa. Terminando servidor
-[INFO] 11:20:56:943 MiRam/(15296:15300): socket_cliente -1
-[INFO] 11:20:56:943 MiRam/(15296:15300): tttttttt
+[ERROR] 21:15:35:942 MiRam/(19064:19076): el discordiador finalizo el programa. Terminando servidor
+[INFO] 21:15:35:942 MiRam/(19064:19068): socket_cliente -1
+[INFO] 21:15:35:942 MiRam/(19064:19068): tttttttt
