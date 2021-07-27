@@ -458,7 +458,7 @@ tarea_tripulante codigoTarea(char *nombretarea){
 tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
 	t_paquete* paquete = crear_paquete(PEDIR_TAREA);
 
-	char* tid_char = malloc(sizeof(char)+1);
+	char* tid_char = malloc(sizeof(char)+2);
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
@@ -494,7 +494,7 @@ tarea* pedir_tarea(int conexion_miram, tcbTripulante* tripulante){
 void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_estado){
 	t_paquete* paquete = crear_paquete(CAMBIAR_DE_ESTADO);
 
-	char* tid_char = malloc(sizeof(char)+1);
+	char* tid_char = malloc(sizeof(char)+2);
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
@@ -523,7 +523,7 @@ void cambiar_estado(int conexion_miram, tcbTripulante* tripulante, char nuevo_es
 void informar_movimiento(int conexion_miram, tcbTripulante* tripulante){
 	t_paquete* paquete = crear_paquete(INFORMAR_MOVIMIENTO);
 
-	char* tid_char = malloc(sizeof(char)+1);
+	char* tid_char = malloc(sizeof(char)+2);
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
@@ -555,7 +555,7 @@ void informar_movimiento(int conexion_miram, tcbTripulante* tripulante){
 void informar_movimiento_mongo_X (tcbTripulante* tripulante, int x_viejo){
 	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
 
-	char* tid_char = malloc(sizeof(char)+1);
+	char* tid_char = malloc(sizeof(char)+2);
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
@@ -601,7 +601,7 @@ void informar_movimiento_mongo_X (tcbTripulante* tripulante, int x_viejo){
 void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo){
 	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
 
-	char* tid_char = malloc(sizeof(char)+1);
+	char* tid_char = malloc(sizeof(char)+2);
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
@@ -647,7 +647,7 @@ void informar_movimiento_mongo_Y (tcbTripulante* tripulante, int y_viejo){
 void informar_inicio_tarea(tcbTripulante* tripulante){
 	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
 
-	char* tid_char = malloc(sizeof(char)+1);
+	char* tid_char = malloc(sizeof(char)+2);
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
@@ -672,7 +672,7 @@ void informar_inicio_tarea(tcbTripulante* tripulante){
 void informar_fin_tarea(tcbTripulante* tripulante){
 	t_paquete* paquete = crear_paquete(INFORMAR_BITACORA);
 
-	char* tid_char = malloc(sizeof(char)+1);
+	char* tid_char = malloc(sizeof(char)+2);
 	sprintf(tid_char, "%d", tripulante->tid);
 	agregar_a_paquete(paquete, tid_char, strlen(tid_char)+1);
 
@@ -757,7 +757,7 @@ void mongo_tarea(tcbTripulante* tripu){
 
 	agregar_a_paquete(paquete, tripu->tarea_posta->tarea, strlen(tripu->tarea_posta->tarea)+1);
 
-	char* parametro_char = malloc(sizeof(char)+1);
+	char* parametro_char = malloc(sizeof(char)+3);
 	sprintf(parametro_char, "%d", tripu->tarea_posta->parametro);
 
 	agregar_a_paquete(paquete, parametro_char, strlen(parametro_char)+1);

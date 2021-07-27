@@ -748,7 +748,7 @@ void menu_discordiador() {
 					liberar_memoria_tripu(tripulante);
 				}
 
-				char* largo_tarea = malloc((2*sizeof(char))+1);
+				char* largo_tarea = malloc((3*sizeof(char))+1);
 				sprintf(largo_tarea, "%d", strlen(tareas)+1);
 				agregar_a_paquete(paquete, largo_tarea, strlen(largo_tarea)+1);
 				agregar_a_paquete(paquete, tareas, strlen(tareas)+1);
@@ -816,6 +816,12 @@ void menu_discordiador() {
 						int numero_patota = (int)atoi(list_get(lista_tripulantes,i+1));
 						printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, numero_patota, tripulante->estado);
 					}
+
+					void destruir_tripu(tcbTripulante* tripu){
+						//free(tripu->tarea_posta);
+						free(tripu);
+					}
+					list_destroy_and_destroy_elements(lista_tripulantes, (void*)destruir_tripu);
 				}
 
 				break;

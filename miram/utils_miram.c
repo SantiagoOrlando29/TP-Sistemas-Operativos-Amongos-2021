@@ -693,7 +693,7 @@ void imprimir_tabla_espacios_de_memoria(){
 
     for(int i=0; i < size; i++) {
     	espacio_de_memoria *espacio = list_get(tabla_espacios_de_memoria, i);
-    	log_info(logger, "base: %d, tam: %d, libre: %s ", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
+    	log_info(logger, "base: %3d, tam: %2d, libre: %s ", espacio->base, espacio->tam, espacio->libre ? "true" : "false");
     }
     sem_post(&MUTEX_TABLA_MEMORIA);
     log_info(logger, "----------------------------------------");
