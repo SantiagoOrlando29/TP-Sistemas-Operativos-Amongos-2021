@@ -1290,6 +1290,7 @@ void sig_handler(int signum){
     if(signum == SIGUSR1){
     	log_info(logger, "SIGUSR1\n");
     	if(strcmp(configuracion.squema_memoria, "SEGMENTACION") == 0){
+    		log_info(logger, "dump segmentacion");
     		dump_memoria_segmentacion();
     	}else{
     		dump_memoria_paginacion();
@@ -1301,7 +1302,8 @@ void dump_memoria_segmentacion(){
 	char buff1[50];
 	char buff2[50];
 	char namebuff[100];
-	time_t now = contador_lru;
+	//time_t now = contador_lru;
+	time_t now = time(0);
 	strftime(buff1, 100, "%d/%m/%Y %H:%M:%S"  , localtime(&now)); //Tmestamp a escribir en el archivo
 	strftime(buff2, 100, "%d_%m_%Y_%H_%M_%S"  , localtime(&now)); //Timestamp del nombre del archivo
 	sprintf(namebuff, "Dump_%s.dmp",buff2);
@@ -1310,20 +1312,42 @@ void dump_memoria_segmentacion(){
 	fflush(stdout);
 	fprintf(dump_file,"Dump: %s\n", buff1);
 
-	for(int i=0; i < list_size(lista_tablas_segmentos); i++){
-		tabla_segmentacion* tabla_seg = (tabla_segmentacion*)list_get(lista_tablas_segmentos, i);
-		for(int j=0; j < list_size(tabla_seg->lista_segmentos); j++){
-			segmento* seg = (segmento*)list_get(tabla_seg->lista_segmentos, j);
-			if(seg->base < 16){
-				fprintf(dump_file, "Patota:%2d   Segmento:%2d   Inicio: 0x000%X   Tam: %d b\n", tabla_seg->id_patota, seg->numero_segmento, seg->base, seg->tamanio);
-			}else if(seg->base < 256){
-				fprintf(dump_file, "Patota:%2d   Segmento:%2d   Inicio: 0x00%X   Tam: %d b\n", tabla_seg->id_patota, seg->numero_segmento, seg->base, seg->tamanio);
-			}else{
-				fprintf(dump_file, "Patota:%2d   Segmento:%2d   Inicio: 0x0%X   Tam: %d b\n", tabla_seg->id_patota, seg->numero_segmento, seg->base, seg->tamanio);
+	sem_wait(&MUTEX_TABLA_MEMORIA);
+	if(list_size(tabla_espacios_de_memoria) > 1){ //o sea, tiene algo cargado y no es solo la memoria entera vacia
+
+		int algun_espacio_ocupado = 0;
+		for(int k=0; k < list_size(tabla_espacios_de_memoria); k++){
+			espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, k);
+			if(espacio->libre == false){ //esta ocupado
+				algun_espacio_ocupado = 1;
+				k = list_size(tabla_espacios_de_memoria);
 			}
-			fflush(stdout);
 		}
+
+		if(algun_espacio_ocupado == 0){ // tiene todos los espacios vacios
+			for(int j=0; j < list_size(tabla_espacios_de_memoria); j++){
+				espacio_de_memoria* espacio = list_get(tabla_espacios_de_memoria, j);
+				fprintf(dump_file, "Patota: -   Segmento: -   Inicio: %3d   Tam: %d b\n", espacio->base, espacio->tam);
+				fflush(stdout);
+			}
+		}else{
+			sem_wait(&MUTEX_LISTA_TABLAS_SEGMENTOS);
+			for(int i=0; i < list_size(lista_tablas_segmentos); i++){
+				tabla_segmentacion* tabla_seg = (tabla_segmentacion*)list_get(lista_tablas_segmentos, i);
+				for(int j=0; j < list_size(tabla_seg->lista_segmentos); j++){
+					segmento* seg = (segmento*)list_get(tabla_seg->lista_segmentos, j);
+					fprintf(dump_file, "Patota:%2d   Segmento:%2d   Inicio: %3d   Tam: %d b\n", tabla_seg->id_patota, seg->numero_segmento, seg->base, seg->tamanio);
+					fflush(stdout);
+				}
+			}
+			sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
+		}
+
+	}else{ // memoria entera vacia
+		fprintf(dump_file, "Patota: -   Segmento: -   Inicio: 0   Tam: %d b\n", configuracion.tamanio_memoria);
+		fflush(stdout);
 	}
+	sem_post(&MUTEX_TABLA_MEMORIA);
 
 	fclose(dump_file);
 }

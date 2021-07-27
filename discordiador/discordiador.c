@@ -863,7 +863,7 @@ DUMP
 Esperar el fin de las tareas de los tripulantes.
 DUMP
 compactar
-DUMP de la memoria
+DUMP
 */
 /*
 INICIAR_PATOTA 3 ES3_Patota1.txt 9|9 0|0 5|5
