@@ -29224,3 +29224,1385 @@
 [INFO] 21:14:48:890 mongostore/(19016:19018): Servidor Mongo2 encendido
 [INFO] 21:14:48:890 mongostore/(19016:19017): Servidor iniciando
 [INFO] 21:14:48:892 mongostore/(19016:19017): Servidor Mongo encendido
+[DEBUG] 00:48:56:832 mongostore/(7543:7543): LOGGER OK
+[INFO] 00:48:56:832 mongostore/(7543:7543): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 00:48:56:832 mongostore/(7543:7543): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 00:48:56:833 mongostore/(7543:7543): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 00:48:56:833 mongostore/(7543:7543): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 00:48:56:833 mongostore/(7543:7543): O-Superbloque generado desde archivo
+[INFO] 00:48:56:833 mongostore/(7543:7543): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 00:48:56:833 mongostore/(7543:7543): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 00:48:56:833 mongostore/(7543:7543): O-Blocks mapeado del archivo a la memoria
+[INFO] 00:48:56:834 mongostore/(7543:7543): Existencia de Blocks validada
+[DEBUG] 00:48:56:834 mongostore/(7543:7543): Directorios del File System confirmados
+[INFO] 00:48:56:834 mongostore/(7543:7543): File System iniciado
+[INFO] 00:48:56:834 mongostore/(7543:7543): pid 7543  
+
+[INFO] 00:48:56:834 mongostore/(7543:7545): Servidor iniciando 2
+[INFO] 00:48:56:835 mongostore/(7543:7545): Servidor Mongo2 encendido
+[INFO] 00:48:56:835 mongostore/(7543:7544): Servidor iniciando
+[INFO] 00:48:56:835 mongostore/(7543:7544): Servidor Mongo encendido
+[DEBUG] 00:53:55:947 mongostore/(8064:8064): LOGGER OK
+[INFO] 00:53:55:948 mongostore/(8064:8064): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 00:53:55:948 mongostore/(8064:8064): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 00:53:55:948 mongostore/(8064:8064): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 00:53:55:948 mongostore/(8064:8064): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 00:53:55:948 mongostore/(8064:8064): O-Superbloque generado desde archivo
+[INFO] 00:53:55:948 mongostore/(8064:8064): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 00:53:55:948 mongostore/(8064:8064): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 00:53:55:948 mongostore/(8064:8064): O-Blocks mapeado del archivo a la memoria
+[INFO] 00:53:55:949 mongostore/(8064:8064): Existencia de Blocks validada
+[DEBUG] 00:53:55:949 mongostore/(8064:8064): Directorios del File System confirmados
+[INFO] 00:53:55:949 mongostore/(8064:8064): File System iniciado
+[INFO] 00:53:55:949 mongostore/(8064:8064): pid 8064  
+
+[INFO] 00:53:55:949 mongostore/(8064:8066): Servidor iniciando 2
+[INFO] 00:53:55:949 mongostore/(8064:8066): Servidor Mongo2 encendido
+[INFO] 00:53:55:949 mongostore/(8064:8065): Servidor iniciando
+[INFO] 00:53:55:950 mongostore/(8064:8065): Servidor Mongo encendido
+[INFO] 00:54:07:692 mongostore/(8064:8065): Estableciendo conexión desde 12966
+[INFO] 00:54:07:692 mongostore/(8064:8065): Creando hilo
+[INFO] 00:54:07:693 mongostore/(8064:8066): 2 Estableciendo conexión desde 33965
+[INFO] 00:54:07:693 mongostore/(8064:8066): 2 Creando hilo
+[INFO] 00:54:07:694 mongostore/(8064:8105): Se conecto este socket a mi 8
+[INFO] 00:54:32:780 mongostore/(8064:8065): Estableciendo conexión desde 14502
+[INFO] 00:54:32:781 mongostore/(8064:8065): Creando hilo
+[INFO] 00:54:32:791 mongostore/(8064:8168): Se conecto este socket a mi 9
+[INFO] 00:54:32:799 mongostore/(8064:8065): Estableciendo conexión desde 15526
+[INFO] 00:54:32:799 mongostore/(8064:8065): Creando hilo
+[INFO] 00:54:32:803 mongostore/(8064:8171): Se conecto este socket a mi 10
+[INFO] 00:54:32:805 mongostore/(8064:8171): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 00:54:32:805 mongostore/(8064:8171): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 00:54:32:805 mongostore/(8064:8171): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 00:54:32:805 mongostore/(8064:8171): Bitacora de tripulante 2 levantada en memoria con size = 5619 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151]
+[DEBUG] 00:54:32:805 mongostore/(8064:8171): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5619, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151] y superbloque.block_size 256: (1)
+[DEBUG] 00:54:32:805 mongostore/(8064:8171): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151]
+[DEBUG] 00:54:32:805 mongostore/(8064:8171): O-Ultimo_entero usado 151
+[DEBUG] 00:54:32:805 mongostore/(8064:8171): Posicion_en_bloque 243, posicion_inicio_bloque 38656 posicion block_addres 0xb6b56000 posicion absoluta 0xb6b5f7f3
+[DEBUG] 00:54:32:805 mongostore/(8064:8171): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 00:54:32:806 mongostore/(8064:8171): I-Se ingresa a superbloque_obtener_bloque_libre
+[DEBUG] 00:54:32:806 mongostore/(8064:8171): O-Bloque libre obtenido 152
+[DEBUG] 00:54:32:806 mongostore/(8064:8171): Posicion_en_bloque 0, posicion_inicio_bloque 38912 posicion block_addres 0xb6b56000 posicion absoluta 0xb6b5f800
+[DEBUG] 00:54:32:806 mongostore/(8064:8171): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 00:54:32:806 mongostore/(8064:8171): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 00:54:32:906 mongostore/(8064:8171): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 00:54:32:906 mongostore/(8064:8171): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 00:54:37:912 mongostore/(8064:8171): tid 2  Se finaliza la tarea B00
+[DEBUG] 00:54:37:912 mongostore/(8064:8171): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5650, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152] y superbloque.block_size 256: (1)
+[DEBUG] 00:54:37:912 mongostore/(8064:8171): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152]
+[DEBUG] 00:54:37:912 mongostore/(8064:8171): O-Ultimo_entero usado 152
+[DEBUG] 00:54:37:912 mongostore/(8064:8171): Posicion_en_bloque 18, posicion_inicio_bloque 38912 posicion block_addres 0xb6b56000 posicion absoluta 0xb6b5f812
+[DEBUG] 00:54:37:912 mongostore/(8064:8171): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 00:54:37:912 mongostore/(8064:8171): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 00:54:37:983 mongostore/(8064:8171): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 00:54:37:983 mongostore/(8064:8171): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 00:54:37:986 mongostore/(8064:8171): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 00:54:37:986 mongostore/(8064:8171): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5674, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152] y superbloque.block_size 256: (1)
+[DEBUG] 00:54:37:986 mongostore/(8064:8171): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152]
+[DEBUG] 00:54:37:986 mongostore/(8064:8171): O-Ultimo_entero usado 152
+[DEBUG] 00:54:37:986 mongostore/(8064:8171): Posicion_en_bloque 42, posicion_inicio_bloque 38912 posicion block_addres 0xb6b56000 posicion absoluta 0xb6b5f82a
+[DEBUG] 00:54:37:986 mongostore/(8064:8171): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 00:54:37:986 mongostore/(8064:8171): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 00:54:38:49 mongostore/(8064:8171): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 00:54:38:49 mongostore/(8064:8171): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 00:54:43:54 mongostore/(8064:8171): tid 2  Se finaliza la tarea B01
+[DEBUG] 00:54:43:54 mongostore/(8064:8171): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5705, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152] y superbloque.block_size 256: (1)
+[DEBUG] 00:54:43:54 mongostore/(8064:8171): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152]
+[DEBUG] 00:54:43:54 mongostore/(8064:8171): O-Ultimo_entero usado 152
+[DEBUG] 00:54:43:54 mongostore/(8064:8171): Posicion_en_bloque 73, posicion_inicio_bloque 38912 posicion block_addres 0xb6b56000 posicion absoluta 0xb6b5f849
+[DEBUG] 00:54:43:54 mongostore/(8064:8171): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 00:54:43:54 mongostore/(8064:8171): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 00:54:43:149 mongostore/(8064:8171): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 00:54:43:149 mongostore/(8064:8171): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 00:54:43:152 mongostore/(8064:8171): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 00:54:43:152 mongostore/(8064:8171): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5729, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152] y superbloque.block_size 256: (1)
+[DEBUG] 00:54:43:152 mongostore/(8064:8171): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152]
+[DEBUG] 00:54:43:152 mongostore/(8064:8171): O-Ultimo_entero usado 152
+[DEBUG] 00:54:43:152 mongostore/(8064:8171): Posicion_en_bloque 97, posicion_inicio_bloque 38912 posicion block_addres 0xb6b56000 posicion absoluta 0xb6b5f861
+[DEBUG] 00:54:43:152 mongostore/(8064:8171): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 00:54:43:152 mongostore/(8064:8171): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 00:54:43:210 mongostore/(8064:8171): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 00:54:43:210 mongostore/(8064:8171): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 00:54:48:213 mongostore/(8064:8171): tid 2  Se finaliza la tarea B02
+[DEBUG] 00:54:48:213 mongostore/(8064:8171): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5760, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152] y superbloque.block_size 256: (1)
+[DEBUG] 00:54:48:213 mongostore/(8064:8171): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152]
+[DEBUG] 00:54:48:213 mongostore/(8064:8171): O-Ultimo_entero usado 152
+[DEBUG] 00:54:48:213 mongostore/(8064:8171): Posicion_en_bloque 128, posicion_inicio_bloque 38912 posicion block_addres 0xb6b56000 posicion absoluta 0xb6b5f880
+[DEBUG] 00:54:48:214 mongostore/(8064:8171): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 00:54:48:214 mongostore/(8064:8171): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 00:54:48:269 mongostore/(8064:8171): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 00:54:48:269 mongostore/(8064:8171): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[ERROR] 00:58:25:410 mongostore/(8064:8105): el discordiador finalizo el programa. Terminando servidor
+[INFO] 00:58:25:412 mongostore/(8064:8105): aaaaaaAAAAA
+[DEBUG] 01:02:11:824 mongostore/(8852:8852): LOGGER OK
+[INFO] 01:02:11:824 mongostore/(8852:8852): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 01:02:11:824 mongostore/(8852:8852): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 01:02:11:825 mongostore/(8852:8852): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 01:02:11:825 mongostore/(8852:8852): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 01:02:11:825 mongostore/(8852:8852): O-Superbloque generado desde archivo
+[INFO] 01:02:11:825 mongostore/(8852:8852): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 01:02:11:826 mongostore/(8852:8852): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 01:02:11:826 mongostore/(8852:8852): O-Blocks mapeado del archivo a la memoria
+[INFO] 01:02:11:826 mongostore/(8852:8852): Existencia de Blocks validada
+[DEBUG] 01:02:11:827 mongostore/(8852:8852): Directorios del File System confirmados
+[INFO] 01:02:11:827 mongostore/(8852:8852): File System iniciado
+[INFO] 01:02:11:827 mongostore/(8852:8852): pid 8852  
+
+[INFO] 01:02:11:827 mongostore/(8852:8854): Servidor iniciando 2
+[INFO] 01:02:11:828 mongostore/(8852:8854): Servidor Mongo2 encendido
+[INFO] 01:02:11:828 mongostore/(8852:8853): Servidor iniciando
+[INFO] 01:02:11:828 mongostore/(8852:8853): Servidor Mongo encendido
+[INFO] 01:02:40:741 mongostore/(8852:8853): Estableciendo conexión desde 16550
+[INFO] 01:02:40:741 mongostore/(8852:8853): Creando hilo
+[INFO] 01:02:40:744 mongostore/(8852:8854): 2 Estableciendo conexión desde 37549
+[INFO] 01:02:40:745 mongostore/(8852:8854): 2 Creando hilo
+[INFO] 01:02:40:750 mongostore/(8852:8915): Se conecto este socket a mi 8
+[INFO] 01:03:07:899 mongostore/(8852:8853): Estableciendo conexión desde 18086
+[INFO] 01:03:07:900 mongostore/(8852:8853): Creando hilo
+[INFO] 01:03:07:924 mongostore/(8852:8977): Se conecto este socket a mi 9
+[INFO] 01:03:07:931 mongostore/(8852:8853): Estableciendo conexión desde 19110
+[INFO] 01:03:07:931 mongostore/(8852:8853): Creando hilo
+[INFO] 01:03:07:934 mongostore/(8852:8979): Se conecto este socket a mi 10
+[INFO] 01:03:07:936 mongostore/(8852:8979): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 01:03:07:936 mongostore/(8852:8979): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 01:03:07:936 mongostore/(8852:8979): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 01:03:07:936 mongostore/(8852:8979): Bitacora de tripulante 2 levantada en memoria con size = 5784 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152]
+[DEBUG] 01:03:07:936 mongostore/(8852:8979): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5784, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152] y superbloque.block_size 256: (1)
+[DEBUG] 01:03:07:936 mongostore/(8852:8979): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152]
+[DEBUG] 01:03:07:937 mongostore/(8852:8979): O-Ultimo_entero usado 152
+[DEBUG] 01:03:07:937 mongostore/(8852:8979): Posicion_en_bloque 152, posicion_inicio_bloque 38912 posicion block_addres 0xb6b06000 posicion absoluta 0xb6b0f898
+[DEBUG] 01:03:07:937 mongostore/(8852:8979): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:03:07:937 mongostore/(8852:8979): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 01:03:08:29 mongostore/(8852:8979): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 01:03:08:29 mongostore/(8852:8979): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 01:03:13:33 mongostore/(8852:8979): tid 2  Se finaliza la tarea B00
+[DEBUG] 01:03:13:34 mongostore/(8852:8979): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5815, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152] y superbloque.block_size 256: (1)
+[DEBUG] 01:03:13:34 mongostore/(8852:8979): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152]
+[DEBUG] 01:03:13:34 mongostore/(8852:8979): O-Ultimo_entero usado 152
+[DEBUG] 01:03:13:35 mongostore/(8852:8979): Posicion_en_bloque 183, posicion_inicio_bloque 38912 posicion block_addres 0xb6b06000 posicion absoluta 0xb6b0f8b7
+[DEBUG] 01:03:13:35 mongostore/(8852:8979): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:03:13:35 mongostore/(8852:8979): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 01:03:13:136 mongostore/(8852:8979): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 01:03:13:136 mongostore/(8852:8979): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 01:03:13:141 mongostore/(8852:8979): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 01:03:13:141 mongostore/(8852:8979): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5839, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152] y superbloque.block_size 256: (1)
+[DEBUG] 01:03:13:141 mongostore/(8852:8979): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152]
+[DEBUG] 01:03:13:141 mongostore/(8852:8979): O-Ultimo_entero usado 152
+[DEBUG] 01:03:13:141 mongostore/(8852:8979): Posicion_en_bloque 207, posicion_inicio_bloque 38912 posicion block_addres 0xb6b06000 posicion absoluta 0xb6b0f8cf
+[DEBUG] 01:03:13:142 mongostore/(8852:8979): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:03:13:142 mongostore/(8852:8979): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 01:03:13:211 mongostore/(8852:8979): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 01:03:13:211 mongostore/(8852:8979): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 01:03:18:214 mongostore/(8852:8979): tid 2  Se finaliza la tarea B01
+[DEBUG] 01:03:18:214 mongostore/(8852:8979): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5870, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152] y superbloque.block_size 256: (1)
+[DEBUG] 01:03:18:214 mongostore/(8852:8979): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152]
+[DEBUG] 01:03:18:215 mongostore/(8852:8979): O-Ultimo_entero usado 152
+[DEBUG] 01:03:18:215 mongostore/(8852:8979): Posicion_en_bloque 238, posicion_inicio_bloque 38912 posicion block_addres 0xb6b06000 posicion absoluta 0xb6b0f8ee
+[DEBUG] 01:03:18:215 mongostore/(8852:8979): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:03:18:215 mongostore/(8852:8979): I-Se ingresa a superbloque_obtener_bloque_libre
+[DEBUG] 01:03:18:215 mongostore/(8852:8979): O-Bloque libre obtenido 153
+[DEBUG] 01:03:18:216 mongostore/(8852:8979): Posicion_en_bloque 0, posicion_inicio_bloque 39168 posicion block_addres 0xb6b06000 posicion absoluta 0xb6b0f900
+[DEBUG] 01:03:18:216 mongostore/(8852:8979): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:03:18:216 mongostore/(8852:8979): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 01:03:18:287 mongostore/(8852:8979): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 01:03:18:288 mongostore/(8852:8979): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 01:03:18:294 mongostore/(8852:8979): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 01:03:18:294 mongostore/(8852:8979): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5894, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153] y superbloque.block_size 256: (1)
+[DEBUG] 01:03:18:294 mongostore/(8852:8979): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153]
+[DEBUG] 01:03:18:294 mongostore/(8852:8979): O-Ultimo_entero usado 153
+[DEBUG] 01:03:18:294 mongostore/(8852:8979): Posicion_en_bloque 6, posicion_inicio_bloque 39168 posicion block_addres 0xb6b06000 posicion absoluta 0xb6b0f906
+[DEBUG] 01:03:18:295 mongostore/(8852:8979): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:03:18:295 mongostore/(8852:8979): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 01:03:18:386 mongostore/(8852:8979): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 01:03:18:387 mongostore/(8852:8979): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 01:03:23:394 mongostore/(8852:8979): tid 2  Se finaliza la tarea B02
+[DEBUG] 01:03:23:394 mongostore/(8852:8979): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5925, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153] y superbloque.block_size 256: (1)
+[DEBUG] 01:03:23:394 mongostore/(8852:8979): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153]
+[DEBUG] 01:03:23:395 mongostore/(8852:8979): O-Ultimo_entero usado 153
+[DEBUG] 01:03:23:395 mongostore/(8852:8979): Posicion_en_bloque 37, posicion_inicio_bloque 39168 posicion block_addres 0xb6b06000 posicion absoluta 0xb6b0f925
+[DEBUG] 01:03:23:395 mongostore/(8852:8979): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:03:23:395 mongostore/(8852:8979): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 01:03:23:462 mongostore/(8852:8979): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 01:03:23:462 mongostore/(8852:8979): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[ERROR] 01:09:57:204 mongostore/(8852:8915): el discordiador finalizo el programa. Terminando servidor
+[INFO] 01:09:57:208 mongostore/(8852:8915): aaaaaaAAAAA
+[DEBUG] 01:10:02:275 mongostore/(9610:9610): LOGGER OK
+[INFO] 01:10:02:277 mongostore/(9610:9610): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 01:10:02:280 mongostore/(9610:9610): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 01:10:02:280 mongostore/(9610:9610): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 01:10:02:281 mongostore/(9610:9610): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 01:10:02:281 mongostore/(9610:9610): O-Superbloque generado desde archivo
+[INFO] 01:10:02:281 mongostore/(9610:9610): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 01:10:02:281 mongostore/(9610:9610): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 01:10:02:282 mongostore/(9610:9610): O-Blocks mapeado del archivo a la memoria
+[INFO] 01:10:02:282 mongostore/(9610:9610): Existencia de Blocks validada
+[DEBUG] 01:10:02:282 mongostore/(9610:9610): Directorios del File System confirmados
+[INFO] 01:10:02:282 mongostore/(9610:9610): File System iniciado
+[INFO] 01:10:02:282 mongostore/(9610:9610): pid 9610  
+
+[INFO] 01:10:02:286 mongostore/(9610:9612): Servidor iniciando 2
+[INFO] 01:10:02:286 mongostore/(9610:9612): Servidor Mongo2 encendido
+[INFO] 01:10:02:287 mongostore/(9610:9611): Servidor iniciando
+[INFO] 01:10:02:287 mongostore/(9610:9611): Servidor Mongo encendido
+[INFO] 01:10:09:21 mongostore/(9610:9611): Estableciendo conexión desde 20134
+[INFO] 01:10:09:21 mongostore/(9610:9611): Creando hilo
+[INFO] 01:10:09:23 mongostore/(9610:9612): 2 Estableciendo conexión desde 41133
+[INFO] 01:10:09:23 mongostore/(9610:9612): 2 Creando hilo
+[INFO] 01:10:09:24 mongostore/(9610:9640): Se conecto este socket a mi 8
+[INFO] 01:10:32:457 mongostore/(9610:9611): Estableciendo conexión desde 21670
+[INFO] 01:10:32:457 mongostore/(9610:9611): Creando hilo
+[INFO] 01:10:32:480 mongostore/(9610:9718): Se conecto este socket a mi 9
+[INFO] 01:10:32:489 mongostore/(9610:9611): Estableciendo conexión desde 22694
+[INFO] 01:10:32:489 mongostore/(9610:9611): Creando hilo
+[INFO] 01:10:32:491 mongostore/(9610:9720): Se conecto este socket a mi 10
+[INFO] 01:10:32:499 mongostore/(9610:9720): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 01:10:32:500 mongostore/(9610:9720): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 01:10:32:500 mongostore/(9610:9720): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 01:10:32:500 mongostore/(9610:9720): Bitacora de tripulante 2 levantada en memoria con size = 5949 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153]
+[DEBUG] 01:10:32:500 mongostore/(9610:9720): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5949, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153] y superbloque.block_size 256: (1)
+[DEBUG] 01:10:32:500 mongostore/(9610:9720): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153]
+[DEBUG] 01:10:32:501 mongostore/(9610:9720): O-Ultimo_entero usado 153
+[DEBUG] 01:10:32:501 mongostore/(9610:9720): Posicion_en_bloque 61, posicion_inicio_bloque 39168 posicion block_addres 0xb6b29000 posicion absoluta 0xb6b3293d
+[DEBUG] 01:10:32:501 mongostore/(9610:9720): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:10:32:501 mongostore/(9610:9720): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 01:10:32:620 mongostore/(9610:9720): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 01:10:32:620 mongostore/(9610:9720): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 01:10:37:628 mongostore/(9610:9720): tid 2  Se finaliza la tarea B00
+[DEBUG] 01:10:37:628 mongostore/(9610:9720): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 5980, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153] y superbloque.block_size 256: (1)
+[DEBUG] 01:10:37:629 mongostore/(9610:9720): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153]
+[DEBUG] 01:10:37:629 mongostore/(9610:9720): O-Ultimo_entero usado 153
+[DEBUG] 01:10:37:629 mongostore/(9610:9720): Posicion_en_bloque 92, posicion_inicio_bloque 39168 posicion block_addres 0xb6b29000 posicion absoluta 0xb6b3295c
+[DEBUG] 01:10:37:629 mongostore/(9610:9720): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:10:37:629 mongostore/(9610:9720): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 01:10:37:716 mongostore/(9610:9720): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 01:10:37:717 mongostore/(9610:9720): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 01:10:37:721 mongostore/(9610:9720): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 01:10:37:722 mongostore/(9610:9720): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6004, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153] y superbloque.block_size 256: (1)
+[DEBUG] 01:10:37:722 mongostore/(9610:9720): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153]
+[DEBUG] 01:10:37:722 mongostore/(9610:9720): O-Ultimo_entero usado 153
+[DEBUG] 01:10:37:722 mongostore/(9610:9720): Posicion_en_bloque 116, posicion_inicio_bloque 39168 posicion block_addres 0xb6b29000 posicion absoluta 0xb6b32974
+[DEBUG] 01:10:37:722 mongostore/(9610:9720): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:10:37:722 mongostore/(9610:9720): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 01:10:37:791 mongostore/(9610:9720): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 01:10:37:791 mongostore/(9610:9720): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 01:10:42:795 mongostore/(9610:9720): tid 2  Se finaliza la tarea B01
+[DEBUG] 01:10:42:796 mongostore/(9610:9720): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6035, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153] y superbloque.block_size 256: (1)
+[DEBUG] 01:10:42:796 mongostore/(9610:9720): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153]
+[DEBUG] 01:10:42:796 mongostore/(9610:9720): O-Ultimo_entero usado 153
+[DEBUG] 01:10:42:796 mongostore/(9610:9720): Posicion_en_bloque 147, posicion_inicio_bloque 39168 posicion block_addres 0xb6b29000 posicion absoluta 0xb6b32993
+[DEBUG] 01:10:42:797 mongostore/(9610:9720): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:10:42:797 mongostore/(9610:9720): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 01:10:42:867 mongostore/(9610:9720): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 01:10:42:868 mongostore/(9610:9720): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 01:10:42:873 mongostore/(9610:9720): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 01:10:42:873 mongostore/(9610:9720): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6059, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153] y superbloque.block_size 256: (1)
+[DEBUG] 01:10:42:873 mongostore/(9610:9720): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153]
+[DEBUG] 01:10:42:873 mongostore/(9610:9720): O-Ultimo_entero usado 153
+[DEBUG] 01:10:42:873 mongostore/(9610:9720): Posicion_en_bloque 171, posicion_inicio_bloque 39168 posicion block_addres 0xb6b29000 posicion absoluta 0xb6b329ab
+[DEBUG] 01:10:42:873 mongostore/(9610:9720): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:10:42:874 mongostore/(9610:9720): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 01:10:42:950 mongostore/(9610:9720): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 01:10:42:951 mongostore/(9610:9720): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 01:10:47:955 mongostore/(9610:9720): tid 2  Se finaliza la tarea B02
+[DEBUG] 01:10:47:955 mongostore/(9610:9720): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6090, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153] y superbloque.block_size 256: (1)
+[DEBUG] 01:10:47:955 mongostore/(9610:9720): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153]
+[DEBUG] 01:10:47:956 mongostore/(9610:9720): O-Ultimo_entero usado 153
+[DEBUG] 01:10:47:956 mongostore/(9610:9720): Posicion_en_bloque 202, posicion_inicio_bloque 39168 posicion block_addres 0xb6b29000 posicion absoluta 0xb6b329ca
+[DEBUG] 01:10:47:956 mongostore/(9610:9720): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 01:10:47:956 mongostore/(9610:9720): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 01:10:48:18 mongostore/(9610:9720): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 01:10:48:18 mongostore/(9610:9720): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[ERROR] 09:28:23:726 mongostore/(9610:9640): el discordiador finalizo el programa. Terminando servidor
+[INFO] 09:28:23:727 mongostore/(9610:9640): aaaaaaAAAAA
+[DEBUG] 09:28:30:536 mongostore/(32201:32201): LOGGER OK
+[INFO] 09:28:30:538 mongostore/(32201:32201): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 09:28:30:538 mongostore/(32201:32201): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 09:28:30:539 mongostore/(32201:32201): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 09:28:30:539 mongostore/(32201:32201): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 09:28:30:539 mongostore/(32201:32201): O-Superbloque generado desde archivo
+[INFO] 09:28:30:539 mongostore/(32201:32201): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 09:28:30:540 mongostore/(32201:32201): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 09:28:30:540 mongostore/(32201:32201): O-Blocks mapeado del archivo a la memoria
+[INFO] 09:28:30:545 mongostore/(32201:32201): Existencia de Blocks validada
+[DEBUG] 09:28:30:545 mongostore/(32201:32201): Directorios del File System confirmados
+[INFO] 09:28:30:545 mongostore/(32201:32201): File System iniciado
+[INFO] 09:28:30:545 mongostore/(32201:32201): pid 32201  
+
+[INFO] 09:28:30:548 mongostore/(32201:32203): Servidor iniciando 2
+[INFO] 09:28:30:548 mongostore/(32201:32203): Servidor Mongo2 encendido
+[INFO] 09:28:30:548 mongostore/(32201:32202): Servidor iniciando
+[INFO] 09:28:30:549 mongostore/(32201:32202): Servidor Mongo encendido
+[INFO] 09:28:48:560 mongostore/(32201:32202): Estableciendo conexión desde 24230
+[INFO] 09:28:48:560 mongostore/(32201:32202): Creando hilo
+[INFO] 09:28:48:562 mongostore/(32201:32203): 2 Estableciendo conexión desde 45229
+[INFO] 09:28:48:562 mongostore/(32201:32203): 2 Creando hilo
+[INFO] 09:28:48:563 mongostore/(32201:32242): Se conecto este socket a mi 8
+[INFO] 09:29:25:891 mongostore/(32201:32202): Estableciendo conexión desde 25766
+[INFO] 09:29:25:891 mongostore/(32201:32202): Creando hilo
+[INFO] 09:29:25:907 mongostore/(32201:32294): Se conecto este socket a mi 9
+[INFO] 09:29:25:915 mongostore/(32201:32202): Estableciendo conexión desde 26790
+[INFO] 09:29:25:915 mongostore/(32201:32202): Creando hilo
+[INFO] 09:29:25:920 mongostore/(32201:32296): Se conecto este socket a mi 10
+[INFO] 09:29:25:921 mongostore/(32201:32296): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 09:29:25:922 mongostore/(32201:32296): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 09:29:25:922 mongostore/(32201:32296): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 09:29:25:922 mongostore/(32201:32296): Bitacora de tripulante 2 levantada en memoria con size = 6114 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153]
+[DEBUG] 09:29:25:923 mongostore/(32201:32296): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6114, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153] y superbloque.block_size 256: (1)
+[DEBUG] 09:29:25:923 mongostore/(32201:32296): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153]
+[DEBUG] 09:29:25:923 mongostore/(32201:32296): O-Ultimo_entero usado 153
+[DEBUG] 09:29:25:923 mongostore/(32201:32296): Posicion_en_bloque 226, posicion_inicio_bloque 39168 posicion block_addres 0xb6b6e000 posicion absoluta 0xb6b779e2
+[DEBUG] 09:29:25:923 mongostore/(32201:32296): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:29:25:923 mongostore/(32201:32296): I-Se ingresa a superbloque_obtener_bloque_libre
+[DEBUG] 09:29:25:923 mongostore/(32201:32296): O-Bloque libre obtenido 154
+[DEBUG] 09:29:25:923 mongostore/(32201:32296): Posicion_en_bloque 0, posicion_inicio_bloque 39424 posicion block_addres 0xb6b6e000 posicion absoluta 0xb6b77a00
+[DEBUG] 09:29:25:923 mongostore/(32201:32296): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:29:25:923 mongostore/(32201:32296): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 09:29:25:998 mongostore/(32201:32296): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 09:29:25:998 mongostore/(32201:32296): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 09:29:30:2 mongostore/(32201:32296): tid 2  Se finaliza la tarea B00
+[DEBUG] 09:29:30:4 mongostore/(32201:32296): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6145, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154] y superbloque.block_size 256: (1)
+[DEBUG] 09:29:30:4 mongostore/(32201:32296): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154]
+[DEBUG] 09:29:30:4 mongostore/(32201:32296): O-Ultimo_entero usado 154
+[DEBUG] 09:29:30:5 mongostore/(32201:32296): Posicion_en_bloque 1, posicion_inicio_bloque 39424 posicion block_addres 0xb6b6e000 posicion absoluta 0xb6b77a01
+[DEBUG] 09:29:30:5 mongostore/(32201:32296): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:29:30:5 mongostore/(32201:32296): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 09:29:31:204 mongostore/(32201:32296): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 09:29:31:204 mongostore/(32201:32296): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 09:29:31:213 mongostore/(32201:32296): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 09:29:31:213 mongostore/(32201:32296): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6169, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154] y superbloque.block_size 256: (1)
+[DEBUG] 09:29:31:214 mongostore/(32201:32296): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154]
+[DEBUG] 09:29:31:214 mongostore/(32201:32296): O-Ultimo_entero usado 154
+[DEBUG] 09:29:31:214 mongostore/(32201:32296): Posicion_en_bloque 25, posicion_inicio_bloque 39424 posicion block_addres 0xb6b6e000 posicion absoluta 0xb6b77a19
+[DEBUG] 09:29:31:218 mongostore/(32201:32296): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:29:31:218 mongostore/(32201:32296): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 09:29:31:307 mongostore/(32201:32296): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 09:29:31:307 mongostore/(32201:32296): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 09:29:36:312 mongostore/(32201:32296): tid 2  Se finaliza la tarea B01
+[DEBUG] 09:29:36:313 mongostore/(32201:32296): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6200, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154] y superbloque.block_size 256: (1)
+[DEBUG] 09:29:36:313 mongostore/(32201:32296): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154]
+[DEBUG] 09:29:36:313 mongostore/(32201:32296): O-Ultimo_entero usado 154
+[DEBUG] 09:29:36:313 mongostore/(32201:32296): Posicion_en_bloque 56, posicion_inicio_bloque 39424 posicion block_addres 0xb6b6e000 posicion absoluta 0xb6b77a38
+[DEBUG] 09:29:36:314 mongostore/(32201:32296): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:29:36:314 mongostore/(32201:32296): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 09:29:36:367 mongostore/(32201:32296): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 09:29:36:368 mongostore/(32201:32296): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 09:29:36:370 mongostore/(32201:32296): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 09:29:36:370 mongostore/(32201:32296): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6224, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154] y superbloque.block_size 256: (1)
+[DEBUG] 09:29:36:370 mongostore/(32201:32296): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154]
+[DEBUG] 09:29:36:371 mongostore/(32201:32296): O-Ultimo_entero usado 154
+[DEBUG] 09:29:36:371 mongostore/(32201:32296): Posicion_en_bloque 80, posicion_inicio_bloque 39424 posicion block_addres 0xb6b6e000 posicion absoluta 0xb6b77a50
+[DEBUG] 09:29:36:371 mongostore/(32201:32296): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:29:36:371 mongostore/(32201:32296): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 09:29:36:434 mongostore/(32201:32296): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 09:29:36:434 mongostore/(32201:32296): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 09:29:41:442 mongostore/(32201:32296): tid 2  Se finaliza la tarea B02
+[DEBUG] 09:29:41:442 mongostore/(32201:32296): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6255, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154] y superbloque.block_size 256: (1)
+[DEBUG] 09:29:41:443 mongostore/(32201:32296): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154]
+[DEBUG] 09:29:41:443 mongostore/(32201:32296): O-Ultimo_entero usado 154
+[DEBUG] 09:29:41:443 mongostore/(32201:32296): Posicion_en_bloque 111, posicion_inicio_bloque 39424 posicion block_addres 0xb6b6e000 posicion absoluta 0xb6b77a6f
+[DEBUG] 09:29:41:443 mongostore/(32201:32296): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:29:41:444 mongostore/(32201:32296): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 09:29:41:502 mongostore/(32201:32296): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 09:29:41:502 mongostore/(32201:32296): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[ERROR] 09:44:40:601 mongostore/(32201:32242): el discordiador finalizo el programa. Terminando servidor
+[INFO] 09:44:40:604 mongostore/(32201:32242): aaaaaaAAAAA
+[DEBUG] 09:46:07:90 mongostore/(654:654): LOGGER OK
+[INFO] 09:46:07:90 mongostore/(654:654): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 09:46:07:91 mongostore/(654:654): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 09:46:07:91 mongostore/(654:654): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 09:46:07:91 mongostore/(654:654): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 09:46:07:92 mongostore/(654:654): O-Superbloque generado desde archivo
+[INFO] 09:46:07:92 mongostore/(654:654): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 09:46:07:92 mongostore/(654:654): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 09:46:07:92 mongostore/(654:654): O-Blocks mapeado del archivo a la memoria
+[INFO] 09:46:07:93 mongostore/(654:654): Existencia de Blocks validada
+[DEBUG] 09:46:07:93 mongostore/(654:654): Directorios del File System confirmados
+[INFO] 09:46:07:93 mongostore/(654:654): File System iniciado
+[INFO] 09:46:07:94 mongostore/(654:654): pid 654  
+
+[INFO] 09:46:07:94 mongostore/(654:656): Servidor iniciando 2
+[INFO] 09:46:07:95 mongostore/(654:656): Servidor Mongo2 encendido
+[INFO] 09:46:07:95 mongostore/(654:655): Servidor iniciando
+[INFO] 09:46:07:95 mongostore/(654:655): Servidor Mongo encendido
+[INFO] 09:46:17:347 mongostore/(654:655): Estableciendo conexión desde 27814
+[INFO] 09:46:17:347 mongostore/(654:655): Creando hilo
+[INFO] 09:46:17:348 mongostore/(654:656): 2 Estableciendo conexión desde 48813
+[INFO] 09:46:17:348 mongostore/(654:656): 2 Creando hilo
+[INFO] 09:46:17:348 mongostore/(654:683): Se conecto este socket a mi 8
+[INFO] 09:46:43:369 mongostore/(654:655): Estableciendo conexión desde 29350
+[INFO] 09:46:43:369 mongostore/(654:655): Creando hilo
+[INFO] 09:46:43:379 mongostore/(654:738): Se conecto este socket a mi 9
+[INFO] 09:46:43:395 mongostore/(654:655): Estableciendo conexión desde 30374
+[INFO] 09:46:43:396 mongostore/(654:655): Creando hilo
+[INFO] 09:46:43:410 mongostore/(654:740): Se conecto este socket a mi 10
+[INFO] 09:46:43:412 mongostore/(654:740): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 09:46:43:412 mongostore/(654:740): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 09:46:43:412 mongostore/(654:740): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 09:46:43:412 mongostore/(654:740): Bitacora de tripulante 2 levantada en memoria con size = 6279 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154]
+[DEBUG] 09:46:43:412 mongostore/(654:740): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6279, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154] y superbloque.block_size 256: (1)
+[DEBUG] 09:46:43:412 mongostore/(654:740): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154]
+[DEBUG] 09:46:43:413 mongostore/(654:740): O-Ultimo_entero usado 154
+[DEBUG] 09:46:43:413 mongostore/(654:740): Posicion_en_bloque 135, posicion_inicio_bloque 39424 posicion block_addres 0xb6b73000 posicion absoluta 0xb6b7ca87
+[DEBUG] 09:46:43:413 mongostore/(654:740): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:46:43:413 mongostore/(654:740): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 09:46:43:570 mongostore/(654:740): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 09:46:43:571 mongostore/(654:740): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 09:46:48:576 mongostore/(654:740): tid 2  Se finaliza la tarea B00
+[DEBUG] 09:46:48:577 mongostore/(654:740): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6310, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154] y superbloque.block_size 256: (1)
+[DEBUG] 09:46:48:577 mongostore/(654:740): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154]
+[DEBUG] 09:46:48:577 mongostore/(654:740): O-Ultimo_entero usado 154
+[DEBUG] 09:46:48:577 mongostore/(654:740): Posicion_en_bloque 166, posicion_inicio_bloque 39424 posicion block_addres 0xb6b73000 posicion absoluta 0xb6b7caa6
+[DEBUG] 09:46:48:578 mongostore/(654:740): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:46:48:578 mongostore/(654:740): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 09:46:48:651 mongostore/(654:740): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 09:46:48:652 mongostore/(654:740): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 09:46:48:657 mongostore/(654:740): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 09:46:48:657 mongostore/(654:740): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6334, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154] y superbloque.block_size 256: (1)
+[DEBUG] 09:46:48:657 mongostore/(654:740): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154]
+[DEBUG] 09:46:48:657 mongostore/(654:740): O-Ultimo_entero usado 154
+[DEBUG] 09:46:48:658 mongostore/(654:740): Posicion_en_bloque 190, posicion_inicio_bloque 39424 posicion block_addres 0xb6b73000 posicion absoluta 0xb6b7cabe
+[DEBUG] 09:46:48:658 mongostore/(654:740): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:46:48:658 mongostore/(654:740): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 09:46:48:721 mongostore/(654:740): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 09:46:48:721 mongostore/(654:740): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 09:46:53:730 mongostore/(654:740): tid 2  Se finaliza la tarea B01
+[DEBUG] 09:46:53:730 mongostore/(654:740): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6365, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154] y superbloque.block_size 256: (1)
+[DEBUG] 09:46:53:731 mongostore/(654:740): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154]
+[DEBUG] 09:46:53:731 mongostore/(654:740): O-Ultimo_entero usado 154
+[DEBUG] 09:46:53:731 mongostore/(654:740): Posicion_en_bloque 221, posicion_inicio_bloque 39424 posicion block_addres 0xb6b73000 posicion absoluta 0xb6b7cadd
+[DEBUG] 09:46:53:731 mongostore/(654:740): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:46:53:732 mongostore/(654:740): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 09:46:53:779 mongostore/(654:740): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 09:46:53:779 mongostore/(654:740): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 09:46:53:781 mongostore/(654:740): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 09:46:53:781 mongostore/(654:740): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6389, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154] y superbloque.block_size 256: (1)
+[DEBUG] 09:46:53:781 mongostore/(654:740): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154]
+[DEBUG] 09:46:53:781 mongostore/(654:740): O-Ultimo_entero usado 154
+[DEBUG] 09:46:53:781 mongostore/(654:740): Posicion_en_bloque 245, posicion_inicio_bloque 39424 posicion block_addres 0xb6b73000 posicion absoluta 0xb6b7caf5
+[DEBUG] 09:46:53:781 mongostore/(654:740): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:46:53:781 mongostore/(654:740): I-Se ingresa a superbloque_obtener_bloque_libre
+[DEBUG] 09:46:53:781 mongostore/(654:740): O-Bloque libre obtenido 155
+[DEBUG] 09:46:53:781 mongostore/(654:740): Posicion_en_bloque 0, posicion_inicio_bloque 39680 posicion block_addres 0xb6b73000 posicion absoluta 0xb6b7cb00
+[DEBUG] 09:46:53:781 mongostore/(654:740): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:46:53:781 mongostore/(654:740): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 09:46:53:846 mongostore/(654:740): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 09:46:53:846 mongostore/(654:740): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 09:46:58:849 mongostore/(654:740): tid 2  Se finaliza la tarea B02
+[DEBUG] 09:46:58:850 mongostore/(654:740): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6420, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155] y superbloque.block_size 256: (1)
+[DEBUG] 09:46:58:850 mongostore/(654:740): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155]
+[DEBUG] 09:46:58:850 mongostore/(654:740): O-Ultimo_entero usado 155
+[DEBUG] 09:46:58:851 mongostore/(654:740): Posicion_en_bloque 20, posicion_inicio_bloque 39680 posicion block_addres 0xb6b73000 posicion absoluta 0xb6b7cb14
+[DEBUG] 09:46:58:851 mongostore/(654:740): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 09:46:58:851 mongostore/(654:740): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 09:46:58:915 mongostore/(654:740): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 09:46:58:916 mongostore/(654:740): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[ERROR] 10:05:54:276 mongostore/(654:683): el discordiador finalizo el programa. Terminando servidor
+[INFO] 10:05:54:278 mongostore/(654:683): aaaaaaAAAAA
+[DEBUG] 10:06:07:195 mongostore/(1795:1795): LOGGER OK
+[INFO] 10:06:07:196 mongostore/(1795:1795): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:06:07:196 mongostore/(1795:1795): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:06:07:196 mongostore/(1795:1795): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:06:07:197 mongostore/(1795:1795): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:06:07:197 mongostore/(1795:1795): O-Superbloque generado desde archivo
+[INFO] 10:06:07:197 mongostore/(1795:1795): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:06:07:198 mongostore/(1795:1795): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:06:07:198 mongostore/(1795:1795): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:06:07:198 mongostore/(1795:1795): Existencia de Blocks validada
+[DEBUG] 10:06:07:198 mongostore/(1795:1795): Directorios del File System confirmados
+[INFO] 10:06:07:199 mongostore/(1795:1795): File System iniciado
+[INFO] 10:06:07:199 mongostore/(1795:1795): pid 1795  
+
+[INFO] 10:06:07:200 mongostore/(1795:1797): Servidor iniciando 2
+[INFO] 10:06:07:200 mongostore/(1795:1797): Servidor Mongo2 encendido
+[INFO] 10:06:07:200 mongostore/(1795:1796): Servidor iniciando
+[INFO] 10:06:07:204 mongostore/(1795:1796): Servidor Mongo encendido
+[INFO] 10:06:10:102 mongostore/(1795:1796): Estableciendo conexión desde 31398
+[INFO] 10:06:10:102 mongostore/(1795:1796): Creando hilo
+[INFO] 10:06:10:104 mongostore/(1795:1797): 2 Estableciendo conexión desde 52397
+[INFO] 10:06:10:104 mongostore/(1795:1797): 2 Creando hilo
+[INFO] 10:06:10:110 mongostore/(1795:1809): Se conecto este socket a mi 8
+[INFO] 10:06:34:922 mongostore/(1795:1796): Estableciendo conexión desde 32934
+[INFO] 10:06:34:922 mongostore/(1795:1796): Creando hilo
+[INFO] 10:06:34:936 mongostore/(1795:1854): Se conecto este socket a mi 9
+[INFO] 10:06:34:951 mongostore/(1795:1796): Estableciendo conexión desde 33958
+[INFO] 10:06:34:951 mongostore/(1795:1796): Creando hilo
+[INFO] 10:06:34:953 mongostore/(1795:1856): Se conecto este socket a mi 10
+[INFO] 10:06:34:962 mongostore/(1795:1856): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 10:06:34:962 mongostore/(1795:1856): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 10:06:34:962 mongostore/(1795:1856): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 10:06:34:962 mongostore/(1795:1856): Bitacora de tripulante 2 levantada en memoria con size = 6444 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155]
+[DEBUG] 10:06:34:963 mongostore/(1795:1856): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6444, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155] y superbloque.block_size 256: (1)
+[DEBUG] 10:06:34:963 mongostore/(1795:1856): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155]
+[DEBUG] 10:06:34:963 mongostore/(1795:1856): O-Ultimo_entero usado 155
+[DEBUG] 10:06:34:963 mongostore/(1795:1856): Posicion_en_bloque 44, posicion_inicio_bloque 39680 posicion block_addres 0xb6b16000 posicion absoluta 0xb6b1fb2c
+[DEBUG] 10:06:34:963 mongostore/(1795:1856): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:06:34:963 mongostore/(1795:1856): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:06:35:65 mongostore/(1795:1856): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:06:35:65 mongostore/(1795:1856): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:06:40:68 mongostore/(1795:1856): tid 2  Se finaliza la tarea B00
+[DEBUG] 10:06:40:69 mongostore/(1795:1856): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6475, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155] y superbloque.block_size 256: (1)
+[DEBUG] 10:06:40:69 mongostore/(1795:1856): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155]
+[DEBUG] 10:06:40:69 mongostore/(1795:1856): O-Ultimo_entero usado 155
+[DEBUG] 10:06:40:69 mongostore/(1795:1856): Posicion_en_bloque 75, posicion_inicio_bloque 39680 posicion block_addres 0xb6b16000 posicion absoluta 0xb6b1fb4b
+[DEBUG] 10:06:40:70 mongostore/(1795:1856): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:06:40:70 mongostore/(1795:1856): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:06:40:232 mongostore/(1795:1856): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:06:40:232 mongostore/(1795:1856): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:06:40:237 mongostore/(1795:1856): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 10:06:40:237 mongostore/(1795:1856): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6499, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155] y superbloque.block_size 256: (1)
+[DEBUG] 10:06:40:237 mongostore/(1795:1856): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155]
+[DEBUG] 10:06:40:237 mongostore/(1795:1856): O-Ultimo_entero usado 155
+[DEBUG] 10:06:40:237 mongostore/(1795:1856): Posicion_en_bloque 99, posicion_inicio_bloque 39680 posicion block_addres 0xb6b16000 posicion absoluta 0xb6b1fb63
+[DEBUG] 10:06:40:237 mongostore/(1795:1856): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:06:40:238 mongostore/(1795:1856): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:06:40:323 mongostore/(1795:1856): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:06:40:324 mongostore/(1795:1856): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:06:45:330 mongostore/(1795:1856): tid 2  Se finaliza la tarea B01
+[DEBUG] 10:06:45:331 mongostore/(1795:1856): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6530, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155] y superbloque.block_size 256: (1)
+[DEBUG] 10:06:45:331 mongostore/(1795:1856): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155]
+[DEBUG] 10:06:45:331 mongostore/(1795:1856): O-Ultimo_entero usado 155
+[DEBUG] 10:06:45:331 mongostore/(1795:1856): Posicion_en_bloque 130, posicion_inicio_bloque 39680 posicion block_addres 0xb6b16000 posicion absoluta 0xb6b1fb82
+[DEBUG] 10:06:45:332 mongostore/(1795:1856): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:06:45:332 mongostore/(1795:1856): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:06:45:391 mongostore/(1795:1856): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:06:45:391 mongostore/(1795:1856): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:06:45:395 mongostore/(1795:1856): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 10:06:45:395 mongostore/(1795:1856): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6554, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155] y superbloque.block_size 256: (1)
+[DEBUG] 10:06:45:395 mongostore/(1795:1856): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155]
+[DEBUG] 10:06:45:395 mongostore/(1795:1856): O-Ultimo_entero usado 155
+[DEBUG] 10:06:45:395 mongostore/(1795:1856): Posicion_en_bloque 154, posicion_inicio_bloque 39680 posicion block_addres 0xb6b16000 posicion absoluta 0xb6b1fb9a
+[DEBUG] 10:06:45:395 mongostore/(1795:1856): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:06:45:395 mongostore/(1795:1856): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:06:45:457 mongostore/(1795:1856): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:06:45:458 mongostore/(1795:1856): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:06:50:460 mongostore/(1795:1856): tid 2  Se finaliza la tarea B02
+[DEBUG] 10:06:50:460 mongostore/(1795:1856): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6585, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155] y superbloque.block_size 256: (1)
+[DEBUG] 10:06:50:460 mongostore/(1795:1856): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155]
+[DEBUG] 10:06:50:461 mongostore/(1795:1856): O-Ultimo_entero usado 155
+[DEBUG] 10:06:50:461 mongostore/(1795:1856): Posicion_en_bloque 185, posicion_inicio_bloque 39680 posicion block_addres 0xb6b16000 posicion absoluta 0xb6b1fbb9
+[DEBUG] 10:06:50:461 mongostore/(1795:1856): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:06:50:461 mongostore/(1795:1856): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:06:50:516 mongostore/(1795:1856): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:06:50:517 mongostore/(1795:1856): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[ERROR] 10:09:05:122 mongostore/(1795:1809): el discordiador finalizo el programa. Terminando servidor
+[INFO] 10:09:05:126 mongostore/(1795:1809): aaaaaaAAAAA
+[DEBUG] 10:09:13:977 mongostore/(2016:2016): LOGGER OK
+[INFO] 10:09:13:978 mongostore/(2016:2016): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:09:13:978 mongostore/(2016:2016): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:09:13:979 mongostore/(2016:2016): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:09:13:979 mongostore/(2016:2016): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:09:13:979 mongostore/(2016:2016): O-Superbloque generado desde archivo
+[INFO] 10:09:13:980 mongostore/(2016:2016): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:09:13:980 mongostore/(2016:2016): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:09:13:981 mongostore/(2016:2016): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:09:13:981 mongostore/(2016:2016): Existencia de Blocks validada
+[DEBUG] 10:09:13:981 mongostore/(2016:2016): Directorios del File System confirmados
+[INFO] 10:09:13:982 mongostore/(2016:2016): File System iniciado
+[INFO] 10:09:13:982 mongostore/(2016:2016): pid 2016  
+
+[INFO] 10:09:13:982 mongostore/(2016:2018): Servidor iniciando 2
+[INFO] 10:09:13:983 mongostore/(2016:2018): Servidor Mongo2 encendido
+[INFO] 10:09:13:983 mongostore/(2016:2017): Servidor iniciando
+[INFO] 10:09:13:987 mongostore/(2016:2017): Servidor Mongo encendido
+[INFO] 10:09:16:76 mongostore/(2016:2017): Estableciendo conexión desde 34982
+[INFO] 10:09:16:76 mongostore/(2016:2017): Creando hilo
+[INFO] 10:09:16:79 mongostore/(2016:2018): 2 Estableciendo conexión desde 55981
+[INFO] 10:09:16:79 mongostore/(2016:2018): 2 Creando hilo
+[INFO] 10:09:16:84 mongostore/(2016:2024): Se conecto este socket a mi 8
+[ERROR] 10:39:32:562 mongostore/(2016:2024): el discordiador finalizo el programa. Terminando servidor
+[INFO] 10:39:32:563 mongostore/(2016:2024): aaaaaaAAAAA
+[DEBUG] 10:40:08:9 mongostore/(3645:3645): LOGGER OK
+[INFO] 10:40:08:10 mongostore/(3645:3645): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:40:08:10 mongostore/(3645:3645): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:40:08:10 mongostore/(3645:3645): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:40:08:11 mongostore/(3645:3645): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:40:08:11 mongostore/(3645:3645): O-Superbloque generado desde archivo
+[INFO] 10:40:08:11 mongostore/(3645:3645): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:40:08:11 mongostore/(3645:3645): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:40:08:12 mongostore/(3645:3645): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:40:08:12 mongostore/(3645:3645): Existencia de Blocks validada
+[DEBUG] 10:40:08:12 mongostore/(3645:3645): Directorios del File System confirmados
+[INFO] 10:40:08:13 mongostore/(3645:3645): File System iniciado
+[INFO] 10:40:08:13 mongostore/(3645:3645): pid 3645  
+
+[INFO] 10:40:08:13 mongostore/(3645:3647): Servidor iniciando 2
+[INFO] 10:40:08:14 mongostore/(3645:3647): Servidor Mongo2 encendido
+[INFO] 10:40:08:14 mongostore/(3645:3646): Servidor iniciando
+[INFO] 10:40:08:14 mongostore/(3645:3646): Servidor Mongo encendido
+[INFO] 10:40:11:701 mongostore/(3645:3646): Estableciendo conexión desde 36518
+[INFO] 10:40:11:701 mongostore/(3645:3646): Creando hilo
+[INFO] 10:40:11:703 mongostore/(3645:3647): 2 Estableciendo conexión desde 57517
+[INFO] 10:40:11:703 mongostore/(3645:3647): 2 Creando hilo
+[INFO] 10:40:11:720 mongostore/(3645:3655): Se conecto este socket a mi 8
+[INFO] 10:40:35:137 mongostore/(3645:3646): Estableciendo conexión desde 38054
+[INFO] 10:40:35:137 mongostore/(3645:3646): Creando hilo
+[INFO] 10:40:35:162 mongostore/(3645:3704): Se conecto este socket a mi 9
+[INFO] 10:40:35:171 mongostore/(3645:3646): Estableciendo conexión desde 39078
+[INFO] 10:40:35:171 mongostore/(3645:3646): Creando hilo
+[INFO] 10:40:35:175 mongostore/(3645:3705): Se conecto este socket a mi 10
+[INFO] 10:40:35:182 mongostore/(3645:3705): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 10:40:35:182 mongostore/(3645:3705): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 10:40:35:182 mongostore/(3645:3705): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 10:40:35:182 mongostore/(3645:3705): Bitacora de tripulante 2 levantada en memoria con size = 6609 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155]
+[DEBUG] 10:40:35:182 mongostore/(3645:3705): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6609, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155] y superbloque.block_size 256: (1)
+[DEBUG] 10:40:35:183 mongostore/(3645:3705): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155]
+[DEBUG] 10:40:35:183 mongostore/(3645:3705): O-Ultimo_entero usado 155
+[DEBUG] 10:40:35:183 mongostore/(3645:3705): Posicion_en_bloque 209, posicion_inicio_bloque 39680 posicion block_addres 0xb6b09000 posicion absoluta 0xb6b12bd1
+[DEBUG] 10:40:35:183 mongostore/(3645:3705): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:40:35:183 mongostore/(3645:3705): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:40:35:272 mongostore/(3645:3705): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:40:35:272 mongostore/(3645:3705): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:40:40:276 mongostore/(3645:3705): tid 2  Se finaliza la tarea B00
+[DEBUG] 10:40:40:277 mongostore/(3645:3705): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6640, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155] y superbloque.block_size 256: (1)
+[DEBUG] 10:40:40:277 mongostore/(3645:3705): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155]
+[DEBUG] 10:40:40:277 mongostore/(3645:3705): O-Ultimo_entero usado 155
+[DEBUG] 10:40:40:277 mongostore/(3645:3705): Posicion_en_bloque 240, posicion_inicio_bloque 39680 posicion block_addres 0xb6b09000 posicion absoluta 0xb6b12bf0
+[DEBUG] 10:40:40:278 mongostore/(3645:3705): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:40:40:278 mongostore/(3645:3705): I-Se ingresa a superbloque_obtener_bloque_libre
+[DEBUG] 10:40:40:278 mongostore/(3645:3705): O-Bloque libre obtenido 156
+[DEBUG] 10:40:40:279 mongostore/(3645:3705): Posicion_en_bloque 0, posicion_inicio_bloque 39936 posicion block_addres 0xb6b09000 posicion absoluta 0xb6b12c00
+[DEBUG] 10:40:40:279 mongostore/(3645:3705): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:40:40:279 mongostore/(3645:3705): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:40:40:363 mongostore/(3645:3705): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:40:40:364 mongostore/(3645:3705): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:40:40:369 mongostore/(3645:3705): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 10:40:40:369 mongostore/(3645:3705): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6664, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156] y superbloque.block_size 256: (1)
+[DEBUG] 10:40:40:369 mongostore/(3645:3705): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156]
+[DEBUG] 10:40:40:370 mongostore/(3645:3705): O-Ultimo_entero usado 156
+[DEBUG] 10:40:40:370 mongostore/(3645:3705): Posicion_en_bloque 8, posicion_inicio_bloque 39936 posicion block_addres 0xb6b09000 posicion absoluta 0xb6b12c08
+[DEBUG] 10:40:40:370 mongostore/(3645:3705): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:40:40:370 mongostore/(3645:3705): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:40:40:432 mongostore/(3645:3705): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:40:40:432 mongostore/(3645:3705): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:40:45:439 mongostore/(3645:3705): tid 2  Se finaliza la tarea B01
+[DEBUG] 10:40:45:440 mongostore/(3645:3705): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6695, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156] y superbloque.block_size 256: (1)
+[DEBUG] 10:40:45:440 mongostore/(3645:3705): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156]
+[DEBUG] 10:40:45:440 mongostore/(3645:3705): O-Ultimo_entero usado 156
+[DEBUG] 10:40:45:440 mongostore/(3645:3705): Posicion_en_bloque 39, posicion_inicio_bloque 39936 posicion block_addres 0xb6b09000 posicion absoluta 0xb6b12c27
+[DEBUG] 10:40:45:441 mongostore/(3645:3705): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:40:45:441 mongostore/(3645:3705): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:40:45:516 mongostore/(3645:3705): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:40:45:516 mongostore/(3645:3705): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:40:45:517 mongostore/(3645:3705): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 10:40:45:518 mongostore/(3645:3705): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6719, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156] y superbloque.block_size 256: (1)
+[DEBUG] 10:40:45:518 mongostore/(3645:3705): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156]
+[DEBUG] 10:40:45:518 mongostore/(3645:3705): O-Ultimo_entero usado 156
+[DEBUG] 10:40:45:518 mongostore/(3645:3705): Posicion_en_bloque 63, posicion_inicio_bloque 39936 posicion block_addres 0xb6b09000 posicion absoluta 0xb6b12c3f
+[DEBUG] 10:40:45:518 mongostore/(3645:3705): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:40:45:518 mongostore/(3645:3705): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:40:45:608 mongostore/(3645:3705): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:40:45:608 mongostore/(3645:3705): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:40:50:612 mongostore/(3645:3705): tid 2  Se finaliza la tarea B02
+[DEBUG] 10:40:50:612 mongostore/(3645:3705): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6750, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156] y superbloque.block_size 256: (1)
+[DEBUG] 10:40:50:613 mongostore/(3645:3705): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156]
+[DEBUG] 10:40:50:613 mongostore/(3645:3705): O-Ultimo_entero usado 156
+[DEBUG] 10:40:50:614 mongostore/(3645:3705): Posicion_en_bloque 94, posicion_inicio_bloque 39936 posicion block_addres 0xb6b09000 posicion absoluta 0xb6b12c5e
+[DEBUG] 10:40:50:614 mongostore/(3645:3705): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:40:50:615 mongostore/(3645:3705): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:40:50:688 mongostore/(3645:3705): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:40:50:689 mongostore/(3645:3705): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[ERROR] 10:42:46:473 mongostore/(3645:3655): el discordiador finalizo el programa. Terminando servidor
+[INFO] 10:42:46:475 mongostore/(3645:3655): aaaaaaAAAAA
+[DEBUG] 10:43:09:430 mongostore/(3903:3903): LOGGER OK
+[INFO] 10:43:09:430 mongostore/(3903:3903): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:43:09:430 mongostore/(3903:3903): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:43:09:430 mongostore/(3903:3903): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:43:09:430 mongostore/(3903:3903): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:43:09:430 mongostore/(3903:3903): O-Superbloque generado desde archivo
+[INFO] 10:43:09:430 mongostore/(3903:3903): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:43:09:430 mongostore/(3903:3903): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:43:09:430 mongostore/(3903:3903): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:43:09:430 mongostore/(3903:3903): Existencia de Blocks validada
+[DEBUG] 10:43:09:431 mongostore/(3903:3903): Directorios del File System confirmados
+[INFO] 10:43:09:431 mongostore/(3903:3903): File System iniciado
+[INFO] 10:43:09:431 mongostore/(3903:3903): pid 3903  
+
+[INFO] 10:43:09:431 mongostore/(3903:3905): Servidor iniciando 2
+[INFO] 10:43:09:431 mongostore/(3903:3905): Servidor Mongo2 encendido
+[INFO] 10:43:09:431 mongostore/(3903:3904): Servidor iniciando
+[INFO] 10:43:09:431 mongostore/(3903:3904): Servidor Mongo encendido
+[INFO] 10:43:12:74 mongostore/(3903:3904): Estableciendo conexión desde 41638
+[INFO] 10:43:12:75 mongostore/(3903:3904): Creando hilo
+[INFO] 10:43:12:76 mongostore/(3903:3905): 2 Estableciendo conexión desde 62637
+[INFO] 10:43:12:76 mongostore/(3903:3905): 2 Creando hilo
+[INFO] 10:43:12:77 mongostore/(3903:3914): Se conecto este socket a mi 8
+[INFO] 10:43:36:275 mongostore/(3903:3904): Estableciendo conexión desde 43174
+[INFO] 10:43:36:276 mongostore/(3903:3904): Creando hilo
+[INFO] 10:43:36:279 mongostore/(3903:3961): Se conecto este socket a mi 9
+[INFO] 10:43:36:281 mongostore/(3903:3904): Estableciendo conexión desde 44198
+[INFO] 10:43:36:282 mongostore/(3903:3904): Creando hilo
+[INFO] 10:43:36:284 mongostore/(3903:3963): Se conecto este socket a mi 10
+[INFO] 10:43:36:289 mongostore/(3903:3963): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 10:43:36:290 mongostore/(3903:3963): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 10:43:36:290 mongostore/(3903:3963): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 10:43:36:290 mongostore/(3903:3963): Bitacora de tripulante 2 levantada en memoria con size = 6774 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156]
+[DEBUG] 10:43:36:290 mongostore/(3903:3963): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6774, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156] y superbloque.block_size 256: (1)
+[DEBUG] 10:43:36:290 mongostore/(3903:3963): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156]
+[DEBUG] 10:43:36:290 mongostore/(3903:3963): O-Ultimo_entero usado 156
+[DEBUG] 10:43:36:290 mongostore/(3903:3963): Posicion_en_bloque 118, posicion_inicio_bloque 39936 posicion block_addres 0xb6b1b000 posicion absoluta 0xb6b24c76
+[DEBUG] 10:43:36:290 mongostore/(3903:3963): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:43:36:290 mongostore/(3903:3963): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:43:36:394 mongostore/(3903:3963): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:43:36:395 mongostore/(3903:3963): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:43:41:400 mongostore/(3903:3963): tid 2  Se finaliza la tarea B00
+[DEBUG] 10:43:41:401 mongostore/(3903:3963): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6805, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156] y superbloque.block_size 256: (1)
+[DEBUG] 10:43:41:401 mongostore/(3903:3963): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156]
+[DEBUG] 10:43:41:401 mongostore/(3903:3963): O-Ultimo_entero usado 156
+[DEBUG] 10:43:41:401 mongostore/(3903:3963): Posicion_en_bloque 149, posicion_inicio_bloque 39936 posicion block_addres 0xb6b1b000 posicion absoluta 0xb6b24c95
+[DEBUG] 10:43:41:402 mongostore/(3903:3963): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:43:41:402 mongostore/(3903:3963): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:43:41:478 mongostore/(3903:3963): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:43:41:478 mongostore/(3903:3963): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:43:41:486 mongostore/(3903:3963): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 10:43:41:487 mongostore/(3903:3963): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6829, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156] y superbloque.block_size 256: (1)
+[DEBUG] 10:43:41:487 mongostore/(3903:3963): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156]
+[DEBUG] 10:43:41:487 mongostore/(3903:3963): O-Ultimo_entero usado 156
+[DEBUG] 10:43:41:487 mongostore/(3903:3963): Posicion_en_bloque 173, posicion_inicio_bloque 39936 posicion block_addres 0xb6b1b000 posicion absoluta 0xb6b24cad
+[DEBUG] 10:43:41:487 mongostore/(3903:3963): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:43:41:487 mongostore/(3903:3963): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:43:41:578 mongostore/(3903:3963): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:43:41:578 mongostore/(3903:3963): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:43:46:583 mongostore/(3903:3963): tid 2  Se finaliza la tarea B01
+[DEBUG] 10:43:46:583 mongostore/(3903:3963): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6860, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156] y superbloque.block_size 256: (1)
+[DEBUG] 10:43:46:584 mongostore/(3903:3963): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156]
+[DEBUG] 10:43:46:584 mongostore/(3903:3963): O-Ultimo_entero usado 156
+[DEBUG] 10:43:46:584 mongostore/(3903:3963): Posicion_en_bloque 204, posicion_inicio_bloque 39936 posicion block_addres 0xb6b1b000 posicion absoluta 0xb6b24ccc
+[DEBUG] 10:43:46:584 mongostore/(3903:3963): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:43:46:585 mongostore/(3903:3963): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:43:46:681 mongostore/(3903:3963): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:43:46:681 mongostore/(3903:3963): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:43:46:686 mongostore/(3903:3963): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 10:43:46:687 mongostore/(3903:3963): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6884, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156] y superbloque.block_size 256: (1)
+[DEBUG] 10:43:46:687 mongostore/(3903:3963): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156]
+[DEBUG] 10:43:46:687 mongostore/(3903:3963): O-Ultimo_entero usado 156
+[DEBUG] 10:43:46:687 mongostore/(3903:3963): Posicion_en_bloque 228, posicion_inicio_bloque 39936 posicion block_addres 0xb6b1b000 posicion absoluta 0xb6b24ce4
+[DEBUG] 10:43:46:687 mongostore/(3903:3963): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:43:46:687 mongostore/(3903:3963): I-Se ingresa a superbloque_obtener_bloque_libre
+[DEBUG] 10:43:46:687 mongostore/(3903:3963): O-Bloque libre obtenido 157
+[DEBUG] 10:43:46:687 mongostore/(3903:3963): Posicion_en_bloque 0, posicion_inicio_bloque 40192 posicion block_addres 0xb6b1b000 posicion absoluta 0xb6b24d00
+[DEBUG] 10:43:46:687 mongostore/(3903:3963): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:43:46:687 mongostore/(3903:3963): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:43:46:747 mongostore/(3903:3963): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:43:46:747 mongostore/(3903:3963): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:43:51:750 mongostore/(3903:3963): tid 2  Se finaliza la tarea B02
+[DEBUG] 10:43:51:750 mongostore/(3903:3963): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6915, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157] y superbloque.block_size 256: (1)
+[DEBUG] 10:43:51:751 mongostore/(3903:3963): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157]
+[DEBUG] 10:43:51:751 mongostore/(3903:3963): O-Ultimo_entero usado 157
+[DEBUG] 10:43:51:751 mongostore/(3903:3963): Posicion_en_bloque 3, posicion_inicio_bloque 40192 posicion block_addres 0xb6b1b000 posicion absoluta 0xb6b24d03
+[DEBUG] 10:43:51:751 mongostore/(3903:3963): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:43:51:752 mongostore/(3903:3963): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:43:51:830 mongostore/(3903:3963): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:43:51:831 mongostore/(3903:3963): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[ERROR] 10:51:27:51 mongostore/(3903:3914): el discordiador finalizo el programa. Terminando servidor
+[INFO] 10:51:27:54 mongostore/(3903:3914): aaaaaaAAAAA
+[DEBUG] 10:51:34:540 mongostore/(4556:4556): LOGGER OK
+[INFO] 10:51:34:542 mongostore/(4556:4556): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:51:34:542 mongostore/(4556:4556): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:51:34:542 mongostore/(4556:4556): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 10:51:34:543 mongostore/(4556:4556): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 10:51:34:543 mongostore/(4556:4556): O-Superbloque generado desde archivo
+[INFO] 10:51:34:543 mongostore/(4556:4556): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 10:51:34:543 mongostore/(4556:4556): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 10:51:34:543 mongostore/(4556:4556): O-Blocks mapeado del archivo a la memoria
+[INFO] 10:51:34:544 mongostore/(4556:4556): Existencia de Blocks validada
+[DEBUG] 10:51:34:544 mongostore/(4556:4556): Directorios del File System confirmados
+[INFO] 10:51:34:544 mongostore/(4556:4556): File System iniciado
+[INFO] 10:51:34:544 mongostore/(4556:4556): pid 4556  
+
+[INFO] 10:51:34:545 mongostore/(4556:4558): Servidor iniciando 2
+[INFO] 10:51:34:545 mongostore/(4556:4558): Servidor Mongo2 encendido
+[INFO] 10:51:34:546 mongostore/(4556:4557): Servidor iniciando
+[INFO] 10:51:34:546 mongostore/(4556:4557): Servidor Mongo encendido
+[INFO] 10:51:41:268 mongostore/(4556:4557): Estableciendo conexión desde 45222
+[INFO] 10:51:41:268 mongostore/(4556:4557): Creando hilo
+[INFO] 10:51:41:270 mongostore/(4556:4558): 2 Estableciendo conexión desde 686
+[INFO] 10:51:41:270 mongostore/(4556:4558): 2 Creando hilo
+[INFO] 10:51:41:271 mongostore/(4556:4570): Se conecto este socket a mi 8
+[INFO] 10:52:04:80 mongostore/(4556:4557): Estableciendo conexión desde 46758
+[INFO] 10:52:04:81 mongostore/(4556:4557): Creando hilo
+[INFO] 10:52:04:102 mongostore/(4556:4614): Se conecto este socket a mi 9
+[INFO] 10:52:04:107 mongostore/(4556:4557): Estableciendo conexión desde 47782
+[INFO] 10:52:04:107 mongostore/(4556:4557): Creando hilo
+[INFO] 10:52:04:110 mongostore/(4556:4616): Se conecto este socket a mi 10
+[INFO] 10:52:04:112 mongostore/(4556:4616): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 10:52:04:114 mongostore/(4556:4616): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 10:52:04:114 mongostore/(4556:4616): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 10:52:04:114 mongostore/(4556:4616): Bitacora de tripulante 2 levantada en memoria con size = 6939 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157]
+[DEBUG] 10:52:04:114 mongostore/(4556:4616): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6939, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157] y superbloque.block_size 256: (1)
+[DEBUG] 10:52:04:114 mongostore/(4556:4616): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157]
+[DEBUG] 10:52:04:114 mongostore/(4556:4616): O-Ultimo_entero usado 157
+[DEBUG] 10:52:04:114 mongostore/(4556:4616): Posicion_en_bloque 27, posicion_inicio_bloque 40192 posicion block_addres 0xb6b07000 posicion absoluta 0xb6b10d1b
+[DEBUG] 10:52:04:114 mongostore/(4556:4616): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:52:04:115 mongostore/(4556:4616): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:52:04:192 mongostore/(4556:4616): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:52:04:193 mongostore/(4556:4616): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:52:09:198 mongostore/(4556:4616): tid 2  Se finaliza la tarea B00
+[DEBUG] 10:52:09:198 mongostore/(4556:4616): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6970, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157] y superbloque.block_size 256: (1)
+[DEBUG] 10:52:09:198 mongostore/(4556:4616): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157]
+[DEBUG] 10:52:09:199 mongostore/(4556:4616): O-Ultimo_entero usado 157
+[DEBUG] 10:52:09:199 mongostore/(4556:4616): Posicion_en_bloque 58, posicion_inicio_bloque 40192 posicion block_addres 0xb6b07000 posicion absoluta 0xb6b10d3a
+[DEBUG] 10:52:09:199 mongostore/(4556:4616): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:52:09:199 mongostore/(4556:4616): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:52:09:258 mongostore/(4556:4616): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:52:09:259 mongostore/(4556:4616): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:52:09:264 mongostore/(4556:4616): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 10:52:09:264 mongostore/(4556:4616): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 6994, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157] y superbloque.block_size 256: (1)
+[DEBUG] 10:52:09:264 mongostore/(4556:4616): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157]
+[DEBUG] 10:52:09:264 mongostore/(4556:4616): O-Ultimo_entero usado 157
+[DEBUG] 10:52:09:264 mongostore/(4556:4616): Posicion_en_bloque 82, posicion_inicio_bloque 40192 posicion block_addres 0xb6b07000 posicion absoluta 0xb6b10d52
+[DEBUG] 10:52:09:264 mongostore/(4556:4616): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:52:09:264 mongostore/(4556:4616): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:52:09:351 mongostore/(4556:4616): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:52:09:351 mongostore/(4556:4616): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:52:14:355 mongostore/(4556:4616): tid 2  Se finaliza la tarea B01
+[DEBUG] 10:52:14:355 mongostore/(4556:4616): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7025, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157] y superbloque.block_size 256: (1)
+[DEBUG] 10:52:14:355 mongostore/(4556:4616): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157]
+[DEBUG] 10:52:14:356 mongostore/(4556:4616): O-Ultimo_entero usado 157
+[DEBUG] 10:52:14:356 mongostore/(4556:4616): Posicion_en_bloque 113, posicion_inicio_bloque 40192 posicion block_addres 0xb6b07000 posicion absoluta 0xb6b10d71
+[DEBUG] 10:52:14:357 mongostore/(4556:4616): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:52:14:357 mongostore/(4556:4616): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:52:14:417 mongostore/(4556:4616): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:52:14:417 mongostore/(4556:4616): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:52:14:425 mongostore/(4556:4616): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 10:52:14:426 mongostore/(4556:4616): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7049, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157] y superbloque.block_size 256: (1)
+[DEBUG] 10:52:14:426 mongostore/(4556:4616): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157]
+[DEBUG] 10:52:14:427 mongostore/(4556:4616): O-Ultimo_entero usado 157
+[DEBUG] 10:52:14:428 mongostore/(4556:4616): Posicion_en_bloque 137, posicion_inicio_bloque 40192 posicion block_addres 0xb6b07000 posicion absoluta 0xb6b10d89
+[DEBUG] 10:52:14:428 mongostore/(4556:4616): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:52:14:428 mongostore/(4556:4616): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:52:14:517 mongostore/(4556:4616): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:52:14:518 mongostore/(4556:4616): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 10:52:19:530 mongostore/(4556:4616): tid 2  Se finaliza la tarea B02
+[DEBUG] 10:52:19:530 mongostore/(4556:4616): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7080, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157] y superbloque.block_size 256: (1)
+[DEBUG] 10:52:19:530 mongostore/(4556:4616): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157]
+[DEBUG] 10:52:19:530 mongostore/(4556:4616): O-Ultimo_entero usado 157
+[DEBUG] 10:52:19:531 mongostore/(4556:4616): Posicion_en_bloque 168, posicion_inicio_bloque 40192 posicion block_addres 0xb6b07000 posicion absoluta 0xb6b10da8
+[DEBUG] 10:52:19:531 mongostore/(4556:4616): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 10:52:19:531 mongostore/(4556:4616): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 10:52:19:592 mongostore/(4556:4616): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 10:52:19:592 mongostore/(4556:4616): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[ERROR] 11:02:34:648 mongostore/(4556:4570): el discordiador finalizo el programa. Terminando servidor
+[INFO] 11:02:34:649 mongostore/(4556:4570): aaaaaaAAAAA
+[DEBUG] 11:02:47:605 mongostore/(5150:5150): LOGGER OK
+[INFO] 11:02:47:605 mongostore/(5150:5150): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:02:47:605 mongostore/(5150:5150): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:02:47:605 mongostore/(5150:5150): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:02:47:605 mongostore/(5150:5150): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:02:47:606 mongostore/(5150:5150): O-Superbloque generado desde archivo
+[INFO] 11:02:47:606 mongostore/(5150:5150): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:02:47:606 mongostore/(5150:5150): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:02:47:606 mongostore/(5150:5150): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:02:47:606 mongostore/(5150:5150): Existencia de Blocks validada
+[DEBUG] 11:02:47:607 mongostore/(5150:5150): Directorios del File System confirmados
+[INFO] 11:02:47:607 mongostore/(5150:5150): File System iniciado
+[INFO] 11:02:47:607 mongostore/(5150:5150): pid 5150  
+
+[INFO] 11:02:47:607 mongostore/(5150:5152): Servidor iniciando 2
+[INFO] 11:02:47:607 mongostore/(5150:5152): Servidor Mongo2 encendido
+[INFO] 11:02:47:608 mongostore/(5150:5151): Servidor iniciando
+[INFO] 11:02:47:608 mongostore/(5150:5151): Servidor Mongo encendido
+[INFO] 11:02:50:589 mongostore/(5150:5151): Estableciendo conexión desde 48806
+[INFO] 11:02:50:590 mongostore/(5150:5151): Creando hilo
+[INFO] 11:02:50:591 mongostore/(5150:5152): 2 Estableciendo conexión desde 4270
+[INFO] 11:02:50:591 mongostore/(5150:5152): 2 Creando hilo
+[INFO] 11:02:50:593 mongostore/(5150:5161): Se conecto este socket a mi 8
+[WARNING] 11:03:01:145 mongostore/(5150:5161): el cliente se desconecto.
+[INFO] 11:03:11:928 mongostore/(5150:5151): Estableciendo conexión desde 50342
+[INFO] 11:03:11:931 mongostore/(5150:5151): Creando hilo
+[INFO] 11:03:11:932 mongostore/(5150:5199): Se conecto este socket a mi 9
+[ERROR] 11:08:41:481 mongostore/(5150:5199): el discordiador finalizo el programa. Terminando servidor
+[INFO] 11:08:41:482 mongostore/(5150:5199): aaaaaaAAAAA
+[DEBUG] 11:09:10:314 mongostore/(5623:5623): LOGGER OK
+[INFO] 11:09:10:314 mongostore/(5623:5623): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:09:10:314 mongostore/(5623:5623): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:09:10:315 mongostore/(5623:5623): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:09:10:315 mongostore/(5623:5623): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:09:10:315 mongostore/(5623:5623): O-Superbloque generado desde archivo
+[INFO] 11:09:10:315 mongostore/(5623:5623): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:09:10:315 mongostore/(5623:5623): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:09:10:315 mongostore/(5623:5623): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:09:10:316 mongostore/(5623:5623): Existencia de Blocks validada
+[DEBUG] 11:09:10:316 mongostore/(5623:5623): Directorios del File System confirmados
+[INFO] 11:09:10:316 mongostore/(5623:5623): File System iniciado
+[INFO] 11:09:10:316 mongostore/(5623:5623): pid 5623  
+
+[INFO] 11:09:10:316 mongostore/(5623:5625): Servidor iniciando 2
+[INFO] 11:09:10:317 mongostore/(5623:5625): Servidor Mongo2 encendido
+[INFO] 11:09:10:317 mongostore/(5623:5624): Servidor iniciando
+[INFO] 11:09:10:317 mongostore/(5623:5624): Servidor Mongo encendido
+[INFO] 11:09:16:939 mongostore/(5623:5624): Estableciendo conexión desde 51878
+[INFO] 11:09:16:940 mongostore/(5623:5624): Creando hilo
+[INFO] 11:09:16:941 mongostore/(5623:5625): 2 Estableciendo conexión desde 7342
+[INFO] 11:09:16:941 mongostore/(5623:5625): 2 Creando hilo
+[INFO] 11:09:16:942 mongostore/(5623:5633): Se conecto este socket a mi 8
+[INFO] 11:09:43:251 mongostore/(5623:5624): Estableciendo conexión desde 53414
+[INFO] 11:09:43:251 mongostore/(5623:5624): Creando hilo
+[INFO] 11:09:43:273 mongostore/(5623:5676): Se conecto este socket a mi 9
+[INFO] 11:09:43:277 mongostore/(5623:5624): Estableciendo conexión desde 54438
+[INFO] 11:09:43:278 mongostore/(5623:5624): Creando hilo
+[INFO] 11:09:43:281 mongostore/(5623:5678): Se conecto este socket a mi 10
+[INFO] 11:09:43:284 mongostore/(5623:5678): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 11:09:43:284 mongostore/(5623:5678): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 11:09:43:284 mongostore/(5623:5678): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 11:09:43:284 mongostore/(5623:5678): Bitacora de tripulante 2 levantada en memoria con size = 7104 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157]
+[DEBUG] 11:09:43:284 mongostore/(5623:5678): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7104, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157] y superbloque.block_size 256: (1)
+[DEBUG] 11:09:43:285 mongostore/(5623:5678): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157]
+[DEBUG] 11:09:43:285 mongostore/(5623:5678): O-Ultimo_entero usado 157
+[DEBUG] 11:09:43:285 mongostore/(5623:5678): Posicion_en_bloque 192, posicion_inicio_bloque 40192 posicion block_addres 0xb6b3e000 posicion absoluta 0xb6b47dc0
+[DEBUG] 11:09:43:285 mongostore/(5623:5678): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 11:09:43:285 mongostore/(5623:5678): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 11:09:43:406 mongostore/(5623:5678): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 11:09:43:406 mongostore/(5623:5678): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 11:09:48:410 mongostore/(5623:5678): tid 2  Se finaliza la tarea B00
+[DEBUG] 11:09:48:411 mongostore/(5623:5678): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7135, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157] y superbloque.block_size 256: (1)
+[DEBUG] 11:09:48:411 mongostore/(5623:5678): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157]
+[DEBUG] 11:09:48:411 mongostore/(5623:5678): O-Ultimo_entero usado 157
+[DEBUG] 11:09:48:411 mongostore/(5623:5678): Posicion_en_bloque 223, posicion_inicio_bloque 40192 posicion block_addres 0xb6b3e000 posicion absoluta 0xb6b47ddf
+[DEBUG] 11:09:48:411 mongostore/(5623:5678): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 11:09:48:412 mongostore/(5623:5678): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 11:09:48:476 mongostore/(5623:5678): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 11:09:48:477 mongostore/(5623:5678): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 11:09:48:480 mongostore/(5623:5678): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 11:09:48:480 mongostore/(5623:5678): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7159, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157] y superbloque.block_size 256: (1)
+[DEBUG] 11:09:48:480 mongostore/(5623:5678): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157]
+[DEBUG] 11:09:48:481 mongostore/(5623:5678): O-Ultimo_entero usado 157
+[DEBUG] 11:09:48:481 mongostore/(5623:5678): Posicion_en_bloque 247, posicion_inicio_bloque 40192 posicion block_addres 0xb6b3e000 posicion absoluta 0xb6b47df7
+[DEBUG] 11:09:48:481 mongostore/(5623:5678): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 11:09:48:481 mongostore/(5623:5678): I-Se ingresa a superbloque_obtener_bloque_libre
+[DEBUG] 11:09:48:481 mongostore/(5623:5678): O-Bloque libre obtenido 158
+[DEBUG] 11:09:48:481 mongostore/(5623:5678): Posicion_en_bloque 0, posicion_inicio_bloque 40448 posicion block_addres 0xb6b3e000 posicion absoluta 0xb6b47e00
+[DEBUG] 11:09:48:481 mongostore/(5623:5678): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 11:09:48:481 mongostore/(5623:5678): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 11:09:48:551 mongostore/(5623:5678): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 11:09:48:552 mongostore/(5623:5678): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 11:09:53:555 mongostore/(5623:5678): tid 2  Se finaliza la tarea B01
+[DEBUG] 11:09:53:556 mongostore/(5623:5678): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7190, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158] y superbloque.block_size 256: (1)
+[DEBUG] 11:09:53:556 mongostore/(5623:5678): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158]
+[DEBUG] 11:09:53:556 mongostore/(5623:5678): O-Ultimo_entero usado 158
+[DEBUG] 11:09:53:556 mongostore/(5623:5678): Posicion_en_bloque 22, posicion_inicio_bloque 40448 posicion block_addres 0xb6b3e000 posicion absoluta 0xb6b47e16
+[DEBUG] 11:09:53:556 mongostore/(5623:5678): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 11:09:53:557 mongostore/(5623:5678): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 11:09:53:655 mongostore/(5623:5678): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 11:09:53:656 mongostore/(5623:5678): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 11:09:53:657 mongostore/(5623:5678): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 11:09:53:657 mongostore/(5623:5678): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7214, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158] y superbloque.block_size 256: (1)
+[DEBUG] 11:09:53:657 mongostore/(5623:5678): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158]
+[DEBUG] 11:09:53:657 mongostore/(5623:5678): O-Ultimo_entero usado 158
+[DEBUG] 11:09:53:657 mongostore/(5623:5678): Posicion_en_bloque 46, posicion_inicio_bloque 40448 posicion block_addres 0xb6b3e000 posicion absoluta 0xb6b47e2e
+[DEBUG] 11:09:53:658 mongostore/(5623:5678): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 11:09:53:658 mongostore/(5623:5678): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 11:09:53:735 mongostore/(5623:5678): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 11:09:53:735 mongostore/(5623:5678): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 11:09:58:740 mongostore/(5623:5678): tid 2  Se finaliza la tarea B02
+[DEBUG] 11:09:58:740 mongostore/(5623:5678): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7245, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158] y superbloque.block_size 256: (1)
+[DEBUG] 11:09:58:741 mongostore/(5623:5678): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158]
+[DEBUG] 11:09:58:741 mongostore/(5623:5678): O-Ultimo_entero usado 158
+[DEBUG] 11:09:58:741 mongostore/(5623:5678): Posicion_en_bloque 77, posicion_inicio_bloque 40448 posicion block_addres 0xb6b3e000 posicion absoluta 0xb6b47e4d
+[DEBUG] 11:09:58:741 mongostore/(5623:5678): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 11:09:58:742 mongostore/(5623:5678): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 11:09:58:930 mongostore/(5623:5678): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 11:09:58:930 mongostore/(5623:5678): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 11:26:19:201 mongostore/(4151:4151): LOGGER OK
+[INFO] 11:26:19:212 mongostore/(4151:4151): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:26:19:212 mongostore/(4151:4151): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:26:19:212 mongostore/(4151:4151): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:26:19:213 mongostore/(4151:4151): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:26:19:213 mongostore/(4151:4151): O-Superbloque generado desde archivo
+[INFO] 11:26:19:213 mongostore/(4151:4151): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:26:19:213 mongostore/(4151:4151): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:26:19:213 mongostore/(4151:4151): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:26:19:213 mongostore/(4151:4151): Existencia de Blocks validada
+[DEBUG] 11:26:19:214 mongostore/(4151:4151): Directorios del File System confirmados
+[INFO] 11:26:19:214 mongostore/(4151:4151): File System iniciado
+[INFO] 11:26:19:214 mongostore/(4151:4151): pid 4151  
+
+[INFO] 11:26:19:214 mongostore/(4151:4153): Servidor iniciando 2
+[INFO] 11:26:19:214 mongostore/(4151:4153): Servidor Mongo2 encendido
+[INFO] 11:26:19:215 mongostore/(4151:4152): Servidor iniciando
+[INFO] 11:26:19:215 mongostore/(4151:4152): Servidor Mongo encendido
+[INFO] 11:27:26:4 mongostore/(4151:4152): Estableciendo conexión desde 23212
+[INFO] 11:27:26:4 mongostore/(4151:4152): Creando hilo
+[INFO] 11:27:26:14 mongostore/(4151:4153): 2 Estableciendo conexión desde 45745
+[INFO] 11:27:26:14 mongostore/(4151:4153): 2 Creando hilo
+[INFO] 11:27:26:19 mongostore/(4151:4352): Se conecto este socket a mi 8
+[ERROR] 11:32:16:915 mongostore/(4151:4352): el discordiador finalizo el programa. Terminando servidor
+[INFO] 11:32:16:916 mongostore/(4151:4352): aaaaaaAAAAA
+[DEBUG] 11:33:01:521 mongostore/(5068:5068): LOGGER OK
+[INFO] 11:33:01:522 mongostore/(5068:5068): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:33:01:522 mongostore/(5068:5068): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:33:01:522 mongostore/(5068:5068): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:33:01:522 mongostore/(5068:5068): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:33:01:522 mongostore/(5068:5068): O-Superbloque generado desde archivo
+[INFO] 11:33:01:522 mongostore/(5068:5068): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:33:01:523 mongostore/(5068:5068): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:33:01:523 mongostore/(5068:5068): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:33:01:523 mongostore/(5068:5068): Existencia de Blocks validada
+[DEBUG] 11:33:01:523 mongostore/(5068:5068): Directorios del File System confirmados
+[INFO] 11:33:01:523 mongostore/(5068:5068): File System iniciado
+[INFO] 11:33:01:523 mongostore/(5068:5068): pid 5068  
+
+[INFO] 11:33:01:524 mongostore/(5068:5070): Servidor iniciando 2
+[INFO] 11:33:01:524 mongostore/(5068:5070): Servidor Mongo2 encendido
+[INFO] 11:33:01:524 mongostore/(5068:5069): Servidor iniciando
+[INFO] 11:33:01:525 mongostore/(5068:5069): Servidor Mongo encendido
+[INFO] 11:33:08:154 mongostore/(5068:5069): Estableciendo conexión desde 24748
+[INFO] 11:33:08:154 mongostore/(5068:5069): Creando hilo
+[INFO] 11:33:08:156 mongostore/(5068:5070): 2 Estableciendo conexión desde 47281
+[INFO] 11:33:08:156 mongostore/(5068:5070): 2 Creando hilo
+[INFO] 11:33:08:157 mongostore/(5068:5085): Se conecto este socket a mi 8
+[ERROR] 11:38:52:226 mongostore/(5068:5085): el discordiador finalizo el programa. Terminando servidor
+[INFO] 11:38:52:226 mongostore/(5068:5085): aaaaaaAAAAA
+[DEBUG] 11:42:06:831 mongostore/(6303:6303): LOGGER OK
+[INFO] 11:42:06:831 mongostore/(6303:6303): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:42:06:831 mongostore/(6303:6303): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:42:06:831 mongostore/(6303:6303): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:42:06:831 mongostore/(6303:6303): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:42:06:832 mongostore/(6303:6303): O-Superbloque generado desde archivo
+[INFO] 11:42:06:832 mongostore/(6303:6303): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:42:06:832 mongostore/(6303:6303): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:42:06:832 mongostore/(6303:6303): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:42:06:833 mongostore/(6303:6303): Existencia de Blocks validada
+[DEBUG] 11:42:06:833 mongostore/(6303:6303): Directorios del File System confirmados
+[INFO] 11:42:06:833 mongostore/(6303:6303): File System iniciado
+[INFO] 11:42:06:833 mongostore/(6303:6303): pid 6303  
+
+[INFO] 11:42:06:834 mongostore/(6303:6305): Servidor iniciando 2
+[INFO] 11:42:06:834 mongostore/(6303:6305): Servidor Mongo2 encendido
+[INFO] 11:42:06:834 mongostore/(6303:6304): Servidor iniciando
+[INFO] 11:42:06:834 mongostore/(6303:6304): Servidor Mongo encendido
+[INFO] 11:42:11:559 mongostore/(6303:6304): Estableciendo conexión desde 26284
+[INFO] 11:42:11:559 mongostore/(6303:6304): Creando hilo
+[INFO] 11:42:11:560 mongostore/(6303:6305): 2 Estableciendo conexión desde 48817
+[INFO] 11:42:11:560 mongostore/(6303:6305): 2 Creando hilo
+[INFO] 11:42:11:560 mongostore/(6303:6317): Se conecto este socket a mi 8
+[WARNING] 11:42:24:160 mongostore/(6303:6317): el cliente se desconecto.
+[DEBUG] 11:44:44:793 mongostore/(6689:6689): LOGGER OK
+[INFO] 11:44:44:794 mongostore/(6689:6689): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:44:44:794 mongostore/(6689:6689): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:44:44:795 mongostore/(6689:6689): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 11:44:44:795 mongostore/(6689:6689): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 11:44:44:795 mongostore/(6689:6689): O-Superbloque generado desde archivo
+[INFO] 11:44:44:796 mongostore/(6689:6689): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 11:44:44:796 mongostore/(6689:6689): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 11:44:44:796 mongostore/(6689:6689): O-Blocks mapeado del archivo a la memoria
+[INFO] 11:44:44:796 mongostore/(6689:6689): Existencia de Blocks validada
+[DEBUG] 11:44:44:797 mongostore/(6689:6689): Directorios del File System confirmados
+[INFO] 11:44:44:797 mongostore/(6689:6689): File System iniciado
+[INFO] 11:44:44:797 mongostore/(6689:6689): pid 6689  
+
+[INFO] 11:44:44:798 mongostore/(6689:6691): Servidor iniciando 2
+[INFO] 11:44:44:798 mongostore/(6689:6691): Servidor Mongo2 encendido
+[INFO] 11:44:44:798 mongostore/(6689:6690): Servidor iniciando
+[INFO] 11:44:44:799 mongostore/(6689:6690): Servidor Mongo encendido
+[DEBUG] 12:03:49:47 mongostore/(9269:9269): LOGGER OK
+[INFO] 12:03:49:47 mongostore/(9269:9269): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 12:03:49:47 mongostore/(9269:9269): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 12:03:49:47 mongostore/(9269:9269): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 12:03:49:48 mongostore/(9269:9269): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 12:03:49:48 mongostore/(9269:9269): O-Superbloque generado desde archivo
+[INFO] 12:03:49:48 mongostore/(9269:9269): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 12:03:49:48 mongostore/(9269:9269): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 12:03:49:48 mongostore/(9269:9269): O-Blocks mapeado del archivo a la memoria
+[INFO] 12:03:49:48 mongostore/(9269:9269): Existencia de Blocks validada
+[DEBUG] 12:03:49:48 mongostore/(9269:9269): Directorios del File System confirmados
+[INFO] 12:03:49:48 mongostore/(9269:9269): File System iniciado
+[INFO] 12:03:49:49 mongostore/(9269:9269): pid 9269  
+
+[INFO] 12:03:49:49 mongostore/(9269:9271): Servidor iniciando 2
+[INFO] 12:03:49:49 mongostore/(9269:9271): Servidor Mongo2 encendido
+[INFO] 12:03:49:49 mongostore/(9269:9270): Servidor iniciando
+[INFO] 12:03:49:49 mongostore/(9269:9270): Servidor Mongo encendido
+[INFO] 12:03:52:165 mongostore/(9269:9270): Estableciendo conexión desde 29356
+[INFO] 12:03:52:165 mongostore/(9269:9270): Creando hilo
+[INFO] 12:03:52:171 mongostore/(9269:9271): 2 Estableciendo conexión desde 51889
+[INFO] 12:03:52:171 mongostore/(9269:9271): 2 Creando hilo
+[INFO] 12:03:52:172 mongostore/(9269:9280): Se conecto este socket a mi 8
+[INFO] 12:04:17:189 mongostore/(9269:9270): Estableciendo conexión desde 30892
+[INFO] 12:04:17:189 mongostore/(9269:9270): Creando hilo
+[INFO] 12:04:17:191 mongostore/(9269:9336): Se conecto este socket a mi 9
+[INFO] 12:04:17:204 mongostore/(9269:9270): Estableciendo conexión desde 31916
+[INFO] 12:04:17:204 mongostore/(9269:9270): Creando hilo
+[INFO] 12:04:17:210 mongostore/(9269:9338): Se conecto este socket a mi 10
+[INFO] 12:04:17:227 mongostore/(9269:9338): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 12:04:17:227 mongostore/(9269:9338): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 12:04:17:227 mongostore/(9269:9338): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 12:04:17:227 mongostore/(9269:9338): Bitacora de tripulante 2 levantada en memoria con size = 7269 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158]
+[DEBUG] 12:04:17:227 mongostore/(9269:9338): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7269, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158] y superbloque.block_size 256: (1)
+[DEBUG] 12:04:17:228 mongostore/(9269:9338): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158]
+[DEBUG] 12:04:17:228 mongostore/(9269:9338): O-Ultimo_entero usado 158
+[DEBUG] 12:04:17:228 mongostore/(9269:9338): Posicion_en_bloque 101, posicion_inicio_bloque 40448 posicion block_addres 0xb6b58000 posicion absoluta 0xb6b61e65
+[DEBUG] 12:04:17:228 mongostore/(9269:9338): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:04:17:228 mongostore/(9269:9338): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:04:17:311 mongostore/(9269:9338): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:04:17:311 mongostore/(9269:9338): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:04:22:314 mongostore/(9269:9338): tid 2  Se finaliza la tarea B00
+[DEBUG] 12:04:22:315 mongostore/(9269:9338): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7300, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158] y superbloque.block_size 256: (1)
+[DEBUG] 12:04:22:315 mongostore/(9269:9338): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158]
+[DEBUG] 12:04:22:315 mongostore/(9269:9338): O-Ultimo_entero usado 158
+[DEBUG] 12:04:22:315 mongostore/(9269:9338): Posicion_en_bloque 132, posicion_inicio_bloque 40448 posicion block_addres 0xb6b58000 posicion absoluta 0xb6b61e84
+[DEBUG] 12:04:22:315 mongostore/(9269:9338): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:04:22:315 mongostore/(9269:9338): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:04:22:382 mongostore/(9269:9338): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:04:22:382 mongostore/(9269:9338): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:04:22:384 mongostore/(9269:9338): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 12:04:22:385 mongostore/(9269:9338): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7324, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158] y superbloque.block_size 256: (1)
+[DEBUG] 12:04:22:385 mongostore/(9269:9338): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158]
+[DEBUG] 12:04:22:385 mongostore/(9269:9338): O-Ultimo_entero usado 158
+[DEBUG] 12:04:22:385 mongostore/(9269:9338): Posicion_en_bloque 156, posicion_inicio_bloque 40448 posicion block_addres 0xb6b58000 posicion absoluta 0xb6b61e9c
+[DEBUG] 12:04:22:385 mongostore/(9269:9338): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:04:22:385 mongostore/(9269:9338): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:04:22:457 mongostore/(9269:9338): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:04:22:457 mongostore/(9269:9338): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:04:27:460 mongostore/(9269:9338): tid 2  Se finaliza la tarea B01
+[DEBUG] 12:04:27:460 mongostore/(9269:9338): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7355, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158] y superbloque.block_size 256: (1)
+[DEBUG] 12:04:27:460 mongostore/(9269:9338): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158]
+[DEBUG] 12:04:27:460 mongostore/(9269:9338): O-Ultimo_entero usado 158
+[DEBUG] 12:04:27:460 mongostore/(9269:9338): Posicion_en_bloque 187, posicion_inicio_bloque 40448 posicion block_addres 0xb6b58000 posicion absoluta 0xb6b61ebb
+[DEBUG] 12:04:27:460 mongostore/(9269:9338): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:04:27:460 mongostore/(9269:9338): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:04:27:520 mongostore/(9269:9338): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:04:27:521 mongostore/(9269:9338): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:04:27:524 mongostore/(9269:9338): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 12:04:27:525 mongostore/(9269:9338): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7379, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158] y superbloque.block_size 256: (1)
+[DEBUG] 12:04:27:525 mongostore/(9269:9338): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158]
+[DEBUG] 12:04:27:525 mongostore/(9269:9338): O-Ultimo_entero usado 158
+[DEBUG] 12:04:27:525 mongostore/(9269:9338): Posicion_en_bloque 211, posicion_inicio_bloque 40448 posicion block_addres 0xb6b58000 posicion absoluta 0xb6b61ed3
+[DEBUG] 12:04:27:526 mongostore/(9269:9338): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:04:27:526 mongostore/(9269:9338): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:04:27:587 mongostore/(9269:9338): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:04:27:588 mongostore/(9269:9338): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:04:32:590 mongostore/(9269:9338): tid 2  Se finaliza la tarea B02
+[DEBUG] 12:04:32:591 mongostore/(9269:9338): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7410, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158] y superbloque.block_size 256: (1)
+[DEBUG] 12:04:32:591 mongostore/(9269:9338): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158]
+[DEBUG] 12:04:32:591 mongostore/(9269:9338): O-Ultimo_entero usado 158
+[DEBUG] 12:04:32:591 mongostore/(9269:9338): Posicion_en_bloque 242, posicion_inicio_bloque 40448 posicion block_addres 0xb6b58000 posicion absoluta 0xb6b61ef2
+[DEBUG] 12:04:32:592 mongostore/(9269:9338): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:04:32:592 mongostore/(9269:9338): I-Se ingresa a superbloque_obtener_bloque_libre
+[DEBUG] 12:04:32:592 mongostore/(9269:9338): O-Bloque libre obtenido 159
+[DEBUG] 12:04:32:592 mongostore/(9269:9338): Posicion_en_bloque 0, posicion_inicio_bloque 40704 posicion block_addres 0xb6b58000 posicion absoluta 0xb6b61f00
+[DEBUG] 12:04:32:592 mongostore/(9269:9338): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:04:32:593 mongostore/(9269:9338): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:04:32:679 mongostore/(9269:9338): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:04:32:680 mongostore/(9269:9338): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[ERROR] 12:06:01:360 mongostore/(9269:9280): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:06:01:363 mongostore/(9269:9280): aaaaaaAAAAA
+[DEBUG] 12:06:10:882 mongostore/(9613:9613): LOGGER OK
+[INFO] 12:06:10:882 mongostore/(9613:9613): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 12:06:10:883 mongostore/(9613:9613): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 12:06:10:883 mongostore/(9613:9613): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 12:06:10:883 mongostore/(9613:9613): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 12:06:10:883 mongostore/(9613:9613): O-Superbloque generado desde archivo
+[INFO] 12:06:10:883 mongostore/(9613:9613): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 12:06:10:883 mongostore/(9613:9613): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 12:06:10:884 mongostore/(9613:9613): O-Blocks mapeado del archivo a la memoria
+[INFO] 12:06:10:884 mongostore/(9613:9613): Existencia de Blocks validada
+[DEBUG] 12:06:10:884 mongostore/(9613:9613): Directorios del File System confirmados
+[INFO] 12:06:10:884 mongostore/(9613:9613): File System iniciado
+[INFO] 12:06:10:884 mongostore/(9613:9613): pid 9613  
+
+[INFO] 12:06:10:884 mongostore/(9613:9615): Servidor iniciando 2
+[INFO] 12:06:10:885 mongostore/(9613:9615): Servidor Mongo2 encendido
+[INFO] 12:06:10:885 mongostore/(9613:9614): Servidor iniciando
+[INFO] 12:06:10:885 mongostore/(9613:9614): Servidor Mongo encendido
+[INFO] 12:06:14:885 mongostore/(9613:9614): Estableciendo conexión desde 32940
+[INFO] 12:06:14:885 mongostore/(9613:9614): Creando hilo
+[INFO] 12:06:14:887 mongostore/(9613:9615): 2 Estableciendo conexión desde 55473
+[INFO] 12:06:14:888 mongostore/(9613:9615): 2 Creando hilo
+[INFO] 12:06:14:891 mongostore/(9613:9627): Se conecto este socket a mi 8
+[INFO] 12:06:31:731 mongostore/(9613:9614): Estableciendo conexión desde 34476
+[INFO] 12:06:31:732 mongostore/(9613:9614): Creando hilo
+[INFO] 12:06:31:733 mongostore/(9613:9671): Se conecto este socket a mi 9
+[INFO] 12:06:31:747 mongostore/(9613:9614): Estableciendo conexión desde 35500
+[INFO] 12:06:31:747 mongostore/(9613:9614): Creando hilo
+[INFO] 12:06:31:752 mongostore/(9613:9673): Se conecto este socket a mi 10
+[INFO] 12:06:31:766 mongostore/(9613:9673): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 12:06:31:768 mongostore/(9613:9673): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 12:06:31:768 mongostore/(9613:9673): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 12:06:31:768 mongostore/(9613:9673): Bitacora de tripulante 2 levantada en memoria con size = 7434 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159]
+[DEBUG] 12:06:31:770 mongostore/(9613:9673): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7434, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159] y superbloque.block_size 256: (1)
+[DEBUG] 12:06:31:770 mongostore/(9613:9673): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159]
+[DEBUG] 12:06:31:771 mongostore/(9613:9673): O-Ultimo_entero usado 159
+[DEBUG] 12:06:31:771 mongostore/(9613:9673): Posicion_en_bloque 10, posicion_inicio_bloque 40704 posicion block_addres 0xb6b9c000 posicion absoluta 0xb6ba5f0a
+[DEBUG] 12:06:31:771 mongostore/(9613:9673): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:06:31:771 mongostore/(9613:9673): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:06:31:843 mongostore/(9613:9673): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:06:31:843 mongostore/(9613:9673): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:06:36:845 mongostore/(9613:9673): tid 2  Se finaliza la tarea B00
+[DEBUG] 12:06:36:846 mongostore/(9613:9673): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7465, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159] y superbloque.block_size 256: (1)
+[DEBUG] 12:06:36:846 mongostore/(9613:9673): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159]
+[DEBUG] 12:06:36:846 mongostore/(9613:9673): O-Ultimo_entero usado 159
+[DEBUG] 12:06:36:846 mongostore/(9613:9673): Posicion_en_bloque 41, posicion_inicio_bloque 40704 posicion block_addres 0xb6b9c000 posicion absoluta 0xb6ba5f29
+[DEBUG] 12:06:36:846 mongostore/(9613:9673): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:06:36:846 mongostore/(9613:9673): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:06:36:935 mongostore/(9613:9673): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:06:36:935 mongostore/(9613:9673): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:06:36:938 mongostore/(9613:9673): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 12:06:36:938 mongostore/(9613:9673): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7489, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159] y superbloque.block_size 256: (1)
+[DEBUG] 12:06:36:938 mongostore/(9613:9673): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159]
+[DEBUG] 12:06:36:938 mongostore/(9613:9673): O-Ultimo_entero usado 159
+[DEBUG] 12:06:36:938 mongostore/(9613:9673): Posicion_en_bloque 65, posicion_inicio_bloque 40704 posicion block_addres 0xb6b9c000 posicion absoluta 0xb6ba5f41
+[DEBUG] 12:06:36:938 mongostore/(9613:9673): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:06:36:938 mongostore/(9613:9673): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:06:36:2 mongostore/(9613:9673): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:06:36:2 mongostore/(9613:9673): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:06:42:5 mongostore/(9613:9673): tid 2  Se finaliza la tarea B01
+[DEBUG] 12:06:42:5 mongostore/(9613:9673): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7520, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159] y superbloque.block_size 256: (1)
+[DEBUG] 12:06:42:5 mongostore/(9613:9673): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159]
+[DEBUG] 12:06:42:5 mongostore/(9613:9673): O-Ultimo_entero usado 159
+[DEBUG] 12:06:42:5 mongostore/(9613:9673): Posicion_en_bloque 96, posicion_inicio_bloque 40704 posicion block_addres 0xb6b9c000 posicion absoluta 0xb6ba5f60
+[DEBUG] 12:06:42:5 mongostore/(9613:9673): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:06:42:6 mongostore/(9613:9673): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:06:42:95 mongostore/(9613:9673): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:06:42:96 mongostore/(9613:9673): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:06:42:97 mongostore/(9613:9673): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 12:06:42:98 mongostore/(9613:9673): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7544, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159] y superbloque.block_size 256: (1)
+[DEBUG] 12:06:42:98 mongostore/(9613:9673): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159]
+[DEBUG] 12:06:42:98 mongostore/(9613:9673): O-Ultimo_entero usado 159
+[DEBUG] 12:06:42:98 mongostore/(9613:9673): Posicion_en_bloque 120, posicion_inicio_bloque 40704 posicion block_addres 0xb6b9c000 posicion absoluta 0xb6ba5f78
+[DEBUG] 12:06:42:98 mongostore/(9613:9673): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:06:42:98 mongostore/(9613:9673): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:06:42:161 mongostore/(9613:9673): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:06:42:162 mongostore/(9613:9673): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:06:47:164 mongostore/(9613:9673): tid 2  Se finaliza la tarea B02
+[DEBUG] 12:06:47:164 mongostore/(9613:9673): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7575, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159] y superbloque.block_size 256: (1)
+[DEBUG] 12:06:47:164 mongostore/(9613:9673): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159]
+[DEBUG] 12:06:47:164 mongostore/(9613:9673): O-Ultimo_entero usado 159
+[DEBUG] 12:06:47:164 mongostore/(9613:9673): Posicion_en_bloque 151, posicion_inicio_bloque 40704 posicion block_addres 0xb6b9c000 posicion absoluta 0xb6ba5f97
+[DEBUG] 12:06:47:164 mongostore/(9613:9673): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:06:47:164 mongostore/(9613:9673): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:06:47:268 mongostore/(9613:9673): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:06:47:268 mongostore/(9613:9673): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[ERROR] 12:09:43:368 mongostore/(9613:9627): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:09:43:371 mongostore/(9613:9627): aaaaaaAAAAA
+[DEBUG] 12:09:53:930 mongostore/(10105:10105): LOGGER OK
+[INFO] 12:09:53:931 mongostore/(10105:10105): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 12:09:53:931 mongostore/(10105:10105): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 12:09:53:931 mongostore/(10105:10105): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 12:09:53:931 mongostore/(10105:10105): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 12:09:53:931 mongostore/(10105:10105): O-Superbloque generado desde archivo
+[INFO] 12:09:53:931 mongostore/(10105:10105): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 12:09:53:932 mongostore/(10105:10105): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 12:09:53:932 mongostore/(10105:10105): O-Blocks mapeado del archivo a la memoria
+[INFO] 12:09:53:932 mongostore/(10105:10105): Existencia de Blocks validada
+[DEBUG] 12:09:53:932 mongostore/(10105:10105): Directorios del File System confirmados
+[INFO] 12:09:53:932 mongostore/(10105:10105): File System iniciado
+[INFO] 12:09:53:932 mongostore/(10105:10105): pid 10105  
+
+[INFO] 12:09:53:933 mongostore/(10105:10107): Servidor iniciando 2
+[INFO] 12:09:53:933 mongostore/(10105:10107): Servidor Mongo2 encendido
+[INFO] 12:09:53:933 mongostore/(10105:10106): Servidor iniciando
+[INFO] 12:09:53:933 mongostore/(10105:10106): Servidor Mongo encendido
+[INFO] 12:09:56:493 mongostore/(10105:10106): Estableciendo conexión desde 50348
+[INFO] 12:09:56:493 mongostore/(10105:10106): Creando hilo
+[INFO] 12:09:56:494 mongostore/(10105:10107): 2 Estableciendo conexión desde 7346
+[INFO] 12:09:56:494 mongostore/(10105:10107): 2 Creando hilo
+[INFO] 12:09:56:495 mongostore/(10105:10120): Se conecto este socket a mi 8
+[INFO] 12:10:26:611 mongostore/(10105:10106): Estableciendo conexión desde 51884
+[INFO] 12:10:26:612 mongostore/(10105:10106): Creando hilo
+[INFO] 12:10:26:613 mongostore/(10105:10184): Se conecto este socket a mi 9
+[INFO] 12:10:26:627 mongostore/(10105:10106): Estableciendo conexión desde 52908
+[INFO] 12:10:26:627 mongostore/(10105:10106): Creando hilo
+[INFO] 12:10:26:631 mongostore/(10105:10186): Se conecto este socket a mi 10
+[INFO] 12:10:26:633 mongostore/(10105:10186): tid 2  Comienza ejecucion de tarea B00
+[DEBUG] 12:10:26:634 mongostore/(10105:10186): Bitacora de tripulante 2 cargada en memoria con size = 0 y blocks = []
+[DEBUG] 12:10:26:634 mongostore/(10105:10186): en bitacora_validar_existencia_metadata: bitacora_data->ruta_completa: /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[DEBUG] 12:10:26:634 mongostore/(10105:10186): Bitacora de tripulante 2 levantada en memoria con size = 7599 y blocks = [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159]
+[DEBUG] 12:10:26:634 mongostore/(10105:10186): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7599, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159] y superbloque.block_size 256: (1)
+[DEBUG] 12:10:26:634 mongostore/(10105:10186): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159]
+[DEBUG] 12:10:26:634 mongostore/(10105:10186): O-Ultimo_entero usado 159
+[DEBUG] 12:10:26:634 mongostore/(10105:10186): Posicion_en_bloque 175, posicion_inicio_bloque 40704 posicion block_addres 0xb6b24000 posicion absoluta 0xb6b2dfaf
+[DEBUG] 12:10:26:634 mongostore/(10105:10186): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:10:26:635 mongostore/(10105:10186): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:10:26:748 mongostore/(10105:10186): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:10:26:749 mongostore/(10105:10186): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:10:31:751 mongostore/(10105:10186): tid 2  Se finaliza la tarea B00
+[DEBUG] 12:10:31:752 mongostore/(10105:10186): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7630, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159] y superbloque.block_size 256: (1)
+[DEBUG] 12:10:31:752 mongostore/(10105:10186): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159]
+[DEBUG] 12:10:31:753 mongostore/(10105:10186): O-Ultimo_entero usado 159
+[DEBUG] 12:10:31:753 mongostore/(10105:10186): Posicion_en_bloque 206, posicion_inicio_bloque 40704 posicion block_addres 0xb6b24000 posicion absoluta 0xb6b2dfce
+[DEBUG] 12:10:31:753 mongostore/(10105:10186): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:10:31:754 mongostore/(10105:10186): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:10:31:823 mongostore/(10105:10186): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:10:31:824 mongostore/(10105:10186): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:10:31:828 mongostore/(10105:10186): tid 2  Comienza ejecucion de tarea B01
+[DEBUG] 12:10:31:828 mongostore/(10105:10186): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7654, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159] y superbloque.block_size 256: (1)
+[DEBUG] 12:10:31:828 mongostore/(10105:10186): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159]
+[DEBUG] 12:10:31:828 mongostore/(10105:10186): O-Ultimo_entero usado 159
+[DEBUG] 12:10:31:828 mongostore/(10105:10186): Posicion_en_bloque 230, posicion_inicio_bloque 40704 posicion block_addres 0xb6b24000 posicion absoluta 0xb6b2dfe6
+[DEBUG] 12:10:31:829 mongostore/(10105:10186): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:10:31:829 mongostore/(10105:10186): I-Se ingresa a superbloque_obtener_bloque_libre
+[DEBUG] 12:10:31:829 mongostore/(10105:10186): O-Bloque libre obtenido 160
+[DEBUG] 12:10:31:829 mongostore/(10105:10186): Posicion_en_bloque 0, posicion_inicio_bloque 40960 posicion block_addres 0xb6b24000 posicion absoluta 0xb6b2e000
+[DEBUG] 12:10:31:829 mongostore/(10105:10186): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:10:31:829 mongostore/(10105:10186): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:10:31:956 mongostore/(10105:10186): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:10:31:957 mongostore/(10105:10186): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:10:36:959 mongostore/(10105:10186): tid 2  Se finaliza la tarea B01
+[DEBUG] 12:10:36:960 mongostore/(10105:10186): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7685, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159,160] y superbloque.block_size 256: (1)
+[DEBUG] 12:10:36:960 mongostore/(10105:10186): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159,160]
+[DEBUG] 12:10:36:961 mongostore/(10105:10186): O-Ultimo_entero usado 160
+[DEBUG] 12:10:36:961 mongostore/(10105:10186): Posicion_en_bloque 5, posicion_inicio_bloque 40960 posicion block_addres 0xb6b24000 posicion absoluta 0xb6b2e005
+[DEBUG] 12:10:36:961 mongostore/(10105:10186): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:10:36:961 mongostore/(10105:10186): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:10:37:174 mongostore/(10105:10186): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:10:37:175 mongostore/(10105:10186): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:10:37:180 mongostore/(10105:10186): tid 2  Comienza ejecucion de tarea B02
+[DEBUG] 12:10:37:180 mongostore/(10105:10186): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7709, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159,160] y superbloque.block_size 256: (1)
+[DEBUG] 12:10:37:181 mongostore/(10105:10186): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159,160]
+[DEBUG] 12:10:37:181 mongostore/(10105:10186): O-Ultimo_entero usado 160
+[DEBUG] 12:10:37:181 mongostore/(10105:10186): Posicion_en_bloque 29, posicion_inicio_bloque 40960 posicion block_addres 0xb6b24000 posicion absoluta 0xb6b2e01d
+[DEBUG] 12:10:37:182 mongostore/(10105:10186): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:10:37:182 mongostore/(10105:10186): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:10:37:249 mongostore/(10105:10186): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:10:37:249 mongostore/(10105:10186): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[INFO] 12:10:42:253 mongostore/(10105:10186): tid 2  Se finaliza la tarea B02
+[DEBUG] 12:10:42:253 mongostore/(10105:10186): En bitacora tiene_espacio_en_ultimo_bloque con SIZE 7740, BLOCKS [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159,160] y superbloque.block_size 256: (1)
+[DEBUG] 12:10:42:254 mongostore/(10105:10186): I-Ingreso a cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros) [1,2,4,6,63,66,95,101,104,106,108,113,126,132,134,136,138,140,142,146,150,151,152,153,154,155,156,157,158,159,160]
+[DEBUG] 12:10:42:254 mongostore/(10105:10186): O-Ultimo_entero usado 160
+[DEBUG] 12:10:42:254 mongostore/(10105:10186): Posicion_en_bloque 60, posicion_inicio_bloque 40960 posicion block_addres 0xb6b24000 posicion absoluta 0xb6b2e03c
+[DEBUG] 12:10:42:254 mongostore/(10105:10186): pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** log, int bloque)
+[DEBUG] 12:10:42:254 mongostore/(10105:10186): O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria
+[DEBUG] 12:10:42:307 mongostore/(10105:10186): O-Archivo Blocks.ims actualizado con los valores de la memoria
+[DEBUG] 12:10:42:308 mongostore/(10105:10186): Se actualizo el archivo bitacora del tripulante 2 en la ruta /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims
+[ERROR] 12:10:55:969 mongostore/(10105:10120): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:10:55:970 mongostore/(10105:10120): aaaaaaAAAAA
+[DEBUG] 12:12:00:958 mongostore/(10391:10391): LOGGER OK
+[INFO] 12:12:00:958 mongostore/(10391:10391): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 12:12:00:959 mongostore/(10391:10391): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 12:12:00:959 mongostore/(10391:10391): I-Se ingresa a superbloque_generar_estructura_desde_archivo
+[DEBUG] 12:12:00:959 mongostore/(10391:10391): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 12:12:00:959 mongostore/(10391:10391): O-Superbloque generado desde archivo
+[INFO] 12:12:00:959 mongostore/(10391:10391): Existencia de SuperBloque validada: estructura en memoria, archivo y mapeo a memoria para actualizacion
+[DEBUG] 12:12:00:959 mongostore/(10391:10391): I-Se ingresa a blocks_mapear_archivo_a_memoria
+[DEBUG] 12:12:00:960 mongostore/(10391:10391): O-Blocks mapeado del archivo a la memoria
+[INFO] 12:12:00:960 mongostore/(10391:10391): Existencia de Blocks validada
+[DEBUG] 12:12:00:960 mongostore/(10391:10391): Directorios del File System confirmados
+[INFO] 12:12:00:960 mongostore/(10391:10391): File System iniciado
+[INFO] 12:12:00:960 mongostore/(10391:10391): pid 10391  
+
+[INFO] 12:12:00:960 mongostore/(10391:10393): Servidor iniciando 2
+[INFO] 12:12:00:961 mongostore/(10391:10393): Servidor Mongo2 encendido
+[INFO] 12:12:00:961 mongostore/(10391:10392): Servidor iniciando
+[INFO] 12:12:00:961 mongostore/(10391:10392): Servidor Mongo encendido
+[INFO] 12:12:04:890 mongostore/(10391:10392): Estableciendo conexión desde 53932
+[INFO] 12:12:04:890 mongostore/(10391:10392): Creando hilo
+[INFO] 12:12:04:891 mongostore/(10391:10393): 2 Estableciendo conexión desde 10930
+[INFO] 12:12:04:891 mongostore/(10391:10393): 2 Creando hilo
+[INFO] 12:12:04:893 mongostore/(10391:10402): Se conecto este socket a mi 8
+[INFO] 12:12:36:324 mongostore/(10391:10392): Estableciendo conexión desde 55468
+[INFO] 12:12:36:324 mongostore/(10391:10392): Creando hilo
+[INFO] 12:12:36:327 mongostore/(10391:10476): Se conecto este socket a mi 9
+[INFO] 12:12:36:335 mongostore/(10391:10392): Estableciendo conexión desde 56492
+[INFO] 12:12:36:337 mongostore/(10391:10392): Creando hilo
+[INFO] 12:12:36:344 mongostore/(10391:10479): Se conecto este socket a mi 10
+[INFO] 12:12:36:348 mongostore/(10391:10392): Estableciendo conexión desde 57516
+[INFO] 12:12:36:348 mongostore/(10391:10392): Creando hilo
+[INFO] 12:12:36:349 mongostore/(10391:10481): Se conecto este socket a mi 11
+[INFO] 12:12:36:351 mongostore/(10391:10392): Estableciendo conexión desde 58540
+[INFO] 12:12:36:351 mongostore/(10391:10392): Creando hilo
+[INFO] 12:12:36:356 mongostore/(10391:10482): Se conecto este socket a mi 12
+[INFO] 12:12:36:357 mongostore/(10391:10392): Estableciendo conexión desde 59564
+[INFO] 12:12:36:357 mongostore/(10391:10392): Creando hilo
+[INFO] 12:12:36:358 mongostore/(10391:10485): Se conecto este socket a mi 13
+[ERROR] 12:13:29:575 mongostore/(10391:10402): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:13:29:579 mongostore/(10391:10402): aaaaaaAAAAA

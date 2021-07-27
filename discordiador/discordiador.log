@@ -1,9 +1,15 @@
-[INFO] 21:15:08:302 discordiador/(19075:19078): in funcion_sabotaje
-[INFO] 21:15:08:302 discordiador/(19075:19077): in menu_discordiador
-[INFO] 21:15:19:956 discordiador/(19075:19077): Memoria asignada
-[INFO] 21:15:27:506 discordiador/(19075:19077): Memoria asignada
-[INFO] 21:15:34:831 discordiador/(19075:19118): TRIPU 1  tarea recibida: no hay mas tareas
-[INFO] 21:15:34:833 discordiador/(19075:19118): tripu_misma_patota_exit 1
-[INFO] 21:15:34:833 discordiador/(19075:19118): size exit 0
-[INFO] 21:15:34:834 discordiador/(19075:19137): TRIPU 2  tarea recibida: B00;3;3;5
-[INFO] 21:15:35:942 discordiador/(19075:19077): aaaaaaaa
+[INFO] 12:12:04:891 discordiador/(10400:10405): in funcion_sabotaje
+[INFO] 12:12:04:892 discordiador/(10400:10404): in menu_discordiador
+[INFO] 12:12:06:918 discordiador/(10400:10404): Memoria asignada
+[INFO] 12:12:36:333 discordiador/(10400:10412): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 12:12:36:344 discordiador/(10400:10412): tripu_misma_patota_exit 1
+[INFO] 12:12:36:347 discordiador/(10400:10413): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 12:12:36:349 discordiador/(10400:10413): tripu_misma_patota_exit 2
+[INFO] 12:12:36:350 discordiador/(10400:10414): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 12:12:36:356 discordiador/(10400:10414): tripu_misma_patota_exit 3
+[INFO] 12:12:36:356 discordiador/(10400:10415): TRIPU 4  tarea recibida: no hay mas tareas
+[INFO] 12:12:36:357 discordiador/(10400:10415): tripu_misma_patota_exit 4
+[INFO] 12:12:36:358 discordiador/(10400:10416): TRIPU 5  tarea recibida: no hay mas tareas
+[INFO] 12:12:36:359 discordiador/(10400:10416): tripu_misma_patota_exit 5
+[INFO] 12:12:36:359 discordiador/(10400:10416): size exit 0
+[INFO] 12:13:29:575 discordiador/(10400:10404): aaaaaaaa

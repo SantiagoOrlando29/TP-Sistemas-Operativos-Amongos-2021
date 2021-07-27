@@ -1,375 +1,419 @@
-[INFO] 21:15:03:932 MiRam/(19064:19064): pid 19064  
+[INFO] 12:11:56:935 MiRam/(10372:10372): pid 10372  
 
-[INFO] 21:15:03:933 MiRam/(19064:19064): 
+[INFO] 12:11:56:935 MiRam/(10372:10372): 
 Numero de marco es: 4 nro_marcos
 
-[INFO] 21:15:03:936 MiRam/(19064:19068): Servidor iniciando
-[INFO] 21:15:03:936 MiRam/(19064:19068): Servidor MiRam encendido
-[INFO] 21:15:03:936 MiRam/(19064:19068): socket_servidor 4
-[INFO] 21:15:08:301 MiRam/(19064:19068): socket_cliente 5
-[INFO] 21:15:08:301 MiRam/(19064:19068): Estableciendo conexión desde 4815
-[INFO] 21:15:08:301 MiRam/(19064:19068): Creando hilo
-[INFO] 21:15:08:301 MiRam/(19064:19068): Inicializo el archivo
-[INFO] 21:15:08:302 MiRam/(19064:19076): Se conecto este socket a mi 5
-
-[INFO] 21:15:13:937 MiRam/(19064:19076): PID es 1
-[INFO] 21:15:13:937 MiRam/(19064:19076): Ingresa nueva patota, necesito 3 marcos
-[INFO] 21:15:13:938 MiRam/(19064:19076): Guardando info
-[INFO] 21:15:13:938 MiRam/(19064:19076): Asigne esta posicion 0
-
-[INFO] 21:15:15:945 MiRam/(19064:19076): Asigne esta posicion 1
-
-[INFO] 21:15:17:946 MiRam/(19064:19076): Asigne esta posicion 2
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): MARCO 0
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): OFFSET 0
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): ID magico 1
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): MARCO 0
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): OFFSET 4
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): Puntero magico 29
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): MARCO 0
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): OFFSET 8
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): TID magico 1
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): MARCO 0
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): OFFSET 12
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): Estado magico N
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): Pos x magico 1
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): Pos y magico 1
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): Prox instruccion 29
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): Puntero magico  1
-
-[INFO] 21:15:19:956 MiRam/(19064:19076): Patota 1
-
-[INFO] 21:15:19:957 MiRam/(19064:19076): ID MARCO 0
-
-[INFO] 21:15:19:957 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:19:957 MiRam/(19064:19076): Ubicacion 0
-
-[INFO] 21:15:19:957 MiRam/(19064:19076): ID MARCO 1
-
-[INFO] 21:15:19:957 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:19:957 MiRam/(19064:19076): Ubicacion 0
-
-[INFO] 21:15:19:957 MiRam/(19064:19076): ID MARCO 2
-
-[INFO] 21:15:19:957 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:19:957 MiRam/(19064:19076): Ubicacion 0
-
-[INFO] 21:15:21:483 MiRam/(19064:19076): PID es 2
-[INFO] 21:15:21:483 MiRam/(19064:19076): Ingresa nueva patota, necesito 3 marcos
-[INFO] 21:15:21:484 MiRam/(19064:19076): Guardando info
-[INFO] 21:15:21:484 MiRam/(19064:19076): Asigne esta posicion 3
-
-[INFO] 21:15:23:494 MiRam/(19064:19076): Algoritmo de reemplazo es LRU
-
-[INFO] 21:15:23:494 MiRam/(19064:19076): El marco elegido para reemplazar es 2
-[INFO] 21:15:23:494 MiRam/(19064:19076): Memoria -1240462632
-[INFO] 21:15:23:494 MiRam/(19064:19076): EL NUMERO DE BLOQUE ES 0
-[INFO] 21:15:23:495 MiRam/(19064:19076): Swappeando 0
-[INFO] 21:15:23:495 MiRam/(19064:19076): Asigne esta posicion 2
-
-[INFO] 21:15:25:500 MiRam/(19064:19076): Algoritmo de reemplazo es LRU
-
-[INFO] 21:15:25:500 MiRam/(19064:19076): El marco elegido para reemplazar es 0
-[INFO] 21:15:25:500 MiRam/(19064:19076): Memoria -1240462480
-[INFO] 21:15:25:500 MiRam/(19064:19076): EL NUMERO DE BLOQUE ES 1
-[INFO] 21:15:25:500 MiRam/(19064:19076): Swappeando 1
-[INFO] 21:15:25:501 MiRam/(19064:19076): Asigne esta posicion 0
-
-[INFO] 21:15:27:505 MiRam/(19064:19076): MARCO 3
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): OFFSET 0
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): ID magico 2
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): MARCO 3
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): OFFSET 4
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): Puntero magico 29
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): MARCO 3
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): OFFSET 8
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): TID magico 2
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): MARCO 3
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): OFFSET 12
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): Estado magico N
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): Pos x magico 3
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): Pos y magico 3
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): Prox instruccion 29
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): Puntero magico  1
-
-[INFO] 21:15:27:506 MiRam/(19064:19076): Patota 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 0
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 0
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 0
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Patota 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 0
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): ID MARCO 0
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:507 MiRam/(19064:19076): Ubicacion 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 0
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Patota 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 0
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 0
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 0
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Patota 2
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 3
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 0
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 2
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 0
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): ID MARCO 0
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Uso 1
-
-[INFO] 21:15:27:508 MiRam/(19064:19076): Ubicacion 0
-
-[INFO] 21:15:34:814 MiRam/(19064:19068): socket_cliente 7
-[INFO] 21:15:34:814 MiRam/(19064:19068): Estableciendo conexión desde 6351
-[INFO] 21:15:34:815 MiRam/(19064:19068): Creando hilo
-[INFO] 21:15:34:816 MiRam/(19064:19068): Inicializo el archivo
-[INFO] 21:15:34:829 MiRam/(19064:19162): Se conecto este socket a mi 7
-
-[INFO] 21:15:34:829 MiRam/(19064:19162): POS VECTOR 0
-[INFO] 21:15:34:829 MiRam/(19064:19162): El indice 0
-[INFO] 21:15:34:829 MiRam/(19064:19162): 
+[INFO] 12:11:56:936 MiRam/(10372:10373): Servidor iniciando
+[INFO] 12:11:56:936 MiRam/(10372:10373): Servidor MiRam encendido
+[INFO] 12:11:56:937 MiRam/(10372:10373): socket_servidor 4
+[INFO] 12:12:04:888 MiRam/(10372:10373): socket_cliente 5
+[INFO] 12:12:04:888 MiRam/(10372:10373): Estableciendo conexión desde 5778
+[INFO] 12:12:04:888 MiRam/(10372:10373): Creando hilo
+[INFO] 12:12:04:888 MiRam/(10372:10373): Inicializo el archivo
+[INFO] 12:12:04:892 MiRam/(10372:10401): Se conecto este socket a mi 5
+
+[INFO] 12:12:06:913 MiRam/(10372:10401): PID es 1
+[INFO] 12:12:06:914 MiRam/(10372:10401): Ingresa nueva patota, necesito 5 marcos
+[INFO] 12:12:06:914 MiRam/(10372:10401): Guardando info
+[INFO] 12:12:06:914 MiRam/(10372:10401): Asigne esta posicion 0
+
+[INFO] 12:12:06:914 MiRam/(10372:10401): Asigne esta posicion 1
+
+[INFO] 12:12:06:915 MiRam/(10372:10401): Asigne esta posicion 2
+
+[INFO] 12:12:06:915 MiRam/(10372:10401): Asigne esta posicion 3
+
+[INFO] 12:12:06:915 MiRam/(10372:10401): Algoritmo de reemplazo es LRU
+
+[INFO] 12:12:06:915 MiRam/(10372:10401): El marco elegido para reemplazar es 0
+[INFO] 12:12:06:915 MiRam/(10372:10401): Memoria -1239414968
+[INFO] 12:12:06:915 MiRam/(10372:10401): EL NUMERO DE BLOQUE ES 0
+[INFO] 12:12:06:915 MiRam/(10372:10401): Swappeando 0
+[INFO] 12:12:06:915 MiRam/(10372:10401): Asigne esta posicion 0
+
+[INFO] 12:12:06:915 MiRam/(10372:10401): ENTRE EN MS
+[INFO] 12:12:06:916 MiRam/(10372:10401): Recupero de 0
+[INFO] 12:12:06:916 MiRam/(10372:10401): Algoritmo de reemplazo es LRU
+
+[INFO] 12:12:06:916 MiRam/(10372:10401): El marco elegido para reemplazar es 1
+[INFO] 12:12:06:916 MiRam/(10372:10401): Memoria -1239414808
+[INFO] 12:12:06:916 MiRam/(10372:10401): EL NUMERO DE BLOQUE ES 1
+[INFO] 12:12:06:916 MiRam/(10372:10401): Swappeando 1
+[INFO] 12:12:06:916 MiRam/(10372:10401): Recuperando este bloque de swap 0
+[INFO] 12:12:06:916 MiRam/(10372:10401): ENTRE EN MS
+[INFO] 12:12:06:916 MiRam/(10372:10401): Recupero de 1
+[INFO] 12:12:06:916 MiRam/(10372:10401): Algoritmo de reemplazo es LRU
+
+[INFO] 12:12:06:916 MiRam/(10372:10401): El marco elegido para reemplazar es 2
+[INFO] 12:12:06:916 MiRam/(10372:10401): Memoria -1239414616
+[INFO] 12:12:06:916 MiRam/(10372:10401): EL NUMERO DE BLOQUE ES 2
+[INFO] 12:12:06:916 MiRam/(10372:10401): Swappeando 2
+[INFO] 12:12:06:917 MiRam/(10372:10401): Recuperando este bloque de swap 1
+[INFO] 12:12:06:917 MiRam/(10372:10401): ENTRE EN MS
+[INFO] 12:12:06:917 MiRam/(10372:10401): Recupero de 2
+[INFO] 12:12:06:917 MiRam/(10372:10401): Algoritmo de reemplazo es LRU
+
+[INFO] 12:12:06:917 MiRam/(10372:10401): El marco elegido para reemplazar es 3
+[INFO] 12:12:06:917 MiRam/(10372:10401): Memoria -1239414408
+[INFO] 12:12:06:917 MiRam/(10372:10401): EL NUMERO DE BLOQUE ES 3
+[INFO] 12:12:06:917 MiRam/(10372:10401): Swappeando 3
+[INFO] 12:12:06:917 MiRam/(10372:10401): Recuperando este bloque de swap 2
+[INFO] 12:12:06:917 MiRam/(10372:10401): ENTRE EN MS
+[INFO] 12:12:06:917 MiRam/(10372:10401): Recupero de 3
+[INFO] 12:12:06:917 MiRam/(10372:10401): Algoritmo de reemplazo es LRU
+
+[INFO] 12:12:06:917 MiRam/(10372:10401): El marco elegido para reemplazar es 0
+[INFO] 12:12:06:917 MiRam/(10372:10401): Memoria -1239414200
+[INFO] 12:12:06:917 MiRam/(10372:10401): EL NUMERO DE BLOQUE ES 4
+[INFO] 12:12:06:917 MiRam/(10372:10401): Swappeando 4
+[INFO] 12:12:06:918 MiRam/(10372:10401): Recuperando este bloque de swap 3
+[INFO] 12:12:06:918 MiRam/(10372:10401): ENTRE EN MS
+[INFO] 12:12:06:918 MiRam/(10372:10401): Recupero de 4
+[INFO] 12:12:06:918 MiRam/(10372:10401): Algoritmo de reemplazo es LRU
+
+[INFO] 12:12:06:918 MiRam/(10372:10401): El marco elegido para reemplazar es 1
+[INFO] 12:12:06:918 MiRam/(10372:10401): Memoria -1239413768
+[INFO] 12:12:06:918 MiRam/(10372:10401): EL NUMERO DE BLOQUE ES 5
+[INFO] 12:12:06:918 MiRam/(10372:10401): Swappeando 5
+[INFO] 12:12:06:918 MiRam/(10372:10401): Recuperando este bloque de swap 4
+[INFO] 12:12:06:918 MiRam/(10372:10401): Patota 1
+
+[INFO] 12:12:06:918 MiRam/(10372:10401): --------
+[INFO] 12:12:06:918 MiRam/(10372:10401): ID MARCO 0
+
+[INFO] 12:12:06:918 MiRam/(10372:10401): Uso 1
+
+[INFO] 12:12:06:918 MiRam/(10372:10401): Esta en memoria secundaria
+[INFO] 12:12:06:918 MiRam/(10372:10401): --------
+[INFO] 12:12:06:918 MiRam/(10372:10401): --------
+[INFO] 12:12:06:918 MiRam/(10372:10401): ID MARCO 1
+
+[INFO] 12:12:06:918 MiRam/(10372:10401): Uso 1
+
+[INFO] 12:12:06:918 MiRam/(10372:10401): No lo esta
+[INFO] 12:12:06:918 MiRam/(10372:10401): --------
+[INFO] 12:12:06:918 MiRam/(10372:10401): --------
+[INFO] 12:12:06:918 MiRam/(10372:10401): ID MARCO 2
+
+[INFO] 12:12:06:918 MiRam/(10372:10401): Uso 1
+
+[INFO] 12:12:06:918 MiRam/(10372:10401): No lo esta
+[INFO] 12:12:06:918 MiRam/(10372:10401): --------
+[INFO] 12:12:06:919 MiRam/(10372:10401): --------
+[INFO] 12:12:06:919 MiRam/(10372:10401): ID MARCO 3
+
+[INFO] 12:12:06:919 MiRam/(10372:10401): Uso 1
+
+[INFO] 12:12:06:919 MiRam/(10372:10401): No lo esta
+[INFO] 12:12:06:919 MiRam/(10372:10401): --------
+[INFO] 12:12:06:919 MiRam/(10372:10401): --------
+[INFO] 12:12:06:919 MiRam/(10372:10401): ID MARCO 4
+
+[INFO] 12:12:06:919 MiRam/(10372:10401): Uso 1
+
+[INFO] 12:12:06:919 MiRam/(10372:10401): No lo esta
+[INFO] 12:12:06:919 MiRam/(10372:10401): --------
+[INFO] 12:12:36:324 MiRam/(10372:10373): socket_cliente 7
+[INFO] 12:12:36:324 MiRam/(10372:10373): Estableciendo conexión desde 7314
+[INFO] 12:12:36:324 MiRam/(10372:10373): Creando hilo
+[INFO] 12:12:36:324 MiRam/(10372:10373): Inicializo el archivo
+[INFO] 12:12:36:327 MiRam/(10372:10477): Se conecto este socket a mi 7
+
+[INFO] 12:12:36:328 MiRam/(10372:10477): POS VECTOR 0
+[INFO] 12:12:36:328 MiRam/(10372:10477): El indice 0
+[INFO] 12:12:36:328 MiRam/(10372:10477): 
 El offset 8
-[INFO] 21:15:34:830 MiRam/(19064:19162): ENTRE EN MS
-[INFO] 21:15:34:830 MiRam/(19064:19162): Recupero de 1
-[INFO] 21:15:34:830 MiRam/(19064:19162): Algoritmo de reemplazo es LRU
+[INFO] 12:12:36:328 MiRam/(10372:10477): ENTRE EN MS
+[INFO] 12:12:36:328 MiRam/(10372:10477): Recupero de 5
+[INFO] 12:12:36:329 MiRam/(10372:10477): Algoritmo de reemplazo es LRU
 
-[INFO] 21:15:34:830 MiRam/(19064:19162): El marco elegido para reemplazar es 1
-[INFO] 21:15:34:830 MiRam/(19064:19162): Memoria 146334296
-[INFO] 21:15:34:830 MiRam/(19064:19162): EL NUMERO DE BLOQUE ES 2
-[INFO] 21:15:34:830 MiRam/(19064:19162): Swappeando 2
-[INFO] 21:15:34:830 MiRam/(19064:19162): Recuperando este bloque de swap 1
-[INFO] 21:15:34:831 MiRam/(19064:19162): MARCO 1
-[INFO] 21:15:34:831 MiRam/(19064:19162): OFFSET 8
-[INFO] 21:15:34:831 MiRam/(19064:19162): TID magico 0
-[INFO] 21:15:34:831 MiRam/(19064:19162): MARCO 1
-[INFO] 21:15:34:831 MiRam/(19064:19162): OFFSET 12
-[INFO] 21:15:34:831 MiRam/(19064:19162): Estado magico 
-[INFO] 21:15:34:831 MiRam/(19064:19162): Pos x magico 0
+[INFO] 12:12:36:329 MiRam/(10372:10477): El marco elegido para reemplazar es 2
+[INFO] 12:12:36:329 MiRam/(10372:10477): Memoria 148750936
+[INFO] 12:12:36:329 MiRam/(10372:10477): EL NUMERO DE BLOQUE ES 6
+[INFO] 12:12:36:330 MiRam/(10372:10477): Swappeando 6
+[INFO] 12:12:36:330 MiRam/(10372:10477): Recuperando este bloque de swap 5
+[INFO] 12:12:36:330 MiRam/(10372:10477): MARCO 2
+[INFO] 12:12:36:331 MiRam/(10372:10477): OFFSET 8
+[INFO] 12:12:36:331 MiRam/(10372:10477): TID magico 0
+[INFO] 12:12:36:331 MiRam/(10372:10477): MARCO 2
+[INFO] 12:12:36:331 MiRam/(10372:10477): OFFSET 12
+[INFO] 12:12:36:331 MiRam/(10372:10477): Estado magico 
+[INFO] 12:12:36:331 MiRam/(10372:10477): Pos x magico 0
 
-[INFO] 21:15:34:831 MiRam/(19064:19162): Pos y magico 0
-[INFO] 21:15:34:831 MiRam/(19064:19162): Prox instruccion 0
-[INFO] 21:15:34:831 MiRam/(19064:19162): Puntero magico  0
-[INFO] 21:15:34:831 MiRam/(19064:19162): El tripulante que recibi es el 1
+[INFO] 12:12:36:332 MiRam/(10372:10477): Pos y magico 0
+[INFO] 12:12:36:332 MiRam/(10372:10477): Prox instruccion 0
+[INFO] 12:12:36:332 MiRam/(10372:10477): Puntero magico  0
+[INFO] 12:12:36:332 MiRam/(10372:10477): El tripulante que recibi es el 1
  y 1
-[INFO] 21:15:34:831 MiRam/(19064:19162): El tripulante que recibi eSSSSSs el 0
+[INFO] 12:12:36:332 MiRam/(10372:10477): El tripulante que recibi eSSSSSs el 0
  y 0
-[INFO] 21:15:34:831 MiRam/(19064:19162): 
+[INFO] 12:12:36:333 MiRam/(10372:10477): 
  tareas : (null) 
 
-[INFO] 21:15:34:832 MiRam/(19064:19068): socket_cliente 8
-[INFO] 21:15:34:832 MiRam/(19064:19068): Estableciendo conexión desde 7375
-[INFO] 21:15:34:832 MiRam/(19064:19068): Creando hilo
-[INFO] 21:15:34:832 MiRam/(19064:19068): Inicializo el archivo
-[INFO] 21:15:34:832 MiRam/(19064:19162): POS VECTOR 0
-[INFO] 21:15:34:832 MiRam/(19064:19162): El indice 0
-[INFO] 21:15:34:832 MiRam/(19064:19162): 
+[INFO] 12:12:36:334 MiRam/(10372:10373): socket_cliente 8
+[INFO] 12:12:36:334 MiRam/(10372:10373): Estableciendo conexión desde 8338
+[INFO] 12:12:36:334 MiRam/(10372:10373): Creando hilo
+[INFO] 12:12:36:334 MiRam/(10372:10373): Inicializo el archivo
+[INFO] 12:12:36:343 MiRam/(10372:10477): POS VECTOR 0
+[INFO] 12:12:36:343 MiRam/(10372:10477): El indice 0
+[INFO] 12:12:36:343 MiRam/(10372:10477): 
 El offset 8
-[INFO] 21:15:34:832 MiRam/(19064:19162): MARCO 1
-[INFO] 21:15:34:832 MiRam/(19064:19162): OFFSET 8
-[INFO] 21:15:34:832 MiRam/(19064:19162): TID magico 0
-[INFO] 21:15:34:832 MiRam/(19064:19162): MARCO 1
-[INFO] 21:15:34:833 MiRam/(19064:19162): OFFSET 12
-[INFO] 21:15:34:833 MiRam/(19064:19162): Estado magico 
-[INFO] 21:15:34:833 MiRam/(19064:19162): Pos x magico 0
+[INFO] 12:12:36:343 MiRam/(10372:10477): MARCO 2
+[INFO] 12:12:36:343 MiRam/(10372:10477): OFFSET 8
+[INFO] 12:12:36:343 MiRam/(10372:10477): TID magico 0
+[INFO] 12:12:36:343 MiRam/(10372:10477): MARCO 2
+[INFO] 12:12:36:344 MiRam/(10372:10477): OFFSET 12
+[INFO] 12:12:36:344 MiRam/(10372:10477): Estado magico 
+[INFO] 12:12:36:344 MiRam/(10372:10477): Pos x magico 0
 
-[INFO] 21:15:34:833 MiRam/(19064:19162): Pos y magico 0
-[INFO] 21:15:34:833 MiRam/(19064:19162): Prox instruccion 0
-[INFO] 21:15:34:833 MiRam/(19064:19162): Puntero magico  0
-[INFO] 21:15:34:833 MiRam/(19064:19162): El indice 0
+[INFO] 12:12:36:344 MiRam/(10372:10477): Pos y magico 0
+[INFO] 12:12:36:344 MiRam/(10372:10477): Prox instruccion 0
+[INFO] 12:12:36:344 MiRam/(10372:10477): Puntero magico  0
+[INFO] 12:12:36:344 MiRam/(10372:10477): El indice 0
 
-[INFO] 21:15:34:833 MiRam/(19064:19162): 
-El offset 8
-
-[INFO] 21:15:34:833 MiRam/(19064:19162): MARCO 1
-
-[INFO] 21:15:34:833 MiRam/(19064:19162): OFFSET 8
-
-[ERROR] 21:15:34:833 MiRam/(19064:19162): el cliente se desconecto. Terminando servidor
-[INFO] 21:15:34:834 MiRam/(19064:19163): Se conecto este socket a mi 8
-
-[INFO] 21:15:34:834 MiRam/(19064:19163): POS VECTOR 0
-[INFO] 21:15:34:834 MiRam/(19064:19163): El indice 0
-[INFO] 21:15:34:834 MiRam/(19064:19163): 
-El offset 8
-[INFO] 21:15:34:834 MiRam/(19064:19163): MARCO 3
-[INFO] 21:15:34:834 MiRam/(19064:19163): OFFSET 8
-[INFO] 21:15:34:834 MiRam/(19064:19163): TID magico 2
-[INFO] 21:15:34:834 MiRam/(19064:19163): MARCO 3
-[INFO] 21:15:34:834 MiRam/(19064:19163): OFFSET 12
-[INFO] 21:15:34:834 MiRam/(19064:19163): Estado magico N
-
-[INFO] 21:15:34:834 MiRam/(19064:19163): Pos x magico 3
-
-[INFO] 21:15:34:834 MiRam/(19064:19163): Pos y magico 3
-[INFO] 21:15:34:834 MiRam/(19064:19163): Prox instruccion 29
-[INFO] 21:15:34:834 MiRam/(19064:19163): Puntero magico  1
-[INFO] 21:15:34:834 MiRam/(19064:19163): El tripulante que recibi es el 2
- y 2
-[INFO] 21:15:34:834 MiRam/(19064:19163): El tripulante que recibi eSSSSSs el 2
- y 29
-[INFO] 21:15:34:834 MiRam/(19064:19163): 
-El punterin 29
-
-[INFO] 21:15:34:834 MiRam/(19064:19163): El indice 0
-
-[INFO] 21:15:34:834 MiRam/(19064:19163): 
+[INFO] 12:12:36:344 MiRam/(10372:10477): 
 El offset 8
 
-[INFO] 21:15:34:834 MiRam/(19064:19163): MARCO 3
+[INFO] 12:12:36:344 MiRam/(10372:10477): MARCO 2
 
-[INFO] 21:15:34:834 MiRam/(19064:19163): OFFSET 8
+[INFO] 12:12:36:344 MiRam/(10372:10477): OFFSET 8
 
-[INFO] 21:15:34:834 MiRam/(19064:19163): 
- tareas : B00;3;3;5 
+[ERROR] 12:12:36:344 MiRam/(10372:10477): el cliente se desconecto. Terminando servidor
+[INFO] 12:12:36:345 MiRam/(10372:10478): Se conecto este socket a mi 8
 
-[INFO] 21:15:34:835 MiRam/(19064:19163): POS VECTOR 0
-[INFO] 21:15:34:835 MiRam/(19064:19163): El indice 0
-[INFO] 21:15:34:835 MiRam/(19064:19163): 
+[INFO] 12:12:36:345 MiRam/(10372:10478): POS VECTOR 1
+[INFO] 12:12:36:345 MiRam/(10372:10478): El indice 0
+[INFO] 12:12:36:345 MiRam/(10372:10478): 
+El offset 29
+[INFO] 12:12:36:345 MiRam/(10372:10478): MARCO 2
+[INFO] 12:12:36:345 MiRam/(10372:10478): OFFSET 29
+[INFO] 12:12:36:345 MiRam/(10372:10478): ENTRE EN MS
+[INFO] 12:12:36:345 MiRam/(10372:10478): Recupero de 6
+[INFO] 12:12:36:345 MiRam/(10372:10478): Algoritmo de reemplazo es LRU
+
+[INFO] 12:12:36:346 MiRam/(10372:10478): El marco elegido para reemplazar es 3
+[INFO] 12:12:36:346 MiRam/(10372:10478): Memoria -1239415344
+[INFO] 12:12:36:346 MiRam/(10372:10478): EL NUMERO DE BLOQUE ES 7
+[INFO] 12:12:36:346 MiRam/(10372:10478): Swappeando 7
+[INFO] 12:12:36:346 MiRam/(10372:10478): Recuperando este bloque de swap 6
+[INFO] 12:12:36:346 MiRam/(10372:10478): TID magico 0
+[INFO] 12:12:36:346 MiRam/(10372:10478): MARCO 3
+[INFO] 12:12:36:346 MiRam/(10372:10478): OFFSET 1
+[INFO] 12:12:36:346 MiRam/(10372:10478): Estado magico 
+[INFO] 12:12:36:346 MiRam/(10372:10478): Pos x magico 0
+
+[INFO] 12:12:36:346 MiRam/(10372:10478): Pos y magico 0
+[INFO] 12:12:36:346 MiRam/(10372:10478): Prox instruccion 0
+[INFO] 12:12:36:347 MiRam/(10372:10478): Puntero magico  0
+[INFO] 12:12:36:347 MiRam/(10372:10478): El tripulante que recibi es el 2
+ y 1
+[INFO] 12:12:36:347 MiRam/(10372:10478): El tripulante que recibi eSSSSSs el 0
+ y 0
+[INFO] 12:12:36:347 MiRam/(10372:10478): 
+ tareas : (null) 
+
+[INFO] 12:12:36:347 MiRam/(10372:10373): socket_cliente 9
+[INFO] 12:12:36:347 MiRam/(10372:10373): Estableciendo conexión desde 9362
+[INFO] 12:12:36:347 MiRam/(10372:10373): Creando hilo
+[INFO] 12:12:36:347 MiRam/(10372:10373): Inicializo el archivo
+[INFO] 12:12:36:348 MiRam/(10372:10478): POS VECTOR 1
+[INFO] 12:12:36:348 MiRam/(10372:10478): El indice 0
+[INFO] 12:12:36:348 MiRam/(10372:10478): 
+El offset 29
+[INFO] 12:12:36:348 MiRam/(10372:10478): MARCO 2
+[INFO] 12:12:36:348 MiRam/(10372:10478): OFFSET 29
+[INFO] 12:12:36:348 MiRam/(10372:10478): TID magico 0
+[INFO] 12:12:36:348 MiRam/(10372:10478): MARCO 3
+[INFO] 12:12:36:348 MiRam/(10372:10478): OFFSET 1
+[INFO] 12:12:36:348 MiRam/(10372:10478): Estado magico 
+[INFO] 12:12:36:348 MiRam/(10372:10478): Pos x magico 0
+
+[INFO] 12:12:36:349 MiRam/(10372:10478): Pos y magico 0
+[INFO] 12:12:36:349 MiRam/(10372:10478): Prox instruccion 0
+[INFO] 12:12:36:349 MiRam/(10372:10478): Puntero magico  0
+[INFO] 12:12:36:349 MiRam/(10372:10478): El indice 0
+
+[INFO] 12:12:36:349 MiRam/(10372:10478): 
 El offset 8
-[INFO] 21:15:34:835 MiRam/(19064:19163): MARCO 3
-[INFO] 21:15:34:835 MiRam/(19064:19163): OFFSET 8
-[INFO] 21:15:34:835 MiRam/(19064:19163): TID magico 2
-[INFO] 21:15:34:835 MiRam/(19064:19163): MARCO 3
-[INFO] 21:15:34:835 MiRam/(19064:19163): OFFSET 12
-[INFO] 21:15:34:835 MiRam/(19064:19163): Estado magico N
 
-[INFO] 21:15:34:835 MiRam/(19064:19163): Pos x magico 3
+[INFO] 12:12:36:349 MiRam/(10372:10478): MARCO 2
 
-[INFO] 21:15:34:835 MiRam/(19064:19163): Pos y magico 3
-[INFO] 21:15:34:835 MiRam/(19064:19163): Prox instruccion 39
-[INFO] 21:15:34:835 MiRam/(19064:19163): Puntero magico  1
-[INFO] 21:15:34:835 MiRam/(19064:19163): El indice 0
+[INFO] 12:12:36:349 MiRam/(10372:10478): OFFSET 8
 
-[INFO] 21:15:34:835 MiRam/(19064:19163): 
+[ERROR] 12:12:36:349 MiRam/(10372:10478): el cliente se desconecto. Terminando servidor
+[INFO] 12:12:36:349 MiRam/(10372:10480): Se conecto este socket a mi 9
+
+[INFO] 12:12:36:349 MiRam/(10372:10480): POS VECTOR 2
+[INFO] 12:12:36:350 MiRam/(10372:10480): El indice 1
+[INFO] 12:12:36:350 MiRam/(10372:10480): 
+El offset 18
+[INFO] 12:12:36:350 MiRam/(10372:10480): MARCO 3
+[INFO] 12:12:36:350 MiRam/(10372:10480): OFFSET 18
+[INFO] 12:12:36:350 MiRam/(10372:10480): TID magico 0
+[INFO] 12:12:36:350 MiRam/(10372:10480): MARCO 3
+[INFO] 12:12:36:350 MiRam/(10372:10480): OFFSET 22
+[INFO] 12:12:36:350 MiRam/(10372:10480): Estado magico 
+[INFO] 12:12:36:350 MiRam/(10372:10480): Pos x magico 0
+
+[INFO] 12:12:36:350 MiRam/(10372:10480): Pos y magico 0
+[INFO] 12:12:36:350 MiRam/(10372:10480): ENTRE EN MS
+[INFO] 12:12:36:350 MiRam/(10372:10480): Recupero de 7
+[INFO] 12:12:36:350 MiRam/(10372:10480): Algoritmo de reemplazo es LRU
+
+[INFO] 12:12:36:350 MiRam/(10372:10480): El marco elegido para reemplazar es 0
+[INFO] 12:12:36:350 MiRam/(10372:10480): Memoria -1228927624
+[INFO] 12:12:36:350 MiRam/(10372:10480): EL NUMERO DE BLOQUE ES 8
+[INFO] 12:12:36:350 MiRam/(10372:10480): Swappeando 8
+[INFO] 12:12:36:350 MiRam/(10372:10480): Recuperando este bloque de swap 7
+[INFO] 12:12:36:350 MiRam/(10372:10480): Prox instruccion 0
+[INFO] 12:12:36:350 MiRam/(10372:10480): Puntero magico  0
+[INFO] 12:12:36:350 MiRam/(10372:10480): El tripulante que recibi es el 3
+ y 1
+[INFO] 12:12:36:350 MiRam/(10372:10480): El tripulante que recibi eSSSSSs el 0
+ y 0
+[INFO] 12:12:36:350 MiRam/(10372:10480): 
+ tareas : (null) 
+
+[INFO] 12:12:36:350 MiRam/(10372:10373): socket_cliente 7
+[INFO] 12:12:36:350 MiRam/(10372:10373): Estableciendo conexión desde 10386
+[INFO] 12:12:36:350 MiRam/(10372:10373): Creando hilo
+[INFO] 12:12:36:350 MiRam/(10372:10373): Inicializo el archivo
+[INFO] 12:12:36:353 MiRam/(10372:10480): POS VECTOR 2
+[INFO] 12:12:36:353 MiRam/(10372:10480): El indice 1
+[INFO] 12:12:36:353 MiRam/(10372:10480): 
+El offset 18
+[INFO] 12:12:36:353 MiRam/(10372:10480): MARCO 3
+[INFO] 12:12:36:353 MiRam/(10372:10480): OFFSET 18
+[INFO] 12:12:36:353 MiRam/(10372:10480): TID magico 0
+[INFO] 12:12:36:353 MiRam/(10372:10480): MARCO 3
+[INFO] 12:12:36:353 MiRam/(10372:10480): OFFSET 22
+[INFO] 12:12:36:353 MiRam/(10372:10480): Estado magico 
+[INFO] 12:12:36:353 MiRam/(10372:10480): Pos x magico 0
+
+[INFO] 12:12:36:353 MiRam/(10372:10480): Pos y magico 0
+[INFO] 12:12:36:353 MiRam/(10372:10480): Prox instruccion 0
+[INFO] 12:12:36:353 MiRam/(10372:10480): Puntero magico  0
+[INFO] 12:12:36:353 MiRam/(10372:10480): El indice 0
+
+[INFO] 12:12:36:353 MiRam/(10372:10480): 
 El offset 8
 
-[INFO] 21:15:34:835 MiRam/(19064:19163): MARCO 3
+[INFO] 12:12:36:353 MiRam/(10372:10480): MARCO 2
 
-[INFO] 21:15:34:835 MiRam/(19064:19163): OFFSET 8
+[INFO] 12:12:36:353 MiRam/(10372:10480): OFFSET 8
 
-[ERROR] 21:15:35:942 MiRam/(19064:19076): el discordiador finalizo el programa. Terminando servidor
-[INFO] 21:15:35:942 MiRam/(19064:19068): socket_cliente -1
-[INFO] 21:15:35:942 MiRam/(19064:19068): tttttttt
+[ERROR] 12:12:36:356 MiRam/(10372:10480): el cliente se desconecto. Terminando servidor
+[INFO] 12:12:36:356 MiRam/(10372:10483): Se conecto este socket a mi 7
+
+[INFO] 12:12:36:356 MiRam/(10372:10483): POS VECTOR 3
+[INFO] 12:12:36:356 MiRam/(10372:10483): El indice 2
+[INFO] 12:12:36:356 MiRam/(10372:10483): 
+El offset 7
+[INFO] 12:12:36:356 MiRam/(10372:10483): MARCO 0
+[INFO] 12:12:36:356 MiRam/(10372:10483): OFFSET 7
+[INFO] 12:12:36:356 MiRam/(10372:10483): TID magico 0
+[INFO] 12:12:36:356 MiRam/(10372:10483): MARCO 0
+[INFO] 12:12:36:356 MiRam/(10372:10483): OFFSET 11
+[INFO] 12:12:36:356 MiRam/(10372:10483): Estado magico 
+[INFO] 12:12:36:356 MiRam/(10372:10483): Pos x magico 0
+
+[INFO] 12:12:36:356 MiRam/(10372:10483): Pos y magico 0
+[INFO] 12:12:36:356 MiRam/(10372:10483): Prox instruccion 0
+[INFO] 12:12:36:356 MiRam/(10372:10483): Puntero magico  0
+[INFO] 12:12:36:356 MiRam/(10372:10483): El tripulante que recibi es el 4
+ y 1
+[INFO] 12:12:36:356 MiRam/(10372:10483): El tripulante que recibi eSSSSSs el 0
+ y 0
+[INFO] 12:12:36:356 MiRam/(10372:10483): 
+ tareas : (null) 
+
+[INFO] 12:12:36:356 MiRam/(10372:10373): socket_cliente 8
+[INFO] 12:12:36:356 MiRam/(10372:10373): Estableciendo conexión desde 11410
+[INFO] 12:12:36:357 MiRam/(10372:10373): Creando hilo
+[INFO] 12:12:36:357 MiRam/(10372:10373): Inicializo el archivo
+[INFO] 12:12:36:357 MiRam/(10372:10483): POS VECTOR 3
+[INFO] 12:12:36:357 MiRam/(10372:10483): El indice 2
+[INFO] 12:12:36:357 MiRam/(10372:10483): 
+El offset 7
+[INFO] 12:12:36:357 MiRam/(10372:10483): MARCO 0
+[INFO] 12:12:36:357 MiRam/(10372:10483): OFFSET 7
+[INFO] 12:12:36:357 MiRam/(10372:10483): TID magico 0
+[INFO] 12:12:36:357 MiRam/(10372:10483): MARCO 0
+[INFO] 12:12:36:357 MiRam/(10372:10483): OFFSET 11
+[INFO] 12:12:36:357 MiRam/(10372:10483): Estado magico 
+[INFO] 12:12:36:357 MiRam/(10372:10483): Pos x magico 0
+
+[INFO] 12:12:36:357 MiRam/(10372:10483): Pos y magico 0
+[INFO] 12:12:36:357 MiRam/(10372:10483): Prox instruccion 0
+[INFO] 12:12:36:357 MiRam/(10372:10483): Puntero magico  0
+[INFO] 12:12:36:357 MiRam/(10372:10483): El indice 0
+
+[INFO] 12:12:36:357 MiRam/(10372:10483): 
+El offset 8
+
+[INFO] 12:12:36:357 MiRam/(10372:10483): MARCO 2
+
+[INFO] 12:12:36:357 MiRam/(10372:10483): OFFSET 8
+
+[ERROR] 12:12:36:358 MiRam/(10372:10483): el cliente se desconecto. Terminando servidor
+[INFO] 12:12:36:358 MiRam/(10372:10484): Se conecto este socket a mi 8
+
+[INFO] 12:12:36:358 MiRam/(10372:10484): POS VECTOR 4
+[INFO] 12:12:36:358 MiRam/(10372:10484): El indice 2
+[INFO] 12:12:36:358 MiRam/(10372:10484): 
+El offset 28
+[INFO] 12:12:36:358 MiRam/(10372:10484): MARCO 0
+[INFO] 12:12:36:358 MiRam/(10372:10484): OFFSET 28
+[INFO] 12:12:36:358 MiRam/(10372:10484): ENTRE EN MS
+[INFO] 12:12:36:358 MiRam/(10372:10484): Recupero de 8
+[INFO] 12:12:36:358 MiRam/(10372:10484): Algoritmo de reemplazo es LRU
+
+[INFO] 12:12:36:358 MiRam/(10372:10484): El marco elegido para reemplazar es 1
+[INFO] 12:12:36:358 MiRam/(10372:10484): Memoria -1239413096
+[INFO] 12:12:36:358 MiRam/(10372:10484): EL NUMERO DE BLOQUE ES 9
+[INFO] 12:12:36:358 MiRam/(10372:10484): Swappeando 9
+[INFO] 12:12:36:358 MiRam/(10372:10484): Recuperando este bloque de swap 8
+[INFO] 12:12:36:358 MiRam/(10372:10484): TID magico 0
+[INFO] 12:12:36:358 MiRam/(10372:10484): MARCO 1
+[INFO] 12:12:36:358 MiRam/(10372:10484): OFFSET 0
+[INFO] 12:12:36:358 MiRam/(10372:10484): Estado magico 
+[INFO] 12:12:36:358 MiRam/(10372:10484): Pos x magico 0
+
+[INFO] 12:12:36:358 MiRam/(10372:10484): Pos y magico 0
+[INFO] 12:12:36:358 MiRam/(10372:10484): Prox instruccion 0
+[INFO] 12:12:36:358 MiRam/(10372:10484): Puntero magico  0
+[INFO] 12:12:36:358 MiRam/(10372:10484): El tripulante que recibi es el 5
+ y 1
+[INFO] 12:12:36:358 MiRam/(10372:10484): El tripulante que recibi eSSSSSs el 0
+ y 0
+[INFO] 12:12:36:358 MiRam/(10372:10484): 
+ tareas : (null) 
+
+[INFO] 12:12:36:358 MiRam/(10372:10484): POS VECTOR 4
+[INFO] 12:12:36:358 MiRam/(10372:10484): El indice 2
+[INFO] 12:12:36:358 MiRam/(10372:10484): 
+El offset 28
+[INFO] 12:12:36:358 MiRam/(10372:10484): MARCO 0
+[INFO] 12:12:36:359 MiRam/(10372:10484): OFFSET 28
+[INFO] 12:12:36:359 MiRam/(10372:10484): TID magico 0
+[INFO] 12:12:36:359 MiRam/(10372:10484): MARCO 1
+[INFO] 12:12:36:359 MiRam/(10372:10484): OFFSET 0
+[INFO] 12:12:36:359 MiRam/(10372:10484): Estado magico 
+[INFO] 12:12:36:359 MiRam/(10372:10484): Pos x magico 0
+
+[INFO] 12:12:36:359 MiRam/(10372:10484): Pos y magico 0
+[INFO] 12:12:36:359 MiRam/(10372:10484): Prox instruccion 0
+[INFO] 12:12:36:359 MiRam/(10372:10484): Puntero magico  0
+[INFO] 12:12:36:359 MiRam/(10372:10484): El indice 0
+
+[INFO] 12:12:36:359 MiRam/(10372:10484): 
+El offset 8
+
+[INFO] 12:12:36:359 MiRam/(10372:10484): MARCO 2
+
+[INFO] 12:12:36:359 MiRam/(10372:10484): OFFSET 8
+
+[ERROR] 12:12:36:359 MiRam/(10372:10484): el cliente se desconecto. Terminando servidor
+[ERROR] 12:13:29:575 MiRam/(10372:10401): el discordiador finalizo el programa. Terminando servidor
+[INFO] 12:13:29:577 MiRam/(10372:10373): socket_cliente -1
+[INFO] 12:13:29:577 MiRam/(10372:10373): tttttttt

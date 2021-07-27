@@ -12,6 +12,7 @@ int err;
 int numero_mapa = 0;
 int cols=10;
 int rows=10;
+int contador_lru=0;
 
 void iniciar_servidor(config_struct* config_servidor)
 {
@@ -1300,7 +1301,7 @@ void dump_memoria_segmentacion(){
 	char buff1[50];
 	char buff2[50];
 	char namebuff[100];
-	time_t now = time(0);
+	time_t now = contador_lru;
 	strftime(buff1, 100, "%d/%m/%Y %H:%M:%S"  , localtime(&now)); //Tmestamp a escribir en el archivo
 	strftime(buff2, 100, "%d_%m_%Y_%H_%M_%S"  , localtime(&now)); //Timestamp del nombre del archivo
 	sprintf(namebuff, "Dump_%s.dmp",buff2);
@@ -1404,16 +1405,15 @@ int funcion_cliente_paginacion(int socket_cliente){
 						marco* marco_nuevo = malloc (sizeof(marco));
 						marco_nuevo->id_marco=posicion_libre;
 						marco_nuevo->ubicacion=MEM_PRINCIPAL;
+						contador_lru++;
 						marco_nuevo->bit_uso=1;
-						marco_nuevo->ultimo_uso = time(0);
+						marco_nuevo->ultimo_uso = contador_lru;
 						list_add(una_tabla->lista_marcos,marco_nuevo);
-						sleep(2);
 
 					}
 					sem_wait(&MUTEX_MEM_PRINCIPAL);
 					almacenar_informacion2(&configuracion,lista, pid);
 					sem_post(&MUTEX_MEM_PRINCIPAL);
-					leer_informacion2(&configuracion,una_tabla,lista, pid);
 					char* mensaje = "Memoria asignada";
 					enviar_mensaje(mensaje, socket_cliente);
 					imprimir_tabla_paginacion();
@@ -1441,12 +1441,13 @@ int funcion_cliente_paginacion(int socket_cliente){
 				break;
 
 			case PEDIR_TAREA:;
-				sem_wait(&MUTEX_MEM_PRINCIPAL);
 
 				lista = recibir_paquete(socket_cliente);
 
 				int tripulante_id = (int)atoi(list_get(lista, 0));
 				int patota_id = (int)atoi(list_get(lista, 1));
+				sem_wait(&MUTEX_MEM_PRINCIPAL);
+
 				tcbTripulante* tripulante1 = obtener_tripulante2(patota_id, tripulante_id, &configuracion);
 
 				log_info(logger,"El tripulante que recibi es el %d\n y %d", tripulante_id, patota_id);
@@ -1479,9 +1480,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 				patota_id = (int)atoi(list_get(lista, 2));
 				sem_wait(&MUTEX_MEM_PRINCIPAL);
 				tcbTripulante* tripulante2 = obtener_tripulante2(patota_id, tripulante_id, &configuracion);
-				sem_post(&MUTEX_MEM_PRINCIPAL);
 				tripulante2->estado=estado;
-				sem_wait(&MUTEX_MEM_PRINCIPAL);
 				actualizar_tripulante(tripulante2,patota_id,&configuracion);
 				sem_post(&MUTEX_MEM_PRINCIPAL);
 
@@ -1581,9 +1580,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
+	marcos->bit_uso=1;
+	marcos->ultimo_uso = contador_lru;
 	log_info(logger,"MARCO %d",marcos->id_marco);
 	fflush(stdout);
 	log_info(logger,"OFFSET %d",offset);
@@ -1601,11 +1604,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_uno(&tid,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1617,11 +1622,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 	leer_atributo_dos(&tid,offset,marcos->id_marco, config_servidor);
 	offset+=1;
 	indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
@@ -1632,11 +1639,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_tres(&tid,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1648,11 +1657,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 
 	log_info(logger,"TID magico %d",tid);
@@ -1670,11 +1681,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	char estado =*(char*)leer_atributo_char(offset,marcos->id_marco, config_servidor);
 	offset+=sizeof(char);
@@ -1692,11 +1705,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_uno(&pos_x,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1708,11 +1723,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_dos(&pos_x,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1724,11 +1741,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+	//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_tres(&pos_x,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1740,11 +1759,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 	log_info(logger,"Pos x magico %d\n",pos_x);
 	fflush(stdout);
 
@@ -1759,11 +1780,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+	//	list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_uno(&pos_y,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1775,11 +1798,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+	//	list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_dos(&pos_y,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1791,11 +1816,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_tres(&pos_y,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1807,11 +1834,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	log_info(logger,"Pos y magico %d",pos_y);
 	fflush(stdout);
@@ -1828,11 +1857,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_uno(&prox_in,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1844,11 +1875,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_dos(&prox_in,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1860,11 +1893,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_tres(&prox_in,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1876,11 +1911,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	log_info(logger,"Prox instruccion %d",prox_in);
 	fflush(stdout);
@@ -1896,11 +1933,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+	//	list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_uno(&puntero_pcb,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1912,11 +1951,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_dos(&puntero_pcb,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1928,11 +1969,13 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
+
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_tres(&puntero_pcb,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -1944,11 +1987,12 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
+	contador_lru++;
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	log_info(logger,"Puntero magico  %d",puntero_pcb);
 	fflush(stdout);
@@ -1993,11 +2037,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
+		marcos->ultimo_uso=contador_lru;
 		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 	log_info(logger,"MARCO %d\n",marcos->id_marco);
 	fflush(stdout);
 	log_info(logger,"OFFSET %d\n",offset);
@@ -2013,11 +2057,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
+		marcos->ultimo_uso=contador_lru;
 		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_uno(&pid,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -2029,11 +2073,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
+		marcos->ultimo_uso=contador_lru;
 		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_dos(&pid,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -2045,11 +2089,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
+		marcos->ultimo_uso=contador_lru;
 		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_tres(&pid,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -2061,11 +2105,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
+		marcos->ultimo_uso=contador_lru;
 		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 
 	log_info(logger,"ID magico %d\n",pid);
@@ -2088,11 +2132,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
+		marcos->ultimo_uso=contador_lru;
 		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_uno(&puntero_tarea,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -2104,11 +2148,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
+		marcos->ultimo_uso=contador_lru;
 		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_dos(&puntero_tarea,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -2121,11 +2165,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
+		marcos->ultimo_uso=contador_lru;
 		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	leer_atributo_tres(&puntero_tarea,offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -2138,11 +2182,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 
 	log_info(logger,"Puntero magico %d\n",puntero_tarea);
 	fflush(stdout);
@@ -2166,11 +2210,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_uno(&tid,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2182,11 +2226,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_dos(&tid,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2198,11 +2242,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_tres(&tid,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2214,11 +2258,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		log_info(logger,"TID magico %d\n",tid);
 		fflush(stdout);
@@ -2235,11 +2279,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		char estado =*(char*)leer_atributo_char(offset,marcos->id_marco, config_servidor);
 		offset+=sizeof(char);
@@ -2257,11 +2301,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_uno(&pos_x,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2273,13 +2317,13 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 
 
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_dos(&pos_x,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2291,11 +2335,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_tres(&pos_x,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2307,11 +2351,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		log_info(logger,"Pos x magico %d\n",pos_x);
 		fflush(stdout);
@@ -2327,11 +2371,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_uno(&pos_y,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2343,11 +2387,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_dos(&pos_y,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2359,11 +2403,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_tres(&pos_y,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2375,11 +2419,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		log_info(logger,"Pos y magico %d\n",pos_y);
 		fflush(stdout);
@@ -2396,11 +2440,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_uno(&prox_in,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2412,12 +2456,12 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_dos(&prox_in,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2429,11 +2473,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 	    leer_atributo_tres(&prox_in,offset,marcos->id_marco, config_servidor);
 	    offset+=1;
@@ -2445,11 +2489,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 
 		log_info(logger,"Prox instruccion %d\n",prox_in);
@@ -2466,11 +2510,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_uno(&puntero_pcb,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2482,11 +2526,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_dos(&puntero_pcb,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2498,11 +2542,11 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		leer_atributo_tres(&puntero_pcb,offset,marcos->id_marco, config_servidor);
 		offset+=1;
@@ -2514,11 +2558,12 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 
 		log_info(logger,"Puntero magico  %d\n",puntero_pcb);
 		fflush(stdout);
@@ -2537,12 +2582,13 @@ void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tab
 			int numBloque=marcos->id_marco;
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
+			contador_lru++;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
+			marcos->ultimo_uso=contador_lru;
 			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		marcos->ultimo_uso = contador_lru;
 		char valor =*(char*)leer_atributo_char(offset,marcos->id_marco, config_servidor);
 		offset+=sizeof(char);
 		//log_info(logger,"%c",valor);
@@ -2570,11 +2616,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
 	offset +=escribir_atributo_cero(pid,offset,marcos->id_marco, config_servidor);
 	indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 	marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2585,12 +2633,14 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
 	offset +=escribir_atributo_uno(pid,offset,marcos->id_marco, config_servidor);
 	indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 	marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2601,11 +2651,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
 	offset +=escribir_atributo_dos(pid,offset,marcos->id_marco, config_servidor);
 	indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 	marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2616,11 +2668,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
 	offset +=escribir_atributo_tres(pid,offset,marcos->id_marco, config_servidor);
 
 /////////////////////////////////////////Puntero tareas/////////////////////////////////////////////////////////////////////////////
@@ -2636,11 +2690,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
 	offset +=escribir_atributo_cero(puntero_tarea,offset,marcos->id_marco, config_servidor);
 	indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 	marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2652,11 +2708,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
 	offset +=escribir_atributo_uno(puntero_tarea,offset,marcos->id_marco, config_servidor);
 	indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 	marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2667,11 +2725,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
 	offset +=escribir_atributo_dos(puntero_tarea,offset,marcos->id_marco, config_servidor);
 	indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 	marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2681,12 +2741,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
+		contador_lru++;
 		marcos->bit_uso=1;
-		marcos->ultimo_uso=time(0);
-		list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	marcos->ultimo_uso = contador_lru;
 	offset +=escribir_atributo_tres(puntero_tarea,offset,marcos->id_marco, config_servidor);
 
 /////////////////////////////////////////Tripulantes/////////////////////////////////////////////////////////////////////////////
@@ -2705,11 +2766,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_cero(tid,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2720,11 +2783,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_uno(tid,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2735,11 +2800,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_dos(tid,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2750,11 +2817,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+		//	list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_tres(tid,offset,marcos->id_marco, config_servidor);
 /////////////////////////////////////////Estado/////////////////////////////////////////////////////////////////////////////
 
@@ -2768,11 +2837,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_char(tripulante,offset,marcos->id_marco, config_servidor);
 /////////////////////////////////////////Pos_x/////////////////////////////////////////////////////////////////////////////
 
@@ -2786,11 +2857,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_cero(pos_x,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2801,11 +2874,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+		//	list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_uno(pos_x,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2816,12 +2891,14 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_dos(pos_x,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2832,11 +2909,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_tres(pos_x,offset,marcos->id_marco, config_servidor);
 /////////////////////////////////////////Pos_y/////////////////////////////////////////////////////////////////////////////
 
@@ -2850,11 +2929,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_cero(pos_y,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2865,11 +2946,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_uno(pos_y,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2880,11 +2963,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_dos(pos_y,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2895,12 +2980,14 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+		//	list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_tres(pos_y,offset,marcos->id_marco, config_servidor);
 /////////////////////////////////////////Proxima instruccion/////////////////////////////////////////////////////////////////////////////
 		uint32_t prox_i = puntero_tarea;
@@ -2913,12 +3000,14 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+		//	list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_cero(prox_i,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2929,11 +3018,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_uno(prox_i,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2944,11 +3035,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+		//	list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_dos(prox_i,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2959,11 +3052,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_tres(prox_i,offset,marcos->id_marco, config_servidor);
 /////////////////////////////////////////Puntero pcb/////////////////////////////////////////////////////////////////////////////
 
@@ -2977,11 +3072,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+		//	list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_cero(p_pcb,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -2992,11 +3089,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+		//	list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_uno(p_pcb,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -3007,11 +3106,13 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_dos(p_pcb,offset,marcos->id_marco, config_servidor);
 		indice_marco += alcanza_espacio(&offset, (config_servidor->tamanio_pag), 1);
 		marcos =(marco*) list_get(una_tabla->lista_marcos,indice_marco);
@@ -3022,11 +3123,12 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+		//	list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_atributo_tres(p_pcb,offset,marcos->id_marco, config_servidor);
 
 
@@ -3046,11 +3148,12 @@ void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int p
 			marcos->id_marco=swap_a_memoria(numBloque);
 			marcos->ubicacion=MEM_PRINCIPAL;
 			marcos->bit_uso=1;
-			marcos->ultimo_uso=time(0);
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+			marcos->ultimo_uso=contador_lru;
+			//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 		}
 		marcos->bit_uso=1;
-		marcos->ultimo_uso = time(0);
+		contador_lru++;
+		marcos->ultimo_uso = contador_lru;
 		offset +=escribir_char_tarea(tarea[i],offset,marcos->id_marco, config_servidor);
 	}
 
@@ -3269,7 +3372,7 @@ void dump_memoria_paginacion(){
 	char buff1[50];
 	char buff2[50];
 	char namebuff[100];
-	time_t now = time(0);
+	time_t now = contador_lru;
 	strftime(buff1, 100, "%d/%m/%Y %H:%M:%S"  , localtime(&now)); //TImestamp a escribir en el archivo
 	strftime(buff2, 100, "%d_%m_%Y_%H_%M_%S"  , localtime(&now)); //Timestamp del nombre del archivo
 	sprintf(namebuff, "Dump_%s.dmp",buff2);
@@ -3305,7 +3408,7 @@ void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina){
 			marco* un_marco=list_get(una_tabla->lista_marcos,j);
 			if(un_marco->id_marco==id_marco && un_marco->ubicacion==MEM_PRINCIPAL){
 				char buff1[100];
-				strftime(buff1, 100, "%d/%m/%Y %H:%M:%S"  , localtime(&un_marco->ultimo_uso));
+			//	strftime(buff1, 100, "%d/%m/%Y %H:%M:%S"  , localtime(&un_marco->ultimo_uso));
 				//log_info(logger,"Ultimo uso %s\n", buff1);
 				 *estado = 1;
 				 *proceso=una_tabla->id_patota;
@@ -3334,10 +3437,18 @@ void imprimir_tabla_paginacion(){
 		log_info(logger,"Patota %d\n",una_tabla->id_patota);
 		for(int j=0; j<list_size(una_tabla->lista_marcos);j++){
 			marco* un_marco=list_get(una_tabla->lista_marcos,j);
-			log_info(logger,"ID MARCO %d\n",un_marco->id_marco );
+			log_info(logger,"--------");
+			log_info(logger,"ID MARCO %d\n",j);
 			log_info(logger,"Uso %d\n",un_marco->bit_uso );
 			//log_info(logger,"Libre %d\n",un_marco->libre );
-			log_info(logger,"Ubicacion %d\n",un_marco->ubicacion );
+			if(un_marco->ubicacion==MEM_SECUNDARIA){
+				log_info(logger,"Esta en memoria secundaria");
+			}else{
+				log_info(logger,"No lo esta");
+
+			}
+			log_info(logger,"--------");
+
 			//log_info(logger,"Time %f\n",un_marco->ultimo_uso);
 			}
 	}
@@ -3347,8 +3458,9 @@ void imprimir_tabla_paginacion(){
 void swap_pagina_iniciar(){
 	log_info(logger, "Inicializo el archivo");
 	FILE* swapfile=fopen("swap.bin","wb");
-	void * leido = calloc(16384, 1);
-	fwrite(leido, 16384, 1, swapfile);
+	int swap_frames = 16384/32;
+	void * leido = calloc(swap_frames, 1);
+	fwrite(leido, swap_frames, 1, swapfile);
 	fclose(swapfile);
 }
 
@@ -3359,11 +3471,11 @@ void swap_pagina(void* contenidoAEscribir,int numDeBloque){
 	FILE* swapfile;
 	swapfile = fopen("swap.bin","rb+");
 	printf("\n el numero de bloque es %d \n",numDeBloque);
-	fseek(swapfile,numDeBloque*configuracion.tamanio_pag*sizeof(char),0);
+	fseek(swapfile,numDeBloque*configuracion.tamanio_pag*sizeof(char),SEEK_SET);
 	//char* aux = malloc(configuracion.tamanio_pag*sizeof(char));
 	//aux=completarBloque(contenidoAEscribir);
 	void * leido = calloc(configuracion.tamanio_pag, 1);
-	fwrite(leido, sizeof(char)*configuracion.tamanio_pag, 1, swapfile);
+	fwrite(leido, sizeof(configuracion.tamanio_pag), 1, swapfile);
 
 	fwrite(contenidoAEscribir,sizeof(char)*configuracion.tamanio_pag,1,swapfile);
 	//free(aux);
@@ -3374,7 +3486,7 @@ int swap_a_memoria(int numBloque){
 
 	log_info(logger, "Recupero de %d", numBloque);
 	int nuevo_marco=posicion_marco();
-	void* leido = malloc(configuracion.tamanio_pag);
+	void * leido = calloc(configuracion.tamanio_pag, 1);
 	leido = recuperar_pag_swap(numBloque);
 	mem_hexdump((void*)leido, configuracion.tamanio_pag);
 	memcpy(configuracion.posicion_inicial+(nuevo_marco*configuracion.tamanio_pag),leido,configuracion.tamanio_pag*sizeof(char));
@@ -3389,9 +3501,9 @@ int swap_a_memoria(int numBloque){
 void* recuperar_pag_swap(int numDeBloque){
 	log_info(logger, "Recuperando este bloque de swap %d", numDeBloque);
 	FILE* swapfile = fopen("swap.bin","r");
-	void* leido = malloc(configuracion.tamanio_pag);
+	void * leido = calloc(configuracion.tamanio_pag, 1);
 	fseek(swapfile,(numDeBloque*configuracion.tamanio_pag),SEEK_SET);
-	fread(leido,configuracion.tamanio_pag*sizeof(char),1,swapfile);
+	fread(leido,configuracion.tamanio_pag,1,swapfile);
 	//char* aux = vaciar_bloque(leido);
 	fclose(swapfile);
 	//free(leido);
@@ -3403,7 +3515,8 @@ int reemplazo_lru(){
 	   int nro_marco=0;
 	   int pagina=0;
 	   int marco_patota=0;
-	   time_t lru_actual = time(0);
+	   contador_lru++;
+	   int lru_actual = contador_lru;
 	   marco* lru_m=malloc(sizeof(marco));
 	   for(int i=0; i<list_size(tabla_paginacion_ppal);i++){
 		   tabla_paginacion* una_tabla =(tabla_paginacion*)list_get(tabla_paginacion_ppal,i);
@@ -3422,23 +3535,24 @@ int reemplazo_lru(){
 	   nro_marco=lru_m->id_marco;
 	   log_info(logger, "El marco elegido para reemplazar es %d", lru_m->id_marco);
 	   void* contenidoAEscribir = malloc(configuracion.tamanio_pag);
-	   mem_hexdump(contenidoAEscribir, configuracion.tamanio_pag);
+	//   mem_hexdump(contenidoAEscribir, configuracion.tamanio_pag);
 	   log_info(logger,"Memoria %d",(int) contenidoAEscribir);
 	   memcpy(contenidoAEscribir,configuracion.posicion_inicial + nro_marco*(configuracion.tamanio_pag) ,configuracion.tamanio_pag*sizeof(char));
 	   lru_m->id_marco=lugar_swap_libre();
 	   log_info(logger,"EL NUMERO DE BLOQUE ES %d",lru_m->id_marco);
 	   swap_pagina(contenidoAEscribir,lru_m->id_marco);
 
-	   tabla_paginacion* una_tabla =(tabla_paginacion*)list_get(tabla_paginacion_ppal,pagina);
-	   list_add_in_index(una_tabla->lista_marcos, marco_patota,(void*) lru_m);
-	   list_add_in_index(tabla_paginacion_ppal,pagina ,una_tabla);
-	   free(contenidoAEscribir);
+	  // tabla_paginacion* una_tabla =(tabla_paginacion*)list_get(tabla_paginacion_ppal,pagina);
+	 //  list_remove(una_tabla->lista_marcos,marco_patota);
+	  //list_add_in_index(una_tabla->lista_marcos, marco_patota,(void*) lru_m);
+	  // list_add_in_index(tabla_paginacion_ppal,pagina ,(void*)una_tabla);
+	  // free(contenidoAEscribir);
 	   return nro_marco;
 }
 
 
 void actualizar_lru(marco* un_marco){
-	un_marco->ultimo_uso= time(0);
+	un_marco->ultimo_uso= contador_lru;
 
 
 }
@@ -3581,6 +3695,11 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 	fflush(stdout);
 	log_info(logger,"OFFSET %d\n",offset);
 	fflush(stdout);
+	marcos->bit_uso=1;
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
+
 
 //////////////////////////////////////TID////////////////////////////////////////////////////////////////////////////
     uint32_t tid = tripulante->tid;
@@ -3593,10 +3712,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
 	offset +=escribir_atributo_cero(tid,offset,marcos->id_marco, config_servidor);
 
 
@@ -3608,10 +3729,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_uno(tid,offset,marcos->id_marco, config_servidor);
 
 
@@ -3623,10 +3746,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_dos(tid,offset,marcos->id_marco, config_servidor);
 
 
@@ -3637,10 +3762,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_tres(tid,offset,marcos->id_marco, config_servidor);
     //////////////////////////////////////ESTADO////////////////////////////////////////////////////////////////////////////
 
@@ -3653,10 +3780,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
 
     offset +=escribir_atributo_char(tripulante,offset,marcos->id_marco, config_servidor);
 
@@ -3671,10 +3800,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_cero(pos_x,offset,marcos->id_marco, config_servidor);
 
 
@@ -3687,10 +3818,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_uno(pos_x,offset,marcos->id_marco, config_servidor);
 
 
@@ -3702,10 +3835,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_dos(pos_x,offset,marcos->id_marco, config_servidor);
 
 
@@ -3716,10 +3851,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_tres(pos_x,offset,marcos->id_marco, config_servidor);
     //////////////////////////////////////POSICION Y////////////////////////////////////////////////////////////////////////////
 
@@ -3731,10 +3868,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_cero(pos_y,offset,marcos->id_marco, config_servidor);
 
 
@@ -3746,10 +3885,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_uno(pos_y,offset,marcos->id_marco, config_servidor);
 
 
@@ -3761,10 +3902,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_dos(pos_y,offset,marcos->id_marco, config_servidor);
 
 
@@ -3775,10 +3918,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_tres(pos_y,offset,marcos->id_marco, config_servidor);
     //////////////////////////////////////PROXIMA TAREA////////////////////////////////////////////////////////////////////////////
 
@@ -3790,10 +3935,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_cero(prox_i,offset,marcos->id_marco, config_servidor);
 
 
@@ -3805,10 +3952,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_uno(prox_i,offset,marcos->id_marco, config_servidor);
 
 
@@ -3820,10 +3969,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_dos(prox_i,offset,marcos->id_marco, config_servidor);
 
 
@@ -3834,10 +3985,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_tres(prox_i,offset,marcos->id_marco, config_servidor);
     //////////////////////////////////////PUNTERO PCB////////////////////////////////////////////////////////////////////////////
 
@@ -3849,10 +4002,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_cero(p_pcb,offset,marcos->id_marco, config_servidor);
 
 
@@ -3864,10 +4019,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_uno(p_pcb,offset,marcos->id_marco, config_servidor);
 
 
@@ -3879,10 +4036,12 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_dos(p_pcb,offset,marcos->id_marco, config_servidor);
 
 
@@ -3893,10 +4052,11 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	marcos->bit_uso=1;
-	marcos->ultimo_uso = time(0);
+	contador_lru++;
+	marcos->ultimo_uso = contador_lru;
     offset +=escribir_atributo_tres(p_pcb,offset,marcos->id_marco, config_servidor);
 
 
@@ -3939,10 +4099,11 @@ char* obtener_tarea2(int id_patota, tcbTripulante* tripulante){
 			int nuevo_marco = swap_a_memoria(otro_marco->id_marco);
 			otro_marco->ubicacion=MEM_PRINCIPAL;
 			otro_marco->id_marco=nuevo_marco;
-			list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)otro_marco);
+		//	list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)otro_marco);
 		}
 		otro_marco->bit_uso=1;
-		otro_marco->ultimo_uso = time(0);
+		contador_lru++;
+		otro_marco->ultimo_uso = contador_lru;
 		tarea=*(char*)leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
 		offset+=sizeof(char);
 		if(tarea != '-' && tarea != '.'){

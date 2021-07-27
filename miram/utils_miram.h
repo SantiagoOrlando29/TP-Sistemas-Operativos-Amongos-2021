@@ -185,7 +185,7 @@ typedef struct{
 
 typedef struct{
 	int id_marco;
-	time_t ultimo_uso;
+	int ultimo_uso;
 	presencia ubicacion;
 	int bit_uso;
 	int libre;
