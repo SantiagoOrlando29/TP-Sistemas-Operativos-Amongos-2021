@@ -1441,12 +1441,12 @@ int funcion_cliente_paginacion(int socket_cliente){
 				break;
 
 			case PEDIR_TAREA:;
+				sem_wait(&MUTEX_MEM_PRINCIPAL);
 
 				lista = recibir_paquete(socket_cliente);
 
 				int tripulante_id = (int)atoi(list_get(lista, 0));
 				int patota_id = (int)atoi(list_get(lista, 1));
-				sem_wait(&MUTEX_MEM_PRINCIPAL);
 
 				tcbTripulante* tripulante1 = obtener_tripulante2(patota_id, tripulante_id, &configuracion);
 
@@ -3561,7 +3561,7 @@ int lugar_swap_libre(){
 	for(int i=0;i<configuracion.cant_lugares_swap;i++){
 		if((int)list_get(configuracion.swap_libre,i)==0){
 			int valor = 1;
-			list_add_in_index(configuracion.swap_libre,i,(void*)valor);
+		//	list_add_in_index(configuracion.swap_libre,i,(void*)valor);
 			return i;
 		}
 	}
