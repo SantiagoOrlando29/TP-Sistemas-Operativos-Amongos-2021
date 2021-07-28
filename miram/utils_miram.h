@@ -277,13 +277,14 @@ void* leer_atributo(int offset, int nro_marco, config_struct* config_s);
 int escribir_atributo_char(tcbTripulante* tripulante, int offset, int nro_marco, config_struct* config_s);
 int escribir_atributo(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
 
+void almacenarinformacion3(t_list* lista, config_struct* config_servidor);
 int posicion_vector(int tripulante_id);
 int escribir_atributo_cero(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
 int escribir_atributo_uno(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
 int escribir_atributo_dos(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
 int escribir_atributo_tres(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
 void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int patota_id);
-void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista, int patota_id);
+void leer_informacion2(config_struct* config_servidor, t_list* lista, int patota_id);
 void leer_atributo_cero(void* dato,int offset, int nro_marco, config_struct* config_s);
 void leer_atributo_uno(void* dato,int offset, int nro_marco, config_struct* config_s);
 void leer_atributo_dos(void* dato,int offset, int nro_marco, config_struct* config_s);
@@ -293,7 +294,10 @@ void swap_pagina_iniciar();
 
 
 int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct* config_s);
+void buscar_marco_ms(int id_marco,int * estado,int* proceso, int *pagina);
 void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina);
+void imprimir_marcos_ms();
+void imprimir_marcos_mp();
 int lugar_swap_libre();
 int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato);
 void actualizar_lru(marco* un_marco);
