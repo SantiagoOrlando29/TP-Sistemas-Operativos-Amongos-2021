@@ -2937,7 +2937,7 @@ int posicion_marco(){
 		return reemplazo_lru();
 	}else{
 		log_info(logger,"Algoritmo de reemplazo es clock\n");
-		return reemplazo_clock();
+		//return reemplazo_clock();
 	}
 
 
@@ -3157,31 +3157,13 @@ void swap_pagina_iniciar(){
 }
 
 
-void swap_pagina(void* contenidoAEscribir,int numDeBloque){
 
-	log_info(logger, "Swappeando %d", numDeBloque);
-	FILE* swapfile;
-	swapfile = fopen("swap.bin","a+");
-	printf("\n el numero de bloque de MS es %d \n",numDeBloque);
-	//char* aux = malloc(configuracion.tamanio_pag*sizeof(char));
-	//aux=completarBloque(contenidoAEscribir);
-	//void * leido = calloc(configuracion.tamanio_pag, 1);
-	//fwrite(leido, sizeof(configuracion.tamanio_pag), 1, swapfile);
-	log_info(logger, "Esto escribo en swap");
-	mem_hexdump(contenidoAEscribir, configuracion.tamanio_pag);
-	log_info(logger, "TEST SOPORTE PRODUCTO %d", numDeBloque*configuracion.tamanio_pag);
-	log_info(logger, "TEST SOPORTE CONFIG TAMANIO %d", configuracion.tamanio_pag);
-	fseek(swapfile,numDeBloque*configuracion.tamanio_pag,SEEK_SET);
-	fwrite(contenidoAEscribir,configuracion.tamanio_pag,1,swapfile);
-	//free(aux);
-	fclose(swapfile);
-}
 
 int swap_a_memoria(int numBloque){
 
 	log_info(logger, "Esto recupero de swap %d", numBloque);
 	int nuevo_marco=posicion_marco();
-	void * leido = malloc(configuracion.tamanio_pag);
+	void * leido = calloc(configuracion.tamanio_pag,1);
 	leido = recuperar_pag_swap(numBloque);
 	mem_hexdump((void*)leido, configuracion.tamanio_pag);
 	memcpy(configuracion.posicion_inicial+(nuevo_marco*configuracion.tamanio_pag),leido,configuracion.tamanio_pag*sizeof(char));
@@ -3194,7 +3176,7 @@ int swap_a_memoria(int numBloque){
 
 void* recuperar_pag_swap(int numDeBloque){
 	log_info(logger, "Recuperando este bloque de swap %d", numDeBloque);
-	void* leido=malloc(configuracion.tamanio_pag);
+	void * leido = calloc(configuracion.tamanio_pag,1);
 	memcpy(leido,swap_address + numDeBloque*configuracion.tamanio_pag ,configuracion.tamanio_pag);
 	log_info(logger, "Esto recupero en swap");
 	mem_hexdump(leido, configuracion.tamanio_pag);
@@ -3277,7 +3259,7 @@ int espacios_swap_libres(config_struct* config_servidor){
 }
 
 
-
+/*
 int reemplazo_clock(){
 	int nro_marco;
 	int flag =0;
@@ -3317,7 +3299,7 @@ int reemplazo_clock(){
 
 }
 
-
+*/
 /*
 int reemplazo_clock(){
 			log_info(logger,"Estoy en el clock\n");
@@ -3384,7 +3366,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
-		list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
+		//list_add_in_index(auxiliar->lista_marcos,indice_marco, (void*)marcos);
 	}
 	log_info(logger,"MARCO %d\n",marcos->id_marco);
 	fflush(stdout);
@@ -3760,7 +3742,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 }
 
 
-char* obtener_tarea2(int id_patota, tcbTripulante* tripulante){
+char* obtener_tarea(int id_patota, tcbTripulante* tripulante){
 
 	int flag =0;
 	char* una_tarea=calloc(100,1);
@@ -3800,6 +3782,7 @@ char* obtener_tarea2(int id_patota, tcbTripulante* tripulante){
 		contador_lru++;
 		otro_marco->ultimo_uso = contador_lru;
 		tarea=*(char*)leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
+		printf("\n tareas leidas %c \n",tarea);
 		offset+=sizeof(char);
 		if(tarea != '-' && tarea != '.'){
 			una_tarea=strncat(una_tarea,&tarea,1);
@@ -3807,7 +3790,7 @@ char* obtener_tarea2(int id_patota, tcbTripulante* tripulante){
 		}
 		if(tarea == '.'){
 			flag=1;
-			actualizar_tripulante(tripulante, id_patota,&configuracion);
+			//actualizar_tripulante(tripulante, id_patota,&configuracion);
 			break;
 		}
 		cuantas_letras++;
@@ -3828,7 +3811,7 @@ char* obtener_tarea2(int id_patota, tcbTripulante* tripulante){
 bool enviar_tarea_paginacion(int socket_cliente, int numero_patota, tcbTripulante* tripulante){
 	sem_wait(&MUTEX_PEDIR_TAREA); //REEVER ESTOS SEMAFOROS
 
-	char* una_tarea = obtener_tarea2(numero_patota, tripulante);
+	char* una_tarea = obtener_tarea(numero_patota, tripulante);
 	log_info(logger,"\n tareas : %s \n",una_tarea);
 	fflush(stdout);
 	if(una_tarea == NULL){ //no tiene mas tareas

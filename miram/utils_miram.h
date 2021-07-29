@@ -310,7 +310,7 @@ int swap_a_memoria(int numBloque);
 void* recuperar_pag_swap(int numDeBloque);
 void dump_memoria_paginacion();
 int reemplazo_lru();
-char* obtener_tarea2(int id_patota, tcbTripulante* tripulante);
+char* obtener_tarea(int id_patota, tcbTripulante* tripulante);
 tcbTripulante* obtener_tripulante(int patota_id,int tripulante_id, config_struct* config_servidor);
 bool enviar_tarea_paginacion(int socket_cliente, int numero_patota, tcbTripulante* tripulante);
 
