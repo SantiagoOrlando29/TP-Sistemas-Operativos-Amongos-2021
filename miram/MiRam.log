@@ -1,2233 +1,2795 @@
-[INFO] 11:43:04:117 MiRam/(3077:3077): pid 3077  
+[INFO] 12:08:07:655 MiRam/(4096:4096): pid 4096  
 
-[INFO] 11:43:04:117 MiRam/(3077:3077): 
+[INFO] 12:08:07:658 MiRam/(4096:4096): 
 Numero de marco es: 4 nro_marcos
 
-[INFO] 11:43:04:120 MiRam/(3077:3078): Servidor iniciando
-[INFO] 11:43:04:120 MiRam/(3077:3078): Servidor MiRam encendido
-[INFO] 11:43:04:120 MiRam/(3077:3078): socket_servidor 4
-[INFO] 11:43:09:728 MiRam/(3077:3078): socket_cliente 5
-[INFO] 11:43:09:728 MiRam/(3077:3078): Estableciendo conexión desde 46752
-[INFO] 11:43:09:728 MiRam/(3077:3078): Creando hilo
-[INFO] 11:43:09:730 MiRam/(3077:3083): Se conecto este socket a mi 5
+[INFO] 12:08:07:667 MiRam/(4096:4097): Servidor iniciando
+[INFO] 12:08:07:667 MiRam/(4096:4097): Servidor MiRam encendido
+[INFO] 12:08:07:667 MiRam/(4096:4097): socket_servidor 4
+[INFO] 12:08:14:237 MiRam/(4096:4097): socket_cliente 5
+[INFO] 12:08:14:237 MiRam/(4096:4097): Estableciendo conexión desde 42643
+[INFO] 12:08:14:237 MiRam/(4096:4097): Creando hilo
+[INFO] 12:08:14:239 MiRam/(4096:4102): Se conecto este socket a mi 5
 
-[INFO] 11:43:15:738 MiRam/(3077:3083): PID es 1
-[INFO] 11:43:15:738 MiRam/(3077:3083): Ingresa nueva patota, necesito 2 marcos
-[INFO] 11:43:15:739 MiRam/(3077:3083): Guardando info
-[INFO] 11:43:15:739 MiRam/(3077:3083): MARCO 0
+[INFO] 12:08:20:949 MiRam/(4096:4102): PID es 1
+[INFO] 12:08:20:949 MiRam/(4096:4102): Ingresa nueva patota, necesito 2 marcos
+[INFO] 12:08:20:950 MiRam/(4096:4102): Guardando info
+[INFO] 12:08:20:950 MiRam/(4096:4102): MARCO 0
 
-[INFO] 11:43:15:739 MiRam/(3077:3083): OFFSET 0
+[INFO] 12:08:20:950 MiRam/(4096:4102): OFFSET 0
 
-[INFO] 11:43:15:739 MiRam/(3077:3083): ID magico 1
+[INFO] 12:08:20:950 MiRam/(4096:4102): ID magico 1
 
-[INFO] 11:43:15:739 MiRam/(3077:3083): MARCO 0
+[INFO] 12:08:20:950 MiRam/(4096:4102): MARCO 0
 
-[INFO] 11:43:15:739 MiRam/(3077:3083): OFFSET 4
+[INFO] 12:08:20:950 MiRam/(4096:4102): OFFSET 4
 
-[INFO] 11:43:15:739 MiRam/(3077:3083): Puntero magico 29
+[INFO] 12:08:20:950 MiRam/(4096:4102): Puntero magico 29
 
-[INFO] 11:43:15:739 MiRam/(3077:3083): MARCO 0
+[INFO] 12:08:20:950 MiRam/(4096:4102): MARCO 0
 
-[INFO] 11:43:15:740 MiRam/(3077:3083): OFFSET 8
+[INFO] 12:08:20:950 MiRam/(4096:4102): OFFSET 8
 
-[INFO] 11:43:15:740 MiRam/(3077:3083): TID magico 1
+[INFO] 12:08:20:950 MiRam/(4096:4102): TID magico 1
 
-[INFO] 11:43:15:740 MiRam/(3077:3083): MARCO 0
+[INFO] 12:08:20:950 MiRam/(4096:4102): MARCO 0
 
-[INFO] 11:43:15:740 MiRam/(3077:3083): OFFSET 12
+[INFO] 12:08:20:950 MiRam/(4096:4102): OFFSET 12
 
-[INFO] 11:43:15:740 MiRam/(3077:3083): Estado magico N
+[INFO] 12:08:20:950 MiRam/(4096:4102): Estado magico N
 
-[INFO] 11:43:15:740 MiRam/(3077:3083): Pos x magico 1
+[INFO] 12:08:20:950 MiRam/(4096:4102): Pos x magico 1
 
-[INFO] 11:43:15:740 MiRam/(3077:3083): Pos y magico 1
+[INFO] 12:08:20:950 MiRam/(4096:4102): Pos y magico 1
 
-[INFO] 11:43:15:740 MiRam/(3077:3083): Prox instruccion 29
+[INFO] 12:08:20:950 MiRam/(4096:4102): Prox instruccion 29
 
-[INFO] 11:43:15:740 MiRam/(3077:3083): Puntero magico  1
+[INFO] 12:08:20:950 MiRam/(4096:4102): Puntero magico  1
 
-[INFO] 11:43:15:740 MiRam/(3077:3083): MP
-[INFO] 11:43:15:741 MiRam/(3077:3083): Marco: 0    Estado:Ocupado    Proceso: 1    Pagina: 0
+[INFO] 12:08:20:951 MiRam/(4096:4102): MP
+[INFO] 12:08:20:951 MiRam/(4096:4102): Marco: 0    Estado:Ocupado    Proceso: 1    Pagina: 0
 
-[INFO] 11:43:15:741 MiRam/(3077:3083): Marco: 1    Estado:Ocupado    Proceso: 1    Pagina: 1
+[INFO] 12:08:20:951 MiRam/(4096:4102): Marco: 1    Estado:Ocupado    Proceso: 1    Pagina: 1
 
-[INFO] 11:43:15:741 MiRam/(3077:3083): Marco: 2    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:951 MiRam/(4096:4102): Marco: 2    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:741 MiRam/(3077:3083): Marco: 3    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:952 MiRam/(4096:4102): Marco: 3    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:741 MiRam/(3077:3083): MS
-[INFO] 11:43:15:741 MiRam/(3077:3083): Marco: 0    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:952 MiRam/(4096:4102): MS
+[INFO] 12:08:20:952 MiRam/(4096:4102): Marco: 0    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:741 MiRam/(3077:3083): Marco: 1    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:952 MiRam/(4096:4102): Marco: 1    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:741 MiRam/(3077:3083): Marco: 2    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:952 MiRam/(4096:4102): Marco: 2    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:742 MiRam/(3077:3083): Marco: 3    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:952 MiRam/(4096:4102): Marco: 3    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:742 MiRam/(3077:3083): Marco: 4    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:952 MiRam/(4096:4102): Marco: 4    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:742 MiRam/(3077:3083): Marco: 5    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:952 MiRam/(4096:4102): Marco: 5    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:742 MiRam/(3077:3083): Marco: 6    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:952 MiRam/(4096:4102): Marco: 6    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:742 MiRam/(3077:3083): Marco: 7    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:952 MiRam/(4096:4102): Marco: 7    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:742 MiRam/(3077:3083): Marco: 8    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:952 MiRam/(4096:4102): Marco: 8    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:742 MiRam/(3077:3083): Marco: 9    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:952 MiRam/(4096:4102): Marco: 9    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:742 MiRam/(3077:3083): Impresion de 4 marcos
-[INFO] 11:43:15:742 MiRam/(3077:3083): PID es 2
-[INFO] 11:43:15:742 MiRam/(3077:3083): Ingresa nueva patota, necesito 2 marcos
-[INFO] 11:43:15:743 MiRam/(3077:3083): Guardando info
-[INFO] 11:43:15:743 MiRam/(3077:3083): MARCO 2
+[INFO] 12:08:20:952 MiRam/(4096:4102): Impresion de 4 marcos
+[INFO] 12:08:20:952 MiRam/(4096:4102): PID es 2
+[INFO] 12:08:20:952 MiRam/(4096:4102): Ingresa nueva patota, necesito 2 marcos
+[INFO] 12:08:20:954 MiRam/(4096:4102): Guardando info
+[INFO] 12:08:20:954 MiRam/(4096:4102): MARCO 2
 
-[INFO] 11:43:15:743 MiRam/(3077:3083): OFFSET 0
+[INFO] 12:08:20:954 MiRam/(4096:4102): OFFSET 0
 
-[INFO] 11:43:15:743 MiRam/(3077:3083): ID magico 2
+[INFO] 12:08:20:954 MiRam/(4096:4102): ID magico 2
 
-[INFO] 11:43:15:743 MiRam/(3077:3083): MARCO 2
+[INFO] 12:08:20:954 MiRam/(4096:4102): MARCO 2
 
-[INFO] 11:43:15:743 MiRam/(3077:3083): OFFSET 4
+[INFO] 12:08:20:955 MiRam/(4096:4102): OFFSET 4
 
-[INFO] 11:43:15:744 MiRam/(3077:3083): Puntero magico 29
+[INFO] 12:08:20:955 MiRam/(4096:4102): Puntero magico 29
 
-[INFO] 11:43:15:744 MiRam/(3077:3083): MARCO 2
+[INFO] 12:08:20:955 MiRam/(4096:4102): MARCO 2
 
-[INFO] 11:43:15:744 MiRam/(3077:3083): OFFSET 8
+[INFO] 12:08:20:955 MiRam/(4096:4102): OFFSET 8
 
-[INFO] 11:43:15:744 MiRam/(3077:3083): TID magico 2
+[INFO] 12:08:20:955 MiRam/(4096:4102): TID magico 2
 
-[INFO] 11:43:15:744 MiRam/(3077:3083): MARCO 2
+[INFO] 12:08:20:955 MiRam/(4096:4102): MARCO 2
 
-[INFO] 11:43:15:744 MiRam/(3077:3083): OFFSET 12
+[INFO] 12:08:20:955 MiRam/(4096:4102): OFFSET 12
 
-[INFO] 11:43:15:744 MiRam/(3077:3083): Estado magico N
+[INFO] 12:08:20:956 MiRam/(4096:4102): Estado magico N
 
-[INFO] 11:43:15:744 MiRam/(3077:3083): Pos x magico 3
+[INFO] 12:08:20:956 MiRam/(4096:4102): Pos x magico 1
 
-[INFO] 11:43:15:744 MiRam/(3077:3083): Pos y magico 3
+[INFO] 12:08:20:956 MiRam/(4096:4102): Pos y magico 1
 
-[INFO] 11:43:15:744 MiRam/(3077:3083): Prox instruccion 29
+[INFO] 12:08:20:956 MiRam/(4096:4102): Prox instruccion 29
 
-[INFO] 11:43:15:744 MiRam/(3077:3083): Puntero magico  1
+[INFO] 12:08:20:956 MiRam/(4096:4102): Puntero magico  1
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): MP
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 0    Estado:Ocupado    Proceso: 1    Pagina: 0
+[INFO] 12:08:20:957 MiRam/(4096:4102): MP
+[INFO] 12:08:20:958 MiRam/(4096:4102): Marco: 0    Estado:Ocupado    Proceso: 1    Pagina: 0
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 1    Estado:Ocupado    Proceso: 1    Pagina: 1
+[INFO] 12:08:20:958 MiRam/(4096:4102): Marco: 1    Estado:Ocupado    Proceso: 1    Pagina: 1
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 2    Estado:Ocupado    Proceso: 2    Pagina: 0
+[INFO] 12:08:20:958 MiRam/(4096:4102): Marco: 2    Estado:Ocupado    Proceso: 2    Pagina: 0
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 3    Estado:Ocupado    Proceso: 2    Pagina: 1
+[INFO] 12:08:20:958 MiRam/(4096:4102): Marco: 3    Estado:Ocupado    Proceso: 2    Pagina: 1
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): MS
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 0    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:958 MiRam/(4096:4102): MS
+[INFO] 12:08:20:958 MiRam/(4096:4102): Marco: 0    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 1    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:958 MiRam/(4096:4102): Marco: 1    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 2    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:958 MiRam/(4096:4102): Marco: 2    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 3    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:958 MiRam/(4096:4102): Marco: 3    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 4    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:958 MiRam/(4096:4102): Marco: 4    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 5    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:958 MiRam/(4096:4102): Marco: 5    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 6    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:958 MiRam/(4096:4102): Marco: 6    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 7    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:958 MiRam/(4096:4102): Marco: 7    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 8    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:959 MiRam/(4096:4102): Marco: 8    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Marco: 9    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:20:959 MiRam/(4096:4102): Marco: 9    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:15:745 MiRam/(3077:3083): Impresion de 4 marcos
-[INFO] 11:43:16:852 MiRam/(3077:3083): PID es 3
-[INFO] 11:43:16:852 MiRam/(3077:3083): Ingresa nueva patota, necesito 4 marcos
-[INFO] 11:43:16:853 MiRam/(3077:3083): Guardando info
-[INFO] 11:43:16:853 MiRam/(3077:3083): Algoritmo de reemplazo es LRU
+[INFO] 12:08:20:959 MiRam/(4096:4102): Impresion de 4 marcos
+[INFO] 12:08:21:526 MiRam/(4096:4102): PID es 3
+[INFO] 12:08:21:526 MiRam/(4096:4102): Ingresa nueva patota, necesito 4 marcos
+[INFO] 12:08:21:527 MiRam/(4096:4102): Guardando info
+[INFO] 12:08:21:527 MiRam/(4096:4102): Algoritmo de reemplazo es LRU
 
-[INFO] 11:43:16:853 MiRam/(3077:3083): El marco elegido de MP para reemplazar es 0
-[INFO] 11:43:16:854 MiRam/(3077:3083): EL NUMERO DE BLOQUE ES 0
-[INFO] 11:43:18:854 MiRam/(3077:3083): Algoritmo de reemplazo es LRU
+[INFO] 12:08:21:527 MiRam/(4096:4102): El marco elegido de MP para reemplazar es 0
+[INFO] 12:08:21:528 MiRam/(4096:4102): EL NUMERO DE BLOQUE ES 0
+[INFO] 12:08:23:528 MiRam/(4096:4102): Algoritmo de reemplazo es LRU
 
-[INFO] 11:43:18:855 MiRam/(3077:3083): El marco elegido de MP para reemplazar es 1
-[INFO] 11:43:18:855 MiRam/(3077:3083): EL NUMERO DE BLOQUE ES 1
-[INFO] 11:43:20:856 MiRam/(3077:3083): Algoritmo de reemplazo es LRU
+[INFO] 12:08:23:528 MiRam/(4096:4102): El marco elegido de MP para reemplazar es 1
+[INFO] 12:08:23:529 MiRam/(4096:4102): EL NUMERO DE BLOQUE ES 1
+[INFO] 12:08:25:529 MiRam/(4096:4102): Algoritmo de reemplazo es LRU
 
-[INFO] 11:43:20:856 MiRam/(3077:3083): El marco elegido de MP para reemplazar es 2
-[INFO] 11:43:20:856 MiRam/(3077:3083): EL NUMERO DE BLOQUE ES 2
-[INFO] 11:43:22:857 MiRam/(3077:3083): Algoritmo de reemplazo es LRU
+[INFO] 12:08:25:529 MiRam/(4096:4102): El marco elegido de MP para reemplazar es 2
+[INFO] 12:08:25:529 MiRam/(4096:4102): EL NUMERO DE BLOQUE ES 2
+[INFO] 12:08:27:529 MiRam/(4096:4102): Algoritmo de reemplazo es LRU
 
-[INFO] 11:43:22:858 MiRam/(3077:3083): El marco elegido de MP para reemplazar es 3
-[INFO] 11:43:22:858 MiRam/(3077:3083): EL NUMERO DE BLOQUE ES 3
-[INFO] 11:43:24:858 MiRam/(3077:3083): MARCO 0
+[INFO] 12:08:27:529 MiRam/(4096:4102): El marco elegido de MP para reemplazar es 3
+[INFO] 12:08:27:530 MiRam/(4096:4102): EL NUMERO DE BLOQUE ES 3
+[INFO] 12:08:29:531 MiRam/(4096:4102): MARCO 0
 
-[INFO] 11:43:24:858 MiRam/(3077:3083): OFFSET 0
+[INFO] 12:08:29:531 MiRam/(4096:4102): OFFSET 0
 
-[INFO] 11:43:24:858 MiRam/(3077:3083): ID magico 3
+[INFO] 12:08:29:531 MiRam/(4096:4102): ID magico 3
 
-[INFO] 11:43:24:858 MiRam/(3077:3083): MARCO 0
+[INFO] 12:08:29:531 MiRam/(4096:4102): MARCO 0
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): OFFSET 4
+[INFO] 12:08:29:531 MiRam/(4096:4102): OFFSET 4
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): Puntero magico 29
+[INFO] 12:08:29:531 MiRam/(4096:4102): Puntero magico 29
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): MARCO 0
+[INFO] 12:08:29:531 MiRam/(4096:4102): MARCO 0
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): OFFSET 8
+[INFO] 12:08:29:531 MiRam/(4096:4102): OFFSET 8
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): TID magico 3
+[INFO] 12:08:29:531 MiRam/(4096:4102): TID magico 3
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): MARCO 0
+[INFO] 12:08:29:531 MiRam/(4096:4102): MARCO 0
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): OFFSET 12
+[INFO] 12:08:29:531 MiRam/(4096:4102): OFFSET 12
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): Estado magico N
+[INFO] 12:08:29:531 MiRam/(4096:4102): Estado magico N
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): Pos x magico 5
+[INFO] 12:08:29:531 MiRam/(4096:4102): Pos x magico 1
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): Pos y magico 5
+[INFO] 12:08:29:531 MiRam/(4096:4102): Pos y magico 1
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): Prox instruccion 29
+[INFO] 12:08:29:531 MiRam/(4096:4102): Prox instruccion 29
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): Puntero magico  1
+[INFO] 12:08:29:531 MiRam/(4096:4102): Puntero magico  1
 
-[INFO] 11:43:24:859 MiRam/(3077:3083): MP
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 0    Estado:Ocupado    Proceso: 3    Pagina: 0
+[INFO] 12:08:29:531 MiRam/(4096:4102): MP
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 0    Estado:Ocupado    Proceso: 3    Pagina: 0
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 1    Estado:Ocupado    Proceso: 3    Pagina: 1
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 1    Estado:Ocupado    Proceso: 3    Pagina: 1
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 2    Estado:Ocupado    Proceso: 3    Pagina: 2
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 2    Estado:Ocupado    Proceso: 3    Pagina: 2
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 3    Estado:Ocupado    Proceso: 3    Pagina: 3
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 3    Estado:Ocupado    Proceso: 3    Pagina: 3
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): MS
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 0    Estado:Ocupado    Proceso: 1    Pagina: 0
+[INFO] 12:08:29:532 MiRam/(4096:4102): MS
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 0    Estado:Ocupado    Proceso: 1    Pagina: 0
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 1    Estado:Ocupado    Proceso: 1    Pagina: 1
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 1    Estado:Ocupado    Proceso: 1    Pagina: 1
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 2    Estado:Ocupado    Proceso: 2    Pagina: 0
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 2    Estado:Ocupado    Proceso: 2    Pagina: 0
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 3    Estado:Ocupado    Proceso: 2    Pagina: 1
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 3    Estado:Ocupado    Proceso: 2    Pagina: 1
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 4    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 4    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 5    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 5    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 6    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 6    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 7    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 7    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 8    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 8    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:24:860 MiRam/(3077:3083): Marco: 9    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 12:08:29:532 MiRam/(4096:4102): Marco: 9    Estado:Libre      Proceso: -    Pagina: -
 
-[INFO] 11:43:24:861 MiRam/(3077:3083): Impresion de 4 marcos
-[INFO] 11:43:31:167 MiRam/(3077:3078): socket_cliente 7
-[INFO] 11:43:31:168 MiRam/(3077:3078): Estableciendo conexión desde 48288
-[INFO] 11:43:31:168 MiRam/(3077:3078): Creando hilo
-[INFO] 11:43:31:169 MiRam/(3077:3108): Se conecto este socket a mi 7
+[INFO] 12:08:29:532 MiRam/(4096:4102): Impresion de 4 marcos
+[INFO] 12:08:34:457 MiRam/(4096:4097): socket_cliente 6
+[INFO] 12:08:34:457 MiRam/(4096:4097): Estableciendo conexión desde 44179
+[INFO] 12:08:34:457 MiRam/(4096:4097): Creando hilo
+[INFO] 12:08:34:459 MiRam/(4096:4118): Se conecto este socket a mi 6
 
-[INFO] 11:43:31:170 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:43:31:170 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:43:31:170 MiRam/(3077:3108): El indice 0
-[INFO] 11:43:31:170 MiRam/(3077:3108): 
+[INFO] 12:08:34:459 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:08:34:459 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:08:34:459 MiRam/(4096:4118): El indice 0
+[INFO] 12:08:34:459 MiRam/(4096:4118): 
 El offseeeeeet tripu 8
-[INFO] 11:43:31:171 MiRam/(3077:3108): ENTRE EN MS
-[INFO] 11:43:31:171 MiRam/(3077:3108): Esto recupero de swap 0
-[INFO] 11:43:31:171 MiRam/(3077:3108): Algoritmo de reemplazo es LRU
+[INFO] 12:08:34:459 MiRam/(4096:4118): ENTRE EN MS
+[INFO] 12:08:34:459 MiRam/(4096:4118): Esto recupero de swap 0
+[INFO] 12:08:34:460 MiRam/(4096:4118): Algoritmo de reemplazo es LRU
 
-[INFO] 11:43:31:171 MiRam/(3077:3108): El marco elegido de MP para reemplazar es 1
-[INFO] 11:43:31:172 MiRam/(3077:3108): EL NUMERO DE BLOQUE ES 4
-[INFO] 11:43:33:172 MiRam/(3077:3108): Recuperando este bloque de swap 0
-[INFO] 11:43:33:173 MiRam/(3077:3108): Esto recupero en swap
-[INFO] 11:43:33:173 MiRam/(3077:3108): MARCO 1
-[INFO] 11:43:33:173 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:43:33:173 MiRam/(3077:3108): TID magico 1
-[INFO] 11:43:33:173 MiRam/(3077:3108): MARCO 1
-[INFO] 11:43:33:174 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:43:33:174 MiRam/(3077:3108): Estado magico N
+[INFO] 12:08:34:460 MiRam/(4096:4118): El marco elegido de MP para reemplazar es 1
+[INFO] 12:08:34:460 MiRam/(4096:4118): EL NUMERO DE BLOQUE ES 4
+[INFO] 12:08:36:461 MiRam/(4096:4118): Recuperando este bloque de swap 0
+[INFO] 12:08:36:461 MiRam/(4096:4118): Esto recupero en swap
+[INFO] 12:08:36:461 MiRam/(4096:4118): MARCO 1
+[INFO] 12:08:36:461 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:08:36:461 MiRam/(4096:4118): TID magico 1
+[INFO] 12:08:36:461 MiRam/(4096:4118): MARCO 1
+[INFO] 12:08:36:461 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:08:36:461 MiRam/(4096:4118): Estado magico N
 
-[INFO] 11:43:33:174 MiRam/(3077:3108): Pos x magico 1
+[INFO] 12:08:36:461 MiRam/(4096:4118): Pos x magico 1
 
-[INFO] 11:43:33:174 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:43:33:174 MiRam/(3077:3108): Prox instruccion 29
-[INFO] 11:43:33:174 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:43:33:174 MiRam/(3077:3108): El tripulante que recibi es el 1
+[INFO] 12:08:36:461 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:08:36:461 MiRam/(4096:4118): Prox instruccion 29
+[INFO] 12:08:36:462 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:08:36:462 MiRam/(4096:4118): El tripulante que recibi es el 1
  y 1
-[INFO] 11:43:33:174 MiRam/(3077:3108): El tripulante que recibi eSSSSSs el 1
+[INFO] 12:08:36:462 MiRam/(4096:4118): El tripulante que recibi eSSSSSs el 1
  y 29
-[INFO] 11:43:33:174 MiRam/(3077:3108): 
+[INFO] 12:08:36:462 MiRam/(4096:4118): 
 El punterin 29
 
-[INFO] 11:43:33:175 MiRam/(3077:3108): Esto recupero de swap 1
-[INFO] 11:43:33:175 MiRam/(3077:3108): Algoritmo de reemplazo es LRU
+[INFO] 12:08:36:462 MiRam/(4096:4118): Esto recupero de swap 1
+[INFO] 12:08:36:462 MiRam/(4096:4118): Algoritmo de reemplazo es LRU
 
-[INFO] 11:43:33:175 MiRam/(3077:3108): El marco elegido de MP para reemplazar es 2
-[INFO] 11:43:33:175 MiRam/(3077:3108): EL NUMERO DE BLOQUE ES 5
-[INFO] 11:43:35:175 MiRam/(3077:3108): Recuperando este bloque de swap 1
-[INFO] 11:43:35:175 MiRam/(3077:3108): Esto recupero en swap
-[INFO] 11:43:35:176 MiRam/(3077:3108): El indice 0
+[INFO] 12:08:36:462 MiRam/(4096:4118): El marco elegido de MP para reemplazar es 2
+[INFO] 12:08:36:462 MiRam/(4096:4118): EL NUMERO DE BLOQUE ES 5
+[INFO] 12:08:38:462 MiRam/(4096:4118): Recuperando este bloque de swap 1
+[INFO] 12:08:38:463 MiRam/(4096:4118): Esto recupero en swap
+[INFO] 12:08:38:464 MiRam/(4096:4118): El indice 0
 
-[INFO] 11:43:35:176 MiRam/(3077:3108): 
+[INFO] 12:08:38:464 MiRam/(4096:4118): 
 El offset 8
 
-[INFO] 11:43:35:176 MiRam/(3077:3108): MARCO 1
+[INFO] 12:08:38:464 MiRam/(4096:4118): MARCO 1
 
-[INFO] 11:43:35:176 MiRam/(3077:3108): OFFSET 8
+[INFO] 12:08:38:464 MiRam/(4096:4118): OFFSET 8
 
-[INFO] 11:43:35:176 MiRam/(3077:3108): 
+[INFO] 12:08:38:464 MiRam/(4096:4118): 
  tareas : A00;1;1;5 
 
-[INFO] 11:43:35:176 MiRam/(3077:3108): Impresion de 4 marcos
-[INFO] 11:43:35:176 MiRam/(3077:3078): socket_cliente 8
-[INFO] 11:43:35:176 MiRam/(3077:3078): Estableciendo conexión desde 49312
-[INFO] 11:43:35:176 MiRam/(3077:3078): Creando hilo
-[INFO] 11:43:35:177 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:43:35:177 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:43:35:177 MiRam/(3077:3108): El indice 0
-[INFO] 11:43:35:177 MiRam/(3077:3108): 
+[INFO] 12:08:38:464 MiRam/(4096:4118): Impresion de 4 marcos
+[INFO] 12:08:38:465 MiRam/(4096:4097): socket_cliente 7
+[INFO] 12:08:38:466 MiRam/(4096:4097): Estableciendo conexión desde 45203
+[INFO] 12:08:38:466 MiRam/(4096:4097): Creando hilo
+[INFO] 12:08:38:466 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:08:38:466 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:08:38:466 MiRam/(4096:4118): El indice 0
+[INFO] 12:08:38:466 MiRam/(4096:4118): 
 El offseeeeeet tripu 8
-[INFO] 11:43:35:177 MiRam/(3077:3108): MARCO 1
-[INFO] 11:43:35:177 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:43:35:177 MiRam/(3077:3108): TID magico 1
-[INFO] 11:43:35:177 MiRam/(3077:3108): MARCO 1
-[INFO] 11:43:35:177 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:43:35:177 MiRam/(3077:3108): Estado magico N
+[INFO] 12:08:38:466 MiRam/(4096:4118): MARCO 1
+[INFO] 12:08:38:466 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:08:38:466 MiRam/(4096:4118): TID magico 1
+[INFO] 12:08:38:466 MiRam/(4096:4118): MARCO 1
+[INFO] 12:08:38:466 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:08:38:466 MiRam/(4096:4118): Estado magico N
 
-[INFO] 11:43:35:177 MiRam/(3077:3108): Pos x magico 1
+[INFO] 12:08:38:466 MiRam/(4096:4118): Pos x magico 1
 
-[INFO] 11:43:35:177 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:43:35:177 MiRam/(3077:3108): Prox instruccion 39
-[INFO] 11:43:35:177 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:43:35:177 MiRam/(3077:3108): El indice 0
+[INFO] 12:08:38:467 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:08:38:467 MiRam/(4096:4118): Prox instruccion 39
+[INFO] 12:08:38:467 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:08:38:467 MiRam/(4096:4118): El indice 0
 
-[INFO] 11:43:35:177 MiRam/(3077:3108): 
+[INFO] 12:08:38:467 MiRam/(4096:4118): 
 El offset 8
 
-[INFO] 11:43:35:177 MiRam/(3077:3108): MARCO 1
+[INFO] 12:08:38:467 MiRam/(4096:4118): MARCO 1
 
-[INFO] 11:43:35:177 MiRam/(3077:3108): OFFSET 8
+[INFO] 12:08:38:467 MiRam/(4096:4118): OFFSET 8
 
-[INFO] 11:43:35:178 MiRam/(3077:3113): Se conecto este socket a mi 8
+[INFO] 12:08:38:468 MiRam/(4096:4121): Se conecto este socket a mi 7
 
-[INFO] 11:43:35:178 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:43:35:178 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:43:35:178 MiRam/(3077:3113): El indice 0
-[INFO] 11:43:35:178 MiRam/(3077:3113): 
+[INFO] 12:08:38:469 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:08:38:469 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:08:38:470 MiRam/(4096:4121): El indice 0
+[INFO] 12:08:38:470 MiRam/(4096:4121): 
 El offseeeeeet tripu 8
-[INFO] 11:43:35:178 MiRam/(3077:3113): ENTRE EN MS
-[INFO] 11:43:35:178 MiRam/(3077:3113): Esto recupero de swap 2
-[INFO] 11:43:35:178 MiRam/(3077:3113): Algoritmo de reemplazo es LRU
+[INFO] 12:08:38:471 MiRam/(4096:4121): ENTRE EN MS
+[INFO] 12:08:38:471 MiRam/(4096:4121): Esto recupero de swap 2
+[INFO] 12:08:38:471 MiRam/(4096:4121): Algoritmo de reemplazo es LRU
 
-[INFO] 11:43:35:179 MiRam/(3077:3113): El marco elegido de MP para reemplazar es 0
-[INFO] 11:43:35:179 MiRam/(3077:3113): EL NUMERO DE BLOQUE ES 6
-[INFO] 11:43:37:180 MiRam/(3077:3113): Recuperando este bloque de swap 2
-[INFO] 11:43:37:180 MiRam/(3077:3113): Esto recupero en swap
-[INFO] 11:43:37:182 MiRam/(3077:3113): MARCO 0
-[INFO] 11:43:37:183 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:43:37:183 MiRam/(3077:3113): TID magico 2
-[INFO] 11:43:37:183 MiRam/(3077:3113): MARCO 0
-[INFO] 11:43:37:183 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:43:37:183 MiRam/(3077:3113): Estado magico N
+[INFO] 12:08:38:471 MiRam/(4096:4121): El marco elegido de MP para reemplazar es 0
+[INFO] 12:08:38:472 MiRam/(4096:4121): EL NUMERO DE BLOQUE ES 6
+[INFO] 12:08:40:472 MiRam/(4096:4121): Recuperando este bloque de swap 2
+[INFO] 12:08:40:472 MiRam/(4096:4121): Esto recupero en swap
+[INFO] 12:08:40:472 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:40:473 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:08:40:473 MiRam/(4096:4121): TID magico 2
+[INFO] 12:08:40:473 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:40:473 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:08:40:473 MiRam/(4096:4121): Estado magico N
 
-[INFO] 11:43:37:183 MiRam/(3077:3113): Pos x magico 3
+[INFO] 12:08:40:473 MiRam/(4096:4121): Pos x magico 1
 
-[INFO] 11:43:37:184 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:43:37:184 MiRam/(3077:3113): Prox instruccion 29
-[INFO] 11:43:37:184 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:43:37:184 MiRam/(3077:3113): El tripulante que recibi es el 2
+[INFO] 12:08:40:473 MiRam/(4096:4121): Pos y magico 1
+[INFO] 12:08:40:473 MiRam/(4096:4121): Prox instruccion 29
+[INFO] 12:08:40:473 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:08:40:473 MiRam/(4096:4121): El tripulante que recibi es el 2
  y 2
-[INFO] 11:43:37:184 MiRam/(3077:3113): El tripulante que recibi eSSSSSs el 2
+[INFO] 12:08:40:473 MiRam/(4096:4121): El tripulante que recibi eSSSSSs el 2
  y 29
-[INFO] 11:43:37:184 MiRam/(3077:3113): 
+[INFO] 12:08:40:473 MiRam/(4096:4121): 
 El punterin 29
 
-[INFO] 11:43:37:185 MiRam/(3077:3113): Esto recupero de swap 3
-[INFO] 11:43:37:185 MiRam/(3077:3113): Algoritmo de reemplazo es LRU
+[INFO] 12:08:40:473 MiRam/(4096:4121): Esto recupero de swap 3
+[INFO] 12:08:40:473 MiRam/(4096:4121): Algoritmo de reemplazo es LRU
 
-[INFO] 11:43:37:185 MiRam/(3077:3113): El marco elegido de MP para reemplazar es 3
-[INFO] 11:43:37:185 MiRam/(3077:3113): EL NUMERO DE BLOQUE ES 7
-[INFO] 11:43:39:186 MiRam/(3077:3113): Recuperando este bloque de swap 3
-[INFO] 11:43:39:186 MiRam/(3077:3113): Esto recupero en swap
-[INFO] 11:43:39:187 MiRam/(3077:3113): El indice 0
+[INFO] 12:08:40:474 MiRam/(4096:4121): El marco elegido de MP para reemplazar es 3
+[INFO] 12:08:40:474 MiRam/(4096:4121): EL NUMERO DE BLOQUE ES 7
+[INFO] 12:08:42:475 MiRam/(4096:4121): Recuperando este bloque de swap 3
+[INFO] 12:08:42:475 MiRam/(4096:4121): Esto recupero en swap
+[INFO] 12:08:42:475 MiRam/(4096:4121): El indice 0
 
-[INFO] 11:43:39:187 MiRam/(3077:3113): 
+[INFO] 12:08:42:475 MiRam/(4096:4121): 
 El offset 8
 
-[INFO] 11:43:39:188 MiRam/(3077:3113): MARCO 0
+[INFO] 12:08:42:476 MiRam/(4096:4121): MARCO 0
 
-[INFO] 11:43:39:188 MiRam/(3077:3113): OFFSET 8
+[INFO] 12:08:42:476 MiRam/(4096:4121): OFFSET 8
 
-[INFO] 11:43:39:188 MiRam/(3077:3113): 
+[INFO] 12:08:42:476 MiRam/(4096:4121): 
  tareas : B00;3;3;5 
 
-[INFO] 11:43:39:189 MiRam/(3077:3078): socket_cliente 9
-[INFO] 11:43:39:189 MiRam/(3077:3078): Estableciendo conexión desde 50336
-[INFO] 11:43:39:189 MiRam/(3077:3078): Creando hilo
-[INFO] 11:43:39:191 MiRam/(3077:3113): Impresion de 4 marcos
-[INFO] 11:43:39:193 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:43:39:194 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:43:39:194 MiRam/(3077:3113): El indice 0
-[INFO] 11:43:39:210 MiRam/(3077:3113): 
+[INFO] 12:08:42:476 MiRam/(4096:4121): Impresion de 4 marcos
+[INFO] 12:08:42:476 MiRam/(4096:4097): socket_cliente 8
+[INFO] 12:08:42:477 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:08:42:477 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:08:42:477 MiRam/(4096:4121): El indice 0
+[INFO] 12:08:42:477 MiRam/(4096:4097): Estableciendo conexión desde 46227
+[INFO] 12:08:42:478 MiRam/(4096:4097): Creando hilo
+[INFO] 12:08:42:478 MiRam/(4096:4121): 
 El offseeeeeet tripu 8
-[INFO] 11:43:39:210 MiRam/(3077:3113): MARCO 0
-[INFO] 11:43:39:210 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:43:39:210 MiRam/(3077:3113): TID magico 2
-[INFO] 11:43:39:210 MiRam/(3077:3113): MARCO 0
-[INFO] 11:43:39:210 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:43:39:210 MiRam/(3077:3113): Estado magico N
+[INFO] 12:08:42:478 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:42:478 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:08:42:478 MiRam/(4096:4121): TID magico 2
+[INFO] 12:08:42:478 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:42:478 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:08:42:478 MiRam/(4096:4121): Estado magico N
 
-[INFO] 11:43:39:210 MiRam/(3077:3113): Pos x magico 3
+[INFO] 12:08:42:478 MiRam/(4096:4121): Pos x magico 1
 
-[INFO] 11:43:39:210 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:43:39:210 MiRam/(3077:3113): Prox instruccion 39
-[INFO] 11:43:39:210 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:43:39:211 MiRam/(3077:3113): El indice 0
+[INFO] 12:08:42:478 MiRam/(4096:4121): Pos y magico 1
+[INFO] 12:08:42:478 MiRam/(4096:4121): Prox instruccion 39
+[INFO] 12:08:42:479 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:08:42:479 MiRam/(4096:4121): El indice 0
 
-[INFO] 11:43:39:211 MiRam/(3077:3113): 
+[INFO] 12:08:42:479 MiRam/(4096:4121): 
 El offset 8
 
-[INFO] 11:43:39:211 MiRam/(3077:3113): MARCO 0
+[INFO] 12:08:42:479 MiRam/(4096:4121): MARCO 0
 
-[INFO] 11:43:39:211 MiRam/(3077:3113): OFFSET 8
+[INFO] 12:08:42:479 MiRam/(4096:4121): OFFSET 8
 
-[INFO] 11:43:39:215 MiRam/(3077:3117): Se conecto este socket a mi 9
-
-[INFO] 11:43:39:216 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:43:39:216 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:43:39:216 MiRam/(3077:3117): El indice 0
-[INFO] 11:43:39:216 MiRam/(3077:3117): 
+[INFO] 12:08:42:479 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:08:42:479 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:08:42:479 MiRam/(4096:4121): El indice 0
+[INFO] 12:08:42:480 MiRam/(4096:4121): 
 El offseeeeeet tripu 8
-[INFO] 11:43:39:216 MiRam/(3077:3117): ENTRE EN MS
-[INFO] 11:43:39:217 MiRam/(3077:3117): Esto recupero de swap 6
-[INFO] 11:43:39:217 MiRam/(3077:3117): Algoritmo de reemplazo es LRU
+[INFO] 12:08:42:480 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:42:480 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:08:42:480 MiRam/(4096:4121): TID magico 2
+[INFO] 12:08:42:480 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:42:480 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:08:42:480 MiRam/(4096:4121): Estado magico E
 
-[INFO] 11:43:39:222 MiRam/(3077:3117): El marco elegido de MP para reemplazar es 2
-[INFO] 11:43:39:222 MiRam/(3077:3117): EL NUMERO DE BLOQUE ES 8
-[INFO] 11:43:41:223 MiRam/(3077:3117): Recuperando este bloque de swap 6
-[INFO] 11:43:41:223 MiRam/(3077:3117): Esto recupero en swap
-[INFO] 11:43:41:224 MiRam/(3077:3117): MARCO 2
-[INFO] 11:43:41:224 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:43:41:224 MiRam/(3077:3117): TID magico 3
-[INFO] 11:43:41:224 MiRam/(3077:3117): MARCO 2
-[INFO] 11:43:41:224 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:43:41:224 MiRam/(3077:3117): Estado magico N
+[INFO] 12:08:42:480 MiRam/(4096:4121): Pos x magico 1
 
-[INFO] 11:43:41:225 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:08:42:480 MiRam/(4096:4121): Pos y magico 1
+[INFO] 12:08:42:480 MiRam/(4096:4121): Prox instruccion 39
+[INFO] 12:08:42:481 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:08:42:481 MiRam/(4096:4121): El indice 0
 
-[INFO] 11:43:41:225 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:43:41:225 MiRam/(3077:3117): Prox instruccion 29
-[INFO] 11:43:41:225 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:43:41:225 MiRam/(3077:3117): El tripulante que recibi es el 3
+[INFO] 12:08:42:481 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:08:42:481 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:08:42:481 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:08:42:486 MiRam/(4096:4123): Se conecto este socket a mi 8
+
+[INFO] 12:08:42:486 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:08:42:486 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:08:42:486 MiRam/(4096:4123): El indice 0
+[INFO] 12:08:42:486 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:08:42:486 MiRam/(4096:4123): ENTRE EN MS
+[INFO] 12:08:42:486 MiRam/(4096:4123): Esto recupero de swap 6
+[INFO] 12:08:42:489 MiRam/(4096:4123): Algoritmo de reemplazo es LRU
+
+[INFO] 12:08:42:489 MiRam/(4096:4123): El marco elegido de MP para reemplazar es 2
+[INFO] 12:08:42:489 MiRam/(4096:4123): EL NUMERO DE BLOQUE ES 8
+[INFO] 12:08:44:489 MiRam/(4096:4123): Recuperando este bloque de swap 6
+[INFO] 12:08:44:489 MiRam/(4096:4123): Esto recupero en swap
+[INFO] 12:08:44:490 MiRam/(4096:4123): MARCO 2
+[INFO] 12:08:44:490 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:08:44:490 MiRam/(4096:4123): TID magico 3
+[INFO] 12:08:44:490 MiRam/(4096:4123): MARCO 2
+[INFO] 12:08:44:490 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:08:44:490 MiRam/(4096:4123): Estado magico N
+
+[INFO] 12:08:44:490 MiRam/(4096:4123): Pos x magico 1
+
+[INFO] 12:08:44:490 MiRam/(4096:4123): Pos y magico 1
+[INFO] 12:08:44:490 MiRam/(4096:4123): Prox instruccion 29
+[INFO] 12:08:44:490 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:08:44:490 MiRam/(4096:4123): El tripulante que recibi es el 3
  y 3
-[INFO] 11:43:41:225 MiRam/(3077:3117): El tripulante que recibi eSSSSSs el 3
+[INFO] 12:08:44:490 MiRam/(4096:4123): El tripulante que recibi eSSSSSs el 3
  y 29
-[INFO] 11:43:41:226 MiRam/(3077:3117): 
+[INFO] 12:08:44:490 MiRam/(4096:4123): 
 El punterin 29
 
-[INFO] 11:43:41:226 MiRam/(3077:3117): Esto recupero de swap 4
-[INFO] 11:43:41:227 MiRam/(3077:3117): Algoritmo de reemplazo es LRU
+[INFO] 12:08:44:490 MiRam/(4096:4123): Esto recupero de swap 4
+[INFO] 12:08:44:490 MiRam/(4096:4123): Algoritmo de reemplazo es LRU
 
-[INFO] 11:43:41:227 MiRam/(3077:3117): El marco elegido de MP para reemplazar es 1
-[INFO] 11:43:41:227 MiRam/(3077:3117): EL NUMERO DE BLOQUE ES 9
-[INFO] 11:43:43:227 MiRam/(3077:3117): Recuperando este bloque de swap 4
-[INFO] 11:43:43:228 MiRam/(3077:3117): Esto recupero en swap
-[INFO] 11:43:43:230 MiRam/(3077:3117): El indice 0
+[INFO] 12:08:44:491 MiRam/(4096:4123): El marco elegido de MP para reemplazar es 1
+[INFO] 12:08:44:491 MiRam/(4096:4123): EL NUMERO DE BLOQUE ES 9
+[INFO] 12:08:46:492 MiRam/(4096:4123): Recuperando este bloque de swap 4
+[INFO] 12:08:46:492 MiRam/(4096:4123): Esto recupero en swap
+[INFO] 12:08:46:492 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:43:43:230 MiRam/(3077:3117): 
+[INFO] 12:08:46:492 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:43:43:230 MiRam/(3077:3117): MARCO 2
+[INFO] 12:08:46:492 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:43:43:230 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:08:46:492 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:43:43:230 MiRam/(3077:3117): 
+[INFO] 12:08:46:493 MiRam/(4096:4123): 
  tareas : C00;5;5;5 
 
-[INFO] 11:43:43:231 MiRam/(3077:3117): Impresion de 4 marcos
-[INFO] 11:43:43:232 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:43:43:232 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:43:43:232 MiRam/(3077:3108): El indice 0
-[INFO] 11:43:43:233 MiRam/(3077:3108): 
+[INFO] 12:08:46:493 MiRam/(4096:4123): Impresion de 4 marcos
+[INFO] 12:08:46:493 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:08:46:493 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:08:46:493 MiRam/(4096:4118): El indice 0
+[INFO] 12:08:46:493 MiRam/(4096:4118): 
 El offseeeeeet tripu 8
-[INFO] 11:43:43:233 MiRam/(3077:3108): ENTRE EN MS
-[INFO] 11:43:43:233 MiRam/(3077:3108): Esto recupero de swap 9
-[INFO] 11:43:43:233 MiRam/(3077:3108): Algoritmo de reemplazo es LRU
+[INFO] 12:08:46:493 MiRam/(4096:4118): ENTRE EN MS
+[INFO] 12:08:46:493 MiRam/(4096:4118): Esto recupero de swap 9
+[INFO] 12:08:46:493 MiRam/(4096:4118): Algoritmo de reemplazo es LRU
 
-[INFO] 11:43:43:233 MiRam/(3077:3108): El marco elegido de MP para reemplazar es 3
-[INFO] 11:43:43:233 MiRam/(3077:3108): EL NUMERO DE BLOQUE ES 10
-[INFO] 11:43:45:234 MiRam/(3077:3108): Recuperando este bloque de swap 9
-[INFO] 11:43:45:234 MiRam/(3077:3108): Esto recupero en swap
-[INFO] 11:43:45:235 MiRam/(3077:3108): MARCO 3
-[INFO] 11:43:45:235 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:43:45:235 MiRam/(3077:3108): TID magico 1
-[INFO] 11:43:45:235 MiRam/(3077:3108): MARCO 3
-[INFO] 11:43:45:235 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:43:45:235 MiRam/(3077:3108): Estado magico E
+[INFO] 12:08:46:493 MiRam/(4096:4118): El marco elegido de MP para reemplazar es 3
+[INFO] 12:08:46:494 MiRam/(4096:4118): EL NUMERO DE BLOQUE ES 10
+[INFO] 12:08:48:494 MiRam/(4096:4118): Recuperando este bloque de swap 9
+[INFO] 12:08:48:494 MiRam/(4096:4118): Esto recupero en swap
+[INFO] 12:08:48:494 MiRam/(4096:4118): MARCO 3
+[INFO] 12:08:48:495 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:08:48:495 MiRam/(4096:4118): TID magico 1
+[INFO] 12:08:48:495 MiRam/(4096:4118): MARCO 3
+[INFO] 12:08:48:495 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:08:48:495 MiRam/(4096:4118): Estado magico E
 
-[INFO] 11:43:45:235 MiRam/(3077:3108): Pos x magico 1
+[INFO] 12:08:48:495 MiRam/(4096:4118): Pos x magico 1
 
-[INFO] 11:43:45:236 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:43:45:236 MiRam/(3077:3108): Prox instruccion 39
-[INFO] 11:43:45:236 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:43:45:236 MiRam/(3077:3108): El indice 0
+[INFO] 12:08:48:495 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:08:48:495 MiRam/(4096:4118): Prox instruccion 39
+[INFO] 12:08:48:495 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:08:48:495 MiRam/(4096:4118): El indice 0
 
-[INFO] 11:43:45:236 MiRam/(3077:3108): 
+[INFO] 12:08:48:495 MiRam/(4096:4118): 
 El offset 8
 
-[INFO] 11:43:45:236 MiRam/(3077:3108): MARCO 3
+[INFO] 12:08:48:495 MiRam/(4096:4118): MARCO 3
 
-[INFO] 11:43:45:236 MiRam/(3077:3108): OFFSET 8
+[INFO] 12:08:48:495 MiRam/(4096:4118): OFFSET 8
 
-[INFO] 11:43:45:237 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:43:45:237 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:43:45:237 MiRam/(3077:3117): El indice 0
-[INFO] 11:43:45:237 MiRam/(3077:3117): 
+[INFO] 12:08:48:496 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:08:48:496 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:08:48:496 MiRam/(4096:4121): El indice 0
+[INFO] 12:08:48:496 MiRam/(4096:4121): 
 El offseeeeeet tripu 8
-[INFO] 11:43:45:237 MiRam/(3077:3117): MARCO 2
-[INFO] 11:43:45:237 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:43:45:237 MiRam/(3077:3117): TID magico 3
-[INFO] 11:43:45:237 MiRam/(3077:3117): MARCO 2
-[INFO] 11:43:45:237 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:43:45:237 MiRam/(3077:3117): Estado magico N
+[INFO] 12:08:48:496 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:48:496 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:08:48:496 MiRam/(4096:4121): TID magico 2
+[INFO] 12:08:48:496 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:48:496 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:08:48:496 MiRam/(4096:4121): Estado magico E
 
-[INFO] 11:43:45:237 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:08:48:496 MiRam/(4096:4121): Pos x magico 2
 
-[INFO] 11:43:45:237 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:43:45:237 MiRam/(3077:3117): Prox instruccion 39
-[INFO] 11:43:45:238 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:43:45:239 MiRam/(3077:3117): El indice 0
+[INFO] 12:08:48:496 MiRam/(4096:4121): Pos y magico 1
+[INFO] 12:08:48:496 MiRam/(4096:4121): Prox instruccion 39
+[INFO] 12:08:48:496 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:08:48:496 MiRam/(4096:4121): El indice 0
 
-[INFO] 11:43:45:239 MiRam/(3077:3117): 
+[INFO] 12:08:48:496 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:08:48:496 MiRam/(4096:4121): 
 El offset 8
 
-[INFO] 11:43:45:239 MiRam/(3077:3117): MARCO 2
+[INFO] 12:08:48:497 MiRam/(4096:4121): MARCO 0
 
-[INFO] 11:43:45:239 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:08:48:497 MiRam/(4096:4121): OFFSET 8
 
-[INFO] 11:43:45:339 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:43:45:339 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:43:45:339 MiRam/(3077:3113): El indice 0
-[INFO] 11:43:45:339 MiRam/(3077:3113): 
+[INFO] 12:08:48:497 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:08:48:497 MiRam/(4096:4123): El indice 0
+[INFO] 12:08:48:497 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:43:45:339 MiRam/(3077:3113): MARCO 0
-[INFO] 11:43:45:339 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:43:45:339 MiRam/(3077:3113): TID magico 2
-[INFO] 11:43:45:339 MiRam/(3077:3113): MARCO 0
-[INFO] 11:43:45:339 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:43:45:339 MiRam/(3077:3113): Estado magico E
+[INFO] 12:08:48:497 MiRam/(4096:4123): MARCO 2
+[INFO] 12:08:48:497 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:08:48:498 MiRam/(4096:4123): TID magico 3
+[INFO] 12:08:48:498 MiRam/(4096:4123): MARCO 2
+[INFO] 12:08:48:498 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:08:48:498 MiRam/(4096:4123): Estado magico N
 
-[INFO] 11:43:45:339 MiRam/(3077:3113): Pos x magico 3
+[INFO] 12:08:48:498 MiRam/(4096:4123): Pos x magico 1
 
-[INFO] 11:43:45:340 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:43:45:340 MiRam/(3077:3113): Prox instruccion 39
-[INFO] 11:43:45:340 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:43:45:340 MiRam/(3077:3113): El indice 0
+[INFO] 12:08:48:498 MiRam/(4096:4123): Pos y magico 1
+[INFO] 12:08:48:498 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:08:48:498 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:08:48:498 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:43:45:340 MiRam/(3077:3113): 
+[INFO] 12:08:48:499 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:43:45:340 MiRam/(3077:3113): MARCO 0
+[INFO] 12:08:48:499 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:43:45:340 MiRam/(3077:3113): OFFSET 8
+[INFO] 12:08:48:499 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:43:45:340 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:43:45:340 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:43:45:340 MiRam/(3077:3108): El indice 0
-[INFO] 11:43:45:341 MiRam/(3077:3108): 
+[INFO] 12:08:48:499 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:08:48:500 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:08:48:500 MiRam/(4096:4123): El indice 0
+[INFO] 12:08:48:501 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:43:45:341 MiRam/(3077:3108): MARCO 3
-[INFO] 11:43:45:341 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:43:45:341 MiRam/(3077:3108): TID magico 1
-[INFO] 11:43:45:341 MiRam/(3077:3108): MARCO 3
-[INFO] 11:43:45:341 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:43:45:341 MiRam/(3077:3108): Estado magico R
+[INFO] 12:08:48:501 MiRam/(4096:4123): MARCO 2
+[INFO] 12:08:48:501 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:08:48:501 MiRam/(4096:4123): TID magico 3
+[INFO] 12:08:48:501 MiRam/(4096:4123): MARCO 2
+[INFO] 12:08:48:501 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:08:48:501 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:43:45:341 MiRam/(3077:3108): Pos x magico 1
+[INFO] 12:08:48:501 MiRam/(4096:4123): Pos x magico 1
 
-[INFO] 11:43:45:341 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:43:45:341 MiRam/(3077:3108): Prox instruccion 39
-[INFO] 11:43:45:341 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:43:45:341 MiRam/(3077:3108): El indice 0
+[INFO] 12:08:48:501 MiRam/(4096:4123): Pos y magico 1
+[INFO] 12:08:48:502 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:08:48:502 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:08:48:502 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:43:45:341 MiRam/(3077:3108): 
+[INFO] 12:08:48:502 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:43:45:341 MiRam/(3077:3108): MARCO 3
+[INFO] 12:08:48:502 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:43:45:341 MiRam/(3077:3108): OFFSET 8
+[INFO] 12:08:48:502 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:43:49:443 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:43:49:443 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:43:49:443 MiRam/(3077:3108): El indice 0
-[INFO] 11:43:49:443 MiRam/(3077:3108): 
+[INFO] 12:08:50:501 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:08:50:501 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:08:50:501 MiRam/(4096:4121): El indice 0
+[INFO] 12:08:50:501 MiRam/(4096:4121): 
 El offseeeeeet tripu 8
-[INFO] 11:43:49:444 MiRam/(3077:3108): MARCO 3
-[INFO] 11:43:49:444 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:43:49:444 MiRam/(3077:3108): TID magico 1
-[INFO] 11:43:49:444 MiRam/(3077:3108): MARCO 3
-[INFO] 11:43:49:444 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:43:49:444 MiRam/(3077:3108): Estado magico E
+[INFO] 12:08:50:501 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:50:501 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:08:50:501 MiRam/(4096:4121): TID magico 2
+[INFO] 12:08:50:501 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:50:501 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:08:50:502 MiRam/(4096:4121): Estado magico E
 
-[INFO] 11:43:49:444 MiRam/(3077:3108): Pos x magico 1
+[INFO] 12:08:50:502 MiRam/(4096:4121): Pos x magico 2
 
-[INFO] 11:43:49:444 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:43:49:444 MiRam/(3077:3108): Prox instruccion 39
-[INFO] 11:43:49:444 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:43:49:444 MiRam/(3077:3108): El tripulante que recibi es el 1
+[INFO] 12:08:50:502 MiRam/(4096:4121): Pos y magico 2
+[INFO] 12:08:50:502 MiRam/(4096:4121): Prox instruccion 39
+[INFO] 12:08:50:502 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:08:50:502 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:08:50:502 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:08:50:502 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:08:50:502 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:08:50:507 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:08:50:507 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:08:50:507 MiRam/(4096:4123): El indice 0
+[INFO] 12:08:50:507 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:08:50:507 MiRam/(4096:4123): MARCO 2
+[INFO] 12:08:50:507 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:08:50:507 MiRam/(4096:4123): TID magico 3
+[INFO] 12:08:50:507 MiRam/(4096:4123): MARCO 2
+[INFO] 12:08:50:507 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:08:50:507 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:08:50:507 MiRam/(4096:4123): Pos x magico 2
+
+[INFO] 12:08:50:507 MiRam/(4096:4123): Pos y magico 1
+[INFO] 12:08:50:507 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:08:50:508 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:08:50:508 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:08:50:508 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:08:50:508 MiRam/(4096:4123): MARCO 2
+
+[INFO] 12:08:50:508 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:08:52:506 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:08:52:506 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:08:52:506 MiRam/(4096:4121): El indice 0
+[INFO] 12:08:52:506 MiRam/(4096:4121): 
+El offseeeeeet tripu 8
+[INFO] 12:08:52:506 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:52:506 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:08:52:506 MiRam/(4096:4121): TID magico 2
+[INFO] 12:08:52:506 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:52:506 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:08:52:506 MiRam/(4096:4121): Estado magico E
+
+[INFO] 12:08:52:506 MiRam/(4096:4121): Pos x magico 3
+
+[INFO] 12:08:52:506 MiRam/(4096:4121): Pos y magico 2
+[INFO] 12:08:52:506 MiRam/(4096:4121): Prox instruccion 39
+[INFO] 12:08:52:506 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:08:52:507 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:08:52:507 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:08:52:507 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:08:52:507 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:08:52:507 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:08:52:507 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:08:52:507 MiRam/(4096:4118): El indice 0
+[INFO] 12:08:52:507 MiRam/(4096:4118): 
+El offseeeeeet tripu 8
+[INFO] 12:08:52:507 MiRam/(4096:4118): MARCO 3
+[INFO] 12:08:52:507 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:08:52:507 MiRam/(4096:4118): TID magico 1
+[INFO] 12:08:52:507 MiRam/(4096:4118): MARCO 3
+[INFO] 12:08:52:507 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:08:52:507 MiRam/(4096:4118): Estado magico R
+
+[INFO] 12:08:52:507 MiRam/(4096:4118): Pos x magico 1
+
+[INFO] 12:08:52:507 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:08:52:507 MiRam/(4096:4118): Prox instruccion 39
+[INFO] 12:08:52:507 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:08:52:507 MiRam/(4096:4118): El indice 0
+
+[INFO] 12:08:52:507 MiRam/(4096:4118): 
+El offset 8
+
+[INFO] 12:08:52:507 MiRam/(4096:4118): MARCO 3
+
+[INFO] 12:08:52:507 MiRam/(4096:4118): OFFSET 8
+
+[INFO] 12:08:52:510 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:08:52:510 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:08:52:510 MiRam/(4096:4123): El indice 0
+[INFO] 12:08:52:510 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:08:52:511 MiRam/(4096:4123): MARCO 2
+[INFO] 12:08:52:511 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:08:52:511 MiRam/(4096:4123): TID magico 3
+[INFO] 12:08:52:511 MiRam/(4096:4123): MARCO 2
+[INFO] 12:08:52:511 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:08:52:511 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:08:52:511 MiRam/(4096:4123): Pos x magico 2
+
+[INFO] 12:08:52:511 MiRam/(4096:4123): Pos y magico 2
+[INFO] 12:08:52:511 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:08:52:511 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:08:52:511 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:08:52:511 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:08:52:511 MiRam/(4096:4123): MARCO 2
+
+[INFO] 12:08:52:511 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:08:54:513 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:08:54:513 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:08:54:513 MiRam/(4096:4123): El indice 0
+[INFO] 12:08:54:514 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:08:54:514 MiRam/(4096:4123): MARCO 2
+[INFO] 12:08:54:514 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:08:54:514 MiRam/(4096:4123): TID magico 3
+[INFO] 12:08:54:514 MiRam/(4096:4123): MARCO 2
+[INFO] 12:08:54:514 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:08:54:514 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:08:54:514 MiRam/(4096:4123): Pos x magico 3
+
+[INFO] 12:08:54:514 MiRam/(4096:4123): Pos y magico 2
+[INFO] 12:08:54:514 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:08:54:514 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:08:54:514 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:08:54:514 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:08:54:514 MiRam/(4096:4123): MARCO 2
+
+[INFO] 12:08:54:514 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:08:54:514 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:08:54:514 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:08:54:514 MiRam/(4096:4121): El indice 0
+[INFO] 12:08:54:514 MiRam/(4096:4121): 
+El offseeeeeet tripu 8
+[INFO] 12:08:54:514 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:54:514 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:08:54:514 MiRam/(4096:4121): TID magico 2
+[INFO] 12:08:54:514 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:54:515 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:08:54:515 MiRam/(4096:4121): Estado magico R
+
+[INFO] 12:08:54:515 MiRam/(4096:4121): Pos x magico 3
+
+[INFO] 12:08:54:515 MiRam/(4096:4121): Pos y magico 2
+[INFO] 12:08:54:515 MiRam/(4096:4121): Prox instruccion 39
+[INFO] 12:08:54:515 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:08:54:515 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:08:54:515 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:08:54:515 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:08:54:515 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:08:54:515 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:08:54:515 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:08:54:515 MiRam/(4096:4121): El indice 0
+[INFO] 12:08:54:515 MiRam/(4096:4121): 
+El offseeeeeet tripu 8
+[INFO] 12:08:54:515 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:54:515 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:08:54:515 MiRam/(4096:4121): TID magico 2
+[INFO] 12:08:54:516 MiRam/(4096:4121): MARCO 0
+[INFO] 12:08:54:516 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:08:54:516 MiRam/(4096:4121): Estado magico E
+
+[INFO] 12:08:54:516 MiRam/(4096:4121): Pos x magico 3
+
+[INFO] 12:08:54:516 MiRam/(4096:4121): Pos y magico 2
+[INFO] 12:08:54:516 MiRam/(4096:4121): Prox instruccion 39
+[INFO] 12:08:54:516 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:08:54:516 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:08:54:516 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:08:54:516 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:08:54:516 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:08:56:512 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:08:56:512 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:08:56:512 MiRam/(4096:4118): El indice 0
+[INFO] 12:08:56:512 MiRam/(4096:4118): 
+El offseeeeeet tripu 8
+[INFO] 12:08:56:512 MiRam/(4096:4118): MARCO 3
+[INFO] 12:08:56:512 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:08:56:512 MiRam/(4096:4118): TID magico 1
+[INFO] 12:08:56:512 MiRam/(4096:4118): MARCO 3
+[INFO] 12:08:56:512 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:08:56:512 MiRam/(4096:4118): Estado magico E
+
+[INFO] 12:08:56:512 MiRam/(4096:4118): Pos x magico 1
+
+[INFO] 12:08:56:512 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:08:56:513 MiRam/(4096:4118): Prox instruccion 39
+[INFO] 12:08:56:513 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:08:56:513 MiRam/(4096:4118): El tripulante que recibi es el 1
  y 1
-[INFO] 11:43:49:444 MiRam/(3077:3108): El tripulante que recibi eSSSSSs el 1
+[INFO] 12:08:56:513 MiRam/(4096:4118): El tripulante que recibi eSSSSSs el 1
  y 39
-[INFO] 11:43:49:444 MiRam/(3077:3108): 
+[INFO] 12:08:56:513 MiRam/(4096:4118): 
 El punterin 39
 
-[INFO] 11:43:49:444 MiRam/(3077:3108): Esto recupero de swap 8
-[INFO] 11:43:49:444 MiRam/(3077:3108): Algoritmo de reemplazo es LRU
+[INFO] 12:08:56:513 MiRam/(4096:4118): Esto recupero de swap 8
+[INFO] 12:08:56:513 MiRam/(4096:4118): Algoritmo de reemplazo es LRU
 
-[INFO] 11:43:49:445 MiRam/(3077:3108): El marco elegido de MP para reemplazar es 1
-[INFO] 11:43:49:445 MiRam/(3077:3108): EL NUMERO DE BLOQUE ES 11
-[INFO] 11:43:51:446 MiRam/(3077:3108): Recuperando este bloque de swap 8
-[INFO] 11:43:51:446 MiRam/(3077:3108): Esto recupero en swap
-[INFO] 11:43:51:446 MiRam/(3077:3108): El indice 0
+[INFO] 12:08:56:513 MiRam/(4096:4118): El marco elegido de MP para reemplazar es 1
+[INFO] 12:08:56:513 MiRam/(4096:4118): EL NUMERO DE BLOQUE ES 11
+[INFO] 12:08:58:514 MiRam/(4096:4118): Recuperando este bloque de swap 8
+[INFO] 12:08:58:514 MiRam/(4096:4118): Esto recupero en swap
+[INFO] 12:08:58:521 MiRam/(4096:4118): El indice 0
 
-[INFO] 11:43:51:446 MiRam/(3077:3108): 
+[INFO] 12:08:58:521 MiRam/(4096:4118): 
 El offset 8
 
-[INFO] 11:43:51:446 MiRam/(3077:3108): MARCO 3
+[INFO] 12:08:58:521 MiRam/(4096:4118): MARCO 3
 
-[INFO] 11:43:51:446 MiRam/(3077:3108): OFFSET 8
+[INFO] 12:08:58:522 MiRam/(4096:4118): OFFSET 8
 
-[INFO] 11:43:51:446 MiRam/(3077:3108): 
+[INFO] 12:08:58:522 MiRam/(4096:4118): 
  tareas : A01;1;1;5 
 
-[INFO] 11:43:51:446 MiRam/(3077:3108): Impresion de 4 marcos
-[INFO] 11:43:51:447 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:43:51:447 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:43:51:447 MiRam/(3077:3117): El indice 0
-[INFO] 11:43:51:447 MiRam/(3077:3117): 
+[INFO] 12:08:58:523 MiRam/(4096:4118): Impresion de 4 marcos
+[INFO] 12:09:00:524 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:09:00:524 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:09:00:524 MiRam/(4096:4118): El indice 0
+[INFO] 12:09:00:524 MiRam/(4096:4118): 
 El offseeeeeet tripu 8
-[INFO] 11:43:51:447 MiRam/(3077:3117): MARCO 2
-[INFO] 11:43:51:447 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:43:51:447 MiRam/(3077:3117): TID magico 3
-[INFO] 11:43:51:447 MiRam/(3077:3117): MARCO 2
-[INFO] 11:43:51:447 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:43:51:447 MiRam/(3077:3117): Estado magico E
+[INFO] 12:09:00:524 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:00:524 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:09:00:524 MiRam/(4096:4118): TID magico 1
+[INFO] 12:09:00:525 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:00:525 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:09:00:525 MiRam/(4096:4118): Estado magico E
 
-[INFO] 11:43:51:447 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:09:00:525 MiRam/(4096:4118): Pos x magico 1
 
-[INFO] 11:43:51:447 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:43:51:447 MiRam/(3077:3117): Prox instruccion 39
-[INFO] 11:43:51:447 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:43:51:447 MiRam/(3077:3117): El indice 0
+[INFO] 12:09:00:525 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:09:00:525 MiRam/(4096:4118): Prox instruccion 49
+[INFO] 12:09:00:525 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:09:00:525 MiRam/(4096:4118): El indice 0
 
-[INFO] 11:43:51:447 MiRam/(3077:3117): 
+[INFO] 12:09:00:525 MiRam/(4096:4118): 
 El offset 8
 
-[INFO] 11:43:51:447 MiRam/(3077:3117): MARCO 2
+[INFO] 12:09:00:525 MiRam/(4096:4118): MARCO 3
 
-[INFO] 11:43:51:447 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:09:00:525 MiRam/(4096:4118): OFFSET 8
 
-[INFO] 11:43:51:448 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:43:51:448 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:43:51:448 MiRam/(3077:3113): El indice 0
-[INFO] 11:43:51:448 MiRam/(3077:3113): 
+[INFO] 12:09:00:525 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:00:525 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:00:525 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:00:525 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:43:51:448 MiRam/(3077:3113): MARCO 0
-[INFO] 11:43:51:448 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:43:51:448 MiRam/(3077:3113): TID magico 2
-[INFO] 11:43:51:448 MiRam/(3077:3113): MARCO 0
-[INFO] 11:43:51:448 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:43:51:448 MiRam/(3077:3113): Estado magico R
+[INFO] 12:09:00:525 MiRam/(4096:4123): MARCO 2
+[INFO] 12:09:00:525 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:00:525 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:00:525 MiRam/(4096:4123): MARCO 2
+[INFO] 12:09:00:525 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:00:525 MiRam/(4096:4123): Estado magico R
 
-[INFO] 11:43:51:448 MiRam/(3077:3113): Pos x magico 3
+[INFO] 12:09:00:525 MiRam/(4096:4123): Pos x magico 3
 
-[INFO] 11:43:51:448 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:43:51:448 MiRam/(3077:3113): Prox instruccion 39
-[INFO] 11:43:51:448 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:43:51:448 MiRam/(3077:3113): El indice 0
+[INFO] 12:09:00:525 MiRam/(4096:4123): Pos y magico 2
+[INFO] 12:09:00:525 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:00:526 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:00:526 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:43:51:448 MiRam/(3077:3113): 
+[INFO] 12:09:00:526 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:43:51:448 MiRam/(3077:3113): MARCO 0
+[INFO] 12:09:00:526 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:43:51:448 MiRam/(3077:3113): OFFSET 8
+[INFO] 12:09:00:526 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:43:53:519 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:43:53:519 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:43:53:519 MiRam/(3077:3108): El indice 0
-[INFO] 11:43:53:519 MiRam/(3077:3108): 
+[INFO] 12:09:00:526 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:00:526 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:00:526 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:00:526 MiRam/(4096:4121): 
 El offseeeeeet tripu 8
-[INFO] 11:43:53:519 MiRam/(3077:3108): MARCO 3
-[INFO] 11:43:53:519 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:43:53:519 MiRam/(3077:3108): TID magico 1
-[INFO] 11:43:53:519 MiRam/(3077:3108): MARCO 3
-[INFO] 11:43:53:519 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:43:53:519 MiRam/(3077:3108): Estado magico E
+[INFO] 12:09:00:526 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:00:526 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:00:526 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:00:526 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:00:526 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:00:526 MiRam/(4096:4121): Estado magico E
 
-[INFO] 11:43:53:519 MiRam/(3077:3108): Pos x magico 1
+[INFO] 12:09:00:526 MiRam/(4096:4121): Pos x magico 3
 
-[INFO] 11:43:53:519 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:43:53:519 MiRam/(3077:3108): Prox instruccion 49
-[INFO] 11:43:53:519 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:43:53:519 MiRam/(3077:3108): El indice 0
+[INFO] 12:09:00:526 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:00:526 MiRam/(4096:4121): Prox instruccion 39
+[INFO] 12:09:00:526 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:00:526 MiRam/(4096:4121): El indice 0
 
-[INFO] 11:43:53:519 MiRam/(3077:3108): 
+[INFO] 12:09:00:526 MiRam/(4096:4121): 
 El offset 8
 
-[INFO] 11:43:53:519 MiRam/(3077:3108): MARCO 3
+[INFO] 12:09:00:526 MiRam/(4096:4121): MARCO 0
 
-[INFO] 11:43:53:519 MiRam/(3077:3108): OFFSET 8
+[INFO] 12:09:00:526 MiRam/(4096:4121): OFFSET 8
 
-[INFO] 11:43:53:519 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:43:53:520 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:43:53:520 MiRam/(3077:3117): El indice 0
-[INFO] 11:43:53:520 MiRam/(3077:3117): 
+[INFO] 12:09:00:526 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:00:526 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:00:526 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:00:526 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:43:53:520 MiRam/(3077:3117): MARCO 2
-[INFO] 11:43:53:520 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:43:53:520 MiRam/(3077:3117): TID magico 3
-[INFO] 11:43:53:520 MiRam/(3077:3117): MARCO 2
-[INFO] 11:43:53:520 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:43:53:520 MiRam/(3077:3117): Estado magico R
+[INFO] 12:09:00:526 MiRam/(4096:4123): MARCO 2
+[INFO] 12:09:00:526 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:00:526 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:00:526 MiRam/(4096:4123): MARCO 2
+[INFO] 12:09:00:526 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:00:526 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:43:53:520 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:09:00:526 MiRam/(4096:4123): Pos x magico 3
 
-[INFO] 11:43:53:520 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:43:53:520 MiRam/(3077:3117): Prox instruccion 39
-[INFO] 11:43:53:520 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:43:53:520 MiRam/(3077:3117): El indice 0
+[INFO] 12:09:00:527 MiRam/(4096:4123): Pos y magico 2
+[INFO] 12:09:00:527 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:00:527 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:00:527 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:43:53:520 MiRam/(3077:3117): 
+[INFO] 12:09:00:527 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:09:00:527 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:43:53:520 MiRam/(3077:3117): MARCO 2
+[INFO] 12:09:00:527 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:43:53:520 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:09:00:527 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:43:55:571 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:43:55:571 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:43:55:571 MiRam/(3077:3113): El indice 0
-[INFO] 11:43:55:572 MiRam/(3077:3113): 
+[INFO] 12:09:00:527 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:09:00:528 MiRam/(4096:4118): El indice 0
+[INFO] 12:09:00:528 MiRam/(4096:4118): 
 El offseeeeeet tripu 8
-[INFO] 11:43:55:572 MiRam/(3077:3113): MARCO 0
-[INFO] 11:43:55:572 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:43:55:572 MiRam/(3077:3113): TID magico 2
-[INFO] 11:43:55:572 MiRam/(3077:3113): MARCO 0
-[INFO] 11:43:55:572 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:43:55:572 MiRam/(3077:3113): Estado magico E
+[INFO] 12:09:00:528 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:00:528 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:09:00:528 MiRam/(4096:4118): TID magico 1
+[INFO] 12:09:00:528 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:00:528 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:09:00:528 MiRam/(4096:4118): Estado magico R
 
-[INFO] 11:43:55:572 MiRam/(3077:3113): Pos x magico 3
+[INFO] 12:09:00:528 MiRam/(4096:4118): Pos x magico 1
 
-[INFO] 11:43:55:572 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:43:55:572 MiRam/(3077:3113): Prox instruccion 39
-[INFO] 11:43:55:573 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:43:55:573 MiRam/(3077:3113): El tripulante que recibi es el 2
- y 2
-[INFO] 11:43:55:573 MiRam/(3077:3113): El tripulante que recibi eSSSSSs el 2
- y 39
-[INFO] 11:43:55:573 MiRam/(3077:3113): 
-El punterin 39
+[INFO] 12:09:00:528 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:09:00:529 MiRam/(4096:4118): Prox instruccion 49
+[INFO] 12:09:00:529 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:09:00:529 MiRam/(4096:4118): El indice 0
 
-[INFO] 11:43:55:573 MiRam/(3077:3113): Esto recupero de swap 10
-[INFO] 11:43:55:573 MiRam/(3077:3113): Algoritmo de reemplazo es LRU
-
-[INFO] 11:43:55:574 MiRam/(3077:3113): El marco elegido de MP para reemplazar es 1
-[INFO] 11:43:55:574 MiRam/(3077:3113): EL NUMERO DE BLOQUE ES 12
-[INFO] 11:43:57:575 MiRam/(3077:3113): Recuperando este bloque de swap 10
-[INFO] 11:43:57:575 MiRam/(3077:3113): Esto recupero en swap
-[INFO] 11:43:57:576 MiRam/(3077:3113): El indice 0
-
-[INFO] 11:43:57:577 MiRam/(3077:3113): 
+[INFO] 12:09:00:529 MiRam/(4096:4118): 
 El offset 8
 
-[INFO] 11:43:57:577 MiRam/(3077:3113): MARCO 0
+[INFO] 12:09:00:529 MiRam/(4096:4118): MARCO 3
 
-[INFO] 11:43:57:577 MiRam/(3077:3113): OFFSET 8
+[INFO] 12:09:00:529 MiRam/(4096:4118): OFFSET 8
 
-[INFO] 11:43:57:577 MiRam/(3077:3113): 
- tareas : B01;3;3;5 
-
-[INFO] 11:43:57:579 MiRam/(3077:3113): Impresion de 4 marcos
-[INFO] 11:43:57:627 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:43:57:627 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:43:57:627 MiRam/(3077:3117): El indice 0
-[INFO] 11:43:57:627 MiRam/(3077:3117): 
+[INFO] 12:09:02:529 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:02:530 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:02:530 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:02:530 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:43:57:627 MiRam/(3077:3117): MARCO 2
-[INFO] 11:43:57:627 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:43:57:627 MiRam/(3077:3117): TID magico 3
-[INFO] 11:43:57:627 MiRam/(3077:3117): MARCO 2
-[INFO] 11:43:57:627 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:43:57:628 MiRam/(3077:3117): Estado magico E
+[INFO] 12:09:02:530 MiRam/(4096:4123): MARCO 2
+[INFO] 12:09:02:530 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:02:530 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:02:530 MiRam/(4096:4123): MARCO 2
+[INFO] 12:09:02:530 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:02:530 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:43:57:628 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:09:02:530 MiRam/(4096:4123): Pos x magico 3
 
-[INFO] 11:43:57:628 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:43:57:628 MiRam/(3077:3117): Prox instruccion 39
-[INFO] 11:43:57:628 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:43:57:629 MiRam/(3077:3117): El tripulante que recibi es el 3
- y 3
-[INFO] 11:43:57:629 MiRam/(3077:3117): El tripulante que recibi eSSSSSs el 3
- y 39
-[INFO] 11:43:57:629 MiRam/(3077:3117): 
-El punterin 39
+[INFO] 12:09:02:530 MiRam/(4096:4123): Pos y magico 3
+[INFO] 12:09:02:532 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:02:532 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:02:532 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:43:57:629 MiRam/(3077:3117): Esto recupero de swap 11
-[INFO] 11:43:57:629 MiRam/(3077:3117): Algoritmo de reemplazo es LRU
-
-[INFO] 11:43:57:629 MiRam/(3077:3117): El marco elegido de MP para reemplazar es 3
-[INFO] 11:43:57:629 MiRam/(3077:3117): EL NUMERO DE BLOQUE ES 13
-[INFO] 11:43:59:630 MiRam/(3077:3117): Recuperando este bloque de swap 11
-[INFO] 11:43:59:630 MiRam/(3077:3117): Esto recupero en swap
-[INFO] 11:43:59:631 MiRam/(3077:3117): El indice 0
-
-[INFO] 11:43:59:631 MiRam/(3077:3117): 
+[INFO] 12:09:02:532 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:43:59:631 MiRam/(3077:3117): MARCO 2
+[INFO] 12:09:02:532 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:43:59:631 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:09:02:532 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:43:59:631 MiRam/(3077:3117): 
- tareas : C01;5;5;5 
-
-[INFO] 11:43:59:632 MiRam/(3077:3117): Impresion de 4 marcos
-[INFO] 11:43:59:699 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:43:59:699 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:43:59:699 MiRam/(3077:3113): El indice 0
-[INFO] 11:43:59:699 MiRam/(3077:3113): 
+[INFO] 12:09:04:534 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:04:534 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:04:534 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:04:534 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:43:59:699 MiRam/(3077:3113): MARCO 0
-[INFO] 11:43:59:699 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:43:59:699 MiRam/(3077:3113): TID magico 2
-[INFO] 11:43:59:699 MiRam/(3077:3113): MARCO 0
-[INFO] 11:43:59:700 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:43:59:700 MiRam/(3077:3113): Estado magico E
+[INFO] 12:09:04:534 MiRam/(4096:4123): MARCO 2
+[INFO] 12:09:04:536 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:04:536 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:04:536 MiRam/(4096:4123): MARCO 2
+[INFO] 12:09:04:536 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:04:536 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:43:59:700 MiRam/(3077:3113): Pos x magico 3
+[INFO] 12:09:04:536 MiRam/(4096:4123): Pos x magico 4
 
-[INFO] 11:43:59:700 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:43:59:700 MiRam/(3077:3113): Prox instruccion 49
-[INFO] 11:43:59:700 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:43:59:700 MiRam/(3077:3113): El indice 0
+[INFO] 12:09:04:536 MiRam/(4096:4123): Pos y magico 3
+[INFO] 12:09:04:536 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:04:536 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:04:536 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:43:59:700 MiRam/(3077:3113): 
+[INFO] 12:09:04:536 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:43:59:700 MiRam/(3077:3113): MARCO 0
+[INFO] 12:09:04:536 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:43:59:700 MiRam/(3077:3113): OFFSET 8
+[INFO] 12:09:04:536 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:43:59:700 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:43:59:700 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:43:59:701 MiRam/(3077:3108): El indice 0
-[INFO] 11:43:59:701 MiRam/(3077:3108): 
+[INFO] 12:09:06:530 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:09:06:530 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:09:06:530 MiRam/(4096:4118): El indice 0
+[INFO] 12:09:06:530 MiRam/(4096:4118): 
 El offseeeeeet tripu 8
-[INFO] 11:43:59:701 MiRam/(3077:3108): ENTRE EN MS
-[INFO] 11:43:59:701 MiRam/(3077:3108): Esto recupero de swap 13
-[INFO] 11:43:59:701 MiRam/(3077:3108): Algoritmo de reemplazo es LRU
+[INFO] 12:09:06:530 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:06:530 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:09:06:530 MiRam/(4096:4118): TID magico 1
+[INFO] 12:09:06:530 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:06:530 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:09:06:530 MiRam/(4096:4118): Estado magico E
 
-[INFO] 11:43:59:701 MiRam/(3077:3108): El marco elegido de MP para reemplazar es 1
-[INFO] 11:43:59:701 MiRam/(3077:3108): EL NUMERO DE BLOQUE ES 14
-[INFO] 11:44:01:701 MiRam/(3077:3108): Recuperando este bloque de swap 13
-[INFO] 11:44:01:702 MiRam/(3077:3108): Esto recupero en swap
-[INFO] 11:44:01:703 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:01:703 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:44:01:703 MiRam/(3077:3108): TID magico 1
-[INFO] 11:44:01:703 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:01:703 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:44:01:703 MiRam/(3077:3108): Estado magico R
+[INFO] 12:09:06:530 MiRam/(4096:4118): Pos x magico 1
 
-[INFO] 11:44:01:704 MiRam/(3077:3108): Pos x magico 1
+[INFO] 12:09:06:530 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:09:06:530 MiRam/(4096:4118): Prox instruccion 49
+[INFO] 12:09:06:530 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:09:06:530 MiRam/(4096:4118): El indice 0
 
-[INFO] 11:44:01:704 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:44:01:704 MiRam/(3077:3108): Prox instruccion 49
-[INFO] 11:44:01:704 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:44:01:704 MiRam/(3077:3108): El indice 0
-
-[INFO] 11:44:01:704 MiRam/(3077:3108): 
+[INFO] 12:09:06:530 MiRam/(4096:4118): 
 El offset 8
 
-[INFO] 11:44:01:704 MiRam/(3077:3108): MARCO 1
+[INFO] 12:09:06:530 MiRam/(4096:4118): MARCO 3
 
-[INFO] 11:44:01:705 MiRam/(3077:3108): OFFSET 8
+[INFO] 12:09:06:530 MiRam/(4096:4118): OFFSET 8
 
-[INFO] 11:44:01:706 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:01:706 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:01:706 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:01:706 MiRam/(3077:3117): 
+[INFO] 12:09:06:531 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:06:531 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:06:531 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:06:531 MiRam/(4096:4121): 
 El offseeeeeet tripu 8
-[INFO] 11:44:01:706 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:01:706 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:01:706 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:01:706 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:01:706 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:01:706 MiRam/(3077:3117): Estado magico E
+[INFO] 12:09:06:531 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:06:531 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:06:531 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:06:531 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:06:531 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:06:531 MiRam/(4096:4121): Estado magico R
 
-[INFO] 11:44:01:706 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:09:06:531 MiRam/(4096:4121): Pos x magico 3
 
-[INFO] 11:44:01:707 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:01:707 MiRam/(3077:3117): Prox instruccion 49
-[INFO] 11:44:01:707 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:01:707 MiRam/(3077:3117): El indice 0
+[INFO] 12:09:06:531 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:06:531 MiRam/(4096:4121): Prox instruccion 39
+[INFO] 12:09:06:531 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:06:531 MiRam/(4096:4121): El indice 0
 
-[INFO] 11:44:01:707 MiRam/(3077:3117): 
+[INFO] 12:09:06:531 MiRam/(4096:4121): 
 El offset 8
 
-[INFO] 11:44:01:707 MiRam/(3077:3117): MARCO 2
+[INFO] 12:09:06:531 MiRam/(4096:4121): MARCO 0
 
-[INFO] 11:44:01:707 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:09:06:531 MiRam/(4096:4121): OFFSET 8
 
-[INFO] 11:44:01:707 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:44:01:707 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:44:01:707 MiRam/(3077:3113): El indice 0
-[INFO] 11:44:01:707 MiRam/(3077:3113): 
+[INFO] 12:09:06:539 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:06:539 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:06:539 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:06:539 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:01:707 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:01:708 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:44:01:708 MiRam/(3077:3113): TID magico 2
-[INFO] 11:44:01:708 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:01:708 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:44:01:708 MiRam/(3077:3113): Estado magico R
+[INFO] 12:09:06:539 MiRam/(4096:4123): MARCO 2
+[INFO] 12:09:06:539 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:06:539 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:06:539 MiRam/(4096:4123): MARCO 2
+[INFO] 12:09:06:539 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:06:539 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:44:01:708 MiRam/(3077:3113): Pos x magico 3
+[INFO] 12:09:06:539 MiRam/(4096:4123): Pos x magico 4
 
-[INFO] 11:44:01:708 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:44:01:708 MiRam/(3077:3113): Prox instruccion 49
-[INFO] 11:44:01:708 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:44:01:708 MiRam/(3077:3113): El indice 0
+[INFO] 12:09:06:539 MiRam/(4096:4123): Pos y magico 4
+[INFO] 12:09:06:539 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:06:539 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:06:539 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:01:708 MiRam/(3077:3113): 
+[INFO] 12:09:06:539 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:44:01:708 MiRam/(3077:3113): MARCO 0
+[INFO] 12:09:06:539 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:44:01:708 MiRam/(3077:3113): OFFSET 8
+[INFO] 12:09:06:539 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:44:07:711 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:44:07:711 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:44:07:711 MiRam/(3077:3113): El indice 0
-[INFO] 11:44:07:711 MiRam/(3077:3113): 
+[INFO] 12:09:06:540 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:09:06:542 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:09:06:542 MiRam/(4096:4118): El indice 0
+[INFO] 12:09:06:542 MiRam/(4096:4118): 
 El offseeeeeet tripu 8
-[INFO] 11:44:07:711 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:07:711 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:44:07:711 MiRam/(3077:3113): TID magico 2
-[INFO] 11:44:07:711 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:07:711 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:44:07:711 MiRam/(3077:3113): Estado magico E
+[INFO] 12:09:06:542 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:06:542 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:09:06:542 MiRam/(4096:4118): TID magico 1
+[INFO] 12:09:06:542 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:06:544 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:09:06:544 MiRam/(4096:4118): Estado magico R
 
-[INFO] 11:44:07:711 MiRam/(3077:3113): Pos x magico 3
+[INFO] 12:09:06:544 MiRam/(4096:4118): Pos x magico 1
 
-[INFO] 11:44:07:711 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:44:07:711 MiRam/(3077:3113): Prox instruccion 49
-[INFO] 11:44:07:711 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:44:07:711 MiRam/(3077:3113): El indice 0
+[INFO] 12:09:06:544 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:09:06:544 MiRam/(4096:4118): Prox instruccion 49
+[INFO] 12:09:06:544 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:09:06:544 MiRam/(4096:4118): El indice 0
 
-[INFO] 11:44:07:711 MiRam/(3077:3113): 
+[INFO] 12:09:06:544 MiRam/(4096:4118): 
 El offset 8
 
-[INFO] 11:44:07:711 MiRam/(3077:3113): MARCO 0
+[INFO] 12:09:06:544 MiRam/(4096:4118): MARCO 3
 
-[INFO] 11:44:07:711 MiRam/(3077:3113): OFFSET 8
+[INFO] 12:09:06:544 MiRam/(4096:4118): OFFSET 8
 
-[INFO] 11:44:07:712 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:07:712 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:07:712 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:07:712 MiRam/(3077:3117): 
+[INFO] 12:09:08:546 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:09:08:546 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:09:08:546 MiRam/(4096:4118): El indice 0
+[INFO] 12:09:08:546 MiRam/(4096:4118): 
 El offseeeeeet tripu 8
-[INFO] 11:44:07:712 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:07:712 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:07:712 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:07:712 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:07:712 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:07:712 MiRam/(3077:3117): Estado magico R
+[INFO] 12:09:08:546 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:08:547 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:09:08:547 MiRam/(4096:4118): TID magico 1
+[INFO] 12:09:08:547 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:08:547 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:09:08:547 MiRam/(4096:4118): Estado magico E
 
-[INFO] 11:44:07:712 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:09:08:547 MiRam/(4096:4118): Pos x magico 1
 
-[INFO] 11:44:07:712 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:07:712 MiRam/(3077:3117): Prox instruccion 49
-[INFO] 11:44:07:712 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:07:712 MiRam/(3077:3117): El indice 0
-
-[INFO] 11:44:07:712 MiRam/(3077:3117): 
-El offset 8
-
-[INFO] 11:44:07:712 MiRam/(3077:3117): MARCO 2
-
-[INFO] 11:44:07:712 MiRam/(3077:3117): OFFSET 8
-
-[INFO] 11:44:07:712 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:44:07:712 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:44:07:712 MiRam/(3077:3108): El indice 0
-[INFO] 11:44:07:712 MiRam/(3077:3108): 
-El offseeeeeet tripu 8
-[INFO] 11:44:07:712 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:07:712 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:44:07:712 MiRam/(3077:3108): TID magico 1
-[INFO] 11:44:07:712 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:07:712 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:44:07:712 MiRam/(3077:3108): Estado magico E
-
-[INFO] 11:44:07:712 MiRam/(3077:3108): Pos x magico 1
-
-[INFO] 11:44:07:712 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:44:07:712 MiRam/(3077:3108): Prox instruccion 49
-[INFO] 11:44:07:712 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:44:07:712 MiRam/(3077:3108): El indice 0
-
-[INFO] 11:44:07:712 MiRam/(3077:3108): 
-El offset 8
-
-[INFO] 11:44:07:712 MiRam/(3077:3108): MARCO 1
-
-[INFO] 11:44:07:712 MiRam/(3077:3108): OFFSET 8
-
-[INFO] 11:44:07:712 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:44:07:712 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:44:07:713 MiRam/(3077:3113): El indice 0
-[INFO] 11:44:07:713 MiRam/(3077:3113): 
-El offseeeeeet tripu 8
-[INFO] 11:44:07:713 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:07:713 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:44:07:713 MiRam/(3077:3113): TID magico 2
-[INFO] 11:44:07:713 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:07:713 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:44:07:713 MiRam/(3077:3113): Estado magico R
-
-[INFO] 11:44:07:713 MiRam/(3077:3113): Pos x magico 3
-
-[INFO] 11:44:07:713 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:44:07:713 MiRam/(3077:3113): Prox instruccion 49
-[INFO] 11:44:07:713 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:44:07:713 MiRam/(3077:3113): El indice 0
-
-[INFO] 11:44:07:713 MiRam/(3077:3113): 
-El offset 8
-
-[INFO] 11:44:07:713 MiRam/(3077:3113): MARCO 0
-
-[INFO] 11:44:07:713 MiRam/(3077:3113): OFFSET 8
-
-[INFO] 11:44:09:793 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:44:09:793 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:44:09:793 MiRam/(3077:3113): El indice 0
-[INFO] 11:44:09:793 MiRam/(3077:3113): 
-El offseeeeeet tripu 8
-[INFO] 11:44:09:793 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:09:794 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:44:09:794 MiRam/(3077:3113): TID magico 2
-[INFO] 11:44:09:794 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:09:794 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:44:09:794 MiRam/(3077:3113): Estado magico E
-
-[INFO] 11:44:09:794 MiRam/(3077:3113): Pos x magico 3
-
-[INFO] 11:44:09:794 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:44:09:794 MiRam/(3077:3113): Prox instruccion 49
-[INFO] 11:44:09:795 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:44:09:795 MiRam/(3077:3113): El tripulante que recibi es el 2
- y 2
-[INFO] 11:44:09:796 MiRam/(3077:3113): El tripulante que recibi eSSSSSs el 2
- y 49
-[INFO] 11:44:09:796 MiRam/(3077:3113): 
-El punterin 49
-
-[INFO] 11:44:09:796 MiRam/(3077:3113): Esto recupero de swap 14
-[INFO] 11:44:09:796 MiRam/(3077:3113): Algoritmo de reemplazo es LRU
-
-[INFO] 11:44:09:796 MiRam/(3077:3113): El marco elegido de MP para reemplazar es 3
-[INFO] 11:44:09:796 MiRam/(3077:3113): EL NUMERO DE BLOQUE ES 15
-[INFO] 11:44:11:797 MiRam/(3077:3113): Recuperando este bloque de swap 14
-[INFO] 11:44:11:797 MiRam/(3077:3113): Esto recupero en swap
-[INFO] 11:44:11:798 MiRam/(3077:3113): El indice 0
-
-[INFO] 11:44:11:798 MiRam/(3077:3113): 
-El offset 8
-
-[INFO] 11:44:11:798 MiRam/(3077:3113): MARCO 0
-
-[INFO] 11:44:11:798 MiRam/(3077:3113): OFFSET 8
-
-[INFO] 11:44:11:798 MiRam/(3077:3113): 
- tareas : B02;3;3;5 
-
-[INFO] 11:44:11:798 MiRam/(3077:3113): Impresion de 4 marcos
-[INFO] 11:44:13:715 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:13:715 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:13:715 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:13:715 MiRam/(3077:3117): 
-El offseeeeeet tripu 8
-[INFO] 11:44:13:715 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:13:715 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:13:715 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:13:715 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:13:715 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:13:716 MiRam/(3077:3117): Estado magico E
-
-[INFO] 11:44:13:716 MiRam/(3077:3117): Pos x magico 5
-
-[INFO] 11:44:13:716 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:13:716 MiRam/(3077:3117): Prox instruccion 49
-[INFO] 11:44:13:716 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:13:716 MiRam/(3077:3117): El indice 0
-
-[INFO] 11:44:13:716 MiRam/(3077:3117): 
-El offset 8
-
-[INFO] 11:44:13:716 MiRam/(3077:3117): MARCO 2
-
-[INFO] 11:44:13:716 MiRam/(3077:3117): OFFSET 8
-
-[INFO] 11:44:13:716 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:44:13:716 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:44:13:716 MiRam/(3077:3108): El indice 0
-[INFO] 11:44:13:716 MiRam/(3077:3108): 
-El offseeeeeet tripu 8
-[INFO] 11:44:13:716 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:13:716 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:44:13:716 MiRam/(3077:3108): TID magico 1
-[INFO] 11:44:13:716 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:13:716 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:44:13:717 MiRam/(3077:3108): Estado magico R
-
-[INFO] 11:44:13:717 MiRam/(3077:3108): Pos x magico 1
-
-[INFO] 11:44:13:717 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:44:13:717 MiRam/(3077:3108): Prox instruccion 49
-[INFO] 11:44:13:717 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:44:13:717 MiRam/(3077:3108): El indice 0
-
-[INFO] 11:44:13:717 MiRam/(3077:3108): 
-El offset 8
-
-[INFO] 11:44:13:717 MiRam/(3077:3108): MARCO 1
-
-[INFO] 11:44:13:717 MiRam/(3077:3108): OFFSET 8
-
-[INFO] 11:44:15:811 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:44:15:811 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:44:15:811 MiRam/(3077:3108): El indice 0
-[INFO] 11:44:15:811 MiRam/(3077:3108): 
-El offseeeeeet tripu 8
-[INFO] 11:44:15:812 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:15:812 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:44:15:812 MiRam/(3077:3108): TID magico 1
-[INFO] 11:44:15:812 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:15:812 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:44:15:812 MiRam/(3077:3108): Estado magico E
-
-[INFO] 11:44:15:812 MiRam/(3077:3108): Pos x magico 1
-
-[INFO] 11:44:15:812 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:44:15:812 MiRam/(3077:3108): Prox instruccion 49
-[INFO] 11:44:15:813 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:44:15:813 MiRam/(3077:3108): El tripulante que recibi es el 1
+[INFO] 12:09:08:547 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:09:08:547 MiRam/(4096:4118): Prox instruccion 49
+[INFO] 12:09:08:547 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:09:08:547 MiRam/(4096:4118): El tripulante que recibi es el 1
  y 1
-[INFO] 11:44:15:813 MiRam/(3077:3108): El tripulante que recibi eSSSSSs el 1
+[INFO] 12:09:08:547 MiRam/(4096:4118): El tripulante que recibi eSSSSSs el 1
  y 49
-[INFO] 11:44:15:813 MiRam/(3077:3108): 
+[INFO] 12:09:08:547 MiRam/(4096:4118): 
 El punterin 49
 
-[INFO] 11:44:15:813 MiRam/(3077:3108): Esto recupero de swap 12
-[INFO] 11:44:15:814 MiRam/(3077:3108): Algoritmo de reemplazo es LRU
+[INFO] 12:09:08:547 MiRam/(4096:4118): El indice 0
 
-[INFO] 11:44:15:814 MiRam/(3077:3108): El marco elegido de MP para reemplazar es 3
-[INFO] 11:44:15:814 MiRam/(3077:3108): EL NUMERO DE BLOQUE ES 16
-[INFO] 11:44:17:815 MiRam/(3077:3108): Recuperando este bloque de swap 12
-[INFO] 11:44:17:815 MiRam/(3077:3108): Esto recupero en swap
-[INFO] 11:44:17:816 MiRam/(3077:3108): El indice 0
-
-[INFO] 11:44:17:816 MiRam/(3077:3108): 
+[INFO] 12:09:08:547 MiRam/(4096:4118): 
 El offset 8
 
-[INFO] 11:44:17:816 MiRam/(3077:3108): MARCO 1
+[INFO] 12:09:08:547 MiRam/(4096:4118): MARCO 3
 
-[INFO] 11:44:17:816 MiRam/(3077:3108): OFFSET 8
+[INFO] 12:09:08:547 MiRam/(4096:4118): OFFSET 8
 
-[INFO] 11:44:17:816 MiRam/(3077:3108): 
+[INFO] 12:09:08:547 MiRam/(4096:4118): 
  tareas : A02;1;1;5 
 
-[INFO] 11:44:17:816 MiRam/(3077:3108): Impresion de 4 marcos
-[INFO] 11:44:17:819 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:44:17:819 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:44:17:819 MiRam/(3077:3113): El indice 0
-[INFO] 11:44:17:819 MiRam/(3077:3113): 
+[INFO] 12:09:08:547 MiRam/(4096:4118): Impresion de 4 marcos
+[INFO] 12:09:12:537 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:12:537 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:12:537 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:12:537 MiRam/(4096:4121): 
 El offseeeeeet tripu 8
-[INFO] 11:44:17:819 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:17:819 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:44:17:819 MiRam/(3077:3113): TID magico 2
-[INFO] 11:44:17:819 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:17:819 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:44:17:819 MiRam/(3077:3113): Estado magico E
+[INFO] 12:09:12:537 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:12:537 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:12:537 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:12:537 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:12:537 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:12:537 MiRam/(4096:4121): Estado magico E
 
-[INFO] 11:44:17:819 MiRam/(3077:3113): Pos x magico 3
+[INFO] 12:09:12:537 MiRam/(4096:4121): Pos x magico 3
 
-[INFO] 11:44:17:819 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:44:17:819 MiRam/(3077:3113): Prox instruccion 0
-[INFO] 11:44:17:819 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:44:17:819 MiRam/(3077:3113): El indice 0
+[INFO] 12:09:12:537 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:12:537 MiRam/(4096:4121): Prox instruccion 39
+[INFO] 12:09:12:537 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:12:537 MiRam/(4096:4121): El tripulante que recibi es el 2
+ y 2
+[INFO] 12:09:12:537 MiRam/(4096:4121): El tripulante que recibi eSSSSSs el 2
+ y 39
+[INFO] 12:09:12:537 MiRam/(4096:4121): 
+El punterin 39
 
-[INFO] 11:44:17:820 MiRam/(3077:3113): 
+[INFO] 12:09:12:537 MiRam/(4096:4121): Esto recupero de swap 10
+[INFO] 12:09:12:537 MiRam/(4096:4121): Algoritmo de reemplazo es LRU
+
+[INFO] 12:09:12:537 MiRam/(4096:4121): El marco elegido de MP para reemplazar es 2
+[INFO] 12:09:12:537 MiRam/(4096:4121): EL NUMERO DE BLOQUE ES 12
+[INFO] 12:09:14:538 MiRam/(4096:4121): Recuperando este bloque de swap 10
+[INFO] 12:09:14:538 MiRam/(4096:4121): Esto recupero en swap
+[INFO] 12:09:14:539 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:09:14:539 MiRam/(4096:4121): 
 El offset 8
 
-[INFO] 11:44:17:820 MiRam/(3077:3113): MARCO 0
+[INFO] 12:09:14:539 MiRam/(4096:4121): MARCO 0
 
-[INFO] 11:44:17:820 MiRam/(3077:3113): OFFSET 8
+[INFO] 12:09:14:539 MiRam/(4096:4121): OFFSET 8
 
-[INFO] 11:44:17:820 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:17:820 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:17:820 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:17:820 MiRam/(3077:3117): 
+[INFO] 12:09:14:540 MiRam/(4096:4121): 
+ tareas : B01;3;3;5 
+
+[INFO] 12:09:14:540 MiRam/(4096:4121): Impresion de 4 marcos
+[INFO] 12:09:14:540 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:09:14:541 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:09:14:541 MiRam/(4096:4118): El indice 0
+[INFO] 12:09:14:541 MiRam/(4096:4118): 
 El offseeeeeet tripu 8
-[INFO] 11:44:17:820 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:17:820 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:17:820 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:17:820 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:17:820 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:17:820 MiRam/(3077:3117): Estado magico R
+[INFO] 12:09:14:541 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:14:541 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:09:14:541 MiRam/(4096:4118): TID magico 1
+[INFO] 12:09:14:541 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:14:541 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:09:14:541 MiRam/(4096:4118): Estado magico E
 
-[INFO] 11:44:17:820 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:09:14:541 MiRam/(4096:4118): Pos x magico 1
 
-[INFO] 11:44:17:820 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:17:820 MiRam/(3077:3117): Prox instruccion 49
-[INFO] 11:44:17:820 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:17:820 MiRam/(3077:3117): El indice 0
+[INFO] 12:09:14:541 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:09:14:541 MiRam/(4096:4118): Prox instruccion 0
+[INFO] 12:09:14:541 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:09:14:541 MiRam/(4096:4118): El indice 0
 
-[INFO] 11:44:17:820 MiRam/(3077:3117): 
+[INFO] 12:09:14:541 MiRam/(4096:4118): 
 El offset 8
 
-[INFO] 11:44:17:820 MiRam/(3077:3117): MARCO 2
+[INFO] 12:09:14:541 MiRam/(4096:4118): MARCO 3
 
-[INFO] 11:44:17:820 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:09:14:541 MiRam/(4096:4118): OFFSET 8
 
-[INFO] 11:44:19:918 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:19:919 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:19:919 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:19:919 MiRam/(3077:3117): 
+[INFO] 12:09:14:541 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:14:541 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:14:541 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:14:541 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:19:919 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:19:919 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:19:919 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:19:919 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:19:919 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:19:920 MiRam/(3077:3117): Estado magico E
+[INFO] 12:09:14:541 MiRam/(4096:4123): ENTRE EN MS
+[INFO] 12:09:14:541 MiRam/(4096:4123): Esto recupero de swap 12
+[INFO] 12:09:14:542 MiRam/(4096:4123): Algoritmo de reemplazo es LRU
 
-[INFO] 11:44:19:920 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:09:14:542 MiRam/(4096:4123): El marco elegido de MP para reemplazar es 1
+[INFO] 12:09:14:542 MiRam/(4096:4123): EL NUMERO DE BLOQUE ES 13
+[INFO] 12:09:16:542 MiRam/(4096:4123): Recuperando este bloque de swap 12
+[INFO] 12:09:16:542 MiRam/(4096:4123): Esto recupero en swap
+[INFO] 12:09:16:543 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:16:543 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:16:543 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:16:543 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:16:543 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:16:543 MiRam/(4096:4123): Estado magico R
 
-[INFO] 11:44:19:920 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:19:920 MiRam/(3077:3117): Prox instruccion 49
-[INFO] 11:44:19:920 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:19:920 MiRam/(3077:3117): El tripulante que recibi es el 3
+[INFO] 12:09:16:543 MiRam/(4096:4123): Pos x magico 4
+
+[INFO] 12:09:16:543 MiRam/(4096:4123): Pos y magico 4
+[INFO] 12:09:16:543 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:16:543 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:16:543 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:09:16:543 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:16:543 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:16:544 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:16:544 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:16:544 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:16:544 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:16:544 MiRam/(4096:4121): 
+El offseeeeeet tripu 8
+[INFO] 12:09:16:544 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:16:544 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:16:544 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:16:544 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:16:544 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:16:544 MiRam/(4096:4121): Estado magico E
+
+[INFO] 12:09:16:544 MiRam/(4096:4121): Pos x magico 3
+
+[INFO] 12:09:16:544 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:16:544 MiRam/(4096:4121): Prox instruccion 49
+[INFO] 12:09:16:544 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:16:544 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:09:16:544 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:09:16:544 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:09:16:544 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:09:16:544 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:09:16:544 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:09:16:544 MiRam/(4096:4118): El indice 0
+[INFO] 12:09:16:544 MiRam/(4096:4118): 
+El offseeeeeet tripu 8
+[INFO] 12:09:16:544 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:16:545 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:09:16:545 MiRam/(4096:4118): TID magico 1
+[INFO] 12:09:16:545 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:16:545 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:09:16:545 MiRam/(4096:4118): Estado magico R
+
+[INFO] 12:09:16:545 MiRam/(4096:4118): Pos x magico 1
+
+[INFO] 12:09:16:545 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:09:16:545 MiRam/(4096:4118): Prox instruccion 0
+[INFO] 12:09:16:545 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:09:16:545 MiRam/(4096:4118): El indice 0
+
+[INFO] 12:09:16:545 MiRam/(4096:4118): 
+El offset 8
+
+[INFO] 12:09:16:545 MiRam/(4096:4118): MARCO 3
+
+[INFO] 12:09:16:545 MiRam/(4096:4118): OFFSET 8
+
+[INFO] 12:09:16:545 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:16:545 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:16:545 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:16:545 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:09:16:545 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:16:545 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:16:545 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:16:545 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:16:545 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:16:545 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:09:16:545 MiRam/(4096:4123): Pos x magico 4
+
+[INFO] 12:09:16:545 MiRam/(4096:4123): Pos y magico 4
+[INFO] 12:09:16:546 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:16:546 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:16:546 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:09:16:546 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:16:546 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:16:546 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:18:548 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:18:548 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:18:548 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:18:548 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:09:18:548 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:18:548 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:18:548 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:18:548 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:18:548 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:18:548 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:09:18:548 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:09:18:548 MiRam/(4096:4123): Pos y magico 4
+[INFO] 12:09:18:548 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:18:548 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:18:548 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:09:18:548 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:18:548 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:18:548 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:22:549 MiRam/(4096:4118): POS VECTOR 0
+[INFO] 12:09:22:549 MiRam/(4096:4118): Puntero tarea DE PABLIN 8
+[INFO] 12:09:22:549 MiRam/(4096:4118): El indice 0
+[INFO] 12:09:22:550 MiRam/(4096:4118): 
+El offseeeeeet tripu 8
+[INFO] 12:09:22:550 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:22:550 MiRam/(4096:4118): OFFSET 8
+[INFO] 12:09:22:550 MiRam/(4096:4118): TID magico 1
+[INFO] 12:09:22:550 MiRam/(4096:4118): MARCO 3
+[INFO] 12:09:22:550 MiRam/(4096:4118): OFFSET 12
+[INFO] 12:09:22:550 MiRam/(4096:4118): Estado magico E
+
+[INFO] 12:09:22:550 MiRam/(4096:4118): Pos x magico 1
+
+[INFO] 12:09:22:550 MiRam/(4096:4118): Pos y magico 1
+[INFO] 12:09:22:550 MiRam/(4096:4118): Prox instruccion 0
+[INFO] 12:09:22:550 MiRam/(4096:4118): Puntero magico  1
+[INFO] 12:09:22:550 MiRam/(4096:4118): El tripulante que recibi es el 1
+ y 1
+[INFO] 12:09:22:550 MiRam/(4096:4118): El tripulante que recibi eSSSSSs el 1
+ y 0
+[INFO] 12:09:22:550 MiRam/(4096:4118): 
+ tareas : (null) 
+
+[INFO] 12:09:22:550 MiRam/(4096:4118): Impresion de 4 marcos
+[ERROR] 12:09:22:551 MiRam/(4096:4118): el cliente se desconecto. Terminando servidor
+[INFO] 12:09:22:551 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:22:551 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:22:551 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:22:551 MiRam/(4096:4121): 
+El offseeeeeet tripu 8
+[INFO] 12:09:22:551 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:22:551 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:22:551 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:22:551 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:22:551 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:22:551 MiRam/(4096:4121): Estado magico R
+
+[INFO] 12:09:22:552 MiRam/(4096:4121): Pos x magico 3
+
+[INFO] 12:09:22:552 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:22:552 MiRam/(4096:4121): Prox instruccion 49
+[INFO] 12:09:22:552 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:22:552 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:09:22:552 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:09:22:552 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:09:22:552 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:09:22:554 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:22:554 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:22:554 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:22:554 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:09:22:554 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:22:554 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:22:554 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:22:554 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:22:554 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:22:554 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:09:22:554 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:09:22:554 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:22:554 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:22:554 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:22:554 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:09:22:554 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:22:554 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:22:554 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:22:554 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:22:555 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:22:555 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:22:555 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:09:22:555 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:22:555 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:22:555 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:22:555 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:22:555 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:22:555 MiRam/(4096:4123): Estado magico R
+
+[INFO] 12:09:22:555 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:09:22:555 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:22:555 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:22:555 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:22:555 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:09:22:555 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:22:555 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:22:560 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:28:557 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:28:557 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:28:557 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:28:558 MiRam/(4096:4121): 
+El offseeeeeet tripu 8
+[INFO] 12:09:28:558 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:28:558 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:28:558 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:28:558 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:28:558 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:28:558 MiRam/(4096:4121): Estado magico E
+
+[INFO] 12:09:28:558 MiRam/(4096:4121): Pos x magico 3
+
+[INFO] 12:09:28:558 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:28:558 MiRam/(4096:4121): Prox instruccion 49
+[INFO] 12:09:28:558 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:28:558 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:09:28:558 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:09:28:558 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:09:28:559 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:09:28:559 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:28:559 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:28:559 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:28:559 MiRam/(4096:4121): 
+El offseeeeeet tripu 8
+[INFO] 12:09:28:559 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:28:559 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:28:559 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:28:559 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:28:559 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:28:560 MiRam/(4096:4121): Estado magico R
+
+[INFO] 12:09:28:560 MiRam/(4096:4121): Pos x magico 3
+
+[INFO] 12:09:28:560 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:28:560 MiRam/(4096:4121): Prox instruccion 49
+[INFO] 12:09:28:560 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:28:560 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:09:28:560 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:09:28:560 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:09:28:560 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:09:28:561 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:28:561 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:28:561 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:28:561 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:09:28:561 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:28:561 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:28:561 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:28:561 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:28:561 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:28:561 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:09:28:561 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:09:28:561 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:28:561 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:28:561 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:28:561 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:09:28:561 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:28:561 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:28:561 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:28:562 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:28:562 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:28:562 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:28:562 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:09:28:562 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:28:562 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:28:562 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:28:562 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:28:562 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:28:562 MiRam/(4096:4123): Estado magico R
+
+[INFO] 12:09:28:562 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:09:28:562 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:28:562 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:28:562 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:28:562 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:09:28:562 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:28:562 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:28:562 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:30:568 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:30:568 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:30:568 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:30:568 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:09:30:569 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:30:569 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:30:569 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:30:569 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:30:569 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:30:569 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:09:30:569 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:09:30:569 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:30:569 MiRam/(4096:4123): Prox instruccion 39
+[INFO] 12:09:30:569 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:30:569 MiRam/(4096:4123): El tripulante que recibi es el 3
  y 3
-[INFO] 11:44:19:920 MiRam/(3077:3117): El tripulante que recibi eSSSSSs el 3
+[INFO] 12:09:30:569 MiRam/(4096:4123): El tripulante que recibi eSSSSSs el 3
+ y 39
+[INFO] 12:09:30:569 MiRam/(4096:4123): 
+El punterin 39
+
+[INFO] 12:09:30:569 MiRam/(4096:4123): Esto recupero de swap 11
+[INFO] 12:09:30:569 MiRam/(4096:4123): Algoritmo de reemplazo es LRU
+
+[INFO] 12:09:30:569 MiRam/(4096:4123): El marco elegido de MP para reemplazar es 2
+[INFO] 12:09:30:570 MiRam/(4096:4123): EL NUMERO DE BLOQUE ES 14
+[INFO] 12:09:32:570 MiRam/(4096:4123): Recuperando este bloque de swap 11
+[INFO] 12:09:32:570 MiRam/(4096:4123): Esto recupero en swap
+[INFO] 12:09:32:570 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:09:32:570 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:32:570 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:32:570 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:32:571 MiRam/(4096:4123): 
+ tareas : C01;5;5;5 
+
+[INFO] 12:09:32:571 MiRam/(4096:4123): Impresion de 4 marcos
+[INFO] 12:09:32:572 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:32:572 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:32:572 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:32:572 MiRam/(4096:4121): 
+El offseeeeeet tripu 8
+[INFO] 12:09:32:572 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:32:572 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:32:572 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:32:572 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:32:572 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:32:572 MiRam/(4096:4121): Estado magico E
+
+[INFO] 12:09:32:572 MiRam/(4096:4121): Pos x magico 3
+
+[INFO] 12:09:32:572 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:32:572 MiRam/(4096:4121): Prox instruccion 49
+[INFO] 12:09:32:572 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:32:572 MiRam/(4096:4121): El tripulante que recibi es el 2
+ y 2
+[INFO] 12:09:32:572 MiRam/(4096:4121): El tripulante que recibi eSSSSSs el 2
  y 49
-[INFO] 11:44:19:920 MiRam/(3077:3117): 
+[INFO] 12:09:32:572 MiRam/(4096:4121): 
 El punterin 49
 
-[INFO] 11:44:19:921 MiRam/(3077:3117): Esto recupero de swap 15
-[INFO] 11:44:19:921 MiRam/(3077:3117): Algoritmo de reemplazo es LRU
+[INFO] 12:09:32:572 MiRam/(4096:4121): Esto recupero de swap 14
+[INFO] 12:09:32:572 MiRam/(4096:4121): Algoritmo de reemplazo es LRU
 
-[INFO] 11:44:19:921 MiRam/(3077:3117): El marco elegido de MP para reemplazar es 3
-[INFO] 11:44:19:921 MiRam/(3077:3117): EL NUMERO DE BLOQUE ES 17
-[INFO] 11:44:21:922 MiRam/(3077:3117): Recuperando este bloque de swap 15
-[INFO] 11:44:21:923 MiRam/(3077:3117): Esto recupero en swap
-[INFO] 11:44:21:924 MiRam/(3077:3117): El indice 0
+[INFO] 12:09:32:572 MiRam/(4096:4121): El marco elegido de MP para reemplazar es 2
+[INFO] 12:09:32:573 MiRam/(4096:4121): EL NUMERO DE BLOQUE ES 15
+[INFO] 12:09:34:573 MiRam/(4096:4121): Recuperando este bloque de swap 14
+[INFO] 12:09:34:573 MiRam/(4096:4121): Esto recupero en swap
+[INFO] 12:09:34:573 MiRam/(4096:4121): El indice 0
 
-[INFO] 11:44:21:924 MiRam/(3077:3117): 
+[INFO] 12:09:34:573 MiRam/(4096:4121): 
 El offset 8
 
-[INFO] 11:44:21:924 MiRam/(3077:3117): MARCO 2
+[INFO] 12:09:34:574 MiRam/(4096:4121): MARCO 0
 
-[INFO] 11:44:21:924 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:09:34:574 MiRam/(4096:4121): OFFSET 8
 
-[INFO] 11:44:21:924 MiRam/(3077:3117): 
+[INFO] 12:09:34:574 MiRam/(4096:4121): 
+ tareas : B02;3;3;5 
+
+[INFO] 12:09:34:574 MiRam/(4096:4121): Impresion de 4 marcos
+[INFO] 12:09:36:575 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:36:575 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:36:575 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:36:575 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:09:36:575 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:36:575 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:36:575 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:36:575 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:36:575 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:36:575 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:09:36:575 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:09:36:575 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:36:575 MiRam/(4096:4123): Prox instruccion 49
+[INFO] 12:09:36:575 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:36:576 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:09:36:576 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:36:576 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:36:576 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:36:576 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:36:576 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:36:576 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:36:576 MiRam/(4096:4121): 
+El offseeeeeet tripu 8
+[INFO] 12:09:36:576 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:36:576 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:36:576 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:36:576 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:36:576 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:36:576 MiRam/(4096:4121): Estado magico E
+
+[INFO] 12:09:36:576 MiRam/(4096:4121): Pos x magico 3
+
+[INFO] 12:09:36:576 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:36:576 MiRam/(4096:4121): Prox instruccion 0
+[INFO] 12:09:36:577 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:36:577 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:09:36:577 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:09:36:577 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:09:36:577 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:09:36:577 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:36:577 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:36:577 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:36:577 MiRam/(4096:4121): 
+El offseeeeeet tripu 8
+[INFO] 12:09:36:577 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:36:577 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:36:577 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:36:577 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:36:577 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:36:577 MiRam/(4096:4121): Estado magico R
+
+[INFO] 12:09:36:577 MiRam/(4096:4121): Pos x magico 3
+
+[INFO] 12:09:36:578 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:36:578 MiRam/(4096:4121): Prox instruccion 0
+[INFO] 12:09:36:578 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:36:578 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:09:36:578 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:09:36:578 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:09:36:578 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:09:36:578 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:36:578 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:36:578 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:36:578 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:09:36:578 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:36:578 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:36:578 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:36:578 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:36:578 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:36:579 MiRam/(4096:4123): Estado magico R
+
+[INFO] 12:09:36:579 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:09:36:579 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:36:579 MiRam/(4096:4123): Prox instruccion 49
+[INFO] 12:09:36:579 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:36:579 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:09:36:579 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:36:579 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:36:579 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:42:580 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:42:580 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:42:580 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:42:580 MiRam/(4096:4121): 
+El offseeeeeet tripu 8
+[INFO] 12:09:42:580 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:42:581 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:42:581 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:42:581 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:42:581 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:42:581 MiRam/(4096:4121): Estado magico E
+
+[INFO] 12:09:42:582 MiRam/(4096:4121): Pos x magico 3
+
+[INFO] 12:09:42:582 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:42:582 MiRam/(4096:4121): Prox instruccion 0
+[INFO] 12:09:42:582 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:42:582 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:09:42:583 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:09:42:583 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:09:42:583 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:09:42:585 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:42:585 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:42:585 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:42:585 MiRam/(4096:4121): 
+El offseeeeeet tripu 8
+[INFO] 12:09:42:585 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:42:585 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:42:585 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:42:586 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:42:586 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:42:586 MiRam/(4096:4121): Estado magico R
+
+[INFO] 12:09:42:586 MiRam/(4096:4121): Pos x magico 3
+
+[INFO] 12:09:42:586 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:42:586 MiRam/(4096:4121): Prox instruccion 0
+[INFO] 12:09:42:586 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:42:586 MiRam/(4096:4121): El indice 0
+
+[INFO] 12:09:42:587 MiRam/(4096:4121): 
+El offset 8
+
+[INFO] 12:09:42:587 MiRam/(4096:4121): MARCO 0
+
+[INFO] 12:09:42:587 MiRam/(4096:4121): OFFSET 8
+
+[INFO] 12:09:42:587 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:42:587 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:42:587 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:42:587 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:09:42:587 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:42:587 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:42:587 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:42:587 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:42:587 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:42:587 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:09:42:588 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:09:42:588 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:42:588 MiRam/(4096:4123): Prox instruccion 49
+[INFO] 12:09:42:588 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:42:588 MiRam/(4096:4123): El tripulante que recibi es el 3
+ y 3
+[INFO] 12:09:42:588 MiRam/(4096:4123): El tripulante que recibi eSSSSSs el 3
+ y 49
+[INFO] 12:09:42:588 MiRam/(4096:4123): 
+El punterin 49
+
+[INFO] 12:09:42:588 MiRam/(4096:4123): Esto recupero de swap 15
+[INFO] 12:09:42:588 MiRam/(4096:4123): Algoritmo de reemplazo es LRU
+
+[INFO] 12:09:42:588 MiRam/(4096:4123): El marco elegido de MP para reemplazar es 2
+[INFO] 12:09:42:588 MiRam/(4096:4123): EL NUMERO DE BLOQUE ES 16
+[INFO] 12:09:44:589 MiRam/(4096:4123): Recuperando este bloque de swap 15
+[INFO] 12:09:44:589 MiRam/(4096:4123): Esto recupero en swap
+[INFO] 12:09:44:590 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:09:44:590 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:44:590 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:44:590 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:44:590 MiRam/(4096:4123): 
  tareas : C02;5;5;5 
 
-[INFO] 11:44:21:925 MiRam/(3077:3117): Impresion de 4 marcos
-[INFO] 11:44:21:954 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:44:21:954 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:44:21:955 MiRam/(3077:3108): El indice 0
-[INFO] 11:44:21:957 MiRam/(3077:3108): 
+[INFO] 12:09:44:590 MiRam/(4096:4123): Impresion de 4 marcos
+[INFO] 12:09:44:591 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:44:591 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:44:591 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:44:591 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:21:958 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:21:958 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:44:21:958 MiRam/(3077:3108): TID magico 1
-[INFO] 11:44:21:958 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:21:958 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:44:21:958 MiRam/(3077:3108): Estado magico E
+[INFO] 12:09:44:591 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:44:591 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:44:592 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:44:592 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:44:592 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:44:592 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:44:21:958 MiRam/(3077:3108): Pos x magico 1
+[INFO] 12:09:44:592 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:44:21:958 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:44:21:958 MiRam/(3077:3108): Prox instruccion 0
-[INFO] 11:44:21:958 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:44:21:958 MiRam/(3077:3108): El indice 0
+[INFO] 12:09:44:593 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:44:593 MiRam/(4096:4123): Prox instruccion 59
+[INFO] 12:09:44:593 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:44:593 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:21:958 MiRam/(3077:3108): 
+[INFO] 12:09:44:593 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:44:21:958 MiRam/(3077:3108): MARCO 1
+[INFO] 12:09:44:593 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:44:21:958 MiRam/(3077:3108): OFFSET 8
+[INFO] 12:09:44:593 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:44:21:959 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:44:21:959 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:44:21:959 MiRam/(3077:3113): El indice 0
-[INFO] 11:44:21:959 MiRam/(3077:3113): 
+[INFO] 12:09:44:593 MiRam/(4096:4121): POS VECTOR 0
+[INFO] 12:09:44:593 MiRam/(4096:4121): Puntero tarea DE PABLIN 8
+[INFO] 12:09:44:593 MiRam/(4096:4121): El indice 0
+[INFO] 12:09:44:593 MiRam/(4096:4121): 
 El offseeeeeet tripu 8
-[INFO] 11:44:21:959 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:21:959 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:44:21:959 MiRam/(3077:3113): TID magico 2
-[INFO] 11:44:21:959 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:21:959 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:44:21:959 MiRam/(3077:3113): Estado magico R
+[INFO] 12:09:44:593 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:44:593 MiRam/(4096:4121): OFFSET 8
+[INFO] 12:09:44:593 MiRam/(4096:4121): TID magico 2
+[INFO] 12:09:44:593 MiRam/(4096:4121): MARCO 0
+[INFO] 12:09:44:593 MiRam/(4096:4121): OFFSET 12
+[INFO] 12:09:44:593 MiRam/(4096:4121): Estado magico E
 
-[INFO] 11:44:21:959 MiRam/(3077:3113): Pos x magico 3
+[INFO] 12:09:44:593 MiRam/(4096:4121): Pos x magico 3
 
-[INFO] 11:44:21:959 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:44:21:965 MiRam/(3077:3113): Prox instruccion 0
-[INFO] 11:44:21:965 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:44:21:965 MiRam/(3077:3113): El indice 0
-
-[INFO] 11:44:21:965 MiRam/(3077:3113): 
-El offset 8
-
-[INFO] 11:44:21:965 MiRam/(3077:3113): MARCO 0
-
-[INFO] 11:44:21:965 MiRam/(3077:3113): OFFSET 8
-
-[INFO] 11:44:26:3 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:26:3 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:26:4 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:26:4 MiRam/(3077:3117): 
-El offseeeeeet tripu 8
-[INFO] 11:44:26:4 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:26:4 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:26:4 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:26:4 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:26:4 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:26:4 MiRam/(3077:3117): Estado magico E
-
-[INFO] 11:44:26:4 MiRam/(3077:3117): Pos x magico 5
-
-[INFO] 11:44:26:4 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:26:4 MiRam/(3077:3117): Prox instruccion 59
-[INFO] 11:44:26:4 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:26:4 MiRam/(3077:3117): El indice 0
-
-[INFO] 11:44:26:4 MiRam/(3077:3117): 
-El offset 8
-
-[INFO] 11:44:26:5 MiRam/(3077:3117): MARCO 2
-
-[INFO] 11:44:26:5 MiRam/(3077:3117): OFFSET 8
-
-[INFO] 11:44:26:5 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:44:26:5 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:44:26:5 MiRam/(3077:3108): El indice 0
-[INFO] 11:44:26:5 MiRam/(3077:3108): 
-El offseeeeeet tripu 8
-[INFO] 11:44:26:5 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:26:5 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:44:26:5 MiRam/(3077:3108): TID magico 1
-[INFO] 11:44:26:5 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:26:5 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:44:26:5 MiRam/(3077:3108): Estado magico R
-
-[INFO] 11:44:26:5 MiRam/(3077:3108): Pos x magico 1
-
-[INFO] 11:44:26:5 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:44:26:5 MiRam/(3077:3108): Prox instruccion 0
-[INFO] 11:44:26:5 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:44:26:5 MiRam/(3077:3108): El indice 0
-
-[INFO] 11:44:26:5 MiRam/(3077:3108): 
-El offset 8
-
-[INFO] 11:44:26:5 MiRam/(3077:3108): MARCO 1
-
-[INFO] 11:44:26:5 MiRam/(3077:3108): OFFSET 8
-
-[INFO] 11:44:28:51 MiRam/(3077:3113): POS VECTOR 0
-[INFO] 11:44:28:51 MiRam/(3077:3113): Puntero tarea DE PABLIN 8
-[INFO] 11:44:28:51 MiRam/(3077:3113): El indice 0
-[INFO] 11:44:28:51 MiRam/(3077:3113): 
-El offseeeeeet tripu 8
-[INFO] 11:44:28:52 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:28:52 MiRam/(3077:3113): OFFSET 8
-[INFO] 11:44:28:52 MiRam/(3077:3113): TID magico 2
-[INFO] 11:44:28:52 MiRam/(3077:3113): MARCO 0
-[INFO] 11:44:28:52 MiRam/(3077:3113): OFFSET 12
-[INFO] 11:44:28:52 MiRam/(3077:3113): Estado magico E
-
-[INFO] 11:44:28:52 MiRam/(3077:3113): Pos x magico 3
-
-[INFO] 11:44:28:52 MiRam/(3077:3113): Pos y magico 3
-[INFO] 11:44:28:53 MiRam/(3077:3113): Prox instruccion 0
-[INFO] 11:44:28:53 MiRam/(3077:3113): Puntero magico  1
-[INFO] 11:44:28:53 MiRam/(3077:3113): El tripulante que recibi es el 2
+[INFO] 12:09:44:593 MiRam/(4096:4121): Pos y magico 3
+[INFO] 12:09:44:593 MiRam/(4096:4121): Prox instruccion 0
+[INFO] 12:09:44:593 MiRam/(4096:4121): Puntero magico  1
+[INFO] 12:09:44:593 MiRam/(4096:4121): El tripulante que recibi es el 2
  y 2
-[INFO] 11:44:28:53 MiRam/(3077:3113): El tripulante que recibi eSSSSSs el 2
+[INFO] 12:09:44:593 MiRam/(4096:4121): El tripulante que recibi eSSSSSs el 2
  y 0
-[INFO] 11:44:28:53 MiRam/(3077:3113): 
+[INFO] 12:09:44:593 MiRam/(4096:4121): 
  tareas : (null) 
 
-[INFO] 11:44:28:54 MiRam/(3077:3113): Impresion de 4 marcos
-[INFO] 11:44:28:55 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:28:55 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:28:55 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:28:55 MiRam/(3077:3117): 
+[INFO] 12:09:44:593 MiRam/(4096:4121): Impresion de 4 marcos
+[ERROR] 12:09:44:594 MiRam/(4096:4121): el cliente se desconecto. Terminando servidor
+[INFO] 12:09:44:594 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:44:594 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:44:594 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:44:594 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:28:55 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:28:56 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:28:56 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:28:56 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:28:56 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:28:56 MiRam/(3077:3117): Estado magico R
+[INFO] 12:09:44:594 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:44:594 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:44:594 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:44:594 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:44:594 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:44:595 MiRam/(4096:4123): Estado magico R
 
-[INFO] 11:44:28:56 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:09:44:595 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:44:28:56 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:28:56 MiRam/(3077:3117): Prox instruccion 59
-[INFO] 11:44:28:56 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:28:56 MiRam/(3077:3117): El indice 0
+[INFO] 12:09:44:595 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:44:595 MiRam/(4096:4123): Prox instruccion 59
+[INFO] 12:09:44:595 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:44:595 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:28:56 MiRam/(3077:3117): 
+[INFO] 12:09:44:595 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:44:28:56 MiRam/(3077:3117): MARCO 2
+[INFO] 12:09:44:595 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:44:28:56 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:09:44:595 MiRam/(4096:4123): OFFSET 8
 
-[ERROR] 11:44:28:57 MiRam/(3077:3113): el cliente se desconecto. Terminando servidor
-[INFO] 11:44:32:79 MiRam/(3077:3108): POS VECTOR 0
-[INFO] 11:44:32:79 MiRam/(3077:3108): Puntero tarea DE PABLIN 8
-[INFO] 11:44:32:79 MiRam/(3077:3108): El indice 0
-[INFO] 11:44:32:79 MiRam/(3077:3108): 
+[INFO] 12:09:50:599 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:50:599 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:50:599 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:50:599 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:32:80 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:32:80 MiRam/(3077:3108): OFFSET 8
-[INFO] 11:44:32:80 MiRam/(3077:3108): TID magico 1
-[INFO] 11:44:32:80 MiRam/(3077:3108): MARCO 1
-[INFO] 11:44:32:80 MiRam/(3077:3108): OFFSET 12
-[INFO] 11:44:32:80 MiRam/(3077:3108): Estado magico E
+[INFO] 12:09:50:599 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:50:599 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:50:599 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:50:599 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:50:599 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:50:599 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:44:32:80 MiRam/(3077:3108): Pos x magico 1
+[INFO] 12:09:50:600 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:44:32:80 MiRam/(3077:3108): Pos y magico 1
-[INFO] 11:44:32:81 MiRam/(3077:3108): Prox instruccion 0
-[INFO] 11:44:32:81 MiRam/(3077:3108): Puntero magico  1
-[INFO] 11:44:32:81 MiRam/(3077:3108): El tripulante que recibi es el 1
- y 1
-[INFO] 11:44:32:81 MiRam/(3077:3108): El tripulante que recibi eSSSSSs el 1
- y 0
-[INFO] 11:44:32:82 MiRam/(3077:3108): 
- tareas : (null) 
+[INFO] 12:09:50:600 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:50:600 MiRam/(4096:4123): Prox instruccion 59
+[INFO] 12:09:50:600 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:50:600 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:32:82 MiRam/(3077:3108): Impresion de 4 marcos
-[ERROR] 11:44:32:84 MiRam/(3077:3108): el cliente se desconecto. Terminando servidor
-[INFO] 11:44:34:150 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:34:151 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:34:151 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:34:151 MiRam/(3077:3117): 
+[INFO] 12:09:50:600 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:50:600 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:50:600 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:50:600 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:50:601 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:50:601 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:50:601 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:34:151 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:34:151 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:34:152 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:34:152 MiRam/(3077:3117): MARCO 2
-[INFO] 11:44:34:152 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:34:152 MiRam/(3077:3117): Estado magico E
+[INFO] 12:09:50:601 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:50:601 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:50:601 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:50:601 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:50:601 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:50:601 MiRam/(4096:4123): Estado magico R
 
-[INFO] 11:44:34:152 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:09:50:601 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:44:34:152 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:34:152 MiRam/(3077:3117): Prox instruccion 59
-[INFO] 11:44:34:152 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:34:153 MiRam/(3077:3117): El tripulante que recibi es el 3
+[INFO] 12:09:50:601 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:50:601 MiRam/(4096:4123): Prox instruccion 59
+[INFO] 12:09:50:601 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:50:602 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:09:50:602 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:09:50:602 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:09:50:602 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:09:54:608 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:09:54:608 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:09:54:608 MiRam/(4096:4123): El indice 0
+[INFO] 12:09:54:608 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:09:54:608 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:54:608 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:09:54:608 MiRam/(4096:4123): TID magico 3
+[INFO] 12:09:54:609 MiRam/(4096:4123): MARCO 1
+[INFO] 12:09:54:609 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:09:54:609 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:09:54:609 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:09:54:609 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:09:54:609 MiRam/(4096:4123): Prox instruccion 59
+[INFO] 12:09:54:609 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:09:54:609 MiRam/(4096:4123): El tripulante que recibi es el 3
  y 3
-[INFO] 11:44:34:153 MiRam/(3077:3117): El tripulante que recibi eSSSSSs el 3
+[INFO] 12:09:54:609 MiRam/(4096:4123): El tripulante que recibi eSSSSSs el 3
  y 59
-[INFO] 11:44:34:153 MiRam/(3077:3117): 
+[INFO] 12:09:54:609 MiRam/(4096:4123): 
 El punterin 59
 
-[INFO] 11:44:34:154 MiRam/(3077:3117): Esto recupero de swap 5
-[INFO] 11:44:34:154 MiRam/(3077:3117): Algoritmo de reemplazo es LRU
+[INFO] 12:09:54:609 MiRam/(4096:4123): Esto recupero de swap 5
+[INFO] 12:09:54:609 MiRam/(4096:4123): Algoritmo de reemplazo es LRU
 
-[INFO] 11:44:34:154 MiRam/(3077:3117): El marco elegido de MP para reemplazar es 2
-[INFO] 11:44:34:154 MiRam/(3077:3117): EL NUMERO DE BLOQUE ES 18
-[INFO] 11:44:36:155 MiRam/(3077:3117): Recuperando este bloque de swap 5
-[INFO] 11:44:36:155 MiRam/(3077:3117): Esto recupero en swap
-[INFO] 11:44:36:156 MiRam/(3077:3117): El indice 0
+[INFO] 12:09:54:609 MiRam/(4096:4123): El marco elegido de MP para reemplazar es 1
+[INFO] 12:09:54:609 MiRam/(4096:4123): EL NUMERO DE BLOQUE ES 17
+[INFO] 12:09:56:610 MiRam/(4096:4123): Recuperando este bloque de swap 5
+[INFO] 12:09:56:610 MiRam/(4096:4123): Esto recupero en swap
+[INFO] 12:09:56:610 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:36:156 MiRam/(3077:3117): 
+[INFO] 12:09:56:610 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:44:36:156 MiRam/(3077:3117): ENTRE EN MS 
-[INFO] 11:44:36:157 MiRam/(3077:3117): Esto recupero de swap 18
-[INFO] 11:44:36:157 MiRam/(3077:3117): Algoritmo de reemplazo es LRU
+[INFO] 12:09:56:610 MiRam/(4096:4123): ENTRE EN MS 
+[INFO] 12:09:56:610 MiRam/(4096:4123): Esto recupero de swap 17
+[INFO] 12:09:56:610 MiRam/(4096:4123): Algoritmo de reemplazo es LRU
 
-[INFO] 11:44:36:157 MiRam/(3077:3117): El marco elegido de MP para reemplazar es 3
-[INFO] 11:44:36:157 MiRam/(3077:3117): EL NUMERO DE BLOQUE ES 19
-[INFO] 11:44:38:158 MiRam/(3077:3117): Recuperando este bloque de swap 18
-[INFO] 11:44:38:158 MiRam/(3077:3117): Esto recupero en swap
-[INFO] 11:44:38:159 MiRam/(3077:3117): MARCO 3
+[INFO] 12:09:56:610 MiRam/(4096:4123): El marco elegido de MP para reemplazar es 2
+[INFO] 12:09:56:611 MiRam/(4096:4123): EL NUMERO DE BLOQUE ES 18
+[INFO] 12:09:58:611 MiRam/(4096:4123): Recuperando este bloque de swap 17
+[INFO] 12:09:58:611 MiRam/(4096:4123): Esto recupero en swap
+[INFO] 12:09:58:612 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:44:38:159 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:09:58:612 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:44:38:159 MiRam/(3077:3117): 
+[INFO] 12:09:58:612 MiRam/(4096:4123): 
  tareas : C03;5;5;5 
 
-[INFO] 11:44:38:160 MiRam/(3077:3117): Impresion de 4 marcos
-[INFO] 11:44:38:161 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:38:162 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:38:162 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:38:162 MiRam/(3077:3117): 
+[INFO] 12:09:58:612 MiRam/(4096:4123): Impresion de 4 marcos
+[INFO] 12:10:00:615 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:00:615 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:00:615 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:00:616 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:38:162 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:38:162 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:38:162 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:38:163 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:38:163 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:38:163 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:00:616 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:00:616 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:00:616 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:00:616 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:00:617 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:00:617 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:44:38:163 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:00:617 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:44:38:163 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:38:163 MiRam/(3077:3117): Prox instruccion 69
-[INFO] 11:44:38:163 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:38:163 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:00:617 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:00:617 MiRam/(4096:4123): Prox instruccion 69
+[INFO] 12:10:00:617 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:00:617 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:38:164 MiRam/(3077:3117): 
+[INFO] 12:10:00:617 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:44:38:164 MiRam/(3077:3117): MARCO 3
+[INFO] 12:10:00:618 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:44:38:164 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:00:618 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:44:38:164 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:38:164 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:38:165 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:38:165 MiRam/(3077:3117): 
+[INFO] 12:10:00:618 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:00:618 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:00:618 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:00:618 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:38:165 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:38:165 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:38:165 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:38:165 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:38:165 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:38:165 MiRam/(3077:3117): Estado magico R
+[INFO] 12:10:00:618 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:00:618 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:00:619 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:00:619 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:00:619 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:00:619 MiRam/(4096:4123): Estado magico R
 
-[INFO] 11:44:38:166 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:00:619 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:44:38:166 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:38:166 MiRam/(3077:3117): Prox instruccion 69
-[INFO] 11:44:38:166 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:38:166 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:00:619 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:00:619 MiRam/(4096:4123): Prox instruccion 69
+[INFO] 12:10:00:619 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:00:619 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:38:166 MiRam/(3077:3117): 
+[INFO] 12:10:00:619 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:44:38:166 MiRam/(3077:3117): MARCO 3
+[INFO] 12:10:00:619 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:44:38:167 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:00:619 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:44:44:282 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:44:282 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:44:282 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:44:282 MiRam/(3077:3117): 
+[INFO] 12:10:06:620 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:06:620 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:06:620 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:06:620 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:44:282 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:44:283 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:44:283 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:44:283 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:44:283 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:44:283 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:06:621 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:06:621 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:06:621 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:06:621 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:06:621 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:06:621 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:44:44:283 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:06:621 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:44:44:283 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:44:284 MiRam/(3077:3117): Prox instruccion 69
-[INFO] 11:44:44:284 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:44:284 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:06:621 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:06:621 MiRam/(4096:4123): Prox instruccion 69
+[INFO] 12:10:06:621 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:06:621 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:44:284 MiRam/(3077:3117): 
+[INFO] 12:10:06:621 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:44:44:284 MiRam/(3077:3117): MARCO 3
+[INFO] 12:10:06:621 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:44:44:284 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:06:621 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:44:44:285 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:44:285 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:44:285 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:44:286 MiRam/(3077:3117): 
+[INFO] 12:10:06:622 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:06:622 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:06:622 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:06:622 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:44:286 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:44:286 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:44:286 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:44:286 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:44:286 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:44:286 MiRam/(3077:3117): Estado magico R
+[INFO] 12:10:06:622 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:06:622 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:06:622 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:06:622 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:06:622 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:06:622 MiRam/(4096:4123): Estado magico R
 
-[INFO] 11:44:44:286 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:06:622 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:44:44:287 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:44:287 MiRam/(3077:3117): Prox instruccion 69
-[INFO] 11:44:44:287 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:44:287 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:06:622 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:06:622 MiRam/(4096:4123): Prox instruccion 69
+[INFO] 12:10:06:622 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:06:622 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:44:287 MiRam/(3077:3117): 
+[INFO] 12:10:06:622 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:44:44:288 MiRam/(3077:3117): MARCO 3
+[INFO] 12:10:06:622 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:44:44:288 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:06:622 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:44:48:358 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:48:358 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:48:359 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:48:359 MiRam/(3077:3117): 
+[INFO] 12:10:08:625 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:08:625 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:08:625 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:08:625 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:48:359 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:48:359 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:48:359 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:48:359 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:48:359 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:48:359 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:08:625 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:08:625 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:08:625 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:08:625 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:08:625 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:08:625 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:44:48:359 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:08:625 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:44:48:359 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:48:360 MiRam/(3077:3117): Prox instruccion 69
-[INFO] 11:44:48:360 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:48:360 MiRam/(3077:3117): El tripulante que recibi es el 3
+[INFO] 12:10:08:625 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:08:625 MiRam/(4096:4123): Prox instruccion 69
+[INFO] 12:10:08:625 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:08:625 MiRam/(4096:4123): El tripulante que recibi es el 3
  y 3
-[INFO] 11:44:48:360 MiRam/(3077:3117): El tripulante que recibi eSSSSSs el 3
+[INFO] 12:10:08:625 MiRam/(4096:4123): El tripulante que recibi eSSSSSs el 3
  y 69
-[INFO] 11:44:48:360 MiRam/(3077:3117): 
+[INFO] 12:10:08:625 MiRam/(4096:4123): 
 El punterin 69
 
-[INFO] 11:44:48:360 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:08:625 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:48:361 MiRam/(3077:3117): 
+[INFO] 12:10:08:625 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:44:48:361 MiRam/(3077:3117): MARCO 3
+[INFO] 12:10:08:625 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:44:48:361 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:08:625 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:44:48:361 MiRam/(3077:3117): 
+[INFO] 12:10:08:625 MiRam/(4096:4123): 
  tareas : C04;5;5;5 
 
-[INFO] 11:44:48:362 MiRam/(3077:3117): Impresion de 4 marcos
-[INFO] 11:44:50:434 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:50:434 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:50:434 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:50:434 MiRam/(3077:3117): 
+[INFO] 12:10:08:625 MiRam/(4096:4123): Impresion de 4 marcos
+[INFO] 12:10:12:628 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:12:628 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:12:628 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:12:628 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:50:435 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:50:435 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:50:435 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:50:435 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:50:435 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:50:435 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:12:628 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:12:628 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:12:628 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:12:628 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:12:628 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:12:628 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:44:50:435 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:12:628 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:44:50:435 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:50:435 MiRam/(3077:3117): Prox instruccion 79
-[INFO] 11:44:50:435 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:50:435 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:12:628 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:12:628 MiRam/(4096:4123): Prox instruccion 79
+[INFO] 12:10:12:629 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:12:629 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:50:435 MiRam/(3077:3117): 
+[INFO] 12:10:12:629 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:44:50:435 MiRam/(3077:3117): MARCO 3
+[INFO] 12:10:12:629 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:44:50:435 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:12:629 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:44:50:435 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:50:435 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:50:436 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:50:436 MiRam/(3077:3117): 
+[INFO] 12:10:12:629 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:12:629 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:12:629 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:12:629 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:50:436 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:50:436 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:50:436 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:50:436 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:50:436 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:50:436 MiRam/(3077:3117): Estado magico R
+[INFO] 12:10:12:629 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:12:629 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:12:629 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:12:629 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:12:629 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:12:629 MiRam/(4096:4123): Estado magico R
 
-[INFO] 11:44:50:436 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:12:629 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:44:50:436 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:50:436 MiRam/(3077:3117): Prox instruccion 79
-[INFO] 11:44:50:436 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:50:436 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:12:629 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:12:629 MiRam/(4096:4123): Prox instruccion 79
+[INFO] 12:10:12:629 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:12:629 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:50:436 MiRam/(3077:3117): 
+[INFO] 12:10:12:629 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:44:50:436 MiRam/(3077:3117): MARCO 3
+[INFO] 12:10:12:630 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:44:50:436 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:12:630 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:44:56:439 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:56:439 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:56:440 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:56:440 MiRam/(3077:3117): 
+[INFO] 12:10:18:635 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:18:635 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:18:635 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:18:635 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:44:56:440 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:56:441 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:56:441 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:56:441 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:56:441 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:56:441 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:18:635 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:18:635 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:18:635 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:18:635 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:18:635 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:18:635 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:44:56:441 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:18:635 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:44:56:441 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:56:441 MiRam/(3077:3117): Prox instruccion 79
-[INFO] 11:44:56:441 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:56:441 MiRam/(3077:3117): El indice 0
-
-[INFO] 11:44:56:442 MiRam/(3077:3117): 
-El offset 8
-
-[INFO] 11:44:56:442 MiRam/(3077:3117): MARCO 3
-
-[INFO] 11:44:56:442 MiRam/(3077:3117): OFFSET 8
-
-[INFO] 11:44:56:442 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:56:443 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:56:443 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:56:443 MiRam/(3077:3117): 
-El offseeeeeet tripu 8
-[INFO] 11:44:56:443 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:56:443 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:56:443 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:56:443 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:56:443 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:56:443 MiRam/(3077:3117): Estado magico R
-
-[INFO] 11:44:56:444 MiRam/(3077:3117): Pos x magico 5
-
-[INFO] 11:44:56:444 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:56:444 MiRam/(3077:3117): Prox instruccion 79
-[INFO] 11:44:56:444 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:56:444 MiRam/(3077:3117): El indice 0
-
-[INFO] 11:44:56:444 MiRam/(3077:3117): 
-El offset 8
-
-[INFO] 11:44:56:444 MiRam/(3077:3117): MARCO 3
-
-[INFO] 11:44:56:444 MiRam/(3077:3117): OFFSET 8
-
-[INFO] 11:44:58:499 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:44:58:499 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:44:58:500 MiRam/(3077:3117): El indice 0
-[INFO] 11:44:58:500 MiRam/(3077:3117): 
-El offseeeeeet tripu 8
-[INFO] 11:44:58:500 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:58:500 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:44:58:500 MiRam/(3077:3117): TID magico 3
-[INFO] 11:44:58:500 MiRam/(3077:3117): MARCO 3
-[INFO] 11:44:58:500 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:44:58:500 MiRam/(3077:3117): Estado magico E
-
-[INFO] 11:44:58:501 MiRam/(3077:3117): Pos x magico 5
-
-[INFO] 11:44:58:502 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:44:58:502 MiRam/(3077:3117): Prox instruccion 79
-[INFO] 11:44:58:502 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:44:58:502 MiRam/(3077:3117): El tripulante que recibi es el 3
+[INFO] 12:10:18:635 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:18:635 MiRam/(4096:4123): Prox instruccion 79
+[INFO] 12:10:18:635 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:18:635 MiRam/(4096:4123): El tripulante que recibi es el 3
  y 3
-[INFO] 11:44:58:502 MiRam/(3077:3117): El tripulante que recibi eSSSSSs el 3
+[INFO] 12:10:18:635 MiRam/(4096:4123): El tripulante que recibi eSSSSSs el 3
  y 79
-[INFO] 11:44:58:503 MiRam/(3077:3117): 
+[INFO] 12:10:18:635 MiRam/(4096:4123): 
 El punterin 79
 
-[INFO] 11:44:58:503 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:18:635 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:44:58:504 MiRam/(3077:3117): 
+[INFO] 12:10:18:635 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:44:58:504 MiRam/(3077:3117): MARCO 3
+[INFO] 12:10:18:635 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:44:58:504 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:18:635 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:44:58:504 MiRam/(3077:3117): 
+[INFO] 12:10:18:635 MiRam/(4096:4123): 
  tareas : C05;5;5;5 
 
-[INFO] 11:44:58:506 MiRam/(3077:3117): Impresion de 4 marcos
-[INFO] 11:45:02:584 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:02:584 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:02:585 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:02:585 MiRam/(3077:3117): 
+[INFO] 12:10:18:636 MiRam/(4096:4123): Impresion de 4 marcos
+[INFO] 12:10:18:636 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:18:636 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:18:636 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:18:636 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:02:585 MiRam/(3077:3117): MARCO 3
-[INFO] 11:45:02:585 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:02:585 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:02:585 MiRam/(3077:3117): MARCO 3
-[INFO] 11:45:02:585 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:02:585 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:18:636 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:18:636 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:18:636 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:18:636 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:18:636 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:18:636 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:45:02:586 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:18:636 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:02:586 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:02:586 MiRam/(3077:3117): Prox instruccion 89
-[INFO] 11:45:02:586 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:02:586 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:18:636 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:18:636 MiRam/(4096:4123): Prox instruccion 89
+[INFO] 12:10:18:636 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:18:636 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:02:586 MiRam/(3077:3117): 
+[INFO] 12:10:18:636 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:02:586 MiRam/(3077:3117): MARCO 3
+[INFO] 12:10:18:636 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:45:02:586 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:18:636 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:02:587 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:02:587 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:02:587 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:02:587 MiRam/(3077:3117): 
+[INFO] 12:10:18:637 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:18:637 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:18:637 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:18:637 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:02:587 MiRam/(3077:3117): MARCO 3
-[INFO] 11:45:02:587 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:02:587 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:02:588 MiRam/(3077:3117): MARCO 3
-[INFO] 11:45:02:588 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:02:588 MiRam/(3077:3117): Estado magico R
+[INFO] 12:10:18:637 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:18:637 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:18:637 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:18:637 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:18:637 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:18:637 MiRam/(4096:4123): Estado magico R
 
-[INFO] 11:45:02:588 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:18:637 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:02:588 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:02:588 MiRam/(3077:3117): Prox instruccion 89
-[INFO] 11:45:02:588 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:02:588 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:18:637 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:18:637 MiRam/(4096:4123): Prox instruccion 89
+[INFO] 12:10:18:637 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:18:637 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:02:588 MiRam/(3077:3117): 
+[INFO] 12:10:18:637 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:02:589 MiRam/(3077:3117): MARCO 3
+[INFO] 12:10:18:637 MiRam/(4096:4123): MARCO 2
 
-[INFO] 11:45:02:589 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:18:637 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:08:663 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:08:663 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:08:663 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:08:663 MiRam/(3077:3117): 
+[INFO] 12:10:24:641 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:24:641 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:24:641 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:24:641 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:08:664 MiRam/(3077:3117): MARCO 3
-[INFO] 11:45:08:664 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:08:664 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:08:664 MiRam/(3077:3117): MARCO 3
-[INFO] 11:45:08:664 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:08:664 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:24:641 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:24:641 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:24:641 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:24:642 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:24:642 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:24:642 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:45:08:664 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:24:642 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:08:665 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:08:665 MiRam/(3077:3117): Prox instruccion 89
-[INFO] 11:45:08:665 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:08:665 MiRam/(3077:3117): El tripulante que recibi es el 3
+[INFO] 12:10:24:642 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:24:642 MiRam/(4096:4123): Prox instruccion 89
+[INFO] 12:10:24:642 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:24:642 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:10:24:642 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:10:24:642 MiRam/(4096:4123): MARCO 2
+
+[INFO] 12:10:24:642 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:10:24:642 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:24:643 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:24:643 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:24:643 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:10:24:643 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:24:643 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:24:643 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:24:643 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:24:643 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:24:643 MiRam/(4096:4123): Estado magico R
+
+[INFO] 12:10:24:643 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:10:24:643 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:24:643 MiRam/(4096:4123): Prox instruccion 89
+[INFO] 12:10:24:643 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:24:643 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:10:24:643 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:10:24:643 MiRam/(4096:4123): MARCO 2
+
+[INFO] 12:10:24:643 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:10:28:649 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:28:649 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:28:649 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:28:649 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:10:28:649 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:28:649 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:28:649 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:28:649 MiRam/(4096:4123): MARCO 2
+[INFO] 12:10:28:649 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:28:649 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:10:28:649 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:10:28:649 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:28:649 MiRam/(4096:4123): Prox instruccion 89
+[INFO] 12:10:28:649 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:28:649 MiRam/(4096:4123): El tripulante que recibi es el 3
  y 3
-[INFO] 11:45:08:665 MiRam/(3077:3117): El tripulante que recibi eSSSSSs el 3
+[INFO] 12:10:28:649 MiRam/(4096:4123): El tripulante que recibi eSSSSSs el 3
  y 89
-[INFO] 11:45:08:665 MiRam/(3077:3117): 
+[INFO] 12:10:28:650 MiRam/(4096:4123): 
 El punterin 89
 
-[INFO] 11:45:08:666 MiRam/(3077:3117): Esto recupero de swap 7
-[INFO] 11:45:08:666 MiRam/(3077:3117): Algoritmo de reemplazo es LRU
+[INFO] 12:10:28:650 MiRam/(4096:4123): Esto recupero de swap 7
+[INFO] 12:10:28:650 MiRam/(4096:4123): Algoritmo de reemplazo es LRU
 
-[INFO] 11:45:08:666 MiRam/(3077:3117): El marco elegido de MP para reemplazar es 3
-[INFO] 11:45:08:666 MiRam/(3077:3117): EL NUMERO DE BLOQUE ES 20
-[INFO] 11:45:10:667 MiRam/(3077:3117): Recuperando este bloque de swap 7
-[INFO] 11:45:10:667 MiRam/(3077:3117): Esto recupero en swap
-[INFO] 11:45:10:668 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:28:650 MiRam/(4096:4123): El marco elegido de MP para reemplazar es 2
+[INFO] 12:10:28:650 MiRam/(4096:4123): EL NUMERO DE BLOQUE ES 19
+[INFO] 12:10:30:650 MiRam/(4096:4123): Recuperando este bloque de swap 7
+[INFO] 12:10:30:651 MiRam/(4096:4123): Esto recupero en swap
+[INFO] 12:10:30:651 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:10:668 MiRam/(3077:3117): 
+[INFO] 12:10:30:651 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:10:668 MiRam/(3077:3117): ENTRE EN MS 
-[INFO] 11:45:10:668 MiRam/(3077:3117): Esto recupero de swap 20
-[INFO] 11:45:10:668 MiRam/(3077:3117): Algoritmo de reemplazo es LRU
+[INFO] 12:10:30:651 MiRam/(4096:4123): ENTRE EN MS 
+[INFO] 12:10:30:651 MiRam/(4096:4123): Esto recupero de swap 19
+[INFO] 12:10:30:652 MiRam/(4096:4123): Algoritmo de reemplazo es LRU
 
-[INFO] 11:45:10:669 MiRam/(3077:3117): El marco elegido de MP para reemplazar es 2
-[INFO] 11:45:10:669 MiRam/(3077:3117): EL NUMERO DE BLOQUE ES 21
-[INFO] 11:45:12:670 MiRam/(3077:3117): Recuperando este bloque de swap 20
-[INFO] 11:45:12:670 MiRam/(3077:3117): Esto recupero en swap
-[INFO] 11:45:12:671 MiRam/(3077:3117): MARCO 2
+[INFO] 12:10:30:652 MiRam/(4096:4123): El marco elegido de MP para reemplazar es 1
+[INFO] 12:10:30:652 MiRam/(4096:4123): EL NUMERO DE BLOQUE ES 20
+[INFO] 12:10:32:653 MiRam/(4096:4123): Recuperando este bloque de swap 19
+[INFO] 12:10:32:653 MiRam/(4096:4123): Esto recupero en swap
+[INFO] 12:10:32:653 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:45:12:671 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:32:653 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:12:671 MiRam/(3077:3117): 
+[INFO] 12:10:32:653 MiRam/(4096:4123): 
  tareas : C06;5;5;5 
 
-[INFO] 11:45:12:672 MiRam/(3077:3117): Impresion de 4 marcos
-[INFO] 11:45:12:674 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:12:674 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:12:674 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:12:674 MiRam/(3077:3117): 
+[INFO] 12:10:32:654 MiRam/(4096:4123): Impresion de 4 marcos
+[INFO] 12:10:34:658 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:34:658 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:34:658 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:34:658 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:12:675 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:12:675 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:12:675 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:12:676 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:12:676 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:12:676 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:34:658 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:34:658 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:34:659 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:34:659 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:34:659 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:34:659 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:45:12:676 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:34:659 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:12:676 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:12:676 MiRam/(3077:3117): Prox instruccion 99
-[INFO] 11:45:12:677 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:12:677 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:34:659 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:34:659 MiRam/(4096:4123): Prox instruccion 99
+[INFO] 12:10:34:659 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:34:659 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:12:677 MiRam/(3077:3117): 
+[INFO] 12:10:34:659 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:12:677 MiRam/(3077:3117): MARCO 2
+[INFO] 12:10:34:659 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:45:12:677 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:34:659 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:12:678 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:12:678 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:12:678 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:12:678 MiRam/(3077:3117): 
+[INFO] 12:10:34:660 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:34:660 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:34:660 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:34:660 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:12:678 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:12:679 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:12:680 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:12:680 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:12:680 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:12:690 MiRam/(3077:3117): Estado magico R
+[INFO] 12:10:34:660 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:34:660 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:34:660 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:34:660 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:34:661 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:34:661 MiRam/(4096:4123): Estado magico R
 
-[INFO] 11:45:12:691 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:34:661 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:12:691 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:12:691 MiRam/(3077:3117): Prox instruccion 99
-[INFO] 11:45:12:691 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:12:691 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:34:661 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:34:661 MiRam/(4096:4123): Prox instruccion 99
+[INFO] 12:10:34:661 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:34:661 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:12:691 MiRam/(3077:3117): 
+[INFO] 12:10:34:662 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:12:692 MiRam/(3077:3117): MARCO 2
+[INFO] 12:10:34:662 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:45:12:692 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:34:662 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:18:809 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:18:810 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:18:810 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:18:810 MiRam/(3077:3117): 
+[INFO] 12:10:40:664 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:40:664 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:40:664 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:40:664 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:18:810 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:18:810 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:18:810 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:18:810 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:18:810 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:18:810 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:40:664 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:40:665 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:40:665 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:40:665 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:40:665 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:40:665 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:45:18:810 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:40:665 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:18:810 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:18:810 MiRam/(3077:3117): Prox instruccion 99
-[INFO] 11:45:18:810 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:18:810 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:40:665 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:40:665 MiRam/(4096:4123): Prox instruccion 99
+[INFO] 12:10:40:665 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:40:665 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:18:810 MiRam/(3077:3117): 
+[INFO] 12:10:40:665 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:18:810 MiRam/(3077:3117): MARCO 2
+[INFO] 12:10:40:665 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:45:18:810 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:40:665 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:18:810 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:18:810 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:18:810 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:18:811 MiRam/(3077:3117): 
+[INFO] 12:10:40:666 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:40:666 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:40:666 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:40:666 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:18:811 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:18:811 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:18:811 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:18:811 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:18:811 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:18:811 MiRam/(3077:3117): Estado magico R
+[INFO] 12:10:40:666 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:40:666 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:40:666 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:40:666 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:40:666 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:40:666 MiRam/(4096:4123): Estado magico R
 
-[INFO] 11:45:18:811 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:40:666 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:18:811 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:18:811 MiRam/(3077:3117): Prox instruccion 99
-[INFO] 11:45:18:811 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:18:811 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:40:666 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:40:666 MiRam/(4096:4123): Prox instruccion 99
+[INFO] 12:10:40:666 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:40:666 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:18:811 MiRam/(3077:3117): 
+[INFO] 12:10:40:667 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:18:811 MiRam/(3077:3117): MARCO 2
+[INFO] 12:10:40:667 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:45:18:811 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:40:667 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:22:914 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:22:914 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:22:914 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:22:914 MiRam/(3077:3117): 
+[INFO] 12:10:42:670 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:42:670 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:42:670 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:42:670 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:22:914 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:22:914 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:22:915 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:22:915 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:22:915 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:22:915 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:42:670 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:42:670 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:42:670 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:42:670 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:42:670 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:42:670 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:45:22:915 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:42:670 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:22:915 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:22:915 MiRam/(3077:3117): Prox instruccion 99
-[INFO] 11:45:22:916 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:22:916 MiRam/(3077:3117): El tripulante que recibi es el 3
+[INFO] 12:10:42:670 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:42:670 MiRam/(4096:4123): Prox instruccion 99
+[INFO] 12:10:42:670 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:42:670 MiRam/(4096:4123): El tripulante que recibi es el 3
  y 3
-[INFO] 11:45:22:916 MiRam/(3077:3117): El tripulante que recibi eSSSSSs el 3
+[INFO] 12:10:42:670 MiRam/(4096:4123): El tripulante que recibi eSSSSSs el 3
  y 99
-[INFO] 11:45:22:916 MiRam/(3077:3117): 
+[INFO] 12:10:42:670 MiRam/(4096:4123): 
 El punterin 99
 
-[INFO] 11:45:22:917 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:42:670 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:22:917 MiRam/(3077:3117): 
+[INFO] 12:10:42:670 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:22:917 MiRam/(3077:3117): MARCO 2
+[INFO] 12:10:42:670 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:45:22:917 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:42:670 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:22:917 MiRam/(3077:3117): 
+[INFO] 12:10:42:671 MiRam/(4096:4123): 
  tareas : C07;5;5;5 
 
-[INFO] 11:45:22:919 MiRam/(3077:3117): Impresion de 4 marcos
-[INFO] 11:45:24:997 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:24:998 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:24:998 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:24:998 MiRam/(3077:3117): 
+[INFO] 12:10:42:671 MiRam/(4096:4123): Impresion de 4 marcos
+[INFO] 12:10:46:675 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:46:675 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:46:675 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:46:675 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:24:998 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:24:998 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:24:999 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:24:999 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:24:999 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:24:999 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:46:675 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:46:675 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:46:675 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:46:675 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:46:675 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:46:675 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:45:24:999 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:46:675 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:24:999 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:24:999 MiRam/(3077:3117): Prox instruccion 109
-[INFO] 11:45:24:0 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:24:0 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:46:675 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:46:676 MiRam/(4096:4123): Prox instruccion 109
+[INFO] 12:10:46:676 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:46:676 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:24:0 MiRam/(3077:3117): 
+[INFO] 12:10:46:676 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:24:0 MiRam/(3077:3117): MARCO 2
+[INFO] 12:10:46:676 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:45:24:0 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:46:676 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:24:1 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:24:1 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:24:2 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:24:2 MiRam/(3077:3117): 
+[INFO] 12:10:46:677 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:46:677 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:46:677 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:46:677 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:24:2 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:24:2 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:24:2 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:24:3 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:24:3 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:24:3 MiRam/(3077:3117): Estado magico R
+[INFO] 12:10:46:677 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:46:677 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:46:677 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:46:677 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:46:677 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:46:677 MiRam/(4096:4123): Estado magico R
 
-[INFO] 11:45:24:3 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:46:677 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:24:3 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:24:3 MiRam/(3077:3117): Prox instruccion 109
-[INFO] 11:45:24:3 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:24:4 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:46:677 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:46:677 MiRam/(4096:4123): Prox instruccion 109
+[INFO] 12:10:46:677 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:46:678 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:24:4 MiRam/(3077:3117): 
+[INFO] 12:10:46:678 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:24:4 MiRam/(3077:3117): MARCO 2
+[INFO] 12:10:46:678 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:45:24:4 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:46:678 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:31:8 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:31:8 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:31:8 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:31:9 MiRam/(3077:3117): 
+[INFO] 12:10:52:682 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:52:682 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:52:682 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:52:682 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:31:9 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:31:10 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:31:10 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:31:10 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:31:10 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:31:11 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:52:682 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:52:682 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:52:682 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:52:682 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:52:682 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:52:682 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:45:31:11 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:52:682 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:31:11 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:31:11 MiRam/(3077:3117): Prox instruccion 109
-[INFO] 11:45:31:11 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:31:11 MiRam/(3077:3117): El indice 0
-
-[INFO] 11:45:31:11 MiRam/(3077:3117): 
-El offset 8
-
-[INFO] 11:45:31:11 MiRam/(3077:3117): MARCO 2
-
-[INFO] 11:45:31:12 MiRam/(3077:3117): OFFSET 8
-
-[INFO] 11:45:31:12 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:31:12 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:31:12 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:31:13 MiRam/(3077:3117): 
-El offseeeeeet tripu 8
-[INFO] 11:45:31:13 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:31:13 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:31:13 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:31:13 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:31:13 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:31:13 MiRam/(3077:3117): Estado magico R
-
-[INFO] 11:45:31:13 MiRam/(3077:3117): Pos x magico 5
-
-[INFO] 11:45:31:14 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:31:14 MiRam/(3077:3117): Prox instruccion 109
-[INFO] 11:45:31:14 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:31:14 MiRam/(3077:3117): El indice 0
-
-[INFO] 11:45:31:14 MiRam/(3077:3117): 
-El offset 8
-
-[INFO] 11:45:31:14 MiRam/(3077:3117): MARCO 2
-
-[INFO] 11:45:31:14 MiRam/(3077:3117): OFFSET 8
-
-[INFO] 11:45:33:165 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:33:166 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:33:166 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:33:166 MiRam/(3077:3117): 
-El offseeeeeet tripu 8
-[INFO] 11:45:33:166 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:33:166 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:33:166 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:33:167 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:33:167 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:33:167 MiRam/(3077:3117): Estado magico E
-
-[INFO] 11:45:33:167 MiRam/(3077:3117): Pos x magico 5
-
-[INFO] 11:45:33:167 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:33:167 MiRam/(3077:3117): Prox instruccion 109
-[INFO] 11:45:33:167 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:33:168 MiRam/(3077:3117): El tripulante que recibi es el 3
+[INFO] 12:10:52:682 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:52:682 MiRam/(4096:4123): Prox instruccion 109
+[INFO] 12:10:52:682 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:52:682 MiRam/(4096:4123): El tripulante que recibi es el 3
  y 3
-[INFO] 11:45:33:168 MiRam/(3077:3117): El tripulante que recibi eSSSSSs el 3
+[INFO] 12:10:52:682 MiRam/(4096:4123): El tripulante que recibi eSSSSSs el 3
  y 109
-[INFO] 11:45:33:168 MiRam/(3077:3117): 
+[INFO] 12:10:52:683 MiRam/(4096:4123): 
 El punterin 109
 
-[INFO] 11:45:33:168 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:52:683 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:33:169 MiRam/(3077:3117): 
+[INFO] 12:10:52:683 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:33:169 MiRam/(3077:3117): MARCO 2
+[INFO] 12:10:52:683 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:45:33:169 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:52:683 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:33:169 MiRam/(3077:3117): 
+[INFO] 12:10:52:683 MiRam/(4096:4123): 
  tareas : C08;5;5;5 
 
-[INFO] 11:45:33:171 MiRam/(3077:3117): Impresion de 4 marcos
-[INFO] 11:45:37:276 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:37:276 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:37:276 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:37:276 MiRam/(3077:3117): 
+[INFO] 12:10:52:683 MiRam/(4096:4123): Impresion de 4 marcos
+[INFO] 12:10:52:683 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:52:683 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:52:683 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:52:683 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:37:276 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:37:277 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:37:277 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:37:277 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:37:277 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:37:277 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:52:683 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:52:683 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:52:683 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:52:683 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:52:683 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:52:683 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:45:37:277 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:52:683 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:37:277 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:37:278 MiRam/(3077:3117): Prox instruccion 0
-[INFO] 11:45:37:278 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:37:278 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:52:683 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:52:683 MiRam/(4096:4123): Prox instruccion 0
+[INFO] 12:10:52:683 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:52:683 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:37:278 MiRam/(3077:3117): 
+[INFO] 12:10:52:683 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:37:278 MiRam/(3077:3117): MARCO 2
+[INFO] 12:10:52:683 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:45:37:278 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:52:684 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:37:279 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:37:279 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:37:280 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:37:280 MiRam/(3077:3117): 
+[INFO] 12:10:52:684 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:52:684 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:52:684 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:52:684 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:37:280 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:37:280 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:37:280 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:37:280 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:37:281 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:37:281 MiRam/(3077:3117): Estado magico R
+[INFO] 12:10:52:684 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:52:684 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:52:684 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:52:684 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:52:684 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:52:684 MiRam/(4096:4123): Estado magico R
 
-[INFO] 11:45:37:281 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:52:684 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:37:281 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:37:281 MiRam/(3077:3117): Prox instruccion 0
-[INFO] 11:45:37:281 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:37:281 MiRam/(3077:3117): El indice 0
+[INFO] 12:10:52:684 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:52:684 MiRam/(4096:4123): Prox instruccion 0
+[INFO] 12:10:52:684 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:52:684 MiRam/(4096:4123): El indice 0
 
-[INFO] 11:45:37:282 MiRam/(3077:3117): 
+[INFO] 12:10:52:684 MiRam/(4096:4123): 
 El offset 8
 
-[INFO] 11:45:37:282 MiRam/(3077:3117): MARCO 2
+[INFO] 12:10:52:685 MiRam/(4096:4123): MARCO 1
 
-[INFO] 11:45:37:282 MiRam/(3077:3117): OFFSET 8
+[INFO] 12:10:52:685 MiRam/(4096:4123): OFFSET 8
 
-[INFO] 11:45:43:350 MiRam/(3077:3117): POS VECTOR 0
-[INFO] 11:45:43:350 MiRam/(3077:3117): Puntero tarea DE PABLIN 8
-[INFO] 11:45:43:350 MiRam/(3077:3117): El indice 0
-[INFO] 11:45:43:350 MiRam/(3077:3117): 
+[INFO] 12:10:58:688 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:58:688 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:58:688 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:58:688 MiRam/(4096:4123): 
 El offseeeeeet tripu 8
-[INFO] 11:45:43:350 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:43:350 MiRam/(3077:3117): OFFSET 8
-[INFO] 11:45:43:350 MiRam/(3077:3117): TID magico 3
-[INFO] 11:45:43:350 MiRam/(3077:3117): MARCO 2
-[INFO] 11:45:43:350 MiRam/(3077:3117): OFFSET 12
-[INFO] 11:45:43:350 MiRam/(3077:3117): Estado magico E
+[INFO] 12:10:58:688 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:58:688 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:58:688 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:58:688 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:58:689 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:58:689 MiRam/(4096:4123): Estado magico E
 
-[INFO] 11:45:43:350 MiRam/(3077:3117): Pos x magico 5
+[INFO] 12:10:58:689 MiRam/(4096:4123): Pos x magico 5
 
-[INFO] 11:45:43:350 MiRam/(3077:3117): Pos y magico 5
-[INFO] 11:45:43:350 MiRam/(3077:3117): Prox instruccion 0
-[INFO] 11:45:43:350 MiRam/(3077:3117): Puntero magico  1
-[INFO] 11:45:43:350 MiRam/(3077:3117): El tripulante que recibi es el 3
+[INFO] 12:10:58:689 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:58:689 MiRam/(4096:4123): Prox instruccion 0
+[INFO] 12:10:58:690 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:58:690 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:10:58:690 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:10:58:690 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:10:58:690 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:10:58:690 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:10:58:690 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:10:58:690 MiRam/(4096:4123): El indice 0
+[INFO] 12:10:58:691 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:10:58:691 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:58:691 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:10:58:691 MiRam/(4096:4123): TID magico 3
+[INFO] 12:10:58:691 MiRam/(4096:4123): MARCO 1
+[INFO] 12:10:58:691 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:10:58:691 MiRam/(4096:4123): Estado magico R
+
+[INFO] 12:10:58:691 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:10:58:691 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:10:58:691 MiRam/(4096:4123): Prox instruccion 0
+[INFO] 12:10:58:691 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:10:58:691 MiRam/(4096:4123): El indice 0
+
+[INFO] 12:10:58:691 MiRam/(4096:4123): 
+El offset 8
+
+[INFO] 12:10:58:692 MiRam/(4096:4123): MARCO 1
+
+[INFO] 12:10:58:692 MiRam/(4096:4123): OFFSET 8
+
+[INFO] 12:11:02:696 MiRam/(4096:4123): POS VECTOR 0
+[INFO] 12:11:02:696 MiRam/(4096:4123): Puntero tarea DE PABLIN 8
+[INFO] 12:11:02:696 MiRam/(4096:4123): El indice 0
+[INFO] 12:11:02:696 MiRam/(4096:4123): 
+El offseeeeeet tripu 8
+[INFO] 12:11:02:696 MiRam/(4096:4123): MARCO 1
+[INFO] 12:11:02:696 MiRam/(4096:4123): OFFSET 8
+[INFO] 12:11:02:696 MiRam/(4096:4123): TID magico 3
+[INFO] 12:11:02:696 MiRam/(4096:4123): MARCO 1
+[INFO] 12:11:02:696 MiRam/(4096:4123): OFFSET 12
+[INFO] 12:11:02:696 MiRam/(4096:4123): Estado magico E
+
+[INFO] 12:11:02:696 MiRam/(4096:4123): Pos x magico 5
+
+[INFO] 12:11:02:696 MiRam/(4096:4123): Pos y magico 5
+[INFO] 12:11:02:696 MiRam/(4096:4123): Prox instruccion 0
+[INFO] 12:11:02:696 MiRam/(4096:4123): Puntero magico  1
+[INFO] 12:11:02:696 MiRam/(4096:4123): El tripulante que recibi es el 3
  y 3
-[INFO] 11:45:43:350 MiRam/(3077:3117): El tripulante que recibi eSSSSSs el 3
+[INFO] 12:11:02:696 MiRam/(4096:4123): El tripulante que recibi eSSSSSs el 3
  y 0
-[INFO] 11:45:43:350 MiRam/(3077:3117): 
+[INFO] 12:11:02:696 MiRam/(4096:4123): 
  tareas : (null) 
 
-[INFO] 11:45:43:350 MiRam/(3077:3117): Impresion de 4 marcos
-[ERROR] 11:45:43:351 MiRam/(3077:3117): el cliente se desconecto. Terminando servidor
-[ERROR] 11:47:06:246 MiRam/(3077:3083): el discordiador finalizo el programa. Terminando servidor
-[INFO] 11:47:06:247 MiRam/(3077:3078): socket_cliente -1
-[INFO] 11:47:06:247 MiRam/(3077:3078): tttttttt
+[INFO] 12:11:02:696 MiRam/(4096:4123): Impresion de 4 marcos
+[ERROR] 12:11:02:697 MiRam/(4096:4123): el cliente se desconecto. Terminando servidor
