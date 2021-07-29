@@ -1453,6 +1453,9 @@ void cadena_agregar_a_lista_existente_valores_de_otra_lista(char** lista_origina
 		}
 		string_append(lista_original, lista_a_adicionar);
 	}
+
+	printf("El string final es %s\n", *lista_original);
+
 }
 
 //Devuelve un listado en formato cadena con el total de bloques ocupado por las bitacoras
@@ -1468,14 +1471,16 @@ char* bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados_ex_contar_archiv
 	{
 		char* path_buffer = list_get(lista_paths, i);
 		char* string_buffer = metadata_obtener_bloques_desde_archivo(path_buffer);
-
 		cadena_agregar_a_lista_existente_valores_de_otra_lista(&bloques, string_buffer);
-
+		printf("A CAPO\n");
 		free(string_buffer);
+		printf("B CAPO\n");
 		free(path_buffer);
+		printf("C CAPO\n");
 	}
 
-	list_destroy_and_destroy_elements(lista_paths,(void*)destruir_lista_paquete);
+	printf("D CAPO\n");
+	list_destroy_and_destroy_elements(lista_paths,(void*)destruir_lista_paquete); //OJO ESTA ROMPIENDO ESTO
 
 	log_debug(logger, "Los bloques ocupados por el total de las bitacoras son %s", bloques);
 	return bloques;
@@ -1502,9 +1507,9 @@ t_list* bitacoras_obtener_lista_con_rutas_completas()
 					char *ruta_temporal = string_from_format("%s/%s", bitacoras_path, elemento->d_name);
 					printf("La ruta a agregar a la lista queda: %s\n", ruta_temporal);
 					list_add(lista_paths, ruta_temporal);
-					free(ruta_temporal);//agregado por edu (borrar si hay un malfuncionamiento)
+					//free(ruta_temporal);//agregado por edu (borrar si hay un malfuncionamiento)
 				}
-				free(elemento);//agregado por edu (borrar si hay un malfuncionamiento)
+				//free(elemento);//agregado por edu (borrar si hay un malfuncionamiento)
 			}
 			closedir(folder);
 			printf("La cantidad de bitacoras es: %d\n", list_size(lista_paths));
