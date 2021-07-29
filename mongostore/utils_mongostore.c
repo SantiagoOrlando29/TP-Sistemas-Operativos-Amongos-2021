@@ -401,17 +401,22 @@ void enviar_ok(int _socket)
 //Carga la data de la bitacora correspondiente al tripulante indicado por el valor de tid
 void bitacora_cargar_data(t_bitacora_data* bitacora_data, int tid)
 {
+	printf("A\n");
 	bitacora_data->tid = tid;
 	bitacora_data->ruta_completa = string_from_format("%s/Tripulante%d.ims", bitacoras_path, bitacora_data->tid);
 	log_debug(logger, "En bitacora_cargar_data: bitacora_data->ruta_completa: %s", bitacora_data->ruta_completa);
+	printf("B\n");
 
 	if(utils_existe_en_disco(bitacora_data->ruta_completa))
 	{
+		printf("C - Entro a levantar metadata del archivo\n");
 		bitacora_levantar_metadata_de_archivo(bitacora_data);
 	}
 	else
 	{
+		printf("D - Entro a cargar metadata default\n");
 		bitacora_cargar_metadata_default(bitacora_data);
+
 	}
 
 	log_debug(logger, "Salgo de bitacora_cargar_data para el tripulante %d", tid);
@@ -420,10 +425,16 @@ void bitacora_cargar_data(t_bitacora_data* bitacora_data, int tid)
 //Carga en memoria la metadata para el tripulante indicado en bitacora_data segun el archivo asociado en la misma data
 void bitacora_levantar_metadata_de_archivo(t_bitacora_data* bitacora_data)
 {
+	bitacora_data->metadata = malloc(sizeof(t_bitacora_md));
 	t_config* bitacora_config =  config_create(bitacora_data->ruta_completa);
+	printf("E - la ruta completa es %s\n", bitacora_data->ruta_completa);
+	printf("E - El size es %d\n", config_get_int_value(bitacora_config, "SIZE"));
 	bitacora_data->metadata->size = config_get_int_value(bitacora_config, "SIZE");
+	printf("F\n");
 	bitacora_data->metadata->blocks = string_duplicate(config_get_string_value(bitacora_config, "BLOCKS"));
+	printf("G\n");
 	config_destroy(bitacora_config);
+
 
 	log_debug(logger, "Bitacora de tripulante %d levantada en memoria con size = %d y blocks = %s", bitacora_data->tid,
 			bitacora_data->metadata->size, bitacora_data->metadata->blocks);
@@ -437,12 +448,13 @@ void bitacora_cargar_metadata_default(t_bitacora_data* bitacora_data)
 	metadata->blocks = string_duplicate("[]");
 	bitacora_data->metadata = metadata;
 	log_debug(logger, "Bitacora de tripulante %d cargada en memoria con size = %d y blocks = %s", bitacora_data->tid,
-			bitacora_data->metadata->size, bitacora_data->metadata->blocks);
+	bitacora_data->metadata->size, bitacora_data->metadata->blocks);
 }
 
 //Escribe la cadena log en el ultimo bloque escrito si tuviera espacio libre y si no en los blocks del superbloque que se encuentren libres
 void bitacora_guardar_log(t_bitacora_data* bitacora_data, char* mensaje)
 {
+	printf("El mensaje que llega al principio es %s\n", mensaje);
 	//log_debug(logger, "Info-Se ingresa a recurso_generar_cantidad, se debe generar %d %s(s)", cantidad, recurso_data->nombre);
 	if(strlen(mensaje) == 0)
 	{
@@ -454,13 +466,12 @@ void bitacora_guardar_log(t_bitacora_data* bitacora_data, char* mensaje)
 	t_bitacora_md* bitacora_md = bitacora_data->metadata;
 
 	int bloque;
-	log_debug(logger, "si al problemas por aca, puede ser que sea necesario agregar el fin de cadena a las cadenas al enlistarlas");
 	char* mensaje_auxiliar = malloc(strlen(mensaje) + 2);
-	log_debug(logger, "si al problemas por aca, puede ser que sea necesario agregar el fin de cadena a las cadenas al enlistarlas");
+	strcpy(mensaje_auxiliar,mensaje);
 	mensaje_auxiliar[strlen(mensaje)] = '\n';
-	log_debug(logger, "si al problemas por aca, puede ser que sea necesario agregar el fin de cadena a las cadenas al enlistarlas");
 	mensaje_auxiliar[strlen(mensaje) + 1] = '\0';
 	char* posicion_asignada = mensaje_auxiliar;
+	printf("El mensaje auxiliar es %s\n", mensaje_auxiliar);
 
 	if(bitacora_tiene_espacio_en_ultimo_bloque(bitacora_md))
 	{
@@ -474,6 +485,8 @@ void bitacora_guardar_log(t_bitacora_data* bitacora_data, char* mensaje)
 		if(bloque >= 0)
 		{
 			cadena_agregar_entero_a_lista_de_enteros(&bitacora_md->blocks, bloque);
+			printf("El mensaje que tenemos essssss: %s \n", mensaje_auxiliar);
+			printf("El puntero que tenemos essssss: %p \n", &mensaje_auxiliar);
 			bitacora_escribir_en_bloque(bitacora_md, &mensaje_auxiliar, bloque);
 		}
 		else
@@ -512,6 +525,7 @@ void bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** mensaje, int
 
 		bitacora_md->size++;
 		(*mensaje)++;
+		printf("Caracter: %c \n", **mensaje);
 		posicion_absoluta++;
 		posicion_en_bloque++;
 	}
