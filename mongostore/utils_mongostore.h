@@ -86,6 +86,12 @@ typedef enum {
 	DESCARTAR
 } accion_code;
 
+typedef struct {
+	char* nombre;
+	accion_code codigo_accion;
+	recurso_code codigo_recurso;
+} t_tarea;
+
 typedef enum {
 	FIN = 7,
 	CARGAR_BITACORA = 12,
