@@ -20,6 +20,10 @@
 #include <signal.h>
 #include <nivel-gui/nivel-gui.h>
 #include <nivel-gui/tad_nivel.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 #define tamanio_PCB  8
 #define tamanio_tarea 10

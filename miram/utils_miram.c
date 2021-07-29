@@ -14,6 +14,7 @@ int cols=10;
 int rows=10;
 int contador_lru=0;
 FILE* swapfile;
+void* swap_address;
 
 void iniciar_servidor(config_struct* config_servidor)
 {
@@ -85,7 +86,7 @@ void iniciar_servidor(config_struct* config_servidor)
 			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente_segmentacion ,(void*)socket_cliente);
 			pthread_detach(hilo_cliente);
 		    }else{
-		    swap_pagina_iniciar();
+		    //swap_pagina_iniciar();
 			pthread_create(&hilo_cliente,NULL,(void*)funcion_cliente_paginacion ,(void*)socket_cliente);
 			pthread_detach(hilo_cliente);
 
@@ -620,6 +621,17 @@ void iniciar_miram(config_struct* config_servidor){
 
 	if(strcmp(config_servidor->squema_memoria,"PAGINACION")==0){
 
+		int swapfile_fd;
+
+		//Crear file con fopen
+
+		swapfile_fd=open("swap.bin", O_RDWR);
+
+	    swap_address = mmap(NULL, configuracion.tamanio_swap, PROT_WRITE | PROT_READ, MAP_SHARED, swapfile_fd, 0);
+
+	    close(swapfile_fd);
+
+
 		config_servidor->posicion_inicial= malloc((config_servidor->tamanio_memoria));
 
 		config_servidor->marcos_libres=list_create();
@@ -634,6 +646,7 @@ void iniciar_miram(config_struct* config_servidor){
 
 		int nro_lugares_swap = (config_servidor->tamanio_swap)/(configuracion.tamanio_pag);
 		config_servidor->cant_lugares_swap=nro_lugares_swap;
+
 
 		for(int i=0; i<=nro_lugares_swap;i++){
 			int vacio=0;
@@ -1416,6 +1429,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 					log_info(logger, "Guardando info");
 
 					almacenarinformacion3(lista, &configuracion);
+					leer_informacion2(&configuracion,lista, pid);
 
 
 												/*
@@ -1542,11 +1556,11 @@ int funcion_cliente_paginacion(int socket_cliente){
 				bool hay_mas_tareas = enviar_tarea_paginacion(socket_cliente, patota_id, tripulante1);
 
 				if(hay_mas_tareas == false){
-				//	tabla_paginacion* una_tabla= (tabla_paginacion*)list_get(tabla_paginacion_ppal, posicion_patota(patota_id, tabla_paginacion_ppal));
-				//	una_tabla->cant_tripulantes--;
-				//	if(una_tabla->cant_tripulantes == 0){
-				//		list_remove_and_destroy_element(tabla_paginacion_ppal, posicion_patota(patota_id, tabla_paginacion_ppal),(void*)destruir_tabla );
-				//	}
+					tabla_paginacion* una_tabla= (tabla_paginacion*)list_get(tabla_paginacion_ppal, posicion_patota(patota_id, tabla_paginacion_ppal));
+					una_tabla->cant_tripulantes--;
+					if(una_tabla->cant_tripulantes == 0){
+						list_remove_and_destroy_element(tabla_paginacion_ppal, posicion_patota(patota_id, tabla_paginacion_ppal),(void*)destruir_tabla );
+					}
 				}
 				log_info(logger, "Impresion de 4 marcos");
 				mem_hexdump(configuracion.posicion_inicial+configuracion.tamanio_pag*0,configuracion.tamanio_pag);
@@ -1652,16 +1666,17 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 
 	int ptro_tarea= 2*sizeof(uint32_t)+posicion_vector(tripulante_id-1)*21;
 
+	log_info(logger,"Puntero tarea DE PABLIN %d",ptro_tarea);
 	int indice_marco = 0;
 
-	float decimal = (float)(uint32_t)ptro_tarea/configuracion.tamanio_pag;
+	float decimal = (float)ptro_tarea/configuracion.tamanio_pag;
 
 	int parte_entera = (uint32_t)ptro_tarea/configuracion.tamanio_pag;
 	float parte_decimal = (decimal - parte_entera);
 	indice_marco=parte_entera;
 	uint32_t offset = configuracion.tamanio_pag*(parte_decimal);
 	log_info(logger,"El indice %d", indice_marco);
-	log_info(logger,"\nEl offset %d", offset);
+	log_info(logger,"\nEl offseeeeeet tripu %d", offset);
 
 	marco* marcos =  (marco*)list_get(una_tabla->lista_marcos,indice_marco);
 
@@ -1672,7 +1687,7 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 		marcos->ubicacion=MEM_PRINCIPAL;
 		marcos->bit_uso=1;
 		marcos->ultimo_uso=contador_lru;
-		//list_add_in_index(una_tabla->lista_marcos,indice_marco, (void*)marcos);
+		//list_replace(una_tabla->lista_marcos,indice_marco, (void*)marcos);
 	}
 	contador_lru++;
 
@@ -1683,7 +1698,7 @@ tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struc
 	log_info(logger,"OFFSET %d",offset);
 	fflush(stdout);
 
-	uint32_t tid;
+	uint32_t tid=0;
 
 	leer_atributo_cero(&tid, offset,marcos->id_marco, config_servidor);
 	offset+=1;
@@ -2523,7 +2538,7 @@ void almacenarinformacion3(t_list* lista, config_struct* config_servidor){
 
 /////////////////////////////////////////Tripulantes/////////////////////////////////////////////////////////////////////////////
 
-	int cant_tripu=1;
+	int cant_tripu=0;
 	tarea=(char*)list_get(lista, cantidad_tripulantes+3);
 	for(int i =2; i<cantidad_tripulantes+2;i++){
 /////////////////////////////////////////TID/////////////////////////////////////////////////////////////////////////////
@@ -3777,11 +3792,11 @@ void imprimir_tabla_paginacion(){
 
 void swap_pagina_iniciar(){
 	log_info(logger, "Inicializo el archivo");
-	FILE* swapfile=fopen("swap.bin","w");
-	int swap_frames = configuracion.tamanio_swap/configuracion.tamanio_pag;
-	void * leido = calloc(swap_frames*configuracion.tamanio_pag, 1);
-	fwrite(leido, configuracion.tamanio_pag, swap_frames, swapfile);
-	free(leido);
+	FILE* swapfile=fopen("swap.bin","wb+");
+	int swap_frames = configuracion.tamanio_swap;
+	void * leido = calloc(configuracion.tamanio_swap, 1);
+	fwrite(leido, configuracion.tamanio_swap, swap_frames, swapfile);
+	//free(leido);
 	fclose(swapfile);
 }
 
@@ -3790,7 +3805,7 @@ void swap_pagina(void* contenidoAEscribir,int numDeBloque){
 
 	log_info(logger, "Swappeando %d", numDeBloque);
 	FILE* swapfile;
-	swapfile = fopen("swap.bin","wb");
+	swapfile = fopen("swap.bin","a+");
 	printf("\n el numero de bloque de MS es %d \n",numDeBloque);
 	//char* aux = malloc(configuracion.tamanio_pag*sizeof(char));
 	//aux=completarBloque(contenidoAEscribir);
@@ -3798,6 +3813,8 @@ void swap_pagina(void* contenidoAEscribir,int numDeBloque){
 	//fwrite(leido, sizeof(configuracion.tamanio_pag), 1, swapfile);
 	log_info(logger, "Esto escribo en swap");
 	mem_hexdump(contenidoAEscribir, configuracion.tamanio_pag);
+	log_info(logger, "TEST SOPORTE PRODUCTO %d", numDeBloque*configuracion.tamanio_pag);
+	log_info(logger, "TEST SOPORTE CONFIG TAMANIO %d", configuracion.tamanio_pag);
 	fseek(swapfile,numDeBloque*configuracion.tamanio_pag,SEEK_SET);
 	fwrite(contenidoAEscribir,configuracion.tamanio_pag,1,swapfile);
 	//free(aux);
@@ -3808,27 +3825,23 @@ int swap_a_memoria(int numBloque){
 
 	log_info(logger, "Esto recupero de swap %d", numBloque);
 	int nuevo_marco=posicion_marco();
-	void * leido = calloc(configuracion.tamanio_pag, 1);
+	void * leido = malloc(configuracion.tamanio_pag);
 	leido = recuperar_pag_swap(numBloque);
 	mem_hexdump((void*)leido, configuracion.tamanio_pag);
 	memcpy(configuracion.posicion_inicial+(nuevo_marco*configuracion.tamanio_pag),leido,configuracion.tamanio_pag*sizeof(char));
-	free(leido);
+	//free(leido);
 	return nuevo_marco;
 
 }
 
 
 
-
 void* recuperar_pag_swap(int numDeBloque){
 	log_info(logger, "Recuperando este bloque de swap %d", numDeBloque);
-	FILE* file = fopen("swap.bin","r");
-	void * leido = calloc(configuracion.tamanio_pag, 1);
-	fseek(file,numDeBloque*configuracion.tamanio_pag,SEEK_SET);
-	fread(leido,configuracion.tamanio_pag,1,file);
+	void* leido=malloc(configuracion.tamanio_pag);
+	memcpy(leido,swap_address + numDeBloque*configuracion.tamanio_pag ,configuracion.tamanio_pag);
 	log_info(logger, "Esto recupero en swap");
 	mem_hexdump(leido, configuracion.tamanio_pag);
-	fclose(swapfile);
 	//free(leido);
 	return leido;
 }
@@ -3856,21 +3869,23 @@ int reemplazo_lru(){
 	   lru_m->ubicacion=MEM_SECUNDARIA;
 	   nro_marco=lru_m->id_marco;
 	   log_info(logger, "El marco elegido de MP para reemplazar es %d", lru_m->id_marco);
-	   void* contenidoAEscribir = malloc(configuracion.tamanio_pag);
+	   void* contenidoAEscribir = calloc(configuracion.tamanio_pag,1);
 	//   mem_hexdump(contenidoAEscribir, configuracion.tamanio_pag);
 
 	   memcpy(contenidoAEscribir,configuracion.posicion_inicial + nro_marco*(configuracion.tamanio_pag) ,configuracion.tamanio_pag*sizeof(char));
 	   mem_hexdump(contenidoAEscribir, configuracion.tamanio_pag);
 	   int free_swap=lugar_swap_libre();
+	   memcpy(swap_address + free_swap*configuracion.tamanio_pag,contenidoAEscribir ,configuracion.tamanio_pag*sizeof(char));
 	   lru_m->id_marco=free_swap;
 	   log_info(logger,"EL NUMERO DE BLOQUE ES %d",free_swap);
-	   swap_pagina(contenidoAEscribir,lru_m->id_marco);
+	   //swap_pagina(contenidoAEscribir,lru_m->id_marco);
 
-	  // tabla_paginacion* una_tabla =(tabla_paginacion*)list_get(tabla_paginacion_ppal,pagina);
+	  tabla_paginacion* una_tabla =(tabla_paginacion*)list_get(tabla_paginacion_ppal,pagina);
 	 //  list_remove(una_tabla->lista_marcos,marco_patota);
-	  //list_add_in_index(una_tabla->lista_marcos, marco_patota,(void*) lru_m);
+	  list_replace(una_tabla->lista_marcos, marco_patota,(void*) lru_m);
 	  // list_add_in_index(tabla_paginacion_ppal,pagina ,(void*)una_tabla);
-	  // free(contenidoAEscribir);
+	  sleep(2);
+	  //free(contenidoAEscribir);
 	   return nro_marco;
 }
 
@@ -3885,7 +3900,7 @@ int lugar_swap_libre(){
 	for(int i=0;i<configuracion.cant_lugares_swap;i++){
 		if((int)list_get(configuracion.swap_libre,i)==0){
 			int valor = 1;
-		list_add_in_index(configuracion.swap_libre,i,(void*)valor);
+		list_replace(configuracion.swap_libre,i,(void*)valor);
 			return i;
 		}
 	}
