@@ -4,7 +4,7 @@ int main(void)
 {
 	FILE* archivo = fopen("MiRam.log","w");
 	fclose(archivo);
-	logger = log_create("MiRam.log","MiRam",0,LOG_LEVEL_INFO);
+	logger = log_create("MiRam.log","MiRam",1,LOG_LEVEL_INFO);
 
 	int piddd = getpid();
 	log_info(logger, "pid %d  \n", piddd);

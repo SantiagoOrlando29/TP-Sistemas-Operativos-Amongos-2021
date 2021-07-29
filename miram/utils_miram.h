@@ -20,6 +20,10 @@
 #include <signal.h>
 #include <nivel-gui/nivel-gui.h>
 #include <nivel-gui/tad_nivel.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 #define tamanio_PCB  8
 #define tamanio_tarea 10
@@ -245,11 +249,9 @@ int posicion_patota(int id_buscado,t_list* tabla_aux);
 void finalizar_miram(config_struct* config_servidor);
 int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco);
 void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* tabla_aux, config_struct* configuracion);
-int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* config_servidor);
 
 void escribir_tripulante(tcbTripulante* tripulante, void* posicion_inicial);
 
-tcbTripulante* obtener_tripulante(void* inicio_tripulantes);
 
 /*Operaciones para enviar mensajes desde miram a discordiador*/
 t_paquete* crear_paquete(tipoMensaje tipo);
@@ -265,34 +267,36 @@ int funcion_cliente_paginacion(int);
 //PAGINACION
 int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco);
 void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* tabla_aux, config_struct* configuracion);
-int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea,config_struct* config_servidor);
+int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea);
 void mostrar_tripulante(tcbTripulante* tripulante,pcbPatota* patota);
 int cuantos_marcos_libres(config_struct* config_servidor);
-void almacenar_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista);
+void almacenar_informacion(t_list* lista, config_struct* config_servidor);
 void reservar_marco(int cantidad_marcos, config_struct* configuracion, t_list* tabla_aux, int pid );
 void eliminar_estructura_memoria(t_list* tabla_aux);
-void leer_informacion(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista);
+void leer_informacion(config_struct* config_servidor, t_list* lista, int patota_id);
 void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s);
 void* leer_atributo(int offset, int nro_marco, config_struct* config_s);
 int escribir_atributo_char(tcbTripulante* tripulante, int offset, int nro_marco, config_struct* config_s);
 int escribir_atributo(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
+void imprimir_marcos_ms();
+void imprimir_marcos_mp();
+
+
 
 int posicion_vector(int tripulante_id);
 int escribir_atributo_cero(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
 int escribir_atributo_uno(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
 int escribir_atributo_dos(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
 int escribir_atributo_tres(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
-void almacenar_informacion2(config_struct* config_servidor, t_list* lista, int patota_id);
-void leer_informacion2(config_struct* config_servidor, tabla_paginacion* una_tabla, t_list* lista, int patota_id);
 void leer_atributo_cero(void* dato,int offset, int nro_marco, config_struct* config_s);
 void leer_atributo_uno(void* dato,int offset, int nro_marco, config_struct* config_s);
 void leer_atributo_dos(void* dato,int offset, int nro_marco, config_struct* config_s);
 void leer_atributo_tres(void* dato,int offset, int nro_marco, config_struct* config_s);
-int cuantos_marcos2(int cuantos_tripulantes, int longitud_tarea);
 void swap_pagina_iniciar();
 
 
 int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct* config_s);
+void buscar_marco_ms(int id_marco,int * estado,int* proceso, int *pagina);
 void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina);
 int lugar_swap_libre();
 int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato);
@@ -307,7 +311,7 @@ void* recuperar_pag_swap(int numDeBloque);
 void dump_memoria_paginacion();
 int reemplazo_lru();
 char* obtener_tarea2(int id_patota, tcbTripulante* tripulante);
-tcbTripulante* obtener_tripulante2(int patota_id,int tripulante_id, config_struct* config_servidor);
+tcbTripulante* obtener_tripulante(int patota_id,int tripulante_id, config_struct* config_servidor);
 bool enviar_tarea_paginacion(int socket_cliente, int numero_patota, tcbTripulante* tripulante);
 
 
