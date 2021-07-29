@@ -270,7 +270,7 @@ int funcion_cliente(int socket_cliente)
 				lista = recibir_paquete(socket_cliente);
 
 				char* nombre_tarea = list_get(lista, 0);
-				t_tarea* tarea = buscar_tarea(nombre_tarea);
+				t_tarea* tarea = tarea_buscar_accion_y_recurso(nombre_tarea);
 
 				char* cantidad_str = list_get(lista, 1);
 				int cantidad = atoi(cantidad_str);
@@ -379,7 +379,7 @@ void recurso_realizar_tarea(t_tarea* tarea, int cantidad)
 			recurso_generar_cantidad(tarea->codigo_recurso, cantidad);
 			break;
 		case CONSUMIR:
-			recurso_consumir_cantidad(tarea->codigo_recurso, cantidad);
+			//recurso_consumir_cantidad(tarea->codigo_recurso, cantidad);
 			break;
 		case DESCARTAR:
 			recurso_descartar_cantidad(tarea->codigo_recurso, cantidad);
@@ -568,9 +568,8 @@ void sig_handler(int signum){
 //Envia al Discordiador a traves del socket abierto socket_cliente_sabotaje la posicion del sabotaje que debe ser atendida
 void notificar_sabotaje()
 {
-	char** posiciones_sabotaje_array = string_get_string_as_array(configuracion.posiciones_sabotaje);
+	char** posiciones_sabotaje_array = configuracion.posiciones_sabotaje;
 	char* posicion_sabotaje = posiciones_sabotaje_array[sabotajes_indice++];
-	cadena_eliminar_array_de_cadenas(posiciones_sabotaje_array);
 
 	enviar_mensaje(posicion_sabotaje, socket_cliente_sabotaje);
 }
@@ -581,32 +580,6 @@ void destruir_lista(char* contenido){
 
 ///////////////////////////////FIN FUNCIONES MAS RECIENTES///////
 
-///////////////////////FUNCIONES ORDENADAS "CRONOLOGICAMENTE"//////////////////////////////////////////////////////////////
-
-//Lee la configuracion contenida en el archivo de configuracion definido y la carga en el sistema
-void leer_config()
-{
-    t_config* config = config_create(ARCHIVO_CONFIGURACION);
-
-	if(config == NULL)
-	{
-		log_error(logger, "No se puede cargar la configuracion. Se finaliza el programa");
-		exit(EXIT_FAILURE);
-	}
-
-    configuracion.ip = string_duplicate(config_get_string_value(config, "IP"));//no la da el archivo de configuracion
-    configuracion.puerto = string_duplicate(config_get_string_value(config, "PUERTO"));
-    configuracion.punto_montaje = string_duplicate(config_get_string_value(config,"PUNTO_MONTAJE"));
-    configuracion.tiempo_sincronizacion = config_get_int_value(config,"TIEMPO_SINCRONIZACION");
-    configuracion.posiciones_sabotaje = config_get_array_value(config,"POSICIONES_SABOTAJE");
-
-    log_info(logger, "Configuracion leida y almacenada en \"configuracion\"");
-
-    config_destroy(config);
-}
-
-
-//TODO lo de sincronizar la copia de la copia usando el tiempo de sincronizacion de config
 
 ///////////////COMIENZO DE FUNCIONES PARA REALIZAR TAREAS///////////////////////////////////////////////////////////////////
 
@@ -1326,7 +1299,7 @@ void superbloque_validar_integridad_bitmap()
 	char bitmap_real_md5[33];
 	cadena_calcular_md5(bitmap_real, bitmap_size, bitmap_real_md5);
 
-	char* bitmap_actual_md5[33];
+	char bitmap_actual_md5[33];
 	cadena_calcular_md5(superbloque.bitmap, bitmap_size, bitmap_actual_md5);
 
 	if(strcmp(bitmap_actual_md5, bitmap_real_md5))
@@ -1448,7 +1421,7 @@ void cadena_agregar_a_lista_existente_valores_de_otra_lista(char** lista_origina
 	{
 		if(cadena_cantidad_elementos_en_lista(*lista_original) == 0)
 		{
-			printf("borrar si funciona ok ");
+			printf("borrar si funciona ok");
 			printf("original %s ", *lista_original);
 			(**lista_original) = '\0';//(*lista_original)[0] = '\0';
 			printf("original modificada \"%s\"", *lista_original);
@@ -1527,7 +1500,6 @@ t_list* bitacoras_obtener_lista_con_rutas_completas()
 			log_error(logger, "No se pudo abrir el directorio" );
 			exit(EXIT_FAILURE);
 		}
-		free(bitacoras_stat);//agregado por edu (borrar si hay un malfuncionamiento)
 	}
 	else
 	{
@@ -2004,8 +1976,8 @@ void recursos_validar_existencia_metadatas()
 
 	for(int i = 0; i < cantidad_recursos; i++)
 	{
-		printf("en recursos_validar_existencia_metadatas() 1 borrar");
-		recurso_validar_existencia_metadata_en_memoria(&lista_recursos[i]);printf("en recursos_validar_existencia_metadatas() (sacar & 2 borrar");
+		printf("en recursos_validar_existencia_metadatas() 1 borrar\n");
+		recurso_validar_existencia_metadata_en_memoria(&lista_recursos[i]);printf("en recursos_validar_existencia_metadatas() (sacar & 2 borrar)\n");
 	}
 	log_debug(logger, "Salgo de recursos_validar_existencia_metadatas()");
 }

@@ -21,7 +21,7 @@ int main(void)
 
 
 
-	int piddd = getpid();
+	/*int piddd = getpid();
 	log_info(logger, "pid %d  \n", piddd);
 	signal(SIGUSR1, sig_handler);
 
@@ -39,7 +39,7 @@ int main(void)
     pthread_join(servidor_sabotaje,NULL);
 
 
-	log_info(logger, "Finaliza main");
+	log_info(logger, "Finaliza main");*/
 
 	return EXIT_SUCCESS;
 }
