@@ -14,6 +14,7 @@ int cols=10;
 int rows=10;
 int contador_lru=0;
 void* swap_address;
+int id_marco_clock=0;
 
 void iniciar_servidor(config_struct* config_servidor)
 {
@@ -2937,7 +2938,7 @@ int posicion_marco(){
 		return reemplazo_lru();
 	}else{
 		log_info(logger,"Algoritmo de reemplazo es clock\n");
-		//return reemplazo_clock();
+		return reemplazo_clock();
 	}
 
 
@@ -3001,6 +3002,55 @@ int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea){
 	}
 	return cantidad_marcos;
 }
+
+int vistima_clock(){
+
+	int nro_marco;
+	while(id_marco_clock){
+			buscar_marco(id_marco_clock);
+
+
+	return nro_marco;
+
+}
+
+int     buscar_marco(int id_marco){
+
+    	marco* clock_m;
+    	int flag =0;
+		sem_wait(&MUTEX_LISTA_TABLAS_PAGINAS);
+		while(flag!=0){
+		for(int i=0; i<list_size(tabla_paginacion_ppal);i++){
+			tabla_paginacion* una_tabla = list_get(tabla_paginacion_ppal,i);
+			for(int j=0; j<list_size(una_tabla->lista_marcos);j++){
+				marco* un_marco=list_get(una_tabla->lista_marcos,j);
+				if(un_marco->id_marco==id_marco && un_marco->ubicacion==MEM_PRINCIPAL){
+					if(un_marco->bit_uso==1){
+				       un_marco->bit_uso=0;
+						}else{
+						flag=1;
+						clock_m = un_marco;
+						break;
+				}
+			}
+		}if(flag==1){
+			break;
+		}
+		}
+		}
+				   clock_m->ubicacion=MEM_SECUNDARIA;
+				   nro_marco=clock_m->id_marco;
+
+				   void* contenidoAEscribir = malloc(configuracion.tamanio_pag);
+				   memcpy(contenidoAEscribir,configuracion.posicion_inicial + nro_marco*(configuracion.tamanio_pag) ,configuracion.tamanio_pag);
+				   clock_m->id_marco=lugar_swap_libre();
+				   swap_pagina(contenidoAEscribir,clock_m->id_marco);
+		           log_info(logger,"MARCO ENTREGADO POR CLOCK %d \n",  nro_marco);
+				   return nro_marco;
+
+					sem_post(&MUTEX_LISTA_TABLAS_PAGINAS);
+    }
+
 
 
 void dump_memoria_paginacion(){
@@ -3259,32 +3309,30 @@ int espacios_swap_libres(config_struct* config_servidor){
 }
 
 
-/*
+
 int reemplazo_clock(){
 	int nro_marco;
 	int flag =0;
 	marco* clock_m=malloc(sizeof(marco));
-		for(int i=0; i<list_size(tabla_paginacion_ppal);i++){
-			tabla_paginacion* una_tabla = list_get(tabla_paginacion_ppal,i);
-			while(flag !=1){
-				for(int j=0; j<list_size(una_tabla->lista_marcos);j++){
-					marco* un_marco=list_get(una_tabla->lista_marcos,j);
-					if(un_marco->ubicacion == 0){
-						if(un_marco->bit_uso==1){
-	   		            un_marco->bit_uso=0;
-						}else{
-							clock_m = un_marco;
-							flag=1;
-							break;
-						}
+	for(int i=0; i<list_size(tabla_paginacion_ppal);i++){
+		tabla_paginacion* una_tabla = list_get(tabla_paginacion_ppal,i);
+		while(flag !=1){
+			for(int j=0; j<list_size(una_tabla->lista_marcos);j++){
+				marco* un_marco=list_get(una_tabla->lista_marcos,j);
+				if(un_marco->ubicacion == MEM_PRINCIPAL){
+					if(un_marco->bit_uso==1){
+	   		           un_marco->bit_uso=0;
+					}else{
+					   clock_m = un_marco;
+					   flag=1;
+					   break;
+					}
 
-	   	   }
-   }
-}break;
-}
-
-
-
+				}
+			}
+		}
+		break;
+		}
 
 		   clock_m->ubicacion=MEM_SECUNDARIA;
 		   nro_marco=clock_m->id_marco;
@@ -3299,7 +3347,7 @@ int reemplazo_clock(){
 
 }
 
-*/
+
 /*
 int reemplazo_clock(){
 			log_info(logger,"Estoy en el clock\n");
