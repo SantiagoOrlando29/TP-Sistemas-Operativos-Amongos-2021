@@ -284,7 +284,7 @@ int funcion_cliente(int socket_cliente)
 					log_error(logger, "La tarea recibida \"%s %d\" no es valida", nombre_tarea, cantidad);
 				}
 
-				log_debug(logger, "Se supone ya realice una tarea y estoy por enviar el ok");
+				log_debug(logger, "Se supone ya realice \"%s %d\" y estoy por enviar el ok", tarea->nombre, cantidad);
 				enviar_ok(socket_cliente);
 
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
@@ -297,16 +297,13 @@ int funcion_cliente(int socket_cliente)
 				int tid = atoi(tid_str);
 
 				char* mensaje = list_get(lista, 1);
-				log_debug(logger, "tid %d  %s", tid, mensaje); //Mensaje es lo que hay que cargar en blocks
+				log_debug(logger, "tid %d  %s", tid, mensaje); //"mensaje" es lo que hay que cargar en blocks
 
-				t_bitacora_data* bitacora_data = malloc(sizeof(t_bitacora_data));
-
-				bitacora_cargar_data(bitacora_data, tid);
+				t_bitacora_data* bitacora_data = bitacora_cargar_estructura_completa(tid);
 				bitacora_guardar_log(bitacora_data, mensaje);
+				bitacora_borrar_estructura_completa(bitacora_data);
 
-				free(bitacora_data);
-
-				log_debug(logger, "Se supone ya cargue una bitacora y estoy por enviar el ok");
+				log_debug(logger, "Se supone ya cargue una bitacora y estoy por enviar el ok para el tripulante %d y el mensaje %s", tid, mensaje);
 				enviar_ok(socket_cliente);
 
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
@@ -399,44 +396,36 @@ void enviar_ok(int _socket)
 //FUNCIONES NECESARIAS PARA GUARDAR BITACORAS (EDU)
 
 //Carga la data de la bitacora correspondiente al tripulante indicado por el valor de tid
-void bitacora_cargar_data(t_bitacora_data* bitacora_data, int tid)
+t_bitacora_data* bitacora_cargar_estructura_completa(int tid)
 {
-	printf("A\n");
+	t_bitacora_data* bitacora_data = malloc(sizeof(t_bitacora_data));
+
 	bitacora_data->tid = tid;
 	bitacora_data->ruta_completa = string_from_format("%s/Tripulante%d.ims", bitacoras_path, bitacora_data->tid);
-	log_debug(logger, "En bitacora_cargar_data: bitacora_data->ruta_completa: %s", bitacora_data->ruta_completa);
-	printf("B\n");
 
 	if(utils_existe_en_disco(bitacora_data->ruta_completa))
 	{
-		printf("C - Entro a levantar metadata del archivo\n");
 		bitacora_levantar_metadata_de_archivo(bitacora_data);
 	}
 	else
 	{
-		printf("D - Entro a cargar metadata default\n");
 		bitacora_cargar_metadata_default(bitacora_data);
-
 	}
-
-	log_debug(logger, "Salgo de bitacora_cargar_data para el tripulante %d", tid);
+	//log_debug(logger, "Salgo de bitacora_cargar_data para el tripulante %d", tid);
+	return bitacora_data;
 }
 
 //Carga en memoria la metadata para el tripulante indicado en bitacora_data segun el archivo asociado en la misma data
 void bitacora_levantar_metadata_de_archivo(t_bitacora_data* bitacora_data)
 {
 	bitacora_data->metadata = malloc(sizeof(t_bitacora_md));
+
 	t_config* bitacora_config =  config_create(bitacora_data->ruta_completa);
-	printf("E - la ruta completa es %s\n", bitacora_data->ruta_completa);
-	printf("E - El size es %d\n", config_get_int_value(bitacora_config, "SIZE"));
 	bitacora_data->metadata->size = config_get_int_value(bitacora_config, "SIZE");
-	printf("F\n");
 	bitacora_data->metadata->blocks = string_duplicate(config_get_string_value(bitacora_config, "BLOCKS"));
-	printf("G\n");
 	config_destroy(bitacora_config);
 
-
-	log_debug(logger, "Bitacora de tripulante %d levantada en memoria con size = %d y blocks = %s", bitacora_data->tid,
+	log_debug(logger, "Metadata de tripulante %d levantada en memoria con size = %d y blocks = %s", bitacora_data->tid,
 			bitacora_data->metadata->size, bitacora_data->metadata->blocks);
 }
 
@@ -444,17 +433,19 @@ void bitacora_levantar_metadata_de_archivo(t_bitacora_data* bitacora_data)
 void bitacora_cargar_metadata_default(t_bitacora_data* bitacora_data)
 {
 	t_bitacora_md* metadata = malloc(sizeof(t_bitacora_md));
+
 	metadata->size = 0;
 	metadata->blocks = string_duplicate("[]");
+
 	bitacora_data->metadata = metadata;
-	log_debug(logger, "Bitacora de tripulante %d cargada en memoria con size = %d y blocks = %s", bitacora_data->tid,
-	bitacora_data->metadata->size, bitacora_data->metadata->blocks);
+
+	log_debug(logger, "Metadata de tripulante %d default cargada en memoria (size = %d y blocks = %s)", bitacora_data->tid,
+			bitacora_data->metadata->size, bitacora_data->metadata->blocks);
 }
 
 //Escribe la cadena log en el ultimo bloque escrito si tuviera espacio libre y si no en los blocks del superbloque que se encuentren libres
 void bitacora_guardar_log(t_bitacora_data* bitacora_data, char* mensaje)
 {
-	printf("El mensaje que llega al principio es %s\n", mensaje);
 	//log_debug(logger, "Info-Se ingresa a recurso_generar_cantidad, se debe generar %d %s(s)", cantidad, recurso_data->nombre);
 	if(strlen(mensaje) == 0)
 	{
@@ -466,12 +457,8 @@ void bitacora_guardar_log(t_bitacora_data* bitacora_data, char* mensaje)
 	t_bitacora_md* bitacora_md = bitacora_data->metadata;
 
 	int bloque;
-	char* mensaje_auxiliar = malloc(strlen(mensaje) + 2);
-	strcpy(mensaje_auxiliar,mensaje);
-	mensaje_auxiliar[strlen(mensaje)] = '\n';
-	mensaje_auxiliar[strlen(mensaje) + 1] = '\0';
+	char* mensaje_auxiliar = string_from_format("%s\n", mensaje);
 	char* posicion_asignada = mensaje_auxiliar;
-	printf("El mensaje auxiliar es %s\n", mensaje_auxiliar);
 
 	if(bitacora_tiene_espacio_en_ultimo_bloque(bitacora_md))
 	{
@@ -485,8 +472,6 @@ void bitacora_guardar_log(t_bitacora_data* bitacora_data, char* mensaje)
 		if(bloque >= 0)
 		{
 			cadena_agregar_entero_a_lista_de_enteros(&bitacora_md->blocks, bloque);
-			printf("El mensaje que tenemos essssss: %s \n", mensaje_auxiliar);
-			printf("El puntero que tenemos essssss: %p \n", &mensaje_auxiliar);
 			bitacora_escribir_en_bloque(bitacora_md, &mensaje_auxiliar, bloque);
 		}
 		else
@@ -494,6 +479,7 @@ void bitacora_guardar_log(t_bitacora_data* bitacora_data, char* mensaje)
 			log_error(logger, "No se puede escribir el log de la bitacora por no haber bloques libres (no deberia llegar aca)");
 		}
 	}
+
 	free(posicion_asignada);
 
 	superbloque_actualizar_bitmap_en_archivo();
@@ -525,17 +511,14 @@ void bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** mensaje, int
 
 		bitacora_md->size++;
 		(*mensaje)++;
-		printf("Caracter: %c \n", **mensaje);
 		posicion_absoluta++;
 		posicion_en_bloque++;
 	}
-	//if(posicion_en_bloque < superbloque.block_size)
-	//{
-		//*posicion_absoluta = '\n';
 
-		//bitacora_md->size++;
-	//}
-	log_debug(logger, "pase por bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, \"%s\", %d)", *mensaje, bloque);
+	log_debug(logger, "Posicion_en_bloque %d, posicion_inicio_bloque %d posicion block_addres %p posicion absoluta %p proximo caracter a escribir en codigo ascii %d",
+			posicion_en_bloque, posicion_inicio_bloque, blocks_address, posicion_absoluta, **mensaje);
+
+	//log_debug(logger, "Saliendo bitacora_escribir_en_bloque");
 }
 
 //Actualiza el archivo de la bitacora con la informacion que ya tiene en memoria
@@ -547,16 +530,23 @@ void bitacora_actualizar_archivo(t_bitacora_data* bitacora_data)
 	}
 
 	t_config* bitacora_config = config_create(bitacora_data->ruta_completa);
-	char* size_str = string_duplicate(string_itoa(bitacora_data->metadata->size));
+	char* size_str = string_itoa(bitacora_data->metadata->size);
 	config_set_value(bitacora_config, "SIZE", size_str);
 	config_set_value(bitacora_config, "BLOCKS", bitacora_data->metadata->blocks);
 	free(size_str);
 
 	config_save(bitacora_config);
 	config_destroy(bitacora_config);
-	log_debug(logger, "Se actualizo el archivo bitacora del tripulante %d en la ruta %s", bitacora_data->tid, bitacora_data->ruta_completa);
+	log_debug(logger, "%s actualizado para tripulante %d", bitacora_data->ruta_completa, bitacora_data->tid);
 }
 
+void bitacora_borrar_estructura_completa(t_bitacora_data* bitacora_data)
+{
+	free(bitacora_data->metadata->blocks);
+	free(bitacora_data->metadata);
+	free(bitacora_data->ruta_completa);
+	free(bitacora_data);
+}
 
 void enviar_header(op_code tipo, int socket_cliente)
 {
@@ -620,7 +610,6 @@ void recurso_generar_cantidad(recurso_code codigo_recurso, int cantidad)
 		//signal recurso_data superbloque y blocks //quiza se puede ser mas especifico
 
 		log_info(logger, "Finaliza recurso_generar_cantidad de %s", recurso_data->nombre);
-		//verificar_superbloque_temporal(); //borrar
 	}
 	else
 	{
@@ -780,7 +769,7 @@ void metadata_cargar_parcialmente_bloque(t_recurso_md* recurso_md, int* cantidad
 //Busca y devuelve el primer bloque libre en el bitmap, si no existiera finaliza con error
 int superbloque_obtener_bloque_libre()
 {
-	log_debug(logger, "I-Se ingresa a superbloque_obtener_bloque_libre");
+	//log_debug(logger, "I-Se ingresa a superbloque_obtener_bloque_libre");
 
 	t_bitarray* bitmap = bitarray_create_with_mode(superbloque.bitmap, bitmap_size, LSB_FIRST);
 	int posicion;
@@ -961,7 +950,7 @@ void superbloque_actualizar_bitmap_en_archivo()
 	lseek(superbloque_fd, 2 * sizeof(uint32_t), SEEK_SET);
 	write(superbloque_fd, superbloque.bitmap, bitmap_size);
 	close(superbloque_fd);
-	log_debug(logger, "O-Bitmap en archivo SuperBloque.ims actualizado con los valores de la memoria");
+	log_debug(logger, "SuperBloque.ims actualizado (BITMAP)");
 }
 
 //Sincroniza de manera forzosa el archivo de Blocks.ims con el espacio de memoria mapeado
@@ -969,7 +958,7 @@ void blocks_actualizar_archivo()
 {
 	//log_debug(logger, "I-Se ingresa a blocks_actualizar_archivo");
 	msync(blocks_address, blocks_size, MS_SYNC);
-	log_debug(logger, "O-Archivo Blocks.ims actualizado con los valores de la memoria");
+	log_debug(logger, "Blocks.ims actualizado");
 
 }
 
@@ -1016,8 +1005,7 @@ void recurso_descartar_cantidad(recurso_code codigo_recurso, int cantidad)
 
 	if(cantidad == 0)
 	{
-		recurso_validar_existencia_metadata_en_memoria(recurso_data);
-
+		//recurso_validar_existencia_metadata_en_memoria(recurso_data);//al iniciar el file system se levantan todas las metadatas-borrar
 		if(utils_existe_en_disco(recurso_data->ruta_completa) == 0)
 		{
 			log_info(logger, "No existe el archivo %s como para descartarlo", recurso_data->nombre_archivo);
@@ -1050,15 +1038,14 @@ int metadata_tiene_caracteres_en_blocks(t_recurso_md* recurso_md)
 //Descarta del recurso todos los caracteres y bloques, registrados en Blocks, en la metadata y en el superbloque
 void metadata_descartar_caracteres_existentes(t_recurso_md* recurso_md)
 {
-	superbloque_liberar_bloques_en_bitmap(recurso_md->blocks);
-	blocks_eliminar_bloques(recurso_md->blocks);
+	metadata_liberar_bloques_en_bitmap_y_en_blocks(recurso_md->blocks);
 	free(recurso_md->blocks);
-	log_debug(logger, "Se descartaron los caracteres \"%s\" que existian", recurso_md->caracter_llenado);
 	metadata_setear_con_valores_default_en_memoria(recurso_md);
+	log_debug(logger, "Se descartaron los caracteres \"%s\" que existian", recurso_md->caracter_llenado);
 }
 
 //Setea en el bitmap del superbloque las posiciones dadas por la cadena blocks a 0
-void superbloque_liberar_bloques_en_bitmap(char* blocks)
+void metadata_liberar_bloques_en_bitmap_y_en_blocks(char* blocks)
 {
 	//log_debug(logger, "I-Ingreso a superbloque_liberar_bloques_en_bitmap con BLOCKS %s", blocks);
 	int cantidad_bloques = cadena_cantidad_elementos_en_lista(blocks);
@@ -1070,29 +1057,13 @@ void superbloque_liberar_bloques_en_bitmap(char* blocks)
 	{
 		bloque = atoi(lista_bloques[i]);
 		bitarray_clean_bit(bitmap, bloque);
+		log_debug(logger, "Bloque %d eliminado del bitmap del superbloque - version rapida//version lenta", bloque);
+		blocks_eliminar_bloque(bloque);
 	}
 
 	bitarray_destroy(bitmap);
 	cadena_eliminar_array_de_cadenas(&lista_bloques, cantidad_bloques);
-	log_debug(logger, "O-Bloques liberados en bitmap del superbloque");
-}
-
-//Registra un caracter de fin de cadena al comienzo de cada uno de los bloques incluidos en la lista de bloques
-void blocks_eliminar_bloques(char* blocks)
-{
-	log_debug(logger, "I-blocks_eliminar_bloques con BLOCKS %s", blocks);
-
-	int cantidad_bloques = cadena_cantidad_elementos_en_lista(blocks);
-	char** lista_bloques = string_get_string_as_array(blocks);
-	int bloque;
-
-	for(int i = 0; i < cantidad_bloques; i++)
-	{
-		bloque = atoi(lista_bloques[i]);
-		blocks_eliminar_bloque(bloque);
-	}
-	cadena_eliminar_array_de_cadenas(&lista_bloques, cantidad_bloques);
-	log_debug(logger, "O-Bloques eliminados - version rapida//version lenta");
+	log_debug(logger, "Los bloques %s fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims- version rapida//version lenta", blocks);
 }
 
 //Registra un caracter de fin de cadena al comienzo de cada uno de los bloques incluidos en la lista de bloques
@@ -1105,7 +1076,7 @@ void blocks_eliminar_bloque(int bloque)
 	*posicion_absoluta = '\0';
 	//memset(posicion_absoluta, 0, superbloque.block_size);
 
-	log_debug(logger, "O-Bloque eliminado - version rapida//version lenta");
+	log_debug(logger, "Bloque %d eliminado de la copia de blocks - version rapida//version lenta", bloque);
 }
 
 /*////////COMIENZO DE NO TERMINADO 2
@@ -1248,6 +1219,14 @@ int metadata_ultimo_bloque_usado(t_recurso_md* recurso_md)
 /////////FIN DE NO TERMINADO 2
  */
 
+
+
+
+
+
+
+
+
 //////////////////////////////////////////FSCK/////////////////////////////////////////////////////////
 
 //Inicia la secuencia de chequeos y reparaciones del File System Catastrophe Killer
@@ -1341,8 +1320,6 @@ void superbloque_validar_integridad_bitmap()
 //Setea al bitmap apuntado por el campo bitmap de la estructura superbloque segun los bloques ocupados que recibe como parametro
 char* superbloque_obtener_bitmap_correcto_segun_bloques_ocupados()
 {
-	log_debug(logger, "Se ingresa a superbloque_obtener_bitmap_correcto_segun_bloques_ocupados()-BORRAR");
-
 	char* bitmap = malloc(bitmap_size);
 	memset(bitmap, 0, bitmap_size);
 
@@ -1359,13 +1336,10 @@ char* superbloque_obtener_bitmap_correcto_segun_bloques_ocupados()
 		bitarray_set_bit(bitarray_auxiliar, bloque);
 	}
 
-	log_debug(logger, "Se obtuvo el bitmap correcto para la lista de bloques ocupados %s -borrar", bloques_ocupados);
 	bitarray_destroy(bitarray_auxiliar);
 	cadena_eliminar_array_de_cadenas(&lista_bloques_ocupados, cantidad_bloques_ocupados);
-	log_debug(logger, "Se obtuvo el bitmap correcto para la lista de bloques ocupados %s", bloques_ocupados);
 	free(bloques_ocupados);
 
-	log_debug(logger, "Se liberaron los recursos utilizados en superbloque_obtener_bitmap_correcto_segun_bloques_ocupados() -BORRAR");
 	return bitmap;
 }
 
@@ -1376,11 +1350,11 @@ char* files_obtener_cadena_con_el_total_de_bloques_ocupados()
 
 	char* bloques_de_recursos = recursos_obtener_cadena_con_el_total_de_bloques_ocupados();
 	char* bloques_ocupados = bloques_de_recursos;
-	char* bloques_de_bitacoras = bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados_ex_contar_archivos();
+	char* bloques_de_bitacoras = bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados();
 
 	cadena_agregar_a_lista_existente_valores_de_otra_lista(&bloques_ocupados, bloques_de_bitacoras);
 
-	free(bloques_de_bitacoras);//free(bloques_de_recursos);//borrar
+	free(bloques_de_bitacoras);
 	log_debug(logger, "El total de bloques ocupados es %s", bloques_ocupados);
 	return bloques_ocupados;
 }
@@ -1435,33 +1409,22 @@ void cadena_agregar_a_lista_existente_valores_de_otra_lista(char** lista_origina
 	{
 		if(cadena_cantidad_elementos_en_lista(*lista_original) == 0)
 		{
-			printf("borrar si funciona ok");
-			printf("original %s ", *lista_original);
 			(**lista_original) = '\0';//(*lista_original)[0] = '\0';
-			printf("original modificada \"%s\"", *lista_original);
-			printf("a adicionar %s \n", lista_a_adicionar);
 		}
 		else
 		{
-			printf("borrar si funciona ok ");
-			printf("original %s ", *lista_original);
-			printf("a adicionar %s", lista_a_adicionar);
 			cadena_sacar_ultimo_caracter(*lista_original);
 			lista_a_adicionar[0] = ',';
-			printf("original modificada \"%s\"", *lista_original);
-			printf("a adicionar modificada %s \n", lista_a_adicionar);
 		}
 		string_append(lista_original, lista_a_adicionar);
 	}
-
-	printf("El string final es %s\n", *lista_original);
-
 }
 
 //Devuelve un listado en formato cadena con el total de bloques ocupado por las bitacoras
-char* bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados_ex_contar_archivos(){
+char* bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
+{
 
-	log_debug(logger, "Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados_ex_contar_archivos()");
+	log_debug(logger, "Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()");
 
 	t_list* lista_paths = bitacoras_obtener_lista_con_rutas_completas();
 	int cantidad_bitacoras = list_size(lista_paths);
@@ -1472,14 +1435,10 @@ char* bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados_ex_contar_archiv
 		char* path_buffer = list_get(lista_paths, i);
 		char* string_buffer = metadata_obtener_bloques_desde_archivo(path_buffer);
 		cadena_agregar_a_lista_existente_valores_de_otra_lista(&bloques, string_buffer);
-		printf("A CAPO\n");
 		free(string_buffer);
-		printf("B CAPO\n");
-		free(path_buffer);
-		printf("C CAPO\n");
 	}
 
-	printf("D CAPO\n");
+	log_debug(logger, "en bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados() antes de borrar lista de bitacoras");
 	list_destroy_and_destroy_elements(lista_paths,(void*)destruir_lista_paquete); //OJO ESTA ROMPIENDO ESTO
 
 	log_debug(logger, "Los bloques ocupados por el total de las bitacoras son %s", bloques);
@@ -1507,16 +1466,13 @@ t_list* bitacoras_obtener_lista_con_rutas_completas()
 					char *ruta_temporal = string_from_format("%s/%s", bitacoras_path, elemento->d_name);
 					printf("La ruta a agregar a la lista queda: %s\n", ruta_temporal);
 					list_add(lista_paths, ruta_temporal);
-					//free(ruta_temporal);//agregado por edu (borrar si hay un malfuncionamiento)
 				}
-				//free(elemento);//agregado por edu (borrar si hay un malfuncionamiento)
 			}
 			closedir(folder);
-			printf("La cantidad de bitacoras es: %d\n", list_size(lista_paths));
 		}
 		else
 		{
-			log_error(logger, "No se pudo abrir el directorio" );
+			log_error(logger, "No se pudo abrir el directorio");
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -1525,7 +1481,7 @@ t_list* bitacoras_obtener_lista_con_rutas_completas()
 		log_error(logger, "%s no es un directorio valido", bitacoras_path);
 		exit(EXIT_FAILURE);
 	}
-
+	log_debug(logger, "salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()");
 	return lista_paths;
 }
 
@@ -1549,49 +1505,6 @@ void fsck_chequeo_de_sabotajes_en_files()
 		}
 	}
 }
-
-
-
-
-//Verifica el valor size del recurso dado por recurso_data respecto del valor que tendria que tener y lo reemplaze si difiere
-void recurso_validar_size(t_recurso_data* recurso_data)
-{
-	t_config* recurso_config = config_create(recurso_data->ruta_completa);
-
-	int size_actual = config_get_int_value(recurso_config, "SIZE");
-
-	free(recurso_data->metadata->blocks);
-	recurso_data->metadata->blocks = string_duplicate(config_get_string_value(recurso_config, "BLOCKS"));
-
-	int size_real = recurso_obtener_size_real(recurso_data);
-
-	if(size_real != size_actual)
-	{
-		log_info(logger, "El recurso %s tiene su size saboteado, pero no te preocupes, ya lo arreglaremos", recurso_data->nombre);
-		log_debug(logger, "Size actual %d size real %d", size_actual, size_real);
-
-		char* size_real_str = string_itoa(size_real);
-		config_set_value(recurso_config, "SIZE", size_real_str);
-		free(size_real_str);
-		config_save(recurso_config);
-
-		log_info(logger, "Listo, ya podes confiar en el size del recurso %s", recurso_data->nombre);
-	}
-	else
-	{
-		log_info(logger, "Por lo menos el size del recurso %s no fue alterado, enhorabuena!!!", recurso_data->nombre);
-	}
-	config_destroy(recurso_config);
-}
-
-int recurso_obtener_size_real(t_recurso_data* recurso_data)
-{
-	int ultimo_bloque = cadena_ultimo_entero_en_lista_de_enteros(recurso_data->metadata->blocks);//files_obtener_bloques_ocupados();
-
-
-	return 1;//TODO
-}
-
 
 void recurso_validar_block_count(t_recurso_data* recurso_data)
 {
@@ -1627,6 +1540,68 @@ int recurso_obtener_block_count_real(t_recurso_data* recurso_data)
 }
 
 
+//Verifica el valor size del recurso dado por recurso_data respecto del valor que tendria que tener y lo reemplaze si difiere
+void recurso_validar_size(t_recurso_data* recurso_data)
+{
+	t_config* recurso_config = config_create(recurso_data->ruta_completa);
+
+	int size_actual = config_get_int_value(recurso_config, "SIZE");
+
+	free(recurso_data->metadata->blocks);
+	recurso_data->metadata->blocks = string_duplicate(config_get_string_value(recurso_config, "BLOCKS"));
+
+	int size_real = recurso_obtener_size_real(recurso_data);
+
+	if(size_real != size_actual)
+	{
+		log_info(logger, "El recurso %s tiene su size saboteado, pero no te preocupes, ya lo arreglaremos", recurso_data->nombre);
+		log_debug(logger, "Size actual %d size real %d", size_actual, size_real);
+
+		char* size_real_str = string_itoa(size_real);
+		config_set_value(recurso_config, "SIZE", size_real_str);
+		free(size_real_str);
+		config_save(recurso_config);
+
+		log_info(logger, "Listo, ya podes confiar en el size del recurso %s", recurso_data->nombre);
+	}
+	else
+	{
+		log_info(logger, "Por lo menos el size del recurso %s no fue alterado, enhorabuena!!!", recurso_data->nombre);
+	}
+	config_destroy(recurso_config);
+}
+
+//TODO para terminar
+int recurso_obtener_size_real(t_recurso_data* recurso_data)
+{
+	int size_real;
+	int cantidad_bloques = cadena_cantidad_elementos_en_lista(recurso_data->metadata->blocks);
+	if(cantidad_bloques > 0)
+	{
+		if(metadata_tiene_espacio_en_ultimo_bloque(recurso_data->metadata))
+		{
+			int cantidad_bloques_llenos = cantidad_bloques - 1;
+			int ultimo_bloque = cadena_ultimo_entero_en_lista_de_enteros(recurso_data->metadata->blocks);//files_obtener_bloques_ocupados();
+			int cantidad_en_ultimo_bloque = metadata_cantidad_del_caracter_en_bloque(recurso_data->caracter_llenado, ultimo_bloque);
+			size_real = superbloque.block_size * cantidad_bloques_llenos + cantidad_en_ultimo_bloque;
+		}
+		else
+		{
+			size_real = superbloque.block_size * cantidad_bloques;
+		}
+	}
+	else
+	{
+		size_real = 0;
+	}
+	return size_real;
+}
+
+//TODO
+int metadata_cantidad_del_caracter_en_bloque(char caracter, int bloque)
+{
+	return 1;//TODO
+}
 
 //FIXME Si encuentra una diferencia entre los md5 de los concatenados restaura el archivo en blocks con los blocks del archivo metadata
 void recurso_validar_blocks(t_recurso_data* recurso_data)
@@ -1660,13 +1635,6 @@ char* recurso_obtener_blocks_real(t_recurso_data* recurso_data)
 	strcpy(algoLoco, "[]");
 	return algoLoco;
 }
-
-
-
-
-
-
-
 
 
 
@@ -1762,7 +1730,7 @@ void file_system_verificar_existencia_previa()
 	if(utils_existe_en_disco(superbloque_path))
 	{
 		superbloque_levantar_estructura_desde_archivo();
-		file_system_consultar_para_restaurar();
+		file_system_consultar_para_formatear();
 	}
 	else
 	{
@@ -1786,9 +1754,7 @@ void superbloque_levantar_estructura_desde_archivo()
 	read(superbloque_fd, &superbloque.blocks, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
-	printf("verificar que no romp");
 	superbloque_asignar_memoria_a_bitmap();
-	printf("a -borrar\n");
 	lseek(superbloque_fd, desplazamiento, SEEK_SET);
 	read(superbloque_fd, superbloque.bitmap, bitmap_size);
 
@@ -1818,32 +1784,30 @@ void superbloque_asignar_memoria_a_bitmap()
 	bitmap_size = 1 + (superbloque.blocks - 1) / CHAR_BIT;
 	if(superbloque.bitmap != NULL)
 	{
-		printf("ver que no romp");
 		free(superbloque.bitmap);
-		printf("a - borrar\n");
 	}
 	superbloque.bitmap = malloc(bitmap_size);
 	log_debug(logger, "IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size %d", bitmap_size);
 }
 
 //Consulta por consola al usuario si desea levantar un File System existente o crear uno nuevo
-void file_system_consultar_para_restaurar()
+void file_system_consultar_para_formatear()
 {
-	char levantar_char;
-	printf("Se encontro informacion de un File System previo con tamanio de bloques = %d y bloques = %d. Quisieras levantarlo? (S/N) ",
+	char formatear_char;
+	printf("Se encontro informacion de un File System previo con tamanio de bloques = %d y bloques = %d. Quisieras formaterlo? (S/N) ",
 			superbloque.block_size, superbloque.blocks);
-	levantar_char = getchar();
+	formatear_char = getchar();
 	getchar();
 
-	while(strchr("sSnN", levantar_char) == NULL)
+	while(strchr("sSnN", formatear_char) == NULL)
 	{
-		printf("La respuesta ingresada no es valida, prueba otra vez... quisieras levantarlo? (S/N) ");
-		levantar_char = getchar();
+		printf("La respuesta ingresada no es valida, prueba otra vez... quisieras formatear el File System? (S/N) ");
+		formatear_char = getchar();
 		printf("\n");
 		getchar();
 	}
 
-	if(levantar_char == 'n' || levantar_char == 'N')
+	if(formatear_char == 's' || formatear_char == 'S')
 	{
 		file_system_iniciar_limpio();
 	}
@@ -1852,7 +1816,7 @@ void file_system_consultar_para_restaurar()
 //Inicia un File System limpio eliminando cualquier archivo existente previo
 void file_system_iniciar_limpio()
 {
-	file_system_eliminar_archivos_previos(); //WARNING!!! Elimina t.odo lo previo por no estar el superbloque
+	file_system_eliminar_archivos_previos();
 	superbloque_generar_estructura_con_valores_tomados_por_consola();
 	utils_crear_archivo(superbloque_path);
 	superbloque_cargar_archivo();
@@ -1893,9 +1857,8 @@ void superbloque_generar_estructura_con_valores_tomados_por_consola()
 	superbloque_asignar_memoria_a_bitmap();
 	superbloque_setear_bitmap_a_cero();
 
-	log_debug(logger, "Se ingreso por block_size %d y blocks %d. Ademas se genero el bitmap seteado a vacio",
+	log_debug(logger, "Se ingreso por block_size %d y blocks %d. Ademas se genero el bitmap vacio",
 			superbloque.block_size, superbloque.blocks);
-	log_debug(logger, "O-Se cierra consola");
 }
 
 //Setea el total de bytes del bitmap en el SuperBloque en memoria a 0
@@ -1909,7 +1872,7 @@ void utils_crear_archivo(char* path)
 {
 	int file_descriptor;
 
-	file_descriptor = open(path, O_CREAT|O_RDWR, 0777);
+	file_descriptor = creat(path, 0777);
 	if(file_descriptor == -1)
 	{
 		log_error(logger, "El archivo con ruta completa %s no pudo ser creado. Se finaliza el programa", path);
@@ -1936,7 +1899,6 @@ void superbloque_cargar_archivo()
 	desplazamiento += sizeof(uint32_t);
 	lseek(superbloque_fd, desplazamiento, SEEK_SET);
 	write(superbloque_fd, superbloque.bitmap, bitmap_size);
-
 	close(superbloque_fd);
 	log_debug(logger, "O-Archivo SuperBloque.ims cargado");
 }
@@ -1996,7 +1958,7 @@ void recursos_validar_existencia_metadatas()
 	for(int i = 0; i < cantidad_recursos; i++)
 	{
 		printf("en recursos_validar_existencia_metadatas() 1 borrar\n");
-		recurso_validar_existencia_metadata_en_memoria(&lista_recursos[i]);printf("en recursos_validar_existencia_metadatas() (sacar & 2 borrar)\n");
+		recurso_validar_existencia_metadata_en_memoria(&lista_recursos[i]);printf("en recursos_validar_existencia_metadatas() (\"sacar & \"2 borrar)\n");
 	}
 	log_debug(logger, "Salgo de recursos_validar_existencia_metadatas()");
 }

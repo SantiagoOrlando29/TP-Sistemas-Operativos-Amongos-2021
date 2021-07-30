@@ -127,14 +127,12 @@ t_configuracion configuracion;
 
 char* files_path;
 char* bitacoras_path;
-
 char* superbloque_path;
-char* bitmap_address;
-size_t bitmap_size;
-
 char* blocks_path;
-char* blocks_address; //Direccion en memoria de la copia principal de Blocks.ims
+
+size_t bitmap_size;
 size_t blocks_size;
+char* blocks_address; //Direccion en memoria de la copia principal de Blocks.ims
 
 //pthread_mutex_t mutex_blocks;
 //char* bloques_copia;
@@ -154,6 +152,7 @@ t_tarea* tarea_buscar_accion_y_recurso(char* tarea_str);
 int tarea_cantidad_disponibles();
 void recurso_realizar_tarea(t_tarea* tarea, int cantidad);
 void enviar_ok(int _socket);
+t_bitacora_data* bitacora_cargar_estructura_completa(int tid);
 void bitacora_cargar_data(t_bitacora_data* bitacora_data, int tid);
 void bitacora_levantar_metadata_de_archivo(t_bitacora_data* bitacora_data);
 void bitacora_cargar_metadata_default(t_bitacora_data* bitacora_data);
@@ -161,6 +160,7 @@ void bitacora_guardar_log(t_bitacora_data* bitacora_data, char* mensaje);
 int bitacora_tiene_espacio_en_ultimo_bloque(t_bitacora_md* bitacora_md);
 void bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** mensaje, int bloque);
 void bitacora_actualizar_archivo(t_bitacora_data* bitacora_data);
+void bitacora_borrar_estructura_completa(t_bitacora_data* bitacora_data);
 void enviar_header(op_code tipo, int socket_cliente);
 void sig_handler(int signum);
 void notificar_sabotaje();
@@ -189,8 +189,9 @@ void recurso_actualizar_archivo(t_recurso_data* recurso_data);
 void recurso_descartar_cantidad(recurso_code codigo_recurso, int cantidad);
 int metadata_tiene_caracteres_en_blocks(t_recurso_md* recurso_md);
 void metadata_descartar_caracteres_existentes(t_recurso_md* recurso_md);
-void superbloque_liberar_bloques_en_bitmap(char* blocks);
-void blocks_eliminar_bloques(char* blocks);
+void metadata_liberar_bloques_en_bitmap_y_en_blocks(char* blocks);
+//void superbloque_liberar_bloques_en_bitmap(char* blocks);
+//void blocks_eliminar_bloques(char* blocks);
 void blocks_eliminar_bloque(int bloque);
 void fsck_iniciar();
 void fsck_chequeo_de_sabotajes_en_superbloque();
@@ -201,11 +202,12 @@ char* files_obtener_cadena_con_el_total_de_bloques_ocupados();
 char* recursos_obtener_cadena_con_el_total_de_bloques_ocupados();
 char* metadata_obtener_bloques_desde_archivo(char* path);
 void cadena_agregar_a_lista_existente_valores_de_otra_lista(char** lista_original, char* lista_a_adicionar);
-char* bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados_ex_contar_archivos();
+char* bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados();
 t_list* bitacoras_obtener_lista_con_rutas_completas();
 void fsck_chequeo_de_sabotajes_en_files();
 void recurso_validar_size(t_recurso_data* recurso_data);
 int recurso_obtener_size_real(t_recurso_data* recurso_data);
+int metadata_cantidad_del_caracter_en_bloque(char caracter, int bloque);
 void recurso_validar_block_count(t_recurso_data* recurso_data);
 int recurso_obtener_block_count_real(t_recurso_data* recurso_data);
 void recurso_validar_blocks(t_recurso_data* recurso_data);
@@ -220,7 +222,7 @@ void file_system_verificar_existencia_previa();
 void superbloque_levantar_estructura_desde_archivo();
 int utils_abrir_archivo_para_lectura_escritura(char* path);
 void superbloque_asignar_memoria_a_bitmap();
-void file_system_consultar_para_restaurar();
+void file_system_consultar_para_formatear();
 void file_system_iniciar_limpio();
 void file_system_eliminar_archivos_previos();
 void files_eliminar_carpeta_completa();
