@@ -1357,6 +1357,11 @@ void dump_memoria_segmentacion(){
 	fclose(dump_file);
 }
 void destruir_marcos(marco* marcos){
+	if(marcos->ubicacion==MEM_PRINCIPAL){
+		list_replace(configuracion.marcos_libres, marcos->id_marco, (void*)0);
+	}else{
+		list_replace(configuracion.swap_libre, marcos->id_marco, (void*)0);
+	}
 	free(marcos);
 }
 
@@ -1445,13 +1450,14 @@ int funcion_cliente_paginacion(int socket_cliente){
 				lista = recibir_paquete(socket_cliente);
 
 
-				int tripulante_id_2 = (int)list_get(lista,0);
+				int tripulante_id = (int)list_get(lista,0);
 				//free(tid_char);
-				int patota_id_2 = (int)list_get(lista,1);
-				log_info(logger, "tid %d  pid %d", tripulante_id_2, patota_id_2);
+				int patota_id= (int)list_get(lista,1);
+				log_info(logger, "tid %d  pid %d", tripulante_id, patota_id);
 
-
-
+				tcbTripulante* tripulante = obtener_tripulante(patota_id, tripulante_id, &configuracion);
+				tripulante->prox_instruccion=0;
+				actualizar_tripulante(tripulante,patota_id,&configuracion);
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 				//return 0;//para que termine el hilo se supone
 				break;
@@ -2927,7 +2933,7 @@ int posicion_marco(){
 	for(int i=0;i<configuracion.cant_marcos;i++){
 		if((int)(list_get(configuracion.marcos_libres, i))==0){
 			int valor = 1;
-			list_add_in_index(configuracion.marcos_libres, i, (void*)valor);
+			list_replace(configuracion.marcos_libres, i, (void*)valor);
 			return i;
 		}
 
@@ -3003,53 +3009,67 @@ int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea){
 	return cantidad_marcos;
 }
 
-int vistima_clock(){
 
-	int nro_marco;
-	while(id_marco_clock){
-			buscar_marco(id_marco_clock);
+marco* buscar_pagina(int num_pag){
+	log_info(logger,"EL ID BUSCADO clock ES %d", num_pag);
+	mem_hexdump(configuracion.posicion_inicial+configuracion.tamanio_pag*0,configuracion.tamanio_pag);
+	mem_hexdump(configuracion.posicion_inicial+configuracion.tamanio_pag*1,configuracion.tamanio_pag);
+	mem_hexdump(configuracion.posicion_inicial+configuracion.tamanio_pag*2,configuracion.tamanio_pag);
+	mem_hexdump(configuracion.posicion_inicial+configuracion.tamanio_pag*3,configuracion.tamanio_pag);
+	for(int i=0; i<list_size(tabla_paginacion_ppal);i++){
+		tabla_paginacion* una_tabla = list_get(tabla_paginacion_ppal,i);
+		for(int j=0; j<list_size(una_tabla->lista_marcos);j++){
+			marco* un_marco=list_get(una_tabla->lista_marcos,j);
+				if(un_marco->id_marco==num_pag && un_marco->ubicacion==MEM_PRINCIPAL){
+					return un_marco;
+				}
+
+			}
+		}
+	log_error(logger,"No encuentra pagina con CLOCK");
+
+	}
 
 
-	return nro_marco;
 
+int reemplazo_clock(){
+
+		log_info(logger,"Iniciando algoritmo de reemplazo CLOCK");
+		log_info(logger,"EL ID DE MARCO 0-3 ES %d", id_marco_clock);
+		int  nro_marco=0;
+    	marco* clock_m=malloc(sizeof(marco));
+    	int flag =0;
+		//sem_wait(&MUTEX_LISTA_TABLAS_PAGINAS);
+		while(flag==0){
+			sem_wait(&MUTEX_CLOCK);
+			if(id_marco_clock>configuracion.cant_marcos-1){
+				id_marco_clock=0;
+			}
+			marco* un_marco=buscar_pagina(id_marco_clock);
+			id_marco_clock++;
+			sem_post(&MUTEX_CLOCK);
+			if(un_marco->bit_uso==1){
+			   un_marco->bit_uso=0;
+			   }else{
+			    flag=1;
+				clock_m = un_marco;
+				break;
+					}
+				}
+		clock_m->ubicacion=MEM_SECUNDARIA;
+		nro_marco=clock_m->id_marco;
+		void* contenidoAEscribir = calloc(configuracion.tamanio_pag,1);
+		memcpy(contenidoAEscribir,configuracion.posicion_inicial + nro_marco*(configuracion.tamanio_pag) ,configuracion.tamanio_pag);
+		mem_hexdump(contenidoAEscribir, configuracion.tamanio_pag);
+		int free_swap=lugar_swap_libre();
+		memcpy(swap_address + free_swap *configuracion.tamanio_pag,contenidoAEscribir ,configuracion.tamanio_pag);
+		clock_m->id_marco=free_swap;
+		log_info(logger,"ESCRITO EN BLOQUE %d,MARCO ENTREGADO POR CLOCK %d \n",free_swap,  nro_marco);
+		//sem_post(&MUTEX_LISTA_TABLAS_PAGINAS);
+		sleep(2);
+	    return nro_marco;
 }
 
-int     buscar_marco(int id_marco){
-
-    	marco* clock_m;
-    	int flag =0;
-		sem_wait(&MUTEX_LISTA_TABLAS_PAGINAS);
-		while(flag!=0){
-		for(int i=0; i<list_size(tabla_paginacion_ppal);i++){
-			tabla_paginacion* una_tabla = list_get(tabla_paginacion_ppal,i);
-			for(int j=0; j<list_size(una_tabla->lista_marcos);j++){
-				marco* un_marco=list_get(una_tabla->lista_marcos,j);
-				if(un_marco->id_marco==id_marco && un_marco->ubicacion==MEM_PRINCIPAL){
-					if(un_marco->bit_uso==1){
-				       un_marco->bit_uso=0;
-						}else{
-						flag=1;
-						clock_m = un_marco;
-						break;
-				}
-			}
-		}if(flag==1){
-			break;
-		}
-		}
-		}
-				   clock_m->ubicacion=MEM_SECUNDARIA;
-				   nro_marco=clock_m->id_marco;
-
-				   void* contenidoAEscribir = malloc(configuracion.tamanio_pag);
-				   memcpy(contenidoAEscribir,configuracion.posicion_inicial + nro_marco*(configuracion.tamanio_pag) ,configuracion.tamanio_pag);
-				   clock_m->id_marco=lugar_swap_libre();
-				   swap_pagina(contenidoAEscribir,clock_m->id_marco);
-		           log_info(logger,"MARCO ENTREGADO POR CLOCK %d \n",  nro_marco);
-				   return nro_marco;
-
-					sem_post(&MUTEX_LISTA_TABLAS_PAGINAS);
-    }
 
 
 
@@ -3308,44 +3328,6 @@ int espacios_swap_libres(config_struct* config_servidor){
 	return contador_swap;
 }
 
-
-
-int reemplazo_clock(){
-	int nro_marco;
-	int flag =0;
-	marco* clock_m=malloc(sizeof(marco));
-	for(int i=0; i<list_size(tabla_paginacion_ppal);i++){
-		tabla_paginacion* una_tabla = list_get(tabla_paginacion_ppal,i);
-		while(flag !=1){
-			for(int j=0; j<list_size(una_tabla->lista_marcos);j++){
-				marco* un_marco=list_get(una_tabla->lista_marcos,j);
-				if(un_marco->ubicacion == MEM_PRINCIPAL){
-					if(un_marco->bit_uso==1){
-	   		           un_marco->bit_uso=0;
-					}else{
-					   clock_m = un_marco;
-					   flag=1;
-					   break;
-					}
-
-				}
-			}
-		}
-		break;
-		}
-
-		   clock_m->ubicacion=MEM_SECUNDARIA;
-		   nro_marco=clock_m->id_marco;
-
-		   void* contenidoAEscribir = malloc(configuracion.tamanio_pag);
-		   memcpy(contenidoAEscribir,configuracion.posicion_inicial + nro_marco*(configuracion.tamanio_pag) ,configuracion.tamanio_pag);
-		   clock_m->id_marco=lugar_swap_libre();
-		   swap_pagina(contenidoAEscribir,clock_m->id_marco);
-
-           log_info(logger,"MARCO ENTREGADO POR CLOCK %d \n",  nro_marco);
-		   return nro_marco;
-
-}
 
 
 /*

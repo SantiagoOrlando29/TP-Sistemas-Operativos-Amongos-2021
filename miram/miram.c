@@ -24,6 +24,7 @@ int main(void)
 	sem_init(&MUTEX_SWAP,0,1);
 	sem_init(&MUTEX_CASE,0,1);
 	sem_init(&MUTEX_FILE,0,1);
+	sem_init(&MUTEX_CLOCK,0,1);
 
 
 	leer_config();

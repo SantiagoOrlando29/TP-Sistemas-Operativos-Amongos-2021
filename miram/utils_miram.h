@@ -52,6 +52,7 @@ sem_t MUTEX_MEMORIA;
 sem_t MUTEX_SWAP;
 sem_t MUTEX_CASE;
 sem_t MUTEX_FILE;
+sem_t MUTEX_CLOCK;
 
 typedef struct{
 	int patota_id;
@@ -302,6 +303,7 @@ int lugar_swap_libre();
 int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato);
 void actualizar_lru(marco* un_marco);
 int reemplazo_clock();
+marco* buscar_pagina(int num_pag);
 void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_struct* config_servidor);
 int espacios_swap_libres(config_struct* config_servidor);
 void imprimir_tabla_paginacion();
