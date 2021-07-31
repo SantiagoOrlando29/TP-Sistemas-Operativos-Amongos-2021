@@ -17,15 +17,13 @@ int main(void)
 
 	file_system_iniciar();
 
-	for(int tid= 0; tid<3;tid++){
-		t_bitacora_data* bitacora_data = bitacora_cargar_estructura_completa(tid);
-		char mensaje[] = "esto no es moco de pavo";
-		bitacora_guardar_log(bitacora_data, mensaje);
-		printf("El tid es %d y la ruta completa es %s \n", bitacora_data->tid, bitacora_data->ruta_completa);
-		bitacora_borrar_estructura_completa(bitacora_data);
+	//Prueba de cargar bitacora con cantidad de tripulantes y mensaje original
 
-		log_debug(logger, "Se supone ya cargue una bitacora y estoy por enviar el ok para el tripulante %d y el mensaje \"%s\"", tid, mensaje);
-	} //Prueba de cargar bitacora
+	prueba_de_tareas_random();
+	prueba_de_generar_recursos();
+	/*prueba_de_consumir_recursos();
+	prueba_de_descartar_recursos();
+	prueba_de_cargar_n_bitacoras_con_mensaje(5, "un, dos, tres, probando mas nro tripulante");*/
 
 	/*int variable;
 	printf("variable: ");
