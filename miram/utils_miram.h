@@ -310,6 +310,7 @@ void imprimir_tabla_paginacion();
 void swap_pagina(void* contenidoAEscribir,int numDeBloque);
 int swap_a_memoria(int numBloque);
 void* recuperar_pag_swap(int numDeBloque);
+void limpiar_bloque_swap(int numDeBloque);
 void dump_memoria_paginacion();
 int reemplazo_lru();
 char* obtener_tarea(int id_patota, tcbTripulante* tripulante);
