@@ -1,163 +1,161 @@
-[INFO] 13:38:55:749 MiRam/(31050:31050): pid 31050  
+[INFO] 14:34:10:522 MiRam/(10462:10462): pid 10462  
 
-[INFO] 13:38:55:750 MiRam/(31050:31050): 
-Numero de marco es: 4 nro_marcos
+[INFO] 14:34:10:522 MiRam/(10462:10462): ---------  MEMORIA  --------------------
+[INFO] 14:34:10:523 MiRam/(10462:10462): base:   0, tam: 2048, libre: true 
+[INFO] 14:34:10:523 MiRam/(10462:10462): ----------------------------------------
+[INFO] 14:34:10:523 MiRam/(10462:10463): Servidor iniciando
+[INFO] 14:34:10:523 MiRam/(10462:10463): Servidor MiRam encendido
+[INFO] 14:34:10:523 MiRam/(10462:10463): socket_servidor 4
+[INFO] 14:34:22:832 MiRam/(10462:10463): socket_cliente 5
+[INFO] 14:34:22:832 MiRam/(10462:10463): Estableciendo conexión desde 30889
+[INFO] 14:34:22:832 MiRam/(10462:10463): Creando hilo
+[INFO] 14:34:22:841 MiRam/(10462:10489): Se conecto este socket a mi 5
+[INFO] 14:34:25:508 MiRam/(10462:10489): 
+El numero de la patota recibida es 1
+[INFO] 14:34:25:508 MiRam/(10462:10489): ID 1 
+[INFO] 14:34:25:508 MiRam/(10462:10489): posicion x: 0 
+[INFO] 14:34:25:508 MiRam/(10462:10489): posicion y: 0 
+[INFO] 14:34:25:508 MiRam/(10462:10489): Status: N 
+[INFO] 14:34:25:508 MiRam/(10462:10489): n patota: 1 
 
-[INFO] 13:38:55:751 MiRam/(31050:31052): Servidor iniciando
-[INFO] 13:38:55:755 MiRam/(31050:31052): Servidor MiRam encendido
-[INFO] 13:38:55:756 MiRam/(31050:31052): socket_servidor 4
-[INFO] 13:39:10:766 MiRam/(31050:31052): socket_cliente 5
-[INFO] 13:39:10:766 MiRam/(31050:31052): Estableciendo conexión desde 37040
-[INFO] 13:39:10:766 MiRam/(31050:31052): Creando hilo
-[INFO] 13:39:10:767 MiRam/(31050:31059): Se conecto este socket a mi 5
+[INFO] 14:34:25:509 MiRam/(10462:10489): espacio tareas todo ok
+[INFO] 14:34:25:509 MiRam/(10462:10489): ---------  MEMORIA  --------------------
+[INFO] 14:34:25:509 MiRam/(10462:10489): base:   0, tam:  8, libre: false 
+[INFO] 14:34:25:509 MiRam/(10462:10489): base:   8, tam: 24, libre: false 
+[INFO] 14:34:25:509 MiRam/(10462:10489): base:  32, tam: 21, libre: false 
+[INFO] 14:34:25:509 MiRam/(10462:10489): base:  53, tam: 1995, libre: true 
+[INFO] 14:34:25:509 MiRam/(10462:10489): ----------------------------------------
+[INFO] 14:34:25:509 MiRam/(10462:10489): Tabla de segmentos correspondiente a patota 1
+[INFO] 14:34:25:509 MiRam/(10462:10489): Base 0   Tamanio 8
+[INFO] 14:34:25:509 MiRam/(10462:10489): Base 8   Tamanio 24
+[INFO] 14:34:25:509 MiRam/(10462:10489): Base 32   Tamanio 21
+[INFO] 14:34:25:509 MiRam/(10462:10489): ---------------------------------------
+[INFO] 14:34:25:509 MiRam/(10462:10489): Se asigno espacio de memoria a todo 
 
-[INFO] 13:39:17:181 MiRam/(31050:31059): PID es 1
-[INFO] 13:39:17:182 MiRam/(31050:31059): Ingresa nueva patota, necesito 2 marcos
-[INFO] 13:39:17:187 MiRam/(31050:31059): Guardando info
-[INFO] 13:39:17:194 MiRam/(31050:31059): MP
-[INFO] 13:39:17:194 MiRam/(31050:31059): Marco: 0    Estado:Ocupado    Proceso: 1    Pagina: 0
+[INFO] 14:34:25:511 MiRam/(10462:10489): 
+El numero de la patota recibida es 2
+[INFO] 14:34:25:511 MiRam/(10462:10489): ID 2 
+[INFO] 14:34:25:511 MiRam/(10462:10489): posicion x: 8 
+[INFO] 14:34:25:511 MiRam/(10462:10489): posicion y: 0 
+[INFO] 14:34:25:511 MiRam/(10462:10489): Status: N 
+[INFO] 14:34:25:511 MiRam/(10462:10489): n patota: 2 
 
-[INFO] 13:39:17:195 MiRam/(31050:31059): Marco: 1    Estado:Ocupado    Proceso: 1    Pagina: 1
+[INFO] 14:34:25:511 MiRam/(10462:10489): espacio tareas todo ok
+[INFO] 14:34:25:511 MiRam/(10462:10489): ---------  MEMORIA  --------------------
+[INFO] 14:34:25:511 MiRam/(10462:10489): base:   0, tam:  8, libre: false 
+[INFO] 14:34:25:511 MiRam/(10462:10489): base:   8, tam: 24, libre: false 
+[INFO] 14:34:25:511 MiRam/(10462:10489): base:  32, tam: 21, libre: false 
+[INFO] 14:34:25:511 MiRam/(10462:10489): base:  53, tam:  8, libre: false 
+[INFO] 14:34:25:511 MiRam/(10462:10489): base:  61, tam: 25, libre: false 
+[INFO] 14:34:25:511 MiRam/(10462:10489): base:  86, tam: 21, libre: false 
+[INFO] 14:34:25:511 MiRam/(10462:10489): base: 107, tam: 1941, libre: true 
+[INFO] 14:34:25:511 MiRam/(10462:10489): ----------------------------------------
+[INFO] 14:34:25:511 MiRam/(10462:10489): Tabla de segmentos correspondiente a patota 2
+[INFO] 14:34:25:511 MiRam/(10462:10489): Base 53   Tamanio 8
+[INFO] 14:34:25:511 MiRam/(10462:10489): Base 61   Tamanio 25
+[INFO] 14:34:25:511 MiRam/(10462:10489): Base 86   Tamanio 21
+[INFO] 14:34:25:512 MiRam/(10462:10489): ---------------------------------------
+[INFO] 14:34:25:512 MiRam/(10462:10489): Se asigno espacio de memoria a todo 
 
-[INFO] 13:39:17:195 MiRam/(31050:31059): Marco: 2    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 14:34:25:514 MiRam/(10462:10489): 
+El numero de la patota recibida es 3
+[INFO] 14:34:25:514 MiRam/(10462:10489): ID 3 
+[INFO] 14:34:25:514 MiRam/(10462:10489): posicion x: 8 
+[INFO] 14:34:25:514 MiRam/(10462:10489): posicion y: 8 
+[INFO] 14:34:25:515 MiRam/(10462:10489): Status: N 
+[INFO] 14:34:25:515 MiRam/(10462:10489): n patota: 3 
 
-[INFO] 13:39:17:196 MiRam/(31050:31059): Marco: 3    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 14:34:25:515 MiRam/(10462:10489): espacio tareas todo ok
+[INFO] 14:34:25:515 MiRam/(10462:10489): ---------  MEMORIA  --------------------
+[INFO] 14:34:25:515 MiRam/(10462:10489): base:   0, tam:  8, libre: false 
+[INFO] 14:34:25:515 MiRam/(10462:10489): base:   8, tam: 24, libre: false 
+[INFO] 14:34:25:515 MiRam/(10462:10489): base:  32, tam: 21, libre: false 
+[INFO] 14:34:25:515 MiRam/(10462:10489): base:  53, tam:  8, libre: false 
+[INFO] 14:34:25:515 MiRam/(10462:10489): base:  61, tam: 25, libre: false 
+[INFO] 14:34:25:515 MiRam/(10462:10489): base:  86, tam: 21, libre: false 
+[INFO] 14:34:25:515 MiRam/(10462:10489): base: 107, tam:  8, libre: false 
+[INFO] 14:34:25:515 MiRam/(10462:10489): base: 115, tam: 28, libre: false 
+[INFO] 14:34:25:515 MiRam/(10462:10489): base: 143, tam: 21, libre: false 
+[INFO] 14:34:25:515 MiRam/(10462:10489): base: 164, tam: 1884, libre: true 
+[INFO] 14:34:25:515 MiRam/(10462:10489): ----------------------------------------
+[INFO] 14:34:25:515 MiRam/(10462:10489): Tabla de segmentos correspondiente a patota 3
+[INFO] 14:34:25:515 MiRam/(10462:10489): Base 107   Tamanio 8
+[INFO] 14:34:25:515 MiRam/(10462:10489): Base 115   Tamanio 28
+[INFO] 14:34:25:515 MiRam/(10462:10489): Base 143   Tamanio 21
+[INFO] 14:34:25:515 MiRam/(10462:10489): ---------------------------------------
+[INFO] 14:34:25:515 MiRam/(10462:10489): Se asigno espacio de memoria a todo 
 
-[INFO] 13:39:17:196 MiRam/(31050:31059): MS
-[INFO] 13:39:17:196 MiRam/(31050:31059): Marco: 0    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 14:34:26:273 MiRam/(10462:10489): 
+El numero de la patota recibida es 4
+[INFO] 14:34:26:274 MiRam/(10462:10489): ID 4 
+[INFO] 14:34:26:274 MiRam/(10462:10489): posicion x: 0 
+[INFO] 14:34:26:274 MiRam/(10462:10489): posicion y: 8 
+[INFO] 14:34:26:274 MiRam/(10462:10489): Status: N 
+[INFO] 14:34:26:274 MiRam/(10462:10489): n patota: 4 
 
-[INFO] 13:39:17:196 MiRam/(31050:31059): Marco: 1    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 14:34:26:274 MiRam/(10462:10489): espacio tareas todo ok
+[INFO] 14:34:26:274 MiRam/(10462:10489): ---------  MEMORIA  --------------------
+[INFO] 14:34:26:274 MiRam/(10462:10489): base:   0, tam:  8, libre: false 
+[INFO] 14:34:26:274 MiRam/(10462:10489): base:   8, tam: 24, libre: false 
+[INFO] 14:34:26:274 MiRam/(10462:10489): base:  32, tam: 21, libre: false 
+[INFO] 14:34:26:274 MiRam/(10462:10489): base:  53, tam:  8, libre: false 
+[INFO] 14:34:26:274 MiRam/(10462:10489): base:  61, tam: 25, libre: false 
+[INFO] 14:34:26:275 MiRam/(10462:10489): base:  86, tam: 21, libre: false 
+[INFO] 14:34:26:275 MiRam/(10462:10489): base: 107, tam:  8, libre: false 
+[INFO] 14:34:26:275 MiRam/(10462:10489): base: 115, tam: 28, libre: false 
+[INFO] 14:34:26:275 MiRam/(10462:10489): base: 143, tam: 21, libre: false 
+[INFO] 14:34:26:275 MiRam/(10462:10489): base: 164, tam:  8, libre: false 
+[INFO] 14:34:26:275 MiRam/(10462:10489): base: 172, tam: 21, libre: false 
+[INFO] 14:34:26:275 MiRam/(10462:10489): base: 193, tam: 21, libre: false 
+[INFO] 14:34:26:275 MiRam/(10462:10489): base: 214, tam: 1834, libre: true 
+[INFO] 14:34:26:275 MiRam/(10462:10489): ----------------------------------------
+[INFO] 14:34:26:275 MiRam/(10462:10489): Tabla de segmentos correspondiente a patota 4
+[INFO] 14:34:26:275 MiRam/(10462:10489): Base 164   Tamanio 8
+[INFO] 14:34:26:275 MiRam/(10462:10489): Base 172   Tamanio 21
+[INFO] 14:34:26:275 MiRam/(10462:10489): Base 193   Tamanio 21
+[INFO] 14:34:26:275 MiRam/(10462:10489): ---------------------------------------
+[INFO] 14:34:26:275 MiRam/(10462:10489): Se asigno espacio de memoria a todo 
 
-[INFO] 13:39:17:196 MiRam/(31050:31059): Marco: 2    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 14:34:32:714 MiRam/(10462:10489): ------ Lista Tripulantes ---------
+[INFO] 14:34:32:714 MiRam/(10462:10489): Tripulante: 1     Patota: 1     Status: NEW 
 
-[INFO] 13:39:17:197 MiRam/(31050:31059): Marco: 3    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 14:34:32:714 MiRam/(10462:10489): Tripulante: 2     Patota: 2     Status: NEW 
 
-[INFO] 13:39:17:197 MiRam/(31050:31059): Marco: 4    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 14:34:32:714 MiRam/(10462:10489): Tripulante: 3     Patota: 3     Status: NEW 
 
-[INFO] 13:39:17:197 MiRam/(31050:31059): Marco: 5    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 14:34:32:714 MiRam/(10462:10489): Tripulante: 4     Patota: 4     Status: NEW 
 
-[INFO] 13:39:17:197 MiRam/(31050:31059): Marco: 6    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 14:35:05:319 MiRam/(10462:10463): socket_cliente 7
+[INFO] 14:35:05:319 MiRam/(10462:10463): Estableciendo conexión desde 32425
+[INFO] 14:35:05:319 MiRam/(10462:10463): Creando hilo
+[INFO] 14:35:05:325 MiRam/(10462:10518): Se conecto este socket a mi 7
+[INFO] 14:35:05:326 MiRam/(10462:10463): socket_cliente 8
+[INFO] 14:35:05:326 MiRam/(10462:10463): Estableciendo conexión desde 33449
+[INFO] 14:35:05:326 MiRam/(10462:10463): Creando hilo
+[INFO] 14:35:05:332 MiRam/(10462:10520): Se conecto este socket a mi 8
+[INFO] 14:35:05:333 MiRam/(10462:10463): socket_cliente 9
+[INFO] 14:35:05:333 MiRam/(10462:10463): Estableciendo conexión desde 34473
+[INFO] 14:35:05:333 MiRam/(10462:10463): Creando hilo
+[INFO] 14:35:05:333 MiRam/(10462:10522): Se conecto este socket a mi 9
+[INFO] 14:35:05:334 MiRam/(10462:10463): socket_cliente 10
+[INFO] 14:35:05:334 MiRam/(10462:10463): Estableciendo conexión desde 35497
+[INFO] 14:35:05:334 MiRam/(10462:10463): Creando hilo
+[INFO] 14:35:05:336 MiRam/(10462:10524): Se conecto este socket a mi 10
+[INFO] 14:35:09:421 MiRam/(10462:10489): ------ Lista Tripulantes ---------
+[INFO] 14:35:09:421 MiRam/(10462:10489): Tripulante: 1     Patota: 1     Status: EXEC 
 
-[INFO] 13:39:17:197 MiRam/(31050:31059): Marco: 7    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 14:35:09:421 MiRam/(10462:10489): Tripulante: 2     Patota: 2     Status: READY 
 
-[INFO] 13:39:17:197 MiRam/(31050:31059): Marco: 8    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 14:35:09:421 MiRam/(10462:10489): Tripulante: 3     Patota: 3     Status: READY 
 
-[INFO] 13:39:17:198 MiRam/(31050:31059): Marco: 9    Estado:Libre      Proceso: -    Pagina: -
+[INFO] 14:35:09:421 MiRam/(10462:10489): Tripulante: 4     Patota: 4     Status: READY 
 
-[INFO] 13:39:17:198 MiRam/(31050:31059): PID es 2
-[INFO] 13:39:17:198 MiRam/(31050:31059): Ingresa nueva patota, necesito 2 marcos
-[INFO] 13:39:17:205 MiRam/(31050:31059): Guardando info
-[INFO] 13:39:17:208 MiRam/(31050:31059): MP
-[INFO] 13:39:17:208 MiRam/(31050:31059): Marco: 0    Estado:Ocupado    Proceso: 1    Pagina: 0
+[INFO] 14:35:18:308 MiRam/(10462:10489): ------ Lista Tripulantes ---------
+[INFO] 14:35:18:309 MiRam/(10462:10489): Tripulante: 1     Patota: 1     Status: EXEC 
 
-[INFO] 13:39:17:208 MiRam/(31050:31059): Marco: 1    Estado:Ocupado    Proceso: 1    Pagina: 1
+[INFO] 14:35:18:309 MiRam/(10462:10489): Tripulante: 2     Patota: 2     Status: READY 
 
-[INFO] 13:39:17:208 MiRam/(31050:31059): Marco: 2    Estado:Ocupado    Proceso: 2    Pagina: 0
+[INFO] 14:35:18:309 MiRam/(10462:10489): Tripulante: 3     Patota: 3     Status: READY 
 
-[INFO] 13:39:17:208 MiRam/(31050:31059): Marco: 3    Estado:Ocupado    Proceso: 2    Pagina: 1
+[INFO] 14:35:18:309 MiRam/(10462:10489): Tripulante: 4     Patota: 4     Status: READY 
 
-[INFO] 13:39:17:209 MiRam/(31050:31059): MS
-[INFO] 13:39:17:209 MiRam/(31050:31059): Marco: 0    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:209 MiRam/(31050:31059): Marco: 1    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:209 MiRam/(31050:31059): Marco: 2    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:209 MiRam/(31050:31059): Marco: 3    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:210 MiRam/(31050:31059): Marco: 4    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:210 MiRam/(31050:31059): Marco: 5    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:210 MiRam/(31050:31059): Marco: 6    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:210 MiRam/(31050:31059): Marco: 7    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:211 MiRam/(31050:31059): Marco: 8    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:211 MiRam/(31050:31059): Marco: 9    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:211 MiRam/(31050:31059): PID es 3
-[INFO] 13:39:17:211 MiRam/(31050:31059): Ingresa nueva patota, necesito 4 marcos
-[INFO] 13:39:17:214 MiRam/(31050:31059): Guardando info
-[INFO] 13:39:17:214 MiRam/(31050:31059): LRU: Se elije marco 0 de MP, se envía a bloque 0 de MS
-[INFO] 13:39:17:214 MiRam/(31050:31059): LRU: Se elije marco 1 de MP, se envía a bloque 1 de MS
-[INFO] 13:39:17:215 MiRam/(31050:31059): LRU: Se elije marco 2 de MP, se envía a bloque 2 de MS
-[INFO] 13:39:17:215 MiRam/(31050:31059): LRU: Se elije marco 3 de MP, se envía a bloque 3 de MS
-[INFO] 13:39:17:216 MiRam/(31050:31059): MP
-[INFO] 13:39:17:216 MiRam/(31050:31059): Marco: 0    Estado:Ocupado    Proceso: 3    Pagina: 0
-
-[INFO] 13:39:17:216 MiRam/(31050:31059): Marco: 1    Estado:Ocupado    Proceso: 3    Pagina: 1
-
-[INFO] 13:39:17:216 MiRam/(31050:31059): Marco: 2    Estado:Ocupado    Proceso: 3    Pagina: 2
-
-[INFO] 13:39:17:217 MiRam/(31050:31059): Marco: 3    Estado:Ocupado    Proceso: 3    Pagina: 3
-
-[INFO] 13:39:17:217 MiRam/(31050:31059): MS
-[INFO] 13:39:17:227 MiRam/(31050:31059): Marco: 0    Estado:Ocupado    Proceso: 1    Pagina: 0
-
-[INFO] 13:39:17:227 MiRam/(31050:31059): Marco: 1    Estado:Ocupado    Proceso: 1    Pagina: 1
-
-[INFO] 13:39:17:227 MiRam/(31050:31059): Marco: 2    Estado:Ocupado    Proceso: 2    Pagina: 0
-
-[INFO] 13:39:17:227 MiRam/(31050:31059): Marco: 3    Estado:Ocupado    Proceso: 2    Pagina: 1
-
-[INFO] 13:39:17:227 MiRam/(31050:31059): Marco: 4    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:227 MiRam/(31050:31059): Marco: 5    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:227 MiRam/(31050:31059): Marco: 6    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:228 MiRam/(31050:31059): Marco: 7    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:228 MiRam/(31050:31059): Marco: 8    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:17:228 MiRam/(31050:31059): Marco: 9    Estado:Libre      Proceso: -    Pagina: -
-
-[INFO] 13:39:22:973 MiRam/(31050:31052): socket_cliente 6
-[INFO] 13:39:22:973 MiRam/(31050:31052): Estableciendo conexión desde 38576
-[INFO] 13:39:22:973 MiRam/(31050:31052): Creando hilo
-[INFO] 13:39:22:976 MiRam/(31050:31074): Se conecto este socket a mi 6
-
-[INFO] 13:39:22:976 MiRam/(31050:31074): ENTRE EN MS
-[INFO] 13:39:22:977 MiRam/(31050:31074): LRU: Se elije marco 1 de MP, se envía a bloque 4 de MS
-[INFO] 13:39:22:977 MiRam/(31050:31074): Recupero el bloque 0 de MS
-[INFO] 13:39:22:977 MiRam/(31050:31074): LRU: Se elije marco 2 de MP, se envía a bloque 0 de MS
-[INFO] 13:39:22:977 MiRam/(31050:31074): Recupero el bloque 1 de MS
-[INFO] 13:39:22:977 MiRam/(31050:31052): socket_cliente 7
-[INFO] 13:39:22:977 MiRam/(31050:31052): Estableciendo conexión desde 39600
-[INFO] 13:39:22:977 MiRam/(31050:31052): Creando hilo
-[INFO] 13:39:22:981 MiRam/(31050:31076): Se conecto este socket a mi 7
-
-[INFO] 13:39:22:981 MiRam/(31050:31076): ENTRE EN MS
-[INFO] 13:39:22:981 MiRam/(31050:31076): LRU: Se elije marco 0 de MP, se envía a bloque 1 de MS
-[INFO] 13:39:22:982 MiRam/(31050:31076): Recupero el bloque 2 de MS
-[INFO] 13:39:22:982 MiRam/(31050:31076): LRU: Se elije marco 3 de MP, se envía a bloque 2 de MS
-[INFO] 13:39:22:982 MiRam/(31050:31076): Recupero el bloque 3 de MS
-[INFO] 13:39:22:983 MiRam/(31050:31052): socket_cliente 8
-[INFO] 13:39:22:983 MiRam/(31050:31052): Estableciendo conexión desde 40624
-[INFO] 13:39:22:983 MiRam/(31050:31052): Creando hilo
-[INFO] 13:39:22:988 MiRam/(31050:31079): Se conecto este socket a mi 8
-
-[INFO] 13:39:22:988 MiRam/(31050:31079): ENTRE EN MS
-[INFO] 13:39:22:988 MiRam/(31050:31079): LRU: Se elije marco 2 de MP, se envía a bloque 3 de MS
-[INFO] 13:39:22:988 MiRam/(31050:31079): Recupero el bloque 1 de MS
-[INFO] 13:39:22:988 MiRam/(31050:31079): LRU: Se elije marco 1 de MP, se envía a bloque 1 de MS
-[INFO] 13:39:22:988 MiRam/(31050:31079): Recupero el bloque 4 de MS
-[INFO] 13:39:28:983 MiRam/(31050:31074): ENTRE EN MS
-[INFO] 13:39:28:984 MiRam/(31050:31074): LRU: Se elije marco 3 de MP, se envía a bloque 4 de MS
-[INFO] 13:39:28:984 MiRam/(31050:31074): Recupero el bloque 1 de MS
-[INFO] 13:39:33:268 MiRam/(31050:31074): LRU: Se elije marco 1 de MP, se envía a bloque 1 de MS
-[INFO] 13:39:33:268 MiRam/(31050:31074): Recupero el bloque 3 de MS
-[INFO] 13:39:47:341 MiRam/(31050:31076): LRU: Se elije marco 1 de MP, se envía a bloque 3 de MS
-[INFO] 13:39:47:343 MiRam/(31050:31076): Recupero el bloque 4 de MS
-[INFO] 13:39:49:352 MiRam/(31050:31074): LRU: Se elije marco 1 de MP, se envía a bloque 4 de MS
-[INFO] 13:39:49:352 MiRam/(31050:31074): Recupero el bloque 3 de MS
-[INFO] 13:40:01:403 MiRam/(31050:31079): LRU: Se elije marco 1 de MP, se envía a bloque 3 de MS
-[INFO] 13:40:01:406 MiRam/(31050:31079): Recupero el bloque 1 de MS
-[ERROR] 13:40:05:383 MiRam/(31050:31074): el cliente se desconecto. Terminando servidor
-[INFO] 13:40:09:399 MiRam/(31050:31076): Recupero el bloque 4 de MS
-[ERROR] 13:40:19:439 MiRam/(31050:31076): el cliente se desconecto. Terminando servidor
-[INFO] 13:40:21:478 MiRam/(31050:31079): Recupero el bloque 0 de MS
-[INFO] 13:40:51:574 MiRam/(31050:31079): Recupero el bloque 2 de MS
-[ERROR] 13:41:21:662 MiRam/(31050:31079): el cliente se desconecto. Terminando servidor

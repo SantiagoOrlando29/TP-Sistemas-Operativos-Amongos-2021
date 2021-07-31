@@ -184,7 +184,22 @@ int funcion_cliente_segmentacion(int socket_cliente){
 							if(espacio->base == segmento->base){
 								tcbTripulante* tripulante = espacio->contenido;
 
-								log_info(logger, "Tripulante: %d     Patota: %d     Status: %c", tripulante->tid, pid, tripulante->estado);
+								//log_info(logger, "Tripulante: %d     Patota: %d     Status: %c", tripulante->tid, pid, tripulante->estado);
+								switch(tripulante->estado){
+									case 'N':
+										log_info(logger, "Tripulante: %d     Patota: %d     Status: NEW ", tripulante->tid, pid);
+										break;
+									case 'R':
+										log_info(logger, "Tripulante: %d     Patota: %d     Status: READY ", tripulante->tid, pid);
+										break;
+									case 'E':
+										log_info(logger, "Tripulante: %d     Patota: %d     Status: EXEC ", tripulante->tid, pid);
+										break;
+									case 'B':
+										log_info(logger, "Tripulante: %d     Patota: %d     Status: BLOCK I/O ", tripulante->tid, pid);
+										break;
+								}
+
 								/*for(int i=0; i < list_size(lista_tripulantes); i+=2){
 									tripulante = (tcbTripulante*)list_get(lista_tripulantes, i);
 									int numero_patota = (int)atoi(list_get(lista_tripulantes,i+1));

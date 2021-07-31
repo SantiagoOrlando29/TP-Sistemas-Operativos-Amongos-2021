@@ -86,8 +86,9 @@ void planificacion_pausada_o_no_exec(tcbTripulante* tripulante, int* quantums_ej
 
 		*quantums_ejecutados = 0;
 		sem_post(&HABILITA_GRADO_MULTITAREA);
-		sem_wait(&(tripulante->semaforo_tripulante));
 		sem_post(&HABILITA_EJECUTAR);
+		sem_wait(&(tripulante->semaforo_tripulante));
+		//sem_post(&HABILITA_EJECUTAR);
 	}
 }
 
@@ -523,7 +524,6 @@ void funcion_sabotaje(){
 
 		int posx = atoi(strtok(posicion_sabotaje_char,"|"));
 		int posy = atoi(strtok(NULL,""));
-		log_info(logger, "posx %d   posy %d", posx, posy);
 
 		flag_sabotaje = configuracion.grado_multitarea;
 
@@ -555,7 +555,7 @@ void funcion_sabotaje(){
 
 
 		if(list_size(lista_bloq_emergencia) > 0){
-			log_info(logger, "lista bloq emer");
+			log_info(logger, "lista bloq emergencia");
 			for(int i=0; i < list_size(lista_bloq_emergencia); i++){
 				tripulante = (tcbTripulante*)list_get(lista_bloq_emergencia, i);
 				log_info(logger, "tid %d  posx %d  posy %d", tripulante->tid, tripulante->posicionX, tripulante->posicionY);
@@ -583,6 +583,14 @@ void funcion_sabotaje(){
 			}
 			log_info(logger, "Tripu elegido: tid %d  posx %d  posy %d", tripu1->tid, tripu1->posicionX, tripu1->posicionY);
 			informar_atencion_sabotaje(tripu1, posicion_sabotaje_char_2);
+
+			remover_tripulante_de_lista(tripu1, lista_bloq_emergencia);
+			list_add(lista_bloq_emergencia, tripu1);
+			log_info(logger, "lista bloq emergencia actualizada");
+			for(int i=0; i < list_size(lista_bloq_emergencia); i++){
+				tripulante = (tcbTripulante*)list_get(lista_bloq_emergencia, i);
+				log_info(logger, "tid %d  posx %d  posy %d", tripulante->tid, tripulante->posicionX, tripulante->posicionY);
+			}
 
 			//mover al tripu1 que es el mas cercano
 			while(tripu1->posicionX != posx){ //muevo en X
@@ -814,7 +822,20 @@ void menu_discordiador() {
 					for(int i=0; i < list_size(lista_tripulantes); i+=2){
 						tripulante = (tcbTripulante*)list_get(lista_tripulantes, i);
 						int numero_patota = (int)atoi(list_get(lista_tripulantes,i+1));
-						printf("Tripulante: %d     Patota: %d     Status: %c \n", tripulante->tid, numero_patota, tripulante->estado);
+						switch(tripulante->estado){
+							case 'N':
+								printf("Tripulante: %d     Patota: %d     Status: NEW \n", tripulante->tid, numero_patota);
+								break;
+							case 'R':
+								printf("Tripulante: %d     Patota: %d     Status: READY \n", tripulante->tid, numero_patota);
+								break;
+							case 'E':
+								printf("Tripulante: %d     Patota: %d     Status: EXEC \n", tripulante->tid, numero_patota);
+								break;
+							case 'B':
+								printf("Tripulante: %d     Patota: %d     Status: BLOCK I/O \n", tripulante->tid, numero_patota);
+								break;
+						}
 					}
 
 					void destruir_tripu(tcbTripulante* tripu){
