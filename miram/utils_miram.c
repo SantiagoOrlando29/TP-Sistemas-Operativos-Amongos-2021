@@ -1450,14 +1450,14 @@ int funcion_cliente_paginacion(int socket_cliente){
 				lista = recibir_paquete(socket_cliente);
 
 
-				int tripulante_id = (int)list_get(lista,0);
+				int tripulante_id3 = (int)list_get(lista,0);
 				//free(tid_char);
-				int patota_id= (int)list_get(lista,1);
-				log_info(logger, "tid %d  pid %d", tripulante_id, patota_id);
+				int patota_id3= (int)list_get(lista,1);
+				log_info(logger, "tid %d  pid %d", tripulante_id3, patota_id3);
 
-				tcbTripulante* tripulante = obtener_tripulante(patota_id, tripulante_id, &configuracion);
+				tcbTripulante* tripulante = obtener_tripulante(patota_id3, tripulante_id3, &configuracion);
 				tripulante->prox_instruccion=0;
-				actualizar_tripulante(tripulante,patota_id,&configuracion);
+				actualizar_tripulante(tripulante,patota_id3,&configuracion);
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 				//return 0;//para que termine el hilo se supone
 				break;
@@ -1542,15 +1542,37 @@ int funcion_cliente_paginacion(int socket_cliente){
 				break;
 
 			case LISTAR_TRIPULANTES:;
-
 				t_paquete* paquete = crear_paquete(LISTAR_TRIPULANTES);
+				tcbTripulante* list_tripulante = malloc(sizeof(tcbTripulante));
+				log_info(logger, "------ Lista Tripulantes ---------");
+				for(int i=0; i<list_size(tabla_paginacion_ppal);i++){
+					tabla_paginacion* una_tabla = list_get(tabla_paginacion_ppal,i);
+					log_info(logger, "Patota %d", una_tabla->id_patota);
+					for(int trip =1; trip<=una_tabla->cant_tripulantes;trip++){
+						tcbTripulante* list_tripulante = obtener_tripulante(una_tabla->id_patota,trip,&configuracion);
+						log_info(logger, "Tripulante %d", list_tripulante->tid);
+						log_info(logger, "Estado %c", list_tripulante->estado);
+						log_info(logger, "Pos x %d", list_tripulante->posicionX);
+						log_info(logger, "Pos y %d", list_tripulante->posicionY);
+						log_info(logger, "Prox instruccion %d", list_tripulante->prox_instruccion);
+						log_info(logger, "Puntero pcb %d", list_tripulante->puntero_pcb);
+
+					}
+					agregar_a_paquete(paquete, list_tripulante, tamanio_TCB);
+
+					char* pidd_char = malloc(sizeof(char)+1);
+					sprintf(pidd_char, "%d", una_tabla->id_patota);
+					agregar_a_paquete(paquete, pidd_char, strlen(pidd_char)+1);
+					free(pidd_char);
+				}
+
 				if(paquete->buffer->size == 0){ //no habia TCBs para mandar
 					enviar_header(NO_HAY_NADA_PARA_LISTAR , socket_cliente);
 				}else{
 					enviar_paquete(paquete, socket_cliente);
 				}
 
-				eliminar_paquete(paquete);
+					eliminar_paquete(paquete);
 
 				break;
 
