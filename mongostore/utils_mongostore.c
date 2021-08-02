@@ -285,8 +285,7 @@ void recursos_validar_existencia_metadatas()
 
 	for(int i = 0; i < cantidad_recursos; i++)
 	{
-		printf("en recursos_validar_existencia_metadatas() 1 borrar\n");
-		recurso_validar_existencia_metadata_en_memoria(&lista_recursos[i]);printf("en recursos_validar_existencia_metadatas() (\"sacar & \"2 borrar)\n");
+		recurso_validar_existencia_metadata_en_memoria(&lista_recursos[i]);
 	}
 	log_debug(logger, "Salgo de recursos_validar_existencia_metadatas()");
 }
@@ -295,22 +294,19 @@ void recursos_validar_existencia_metadatas()
 void recurso_validar_existencia_metadata_en_memoria(t_recurso_data* recurso_data)
 {
 	//log_debug(logger, "I-Entro a recurso_validar_existencia_metadata_en_memoria para el recurso %s", recurso_data->nombre);
-	printf("aa\n");
 	if(recurso_data->metadata == NULL)
 	{
 		recurso_data->metadata = malloc(sizeof(t_recurso_md));
 		recurso_data->metadata->caracter_llenado = string_from_format("%c", recurso_data->caracter_llenado);
 	}
-	printf("b\n");
+
 	if(utils_existe_en_disco(recurso_data->ruta_completa))
-	{printf("bi\n");
+	{
 		recurso_levantar_de_archivo_a_memoria_valores_variables(recurso_data);
-		printf("bio\n");
 	}
 	else
-	{printf("be\n");
+	{
 		metadata_setear_con_valores_default_en_memoria(recurso_data->metadata);
-		printf("beo\n");
 	}
 	log_debug(logger, "Existencia de metadata para el recurso %s validada. Valor fijo CARACTER_LLENADO %s",
 			recurso_data->nombre, recurso_data->metadata->caracter_llenado);
@@ -682,32 +678,6 @@ void destruir_lista_paquete(char* contenido)
 
 ////////////////////////FUNCIONES NECESARIAS PARA REALIZAR TAREAS///////////////////////
 
-//Devuelve un puntero a la estructura de tarea correspondiente a tarea_str. En caso de no encontrarla devuelve NULL
-t_tarea* tarea_buscar_accion_y_recurso(char* tarea_str)
-{
-	t_tarea* tarea = NULL;
-
-	int cantidad_tareas = tarea_cantidad_disponibles();
-	for(int i = 0; i < cantidad_tareas; i++)
-	{
-		if(strcmp(tarea_str, lista_tareas_disponibles[i].nombre) == 0)
-		{
-			tarea = malloc(sizeof(t_tarea));
-			memcpy(tarea, &lista_tareas_disponibles[i], sizeof(t_tarea));
-			log_debug(logger, "Se encontro %s con accion_code %d y recurso_code %d", tarea_str, tarea->codigo_accion, tarea->codigo_recurso);
-			break;
-		}
-	}
-	log_debug(logger, "Saliendo de tarea_buscar_accion_y_recurso");
-	return tarea;
-}
-
-//Devuelve la cantidad de tareas disponibles para realizarse
-int tarea_cantidad_disponibles()
-{
-	return (sizeof(lista_tareas_disponibles) / sizeof(t_tarea));
-}
-
 //Realiza la tarea recibida con la cantidad recibida actualizando los archivos bajo demanda
 int recurso_realizar_tarea(char* nombre_tarea, char* cantidad_str)
 {
@@ -747,16 +717,49 @@ int recurso_realizar_tarea(char* nombre_tarea, char* cantidad_str)
 		}
 		else
 		{
-			log_warning(logger, "SE SUPONE NO TENDRIA QUE LLEGAR ACA EN LAS PRUEBAS REALES YA QUE NO NOS INGRESARAN CANTIDAD = 0 "
-					"(AGUS NO TE ASUSTES QUE SOLO ESTOY PROBANDO EL WARNING) -- No se actualizaron los archivos de superbloque y "
-					"blocks ya que la tarea \"%s %s\" no realizo modificaciones", nombre_tarea, cantidad_str);
+			log_debug(logger, "La tarea \"%s %s\" no precisa actualizar ni Blocks.ims ni SuperBloque.ims", nombre_tarea, cantidad_str);
 		}
 		return OK;
 	}
 	else
 	{
+		log_warning(logger, "SE SUPONE NO TENDRIA QUE LLEGAR ACA EN LAS PRUEBAS REALES YA QUE NO NOS LLEGARIA DESDE EL DISCORDIADOR UNA TAREA"
+				" NO VALIDA NI UNA CANTIDAD NEGATIVA (AGUS NO TE ASUSTES QUE SOLO ESTOY PROBANDO EL WARNING) -- No se actualizaron los archivos"
+				" de superbloque y blocks ya que la tarea \"%s %s\" no realizo modificaciones", nombre_tarea, cantidad_str);
 		return ERROR;
 	}
+}
+
+//Devuelve un puntero a la estructura de tarea correspondiente a tarea_str. En caso de no encontrarla devuelve NULL
+t_tarea* tarea_buscar_accion_y_recurso(char* tarea_str)
+{
+	t_tarea* tarea = NULL;
+
+	int cantidad_tareas = tarea_cantidad_disponibles();
+	for(int i = 0; i < cantidad_tareas; i++)
+	{
+		if(strcmp(tarea_str, lista_tareas_disponibles[i].nombre) == 0)
+		{
+			tarea = malloc(sizeof(t_tarea));
+			memcpy(tarea, &lista_tareas_disponibles[i], sizeof(t_tarea));
+			log_debug(logger, "Se encontro %s con accion_code %d y recurso_code %d", tarea_str, tarea->codigo_accion, tarea->codigo_recurso);
+			break;
+		}
+	}
+
+	if(tarea == NULL)
+	{
+		log_warning(logger, "No se encontro la tarea \"%s\" en el array de tareas disponibles --NO DEBERIA HABER ENTRADO ACA", tarea_str);
+	}
+
+	log_debug(logger, "Saliendo de tarea_buscar_accion_y_recurso");
+	return tarea;
+}
+
+//Devuelve la cantidad de tareas disponibles para realizarse
+int tarea_cantidad_disponibles()
+{
+	return (sizeof(lista_tareas_disponibles) / sizeof(t_tarea));
 }
 
 //Actualiza la metadata del recurso en memoria al archivo. Si este no existe lo crea con los valores actualizados
@@ -789,7 +792,7 @@ void recurso_actualizar_archivo(t_recurso_data* recurso_data)
 			config_get_int_value(recurso_md, "BLOCK_COUNT"), config_get_string_value(recurso_md, "BLOCKS"),
 			config_get_string_value(recurso_md, "CARACTER_LLENADO"), config_get_string_value(recurso_md, "MD5_ARCHIVO"));
 	config_destroy(recurso_md);
-	log_info(logger, "Se actualizo metadata de %s de memoria de a archivo %s", recurso_data->nombre, recurso_data->ruta_completa);
+	log_info(logger, "Se actualizo metadata de %s de memoria a archivo %s", recurso_data->nombre, recurso_data->ruta_completa);
 }
 
 //Actualiza en el archivo SuperBloque.ims el campo bitmp utilizando write
@@ -805,12 +808,18 @@ void superbloque_actualizar_bitmap_en_archivo()
 }
 
 //Sincroniza de manera forzosa el archivo de Blocks.ims con el espacio de memoria mapeado
+void blocks_actualizar_archivo_con_delay(int _delay)
+{
+	sleep(_delay);//log_debug(logger, "I-Se ingresa a blocks_actualizar_archivo");
+	msync(blocks_address, blocks_size, MS_SYNC);
+	log_debug(logger, "Blocks.ims actualizado");
+}
+
 void blocks_actualizar_archivo()
 {
 	//log_debug(logger, "I-Se ingresa a blocks_actualizar_archivo");
 	msync(blocks_address, blocks_size, MS_SYNC);
 	log_debug(logger, "Blocks.ims actualizado");
-
 }
 
 
@@ -833,9 +842,9 @@ int recurso_generar_cantidad(t_recurso_data* recurso_data, int cantidad)
 	}
 
 	if(cantidad > 0)
-	{printf("a\n");
-		printf("b\n");	metadata_generar_cantidad(recurso_data->metadata, cantidad);
-		printf("c\n");recurso_actualizar_archivo(recurso_data);printf("d\n");
+	{
+		metadata_generar_cantidad(recurso_data->metadata, cantidad);
+		recurso_actualizar_archivo(recurso_data);
 		actualizacion_de_archivos_requerida = 1;
 	}
 
@@ -906,8 +915,6 @@ void metadata_generar_cantidad(t_recurso_md* recurso_md, int cantidad)
 }
 
 
-//////ultima version///
-
 //Verifica si el ultimo bloque usado por el recurso tiene espacio disponible
 int metadata_tiene_espacio_en_ultimo_bloque(t_recurso_md* recurso_md)
 {
@@ -923,8 +930,6 @@ int metadata_ultimo_bloque_usado(t_recurso_md* recurso_md)
 	int ultimo_bloque = cadena_ultimo_entero_en_lista_de_enteros(recurso_md->blocks);
 	return ultimo_bloque;
 }
-
-/////////fin ultima version////
 
 //Carga recursos en el bloque dado hasta que no quede espacio en el o no hayan mas recursos para cargar
 void metadata_cargar_parcialmente_bloque(t_recurso_md* recurso_md, int* cantidad, int bloque)
@@ -1014,66 +1019,59 @@ void metadata_cargar_bloque_completo(t_recurso_md* recurso_md, int bloque)
 //Calcula y actualiza el valor del md5 del archivo teniendo en cuenta el conjunto de bloques que ocupa el recurso en el archivo de Blocks.ims
 void metadata_actualizar_md5(t_recurso_md* recurso_md)
 {
-	log_debug(logger, "I-Se ingresa a metadata_actualizar_md5");
-
-	char* concatenado;
-	char md5_str[33];
-
+	//log_debug(logger, "I-Se ingresa a metadata_actualizar_md5");
 	if(recurso_md->size > 0)
 	{
-		if(blocks_obtener_concatenado_de_recurso(recurso_md, &concatenado) == 0)
-		{
-			cadena_calcular_md5(concatenado, recurso_md->size, md5_str);
-			strcpy(recurso_md->md5_archivo, md5_str);
-		}
-		else
-		{
-			log_error(logger, "No hay memoria suficiente como para calcular el MD5 del recurso con caracter de llenado %s", recurso_md-> caracter_llenado);
-		}
+		char* concatenado = blocks_obtener_concatenado_de_recurso(recurso_md);
+		char md5_str[33];
+		cadena_calcular_md5(concatenado, recurso_md->size, md5_str);
+		strcpy(recurso_md->md5_archivo, md5_str);
 		free(concatenado);
 	}
 	else
 	{
 		strcpy(recurso_md->md5_archivo, "d41d8cd98f00b204e9800998ecf8427e");
 	}
-	log_debug(logger, "O-MD5 en metadata actualizado a %s", recurso_md->md5_archivo);
+	log_debug(logger, "MD5 en metadata actualizado a %s", recurso_md->md5_archivo);
 }
 
-//Obtiene el conjunto de bloques concatenado que el recurso esta ocupando en el archivo de Blocks.ims devolviendo el tamanio del mismo
-int blocks_obtener_concatenado_de_recurso(t_recurso_md* recurso_md, char** concatenado)
-{
-	log_debug(logger, "I-Se ingresa a blocks_obtener_concatenado_de_recurso");
 
-	*concatenado = malloc(recurso_md->size);
-	if(*concatenado == NULL)
-	{
-		return ERROR; //Valor de retorno con error manejado en la funcion que hace el llamado
-	}
-	else
+//Obtiene el conjunto de bloques concatenado que el recurso esta ocupando en el archivo de Blocks.ims
+char* blocks_obtener_concatenado_de_recurso(t_recurso_md* recurso_md)
+{
+	//log_debug(logger, "I-Se ingresa a blocks_obtener_concatenado_de_recurso");
+	char* concatenado = malloc(recurso_md->size);
+
+	if(concatenado != NULL)
 	{
 		int cantidad_bloques = cadena_cantidad_elementos_en_lista(recurso_md->blocks);
-		int i, indice_ultimo_bloque = cantidad_bloques - 1; //Indice en base a la cantidad de bloques de la lista en el recurso
+		int indice_ultimo_bloque = cantidad_bloques - 1; //Indice en base a la cantidad de bloques de la lista en el recurso
 		int bloque;//Numero de bloque en base al total de bloques del sistema
 		char** lista_bloques = string_get_string_as_array(recurso_md->blocks);
 		char* posicion_desde; //Posicion de la copia de Blocks.ims desde la que arranca el bloque que se copiara
-		char* posicion_hacia = *concatenado; //Posicion del espacio de memoria donde se almacenara cada bloque con memcpy
+		char* posicion_hacia = concatenado; //Posicion del espacio de memoria donde se almacenara cada bloque con memcpy
 
-		for(i = 0; i < indice_ultimo_bloque; i++)
+		for(int i = 0; i < indice_ultimo_bloque; i++)
 		{
 			bloque = atoi(lista_bloques[i]);
 			posicion_desde = blocks_address + bloque * superbloque.block_size;
 			memcpy(posicion_hacia, posicion_desde, superbloque.block_size);
 			posicion_hacia += superbloque.block_size;
 		}
-		bloque = atoi(lista_bloques[i]);
+
+		bloque = atoi(lista_bloques[indice_ultimo_bloque]);
 		posicion_desde = blocks_address + bloque * superbloque.block_size;
 		int cantidad_en_ultimo_bloque = recurso_md->size % superbloque.block_size;
 		memcpy(posicion_hacia, posicion_desde, cantidad_en_ultimo_bloque);
 		cadena_eliminar_array_de_cadenas(&lista_bloques, cantidad_bloques);
+		log_debug(logger, "Total de caracteres del recurso concatenado en direccion de memoria %p", concatenado);
+	}
+	else
+	{
+		log_error(logger, "No hay memoria suficiente como para obtener el concatendao de bloques del recurso con C_LL %s", recurso_md->caracter_llenado);
 	}
 
-	log_debug(logger, "O-Total de caracteres del recurso concatenados en direccion de memoria %p", *concatenado);
-	return OK;
+	return concatenado;
 }
 
 ////////////FIN GENERAR
@@ -1084,13 +1082,13 @@ int blocks_obtener_concatenado_de_recurso(t_recurso_md* recurso_md, char** conca
 int recurso_consumir_cantidad(t_recurso_data* recurso_data, int cantidad)
 {
 	log_debug(logger, "Se ingresa a recurso_consumir_cantidad para el recurso %s y la cantidad %d", recurso_data->nombre, cantidad);
-	int accion_realizada = -1;
+	int actualizacion_de_archivos_requerida = 0;
 
 	if(utils_existe_en_disco(recurso_data->ruta_completa) == 0)
 	{
 		log_info(logger, "No existe el archivo %s para el cual queria consumirse", recurso_data->nombre_archivo);
 		log_debug(logger, "Finaliza recurso_consumir_cantidad(%s, %d)", recurso_data->nombre, cantidad);
-		return accion_realizada;
+		return actualizacion_de_archivos_requerida;
 	}
 
 	if(cantidad > 0)
@@ -1098,11 +1096,11 @@ int recurso_consumir_cantidad(t_recurso_data* recurso_data, int cantidad)
 		recurso_validar_existencia_metadata_en_memoria(recurso_data);//BORRAR COMMENT -- invocacion valida si conviene/se supone que hay que trabajar to.do el tiempo con los datos del disco
 		metadata_consumir_cantidad(recurso_data->metadata, cantidad);
 		recurso_actualizar_archivo(recurso_data);
-		accion_realizada = 0;
+		actualizacion_de_archivos_requerida = 1;
 	}
 
 	log_debug(logger, "Finaliza recurso_consumir_cantidad(%s, %d)", recurso_data->nombre, cantidad);
-	return accion_realizada;
+	return actualizacion_de_archivos_requerida;
 }
 
 //Carga la cantidad cantidad de los recursos del codigo_recurso en el ultimo bloque o en nuevos bloques que esten libres agregandolos a la lista de bloques
@@ -1139,7 +1137,7 @@ void metadata_consumir_cantidad(t_recurso_md* recurso_md, int cantidad)
 		cantidad_de_bloques_a_eliminar++;
 	}
 
-	char* bloques_a_eliminar = metadata_obtener_n_ultimos_bloques(recurso_md, cantidad_de_bloques_a_eliminar);
+	char* bloques_a_eliminar = cadena_obtener_n_ultimos_enteros(recurso_md->blocks, cantidad_de_bloques_a_eliminar);
 	metadata_liberar_bloques_en_bitmap_y_en_blocks(bloques_a_eliminar);
 	cadena_eliminar_ultimos_n_elementos_de_elementos_separados_por_comas(recurso_md->blocks, cantidad_de_bloques_a_eliminar);
 	recurso_md->block_count -= cantidad_de_bloques_a_eliminar;
@@ -1156,36 +1154,65 @@ void metadata_consumir_cantidad(t_recurso_md* recurso_md, int cantidad)
 			recurso_md->size, recurso_md->blocks, recurso_md->md5_archivo);
 }
 
-char* metadata_obtener_n_ultimos_bloques(t_recurso_md* recurso_md, int n)
+char* cadena_obtener_n_ultimos_enteros(char* cadena, int n)
 {
-	char** lista_bloques = string_get_string_as_array(recurso_md->blocks);
-	int posicion_ultimo_bloque = cadena_cantidad_elementos_en_lista(recurso_md->blocks) - 1;
+	//log_debug(logger, "Ingreso a cadena_obtener_n_ultimos_entero(\"%s\", %d)", cadena, n);
+	char** lista_bloques = string_get_string_as_array(cadena);
+	int posicion_ultimo_bloque = cadena_cantidad_elementos_en_lista(cadena) - 1;
 
 	char* ultimos_bloques = string_duplicate("[]");
-	for(int i = 0; i < n; i++)
+
+	if(n == 1)
+	{
+		cadena_sacar_ultimo_caracter(ultimos_bloques);
+		int bloque = atoi(lista_bloques[posicion_ultimo_bloque--]);
+		string_append_with_format(&ultimos_bloques, "%d]", bloque);
+	}
+
+	for(int i = 1; i < n; i++)
 	{
 		cadena_sacar_ultimo_caracter(ultimos_bloques);
 		int bloque = atoi(lista_bloques[posicion_ultimo_bloque--]);
 		string_append_with_format(&ultimos_bloques, ",%d]", bloque);
 	}
+
+	log_debug(logger, "Saliendo de cadena_obtener_n_ultimos_entero(\"%s\", %d) se obtuvo %s", cadena, n, ultimos_bloques);
 	return ultimos_bloques;
 }
 
-void cadena_eliminar_ultimos_n_elementos_de_elementos_separados_por_comas(char* cadena, int n)
+void cadena_eliminar_ultimos_n_elementos_de_elementos_separados_por_comas(char* cadena, int n)//[0,1,2] n=1
 {
-	log_debug(logger, "A borrar - antes de eliminar ultimos n elementos cadena: %s", cadena);
+	char* puntero_auxiliar = cadena;
 
 	int coma_a_reemplazar = cadena_cantidad_elementos_en_lista(cadena) - n;
 
-	for(int i = 0; i < coma_a_reemplazar; i++)
+	if(coma_a_reemplazar > 0)
 	{
-		while((*cadena) != ',')
+		for(int i = 0; i < coma_a_reemplazar; i++)
 		{
-			cadena++;
+		/*if(*puntero_auxiliar) != ',')
+		{
+			printf("%c\n", (*puntero_auxiliar));
+			puntero_auxiliar++;
 		}
+		else
+		{*/
+			puntero_auxiliar++;
+			while((*puntero_auxiliar) != ',')
+			{
+				puntero_auxiliar++;
+			}
+		//}
+		}
+		*puntero_auxiliar++ = ']';
+		*puntero_auxiliar = '\0';
 	}
-	*cadena = '\0';
-	log_debug(logger, "A borrar - actual cadena %s", cadena);
+	else
+	{
+		strcpy(cadena, "[]");
+	}
+
+	log_debug(logger, "Saliendo de cadena_eliminar_ultimos_n_elementos_de_elementos_separados_por_comas se obtiene la cadena \"%s\"", cadena);
 }
 
 //Carga recursos en el ultimo bloque registrado hasta que no quede espacio en el o no hayan mas recursos para cargar
@@ -1198,8 +1225,8 @@ void metadata_consumir_en_ultimo_bloque(t_recurso_md* recurso_md, int cantidad)
 	int posicion_inicio_bloque = ultimo_bloque * superbloque.block_size; //se toma en cuenta que los bloques comienzan en 0
 	char* posicion_absoluta = blocks_address + posicion_inicio_bloque + posicion_a_consumir_en_bloque; //esta ok sumar un puntero con 2 ints?
 
-	log_debug(logger, "Ultimo_bloque %d, posicion_a_consumir_en_bloque %d, posicion_inicio_bloque %d posicion absoluta %p o %d",
-			cantidad, ultimo_bloque, posicion_a_consumir_en_bloque, posicion_inicio_bloque, posicion_absoluta, posicion_absoluta);
+	log_debug(logger, "Ultimo_bloque %d, posicion_a_consumir_en_bloque %d, posicion_inicio_bloque %d posicion absoluta %p",
+			ultimo_bloque, posicion_a_consumir_en_bloque, posicion_inicio_bloque, posicion_absoluta);
 
 	char caracter_llenado = recurso_md->caracter_llenado[0];
 
@@ -1222,23 +1249,24 @@ void metadata_consumir_en_ultimo_bloque(t_recurso_md* recurso_md, int cantidad)
 int recurso_descartar(t_recurso_data* recurso_data, int cantidad)
 {
 	log_debug(logger, "Se ingresa a recurso_descartar para el recurso %s y la cantidad %d", recurso_data->nombre, cantidad);
-	int accion_realizada = -1;
-
-	if(utils_existe_en_disco(recurso_data->ruta_completa) == 0)
-	{
-		log_info(logger, "No existe el archivo %s como para descartarse", recurso_data->nombre_archivo);
-		log_debug(logger, "Saliendo de recurso_descartar(%s, %d)", recurso_data->nombre, cantidad);
-		return accion_realizada;
-	}
+	int actualizacion_de_archivos_requerida = 0;
 
 	if(cantidad == 0)
 	{
+		if(utils_existe_en_disco(recurso_data->ruta_completa) == 0)
+		{
+			log_info(logger, "No existe el archivo %s como para descartarse", recurso_data->nombre_archivo);
+			log_debug(logger, "Saliendo de recurso_descartar(%s, %d)", recurso_data->nombre, cantidad);
+			return actualizacion_de_archivos_requerida;
+		}
+
 		recurso_validar_existencia_metadata_en_memoria(recurso_data);//BORRAR COMMENT -- invocacion valida si conviene/se supone que hay que trabajar to.do el tiempo con los datos del disco
+
 		if(metadata_tiene_caracteres_en_blocks(recurso_data->metadata))
 		{
 			metadata_descartar_caracteres_existentes(recurso_data->metadata);
 			log_debug(logger, "Se seteo a los valores default la metadata en memoria del recurso %s", recurso_data->nombre);
-			accion_realizada = 0;
+			actualizacion_de_archivos_requerida = 1;
 		}
 		recurso_descartar_archivo(recurso_data);
 	}
@@ -1248,7 +1276,7 @@ int recurso_descartar(t_recurso_data* recurso_data, int cantidad)
 	}
 
 	log_debug(logger, "Saliendo de recurso_descartar(%s, %d)", recurso_data->nombre, cantidad);
-	return accion_realizada;
+	return actualizacion_de_archivos_requerida;
 }
 
 //Devuelve un valor distinto de 0 si en la lista de blocks del recurso este tiene caracteres en Blocks
@@ -1291,7 +1319,7 @@ void metadata_liberar_bloques_en_bitmap_y_en_blocks(char* blocks)
 //Registra un caracter de fin de cadena al comienzo de cada uno de los bloques incluidos en la lista de bloques
 void blocks_eliminar_bloque(int bloque)
 {
-	log_debug(logger, "I-blocks_eliminar_bloque con bloque %d", bloque);
+	//log_debug(logger, "I-blocks_eliminar_bloque con bloque %d", bloque);
 
 	int posicion_inicio_bloque = bloque * superbloque.block_size;
 	char* posicion_absoluta = blocks_address + posicion_inicio_bloque;
@@ -1317,11 +1345,12 @@ void recurso_descartar_archivo(t_recurso_data* recurso_data)
 
 int cargar_bitacora(char* tid_str, char* mensaje)
 {
-	log_debug(logger, "Se recibe al tripulante %d y el mensaje \"%s\"", tid_str, mensaje);
+	log_debug(logger, "Se recibe al tripulante %s y el mensaje \"%s\"", tid_str, mensaje);
 
 	int tid = atoi(tid_str);
 
 	t_bitacora_data* bitacora_data = bitacora_cargar_estructura_completa(tid);
+
 	if(bitacora_guardar_log(bitacora_data, mensaje) == ERROR)
 	{
 		bitacora_borrar_estructura_completa(bitacora_data);
@@ -1424,6 +1453,7 @@ int bitacora_guardar_log(t_bitacora_data* bitacora_data, char* mensaje)
 
 	superbloque_actualizar_bitmap_en_archivo();
 	blocks_actualizar_archivo();
+	//blocks_actualizar_archivo();
 	bitacora_actualizar_archivo(bitacora_data);
 
 	return OK;
@@ -1457,8 +1487,9 @@ void bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** mensaje, int
 		posicion_en_bloque++;
 	}
 
-	log_debug(logger, "Posicion_en_bloque %d, posicion_inicio_bloque %d posicion block_addres %p posicion absoluta %p proximo caracter a escribir en codigo ascii %d",
-			posicion_en_bloque, posicion_inicio_bloque, blocks_address, posicion_absoluta, **mensaje);
+	log_debug(logger, "Al salir de bitacora_escribir_en_bloque posicion_en_bloque %d, posicion_inicio_bloque %d posicion block_addres %p "
+			"posicion absoluta %p proximo caracter a escribir en codigo ascii %d", posicion_en_bloque, posicion_inicio_bloque, blocks_address,
+			posicion_absoluta, **mensaje);
 	//log_debug(logger, "Saliendo bitacora_escribir_en_bloque");
 }
 
@@ -1499,21 +1530,26 @@ void bitacora_borrar_estructura_completa(t_bitacora_data* bitacora_data)
 //Inicia la secuencia de chequeos y reparaciones del File System Catastrophe Killer
 int fsck_iniciar()
 {
+	log_debug(logger, "Se inicia fsck");
 	fsck_chequeo_de_sabotajes_en_superbloque();
 	fsck_chequeo_de_sabotajes_en_files();
+	log_debug(logger, "Se finaliza fsck");
 	return OK;
 }
 
 //Realiza los chequeos propios del superbloque (en campos blocks y bitmap)
 void fsck_chequeo_de_sabotajes_en_superbloque()
 {
+	log_debug(logger, "Se inicia fsck_chequeo_de_sabotajes_en_superbloque()");
 	superbloque_validar_integridad_cantidad_de_bloques();
 	superbloque_validar_integridad_bitmap();
+	log_debug(logger, "Se a fsck_chequeo_de_sabotajes_en_superbloque()");
 }
 
 //Valida que la cantidad de bloques en el archivo Superbloque.ims se corresponda con la cantidad real en el recurso fisico de Blocks.ims
 void superbloque_validar_integridad_cantidad_de_bloques()
 {
+	log_debug(logger, "Se inicia superbloque_validar_integridad_cantidad_de_bloques()");
 	struct stat* blocks_stat = malloc(sizeof(struct stat));
 	if(stat(blocks_path, blocks_stat) != 0)
 	{
@@ -1548,6 +1584,7 @@ void superbloque_validar_integridad_cantidad_de_bloques()
 
 	free(blocks_stat);
 	close(superbloque_fd);
+	log_debug(logger, "Se finaliza superbloque_validar_integridad_cantidad_de_bloques()");
 }
 
 //Valida que los bloques indicados en el bitmap del superbloque realmente sean los unicos ocupados
@@ -1583,6 +1620,7 @@ void superbloque_validar_integridad_bitmap()
 	}
 
 	free(bitmap_real);
+	log_debug(logger, "Se finaliza superbloque_validar_integridad_bitmap()");
 }
 
 //Setea al bitmap apuntado por el campo bitmap de la estructura superbloque segun los bloques ocupados que recibe como parametro
@@ -1774,40 +1812,6 @@ void fsck_chequeo_de_sabotajes_en_files()
 	}
 }
 
-void recurso_validar_block_count(t_recurso_data* recurso_data)
-{
-	int block_count_real = recurso_obtener_block_count_real(recurso_data);
-
-	t_config* recurso_config = config_create(recurso_data->ruta_completa);
-	int block_count_actual = config_get_int_value(recurso_config, "BLOCK_COUNT");
-
-	if(block_count_actual != block_count_real)
-	{
-		log_info(logger, "El recurso %s tiene su block_count saboteado, pero no te preocupes, ya lo arreglaremos", recurso_data->nombre);
-		log_debug(logger, "Block_count en archivo %d block_count real %d", block_count_actual, block_count_real);
-
-		char* block_count_real_str = string_itoa(block_count_real);
-		config_set_value(recurso_config, "BLOCK_COUNT", block_count_real_str);
-		free(block_count_real_str);
-		config_save(recurso_config);
-
-		log_debug(logger, "Block_count modificado en archivo a %d", config_get_int_value(recurso_config, "BLOCK_COUNT"));
-		log_info(logger, "Listo, ya podes confiar en el block_count del recurso %s", recurso_data->nombre);
-	}
-	else
-	{
-		log_info(logger, "Por lo menos el block_count del recurso %s no fue alterado, enhorabuena!!!", recurso_data->nombre);
-	}
-	config_destroy(recurso_config);
-}
-
-int recurso_obtener_block_count_real(t_recurso_data* recurso_data)
-{
-	//Cadena de blocks seteada en recurso_validar_size
-	return cadena_cantidad_elementos_en_lista(recurso_data->metadata->blocks);
-}
-
-//TODO  a terminar segun lo que confirmen los ayudantes
 
 //Verifica el valor size del recurso dado por recurso_data respecto del valor que tendria que tener y lo reemplaze si difiere
 void recurso_validar_size(t_recurso_data* recurso_data)
@@ -1840,69 +1844,176 @@ void recurso_validar_size(t_recurso_data* recurso_data)
 	config_destroy(recurso_config);
 }
 
-//TODO para terminar
+//Obtiene el valor de size que tendria que tener el recurso dado en funcion de la ocupacion de sus bloques en Blocks.ims
 int recurso_obtener_size_real(t_recurso_data* recurso_data)
 {
-	int size_real;
+	int size_real = 0;
 	int cantidad_bloques = cadena_cantidad_elementos_en_lista(recurso_data->metadata->blocks);
+	char** lista_bloques = string_get_string_as_array(recurso_data->metadata->blocks);
+
 	if(cantidad_bloques > 0)
 	{
-		if(metadata_tiene_espacio_en_ultimo_bloque(recurso_data->metadata))
+		int bloque;
+
+		for(int i = 0; i < cantidad_bloques; i++)
 		{
-			int cantidad_bloques_llenos = cantidad_bloques - 1;
-			int ultimo_bloque = cadena_ultimo_entero_en_lista_de_enteros(recurso_data->metadata->blocks);//files_obtener_bloques_ocupados();
-			int cantidad_en_ultimo_bloque = metadata_cantidad_del_caracter_en_bloque(recurso_data->caracter_llenado, ultimo_bloque);
-			size_real = superbloque.block_size * cantidad_bloques_llenos + cantidad_en_ultimo_bloque;
+			bloque = atoi(lista_bloques[i]);
+			if(blocks_esta_lleno_bloque(bloque) == 0)
+			{
+				break;
+			}
+		}
+
+		if(blocks_esta_lleno_bloque(bloque) == 0)
+		{
+			int cantidad_en_bloque_incompleto = metadata_cantidad_del_caracter_en_bloque(recurso_data->caracter_llenado, bloque);
+			int cantidad_restante_de_bloques = cantidad_bloques -  1;
+			size_real += cantidad_en_bloque_incompleto + cantidad_restante_de_bloques * superbloque.block_size;
 		}
 		else
 		{
-			size_real = superbloque.block_size * cantidad_bloques;
+			size_real += cantidad_bloques * superbloque.block_size;
 		}
 	}
-	else
-	{
-		size_real = 0;
-	}
+
 	return size_real;
 }
 
-//TODO
+//Devuelve un valor distinto de 0 en el caso de que el bloque dado no tenga ningun caracter nulo
+int blocks_esta_lleno_bloque(int bloque)
+{
+	int esta_lleno = 0;
+	int posicion_en_bloque = 0;
+	int posicion_inicio_bloque = bloque * superbloque.block_size;
+	char* posicion_absoluta = blocks_address + posicion_en_bloque + posicion_en_bloque;
+
+	while((*posicion_absoluta) != '\0' && posicion_en_bloque < superbloque.block_size)
+	{
+		posicion_en_bloque++;
+		posicion_absoluta++;
+	}
+
+	if(posicion_en_bloque == superbloque.block_size)
+	{
+		esta_lleno = 1;
+	}
+
+	return esta_lleno;
+}
+
+//Devuelve la cantidad que tiene el bloque dado del caracter dado hasta el caracter nulo o el tamanio del bloque de no encontrarlo
 int metadata_cantidad_del_caracter_en_bloque(char caracter, int bloque)
 {
-	return 1;//TODO
+	int posicion_en_bloque = 0;
+	int posicion_inicio_bloque = bloque * superbloque.block_size;
+	char* posicion_absoluta = blocks_address + posicion_en_bloque + posicion_en_bloque;
+
+	while((*posicion_absoluta) == caracter && posicion_en_bloque < superbloque.block_size)
+	{
+		posicion_en_bloque++;
+		posicion_absoluta++;
+	}
+	return posicion_en_bloque;
+}
+
+//Verifica el valor block_count en disco del recurso dado respecto del valor que tendria que tener y lo reemplaze si difiere
+void recurso_validar_block_count(t_recurso_data* recurso_data)
+{
+	int block_count_real = recurso_obtener_block_count_real(recurso_data);
+
+	t_config* recurso_config = config_create(recurso_data->ruta_completa);
+	int block_count_actual = config_get_int_value(recurso_config, "BLOCK_COUNT");
+
+	if(block_count_actual != block_count_real)
+	{
+		log_info(logger, "El recurso %s tiene su block_count saboteado, pero no te preocupes, ya lo arreglaremos", recurso_data->nombre);
+		log_debug(logger, "Block_count en archivo %d block_count real %d", block_count_actual, block_count_real);
+
+		char* block_count_real_str = string_itoa(block_count_real);
+		config_set_value(recurso_config, "BLOCK_COUNT", block_count_real_str);
+		free(block_count_real_str);
+		config_save(recurso_config);
+
+		log_debug(logger, "Block_count modificado en archivo a %d", config_get_int_value(recurso_config, "BLOCK_COUNT"));
+		log_info(logger, "Listo, ya podes confiar en el block_count del recurso %s", recurso_data->nombre);
+	}
+	else
+	{
+		log_info(logger, "Por lo menos el block_count del recurso %s no fue alterado, enhorabuena!!!", recurso_data->nombre);
+	}
+	config_destroy(recurso_config);
+}
+
+//Obtiene el valor de block_count que tendria que tener el recurso dado en funcion de su lista de blocks
+int recurso_obtener_block_count_real(t_recurso_data* recurso_data)
+{
+	//Cadena de blocks seteada en recurso_validar_size
+	return cadena_cantidad_elementos_en_lista(recurso_data->metadata->blocks);
 }
 
 //FIXME Si encuentra una diferencia entre los md5 de los concatenados restaura el archivo en blocks con los blocks del archivo metadata
 void recurso_validar_blocks(t_recurso_data* recurso_data)
 {
-	char* blocks_real = recurso_obtener_blocks_real(recurso_data);
-	t_config* recurso_config = config_create(recurso_data->ruta_completa);
-	char* blocks_actual = string_duplicate(config_get_string_value(recurso_config, "BLOCKS"));
+	t_recurso_md* recurso_md = recurso_data->metadata;
+	free(recurso_md->blocks);
+	recurso_levantar_de_archivo_a_memoria_valores_variables(recurso_data);
 
-	if(strcmp(blocks_real, blocks_actual) != 0)
+	char md5_segun_blocks_actual[33];
+	if(recurso_md->size > 0)
 	{
-		log_info(logger, "El recurso %s tiene su blocks saboteado, pero no te preocupes, ya lo arreglaremos", recurso_data->nombre);
-		log_debug(logger, "Blocks en archivo %s blocks real %s", blocks_actual, blocks_real);
+		char* concatenado_segun_blocks_actual = blocks_obtener_concatenado_de_recurso(recurso_data->metadata);
+		cadena_calcular_md5(concatenado_segun_blocks_actual, recurso_data->metadata->size, md5_segun_blocks_actual);
+		free(concatenado_segun_blocks_actual);
+	}
+	else
+	{
+		strcpy(md5_segun_blocks_actual, "d41d8cd98f00b204e9800998ecf8427e");
+	}
 
-		config_set_value(recurso_config, "BLOCKS", blocks_real);
-		config_save(recurso_config);
-
-		log_info(logger, "Listo, ya podes confiar en el blocks del recurso %s", recurso_data->nombre);
+	if(strcmp(recurso_md->md5_archivo, md5_segun_blocks_actual) != 0)
+	{
+		log_info(logger, "El recurso %s tiene su blocks saboteado, pero no te preocupes, ya lo arreglaremos restaurando los bloques en Blocks.ims",
+				recurso_data->nombre);
+		metadata_restaurar_en_blocks(recurso_data->metadata);
+		strcpy(recurso_md->md5_archivo, md5_segun_blocks_actual);
+		log_info(logger, "Listo, ya podes confiar en el blocks \"%s\" para el recurso %s", recurso_data->metadata->blocks, recurso_data->nombre);
 	}
 	else
 	{
 		log_info(logger, "Por lo menos el blocks del recurso %s no fue alterado, enhorabuena!!!", recurso_data->nombre);
 	}
-	free(blocks_real);
-	config_destroy(recurso_config);
 }
 
-//TODO Obtiene la lista de blocks real del recurso basado en el archivo de blocks (en consumir y descartar puede ponerse en 0 el primer elemento de cada bloque descartado para poder chequear en esta funcion)
-char* recurso_obtener_blocks_real(t_recurso_data* recurso_data)
+
+void metadata_restaurar_en_blocks(t_recurso_md* recurso_md)
 {
-	char* algoLoco = malloc(3);
-	strcpy(algoLoco, "[]");
-	return algoLoco;
+	int cantidad_en_ultimo_bloque = recurso_md->size % superbloque.block_size;
+	recurso_md->size = 0;
+
+	int cantidad_bloques = cadena_cantidad_elementos_en_lista(recurso_md->blocks);
+	int indice_ultimo_bloque = cantidad_bloques - 1; //Indice en base a la cantidad de bloques de la lista en el recurso
+	int bloque_a_cargar;//Numero de bloque en base al total de bloques del sistema
+	char** lista_bloques = string_get_string_as_array(recurso_md->blocks);
+
+	for(int i = 0; i < indice_ultimo_bloque; i++)
+	{
+		bloque_a_cargar = atoi(lista_bloques[i]);
+		metadata_cargar_bloque_completo(recurso_md, bloque_a_cargar);
+	}
+
+	bloque_a_cargar = atoi(lista_bloques[indice_ultimo_bloque]);
+
+	if(cantidad_en_ultimo_bloque != 0)
+	{
+		metadata_cargar_parcialmente_bloque(recurso_md, &cantidad_en_ultimo_bloque, bloque_a_cargar);
+	}
+	else
+	{
+		metadata_cargar_bloque_completo(recurso_md, bloque_a_cargar);
+	}
+
+	log_debug(logger, "Saliendo de metadata_restaurar_en_blocks");
+
 }
 
 /////////////////////////////////////FIN DE FUNCIONES NECESARIAS PARA FSCK/////////////////////////////////////////////////////////
@@ -1971,9 +2082,10 @@ void utils_dar_tamanio_a_archivo(char* path, size_t length)
 
 void utils_esperar_a_usuario()
 {
-	int tipeado;
-	printf("Presiona algun caracter del teclado para continuar\n");
-	scanf("%d", &tipeado);
+
+	printf("Escribe algun caracter mas Enter para continuar\n");
+	getchar();
+	getchar();
 }
 
 ////////////////////////////FIN DE FUNCIONES UTILS (SOBRETODO PARA MANEJO DE ARCHIVOS)/////////////////////////
@@ -2116,6 +2228,7 @@ void prueba_de_tareas_random()
 	recurso_realizar_tarea("lalala", "1");
 	printf("tarea inexistente con cantidad igual a 0\n");
 	recurso_realizar_tarea("lalala", "0");
+	utils_esperar_a_usuario();
 }
 
 //Funcion para probar generar recurso
@@ -2154,21 +2267,21 @@ void prueba_de_consumir_recursos()
 			char* cantidad_str = string_itoa(tamanios[j]);
 			recurso_realizar_tarea(nombre_tarea, cantidad_str);
 			free(cantidad_str);
+			utils_esperar_a_usuario();
 		}
 		free(nombre_tarea);
-		utils_esperar_a_usuario();
 	}
 }
 
 //Funcion para probar descartar recurso
-void prueba_de_descartar_recursos()
+void prueba_de_descartar_basura()
 {
 	int block_size = superbloque.block_size;
-	int tamanios[] = {-1, 0, 1};
+	int tamanios[] = {-1, 1, 0, 0, 1};
 
 	char* nombre_tarea = string_duplicate("DESCARTAR_BASURA");
 
-	for(int i = 0; i < 3; i++)
+	for(int i = 0; i < 4; i++)
 	{
 		char* cantidad_str = string_itoa(tamanios[i]);
 		recurso_realizar_tarea(nombre_tarea, cantidad_str);
@@ -2178,14 +2291,11 @@ void prueba_de_descartar_recursos()
 	free(nombre_tarea);
 }
 
-//Funcion para probar realizar tarea
-
 //Funcion para probar carga de bitacoras
 void prueba_de_cargar_n_bitacoras_con_mensaje(int n, char* mensaje_de_prueba)
 {
 	for(int tid = 0; tid < n; tid++)
 	{
-
 		char* tid_str = string_itoa(tid);
 		char* mensaje = string_from_format("%s de %d", mensaje_de_prueba, tid);
 		cargar_bitacora(tid_str, mensaje);
@@ -2193,6 +2303,46 @@ void prueba_de_cargar_n_bitacoras_con_mensaje(int n, char* mensaje_de_prueba)
 		free(mensaje);
 		utils_esperar_a_usuario();
 	}
+}
+
+void prueba_de_cargar_bitacora_de_tripulante_n_con_m_mensajes(int n, int m, char* mensaje_de_prueba)
+{
+	/*char* tid_str = string_itoa(n);
+	for(int i = 0; i < m; i++)
+	{
+		char* mensaje = string_from_format("%s de %d, bitacora %d", mensaje_de_prueba, n, i);
+		cargar_bitacora(tid_str, mensaje);
+	}
+	free(tid_str);
+	free(mensaje_de_prueba);
+	utils_esperar_a_usuario();*/
+	for(int tid = 0; tid < n; tid++)
+	{
+		char* tid_str = string_itoa(tid);
+		char* mensaje = string_from_format("%s de %d", mensaje_de_prueba, tid);
+		cargar_bitacora(tid_str, mensaje);
+		free(tid_str);
+		free(mensaje);
+		utils_esperar_a_usuario();
+	}
+	for(int tid = 0; tid < n; tid++)
+		{
+			char* tid_str = string_itoa(tid);
+			char* mensaje = string_from_format("%s de %d", mensaje_de_prueba, tid);
+			cargar_bitacora(tid_str, mensaje);
+			free(tid_str);
+			free(mensaje);
+			utils_esperar_a_usuario();
+		}
+	for(int tid = 0; tid < n; tid++)
+		{
+			char* tid_str = string_itoa(tid);
+			char* mensaje = string_from_format("%s de %d", mensaje_de_prueba, tid);
+			cargar_bitacora(tid_str, mensaje);
+			free(tid_str);
+			free(mensaje);
+			utils_esperar_a_usuario();
+		}
 }
 
 

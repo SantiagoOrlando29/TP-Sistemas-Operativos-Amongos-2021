@@ -201,6 +201,7 @@ int tarea_cantidad_disponibles();
 void recurso_actualizar_archivo(t_recurso_data* recurso_data);
 void superbloque_actualizar_bitmap_en_archivo();
 void blocks_actualizar_archivo();
+void blocks_actualizar_archivo_con_delay(int _delay);
 
 ////////////COMIENZO GENERAR
 
@@ -214,7 +215,7 @@ int superbloque_obtener_bloque_libre();
 void metadata_agregar_bloque_a_lista_de_blocks(t_recurso_md* recurso_md, int bloque);
 void metadata_cargar_bloque_completo(t_recurso_md* recurso_md, int bloque);
 void metadata_actualizar_md5(t_recurso_md* recurso_md);
-int blocks_obtener_concatenado_de_recurso(t_recurso_md* recurso_md, char** concatenado);
+char* blocks_obtener_concatenado_de_recurso(t_recurso_md* recurso_md);
 
 ////////////FIN GENERAR
 
@@ -222,7 +223,6 @@ int blocks_obtener_concatenado_de_recurso(t_recurso_md* recurso_md, char** conca
 
 int recurso_consumir_cantidad(t_recurso_data* recurso_data, int cantidad);
 void metadata_consumir_cantidad(t_recurso_md* recurso_md, int cantidad);
-char* metadata_obtener_n_ultimos_bloques(t_recurso_md* recurso_md, int n);
 void cadena_eliminar_ultimos_n_elementos_de_elementos_separados_por_comas(char* cadena, int n);
 void metadata_consumir_en_ultimo_bloque(t_recurso_md* recurso_md, int cantidad);
 
@@ -265,17 +265,17 @@ char* superbloque_obtener_bitmap_correcto_segun_bloques_ocupados();
 char* files_obtener_cadena_con_el_total_de_bloques_ocupados();
 char* recursos_obtener_cadena_con_el_total_de_bloques_ocupados();
 char* metadata_obtener_bloques_desde_archivo(char* path);
-void cadena_agregar_a_lista_existente_valores_de_otra_lista(char** lista_original, char* lista_a_adicionar);
 char* bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados();
 t_list* bitacoras_obtener_lista_con_rutas_completas();
 void fsck_chequeo_de_sabotajes_en_files();
 void recurso_validar_size(t_recurso_data* recurso_data);
 int recurso_obtener_size_real(t_recurso_data* recurso_data);
+int blocks_esta_lleno_bloque(int bloque);
 int metadata_cantidad_del_caracter_en_bloque(char caracter, int bloque);
 void recurso_validar_block_count(t_recurso_data* recurso_data);
 int recurso_obtener_block_count_real(t_recurso_data* recurso_data);
 void recurso_validar_blocks(t_recurso_data* recurso_data);
-char* recurso_obtener_blocks_real(t_recurso_data* recurso_data);
+void metadata_restaurar_en_blocks(t_recurso_md* recurso_md);
 
 /////////////////////////////////////FIN DE FUNCIONES NECESARIAS PARA FSCK/////////////////////////////////////////////////////////
 
@@ -298,6 +298,8 @@ int cadena_ultimo_entero_en_lista_de_enteros(char* lista_de_enteros);
 void cadena_agregar_entero_a_lista_de_enteros(char** lista_de_enteros, int entero);
 void cadena_sacar_ultimo_caracter(char* cadena);
 void cadena_calcular_md5(const char *cadena, int length, char* md5_33str);
+char* cadena_obtener_n_ultimos_enteros(char* cadena, int n);
+void cadena_agregar_a_lista_existente_valores_de_otra_lista(char** lista_original, char* lista_a_adicionar);
 
 ////////////////////////////FUNCIONES ADICIONALES PARA MANEJO DE CADENAS DE TEXTO/////////////////////////
 
@@ -310,10 +312,9 @@ void verificar_superbloque_temporal();
 void prueba_de_tareas_random();
 void prueba_de_generar_recursos();
 void prueba_de_consumir_recursos();
-void prueba_de_descartar_recursos();
+void prueba_de_descartar_basura();
 void prueba_de_cargar_n_bitacoras_con_mensaje(int n, char* mensaje);
-
-
+void prueba_de_cargar_bitacora_de_tripulante_n_con_m_mensajes(int n, int m, char* mensaje_de_prueba);
 
 
 #endif /* CONEXIONES_H_ */
