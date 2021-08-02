@@ -50,6 +50,43 @@ void leer_config()
     config_destroy(config);
 }
 
+void blocks_abrir_hilo_sincronizacion()
+{
+	log_debug(logger, "Se entra a blocks_abrir_hilo");
+
+    if((pthread_create(&thread_sincronizacion, NULL, (void*)blocks_sincronizar_segun_tiempo_sincronizacion,NULL))!=0){
+        log_info(logger, "Falla al crearse el hilo");
+    }
+
+    pthread_detach(thread_sincronizacion);
+}
+
+int blocks_sincronizar_segun_tiempo_sincronizacion()
+{
+	while(1)
+	{
+		sleep(configuracion.tiempo_sincronizacion);
+		sem_wait(&MUTEX_BLOCKS);
+		msync(blocks_address, blocks_size, MS_SYNC);
+		sem_post(&MUTEX_BLOCKS);
+		log_debug(logger, "Blocks.ims actualizado");
+	}
+	return OK;
+}
+
+void semaforos_inicializar()
+{
+	sem_init(&MUTEX_SUPERBLOQUE_BITMAP, 0, 1);
+	sem_init(&MUTEX_SUPERBLOQUE_PATH, 0, 1);
+	sem_init(&MUTEX_BLOCKS, 0, 1);
+	sem_init(&MUTEX_OXIGENO_MD, 0, 1);
+	sem_init(&MUTEX_COMIDA_MD, 0, 1);
+	sem_init(&MUTEX_BASURA_MD, 0, 1);
+	sem_init(&MUTEX_OXIGENO_IMS, 0, 1);
+	sem_init(&MUTEX_COMIDA_IMS, 0, 1);
+	sem_init(&MUTEX_BASURA_IMS, 0, 1);
+}
+
 ///////////////////////COMIENZO DE FUNCIONES NECESARIAS PARA INICIAR EL FILE SYSTEM///////////////////////////////
 
 //Inicia el File System restaurando a memoria los archivos existentes si los hubiera
@@ -712,7 +749,7 @@ int recurso_realizar_tarea(char* nombre_tarea, char* cantidad_str)
 		if(actualizacion_de_archivos_requerida)
 		{
 			superbloque_actualizar_bitmap_en_archivo();
-			blocks_actualizar_archivo();
+			//blocks_actualizar_archivo();
 			log_info(logger, "Se actualizaron los archivos de superbloque y blocks debido a la realizacion de \"%s %d\"", tarea->nombre, cantidad);
 		}
 		else
@@ -767,6 +804,21 @@ void recurso_actualizar_archivo(t_recurso_data* recurso_data)
 {
 	log_debug(logger, "Se ingresa a recurso_actualizar_archivo de recurso %s", recurso_data->nombre);
 
+	/*switch(recurso_data->caracter_llenado)
+	{
+		case 'O':
+			sem_wait(&MUTEX_OXIGENO_IMS);
+			break;
+		case 'C':
+			sem_wait(&MUTEX_COMIDA_IMS);
+			break;
+		case 'B':
+			sem_wait(&MUTEX_BASURA_IMS);
+			break;
+		default:
+			log_error(logger, "NO TENDRIA QUE LLEGAR ACA!! (En recurso_actualizar_archivo");
+	}*/
+
 	if(utils_existe_en_disco(recurso_data->ruta_completa) == 0)
 	{
 		utils_crear_archivo(recurso_data->ruta_completa);
@@ -792,18 +844,38 @@ void recurso_actualizar_archivo(t_recurso_data* recurso_data)
 			config_get_int_value(recurso_md, "BLOCK_COUNT"), config_get_string_value(recurso_md, "BLOCKS"),
 			config_get_string_value(recurso_md, "CARACTER_LLENADO"), config_get_string_value(recurso_md, "MD5_ARCHIVO"));
 	config_destroy(recurso_md);
+
+/*	switch(recurso_data->caracter_llenado)
+	{
+		case 'O':
+			sem_post(&MUTEX_OXIGENO_IMS);
+			break;
+		case 'C':
+			sem_post(&MUTEX_COMIDA_IMS);
+			break;
+		case 'B':
+			sem_post(&MUTEX_BASURA_IMS);
+			break;
+		default:
+			log_error(logger, "NO TENDRIA QUE LLEGAR ACA!! (En recurso_actualizar_archivo");
+	}*/
+
 	log_info(logger, "Se actualizo metadata de %s de memoria a archivo %s", recurso_data->nombre, recurso_data->ruta_completa);
 }
 
 //Actualiza en el archivo SuperBloque.ims el campo bitmp utilizando write
 void superbloque_actualizar_bitmap_en_archivo()
 {
-	//log_debug(logger, "I-Se ingresa a superbloque_actualizar_bitmap_en_archivo address");// %p", bitmap_address);
-	//msync(bitmap_address, bitmap_size, MS_SYNC);
+	sem_wait(&MUTEX_SUPERBLOQUE_PATH);
+	sem_wait(&MUTEX_SUPERBLOQUE_BITMAP);
+
 	int superbloque_fd = utils_abrir_archivo_para_lectura_escritura(superbloque_path);
 	lseek(superbloque_fd, 2 * sizeof(uint32_t), SEEK_SET);
 	write(superbloque_fd, superbloque.bitmap, bitmap_size);
 	close(superbloque_fd);
+
+	sem_post(&MUTEX_SUPERBLOQUE_BITMAP);
+	sem_post(&MUTEX_SUPERBLOQUE_PATH);
 	log_debug(logger, "SuperBloque.ims actualizado (BITMAP)");
 }
 
@@ -843,9 +915,39 @@ int recurso_generar_cantidad(t_recurso_data* recurso_data, int cantidad)
 
 	if(cantidad > 0)
 	{
+		switch(recurso_data->caracter_llenado)
+		{
+			case 'O':
+				sem_wait(&MUTEX_OXIGENO_MD);
+				break;
+			case 'C':
+				sem_wait(&MUTEX_COMIDA_MD);
+				break;
+			case 'B':
+				sem_wait(&MUTEX_BASURA_MD);
+				break;
+			default:
+				log_error(logger, "NO TENDRIA QUE LLEGAR ACA!! (En recurso_actualizar_archivo");
+		}
+
 		metadata_generar_cantidad(recurso_data->metadata, cantidad);
 		recurso_actualizar_archivo(recurso_data);
 		actualizacion_de_archivos_requerida = 1;
+
+		switch(recurso_data->caracter_llenado)
+		{
+			case 'O':
+				sem_post(&MUTEX_OXIGENO_MD);
+				break;
+			case 'C':
+				sem_post(&MUTEX_COMIDA_MD);
+				break;
+			case 'B':
+				sem_post(&MUTEX_BASURA_MD);
+				break;
+			default:
+				log_error(logger, "NO TENDRIA QUE LLEGAR ACA!! (En recurso_actualizar_archivo");
+		}
 	}
 
 	log_debug(logger, "Finaliza recurso_generar_cantidad(%s, %d)", recurso_data->nombre, cantidad);
@@ -967,6 +1069,8 @@ int superbloque_obtener_bloque_libre()
 {
 	//log_debug(logger, "I-Se ingresa a superbloque_obtener_bloque_libre");
 
+	sem_wait(&MUTEX_BITMAP_MEMORIA);
+
 	t_bitarray* bitmap = bitarray_create_with_mode(superbloque.bitmap, bitmap_size, LSB_FIRST);
 	int posicion;
 	int posicion_maxima = superbloque.blocks - 1;
@@ -985,6 +1089,8 @@ int superbloque_obtener_bloque_libre()
 	}
 
 	bitarray_destroy(bitmap);
+
+	sem_post(&MUTEX_BITMAP_MEMORIA);
 	return posicion;
 }
 
@@ -1016,7 +1122,7 @@ void metadata_cargar_bloque_completo(t_recurso_md* recurso_md, int bloque)
 	log_debug(logger, "O-Se cargo el bloque completo %d con caracter %s", bloque, recurso_md->caracter_llenado);
 }
 
-//Calcula y actualiza el valor del md5 del archivo teniendo en cuenta el conjunto de bloques que ocupa el recurso en el archivo de Blocks.ims
+//Calcula y actualiza el valor del md5 del archivo teniendo en cuenta el conjunto de bloques que ocupa el recurso en el archivo de Blocks.MD
 void metadata_actualizar_md5(t_recurso_md* recurso_md)
 {
 	//log_debug(logger, "I-Se ingresa a metadata_actualizar_md5");
@@ -1301,6 +1407,9 @@ void metadata_liberar_bloques_en_bitmap_y_en_blocks(char* blocks)
 	int cantidad_bloques = cadena_cantidad_elementos_en_lista(blocks);
 	int bloque;
 	char** lista_bloques = string_get_string_as_array(blocks);
+
+	sem_wait(&MUTEX_BITMAP);
+
 	t_bitarray* bitmap = bitarray_create_with_mode(superbloque.bitmap, bitmap_size, LSB_FIRST);
 
 	for(int i = 0; i < cantidad_bloques; i++)
@@ -1312,6 +1421,8 @@ void metadata_liberar_bloques_en_bitmap_y_en_blocks(char* blocks)
 	}
 
 	bitarray_destroy(bitmap);
+
+	sem_post(&MUTEX_BITMAP);
 	cadena_eliminar_array_de_cadenas(&lista_bloques, cantidad_bloques);
 	log_debug(logger, "Los bloques %s fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims", blocks);
 }
@@ -1452,7 +1563,6 @@ int bitacora_guardar_log(t_bitacora_data* bitacora_data, char* mensaje)
 	free(posicion_asignada);
 
 	superbloque_actualizar_bitmap_en_archivo();
-	blocks_actualizar_archivo();
 	//blocks_actualizar_archivo();
 	bitacora_actualizar_archivo(bitacora_data);
 
@@ -1531,8 +1641,13 @@ void bitacora_borrar_estructura_completa(t_bitacora_data* bitacora_data)
 int fsck_iniciar()
 {
 	log_debug(logger, "Se inicia fsck");
+
+	//blocks_actualizar_archivo();
+	sem_wait(&MUTEX_BLOCKS);
 	fsck_chequeo_de_sabotajes_en_superbloque();
 	fsck_chequeo_de_sabotajes_en_files();
+
+	sem_post(&MUTEX_BLOCKS);
 	log_debug(logger, "Se finaliza fsck");
 	return OK;
 }
@@ -2193,20 +2308,6 @@ void cadena_calcular_md5(const char *cadena, int length, char* md5_33str)
 
 
 /////////////////////////FUNCIONES A BORRAR (O NO)/////////////////////
-
-//BORRAR SI NO SE USA -- PREGUNTAR A SANTI/AGUS
-void enviar_header(op_code tipo, int socket_cliente)
-{
-    t_paquete* paquete = malloc(sizeof(t_paquete));
-    paquete->mensajeOperacion = tipo;
-
-    void * magic = malloc(sizeof(paquete->mensajeOperacion));
-    memcpy(magic, &(paquete->mensajeOperacion), sizeof(uint32_t));
-
-    send(socket_cliente, magic, sizeof(paquete->mensajeOperacion), 0);
-
-    free(magic);
-}
 
 //Funcion para encontrar falla de carga en superbloque
 void verificar_superbloque_temporal()

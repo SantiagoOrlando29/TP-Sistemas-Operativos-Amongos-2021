@@ -16,14 +16,17 @@ int main(void)
 	log_debug(logger, "Testeo config, la IP es: %s", configuracion.ip);
 
 	file_system_iniciar();
+	blocks_abrir_hilo_sincronizacion();
+
+	semaforos_inicializar();
 	utils_esperar_a_usuario();
 
 	//Prueba de cargar bitacora con cantidad de tripulantes y mensaje original
 
 	//prueba_de_tareas_random();
-	//prueba_de_generar_recursos();
+	prueba_de_generar_recursos();
 
-	//prueba_de_consumir_recursos();
+	prueba_de_consumir_recursos();
 	//prueba_de_descartar_basura();
 	//prueba_de_cargar_n_bitacoras_con_mensaje(1, "un, dos, tres, probando mas nro tripulante");
 	//prueba_de_cargar_bitacora_de_tripulante_n_con_m_mensajes(2, 3, "CACA");

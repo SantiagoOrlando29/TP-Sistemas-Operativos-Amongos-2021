@@ -133,6 +133,16 @@ char* blocks_path;
 size_t bitmap_size;
 size_t blocks_size;
 char* blocks_address; //Direccion en memoria de la copia principal de Blocks.ims
+pthread_t thread_sincronizacion;
+sem_t MUTEX_SUPERBLOQUE_BITMAP;
+sem_t MUTEX_SUPERBLOQUE_PATH;
+sem_t MUTEX_BLOCKS;
+sem_t MUTEX_OXIGENO_MD;
+sem_t MUTEX_COMIDA_MD;
+sem_t MUTEX_BASURA_MD;
+sem_t MUTEX_OXIGENO_IMS;
+sem_t MUTEX_COMIDA_IMS;
+sem_t MUTEX_BASURA_IMS;
 
 
 //pthread_mutex_t mutex_blocks;
@@ -141,6 +151,9 @@ char* blocks_address; //Direccion en memoria de la copia principal de Blocks.ims
 ///////////////////////FUNCIONES AGRUPADAS Y ORDENADAS "CRONOLOGICAMENTE"//////////////////////////////////////////////////////////////
 
 void leer_config();
+void blocks_abrir_hilo_sincronizacion();
+int blocks_sincronizar_segun_tiempo_sincronizacion();
+void semaforos_inicializar();
 
 ///////////////////////COMIENZO DE FUNCIONES NECESARIAS PARA INICIAR EL FILE SYSTEM///////////////////////////////
 
