@@ -19,7 +19,7 @@
 #include<netdb.h>
 #include <signal.h>
 #include<pthread.h>
-
+#include<semaphore.h>
 /*
 //#include<commons/collections/list.h>
 //#include<commons/collections/queue.h>

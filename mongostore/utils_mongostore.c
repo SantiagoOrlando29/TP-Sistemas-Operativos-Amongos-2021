@@ -1069,7 +1069,7 @@ int superbloque_obtener_bloque_libre()
 {
 	//log_debug(logger, "I-Se ingresa a superbloque_obtener_bloque_libre");
 
-	sem_wait(&MUTEX_BITMAP_MEMORIA);
+	sem_wait(&MUTEX_SUPERBLOQUE_BITMAP);
 
 	t_bitarray* bitmap = bitarray_create_with_mode(superbloque.bitmap, bitmap_size, LSB_FIRST);
 	int posicion;
@@ -1090,7 +1090,7 @@ int superbloque_obtener_bloque_libre()
 
 	bitarray_destroy(bitmap);
 
-	sem_post(&MUTEX_BITMAP_MEMORIA);
+	sem_post(&MUTEX_SUPERBLOQUE_BITMAP);
 	return posicion;
 }
 
@@ -1408,7 +1408,7 @@ void metadata_liberar_bloques_en_bitmap_y_en_blocks(char* blocks)
 	int bloque;
 	char** lista_bloques = string_get_string_as_array(blocks);
 
-	sem_wait(&MUTEX_BITMAP);
+	sem_wait(&MUTEX_SUPERBLOQUE_BITMAP);
 
 	t_bitarray* bitmap = bitarray_create_with_mode(superbloque.bitmap, bitmap_size, LSB_FIRST);
 
@@ -1422,7 +1422,7 @@ void metadata_liberar_bloques_en_bitmap_y_en_blocks(char* blocks)
 
 	bitarray_destroy(bitmap);
 
-	sem_post(&MUTEX_BITMAP);
+	sem_post(&MUTEX_SUPERBLOQUE_BITMAP);
 	cadena_eliminar_array_de_cadenas(&lista_bloques, cantidad_bloques);
 	log_debug(logger, "Los bloques %s fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims", blocks);
 }
