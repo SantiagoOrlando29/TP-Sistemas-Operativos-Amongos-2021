@@ -2450,10 +2450,10 @@ bool almacenar_informacion(t_list* lista, config_struct* config_servidor){
 		offset +=escribir_atributo_tres(p_pcb,offset,marcos->id_marco, config_servidor);
 
 		if(tripulante->tid > 9){ //desde el 10 el mapa tira ":" sino
-					letra = 55;
-				}
-			err = personaje_crear(nivel, letra+tripulante->tid, (int)tripulante->posicionX, (int)tripulante->posicionY);
-			ASSERT_CREATE(nivel, letra, err);
+			letra = 55;
+		}
+		err = personaje_crear(nivel, letra+tripulante->tid, (int)tripulante->posicionX, (int)tripulante->posicionY);
+		ASSERT_CREATE(nivel, letra, err);
 
 		list_add(configuracion.conversion_marcos,(void*)cant_tripu);
 		cant_tripu++;
@@ -3462,14 +3462,14 @@ bool enviar_tarea_paginacion(int socket_cliente, int numero_patota, tcbTripulant
 
 void* crear_mapa(){
 	while (numero_mapa!=1) {
-			nivel_gui_dibujar(nivel);
-			fflush(stdout);
-			sleep(1);
+		nivel_gui_dibujar(nivel);
+		fflush(stdout);
+		sleep(1);
 	if(err){
-		printf("WARN: %s\n", nivel_gui_string_error(err));
+		log_error(logger,"WARN: %s\n", nivel_gui_string_error(err));
 	}
 
 	}
-	printf("\n Termino");
+	log_info(logger,"\n Termino");
 }
 
