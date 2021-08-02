@@ -1760,8 +1760,10 @@ tcbTripulante* obtener_tripulante(int patota_id,int tripulante_id, config_struct
 	}
 	marcos->bit_uso=1;
 	marcos->ultimo_uso=incrementar_lru();
+	char* letra_previa=leer_atributo_char(offset,marcos->id_marco, &configuracion);
 
-	char estado =leer_atributo_char(offset,marcos->id_marco, config_servidor);
+	char estado =*(char*)letra_previa;
+	free(letra_previa);
 	offset+=sizeof(char);
 
 	/////////////////////////////////////////Pos X/////////////////////////////////////////////////////////////////////////////
@@ -2505,7 +2507,6 @@ bool almacenar_informacion(t_list* lista, config_struct* config_servidor){
 
 		offset +=escribir_char_tarea(tarea[i],offset,marcos->id_marco, config_servidor);
 	}
-	free(una_tabla);
 
 	return true;
 
@@ -2613,11 +2614,11 @@ int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct*
 }
 
 
-char leer_atributo_char(int offset, int nro_marco, config_struct* config_s){
-	char dato;
+void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s){
+	void* dato =malloc(sizeof(char)+1);
 	void* p = config_s->posicion_inicial;
 	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
-	memcpy(&dato,p+desplazamiento,sizeof(char));
+	memcpy(dato,p+desplazamiento,sizeof(char));
 	return dato;
 }
 
@@ -2721,7 +2722,7 @@ int reemplazo_clock(){
 
 		log_info(logger,"Iniciando algoritmo de reemplazo CLOCK");
 		int  nro_marco=0;
-    	marco* clock_m=malloc(sizeof(marco));
+    	marco* clock_m;
     	int flag =0;
 		//sem_wait(&MUTEX_LISTA_TABLAS_PAGINAS);
 		while(flag==0){
@@ -2749,6 +2750,7 @@ int reemplazo_clock(){
 		memcpy(swap_address + free_swap *configuracion.tamanio_pag,contenidoAEscribir ,configuracion.tamanio_pag);
 		clock_m->id_marco=free_swap;
 		log_info(logger,"CLOCK: Se elije marco %d de MP, se envía a bloque %d de MS", nro_marco,free_swap);
+		free(contenidoAEscribir);
 		//sem_post(&MUTEX_LISTA_TABLAS_PAGINAS);
 		//sleep(2);
 	    return nro_marco;
@@ -2914,7 +2916,7 @@ void swap_pagina_iniciar(){
 int swap_a_memoria(int numBloque){
 
 	int nuevo_marco=posicion_marco();
-	void * leido = calloc(configuracion.tamanio_pag,1);
+	void* leido;
 	leido = recuperar_pag_swap(numBloque);
 	memcpy(configuracion.posicion_inicial+(nuevo_marco*configuracion.tamanio_pag),leido,configuracion.tamanio_pag*sizeof(char));
 	free(leido);
@@ -3419,7 +3421,9 @@ char* obtener_tarea(int id_patota, tcbTripulante* tripulante){
 	int cuantas_letras=0;
 	char tarea='a';
 	if(tripulante->prox_instruccion == 0){
+		free(una_tarea);
 		return NULL;
+
 	}
 
 	sem_wait(&MUTEX_LISTA_TABLAS_PAGINAS);
@@ -3448,7 +3452,9 @@ char* obtener_tarea(int id_patota, tcbTripulante* tripulante){
 		}
 		otro_marco->bit_uso=1;
 		otro_marco->ultimo_uso = incrementar_lru();
-		tarea=leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
+		char* letra_previa=leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
+		tarea=*(char*)letra_previa;
+		free(letra_previa);
 		offset+=sizeof(char);
 		if(tarea != '-' && tarea != '.'){
 			una_tarea=strncat(una_tarea,&tarea,1);
