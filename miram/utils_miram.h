@@ -53,6 +53,7 @@ sem_t MUTEX_SWAP;
 sem_t MUTEX_CASE;
 sem_t MUTEX_FILE;
 sem_t MUTEX_CLOCK;
+sem_t MUTEX_LRU;
 
 typedef struct{
 	int patota_id;
@@ -342,6 +343,8 @@ tabla_segmentacion* buscar_tabla_segmentos(int numero_patota);
 bool cambiar_posicion(int tid, int posx, int posy, int pid);
 void dump_memoria_segmentacion();
 pcbPatota* crear_pcb(uint32_t numero_patota);
+int utils_abrir_archivo_para_lectura_escritura(char* path);
+void utils_crear_archivo(char* path);
 
 
 /*FINALIZACION*/
