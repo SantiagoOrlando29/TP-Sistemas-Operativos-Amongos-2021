@@ -1468,6 +1468,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 				tcbTripulante* tripulante = obtener_tripulante(patota_id3, tripulante_id3, &configuracion);
 				tripulante->prox_instruccion=0;
 				actualizar_tripulante(tripulante,patota_id3,&configuracion);
+				free(tripulante);
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 
@@ -1510,6 +1511,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 					log_info(logger,"El tripulante %d recibe la tarea solicitada",tripulante_id);
 				}
 
+				free(tripulante1);
 				sem_post(&MUTEX_MEM_PRINCIPAL);
 
 				log_info(logger,"--------MP--------");
@@ -1537,7 +1539,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 				log_info(logger, "Tripulante %d cambiando de estado", tripulante_id);
 				actualizar_tripulante(tripulante2,patota_id,&configuracion);
 				sem_post(&MUTEX_MEM_PRINCIPAL);
-
+				free(tripulante2);
 				char* mensaje1 = "cambio de estado exitoso";
 				enviar_mensaje(mensaje1, socket_cliente);
 
@@ -1567,7 +1569,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 				tripulante3->posicionY=posy;
 				log_info(logger, "Tripulante %d cambiando de posicion", tripulante_id);
 				actualizar_tripulante(tripulante3,patota_id,&configuracion);
-
+				free(tripulante3);
 				//Descomentar mapa
 				/*
 				if(tripulante_id > 9){ //desde el 10 el mapa tira ":" sino
@@ -1601,6 +1603,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 						log_info(logger, "Prox instruccion %d", list_tripulante->prox_instruccion);
 						log_info(logger, "Puntero pcb %d", list_tripulante->puntero_pcb);
 						agregar_a_paquete(paquete, list_tripulante, tamanio_TCB);
+						free(list_tripulante);
 
 					}
 
@@ -2594,6 +2597,7 @@ int escribir_atributo_char(tcbTripulante* tripulante, int offset, int nro_marco,
 	void* p = config_s->posicion_inicial;
 	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
 	memcpy(p+desplazamiento,estado,sizeof(char));
+	free(estado);
 	return sizeof(char);
 }
 
@@ -2603,6 +2607,7 @@ int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct*
 	void* p = config_s->posicion_inicial;
 	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
 	memcpy(p+desplazamiento,valor,sizeof(char));
+	free(valor);
 	return sizeof(char);
 }
 
@@ -2898,7 +2903,7 @@ void swap_pagina_iniciar(){
 	int swap_frames = configuracion.tamanio_swap;
 	void * leido = calloc(configuracion.tamanio_swap, 1);
 	fwrite(leido, configuracion.tamanio_swap, swap_frames, swapfile);
-	//free(leido);
+	free(leido);
 	fclose(swapfile);
 }
 
@@ -2911,7 +2916,7 @@ int swap_a_memoria(int numBloque){
 	void * leido = calloc(configuracion.tamanio_pag,1);
 	leido = recuperar_pag_swap(numBloque);
 	memcpy(configuracion.posicion_inicial+(nuevo_marco*configuracion.tamanio_pag),leido,configuracion.tamanio_pag*sizeof(char));
-	//free(leido);
+	free(leido);
 	return nuevo_marco;
 
 }

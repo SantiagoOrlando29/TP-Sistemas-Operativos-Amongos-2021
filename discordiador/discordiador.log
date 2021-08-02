@@ -1,30 +1,30 @@
-[INFO] 02:17:53:311 discordiador/(10988:10993): in funcion_sabotaje
-[INFO] 02:17:53:311 discordiador/(10988:10992): in menu_discordiador
-[INFO] 02:17:58:630 discordiador/(10988:10992): Memoria asignada
-[INFO] 02:17:58:634 discordiador/(10988:10992): Memoria asignada
-[INFO] 02:17:59:393 discordiador/(10988:10992): Memoria asignada
-[INFO] 02:18:04:470 discordiador/(10988:10997): TRIPU 1  tarea recibida: A00;1;1;5
-[INFO] 02:18:04:476 discordiador/(10988:10998): TRIPU 2  tarea recibida: B00;3;3;5
-[INFO] 02:18:04:481 discordiador/(10988:10999): TRIPU 3  tarea recibida: C00;5;5;5
-[INFO] 02:18:14:519 discordiador/(10988:10997): TRIPU 1  tarea recibida: A01;1;1;5
-[INFO] 02:18:24:580 discordiador/(10988:10998): TRIPU 2  tarea recibida: B01;3;3;5
-[INFO] 02:18:30:594 discordiador/(10988:10997): TRIPU 1  tarea recibida: A02;1;1;5
-[INFO] 02:18:34:541 discordiador/(10988:10999): TRIPU 3  tarea recibida: C01;5;5;5
-[INFO] 02:18:40:551 discordiador/(10988:10998): TRIPU 2  tarea recibida: B02;3;3;5
-[INFO] 02:18:46:561 discordiador/(10988:10997): TRIPU 1  tarea recibida: no hay mas tareas
-[INFO] 02:18:46:561 discordiador/(10988:10997): tripu_misma_patota_exit 1
-[INFO] 02:18:46:561 discordiador/(10988:10997): size exit 0
-[INFO] 02:18:50:569 discordiador/(10988:10999): TRIPU 3  tarea recibida: C02;5;5;5
-[INFO] 02:18:50:622 discordiador/(10988:10998): TRIPU 2  tarea recibida: no hay mas tareas
-[INFO] 02:18:50:623 discordiador/(10988:10998): tripu_misma_patota_exit 1
-[INFO] 02:18:50:623 discordiador/(10988:10998): size exit 0
-[INFO] 02:19:00:581 discordiador/(10988:10999): TRIPU 3  tarea recibida: C03;5;5;5
-[INFO] 02:19:10:594 discordiador/(10988:10999): TRIPU 3  tarea recibida: C04;5;5;5
-[INFO] 02:19:20:606 discordiador/(10988:10999): TRIPU 3  tarea recibida: C05;5;5;5
-[INFO] 02:19:30:618 discordiador/(10988:10999): TRIPU 3  tarea recibida: C06;5;5;5
-[INFO] 02:19:40:626 discordiador/(10988:10999): TRIPU 3  tarea recibida: C07;5;5;5
-[INFO] 02:19:50:642 discordiador/(10988:10999): TRIPU 3  tarea recibida: C08;5;5;5
-[INFO] 02:20:00:658 discordiador/(10988:10999): TRIPU 3  tarea recibida: no hay mas tareas
-[INFO] 02:20:00:658 discordiador/(10988:10999): tripu_misma_patota_exit 1
-[INFO] 02:20:00:658 discordiador/(10988:10999): size exit 0
-[INFO] 02:21:17:967 discordiador/(10988:10993): posicion_sabotaje_char (null)
+[INFO] 03:11:37:179 discordiador/(12308:12313): in funcion_sabotaje
+[INFO] 03:11:37:180 discordiador/(12308:12312): in menu_discordiador
+[INFO] 03:11:40:317 discordiador/(12308:12312): Memoria asignada
+[INFO] 03:11:40:390 discordiador/(12308:12312): Memoria asignada
+[INFO] 03:11:41:174 discordiador/(12308:12312): Memoria asignada
+[INFO] 03:11:47:405 discordiador/(12308:12318): TRIPU 1  tarea recibida: A00;1;1;5
+[INFO] 03:11:47:424 discordiador/(12308:12319): TRIPU 2  tarea recibida: B00;3;3;5
+[INFO] 03:11:47:446 discordiador/(12308:12320): TRIPU 3  tarea recibida: C00;5;5;5
+[INFO] 03:11:57:524 discordiador/(12308:12318): TRIPU 1  tarea recibida: A01;1;1;5
+[INFO] 03:12:07:618 discordiador/(12308:12319): TRIPU 2  tarea recibida: B01;3;3;5
+[INFO] 03:12:13:641 discordiador/(12308:12318): TRIPU 1  tarea recibida: A02;1;1;5
+[INFO] 03:12:17:663 discordiador/(12308:12320): TRIPU 3  tarea recibida: C01;5;5;5
+[INFO] 03:12:23:699 discordiador/(12308:12318): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 03:12:23:699 discordiador/(12308:12318): tripu_misma_patota_exit 1
+[INFO] 03:12:23:700 discordiador/(12308:12318): size exit 0
+[INFO] 03:12:23:734 discordiador/(12308:12319): TRIPU 2  tarea recibida: B02;3;3;5
+[INFO] 03:12:33:824 discordiador/(12308:12319): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 03:12:33:824 discordiador/(12308:12319): tripu_misma_patota_exit 1
+[INFO] 03:12:33:824 discordiador/(12308:12319): size exit 0
+[INFO] 03:12:33:843 discordiador/(12308:12320): TRIPU 3  tarea recibida: C02;5;5;5
+[INFO] 03:12:43:897 discordiador/(12308:12320): TRIPU 3  tarea recibida: C03;5;5;5
+[INFO] 03:12:53:926 discordiador/(12308:12320): TRIPU 3  tarea recibida: C04;5;5;5
+[INFO] 03:13:03:971 discordiador/(12308:12320): TRIPU 3  tarea recibida: C05;5;5;5
+[INFO] 03:13:14:039 discordiador/(12308:12320): TRIPU 3  tarea recibida: C06;5;5;5
+[INFO] 03:13:24:075 discordiador/(12308:12320): TRIPU 3  tarea recibida: C07;5;5;5
+[INFO] 03:13:34:126 discordiador/(12308:12320): TRIPU 3  tarea recibida: C08;5;5;5
+[INFO] 03:13:44:175 discordiador/(12308:12320): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 03:13:44:175 discordiador/(12308:12320): tripu_misma_patota_exit 1
+[INFO] 03:13:44:175 discordiador/(12308:12320): size exit 0
+[INFO] 03:14:13:032 discordiador/(12308:12312): aaaaaaaa
