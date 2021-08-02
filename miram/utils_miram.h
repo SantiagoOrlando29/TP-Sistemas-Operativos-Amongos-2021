@@ -272,7 +272,7 @@ void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* 
 int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea);
 void mostrar_tripulante(tcbTripulante* tripulante,pcbPatota* patota);
 int cuantos_marcos_libres(config_struct* config_servidor);
-void almacenar_informacion(t_list* lista, config_struct* config_servidor);
+bool almacenar_informacion(t_list* lista, config_struct* config_servidor);
 void reservar_marco(int cantidad_marcos, config_struct* configuracion, t_list* tabla_aux, int pid );
 void eliminar_estructura_memoria(t_list* tabla_aux);
 void leer_informacion(config_struct* config_servidor, t_list* lista, int patota_id);

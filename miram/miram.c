@@ -4,7 +4,7 @@ int main(void)
 {
 	FILE* archivo = fopen("MiRam.log","w");
 	fclose(archivo);
-	logger = log_create("MiRam.log","MiRam",1,LOG_LEVEL_INFO);
+	logger = log_create("MiRam.log","MiRam",0,LOG_LEVEL_INFO);
 
 	int piddd = getpid();
 	log_info(logger, "pid %d  \n", piddd);
@@ -32,9 +32,9 @@ int main(void)
 
 	iniciar_miram(&configuracion);
 
-	/*pthread_t hilo_mapa;
+	pthread_t hilo_mapa;
 	pthread_create(&hilo_mapa,NULL,crear_mapa,NULL);
-	pthread_detach(hilo_mapa);*/
+	pthread_detach(hilo_mapa);
 
 	pthread_t servidor;
 	if((pthread_create(&servidor,NULL,(void*)iniciar_servidor,&configuracion))!=0){
