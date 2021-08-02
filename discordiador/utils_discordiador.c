@@ -714,7 +714,7 @@ void informar_atencion_sabotaje(tcbTripulante* tripulante, char* posicion_char){
 
 	//Se corre en pánico hacia X|Y
 	char* a_enviar = malloc(26 + strlen(posicion_char)+1);
-	strcpy(a_enviar, "Se corre en pánico hacia ");
+	strcpy(a_enviar, "Se corre en panico hacia ");
 	strcat(a_enviar, posicion_char);
 
 	agregar_a_paquete(paquete, a_enviar, strlen(a_enviar)+1);

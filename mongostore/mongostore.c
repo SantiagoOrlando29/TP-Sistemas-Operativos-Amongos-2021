@@ -16,34 +16,23 @@ int main(void)
 	log_debug(logger, "Testeo config, la IP es: %s", configuracion.ip);
 
 	file_system_iniciar();
-	//char* archivitos = contar_archivos(bitacoras_path);  //Chequear caso que no hay archivos
+	blocks_abrir_hilo_sincronizacion();
 
+	semaforos_inicializar();
+	//utils_esperar_a_usuario();
 
-	/*for(int i= 0; i<3;i++){
-		t_bitacora_data* bitacora_data = malloc(sizeof(t_bitacora_data));
+	//Prueba de cargar bitacora con cantidad de tripulantes y mensaje original
 
-		bitacora_cargar_data(bitacora_data, i);
-		printf("El tid es %d y la ruta completa es %s \n", bitacora_data->tid, bitacora_data->ruta_completa);
-		bitacora_guardar_log(bitacora_data, "Edu aprobame el tp");
+	//prueba_de_tareas_random();
+	//prueba_de_generar_recursos();
 
-		free(bitacora_data);
+	//prueba_de_consumir_recursos();
+	//prueba_de_descartar_basura();
+	//prueba_de_cargar_n_bitacoras_con_mensaje(1, "un, dos, tres, probando mas nro tripulante");
+	//prueba_de_cargar_bitacora_de_tripulante_n_con_m_mensajes(2, 3, "CACA");
 
-		log_debug(logger, "Se supone ya cargue una bitacora y estoy por enviar el ok %d", i);
-	}*/ //Prueba de cargar bitacora
-
-	/*int variable;
-	printf("variable: ");
-	scanf("%d", &variable);
-	superbloque_validar_integridad_cantidad_de_bloques();
-	*/ //Prueba de validad integridad cantidad de bloques
-
-	//int variable;
-	//printf("variable: ");
-	//scanf("%d", &variable);
-	//superbloque_validar_integridad_bitmap();
-		 //Prueba de validad integridad cantidad de bloques
-
-
+	//fsck_chequeo_de_sabotajes_en_superbloque();
+	//fsck_chequeo_de_sabotajes_en_files();
 
 	int piddd = getpid();
 	log_info(logger, "pid %d  \n", piddd);
@@ -61,6 +50,7 @@ int main(void)
 
     pthread_join(servidor,NULL);
     pthread_join(servidor_sabotaje,NULL);
+
 
 
 	log_info(logger, "Finaliza main");

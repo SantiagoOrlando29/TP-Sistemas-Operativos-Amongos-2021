@@ -1,161 +1,124 @@
-[INFO] 14:34:10:522 MiRam/(10462:10462): pid 10462  
+[INFO] 19:47:37:992 MiRam/(20625:20625): pid 20625  
 
-[INFO] 14:34:10:522 MiRam/(10462:10462): ---------  MEMORIA  --------------------
-[INFO] 14:34:10:523 MiRam/(10462:10462): base:   0, tam: 2048, libre: true 
-[INFO] 14:34:10:523 MiRam/(10462:10462): ----------------------------------------
-[INFO] 14:34:10:523 MiRam/(10462:10463): Servidor iniciando
-[INFO] 14:34:10:523 MiRam/(10462:10463): Servidor MiRam encendido
-[INFO] 14:34:10:523 MiRam/(10462:10463): socket_servidor 4
-[INFO] 14:34:22:832 MiRam/(10462:10463): socket_cliente 5
-[INFO] 14:34:22:832 MiRam/(10462:10463): Estableciendo conexión desde 30889
-[INFO] 14:34:22:832 MiRam/(10462:10463): Creando hilo
-[INFO] 14:34:22:841 MiRam/(10462:10489): Se conecto este socket a mi 5
-[INFO] 14:34:25:508 MiRam/(10462:10489): 
+[INFO] 19:47:37:992 MiRam/(20625:20625): ---------  MEMORIA  --------------------
+[INFO] 19:47:37:992 MiRam/(20625:20625): base:   0, tam: 2048, libre: true 
+[INFO] 19:47:37:993 MiRam/(20625:20625): ----------------------------------------
+[INFO] 19:47:37:993 MiRam/(20625:20626): Servidor iniciando
+[INFO] 19:47:37:993 MiRam/(20625:20626): Servidor MiRam encendido
+[INFO] 19:47:37:993 MiRam/(20625:20626): socket_servidor 4
+[INFO] 19:47:57:645 MiRam/(20625:20626): socket_cliente 5
+[INFO] 19:47:57:645 MiRam/(20625:20626): Estableciendo conexión desde 20141
+[INFO] 19:47:57:645 MiRam/(20625:20626): Creando hilo
+[INFO] 19:47:57:647 MiRam/(20625:20636): Se conecto este socket a mi 5
+[INFO] 19:47:58:525 MiRam/(20625:20636): 
 El numero de la patota recibida es 1
-[INFO] 14:34:25:508 MiRam/(10462:10489): ID 1 
-[INFO] 14:34:25:508 MiRam/(10462:10489): posicion x: 0 
-[INFO] 14:34:25:508 MiRam/(10462:10489): posicion y: 0 
-[INFO] 14:34:25:508 MiRam/(10462:10489): Status: N 
-[INFO] 14:34:25:508 MiRam/(10462:10489): n patota: 1 
+[INFO] 19:47:58:525 MiRam/(20625:20636): ID 1 
+[INFO] 19:47:58:525 MiRam/(20625:20636): posicion x: 0 
+[INFO] 19:47:58:525 MiRam/(20625:20636): posicion y: 0 
+[INFO] 19:47:58:525 MiRam/(20625:20636): Status: N 
+[INFO] 19:47:58:525 MiRam/(20625:20636): n patota: 1 
 
-[INFO] 14:34:25:509 MiRam/(10462:10489): espacio tareas todo ok
-[INFO] 14:34:25:509 MiRam/(10462:10489): ---------  MEMORIA  --------------------
-[INFO] 14:34:25:509 MiRam/(10462:10489): base:   0, tam:  8, libre: false 
-[INFO] 14:34:25:509 MiRam/(10462:10489): base:   8, tam: 24, libre: false 
-[INFO] 14:34:25:509 MiRam/(10462:10489): base:  32, tam: 21, libre: false 
-[INFO] 14:34:25:509 MiRam/(10462:10489): base:  53, tam: 1995, libre: true 
-[INFO] 14:34:25:509 MiRam/(10462:10489): ----------------------------------------
-[INFO] 14:34:25:509 MiRam/(10462:10489): Tabla de segmentos correspondiente a patota 1
-[INFO] 14:34:25:509 MiRam/(10462:10489): Base 0   Tamanio 8
-[INFO] 14:34:25:509 MiRam/(10462:10489): Base 8   Tamanio 24
-[INFO] 14:34:25:509 MiRam/(10462:10489): Base 32   Tamanio 21
-[INFO] 14:34:25:509 MiRam/(10462:10489): ---------------------------------------
-[INFO] 14:34:25:509 MiRam/(10462:10489): Se asigno espacio de memoria a todo 
+[INFO] 19:47:58:525 MiRam/(20625:20636): ID 2 
+[INFO] 19:47:58:525 MiRam/(20625:20636): posicion x: 0 
+[INFO] 19:47:58:525 MiRam/(20625:20636): posicion y: 0 
+[INFO] 19:47:58:525 MiRam/(20625:20636): Status: N 
+[INFO] 19:47:58:525 MiRam/(20625:20636): n patota: 1 
 
-[INFO] 14:34:25:511 MiRam/(10462:10489): 
+[INFO] 19:47:58:525 MiRam/(20625:20636): ID 3 
+[INFO] 19:47:58:525 MiRam/(20625:20636): posicion x: 0 
+[INFO] 19:47:58:525 MiRam/(20625:20636): posicion y: 0 
+[INFO] 19:47:58:526 MiRam/(20625:20636): Status: N 
+[INFO] 19:47:58:526 MiRam/(20625:20636): n patota: 1 
+
+[INFO] 19:47:58:526 MiRam/(20625:20636): espacio tareas todo ok
+[INFO] 19:47:58:526 MiRam/(20625:20636): ---------  MEMORIA  --------------------
+[INFO] 19:47:58:526 MiRam/(20625:20636): base:   0, tam:  8, libre: false 
+[INFO] 19:47:58:526 MiRam/(20625:20636): base:   8, tam: 166, libre: false 
+[INFO] 19:47:58:526 MiRam/(20625:20636): base: 174, tam: 21, libre: false 
+[INFO] 19:47:58:526 MiRam/(20625:20636): base: 195, tam: 21, libre: false 
+[INFO] 19:47:58:526 MiRam/(20625:20636): base: 216, tam: 21, libre: false 
+[INFO] 19:47:58:526 MiRam/(20625:20636): base: 237, tam: 1811, libre: true 
+[INFO] 19:47:58:526 MiRam/(20625:20636): ----------------------------------------
+[INFO] 19:47:58:526 MiRam/(20625:20636): Tabla de segmentos correspondiente a patota 1
+[INFO] 19:47:58:526 MiRam/(20625:20636): Base 0   Tamanio 8
+[INFO] 19:47:58:526 MiRam/(20625:20636): Base 8   Tamanio 166
+[INFO] 19:47:58:526 MiRam/(20625:20636): Base 174   Tamanio 21
+[INFO] 19:47:58:526 MiRam/(20625:20636): Base 195   Tamanio 21
+[INFO] 19:47:58:526 MiRam/(20625:20636): Base 216   Tamanio 21
+[INFO] 19:47:58:527 MiRam/(20625:20636): ---------------------------------------
+[INFO] 19:47:58:527 MiRam/(20625:20636): Se asigno espacio de memoria a todo 
+
+[INFO] 19:47:58:529 MiRam/(20625:20636): 
 El numero de la patota recibida es 2
-[INFO] 14:34:25:511 MiRam/(10462:10489): ID 2 
-[INFO] 14:34:25:511 MiRam/(10462:10489): posicion x: 8 
-[INFO] 14:34:25:511 MiRam/(10462:10489): posicion y: 0 
-[INFO] 14:34:25:511 MiRam/(10462:10489): Status: N 
-[INFO] 14:34:25:511 MiRam/(10462:10489): n patota: 2 
+[INFO] 19:47:58:529 MiRam/(20625:20636): ID 4 
+[INFO] 19:47:58:529 MiRam/(20625:20636): posicion x: 0 
+[INFO] 19:47:58:529 MiRam/(20625:20636): posicion y: 0 
+[INFO] 19:47:58:529 MiRam/(20625:20636): Status: N 
+[INFO] 19:47:58:530 MiRam/(20625:20636): n patota: 2 
 
-[INFO] 14:34:25:511 MiRam/(10462:10489): espacio tareas todo ok
-[INFO] 14:34:25:511 MiRam/(10462:10489): ---------  MEMORIA  --------------------
-[INFO] 14:34:25:511 MiRam/(10462:10489): base:   0, tam:  8, libre: false 
-[INFO] 14:34:25:511 MiRam/(10462:10489): base:   8, tam: 24, libre: false 
-[INFO] 14:34:25:511 MiRam/(10462:10489): base:  32, tam: 21, libre: false 
-[INFO] 14:34:25:511 MiRam/(10462:10489): base:  53, tam:  8, libre: false 
-[INFO] 14:34:25:511 MiRam/(10462:10489): base:  61, tam: 25, libre: false 
-[INFO] 14:34:25:511 MiRam/(10462:10489): base:  86, tam: 21, libre: false 
-[INFO] 14:34:25:511 MiRam/(10462:10489): base: 107, tam: 1941, libre: true 
-[INFO] 14:34:25:511 MiRam/(10462:10489): ----------------------------------------
-[INFO] 14:34:25:511 MiRam/(10462:10489): Tabla de segmentos correspondiente a patota 2
-[INFO] 14:34:25:511 MiRam/(10462:10489): Base 53   Tamanio 8
-[INFO] 14:34:25:511 MiRam/(10462:10489): Base 61   Tamanio 25
-[INFO] 14:34:25:511 MiRam/(10462:10489): Base 86   Tamanio 21
-[INFO] 14:34:25:512 MiRam/(10462:10489): ---------------------------------------
-[INFO] 14:34:25:512 MiRam/(10462:10489): Se asigno espacio de memoria a todo 
+[INFO] 19:47:58:530 MiRam/(20625:20636): ID 5 
+[INFO] 19:47:58:530 MiRam/(20625:20636): posicion x: 0 
+[INFO] 19:47:58:530 MiRam/(20625:20636): posicion y: 0 
+[INFO] 19:47:58:530 MiRam/(20625:20636): Status: N 
+[INFO] 19:47:58:530 MiRam/(20625:20636): n patota: 2 
 
-[INFO] 14:34:25:514 MiRam/(10462:10489): 
-El numero de la patota recibida es 3
-[INFO] 14:34:25:514 MiRam/(10462:10489): ID 3 
-[INFO] 14:34:25:514 MiRam/(10462:10489): posicion x: 8 
-[INFO] 14:34:25:514 MiRam/(10462:10489): posicion y: 8 
-[INFO] 14:34:25:515 MiRam/(10462:10489): Status: N 
-[INFO] 14:34:25:515 MiRam/(10462:10489): n patota: 3 
+[INFO] 19:47:58:530 MiRam/(20625:20636): ID 6 
+[INFO] 19:47:58:530 MiRam/(20625:20636): posicion x: 0 
+[INFO] 19:47:58:530 MiRam/(20625:20636): posicion y: 0 
+[INFO] 19:47:58:530 MiRam/(20625:20636): Status: N 
+[INFO] 19:47:58:530 MiRam/(20625:20636): n patota: 2 
 
-[INFO] 14:34:25:515 MiRam/(10462:10489): espacio tareas todo ok
-[INFO] 14:34:25:515 MiRam/(10462:10489): ---------  MEMORIA  --------------------
-[INFO] 14:34:25:515 MiRam/(10462:10489): base:   0, tam:  8, libre: false 
-[INFO] 14:34:25:515 MiRam/(10462:10489): base:   8, tam: 24, libre: false 
-[INFO] 14:34:25:515 MiRam/(10462:10489): base:  32, tam: 21, libre: false 
-[INFO] 14:34:25:515 MiRam/(10462:10489): base:  53, tam:  8, libre: false 
-[INFO] 14:34:25:515 MiRam/(10462:10489): base:  61, tam: 25, libre: false 
-[INFO] 14:34:25:515 MiRam/(10462:10489): base:  86, tam: 21, libre: false 
-[INFO] 14:34:25:515 MiRam/(10462:10489): base: 107, tam:  8, libre: false 
-[INFO] 14:34:25:515 MiRam/(10462:10489): base: 115, tam: 28, libre: false 
-[INFO] 14:34:25:515 MiRam/(10462:10489): base: 143, tam: 21, libre: false 
-[INFO] 14:34:25:515 MiRam/(10462:10489): base: 164, tam: 1884, libre: true 
-[INFO] 14:34:25:515 MiRam/(10462:10489): ----------------------------------------
-[INFO] 14:34:25:515 MiRam/(10462:10489): Tabla de segmentos correspondiente a patota 3
-[INFO] 14:34:25:515 MiRam/(10462:10489): Base 107   Tamanio 8
-[INFO] 14:34:25:515 MiRam/(10462:10489): Base 115   Tamanio 28
-[INFO] 14:34:25:515 MiRam/(10462:10489): Base 143   Tamanio 21
-[INFO] 14:34:25:515 MiRam/(10462:10489): ---------------------------------------
-[INFO] 14:34:25:515 MiRam/(10462:10489): Se asigno espacio de memoria a todo 
+[INFO] 19:47:58:530 MiRam/(20625:20636): espacio tareas todo ok
+[INFO] 19:47:58:530 MiRam/(20625:20636): ---------  MEMORIA  --------------------
+[INFO] 19:47:58:531 MiRam/(20625:20636): base:   0, tam:  8, libre: false 
+[INFO] 19:47:58:531 MiRam/(20625:20636): base:   8, tam: 166, libre: false 
+[INFO] 19:47:58:531 MiRam/(20625:20636): base: 174, tam: 21, libre: false 
+[INFO] 19:47:58:531 MiRam/(20625:20636): base: 195, tam: 21, libre: false 
+[INFO] 19:47:58:531 MiRam/(20625:20636): base: 216, tam: 21, libre: false 
+[INFO] 19:47:58:531 MiRam/(20625:20636): base: 237, tam:  8, libre: false 
+[INFO] 19:47:58:531 MiRam/(20625:20636): base: 245, tam: 170, libre: false 
+[INFO] 19:47:58:531 MiRam/(20625:20636): base: 415, tam: 21, libre: false 
+[INFO] 19:47:58:531 MiRam/(20625:20636): base: 436, tam: 21, libre: false 
+[INFO] 19:47:58:531 MiRam/(20625:20636): base: 457, tam: 21, libre: false 
+[INFO] 19:47:58:531 MiRam/(20625:20636): base: 478, tam: 1570, libre: true 
+[INFO] 19:47:58:531 MiRam/(20625:20636): ----------------------------------------
+[INFO] 19:47:58:531 MiRam/(20625:20636): Tabla de segmentos correspondiente a patota 2
+[INFO] 19:47:58:531 MiRam/(20625:20636): Base 237   Tamanio 8
+[INFO] 19:47:58:531 MiRam/(20625:20636): Base 245   Tamanio 170
+[INFO] 19:47:58:531 MiRam/(20625:20636): Base 415   Tamanio 21
+[INFO] 19:47:58:531 MiRam/(20625:20636): Base 436   Tamanio 21
+[INFO] 19:47:58:531 MiRam/(20625:20636): Base 457   Tamanio 21
+[INFO] 19:47:58:531 MiRam/(20625:20636): ---------------------------------------
+[INFO] 19:47:58:531 MiRam/(20625:20636): Se asigno espacio de memoria a todo 
 
-[INFO] 14:34:26:273 MiRam/(10462:10489): 
-El numero de la patota recibida es 4
-[INFO] 14:34:26:274 MiRam/(10462:10489): ID 4 
-[INFO] 14:34:26:274 MiRam/(10462:10489): posicion x: 0 
-[INFO] 14:34:26:274 MiRam/(10462:10489): posicion y: 8 
-[INFO] 14:34:26:274 MiRam/(10462:10489): Status: N 
-[INFO] 14:34:26:274 MiRam/(10462:10489): n patota: 4 
-
-[INFO] 14:34:26:274 MiRam/(10462:10489): espacio tareas todo ok
-[INFO] 14:34:26:274 MiRam/(10462:10489): ---------  MEMORIA  --------------------
-[INFO] 14:34:26:274 MiRam/(10462:10489): base:   0, tam:  8, libre: false 
-[INFO] 14:34:26:274 MiRam/(10462:10489): base:   8, tam: 24, libre: false 
-[INFO] 14:34:26:274 MiRam/(10462:10489): base:  32, tam: 21, libre: false 
-[INFO] 14:34:26:274 MiRam/(10462:10489): base:  53, tam:  8, libre: false 
-[INFO] 14:34:26:274 MiRam/(10462:10489): base:  61, tam: 25, libre: false 
-[INFO] 14:34:26:275 MiRam/(10462:10489): base:  86, tam: 21, libre: false 
-[INFO] 14:34:26:275 MiRam/(10462:10489): base: 107, tam:  8, libre: false 
-[INFO] 14:34:26:275 MiRam/(10462:10489): base: 115, tam: 28, libre: false 
-[INFO] 14:34:26:275 MiRam/(10462:10489): base: 143, tam: 21, libre: false 
-[INFO] 14:34:26:275 MiRam/(10462:10489): base: 164, tam:  8, libre: false 
-[INFO] 14:34:26:275 MiRam/(10462:10489): base: 172, tam: 21, libre: false 
-[INFO] 14:34:26:275 MiRam/(10462:10489): base: 193, tam: 21, libre: false 
-[INFO] 14:34:26:275 MiRam/(10462:10489): base: 214, tam: 1834, libre: true 
-[INFO] 14:34:26:275 MiRam/(10462:10489): ----------------------------------------
-[INFO] 14:34:26:275 MiRam/(10462:10489): Tabla de segmentos correspondiente a patota 4
-[INFO] 14:34:26:275 MiRam/(10462:10489): Base 164   Tamanio 8
-[INFO] 14:34:26:275 MiRam/(10462:10489): Base 172   Tamanio 21
-[INFO] 14:34:26:275 MiRam/(10462:10489): Base 193   Tamanio 21
-[INFO] 14:34:26:275 MiRam/(10462:10489): ---------------------------------------
-[INFO] 14:34:26:275 MiRam/(10462:10489): Se asigno espacio de memoria a todo 
-
-[INFO] 14:34:32:714 MiRam/(10462:10489): ------ Lista Tripulantes ---------
-[INFO] 14:34:32:714 MiRam/(10462:10489): Tripulante: 1     Patota: 1     Status: NEW 
-
-[INFO] 14:34:32:714 MiRam/(10462:10489): Tripulante: 2     Patota: 2     Status: NEW 
-
-[INFO] 14:34:32:714 MiRam/(10462:10489): Tripulante: 3     Patota: 3     Status: NEW 
-
-[INFO] 14:34:32:714 MiRam/(10462:10489): Tripulante: 4     Patota: 4     Status: NEW 
-
-[INFO] 14:35:05:319 MiRam/(10462:10463): socket_cliente 7
-[INFO] 14:35:05:319 MiRam/(10462:10463): Estableciendo conexión desde 32425
-[INFO] 14:35:05:319 MiRam/(10462:10463): Creando hilo
-[INFO] 14:35:05:325 MiRam/(10462:10518): Se conecto este socket a mi 7
-[INFO] 14:35:05:326 MiRam/(10462:10463): socket_cliente 8
-[INFO] 14:35:05:326 MiRam/(10462:10463): Estableciendo conexión desde 33449
-[INFO] 14:35:05:326 MiRam/(10462:10463): Creando hilo
-[INFO] 14:35:05:332 MiRam/(10462:10520): Se conecto este socket a mi 8
-[INFO] 14:35:05:333 MiRam/(10462:10463): socket_cliente 9
-[INFO] 14:35:05:333 MiRam/(10462:10463): Estableciendo conexión desde 34473
-[INFO] 14:35:05:333 MiRam/(10462:10463): Creando hilo
-[INFO] 14:35:05:333 MiRam/(10462:10522): Se conecto este socket a mi 9
-[INFO] 14:35:05:334 MiRam/(10462:10463): socket_cliente 10
-[INFO] 14:35:05:334 MiRam/(10462:10463): Estableciendo conexión desde 35497
-[INFO] 14:35:05:334 MiRam/(10462:10463): Creando hilo
-[INFO] 14:35:05:336 MiRam/(10462:10524): Se conecto este socket a mi 10
-[INFO] 14:35:09:421 MiRam/(10462:10489): ------ Lista Tripulantes ---------
-[INFO] 14:35:09:421 MiRam/(10462:10489): Tripulante: 1     Patota: 1     Status: EXEC 
-
-[INFO] 14:35:09:421 MiRam/(10462:10489): Tripulante: 2     Patota: 2     Status: READY 
-
-[INFO] 14:35:09:421 MiRam/(10462:10489): Tripulante: 3     Patota: 3     Status: READY 
-
-[INFO] 14:35:09:421 MiRam/(10462:10489): Tripulante: 4     Patota: 4     Status: READY 
-
-[INFO] 14:35:18:308 MiRam/(10462:10489): ------ Lista Tripulantes ---------
-[INFO] 14:35:18:309 MiRam/(10462:10489): Tripulante: 1     Patota: 1     Status: EXEC 
-
-[INFO] 14:35:18:309 MiRam/(10462:10489): Tripulante: 2     Patota: 2     Status: READY 
-
-[INFO] 14:35:18:309 MiRam/(10462:10489): Tripulante: 3     Patota: 3     Status: READY 
-
-[INFO] 14:35:18:309 MiRam/(10462:10489): Tripulante: 4     Patota: 4     Status: READY 
-
+[INFO] 19:47:59:656 MiRam/(20625:20626): socket_cliente 7
+[INFO] 19:47:59:657 MiRam/(20625:20626): Estableciendo conexión desde 21677
+[INFO] 19:47:59:657 MiRam/(20625:20626): Creando hilo
+[INFO] 19:47:59:660 MiRam/(20625:20655): Se conecto este socket a mi 7
+[INFO] 19:47:59:661 MiRam/(20625:20626): socket_cliente 8
+[INFO] 19:47:59:661 MiRam/(20625:20626): Estableciendo conexión desde 22701
+[INFO] 19:47:59:661 MiRam/(20625:20626): Creando hilo
+[INFO] 19:47:59:664 MiRam/(20625:20656): Se conecto este socket a mi 8
+[INFO] 19:47:59:664 MiRam/(20625:20626): socket_cliente 9
+[INFO] 19:47:59:664 MiRam/(20625:20626): Estableciendo conexión desde 23725
+[INFO] 19:47:59:664 MiRam/(20625:20626): Creando hilo
+[INFO] 19:47:59:669 MiRam/(20625:20658): Se conecto este socket a mi 9
+[INFO] 19:47:59:678 MiRam/(20625:20626): socket_cliente 10
+[INFO] 19:47:59:678 MiRam/(20625:20626): Estableciendo conexión desde 24749
+[INFO] 19:47:59:678 MiRam/(20625:20626): Creando hilo
+[INFO] 19:47:59:681 MiRam/(20625:20660): Se conecto este socket a mi 10
+[INFO] 19:47:59:684 MiRam/(20625:20626): socket_cliente 11
+[INFO] 19:47:59:684 MiRam/(20625:20626): Estableciendo conexión desde 25773
+[INFO] 19:47:59:684 MiRam/(20625:20626): Creando hilo
+[INFO] 19:47:59:707 MiRam/(20625:20663): Se conecto este socket a mi 11
+[INFO] 19:47:59:708 MiRam/(20625:20626): socket_cliente 12
+[INFO] 19:47:59:708 MiRam/(20625:20626): Estableciendo conexión desde 26797
+[INFO] 19:47:59:708 MiRam/(20625:20626): Creando hilo
+[INFO] 19:47:59:710 MiRam/(20625:20667): Se conecto este socket a mi 12
+[WARNING] 19:48:32:392 MiRam/(20625:20667): el cliente se desconecto.
+[WARNING] 19:48:32:393 MiRam/(20625:20663): el cliente se desconecto.
+[WARNING] 19:48:32:393 MiRam/(20625:20660): el cliente se desconecto.
+[WARNING] 19:48:32:393 MiRam/(20625:20658): el cliente se desconecto.
+[WARNING] 19:48:32:393 MiRam/(20625:20656): el cliente se desconecto.
+[WARNING] 19:48:32:393 MiRam/(20625:20655): el cliente se desconecto.
+[WARNING] 19:48:32:393 MiRam/(20625:20636): el cliente se desconecto.
