@@ -63,13 +63,14 @@ void iniciar_servidor(config_struct* config_servidor)
 
 	log_info(logger, "socket_servidor %d", socket_servidor);
 
-	//se crea mapa
+	//Descomentar mapa
+	/*
 	nivel_gui_inicializar();
 
 	nivel_gui_get_area_nivel(&cols, &rows);
 
 	nivel = nivel_crear("AMong-OS");
-
+	 */
 	int hilo;
 	while(variable_servidor != 0){
 
@@ -636,12 +637,12 @@ void iniciar_miram(config_struct* config_servidor){
 
 		int nro_marcos =(config_servidor->tamanio_memoria)/(config_servidor->tamanio_pag);
 		config_servidor->cant_marcos = nro_marcos;
-		log_info(logger,"\nEl numero de marcos de MP es: %d nro_marcos\n", nro_marcos);
+		log_info(logger,"\nEl numero de marcos en MP es: %d", nro_marcos);
 
 		int nro_lugares_swap = (config_servidor->tamanio_swap)/(configuracion.tamanio_pag);
 		config_servidor->cant_lugares_swap=nro_lugares_swap;
 
-		log_info(logger,"\nEl numero de marcos de MS es: %d nro_marcos\n", nro_lugares_swap);
+		log_info(logger,"\nEl numero de marcos en MS es: %d", nro_lugares_swap);
 
 		for(int i=0; i<=nro_lugares_swap;i++){
 			int vacio=0;
@@ -975,11 +976,16 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 			tabla_segmentos_patota->ultimo_tripulante = tripulante->tid;
 		}
 
+		//Descomentar mapa
+		/*
+
 		if(tripulante->tid > 9){ //desde el 10 el mapa tira ":" sino
 			letra = 55;
 		}
 		err = personaje_crear(nivel, letra+tripulante->tid, (int)tripulante->posicionX, (int)tripulante->posicionY);
 		ASSERT_CREATE(nivel, letra, err);
+
+		*/
 	}
 
 	imprimir_tabla_espacios_de_memoria();
@@ -1365,6 +1371,8 @@ void destruir_marcos(marco* marcos){
 		list_replace(configuracion.marcos_libres, marcos->id_marco, (void*)0);
 	}else{
 		list_replace(configuracion.swap_libre, marcos->id_marco, (void*)0);
+		limpiar_bloque_swap(marcos->id_marco);
+
 	}
 	free(marcos);
 	sem_post(&MUTEX_SWAP);
@@ -1448,12 +1456,15 @@ int funcion_cliente_paginacion(int socket_cliente){
 				int patota_id3= (int)list_get(lista,1);
 				log_info(logger, "tid %d  pid %d", tripulante_id3, patota_id3);
 
+				//Descomentar mapa
+				/*
 				if(tripulante_id3 > 9){ //desde el 10 el mapa tira ":" sino
 					letra1 = 55;
 				}
 				log_info(logger, "letra + tid: %c", letra1 + tripulante_id3);
 				item_borrar(nivel, letra1 + tripulante_id3);
 
+				*/
 				tcbTripulante* tripulante = obtener_tripulante(patota_id3, tripulante_id3, &configuracion);
 				tripulante->prox_instruccion=0;
 				actualizar_tripulante(tripulante,patota_id3,&configuracion);
@@ -1483,11 +1494,16 @@ int funcion_cliente_paginacion(int socket_cliente){
 					tabla_paginacion* una_tabla= (tabla_paginacion*)list_get(tabla_paginacion_ppal, posicion_patota(patota_id, tabla_paginacion_ppal));
 					una_tabla->cant_tripulantes--;
 					if(una_tabla->cant_tripulantes == 0){
+
+
+						//Descomentar mapa
+						/*
 						if(tripulante_id3 > 9){ //desde el 10 el mapa tira ":" sino
 							letra1 = 55;
 						}
 						log_info(logger, "letra + tid: %c", letra2 + tripulante_id);
 						item_borrar(nivel, letra2 + tripulante_id);
+						*/
 						list_remove_and_destroy_element(tabla_paginacion_ppal, posicion_patota(patota_id, tabla_paginacion_ppal),(void*)destruir_tabla );
 					}
 				}else{
@@ -1552,11 +1568,14 @@ int funcion_cliente_paginacion(int socket_cliente){
 				log_info(logger, "Tripulante %d cambiando de posicion", tripulante_id);
 				actualizar_tripulante(tripulante3,patota_id,&configuracion);
 
+				//Descomentar mapa
+				/*
 				if(tripulante_id > 9){ //desde el 10 el mapa tira ":" sino
 					letra = 55;
 				}
 			    item_desplazar(nivel, letra+tripulante_id, difx, dify);
 			    sleep(1);
+			    */
 
 				char* mensaje2 = "cambio de posicion exitoso";
 				enviar_mensaje(mensaje2, socket_cliente);
@@ -1605,10 +1624,13 @@ int funcion_cliente_paginacion(int socket_cliente){
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
 				variable_servidor = 0;
+				//Descomentar mapa
+				/*
 				nivel_destruir(nivel);
 				nivel_gui_terminar();
 
 				numero_mapa=1;
+				*/
 				shutdown(socket_servidor, SHUT_RD);
 				close(socket_cliente);
 				return EXIT_FAILURE;
@@ -2449,12 +2471,14 @@ bool almacenar_informacion(t_list* lista, config_struct* config_servidor){
 
 		offset +=escribir_atributo_tres(p_pcb,offset,marcos->id_marco, config_servidor);
 
+		//Descomentar mapa
+		/*
 		if(tripulante->tid > 9){ //desde el 10 el mapa tira ":" sino
 			letra = 55;
 		}
 		err = personaje_crear(nivel, letra+tripulante->tid, (int)tripulante->posicionX, (int)tripulante->posicionY);
 		ASSERT_CREATE(nivel, letra, err);
-
+		*/
 		list_add(configuracion.conversion_marcos,(void*)cant_tripu);
 		cant_tripu++;
 
@@ -2699,6 +2723,7 @@ int reemplazo_clock(){
 			if(id_marco_clock>configuracion.cant_marcos-1){
 				id_marco_clock=0;
 			}
+			log_info(logger, "Puntero clock, posicion %d", id_marco_clock);
 			marco* un_marco=buscar_pagina(id_marco_clock);
 			id_marco_clock++;
 			sem_post(&MUTEX_CLOCK);
@@ -2868,7 +2893,7 @@ void imprimir_tabla_paginacion(){
 }
 
 void swap_pagina_iniciar(){
-	log_info(logger, "Inicializo el archivo");
+	log_info(logger, "Inicializo el archivo swap");
 	FILE* swapfile=fopen(configuracion.path_swap,"wb+");
 	int swap_frames = configuracion.tamanio_swap;
 	void * leido = calloc(configuracion.tamanio_swap, 1);
@@ -2899,9 +2924,10 @@ void* recuperar_pag_swap(int numDeBloque){
 	memcpy(leido,swap_address + numDeBloque*configuracion.tamanio_pag ,configuracion.tamanio_pag);
 	sem_wait(&MUTEX_SWAP);
 	list_replace(configuracion.swap_libre,numDeBloque,(void*)0);
-	limpiar_bloque_swap(numDeBloque);
+	void* limpiador = calloc(configuracion.tamanio_pag,1);
+	memcpy(swap_address + numDeBloque*configuracion.tamanio_pag, limpiador ,configuracion.tamanio_pag);
 	sem_post(&MUTEX_SWAP);
-	//free(leido);
+	free(limpiador);
 	return leido;
 }
 
