@@ -276,7 +276,7 @@ bool almacenar_informacion(t_list* lista, config_struct* config_servidor);
 void reservar_marco(int cantidad_marcos, config_struct* configuracion, t_list* tabla_aux, int pid );
 void eliminar_estructura_memoria(t_list* tabla_aux);
 void leer_informacion(config_struct* config_servidor, t_list* lista, int patota_id);
-void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s);
+char leer_atributo_char(int offset, int nro_marco, config_struct* config_s);
 void* leer_atributo(int offset, int nro_marco, config_struct* config_s);
 int escribir_atributo_char(tcbTripulante* tripulante, int offset, int nro_marco, config_struct* config_s);
 int escribir_atributo(uint32_t dato, int offset, int nro_marco, config_struct* config_s);

@@ -1761,7 +1761,7 @@ tcbTripulante* obtener_tripulante(int patota_id,int tripulante_id, config_struct
 	marcos->bit_uso=1;
 	marcos->ultimo_uso=incrementar_lru();
 
-	char estado =*(char*)leer_atributo_char(offset,marcos->id_marco, config_servidor);
+	char estado =leer_atributo_char(offset,marcos->id_marco, config_servidor);
 	offset+=sizeof(char);
 
 	/////////////////////////////////////////Pos X/////////////////////////////////////////////////////////////////////////////
@@ -2505,6 +2505,7 @@ bool almacenar_informacion(t_list* lista, config_struct* config_servidor){
 
 		offset +=escribir_char_tarea(tarea[i],offset,marcos->id_marco, config_servidor);
 	}
+	free(una_tabla);
 
 	return true;
 
@@ -2612,11 +2613,11 @@ int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct*
 }
 
 
-void* leer_atributo_char(int offset, int nro_marco, config_struct* config_s){
-	void* dato =malloc(sizeof(char)+1);
+char leer_atributo_char(int offset, int nro_marco, config_struct* config_s){
+	char dato;
 	void* p = config_s->posicion_inicial;
 	int desplazamiento=nro_marco*(config_s->tamanio_pag)+offset;
-	memcpy(dato,p+desplazamiento,sizeof(char));
+	memcpy(&dato,p+desplazamiento,sizeof(char));
 	return dato;
 }
 
@@ -3447,7 +3448,7 @@ char* obtener_tarea(int id_patota, tcbTripulante* tripulante){
 		}
 		otro_marco->bit_uso=1;
 		otro_marco->ultimo_uso = incrementar_lru();
-		tarea=*(char*)leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
+		tarea=leer_atributo_char(offset,otro_marco->id_marco, &configuracion);
 		offset+=sizeof(char);
 		if(tarea != '-' && tarea != '.'){
 			una_tarea=strncat(una_tarea,&tarea,1);
