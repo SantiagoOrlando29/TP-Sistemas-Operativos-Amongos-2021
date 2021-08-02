@@ -1465,14 +1465,19 @@ int funcion_cliente_paginacion(int socket_cliente){
 
 				tcbTripulante* tripulante1 = obtener_tripulante(patota_id, tripulante_id, &configuracion);
 
+				log_info(logger,"El tripulante %d solicita nueva tarea",tripulante_id);
+
 				bool hay_mas_tareas = enviar_tarea_paginacion(socket_cliente, patota_id, tripulante1);
 
 				if(hay_mas_tareas == false){
+					log_info(logger,"Ya no hay mas tareas para el tripulante %d",tripulante_id);
 					tabla_paginacion* una_tabla= (tabla_paginacion*)list_get(tabla_paginacion_ppal, posicion_patota(patota_id, tabla_paginacion_ppal));
 					una_tabla->cant_tripulantes--;
 					if(una_tabla->cant_tripulantes == 0){
 						list_remove_and_destroy_element(tabla_paginacion_ppal, posicion_patota(patota_id, tabla_paginacion_ppal),(void*)destruir_tabla );
 					}
+				}else{
+					log_info(logger,"El tripulante %d recibe la tarea solicitada",tripulante_id);
 				}
 
 				sem_post(&MUTEX_MEM_PRINCIPAL);
@@ -1499,11 +1504,13 @@ int funcion_cliente_paginacion(int socket_cliente){
 				sem_wait(&MUTEX_MEM_PRINCIPAL);
 				tcbTripulante* tripulante2 = obtener_tripulante(patota_id, tripulante_id, &configuracion);
 				tripulante2->estado=estado;
+				log_info(logger, "Tripulante %d cambiando de estado", tripulante_id);
 				actualizar_tripulante(tripulante2,patota_id,&configuracion);
 				sem_post(&MUTEX_MEM_PRINCIPAL);
 
 				char* mensaje1 = "cambio de estado exitoso";
 				enviar_mensaje(mensaje1, socket_cliente);
+
 
 
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
@@ -1521,6 +1528,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 				sem_post(&MUTEX_MEM_PRINCIPAL);
 				tripulante3->posicionX=posx;
 				tripulante3->posicionY=posy;
+				log_info(logger, "Tripulante %d cambiando de posicion", tripulante_id);
 				actualizar_tripulante(tripulante3,patota_id,&configuracion);
 				char* mensaje2 = "cambio de posicion exitoso";
 				enviar_mensaje(mensaje2, socket_cliente);

@@ -1,9 +1,29 @@
-[INFO] 22:21:00:331 discordiador/(5505:5510): in funcion_sabotaje
-[INFO] 22:21:00:332 discordiador/(5505:5509): in menu_discordiador
-[INFO] 22:21:07:538 discordiador/(5505:5509): Memoria asignada
-[INFO] 22:21:07:540 discordiador/(5505:5509): Memoria asignada
-[INFO] 22:21:08:504 discordiador/(5505:5509): Memoria asignada
-[INFO] 22:21:15:389 discordiador/(5505:5514): TRIPU 1  tarea recibida: A00;1;1;5
-[INFO] 22:21:15:392 discordiador/(5505:5515): TRIPU 2  tarea recibida: B00;3;3;5
-[INFO] 22:21:15:396 discordiador/(5505:5516): TRIPU 3  tarea recibida: C00;5;5;5
-[INFO] 22:21:29:473 discordiador/(5505:5514): TRIPU 1  tarea recibida: A01;1;1;5
+[INFO] 22:46:14:346 discordiador/(6206:6211): in funcion_sabotaje
+[INFO] 22:46:14:346 discordiador/(6206:6210): in menu_discordiador
+[INFO] 22:46:23:184 discordiador/(6206:6210): Memoria asignada
+[INFO] 22:46:23:186 discordiador/(6206:6210): Memoria asignada
+[INFO] 22:46:23:938 discordiador/(6206:6210): Memoria asignada
+[INFO] 22:46:29:285 discordiador/(6206:6215): TRIPU 1  tarea recibida: A00;1;1;5
+[INFO] 22:46:29:290 discordiador/(6206:6216): TRIPU 2  tarea recibida: B00;3;3;5
+[INFO] 22:46:29:296 discordiador/(6206:6217): TRIPU 3  tarea recibida: C00;5;5;5
+[INFO] 22:46:43:332 discordiador/(6206:6215): TRIPU 1  tarea recibida: A01;1;1;5
+[INFO] 22:46:53:351 discordiador/(6206:6215): TRIPU 1  tarea recibida: A02;1;1;5
+[INFO] 22:47:03:387 discordiador/(6206:6216): TRIPU 2  tarea recibida: B01;3;3;5
+[INFO] 22:47:09:393 discordiador/(6206:6215): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 22:47:09:393 discordiador/(6206:6215): tripu_misma_patota_exit 1
+[INFO] 22:47:09:393 discordiador/(6206:6215): size exit 0
+[INFO] 22:47:17:405 discordiador/(6206:6216): TRIPU 2  tarea recibida: B02;3;3;5
+[INFO] 22:47:17:441 discordiador/(6206:6217): TRIPU 3  tarea recibida: C01;5;5;5
+[INFO] 22:47:27:431 discordiador/(6206:6216): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 22:47:27:431 discordiador/(6206:6216): tripu_misma_patota_exit 1
+[INFO] 22:47:27:431 discordiador/(6206:6216): size exit 0
+[INFO] 22:47:27:466 discordiador/(6206:6217): TRIPU 3  tarea recibida: C02;5;5;5
+[INFO] 22:47:37:484 discordiador/(6206:6217): TRIPU 3  tarea recibida: C03;5;5;5
+[INFO] 22:47:47:498 discordiador/(6206:6217): TRIPU 3  tarea recibida: C04;5;5;5
+[INFO] 22:47:57:519 discordiador/(6206:6217): TRIPU 3  tarea recibida: C05;5;5;5
+[INFO] 22:48:07:533 discordiador/(6206:6217): TRIPU 3  tarea recibida: C06;5;5;5
+[INFO] 22:48:17:561 discordiador/(6206:6217): TRIPU 3  tarea recibida: C07;5;5;5
+[INFO] 22:48:27:593 discordiador/(6206:6217): TRIPU 3  tarea recibida: C08;5;5;5
+[INFO] 22:48:37:619 discordiador/(6206:6217): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 22:48:37:619 discordiador/(6206:6217): tripu_misma_patota_exit 1
+[INFO] 22:48:37:620 discordiador/(6206:6217): size exit 0
