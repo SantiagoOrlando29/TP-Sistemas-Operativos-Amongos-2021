@@ -18,10 +18,11 @@ int main(void)
 	leer_config();
 	log_debug(logger, "Testeo config, la IP es: %s", configuracion.ip);
 
+	semaforos_inicializar();
+
 	file_system_iniciar();
 	blocks_abrir_hilo_sincronizacion();
 
-	semaforos_inicializar();
 	//utils_esperar_a_usuario();
 
 	//Prueba de cargar bitacora con cantidad de tripulantes y mensaje original

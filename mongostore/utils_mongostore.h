@@ -93,6 +93,7 @@ typedef struct {
 } t_tarea;
 
 typedef enum {
+	OBTENER_BITACORA = 6,
 	FIN = 7,
 	CARGAR_BITACORA = 12,
 	REALIZAR_TAREA = 13,
@@ -143,6 +144,7 @@ sem_t MUTEX_BASURA_MD;
 sem_t MUTEX_OXIGENO_IMS;
 sem_t MUTEX_COMIDA_IMS;
 sem_t MUTEX_BASURA_IMS;
+sem_t MUTEX_BITACORA;//solo para no joder con el obtener_bitacora
 
 
 //pthread_mutex_t mutex_blocks;
@@ -169,7 +171,7 @@ void superbloque_asignar_memoria_a_bitmap();
 void file_system_consultar_para_formatear();
 void file_system_iniciar_limpio();
 void file_system_eliminar_archivos_previos();
-void files_eliminar_carpeta_completa();
+//void files_eliminar_carpeta_completa();
 void superbloque_generar_estructura_con_valores_tomados_por_consola();
 void superbloque_setear_bitmap_a_cero();
 void superbloque_cargar_archivo();
@@ -181,6 +183,9 @@ void recurso_validar_existencia_metadata_en_memoria(t_recurso_data* recurso_data
 void recurso_levantar_de_archivo_a_memoria_valores_variables(t_recurso_data* recurso_data);
 void metadata_setear_con_valores_default_en_memoria(t_recurso_md* recurso_md);
 void files_crear_directorios_inexistentes();
+
+void utils_eliminar_carpeta_completa_si_existe(char* path);
+void bitacoras_eliminar_si_existen();
 
 ///////////////FIN DE FUNCIONES NECESARIAS PARA INICIAR EL FILE SYSTEM//////////////////////////////////////////////////////
 
@@ -265,6 +270,10 @@ int bitacora_tiene_espacio_en_ultimo_bloque(t_bitacora_md* bitacora_md);
 void bitacora_escribir_en_bloque(t_bitacora_md* bitacora_md, char** mensaje, int bloque);
 void bitacora_actualizar_archivo(t_bitacora_data* bitacora_data);
 void bitacora_borrar_estructura_completa(t_bitacora_data* bitacora_data);
+
+//char* bitacora_obtener_mensajes_de_tripulante(char* tid_str);
+char* bitacora_obtener_mensajes_de_tripulante(int tid);
+char* blocks_obtener_concatenado_de_bloques_segun_tamanio(char* bloques, size_t tamanio);
 
 ////////////FIN DE FUNCIONES NECESARIAS PARA CARGAR BITACORAS//////////////////////////
 

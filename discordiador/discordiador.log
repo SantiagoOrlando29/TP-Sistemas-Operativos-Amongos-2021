@@ -1,11 +1,24 @@
-[INFO] 00:40:20:524 discordiador/(28671:28675): in funcion_sabotaje
-[INFO] 00:40:20:525 discordiador/(28671:28674): in menu_discordiador
-[INFO] 00:40:21:712 discordiador/(28671:28674): Memoria asignada
-[INFO] 00:40:21:717 discordiador/(28671:28674): Memoria asignada
-[INFO] 00:40:22:221 discordiador/(28671:28679): TRIPU 1  tarea recibida: GENERAR_OXIGENO 12;0;0;5
-[INFO] 00:40:22:226 discordiador/(28671:28680): TRIPU 2  tarea recibida: GENERAR_OXIGENO 12;0;0;5
-[INFO] 00:40:22:228 discordiador/(28671:28681): TRIPU 3  tarea recibida: GENERAR_OXIGENO 12;0;0;5
-[INFO] 00:40:22:238 discordiador/(28671:28682): TRIPU 4  tarea recibida: JUEGA_GOD_OF_WAR;9;9;6
-[INFO] 00:40:22:240 discordiador/(28671:28683): TRIPU 5  tarea recibida: JUEGA_GOD_OF_WAR;9;9;6
-[INFO] 00:40:22:241 discordiador/(28671:28684): TRIPU 6  tarea recibida: JUEGA_GOD_OF_WAR;9;9;6
-[INFO] 00:40:26:791 discordiador/(28671:28675): posicion_sabotaje_char (null)
+[INFO] 17:27:56:302 discordiador/(8795:8799): in funcion_sabotaje
+[INFO] 17:27:56:302 discordiador/(8795:8798): in menu_discordiador
+[INFO] 17:28:02:687 discordiador/(8795:8798): Memoria asignada
+[INFO] 17:28:02:704 discordiador/(8795:8803): TRIPU 1  tarea recibida: GENERAR_COMIDA 40;0;0;1
+[INFO] 17:28:04:713 discordiador/(8795:8802): TRIPU 1  tarea recibida: GENERAR_BASURA 50;0;0;1
+[INFO] 17:28:06:720 discordiador/(8795:8802): TRIPU 1  tarea recibida: GENERAR_OXIGENO 78;0;0;1
+[INFO] 17:28:08:730 discordiador/(8795:8802): TRIPU 1  tarea recibida: CONSUMIR_OXIGENO 64;0;0;1
+[INFO] 17:28:10:737 discordiador/(8795:8802): TRIPU 1  tarea recibida: DESCARTAR_BASURA 0;0;0;1
+[INFO] 17:28:11:741 discordiador/(8795:8803): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 17:28:11:741 discordiador/(8795:8803): tripu_misma_patota_exit 1
+[INFO] 17:28:11:741 discordiador/(8795:8803): size exit 0
+[INFO] 17:28:13:521 discordiador/(8795:8798): bitacora del tripulante: 1
+Comienza ejecucion de tarea GENERAR_COMIDA
+Se finaliza la tarea GENERAR_COMIDA
+Comienza ejecucion de tarea GENERAR_BASURA
+Se finaliza la tarea GENERAR_BASURA
+Comienza ejecucion de tarea GENERAR_OXIGENO
+Se finaliza la tarea GENERAR_OXIGENO
+Comienza ejecucion de tarea CONSUMIR_OXIGENO
+Se finaliza la tarea CONSUMIR_OXIGENO
+Comienza ejecucion de tarea DESCARTAR_BASURA
+Se finaliza la tarea DESCARTAR_BASURA
+
+[INFO] 17:28:18:459 discordiador/(8795:8799): posicion_sabotaje_char (null)

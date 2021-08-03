@@ -896,19 +896,20 @@ INICIAR_PLANIFICACION
 LISTAR_TRIPULANTES
  */
 			case OBTENER_BITACORA:
-				//
-				enviar_header(OBTENER_BITACORA, conexionMiRam);
-				char* message = recibir_mensaje(conexionMiRam);
-				log_info(logger, "mesaage %s", message);
+				paquete = crear_paquete(OBTENER_BITACORA);
+				char** array_parametro = string_split(leido," ");
+				char* tripu_id = array_parametro[1];
 
-				//t_list* lista = recibir_paquete(conexionMiRam);
-				/*enviar_header(OBTENER_BITACORA, conexionMongoStore);
-				int tipoMensaje = recibir_operacion(conexionMongoStore);
-				log_info(logger, "tipoMensaje %d", tipoMensaje);
-				t_list* lista = recibir_paquete(conexionMongoStore);*/
-				//char* mensaje = (char*)list_get(lista, 0);
-				//log_info(logger, mensaje);
-				//list_destroy(lista);
+				agregar_a_paquete(paquete, tripu_id, strlen(tripu_id)+1);
+				enviar_paquete(paquete, conexionMongoStore);
+
+				char* message = recibir_mensaje(conexionMongoStore);
+				log_info(logger, "bitacora del tripulante: %s\n%s", tripu_id, message);
+
+				eliminar_paquete(paquete);
+				limpiar_array(array_parametro);
+				free(message);
+
 				break;
 
 			case EXPULSAR_TRIPULANTE:
