@@ -350,7 +350,7 @@ tarea* transformar_char_tarea(char* char_tarea){
 		   tarea_leida->parametro = atoi(strtok(NULL,""));
 	   }else{ //no tiene parametro => es tarea normal
 		   tarea_leida->tarea = partes[0];
-		   tarea_leida->parametro = NULL;
+		   tarea_leida->parametro = -1;
 	   }
 
 	   tarea_leida->pos_x = atoi(partes[1]);

@@ -186,7 +186,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 
 
 		if(tripulante->fui_expulsado == false){
-			if((void*)tripulante->tarea_posta->parametro != NULL){ //tarea de E/S
+			if(tripulante->tarea_posta->parametro != -1){ //tarea de E/S
 				planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);
 
 				printf("hilo %d, inicio tarea e/s \n", tripulante->tid);
