@@ -339,7 +339,9 @@ void recurso_validar_existencia_metadata_en_memoria(t_recurso_data* recurso_data
 
 	if(utils_existe_en_disco(recurso_data->ruta_completa))
 	{
+		log_info(logger, "ggggggggg");
 		recurso_levantar_de_archivo_a_memoria_valores_variables(recurso_data);
+		log_info(logger, "hhhhhhh");
 	}
 	else
 	{
@@ -353,10 +355,12 @@ void recurso_validar_existencia_metadata_en_memoria(t_recurso_data* recurso_data
 void recurso_levantar_de_archivo_a_memoria_valores_variables(t_recurso_data* recurso_data)
 {
 	t_config* recurso_config = config_create(recurso_data->ruta_completa);
-
 	t_recurso_md* recurso_md = recurso_data->metadata;
+	log_info(logger, "aaaaaaaaAA");
+	printf("%p", recurso_data->metadata);
 	recurso_md->size = config_get_int_value(recurso_config, "SIZE");
-	recurso_md->block_count = config_get_int_value(recurso_config, "BLOCK_COUNT");;
+	log_info(logger, "bbbbbbbb");
+	recurso_md->block_count = config_get_int_value(recurso_config, "BLOCK_COUNT");
 	recurso_md->blocks = string_duplicate(config_get_string_value(recurso_config, "BLOCKS"));
 	strcpy(recurso_md->md5_archivo, config_get_string_value(recurso_config, "MD5_ARCHIVO"));
 
@@ -903,16 +907,6 @@ int recurso_generar_cantidad(t_recurso_data* recurso_data, int cantidad)
 	log_debug(logger, "Se ingresa a recurso_generar_cantidad para el recurso %s y la cantidad %d", recurso_data->nombre, cantidad);
 	int actualizacion_de_archivos_requerida = 0;
 
-	recurso_validar_existencia_metadata_en_memoria(recurso_data);
-
-	if(utils_existe_en_disco(recurso_data->ruta_completa) == 0)
-	{
-		utils_crear_archivo(recurso_data->ruta_completa);
-		recurso_asignar_caracter_de_llenado_a_archivo(recurso_data);
-		log_debug(logger, "Se asigno el caracter de llenado %c en el recien creado archivo %s",
-				recurso_data->caracter_llenado, recurso_data->nombre_archivo);
-	}
-
 	if(cantidad > 0)
 	{
 		switch(recurso_data->caracter_llenado)
@@ -928,6 +922,16 @@ int recurso_generar_cantidad(t_recurso_data* recurso_data, int cantidad)
 				break;
 			default:
 				log_error(logger, "NO TENDRIA QUE LLEGAR ACA!! (En recurso_actualizar_archivo");
+		}
+
+		recurso_validar_existencia_metadata_en_memoria(recurso_data);
+
+		if(utils_existe_en_disco(recurso_data->ruta_completa) == 0)
+		{
+			utils_crear_archivo(recurso_data->ruta_completa);
+			recurso_asignar_caracter_de_llenado_a_archivo(recurso_data);
+			log_debug(logger, "Se asigno el caracter de llenado %c en el recien creado archivo %s",
+					recurso_data->caracter_llenado, recurso_data->nombre_archivo);
 		}
 
 		metadata_generar_cantidad(recurso_data->metadata, cantidad);
@@ -1167,9 +1171,12 @@ char* blocks_obtener_concatenado_de_recurso(t_recurso_md* recurso_md)
 
 		bloque = atoi(lista_bloques[indice_ultimo_bloque]);
 		posicion_desde = blocks_address + bloque * superbloque.block_size;
+		log_info(logger,"posicion_desde %p %d", posicion_desde, bloque * superbloque.block_size);
 		int cantidad_en_ultimo_bloque = recurso_md->size % superbloque.block_size;
+		log_info(logger,"cantidad_en_ultimo_bloque %d", cantidad_en_ultimo_bloque);
 		memcpy(posicion_hacia, posicion_desde, cantidad_en_ultimo_bloque);
 		cadena_eliminar_array_de_cadenas(&lista_bloques, cantidad_bloques);
+		log_debug(logger, "posicion_hacia %p", posicion_hacia);
 		log_debug(logger, "Total de caracteres del recurso concatenado en direccion de memoria %p", concatenado);
 	}
 	else
@@ -1190,19 +1197,50 @@ int recurso_consumir_cantidad(t_recurso_data* recurso_data, int cantidad)
 	log_debug(logger, "Se ingresa a recurso_consumir_cantidad para el recurso %s y la cantidad %d", recurso_data->nombre, cantidad);
 	int actualizacion_de_archivos_requerida = 0;
 
-	if(utils_existe_en_disco(recurso_data->ruta_completa) == 0)
-	{
-		log_info(logger, "No existe el archivo %s para el cual queria consumirse", recurso_data->nombre_archivo);
-		log_debug(logger, "Finaliza recurso_consumir_cantidad(%s, %d)", recurso_data->nombre, cantidad);
-		return actualizacion_de_archivos_requerida;
-	}
-
 	if(cantidad > 0)
 	{
-		recurso_validar_existencia_metadata_en_memoria(recurso_data);//BORRAR COMMENT -- invocacion valida si conviene/se supone que hay que trabajar to.do el tiempo con los datos del disco
+		switch(recurso_data->caracter_llenado)
+		{
+			case 'O':
+				sem_wait(&MUTEX_OXIGENO_MD);
+				break;
+			case 'C':
+				sem_wait(&MUTEX_COMIDA_MD);
+				break;
+			case 'B':
+				sem_wait(&MUTEX_BASURA_MD);
+				break;
+			default:
+				log_error(logger, "NO TENDRIA QUE LLEGAR ACA!! (En recurso_actualizar_archivo");
+		}
+
+		if(utils_existe_en_disco(recurso_data->ruta_completa) == 0)
+		{
+			log_info(logger, "No existe el archivo %s para el cual queria consumirse", recurso_data->nombre_archivo);
+			log_debug(logger, "Finaliza recurso_consumir_cantidad(%s, %d)", recurso_data->nombre, cantidad);
+			return actualizacion_de_archivos_requerida;
+		}
+
+		recurso_validar_existencia_metadata_en_memoria(recurso_data);
 		metadata_consumir_cantidad(recurso_data->metadata, cantidad);
 		recurso_actualizar_archivo(recurso_data);
 		actualizacion_de_archivos_requerida = 1;
+
+		switch(recurso_data->caracter_llenado)
+		{
+			case 'O':
+				sem_post(&MUTEX_OXIGENO_MD);
+				break;
+			case 'C':
+				sem_post(&MUTEX_COMIDA_MD);
+				break;
+			case 'B':
+				sem_post(&MUTEX_BASURA_MD);
+				break;
+			default:
+				log_error(logger, "NO TENDRIA QUE LLEGAR ACA!! (En recurso_actualizar_archivo");
+		}
+
 	}
 
 	log_debug(logger, "Finaliza recurso_consumir_cantidad(%s, %d)", recurso_data->nombre, cantidad);
@@ -1359,14 +1397,29 @@ int recurso_descartar(t_recurso_data* recurso_data, int cantidad)
 
 	if(cantidad == 0)
 	{
+		switch(recurso_data->caracter_llenado)
+		{
+			case 'O':
+				sem_wait(&MUTEX_OXIGENO_MD);
+				break;
+			case 'C':
+				sem_wait(&MUTEX_COMIDA_MD);
+				break;
+			case 'B':
+				sem_wait(&MUTEX_BASURA_MD);
+				break;
+			default:
+				log_error(logger, "NO TENDRIA QUE LLEGAR ACA!! (En recurso_actualizar_archivo");
+		}
+
+		recurso_validar_existencia_metadata_en_memoria(recurso_data);//BORRAR COMMENT -- invocacion valida si conviene/se supone que hay que trabajar to.do el tiempo con los datos del disco
+
 		if(utils_existe_en_disco(recurso_data->ruta_completa) == 0)
 		{
 			log_info(logger, "No existe el archivo %s como para descartarse", recurso_data->nombre_archivo);
 			log_debug(logger, "Saliendo de recurso_descartar(%s, %d)", recurso_data->nombre, cantidad);
 			return actualizacion_de_archivos_requerida;
 		}
-
-		recurso_validar_existencia_metadata_en_memoria(recurso_data);//BORRAR COMMENT -- invocacion valida si conviene/se supone que hay que trabajar to.do el tiempo con los datos del disco
 
 		if(metadata_tiene_caracteres_en_blocks(recurso_data->metadata))
 		{
@@ -1375,6 +1428,22 @@ int recurso_descartar(t_recurso_data* recurso_data, int cantidad)
 			actualizacion_de_archivos_requerida = 1;
 		}
 		recurso_descartar_archivo(recurso_data);
+
+		switch(recurso_data->caracter_llenado)
+		{
+			case 'O':
+				sem_post(&MUTEX_OXIGENO_MD);
+				break;
+			case 'C':
+				sem_post(&MUTEX_COMIDA_MD);
+				break;
+			case 'B':
+				sem_post(&MUTEX_BASURA_MD);
+				break;
+			default:
+				log_error(logger, "NO TENDRIA QUE LLEGAR ACA!! (En recurso_actualizar_archivo");
+		}
+
 	}
 	else
 	{
@@ -1642,8 +1711,11 @@ void bitacora_borrar_estructura_completa(t_bitacora_data* bitacora_data)
 int fsck_iniciar()
 {
 	log_debug(logger, "Se inicia fsck");
+	//munmap(blocks_address, blocks_size);
 
-	//blocks_actualizar_archivo();
+	//blocks_mapear_archivo_a_memoria();
+
+	blocks_actualizar_archivo();
 	sem_wait(&MUTEX_BLOCKS);
 	fsck_chequeo_de_sabotajes_en_superbloque();
 	fsck_chequeo_de_sabotajes_en_files();
@@ -1912,7 +1984,7 @@ void fsck_chequeo_de_sabotajes_en_files()
 {
 	int cantidad_recursos = recursos_cantidad();
 
-	for(int i = 0; i < cantidad_recursos; i++)
+	/*for(int i = 0; i < cantidad_recursos; i++)
 	{
 		t_recurso_data* recurso_data = &lista_recursos[i];
 		if(utils_existe_en_disco(recurso_data->ruta_completa))
@@ -1925,8 +1997,16 @@ void fsck_chequeo_de_sabotajes_en_files()
 		{
 			log_info(logger, "No existe en disco el archivo \"%s\" por lo tanto no pudo ser saboteado", recurso_data->nombre_archivo);
 		}
-	}
+	}*/
+	t_recurso_data* recurso_data = &lista_recursos[2];
+	recurso_validar_size(recurso_data);
 }
+
+//BLOCKS=[95,106,160,169]
+//MD5_ARCHIVO=9897fe5a672cd65d97e90a2b7dfa5750
+//SIZE=101
+//CARACTER_LLENADO=B
+//BLOCK_COUNT=4
 
 
 //Verifica el valor size del recurso dado por recurso_data respecto del valor que tendria que tener y lo reemplaze si difiere
@@ -1938,7 +2018,7 @@ void recurso_validar_size(t_recurso_data* recurso_data)
 
 	free(recurso_data->metadata->blocks);
 	recurso_data->metadata->blocks = string_duplicate(config_get_string_value(recurso_config, "BLOCKS"));
-
+log_info(logger, "size_actual %d", size_actual);
 	int size_real = recurso_obtener_size_real(recurso_data);
 
 	if(size_real != size_actual)
@@ -1974,21 +2054,28 @@ int recurso_obtener_size_real(t_recurso_data* recurso_data)
 		for(int i = 0; i < cantidad_bloques; i++)
 		{
 			bloque = atoi(lista_bloques[i]);
+			log_info(logger, "bloque %d", bloque);
 			if(blocks_esta_lleno_bloque(bloque) == 0)
 			{
-				break;
+				log_info(logger, "bloque %d NO esta lleno", bloque);
+				//break;
+				i = cantidad_bloques;
 			}
 		}
 
 		if(blocks_esta_lleno_bloque(bloque) == 0)
 		{
 			int cantidad_en_bloque_incompleto = metadata_cantidad_del_caracter_en_bloque(recurso_data->caracter_llenado, bloque);
+			log_info(logger, "cantidad_en_bloque_incompleto %d ", cantidad_en_bloque_incompleto);
 			int cantidad_restante_de_bloques = cantidad_bloques -  1;
+			log_info(logger, "cantidad_restante_de_bloques %d ", cantidad_restante_de_bloques);
 			size_real += cantidad_en_bloque_incompleto + cantidad_restante_de_bloques * superbloque.block_size;
+			log_info(logger, "size_real %d ", size_real);
 		}
 		else
 		{
 			size_real += cantidad_bloques * superbloque.block_size;
+			log_info(logger, "size_real 2   %d ", size_real);
 		}
 	}
 
@@ -2001,12 +2088,13 @@ int blocks_esta_lleno_bloque(int bloque)
 	int esta_lleno = 0;
 	int posicion_en_bloque = 0;
 	int posicion_inicio_bloque = bloque * superbloque.block_size;
-	char* posicion_absoluta = blocks_address + posicion_en_bloque + posicion_en_bloque;
-
+	char* posicion_absoluta = blocks_address + posicion_inicio_bloque + posicion_en_bloque;
+	printf("%d", posicion_inicio_bloque);
 	while((*posicion_absoluta) != '\0' && posicion_en_bloque < superbloque.block_size)
 	{
 		posicion_en_bloque++;
 		posicion_absoluta++;
+		printf("%d %c  -  ", posicion_en_bloque, *posicion_absoluta);
 	}
 
 	if(posicion_en_bloque == superbloque.block_size)
@@ -2074,10 +2162,12 @@ void recurso_validar_blocks(t_recurso_data* recurso_data)
 	free(recurso_md->blocks);
 	recurso_levantar_de_archivo_a_memoria_valores_variables(recurso_data);
 
-	char md5_segun_blocks_actual[33];
+	//char md5_segun_blocks_actual[33];
+	char* md5_segun_blocks_actual = malloc(33);
 	if(recurso_md->size > 0)
 	{
 		char* concatenado_segun_blocks_actual = blocks_obtener_concatenado_de_recurso(recurso_data->metadata);
+		log_info(logger, "concatenado_segun_blocks_actual %s", concatenado_segun_blocks_actual);
 		cadena_calcular_md5(concatenado_segun_blocks_actual, recurso_data->metadata->size, md5_segun_blocks_actual);
 		free(concatenado_segun_blocks_actual);
 	}
@@ -2085,7 +2175,8 @@ void recurso_validar_blocks(t_recurso_data* recurso_data)
 	{
 		strcpy(md5_segun_blocks_actual, "d41d8cd98f00b204e9800998ecf8427e");
 	}
-
+	log_info(logger,"recurso_md->md5_archivo: %s\n", recurso_md->md5_archivo);
+	log_info(logger,"md5_segun_blocks_actual: %s\n", md5_segun_blocks_actual);
 	if(strcmp(recurso_md->md5_archivo, md5_segun_blocks_actual) != 0)
 	{
 		log_info(logger, "El recurso %s tiene su blocks saboteado, pero no te preocupes, ya lo arreglaremos restaurando los bloques en Blocks.ims",
@@ -2098,7 +2189,14 @@ void recurso_validar_blocks(t_recurso_data* recurso_data)
 	{
 		log_info(logger, "Por lo menos el blocks del recurso %s no fue alterado, enhorabuena!!!", recurso_data->nombre);
 	}
+	free(md5_segun_blocks_actual);
 }
+
+//recurso_md->md5_archivo: a7fb1584361efae4ca1daf6ac6314004
+//md5_segun_blocks_actual: a77ea12138fd7acaf8337832b8691cfa
+//
+//recurso_md->md5_archivo: a7fb1584361efae4ca1daf6ac6314004
+//md5_segun_blocks_actual: aa7f086b1a2f0dd0e9f02683793057e1
 
 
 void metadata_restaurar_en_blocks(t_recurso_md* recurso_md)

@@ -1,21 +1,11 @@
-[INFO] 19:47:57:647 discordiador/(20635:20639): in funcion_sabotaje
-[INFO] 19:47:57:660 discordiador/(20635:20638): in menu_discordiador
-[INFO] 19:47:58:527 discordiador/(20635:20638): Memoria asignada
-[INFO] 19:47:58:532 discordiador/(20635:20638): Memoria asignada
-[INFO] 19:47:59:660 discordiador/(20635:20648): TRIPU 1  tarea recibida: GENERAR_OXIGENO 12;0;0;5
-[INFO] 19:47:59:664 discordiador/(20635:20649): TRIPU 2  tarea recibida: GENERAR_OXIGENO 12;0;0;5
-[INFO] 19:47:59:677 discordiador/(20635:20650): TRIPU 3  tarea recibida: GENERAR_OXIGENO 12;0;0;5
-[INFO] 19:47:59:684 discordiador/(20635:20651): TRIPU 4  tarea recibida: JUEGA_GOD_OF_WAR;9;9;6
-[INFO] 19:47:59:707 discordiador/(20635:20652): TRIPU 5  tarea recibida: JUEGA_GOD_OF_WAR;9;9;6
-[INFO] 19:47:59:711 discordiador/(20635:20653): TRIPU 6  tarea recibida: JUEGA_GOD_OF_WAR;9;9;6
-[INFO] 19:48:05:698 discordiador/(20635:20642): TRIPU 1  tarea recibida: JUEGA_FORZA_HORIZON;0;0;6
-[INFO] 19:48:10:707 discordiador/(20635:20642): TRIPU 3  tarea recibida: JUEGA_FORZA_HORIZON;0;0;6
-[INFO] 19:48:15:714 discordiador/(20635:20642): TRIPU 2  tarea recibida: JUEGA_FORZA_HORIZON;0;0;6
-[INFO] 19:48:24:808 discordiador/(20635:20651): TRIPU 4  tarea recibida: GENERAR_OXIGENO 8;9;9;5
-[INFO] 19:48:24:818 discordiador/(20635:20653): TRIPU 6  tarea recibida: GENERAR_OXIGENO 8;9;9;5
-[INFO] 19:48:24:825 discordiador/(20635:20652): TRIPU 5  tarea recibida: GENERAR_OXIGENO 8;9;9;5
-[INFO] 19:48:30:843 discordiador/(20635:20642): TRIPU 4  tarea recibida: JUEGA_UNCHARTED;9;9;6
-[INFO] 19:48:31:838 discordiador/(20635:20650): TRIPU 3  tarea recibida: GENERAR_COMIDA 12;0;0;5
-[INFO] 19:48:31:839 discordiador/(20635:20649): TRIPU 2  tarea recibida: GENERAR_COMIDA 12;0;0;5
-[INFO] 19:48:31:847 discordiador/(20635:20648): TRIPU 1  tarea recibida: GENERAR_COMIDA 12;0;0;5
-[INFO] 19:48:32:109 discordiador/(20635:20639): posicion_sabotaje_char (null)
+[INFO] 00:40:20:524 discordiador/(28671:28675): in funcion_sabotaje
+[INFO] 00:40:20:525 discordiador/(28671:28674): in menu_discordiador
+[INFO] 00:40:21:712 discordiador/(28671:28674): Memoria asignada
+[INFO] 00:40:21:717 discordiador/(28671:28674): Memoria asignada
+[INFO] 00:40:22:221 discordiador/(28671:28679): TRIPU 1  tarea recibida: GENERAR_OXIGENO 12;0;0;5
+[INFO] 00:40:22:226 discordiador/(28671:28680): TRIPU 2  tarea recibida: GENERAR_OXIGENO 12;0;0;5
+[INFO] 00:40:22:228 discordiador/(28671:28681): TRIPU 3  tarea recibida: GENERAR_OXIGENO 12;0;0;5
+[INFO] 00:40:22:238 discordiador/(28671:28682): TRIPU 4  tarea recibida: JUEGA_GOD_OF_WAR;9;9;6
+[INFO] 00:40:22:240 discordiador/(28671:28683): TRIPU 5  tarea recibida: JUEGA_GOD_OF_WAR;9;9;6
+[INFO] 00:40:22:241 discordiador/(28671:28684): TRIPU 6  tarea recibida: JUEGA_GOD_OF_WAR;9;9;6
+[INFO] 00:40:26:791 discordiador/(28671:28675): posicion_sabotaje_char (null)

@@ -2,6 +2,9 @@
 
 int main(void)
 {
+	FILE* archivo = fopen(ARCHIVO_LOGS,"w");
+	fclose(archivo);
+	//logger = log_create("discordiador.log","discordiador",1,LOG_LEVEL_INFO);
 	logger = log_create(ARCHIVO_LOGS, PROGRAMA, LOGS_EN_CONSOLA, NIVEL_DE_LOGS_MINIMO);
 
 	if(logger == NULL)
