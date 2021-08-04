@@ -1380,6 +1380,8 @@ void destruir_marcos(marco* marcos){
 
 void destruir_tabla(tabla_paginacion* una_tabla){
 	list_destroy_and_destroy_elements(una_tabla->lista_marcos, (void*) destruir_marcos);
+	free(una_tabla);
+
 }
 
 void destruir_lista_paquete(char* contenido){
@@ -1452,9 +1454,17 @@ int funcion_cliente_paginacion(int socket_cliente){
 
 				lista = recibir_paquete(socket_cliente);
 				char letra1 = 48;
-				int tripulante_id3 = (int)list_get(lista,0);
-				int patota_id3= (int)list_get(lista,1);
-				log_info(logger, "tid %d  pid %d", tripulante_id3, patota_id3);
+				char* pid_char1;
+				char* tid_char1;
+
+				tid_char1 = list_get(lista,0);
+				int tripulante_id3 = (int)atoi(tid_char1);
+				//free(tid_char);
+				pid_char1 = list_get(lista,1);
+				int patota_id3 = (int)atoi(pid_char1);
+
+
+				log_info(logger, "Se solicita expulsar a Tripulante tid %d  Patota pid %d", tripulante_id3, patota_id3);
 
 				//Descomentar mapa
 				/*
@@ -1469,8 +1479,15 @@ int funcion_cliente_paginacion(int socket_cliente){
 				tripulante->prox_instruccion=0;
 				actualizar_tripulante(tripulante,patota_id3,&configuracion);
 				free(tripulante);
-				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
+				log_info(logger,"Eliminando tripulante %d",tripulante_id3);
+
+				//Revisar para el caso de Patotas con mas de 1 tripulante
+				tabla_paginacion* una_tabla= (tabla_paginacion*)list_get(tabla_paginacion_ppal, posicion_patota(patota_id3, tabla_paginacion_ppal));
+
+				list_remove_and_destroy_element(tabla_paginacion_ppal, posicion_patota(patota_id3, tabla_paginacion_ppal),(void*)destruir_tabla );
+
+				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 
 				//return 0;//para que termine el hilo se supone
@@ -1634,6 +1651,20 @@ int funcion_cliente_paginacion(int socket_cliente){
 
 				numero_mapa=1;
 				*/
+
+				list_destroy_and_destroy_elements(tabla_paginacion_ppal, (void*)destruir_tabla);
+					if(list_size(tabla_paginacion_ppal) > 1){ //todavia tiene algun espacio de memoria ocupado
+					//list_destroy_and_destroy_elements(tabla_espacios_de_memoria, (void*)destruir_espacio_memoria);
+						for(int i=0; i < list_size(tabla_paginacion_ppal); i++){
+							tabla_paginacion* tabla_borrar = (tabla_paginacion*)list_remove(tabla_paginacion_ppal, i);
+								destruir_tabla(tabla_borrar);
+
+								}
+								}else{ //solo tiene el espacio entero de la memoria total
+									tabla_paginacion* tabla_borrar = (tabla_paginacion*)list_remove(tabla_paginacion_ppal, 0);
+									destruir_tabla(tabla_borrar);
+								}
+
 				shutdown(socket_servidor, SHUT_RD);
 				close(socket_cliente);
 				return EXIT_FAILURE;
@@ -2952,7 +2983,7 @@ int reemplazo_lru(){
 	   int pagina=0;
 	   int marco_patota=0;
 	   int lru_actual = contador_lru;
-	   marco* lru_m=malloc(sizeof(marco));
+	   marco* lru_m;
 	   for(int i=0; i<list_size(tabla_paginacion_ppal);i++){
 		   tabla_paginacion* una_tabla =(tabla_paginacion*)list_get(tabla_paginacion_ppal,i);
 		   for(int j=0; j<list_size(una_tabla->lista_marcos);j++){
@@ -2968,7 +2999,7 @@ int reemplazo_lru(){
 
 	   lru_m->ubicacion=MEM_SECUNDARIA;
 	   nro_marco=lru_m->id_marco;
-	   void* contenidoAEscribir = calloc(configuracion.tamanio_pag,1);
+	   void* contenidoAEscribir = malloc(configuracion.tamanio_pag);
 	//   mem_hexdump(contenidoAEscribir, configuracion.tamanio_pag);
 
 	   memcpy(contenidoAEscribir,configuracion.posicion_inicial + nro_marco*(configuracion.tamanio_pag) ,configuracion.tamanio_pag*sizeof(char));
@@ -2984,7 +3015,7 @@ int reemplazo_lru(){
 	  list_replace(una_tabla->lista_marcos, marco_patota,(void*) lru_m);
 	  // list_add_in_index(tabla_paginacion_ppal,pagina ,(void*)una_tabla);
 	  //sleep(2);
-	  //free(contenidoAEscribir);
+	  free(contenidoAEscribir);
 	   return nro_marco;
 }
 
