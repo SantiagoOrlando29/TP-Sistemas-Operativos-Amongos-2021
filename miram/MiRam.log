@@ -1,139 +1,852 @@
-[INFO] 11:43:55:949 MiRam/(11107:11107): pid 11107  
+[INFO] 19:09:42:234 MiRam/(22185:22185): pid 22185  
 
-[INFO] 11:43:55:950 MiRam/(11107:11107): ---------  MEMORIA  --------------------
-[INFO] 11:43:55:950 MiRam/(11107:11107): base:   0, tam: 2048, libre: true 
-[INFO] 11:43:55:950 MiRam/(11107:11107): ----------------------------------------
-[INFO] 11:43:55:950 MiRam/(11107:11108): Servidor iniciando
-[INFO] 11:43:55:950 MiRam/(11107:11108): Servidor MiRam encendido
-[INFO] 11:43:55:950 MiRam/(11107:11108): socket_servidor 4
-[INFO] 11:44:02:762 MiRam/(11107:11108): socket_cliente 5
-[INFO] 11:44:02:762 MiRam/(11107:11108): Estableciendo conexión desde 21692
-[INFO] 11:44:02:762 MiRam/(11107:11108): Creando hilo
-[INFO] 11:44:02:767 MiRam/(11107:11124): Se conecto este socket a mi 5
-[INFO] 11:44:04:248 MiRam/(11107:11124): 
+[INFO] 19:09:42:322 MiRam/(22185:22185): ---------  MEMORIA  --------------------
+[INFO] 19:09:42:326 MiRam/(22185:22185): base:   0, tam: 16384, libre: true 
+[INFO] 19:09:42:327 MiRam/(22185:22185): ----------------------------------------
+[INFO] 19:09:42:337 MiRam/(22185:22186): Servidor iniciando
+[INFO] 19:09:42:348 MiRam/(22185:22186): Servidor MiRam encendido
+[INFO] 19:09:42:348 MiRam/(22185:22186): socket_servidor 4
+[INFO] 19:09:46:545 MiRam/(22185:22186): socket_cliente 5
+[INFO] 19:09:46:545 MiRam/(22185:22186): Estableciendo conexión desde 5319
+[INFO] 19:09:46:546 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:46:550 MiRam/(22185:22188): Se conecto este socket a mi 5
+[INFO] 19:09:48:170 MiRam/(22185:22188): 
 El numero de la patota recibida es 1
-[INFO] 11:44:04:249 MiRam/(11107:11124): ID 1 
-[INFO] 11:44:04:249 MiRam/(11107:11124): posicion x: 0 
-[INFO] 11:44:04:249 MiRam/(11107:11124): posicion y: 0 
-[INFO] 11:44:04:249 MiRam/(11107:11124): Status: N 
-[INFO] 11:44:04:249 MiRam/(11107:11124): n patota: 1 
+[INFO] 19:09:48:175 MiRam/(22185:22188): ID 1 
+[INFO] 19:09:48:176 MiRam/(22185:22188): posicion x: 9 
+[INFO] 19:09:48:176 MiRam/(22185:22188): posicion y: 9 
+[INFO] 19:09:48:177 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:177 MiRam/(22185:22188): n patota: 1 
 
-[INFO] 11:44:04:249 MiRam/(11107:11124): espacio tareas todo ok
-[INFO] 11:44:04:249 MiRam/(11107:11124): ---------  MEMORIA  --------------------
-[INFO] 11:44:04:249 MiRam/(11107:11124): base:   0, tam:  8, libre: false 
-[INFO] 11:44:04:249 MiRam/(11107:11124): base:   8, tam: 24, libre: false 
-[INFO] 11:44:04:249 MiRam/(11107:11124): base:  32, tam: 21, libre: false 
-[INFO] 11:44:04:249 MiRam/(11107:11124): base:  53, tam: 1995, libre: true 
-[INFO] 11:44:04:249 MiRam/(11107:11124): ----------------------------------------
-[INFO] 11:44:04:249 MiRam/(11107:11124): Tabla de segmentos correspondiente a patota 1
-[INFO] 11:44:04:249 MiRam/(11107:11124): Base 0   Tamanio 8
-[INFO] 11:44:04:249 MiRam/(11107:11124): Base 8   Tamanio 24
-[INFO] 11:44:04:249 MiRam/(11107:11124): Base 32   Tamanio 21
-[INFO] 11:44:04:249 MiRam/(11107:11124): ---------------------------------------
-[INFO] 11:44:04:250 MiRam/(11107:11124): Se asigno espacio de memoria a todo 
+[INFO] 19:09:48:178 MiRam/(22185:22188): ID 2 
+[INFO] 19:09:48:178 MiRam/(22185:22188): posicion x: 0 
+[INFO] 19:09:48:178 MiRam/(22185:22188): posicion y: 0 
+[INFO] 19:09:48:179 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:179 MiRam/(22185:22188): n patota: 1 
 
-[INFO] 11:44:04:251 MiRam/(11107:11124): 
+[INFO] 19:09:48:179 MiRam/(22185:22188): ID 3 
+[INFO] 19:09:48:180 MiRam/(22185:22188): posicion x: 5 
+[INFO] 19:09:48:180 MiRam/(22185:22188): posicion y: 5 
+[INFO] 19:09:48:180 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:180 MiRam/(22185:22188): n patota: 1 
+
+[INFO] 19:09:48:188 MiRam/(22185:22188): espacio tareas todo ok
+[INFO] 19:09:48:192 MiRam/(22185:22188): ---------  MEMORIA  --------------------
+[INFO] 19:09:48:192 MiRam/(22185:22188): base:   0, tam:  8, libre: false 
+[INFO] 19:09:48:193 MiRam/(22185:22188): base:   8, tam: 237, libre: false 
+[INFO] 19:09:48:193 MiRam/(22185:22188): base: 245, tam: 21, libre: false 
+[INFO] 19:09:48:193 MiRam/(22185:22188): base: 266, tam: 21, libre: false 
+[INFO] 19:09:48:194 MiRam/(22185:22188): base: 287, tam: 21, libre: false 
+[INFO] 19:09:48:194 MiRam/(22185:22188): base: 308, tam: 16076, libre: true 
+[INFO] 19:09:48:194 MiRam/(22185:22188): ----------------------------------------
+[INFO] 19:09:48:195 MiRam/(22185:22188): Tabla de segmentos correspondiente a patota 1
+[INFO] 19:09:48:195 MiRam/(22185:22188): Base 0   Tamanio 8
+[INFO] 19:09:48:196 MiRam/(22185:22188): Base 8   Tamanio 237
+[INFO] 19:09:48:199 MiRam/(22185:22188): Base 245   Tamanio 21
+[INFO] 19:09:48:199 MiRam/(22185:22188): Base 266   Tamanio 21
+[INFO] 19:09:48:199 MiRam/(22185:22188): Base 287   Tamanio 21
+[INFO] 19:09:48:200 MiRam/(22185:22188): ---------------------------------------
+[INFO] 19:09:48:201 MiRam/(22185:22188): Se asigno espacio de memoria a todo 
+
+[INFO] 19:09:48:244 MiRam/(22185:22188): 
 El numero de la patota recibida es 2
-[INFO] 11:44:04:251 MiRam/(11107:11124): ID 2 
-[INFO] 11:44:04:251 MiRam/(11107:11124): posicion x: 8 
-[INFO] 11:44:04:251 MiRam/(11107:11124): posicion y: 0 
-[INFO] 11:44:04:251 MiRam/(11107:11124): Status: N 
-[INFO] 11:44:04:251 MiRam/(11107:11124): n patota: 2 
+[INFO] 19:09:48:245 MiRam/(22185:22188): ID 4 
+[INFO] 19:09:48:245 MiRam/(22185:22188): posicion x: 4 
+[INFO] 19:09:48:245 MiRam/(22185:22188): posicion y: 0 
+[INFO] 19:09:48:246 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:246 MiRam/(22185:22188): n patota: 2 
 
-[INFO] 11:44:04:251 MiRam/(11107:11124): espacio tareas todo ok
-[INFO] 11:44:04:251 MiRam/(11107:11124): ---------  MEMORIA  --------------------
-[INFO] 11:44:04:251 MiRam/(11107:11124): base:   0, tam:  8, libre: false 
-[INFO] 11:44:04:252 MiRam/(11107:11124): base:   8, tam: 24, libre: false 
-[INFO] 11:44:04:252 MiRam/(11107:11124): base:  32, tam: 21, libre: false 
-[INFO] 11:44:04:252 MiRam/(11107:11124): base:  53, tam:  8, libre: false 
-[INFO] 11:44:04:252 MiRam/(11107:11124): base:  61, tam: 25, libre: false 
-[INFO] 11:44:04:252 MiRam/(11107:11124): base:  86, tam: 21, libre: false 
-[INFO] 11:44:04:252 MiRam/(11107:11124): base: 107, tam: 1941, libre: true 
-[INFO] 11:44:04:252 MiRam/(11107:11124): ----------------------------------------
-[INFO] 11:44:04:252 MiRam/(11107:11124): Tabla de segmentos correspondiente a patota 2
-[INFO] 11:44:04:252 MiRam/(11107:11124): Base 53   Tamanio 8
-[INFO] 11:44:04:252 MiRam/(11107:11124): Base 61   Tamanio 25
-[INFO] 11:44:04:252 MiRam/(11107:11124): Base 86   Tamanio 21
-[INFO] 11:44:04:252 MiRam/(11107:11124): ---------------------------------------
-[INFO] 11:44:04:252 MiRam/(11107:11124): Se asigno espacio de memoria a todo 
+[INFO] 19:09:48:246 MiRam/(22185:22188): ID 5 
+[INFO] 19:09:48:247 MiRam/(22185:22188): posicion x: 2 
+[INFO] 19:09:48:247 MiRam/(22185:22188): posicion y: 6 
+[INFO] 19:09:48:247 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:248 MiRam/(22185:22188): n patota: 2 
 
-[INFO] 11:44:04:254 MiRam/(11107:11124): 
+[INFO] 19:09:48:248 MiRam/(22185:22188): ID 6 
+[INFO] 19:09:48:248 MiRam/(22185:22188): posicion x: 8 
+[INFO] 19:09:48:249 MiRam/(22185:22188): posicion y: 2 
+[INFO] 19:09:48:249 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:249 MiRam/(22185:22188): n patota: 2 
+
+[INFO] 19:09:48:250 MiRam/(22185:22188): espacio tareas todo ok
+[INFO] 19:09:48:251 MiRam/(22185:22188): ---------  MEMORIA  --------------------
+[INFO] 19:09:48:252 MiRam/(22185:22188): base:   0, tam:  8, libre: false 
+[INFO] 19:09:48:252 MiRam/(22185:22188): base:   8, tam: 237, libre: false 
+[INFO] 19:09:48:252 MiRam/(22185:22188): base: 245, tam: 21, libre: false 
+[INFO] 19:09:48:252 MiRam/(22185:22188): base: 266, tam: 21, libre: false 
+[INFO] 19:09:48:253 MiRam/(22185:22188): base: 287, tam: 21, libre: false 
+[INFO] 19:09:48:253 MiRam/(22185:22188): base: 308, tam:  8, libre: false 
+[INFO] 19:09:48:253 MiRam/(22185:22188): base: 316, tam: 131, libre: false 
+[INFO] 19:09:48:254 MiRam/(22185:22188): base: 447, tam: 21, libre: false 
+[INFO] 19:09:48:254 MiRam/(22185:22188): base: 468, tam: 21, libre: false 
+[INFO] 19:09:48:254 MiRam/(22185:22188): base: 489, tam: 21, libre: false 
+[INFO] 19:09:48:254 MiRam/(22185:22188): base: 510, tam: 15874, libre: true 
+[INFO] 19:09:48:255 MiRam/(22185:22188): ----------------------------------------
+[INFO] 19:09:48:255 MiRam/(22185:22188): Tabla de segmentos correspondiente a patota 2
+[INFO] 19:09:48:255 MiRam/(22185:22188): Base 308   Tamanio 8
+[INFO] 19:09:48:256 MiRam/(22185:22188): Base 316   Tamanio 131
+[INFO] 19:09:48:256 MiRam/(22185:22188): Base 447   Tamanio 21
+[INFO] 19:09:48:256 MiRam/(22185:22188): Base 468   Tamanio 21
+[INFO] 19:09:48:257 MiRam/(22185:22188): Base 489   Tamanio 21
+[INFO] 19:09:48:257 MiRam/(22185:22188): ---------------------------------------
+[INFO] 19:09:48:257 MiRam/(22185:22188): Se asigno espacio de memoria a todo 
+
+[INFO] 19:09:48:285 MiRam/(22185:22188): 
 El numero de la patota recibida es 3
-[INFO] 11:44:04:255 MiRam/(11107:11124): ID 3 
-[INFO] 11:44:04:255 MiRam/(11107:11124): posicion x: 8 
-[INFO] 11:44:04:255 MiRam/(11107:11124): posicion y: 8 
-[INFO] 11:44:04:255 MiRam/(11107:11124): Status: N 
-[INFO] 11:44:04:255 MiRam/(11107:11124): n patota: 3 
+[INFO] 19:09:48:286 MiRam/(22185:22188): ID 7 
+[INFO] 19:09:48:286 MiRam/(22185:22188): posicion x: 2 
+[INFO] 19:09:48:286 MiRam/(22185:22188): posicion y: 3 
+[INFO] 19:09:48:286 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:287 MiRam/(22185:22188): n patota: 3 
 
-[INFO] 11:44:04:255 MiRam/(11107:11124): espacio tareas todo ok
-[INFO] 11:44:04:255 MiRam/(11107:11124): ---------  MEMORIA  --------------------
-[INFO] 11:44:04:255 MiRam/(11107:11124): base:   0, tam:  8, libre: false 
-[INFO] 11:44:04:255 MiRam/(11107:11124): base:   8, tam: 24, libre: false 
-[INFO] 11:44:04:255 MiRam/(11107:11124): base:  32, tam: 21, libre: false 
-[INFO] 11:44:04:255 MiRam/(11107:11124): base:  53, tam:  8, libre: false 
-[INFO] 11:44:04:255 MiRam/(11107:11124): base:  61, tam: 25, libre: false 
-[INFO] 11:44:04:255 MiRam/(11107:11124): base:  86, tam: 21, libre: false 
-[INFO] 11:44:04:255 MiRam/(11107:11124): base: 107, tam:  8, libre: false 
-[INFO] 11:44:04:255 MiRam/(11107:11124): base: 115, tam: 28, libre: false 
-[INFO] 11:44:04:256 MiRam/(11107:11124): base: 143, tam: 21, libre: false 
-[INFO] 11:44:04:256 MiRam/(11107:11124): base: 164, tam: 1884, libre: true 
-[INFO] 11:44:04:256 MiRam/(11107:11124): ----------------------------------------
-[INFO] 11:44:04:256 MiRam/(11107:11124): Tabla de segmentos correspondiente a patota 3
-[INFO] 11:44:04:256 MiRam/(11107:11124): Base 107   Tamanio 8
-[INFO] 11:44:04:256 MiRam/(11107:11124): Base 115   Tamanio 28
-[INFO] 11:44:04:256 MiRam/(11107:11124): Base 143   Tamanio 21
-[INFO] 11:44:04:256 MiRam/(11107:11124): ---------------------------------------
-[INFO] 11:44:04:256 MiRam/(11107:11124): Se asigno espacio de memoria a todo 
+[INFO] 19:09:48:287 MiRam/(22185:22188): ID 8 
+[INFO] 19:09:48:287 MiRam/(22185:22188): posicion x: 5 
+[INFO] 19:09:48:288 MiRam/(22185:22188): posicion y: 8 
+[INFO] 19:09:48:288 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:288 MiRam/(22185:22188): n patota: 3 
 
-[INFO] 11:44:04:257 MiRam/(11107:11124): 
+[INFO] 19:09:48:289 MiRam/(22185:22188): ID 9 
+[INFO] 19:09:48:289 MiRam/(22185:22188): posicion x: 5 
+[INFO] 19:09:48:289 MiRam/(22185:22188): posicion y: 3 
+[INFO] 19:09:48:290 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:290 MiRam/(22185:22188): n patota: 3 
+
+[INFO] 19:09:48:291 MiRam/(22185:22188): espacio tareas todo ok
+[INFO] 19:09:48:292 MiRam/(22185:22188): ---------  MEMORIA  --------------------
+[INFO] 19:09:48:295 MiRam/(22185:22188): base:   0, tam:  8, libre: false 
+[INFO] 19:09:48:295 MiRam/(22185:22188): base:   8, tam: 237, libre: false 
+[INFO] 19:09:48:295 MiRam/(22185:22188): base: 245, tam: 21, libre: false 
+[INFO] 19:09:48:298 MiRam/(22185:22188): base: 266, tam: 21, libre: false 
+[INFO] 19:09:48:298 MiRam/(22185:22188): base: 287, tam: 21, libre: false 
+[INFO] 19:09:48:299 MiRam/(22185:22188): base: 308, tam:  8, libre: false 
+[INFO] 19:09:48:299 MiRam/(22185:22188): base: 316, tam: 131, libre: false 
+[INFO] 19:09:48:299 MiRam/(22185:22188): base: 447, tam: 21, libre: false 
+[INFO] 19:09:48:299 MiRam/(22185:22188): base: 468, tam: 21, libre: false 
+[INFO] 19:09:48:300 MiRam/(22185:22188): base: 489, tam: 21, libre: false 
+[INFO] 19:09:48:300 MiRam/(22185:22188): base: 510, tam:  8, libre: false 
+[INFO] 19:09:48:301 MiRam/(22185:22188): base: 518, tam: 337, libre: false 
+[INFO] 19:09:48:301 MiRam/(22185:22188): base: 855, tam: 21, libre: false 
+[INFO] 19:09:48:301 MiRam/(22185:22188): base: 876, tam: 21, libre: false 
+[INFO] 19:09:48:301 MiRam/(22185:22188): base: 897, tam: 21, libre: false 
+[INFO] 19:09:48:302 MiRam/(22185:22188): base: 918, tam: 15466, libre: true 
+[INFO] 19:09:48:302 MiRam/(22185:22188): ----------------------------------------
+[INFO] 19:09:48:302 MiRam/(22185:22188): Tabla de segmentos correspondiente a patota 3
+[INFO] 19:09:48:303 MiRam/(22185:22188): Base 510   Tamanio 8
+[INFO] 19:09:48:303 MiRam/(22185:22188): Base 518   Tamanio 337
+[INFO] 19:09:48:303 MiRam/(22185:22188): Base 855   Tamanio 21
+[INFO] 19:09:48:304 MiRam/(22185:22188): Base 876   Tamanio 21
+[INFO] 19:09:48:304 MiRam/(22185:22188): Base 897   Tamanio 21
+[INFO] 19:09:48:304 MiRam/(22185:22188): ---------------------------------------
+[INFO] 19:09:48:305 MiRam/(22185:22188): Se asigno espacio de memoria a todo 
+
+[INFO] 19:09:48:331 MiRam/(22185:22188): 
 El numero de la patota recibida es 4
-[INFO] 11:44:04:257 MiRam/(11107:11124): ID 4 
-[INFO] 11:44:04:257 MiRam/(11107:11124): posicion x: 0 
-[INFO] 11:44:04:257 MiRam/(11107:11124): posicion y: 8 
-[INFO] 11:44:04:257 MiRam/(11107:11124): Status: N 
-[INFO] 11:44:04:257 MiRam/(11107:11124): n patota: 4 
+[INFO] 19:09:48:332 MiRam/(22185:22188): ID 10 
+[INFO] 19:09:48:332 MiRam/(22185:22188): posicion x: 0 
+[INFO] 19:09:48:332 MiRam/(22185:22188): posicion y: 9 
+[INFO] 19:09:48:332 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:333 MiRam/(22185:22188): n patota: 4 
 
-[INFO] 11:44:04:257 MiRam/(11107:11124): espacio tareas todo ok
-[INFO] 11:44:04:257 MiRam/(11107:11124): ---------  MEMORIA  --------------------
-[INFO] 11:44:04:257 MiRam/(11107:11124): base:   0, tam:  8, libre: false 
-[INFO] 11:44:04:257 MiRam/(11107:11124): base:   8, tam: 24, libre: false 
-[INFO] 11:44:04:257 MiRam/(11107:11124): base:  32, tam: 21, libre: false 
-[INFO] 11:44:04:257 MiRam/(11107:11124): base:  53, tam:  8, libre: false 
-[INFO] 11:44:04:257 MiRam/(11107:11124): base:  61, tam: 25, libre: false 
-[INFO] 11:44:04:257 MiRam/(11107:11124): base:  86, tam: 21, libre: false 
-[INFO] 11:44:04:257 MiRam/(11107:11124): base: 107, tam:  8, libre: false 
-[INFO] 11:44:04:257 MiRam/(11107:11124): base: 115, tam: 28, libre: false 
-[INFO] 11:44:04:257 MiRam/(11107:11124): base: 143, tam: 21, libre: false 
-[INFO] 11:44:04:257 MiRam/(11107:11124): base: 164, tam:  8, libre: false 
-[INFO] 11:44:04:257 MiRam/(11107:11124): base: 172, tam: 21, libre: false 
-[INFO] 11:44:04:258 MiRam/(11107:11124): base: 193, tam: 21, libre: false 
-[INFO] 11:44:04:258 MiRam/(11107:11124): base: 214, tam: 1834, libre: true 
-[INFO] 11:44:04:258 MiRam/(11107:11124): ----------------------------------------
-[INFO] 11:44:04:258 MiRam/(11107:11124): Tabla de segmentos correspondiente a patota 4
-[INFO] 11:44:04:258 MiRam/(11107:11124): Base 164   Tamanio 8
-[INFO] 11:44:04:258 MiRam/(11107:11124): Base 172   Tamanio 21
-[INFO] 11:44:04:258 MiRam/(11107:11124): Base 193   Tamanio 21
-[INFO] 11:44:04:258 MiRam/(11107:11124): ---------------------------------------
-[INFO] 11:44:04:258 MiRam/(11107:11124): Se asigno espacio de memoria a todo 
+[INFO] 19:09:48:333 MiRam/(22185:22188): ID 11 
+[INFO] 19:09:48:334 MiRam/(22185:22188): posicion x: 4 
+[INFO] 19:09:48:334 MiRam/(22185:22188): posicion y: 4 
+[INFO] 19:09:48:334 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:334 MiRam/(22185:22188): n patota: 4 
 
-[INFO] 11:44:05:434 MiRam/(11107:11108): socket_cliente 7
-[INFO] 11:44:05:434 MiRam/(11107:11108): Estableciendo conexión desde 23228
-[INFO] 11:44:05:434 MiRam/(11107:11108): Creando hilo
-[INFO] 11:44:05:437 MiRam/(11107:11133): Se conecto este socket a mi 7
-[INFO] 11:44:05:438 MiRam/(11107:11108): socket_cliente 8
-[INFO] 11:44:05:438 MiRam/(11107:11108): Estableciendo conexión desde 24252
-[INFO] 11:44:05:438 MiRam/(11107:11108): Creando hilo
-[INFO] 11:44:05:439 MiRam/(11107:11135): Se conecto este socket a mi 8
-[INFO] 11:44:05:440 MiRam/(11107:11108): socket_cliente 9
-[INFO] 11:44:05:440 MiRam/(11107:11108): Estableciendo conexión desde 25276
-[INFO] 11:44:05:440 MiRam/(11107:11108): Creando hilo
-[INFO] 11:44:05:441 MiRam/(11107:11137): Se conecto este socket a mi 9
-[INFO] 11:44:05:442 MiRam/(11107:11108): socket_cliente 10
-[INFO] 11:44:05:442 MiRam/(11107:11108): Estableciendo conexión desde 26300
-[INFO] 11:44:05:442 MiRam/(11107:11108): Creando hilo
-[INFO] 11:44:05:458 MiRam/(11107:11140): Se conecto este socket a mi 10
-[WARNING] 11:59:25:224 MiRam/(11107:11140): el cliente se desconecto.
-[WARNING] 11:59:25:224 MiRam/(11107:11137): el cliente se desconecto.
-[WARNING] 11:59:25:224 MiRam/(11107:11135): el cliente se desconecto.
-[WARNING] 11:59:25:224 MiRam/(11107:11133): el cliente se desconecto.
-[WARNING] 11:59:25:224 MiRam/(11107:11124): el cliente se desconecto.
+[INFO] 19:09:48:335 MiRam/(22185:22188): ID 12 
+[INFO] 19:09:48:335 MiRam/(22185:22188): posicion x: 9 
+[INFO] 19:09:48:335 MiRam/(22185:22188): posicion y: 0 
+[INFO] 19:09:48:336 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:336 MiRam/(22185:22188): n patota: 4 
+
+[INFO] 19:09:48:337 MiRam/(22185:22188): espacio tareas todo ok
+[INFO] 19:09:48:338 MiRam/(22185:22188): ---------  MEMORIA  --------------------
+[INFO] 19:09:48:338 MiRam/(22185:22188): base:   0, tam:  8, libre: false 
+[INFO] 19:09:48:339 MiRam/(22185:22188): base:   8, tam: 237, libre: false 
+[INFO] 19:09:48:339 MiRam/(22185:22188): base: 245, tam: 21, libre: false 
+[INFO] 19:09:48:339 MiRam/(22185:22188): base: 266, tam: 21, libre: false 
+[INFO] 19:09:48:340 MiRam/(22185:22188): base: 287, tam: 21, libre: false 
+[INFO] 19:09:48:340 MiRam/(22185:22188): base: 308, tam:  8, libre: false 
+[INFO] 19:09:48:340 MiRam/(22185:22188): base: 316, tam: 131, libre: false 
+[INFO] 19:09:48:340 MiRam/(22185:22188): base: 447, tam: 21, libre: false 
+[INFO] 19:09:48:341 MiRam/(22185:22188): base: 468, tam: 21, libre: false 
+[INFO] 19:09:48:341 MiRam/(22185:22188): base: 489, tam: 21, libre: false 
+[INFO] 19:09:48:341 MiRam/(22185:22188): base: 510, tam:  8, libre: false 
+[INFO] 19:09:48:342 MiRam/(22185:22188): base: 518, tam: 337, libre: false 
+[INFO] 19:09:48:342 MiRam/(22185:22188): base: 855, tam: 21, libre: false 
+[INFO] 19:09:48:342 MiRam/(22185:22188): base: 876, tam: 21, libre: false 
+[INFO] 19:09:48:343 MiRam/(22185:22188): base: 897, tam: 21, libre: false 
+[INFO] 19:09:48:343 MiRam/(22185:22188): base: 918, tam:  8, libre: false 
+[INFO] 19:09:48:343 MiRam/(22185:22188): base: 926, tam: 359, libre: false 
+[INFO] 19:09:48:343 MiRam/(22185:22188): base: 1285, tam: 21, libre: false 
+[INFO] 19:09:48:344 MiRam/(22185:22188): base: 1306, tam: 21, libre: false 
+[INFO] 19:09:48:344 MiRam/(22185:22188): base: 1327, tam: 21, libre: false 
+[INFO] 19:09:48:344 MiRam/(22185:22188): base: 1348, tam: 15036, libre: true 
+[INFO] 19:09:48:345 MiRam/(22185:22188): ----------------------------------------
+[INFO] 19:09:48:345 MiRam/(22185:22188): Tabla de segmentos correspondiente a patota 4
+[INFO] 19:09:48:345 MiRam/(22185:22188): Base 918   Tamanio 8
+[INFO] 19:09:48:346 MiRam/(22185:22188): Base 926   Tamanio 359
+[INFO] 19:09:48:346 MiRam/(22185:22188): Base 1285   Tamanio 21
+[INFO] 19:09:48:346 MiRam/(22185:22188): Base 1306   Tamanio 21
+[INFO] 19:09:48:346 MiRam/(22185:22188): Base 1327   Tamanio 21
+[INFO] 19:09:48:347 MiRam/(22185:22188): ---------------------------------------
+[INFO] 19:09:48:347 MiRam/(22185:22188): Se asigno espacio de memoria a todo 
+
+[INFO] 19:09:48:374 MiRam/(22185:22188): 
+El numero de la patota recibida es 5
+[INFO] 19:09:48:375 MiRam/(22185:22188): ID 13 
+[INFO] 19:09:48:375 MiRam/(22185:22188): posicion x: 0 
+[INFO] 19:09:48:376 MiRam/(22185:22188): posicion y: 2 
+[INFO] 19:09:48:376 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:376 MiRam/(22185:22188): n patota: 5 
+
+[INFO] 19:09:48:377 MiRam/(22185:22188): ID 14 
+[INFO] 19:09:48:377 MiRam/(22185:22188): posicion x: 9 
+[INFO] 19:09:48:377 MiRam/(22185:22188): posicion y: 6 
+[INFO] 19:09:48:377 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:378 MiRam/(22185:22188): n patota: 5 
+
+[INFO] 19:09:48:378 MiRam/(22185:22188): ID 15 
+[INFO] 19:09:48:378 MiRam/(22185:22188): posicion x: 3 
+[INFO] 19:09:48:378 MiRam/(22185:22188): posicion y: 5 
+[INFO] 19:09:48:379 MiRam/(22185:22188): Status: N 
+[INFO] 19:09:48:379 MiRam/(22185:22188): n patota: 5 
+
+[INFO] 19:09:48:380 MiRam/(22185:22188): espacio tareas todo ok
+[INFO] 19:09:48:382 MiRam/(22185:22188): ---------  MEMORIA  --------------------
+[INFO] 19:09:48:382 MiRam/(22185:22188): base:   0, tam:  8, libre: false 
+[INFO] 19:09:48:382 MiRam/(22185:22188): base:   8, tam: 237, libre: false 
+[INFO] 19:09:48:382 MiRam/(22185:22188): base: 245, tam: 21, libre: false 
+[INFO] 19:09:48:383 MiRam/(22185:22188): base: 266, tam: 21, libre: false 
+[INFO] 19:09:48:383 MiRam/(22185:22188): base: 287, tam: 21, libre: false 
+[INFO] 19:09:48:383 MiRam/(22185:22188): base: 308, tam:  8, libre: false 
+[INFO] 19:09:48:384 MiRam/(22185:22188): base: 316, tam: 131, libre: false 
+[INFO] 19:09:48:384 MiRam/(22185:22188): base: 447, tam: 21, libre: false 
+[INFO] 19:09:48:387 MiRam/(22185:22188): base: 468, tam: 21, libre: false 
+[INFO] 19:09:48:387 MiRam/(22185:22188): base: 489, tam: 21, libre: false 
+[INFO] 19:09:48:390 MiRam/(22185:22188): base: 510, tam:  8, libre: false 
+[INFO] 19:09:48:390 MiRam/(22185:22188): base: 518, tam: 337, libre: false 
+[INFO] 19:09:48:390 MiRam/(22185:22188): base: 855, tam: 21, libre: false 
+[INFO] 19:09:48:391 MiRam/(22185:22188): base: 876, tam: 21, libre: false 
+[INFO] 19:09:48:391 MiRam/(22185:22188): base: 897, tam: 21, libre: false 
+[INFO] 19:09:48:391 MiRam/(22185:22188): base: 918, tam:  8, libre: false 
+[INFO] 19:09:48:392 MiRam/(22185:22188): base: 926, tam: 359, libre: false 
+[INFO] 19:09:48:392 MiRam/(22185:22188): base: 1285, tam: 21, libre: false 
+[INFO] 19:09:48:392 MiRam/(22185:22188): base: 1306, tam: 21, libre: false 
+[INFO] 19:09:48:393 MiRam/(22185:22188): base: 1327, tam: 21, libre: false 
+[INFO] 19:09:48:393 MiRam/(22185:22188): base: 1348, tam:  8, libre: false 
+[INFO] 19:09:48:393 MiRam/(22185:22188): base: 1356, tam: 145, libre: false 
+[INFO] 19:09:48:393 MiRam/(22185:22188): base: 1501, tam: 21, libre: false 
+[INFO] 19:09:48:394 MiRam/(22185:22188): base: 1522, tam: 21, libre: false 
+[INFO] 19:09:48:394 MiRam/(22185:22188): base: 1543, tam: 21, libre: false 
+[INFO] 19:09:48:394 MiRam/(22185:22188): base: 1564, tam: 14820, libre: true 
+[INFO] 19:09:48:395 MiRam/(22185:22188): ----------------------------------------
+[INFO] 19:09:48:395 MiRam/(22185:22188): Tabla de segmentos correspondiente a patota 5
+[INFO] 19:09:48:395 MiRam/(22185:22188): Base 1348   Tamanio 8
+[INFO] 19:09:48:396 MiRam/(22185:22188): Base 1356   Tamanio 145
+[INFO] 19:09:48:396 MiRam/(22185:22188): Base 1501   Tamanio 21
+[INFO] 19:09:48:396 MiRam/(22185:22188): Base 1522   Tamanio 21
+[INFO] 19:09:48:396 MiRam/(22185:22188): Base 1543   Tamanio 21
+[INFO] 19:09:48:397 MiRam/(22185:22188): ---------------------------------------
+[INFO] 19:09:48:397 MiRam/(22185:22188): Se asigno espacio de memoria a todo 
+
+[INFO] 19:09:48:410 MiRam/(22185:22186): socket_cliente 7
+[INFO] 19:09:48:410 MiRam/(22185:22186): Estableciendo conexión desde 6855
+[INFO] 19:09:48:411 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:422 MiRam/(22185:22211): Se conecto este socket a mi 7
+[INFO] 19:09:48:437 MiRam/(22185:22186): socket_cliente 8
+[INFO] 19:09:48:438 MiRam/(22185:22186): Estableciendo conexión desde 7879
+[INFO] 19:09:48:438 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:444 MiRam/(22185:22213): Se conecto este socket a mi 8
+[INFO] 19:09:48:463 MiRam/(22185:22186): socket_cliente 9
+[INFO] 19:09:48:464 MiRam/(22185:22186): Estableciendo conexión desde 8903
+[INFO] 19:09:48:464 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:468 MiRam/(22185:22215): Se conecto este socket a mi 9
+[INFO] 19:09:48:471 MiRam/(22185:22186): socket_cliente 10
+[INFO] 19:09:48:472 MiRam/(22185:22186): Estableciendo conexión desde 9927
+[INFO] 19:09:48:473 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:485 MiRam/(22185:22217): Se conecto este socket a mi 10
+[INFO] 19:09:48:494 MiRam/(22185:22186): socket_cliente 11
+[INFO] 19:09:48:495 MiRam/(22185:22186): Estableciendo conexión desde 10951
+[INFO] 19:09:48:496 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:497 MiRam/(22185:22219): Se conecto este socket a mi 11
+[INFO] 19:09:48:499 MiRam/(22185:22186): socket_cliente 12
+[INFO] 19:09:48:500 MiRam/(22185:22186): Estableciendo conexión desde 11975
+[INFO] 19:09:48:501 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:502 MiRam/(22185:22221): Se conecto este socket a mi 12
+[INFO] 19:09:48:507 MiRam/(22185:22186): socket_cliente 13
+[INFO] 19:09:48:510 MiRam/(22185:22186): Estableciendo conexión desde 12999
+[INFO] 19:09:48:510 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:515 MiRam/(22185:22223): Se conecto este socket a mi 13
+[INFO] 19:09:48:517 MiRam/(22185:22186): socket_cliente 14
+[INFO] 19:09:48:518 MiRam/(22185:22186): Estableciendo conexión desde 14023
+[INFO] 19:09:48:519 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:520 MiRam/(22185:22225): Se conecto este socket a mi 14
+[INFO] 19:09:48:522 MiRam/(22185:22186): socket_cliente 15
+[INFO] 19:09:48:523 MiRam/(22185:22186): Estableciendo conexión desde 15047
+[INFO] 19:09:48:523 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:526 MiRam/(22185:22227): Se conecto este socket a mi 15
+[INFO] 19:09:48:528 MiRam/(22185:22186): socket_cliente 16
+[INFO] 19:09:48:528 MiRam/(22185:22186): Estableciendo conexión desde 16071
+[INFO] 19:09:48:529 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:530 MiRam/(22185:22229): Se conecto este socket a mi 16
+[INFO] 19:09:48:533 MiRam/(22185:22186): socket_cliente 17
+[INFO] 19:09:48:534 MiRam/(22185:22186): Estableciendo conexión desde 17095
+[INFO] 19:09:48:534 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:541 MiRam/(22185:22231): Se conecto este socket a mi 17
+[INFO] 19:09:48:546 MiRam/(22185:22186): socket_cliente 18
+[INFO] 19:09:48:547 MiRam/(22185:22186): Estableciendo conexión desde 18119
+[INFO] 19:09:48:548 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:550 MiRam/(22185:22233): Se conecto este socket a mi 18
+[INFO] 19:09:48:553 MiRam/(22185:22186): socket_cliente 19
+[INFO] 19:09:48:553 MiRam/(22185:22186): Estableciendo conexión desde 19143
+[INFO] 19:09:48:554 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:555 MiRam/(22185:22235): Se conecto este socket a mi 19
+[INFO] 19:09:48:557 MiRam/(22185:22186): socket_cliente 20
+[INFO] 19:09:48:558 MiRam/(22185:22186): Estableciendo conexión desde 20167
+[INFO] 19:09:48:558 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:560 MiRam/(22185:22237): Se conecto este socket a mi 20
+[INFO] 19:09:48:562 MiRam/(22185:22186): socket_cliente 21
+[INFO] 19:09:48:563 MiRam/(22185:22186): Estableciendo conexión desde 21191
+[INFO] 19:09:48:563 MiRam/(22185:22186): Creando hilo
+[INFO] 19:09:48:565 MiRam/(22185:22239): Se conecto este socket a mi 21
+[INFO] 19:09:50:142 MiRam/(22185:22188): ------ Lista Tripulantes ---------
+[INFO] 19:09:50:144 MiRam/(22185:22188): Tripulante: 1     Patota: 1     Status: READY 
+[INFO] 19:09:50:149 MiRam/(22185:22188): Tripulante: 2     Patota: 1     Status: READY 
+[INFO] 19:09:50:150 MiRam/(22185:22188): Tripulante: 3     Patota: 1     Status: EXEC 
+[INFO] 19:09:50:150 MiRam/(22185:22188): Tripulante: 4     Patota: 2     Status: EXEC 
+[INFO] 19:09:50:151 MiRam/(22185:22188): Tripulante: 5     Patota: 2     Status: READY 
+[INFO] 19:09:50:151 MiRam/(22185:22188): Tripulante: 6     Patota: 2     Status: READY 
+[INFO] 19:09:50:152 MiRam/(22185:22188): Tripulante: 7     Patota: 3     Status: READY 
+[INFO] 19:09:50:152 MiRam/(22185:22188): Tripulante: 8     Patota: 3     Status: READY 
+[INFO] 19:09:50:152 MiRam/(22185:22188): Tripulante: 9     Patota: 3     Status: READY 
+[INFO] 19:09:50:154 MiRam/(22185:22188): Tripulante: 10     Patota: 4     Status: READY 
+[INFO] 19:09:50:155 MiRam/(22185:22188): Tripulante: 11     Patota: 4     Status: READY 
+[INFO] 19:09:50:156 MiRam/(22185:22188): Tripulante: 12     Patota: 4     Status: READY 
+[INFO] 19:09:50:157 MiRam/(22185:22188): Tripulante: 13     Patota: 5     Status: READY 
+[INFO] 19:09:50:157 MiRam/(22185:22188): Tripulante: 14     Patota: 5     Status: READY 
+[INFO] 19:09:50:158 MiRam/(22185:22188): Tripulante: 15     Patota: 5     Status: READY 
+[INFO] 19:16:54:329 MiRam/(22185:22235): no hay mas tareas
+[INFO] 19:16:54:337 MiRam/(22185:22235): Se expulso segmento 2
+[INFO] 19:16:54:352 MiRam/(22185:22235): ---------  MEMORIA  --------------------
+[INFO] 19:16:54:354 MiRam/(22185:22235): base:   0, tam:  8, libre: false 
+[INFO] 19:16:54:354 MiRam/(22185:22235): base:   8, tam: 237, libre: false 
+[INFO] 19:16:54:355 MiRam/(22185:22235): base: 245, tam: 21, libre: false 
+[INFO] 19:16:54:355 MiRam/(22185:22235): base: 266, tam: 21, libre: false 
+[INFO] 19:16:54:355 MiRam/(22185:22235): base: 287, tam: 21, libre: false 
+[INFO] 19:16:54:356 MiRam/(22185:22235): base: 308, tam:  8, libre: false 
+[INFO] 19:16:54:356 MiRam/(22185:22235): base: 316, tam: 131, libre: false 
+[INFO] 19:16:54:359 MiRam/(22185:22235): base: 447, tam: 21, libre: false 
+[INFO] 19:16:54:360 MiRam/(22185:22235): base: 468, tam: 21, libre: false 
+[INFO] 19:16:54:360 MiRam/(22185:22235): base: 489, tam: 21, libre: false 
+[INFO] 19:16:54:360 MiRam/(22185:22235): base: 510, tam:  8, libre: false 
+[INFO] 19:16:54:361 MiRam/(22185:22235): base: 518, tam: 337, libre: false 
+[INFO] 19:16:54:361 MiRam/(22185:22235): base: 855, tam: 21, libre: false 
+[INFO] 19:16:54:361 MiRam/(22185:22235): base: 876, tam: 21, libre: false 
+[INFO] 19:16:54:362 MiRam/(22185:22235): base: 897, tam: 21, libre: false 
+[INFO] 19:16:54:362 MiRam/(22185:22235): base: 918, tam:  8, libre: false 
+[INFO] 19:16:54:363 MiRam/(22185:22235): base: 926, tam: 359, libre: false 
+[INFO] 19:16:54:364 MiRam/(22185:22235): base: 1285, tam: 21, libre: false 
+[INFO] 19:16:54:365 MiRam/(22185:22235): base: 1306, tam: 21, libre: false 
+[INFO] 19:16:54:365 MiRam/(22185:22235): base: 1327, tam: 21, libre: false 
+[INFO] 19:16:54:365 MiRam/(22185:22235): base: 1348, tam:  8, libre: false 
+[INFO] 19:16:54:366 MiRam/(22185:22235): base: 1356, tam: 145, libre: false 
+[INFO] 19:16:54:366 MiRam/(22185:22235): base: 1501, tam: 21, libre: true 
+[INFO] 19:16:54:366 MiRam/(22185:22235): base: 1522, tam: 21, libre: false 
+[INFO] 19:16:54:367 MiRam/(22185:22235): base: 1543, tam: 21, libre: false 
+[INFO] 19:16:54:367 MiRam/(22185:22235): base: 1564, tam: 14820, libre: true 
+[INFO] 19:16:54:368 MiRam/(22185:22235): ----------------------------------------
+[INFO] 19:16:54:368 MiRam/(22185:22235): Tabla de segmentos correspondiente a patota 5
+[INFO] 19:16:54:369 MiRam/(22185:22235): Base 1348   Tamanio 8
+[INFO] 19:16:54:369 MiRam/(22185:22235): Base 1356   Tamanio 145
+[INFO] 19:16:54:369 MiRam/(22185:22235): Base 1522   Tamanio 21
+[INFO] 19:16:54:370 MiRam/(22185:22235): Base 1543   Tamanio 21
+[INFO] 19:16:54:370 MiRam/(22185:22235): ---------------------------------------
+[WARNING] 19:16:54:372 MiRam/(22185:22235): el cliente se desconecto.
+[INFO] 19:17:35:498 MiRam/(22185:22239): no hay mas tareas
+[INFO] 19:17:35:499 MiRam/(22185:22239): Se expulso segmento 4
+[INFO] 19:17:35:512 MiRam/(22185:22239): ---------  MEMORIA  --------------------
+[INFO] 19:17:35:512 MiRam/(22185:22239): base:   0, tam:  8, libre: false 
+[INFO] 19:17:35:513 MiRam/(22185:22239): base:   8, tam: 237, libre: false 
+[INFO] 19:17:35:513 MiRam/(22185:22239): base: 245, tam: 21, libre: false 
+[INFO] 19:17:35:513 MiRam/(22185:22239): base: 266, tam: 21, libre: false 
+[INFO] 19:17:35:514 MiRam/(22185:22239): base: 287, tam: 21, libre: false 
+[INFO] 19:17:35:514 MiRam/(22185:22239): base: 308, tam:  8, libre: false 
+[INFO] 19:17:35:514 MiRam/(22185:22239): base: 316, tam: 131, libre: false 
+[INFO] 19:17:35:514 MiRam/(22185:22239): base: 447, tam: 21, libre: false 
+[INFO] 19:17:35:515 MiRam/(22185:22239): base: 468, tam: 21, libre: false 
+[INFO] 19:17:35:515 MiRam/(22185:22239): base: 489, tam: 21, libre: false 
+[INFO] 19:17:35:515 MiRam/(22185:22239): base: 510, tam:  8, libre: false 
+[INFO] 19:17:35:516 MiRam/(22185:22239): base: 518, tam: 337, libre: false 
+[INFO] 19:17:35:516 MiRam/(22185:22239): base: 855, tam: 21, libre: false 
+[INFO] 19:17:35:516 MiRam/(22185:22239): base: 876, tam: 21, libre: false 
+[INFO] 19:17:35:517 MiRam/(22185:22239): base: 897, tam: 21, libre: false 
+[INFO] 19:17:35:517 MiRam/(22185:22239): base: 918, tam:  8, libre: false 
+[INFO] 19:17:35:517 MiRam/(22185:22239): base: 926, tam: 359, libre: false 
+[INFO] 19:17:35:517 MiRam/(22185:22239): base: 1285, tam: 21, libre: false 
+[INFO] 19:17:35:518 MiRam/(22185:22239): base: 1306, tam: 21, libre: false 
+[INFO] 19:17:35:518 MiRam/(22185:22239): base: 1327, tam: 21, libre: false 
+[INFO] 19:17:35:518 MiRam/(22185:22239): base: 1348, tam:  8, libre: false 
+[INFO] 19:17:35:519 MiRam/(22185:22239): base: 1356, tam: 145, libre: false 
+[INFO] 19:17:35:519 MiRam/(22185:22239): base: 1501, tam: 21, libre: true 
+[INFO] 19:17:35:519 MiRam/(22185:22239): base: 1522, tam: 21, libre: false 
+[INFO] 19:17:35:520 MiRam/(22185:22239): base: 1543, tam: 21, libre: true 
+[INFO] 19:17:35:520 MiRam/(22185:22239): base: 1564, tam: 14820, libre: true 
+[INFO] 19:17:35:520 MiRam/(22185:22239): ----------------------------------------
+[INFO] 19:17:35:521 MiRam/(22185:22239): Tabla de segmentos correspondiente a patota 5
+[INFO] 19:17:35:521 MiRam/(22185:22239): Base 1348   Tamanio 8
+[INFO] 19:17:35:522 MiRam/(22185:22239): Base 1356   Tamanio 145
+[INFO] 19:17:35:522 MiRam/(22185:22239): Base 1522   Tamanio 21
+[INFO] 19:17:35:522 MiRam/(22185:22239): ---------------------------------------
+[WARNING] 19:17:35:523 MiRam/(22185:22239): el cliente se desconecto.
+[INFO] 19:18:19:681 MiRam/(22185:22237): no hay mas tareas
+[INFO] 19:18:19:682 MiRam/(22185:22237): Se expulso segmento 3
+[INFO] 19:18:19:692 MiRam/(22185:22237): ---------  MEMORIA  --------------------
+[INFO] 19:18:19:694 MiRam/(22185:22237): base:   0, tam:  8, libre: false 
+[INFO] 19:18:19:694 MiRam/(22185:22237): base:   8, tam: 237, libre: false 
+[INFO] 19:18:19:695 MiRam/(22185:22237): base: 245, tam: 21, libre: false 
+[INFO] 19:18:19:695 MiRam/(22185:22237): base: 266, tam: 21, libre: false 
+[INFO] 19:18:19:695 MiRam/(22185:22237): base: 287, tam: 21, libre: false 
+[INFO] 19:18:19:696 MiRam/(22185:22237): base: 308, tam:  8, libre: false 
+[INFO] 19:18:19:696 MiRam/(22185:22237): base: 316, tam: 131, libre: false 
+[INFO] 19:18:19:696 MiRam/(22185:22237): base: 447, tam: 21, libre: false 
+[INFO] 19:18:19:697 MiRam/(22185:22237): base: 468, tam: 21, libre: false 
+[INFO] 19:18:19:697 MiRam/(22185:22237): base: 489, tam: 21, libre: false 
+[INFO] 19:18:19:698 MiRam/(22185:22237): base: 510, tam:  8, libre: false 
+[INFO] 19:18:19:698 MiRam/(22185:22237): base: 518, tam: 337, libre: false 
+[INFO] 19:18:19:698 MiRam/(22185:22237): base: 855, tam: 21, libre: false 
+[INFO] 19:18:19:699 MiRam/(22185:22237): base: 876, tam: 21, libre: false 
+[INFO] 19:18:19:699 MiRam/(22185:22237): base: 897, tam: 21, libre: false 
+[INFO] 19:18:19:699 MiRam/(22185:22237): base: 918, tam:  8, libre: false 
+[INFO] 19:18:19:700 MiRam/(22185:22237): base: 926, tam: 359, libre: false 
+[INFO] 19:18:19:700 MiRam/(22185:22237): base: 1285, tam: 21, libre: false 
+[INFO] 19:18:19:700 MiRam/(22185:22237): base: 1306, tam: 21, libre: false 
+[INFO] 19:18:19:701 MiRam/(22185:22237): base: 1327, tam: 21, libre: false 
+[INFO] 19:18:19:701 MiRam/(22185:22237): base: 1348, tam:  8, libre: true 
+[INFO] 19:18:19:701 MiRam/(22185:22237): base: 1356, tam: 145, libre: true 
+[INFO] 19:18:19:702 MiRam/(22185:22237): base: 1501, tam: 21, libre: true 
+[INFO] 19:18:19:702 MiRam/(22185:22237): base: 1522, tam: 21, libre: true 
+[INFO] 19:18:19:703 MiRam/(22185:22237): base: 1543, tam: 21, libre: true 
+[INFO] 19:18:19:703 MiRam/(22185:22237): base: 1564, tam: 14820, libre: true 
+[INFO] 19:18:19:703 MiRam/(22185:22237): ----------------------------------------
+[INFO] 19:18:19:704 MiRam/(22185:22237): Tabla de segmentos de patota ya no existe
+[WARNING] 19:18:19:704 MiRam/(22185:22237): el cliente se desconecto.
+[INFO] 19:18:49:778 MiRam/(22185:22215): no hay mas tareas
+[INFO] 19:18:49:779 MiRam/(22185:22215): Se expulso segmento 4
+[INFO] 19:18:49:784 MiRam/(22185:22215): ---------  MEMORIA  --------------------
+[INFO] 19:18:49:785 MiRam/(22185:22215): base:   0, tam:  8, libre: false 
+[INFO] 19:18:49:785 MiRam/(22185:22215): base:   8, tam: 237, libre: false 
+[INFO] 19:18:49:785 MiRam/(22185:22215): base: 245, tam: 21, libre: false 
+[INFO] 19:18:49:786 MiRam/(22185:22215): base: 266, tam: 21, libre: false 
+[INFO] 19:18:49:786 MiRam/(22185:22215): base: 287, tam: 21, libre: true 
+[INFO] 19:18:49:786 MiRam/(22185:22215): base: 308, tam:  8, libre: false 
+[INFO] 19:18:49:787 MiRam/(22185:22215): base: 316, tam: 131, libre: false 
+[INFO] 19:18:49:788 MiRam/(22185:22215): base: 447, tam: 21, libre: false 
+[INFO] 19:18:49:788 MiRam/(22185:22215): base: 468, tam: 21, libre: false 
+[INFO] 19:18:49:790 MiRam/(22185:22215): base: 489, tam: 21, libre: false 
+[INFO] 19:18:49:790 MiRam/(22185:22215): base: 510, tam:  8, libre: false 
+[INFO] 19:18:49:791 MiRam/(22185:22215): base: 518, tam: 337, libre: false 
+[INFO] 19:18:49:792 MiRam/(22185:22215): base: 855, tam: 21, libre: false 
+[INFO] 19:18:49:793 MiRam/(22185:22215): base: 876, tam: 21, libre: false 
+[INFO] 19:18:49:793 MiRam/(22185:22215): base: 897, tam: 21, libre: false 
+[INFO] 19:18:49:793 MiRam/(22185:22215): base: 918, tam:  8, libre: false 
+[INFO] 19:18:49:794 MiRam/(22185:22215): base: 926, tam: 359, libre: false 
+[INFO] 19:18:49:794 MiRam/(22185:22215): base: 1285, tam: 21, libre: false 
+[INFO] 19:18:49:794 MiRam/(22185:22215): base: 1306, tam: 21, libre: false 
+[INFO] 19:18:49:795 MiRam/(22185:22215): base: 1327, tam: 21, libre: false 
+[INFO] 19:18:49:795 MiRam/(22185:22215): base: 1348, tam:  8, libre: true 
+[INFO] 19:18:49:795 MiRam/(22185:22215): base: 1356, tam: 145, libre: true 
+[INFO] 19:18:49:796 MiRam/(22185:22215): base: 1501, tam: 21, libre: true 
+[INFO] 19:18:49:796 MiRam/(22185:22215): base: 1522, tam: 21, libre: true 
+[INFO] 19:18:49:797 MiRam/(22185:22215): base: 1543, tam: 21, libre: true 
+[INFO] 19:18:49:797 MiRam/(22185:22215): base: 1564, tam: 14820, libre: true 
+[INFO] 19:18:49:799 MiRam/(22185:22215): ----------------------------------------
+[INFO] 19:18:49:800 MiRam/(22185:22215): Tabla de segmentos correspondiente a patota 1
+[INFO] 19:18:49:800 MiRam/(22185:22215): Base 0   Tamanio 8
+[INFO] 19:18:49:800 MiRam/(22185:22215): Base 8   Tamanio 237
+[INFO] 19:18:49:801 MiRam/(22185:22215): Base 245   Tamanio 21
+[INFO] 19:18:49:801 MiRam/(22185:22215): Base 266   Tamanio 21
+[INFO] 19:18:49:801 MiRam/(22185:22215): ---------------------------------------
+[WARNING] 19:18:49:802 MiRam/(22185:22215): el cliente se desconecto.
+[INFO] 19:19:12:878 MiRam/(22185:22211): no hay mas tareas
+[INFO] 19:19:12:881 MiRam/(22185:22211): Se expulso segmento 2
+[INFO] 19:19:12:887 MiRam/(22185:22211): ---------  MEMORIA  --------------------
+[INFO] 19:19:12:893 MiRam/(22185:22211): base:   0, tam:  8, libre: false 
+[INFO] 19:19:12:894 MiRam/(22185:22211): base:   8, tam: 237, libre: false 
+[INFO] 19:19:12:894 MiRam/(22185:22211): base: 245, tam: 21, libre: true 
+[INFO] 19:19:12:894 MiRam/(22185:22211): base: 266, tam: 21, libre: false 
+[INFO] 19:19:12:895 MiRam/(22185:22211): base: 287, tam: 21, libre: true 
+[INFO] 19:19:12:895 MiRam/(22185:22211): base: 308, tam:  8, libre: false 
+[INFO] 19:19:12:896 MiRam/(22185:22211): base: 316, tam: 131, libre: false 
+[INFO] 19:19:12:897 MiRam/(22185:22211): base: 447, tam: 21, libre: false 
+[INFO] 19:19:12:897 MiRam/(22185:22211): base: 468, tam: 21, libre: false 
+[INFO] 19:19:12:898 MiRam/(22185:22211): base: 489, tam: 21, libre: false 
+[INFO] 19:19:12:901 MiRam/(22185:22211): base: 510, tam:  8, libre: false 
+[INFO] 19:19:12:902 MiRam/(22185:22211): base: 518, tam: 337, libre: false 
+[INFO] 19:19:12:902 MiRam/(22185:22211): base: 855, tam: 21, libre: false 
+[INFO] 19:19:12:903 MiRam/(22185:22211): base: 876, tam: 21, libre: false 
+[INFO] 19:19:12:903 MiRam/(22185:22211): base: 897, tam: 21, libre: false 
+[INFO] 19:19:12:904 MiRam/(22185:22211): base: 918, tam:  8, libre: false 
+[INFO] 19:19:12:904 MiRam/(22185:22211): base: 926, tam: 359, libre: false 
+[INFO] 19:19:12:904 MiRam/(22185:22211): base: 1285, tam: 21, libre: false 
+[INFO] 19:19:12:905 MiRam/(22185:22211): base: 1306, tam: 21, libre: false 
+[INFO] 19:19:12:905 MiRam/(22185:22211): base: 1327, tam: 21, libre: false 
+[INFO] 19:19:12:911 MiRam/(22185:22211): base: 1348, tam:  8, libre: true 
+[INFO] 19:19:12:912 MiRam/(22185:22211): base: 1356, tam: 145, libre: true 
+[INFO] 19:19:12:912 MiRam/(22185:22211): base: 1501, tam: 21, libre: true 
+[INFO] 19:19:12:913 MiRam/(22185:22211): base: 1522, tam: 21, libre: true 
+[INFO] 19:19:12:913 MiRam/(22185:22211): base: 1543, tam: 21, libre: true 
+[INFO] 19:19:12:913 MiRam/(22185:22211): base: 1564, tam: 14820, libre: true 
+[INFO] 19:19:12:919 MiRam/(22185:22211): ----------------------------------------
+[INFO] 19:19:12:919 MiRam/(22185:22211): Tabla de segmentos correspondiente a patota 1
+[INFO] 19:19:12:920 MiRam/(22185:22211): Base 0   Tamanio 8
+[INFO] 19:19:12:920 MiRam/(22185:22211): Base 8   Tamanio 237
+[INFO] 19:19:12:920 MiRam/(22185:22211): Base 266   Tamanio 21
+[INFO] 19:19:12:920 MiRam/(22185:22211): ---------------------------------------
+[WARNING] 19:19:12:921 MiRam/(22185:22211): el cliente se desconecto.
+[INFO] 19:19:13:921 MiRam/(22185:22213): no hay mas tareas
+[INFO] 19:19:13:922 MiRam/(22185:22213): Se expulso segmento 3
+[INFO] 19:19:13:932 MiRam/(22185:22213): ---------  MEMORIA  --------------------
+[INFO] 19:19:13:933 MiRam/(22185:22213): base:   0, tam:  8, libre: true 
+[INFO] 19:19:13:934 MiRam/(22185:22213): base:   8, tam: 237, libre: true 
+[INFO] 19:19:13:934 MiRam/(22185:22213): base: 245, tam: 21, libre: true 
+[INFO] 19:19:13:934 MiRam/(22185:22213): base: 266, tam: 21, libre: true 
+[INFO] 19:19:13:935 MiRam/(22185:22213): base: 287, tam: 21, libre: true 
+[INFO] 19:19:13:935 MiRam/(22185:22213): base: 308, tam:  8, libre: false 
+[INFO] 19:19:13:936 MiRam/(22185:22213): base: 316, tam: 131, libre: false 
+[INFO] 19:19:13:936 MiRam/(22185:22213): base: 447, tam: 21, libre: false 
+[INFO] 19:19:13:936 MiRam/(22185:22213): base: 468, tam: 21, libre: false 
+[INFO] 19:19:13:937 MiRam/(22185:22213): base: 489, tam: 21, libre: false 
+[INFO] 19:19:13:937 MiRam/(22185:22213): base: 510, tam:  8, libre: false 
+[INFO] 19:19:13:937 MiRam/(22185:22213): base: 518, tam: 337, libre: false 
+[INFO] 19:19:13:938 MiRam/(22185:22213): base: 855, tam: 21, libre: false 
+[INFO] 19:19:13:938 MiRam/(22185:22213): base: 876, tam: 21, libre: false 
+[INFO] 19:19:13:938 MiRam/(22185:22213): base: 897, tam: 21, libre: false 
+[INFO] 19:19:13:939 MiRam/(22185:22213): base: 918, tam:  8, libre: false 
+[INFO] 19:19:13:939 MiRam/(22185:22213): base: 926, tam: 359, libre: false 
+[INFO] 19:19:13:940 MiRam/(22185:22213): base: 1285, tam: 21, libre: false 
+[INFO] 19:19:13:940 MiRam/(22185:22213): base: 1306, tam: 21, libre: false 
+[INFO] 19:19:13:940 MiRam/(22185:22213): base: 1327, tam: 21, libre: false 
+[INFO] 19:19:13:941 MiRam/(22185:22213): base: 1348, tam:  8, libre: true 
+[INFO] 19:19:13:941 MiRam/(22185:22213): base: 1356, tam: 145, libre: true 
+[INFO] 19:19:13:941 MiRam/(22185:22213): base: 1501, tam: 21, libre: true 
+[INFO] 19:19:13:942 MiRam/(22185:22213): base: 1522, tam: 21, libre: true 
+[INFO] 19:19:13:942 MiRam/(22185:22213): base: 1543, tam: 21, libre: true 
+[INFO] 19:19:13:942 MiRam/(22185:22213): base: 1564, tam: 14820, libre: true 
+[INFO] 19:19:13:943 MiRam/(22185:22213): ----------------------------------------
+[INFO] 19:19:13:943 MiRam/(22185:22213): Tabla de segmentos de patota ya no existe
+[WARNING] 19:19:13:944 MiRam/(22185:22213): el cliente se desconecto.
+[INFO] 19:19:27:002 MiRam/(22185:22223): no hay mas tareas
+[INFO] 19:19:27:007 MiRam/(22185:22223): Se expulso segmento 2
+[INFO] 19:19:27:010 MiRam/(22185:22223): ---------  MEMORIA  --------------------
+[INFO] 19:19:27:011 MiRam/(22185:22223): base:   0, tam:  8, libre: true 
+[INFO] 19:19:27:012 MiRam/(22185:22223): base:   8, tam: 237, libre: true 
+[INFO] 19:19:27:012 MiRam/(22185:22223): base: 245, tam: 21, libre: true 
+[INFO] 19:19:27:015 MiRam/(22185:22223): base: 266, tam: 21, libre: true 
+[INFO] 19:19:27:015 MiRam/(22185:22223): base: 287, tam: 21, libre: true 
+[INFO] 19:19:27:016 MiRam/(22185:22223): base: 308, tam:  8, libre: false 
+[INFO] 19:19:27:016 MiRam/(22185:22223): base: 316, tam: 131, libre: false 
+[INFO] 19:19:27:017 MiRam/(22185:22223): base: 447, tam: 21, libre: false 
+[INFO] 19:19:27:017 MiRam/(22185:22223): base: 468, tam: 21, libre: false 
+[INFO] 19:19:27:018 MiRam/(22185:22223): base: 489, tam: 21, libre: false 
+[INFO] 19:19:27:018 MiRam/(22185:22223): base: 510, tam:  8, libre: false 
+[INFO] 19:19:27:019 MiRam/(22185:22223): base: 518, tam: 337, libre: false 
+[INFO] 19:19:27:019 MiRam/(22185:22223): base: 855, tam: 21, libre: true 
+[INFO] 19:19:27:023 MiRam/(22185:22223): base: 876, tam: 21, libre: false 
+[INFO] 19:19:27:023 MiRam/(22185:22223): base: 897, tam: 21, libre: false 
+[INFO] 19:19:27:024 MiRam/(22185:22223): base: 918, tam:  8, libre: false 
+[INFO] 19:19:27:025 MiRam/(22185:22223): base: 926, tam: 359, libre: false 
+[INFO] 19:19:27:025 MiRam/(22185:22223): base: 1285, tam: 21, libre: false 
+[INFO] 19:19:27:026 MiRam/(22185:22223): base: 1306, tam: 21, libre: false 
+[INFO] 19:19:27:026 MiRam/(22185:22223): base: 1327, tam: 21, libre: false 
+[INFO] 19:19:27:027 MiRam/(22185:22223): base: 1348, tam:  8, libre: true 
+[INFO] 19:19:27:027 MiRam/(22185:22223): base: 1356, tam: 145, libre: true 
+[INFO] 19:19:27:032 MiRam/(22185:22223): base: 1501, tam: 21, libre: true 
+[INFO] 19:19:27:033 MiRam/(22185:22223): base: 1522, tam: 21, libre: true 
+[INFO] 19:19:27:033 MiRam/(22185:22223): base: 1543, tam: 21, libre: true 
+[INFO] 19:19:27:034 MiRam/(22185:22223): base: 1564, tam: 14820, libre: true 
+[INFO] 19:19:27:034 MiRam/(22185:22223): ----------------------------------------
+[INFO] 19:19:27:035 MiRam/(22185:22223): Tabla de segmentos correspondiente a patota 3
+[INFO] 19:19:27:036 MiRam/(22185:22223): Base 510   Tamanio 8
+[INFO] 19:19:27:036 MiRam/(22185:22223): Base 518   Tamanio 337
+[INFO] 19:19:27:037 MiRam/(22185:22223): Base 876   Tamanio 21
+[INFO] 19:19:27:037 MiRam/(22185:22223): Base 897   Tamanio 21
+[INFO] 19:19:27:038 MiRam/(22185:22223): ---------------------------------------
+[WARNING] 19:19:27:038 MiRam/(22185:22223): el cliente se desconecto.
+[INFO] 19:19:38:007 MiRam/(22185:22217): no hay mas tareas
+[INFO] 19:19:38:009 MiRam/(22185:22217): Se expulso segmento 2
+[INFO] 19:19:38:015 MiRam/(22185:22217): ---------  MEMORIA  --------------------
+[INFO] 19:19:38:016 MiRam/(22185:22217): base:   0, tam:  8, libre: true 
+[INFO] 19:19:38:017 MiRam/(22185:22217): base:   8, tam: 237, libre: true 
+[INFO] 19:19:38:017 MiRam/(22185:22217): base: 245, tam: 21, libre: true 
+[INFO] 19:19:38:018 MiRam/(22185:22217): base: 266, tam: 21, libre: true 
+[INFO] 19:19:38:019 MiRam/(22185:22217): base: 287, tam: 21, libre: true 
+[INFO] 19:19:38:021 MiRam/(22185:22217): base: 308, tam:  8, libre: false 
+[INFO] 19:19:38:021 MiRam/(22185:22217): base: 316, tam: 131, libre: false 
+[INFO] 19:19:38:021 MiRam/(22185:22217): base: 447, tam: 21, libre: true 
+[INFO] 19:19:38:022 MiRam/(22185:22217): base: 468, tam: 21, libre: false 
+[INFO] 19:19:38:022 MiRam/(22185:22217): base: 489, tam: 21, libre: false 
+[INFO] 19:19:38:022 MiRam/(22185:22217): base: 510, tam:  8, libre: false 
+[INFO] 19:19:38:023 MiRam/(22185:22217): base: 518, tam: 337, libre: false 
+[INFO] 19:19:38:023 MiRam/(22185:22217): base: 855, tam: 21, libre: true 
+[INFO] 19:19:38:023 MiRam/(22185:22217): base: 876, tam: 21, libre: false 
+[INFO] 19:19:38:024 MiRam/(22185:22217): base: 897, tam: 21, libre: false 
+[INFO] 19:19:38:024 MiRam/(22185:22217): base: 918, tam:  8, libre: false 
+[INFO] 19:19:38:025 MiRam/(22185:22217): base: 926, tam: 359, libre: false 
+[INFO] 19:19:38:025 MiRam/(22185:22217): base: 1285, tam: 21, libre: false 
+[INFO] 19:19:38:025 MiRam/(22185:22217): base: 1306, tam: 21, libre: false 
+[INFO] 19:19:38:026 MiRam/(22185:22217): base: 1327, tam: 21, libre: false 
+[INFO] 19:19:38:026 MiRam/(22185:22217): base: 1348, tam:  8, libre: true 
+[INFO] 19:19:38:026 MiRam/(22185:22217): base: 1356, tam: 145, libre: true 
+[INFO] 19:19:38:027 MiRam/(22185:22217): base: 1501, tam: 21, libre: true 
+[INFO] 19:19:38:027 MiRam/(22185:22217): base: 1522, tam: 21, libre: true 
+[INFO] 19:19:38:027 MiRam/(22185:22217): base: 1543, tam: 21, libre: true 
+[INFO] 19:19:38:028 MiRam/(22185:22217): base: 1564, tam: 14820, libre: true 
+[INFO] 19:19:38:028 MiRam/(22185:22217): ----------------------------------------
+[INFO] 19:19:38:028 MiRam/(22185:22217): Tabla de segmentos correspondiente a patota 2
+[INFO] 19:19:38:029 MiRam/(22185:22217): Base 308   Tamanio 8
+[INFO] 19:19:38:029 MiRam/(22185:22217): Base 316   Tamanio 131
+[INFO] 19:19:38:030 MiRam/(22185:22217): Base 468   Tamanio 21
+[INFO] 19:19:38:030 MiRam/(22185:22217): Base 489   Tamanio 21
+[INFO] 19:19:38:030 MiRam/(22185:22217): ---------------------------------------
+[WARNING] 19:19:38:031 MiRam/(22185:22217): el cliente se desconecto.
+[INFO] 19:19:39:038 MiRam/(22185:22227): no hay mas tareas
+[INFO] 19:19:39:066 MiRam/(22185:22227): Se expulso segmento 4
+[INFO] 19:19:39:140 MiRam/(22185:22227): ---------  MEMORIA  --------------------
+[INFO] 19:19:39:141 MiRam/(22185:22227): base:   0, tam:  8, libre: true 
+[INFO] 19:19:39:144 MiRam/(22185:22227): base:   8, tam: 237, libre: true 
+[INFO] 19:19:39:145 MiRam/(22185:22227): base: 245, tam: 21, libre: true 
+[INFO] 19:19:39:145 MiRam/(22185:22227): base: 266, tam: 21, libre: true 
+[INFO] 19:19:39:146 MiRam/(22185:22227): base: 287, tam: 21, libre: true 
+[INFO] 19:19:39:147 MiRam/(22185:22227): base: 308, tam:  8, libre: false 
+[INFO] 19:19:39:152 MiRam/(22185:22227): base: 316, tam: 131, libre: false 
+[INFO] 19:19:39:152 MiRam/(22185:22227): base: 447, tam: 21, libre: true 
+[INFO] 19:19:39:152 MiRam/(22185:22227): base: 468, tam: 21, libre: false 
+[INFO] 19:19:39:153 MiRam/(22185:22227): base: 489, tam: 21, libre: false 
+[INFO] 19:19:39:153 MiRam/(22185:22227): base: 510, tam:  8, libre: false 
+[INFO] 19:19:39:154 MiRam/(22185:22227): base: 518, tam: 337, libre: false 
+[INFO] 19:19:39:154 MiRam/(22185:22227): base: 855, tam: 21, libre: true 
+[INFO] 19:19:39:154 MiRam/(22185:22227): base: 876, tam: 21, libre: false 
+[INFO] 19:19:39:155 MiRam/(22185:22227): base: 897, tam: 21, libre: true 
+[INFO] 19:19:39:155 MiRam/(22185:22227): base: 918, tam:  8, libre: false 
+[INFO] 19:19:39:156 MiRam/(22185:22227): base: 926, tam: 359, libre: false 
+[INFO] 19:19:39:156 MiRam/(22185:22227): base: 1285, tam: 21, libre: false 
+[INFO] 19:19:39:161 MiRam/(22185:22227): base: 1306, tam: 21, libre: false 
+[INFO] 19:19:39:162 MiRam/(22185:22227): base: 1327, tam: 21, libre: false 
+[INFO] 19:19:39:164 MiRam/(22185:22227): base: 1348, tam:  8, libre: true 
+[INFO] 19:19:39:164 MiRam/(22185:22227): base: 1356, tam: 145, libre: true 
+[INFO] 19:19:39:167 MiRam/(22185:22227): base: 1501, tam: 21, libre: true 
+[INFO] 19:19:39:168 MiRam/(22185:22227): base: 1522, tam: 21, libre: true 
+[INFO] 19:19:39:168 MiRam/(22185:22227): base: 1543, tam: 21, libre: true 
+[INFO] 19:19:39:169 MiRam/(22185:22227): base: 1564, tam: 14820, libre: true 
+[INFO] 19:19:39:169 MiRam/(22185:22227): ----------------------------------------
+[INFO] 19:19:39:169 MiRam/(22185:22227): Tabla de segmentos correspondiente a patota 3
+[INFO] 19:19:39:170 MiRam/(22185:22227): Base 510   Tamanio 8
+[INFO] 19:19:39:170 MiRam/(22185:22227): Base 518   Tamanio 337
+[INFO] 19:19:39:170 MiRam/(22185:22227): Base 876   Tamanio 21
+[INFO] 19:19:39:171 MiRam/(22185:22227): ---------------------------------------
+[WARNING] 19:19:39:171 MiRam/(22185:22227): el cliente se desconecto.
+[INFO] 19:19:45:179 MiRam/(22185:22219): no hay mas tareas
+[INFO] 19:19:45:182 MiRam/(22185:22219): Se expulso segmento 3
+[INFO] 19:19:45:189 MiRam/(22185:22219): ---------  MEMORIA  --------------------
+[INFO] 19:19:45:190 MiRam/(22185:22219): base:   0, tam:  8, libre: true 
+[INFO] 19:19:45:192 MiRam/(22185:22219): base:   8, tam: 237, libre: true 
+[INFO] 19:19:45:193 MiRam/(22185:22219): base: 245, tam: 21, libre: true 
+[INFO] 19:19:45:193 MiRam/(22185:22219): base: 266, tam: 21, libre: true 
+[INFO] 19:19:45:194 MiRam/(22185:22219): base: 287, tam: 21, libre: true 
+[INFO] 19:19:45:194 MiRam/(22185:22219): base: 308, tam:  8, libre: false 
+[INFO] 19:19:45:194 MiRam/(22185:22219): base: 316, tam: 131, libre: false 
+[INFO] 19:19:45:195 MiRam/(22185:22219): base: 447, tam: 21, libre: true 
+[INFO] 19:19:45:195 MiRam/(22185:22219): base: 468, tam: 21, libre: true 
+[INFO] 19:19:45:196 MiRam/(22185:22219): base: 489, tam: 21, libre: false 
+[INFO] 19:19:45:196 MiRam/(22185:22219): base: 510, tam:  8, libre: false 
+[INFO] 19:19:45:197 MiRam/(22185:22219): base: 518, tam: 337, libre: false 
+[INFO] 19:19:45:199 MiRam/(22185:22219): base: 855, tam: 21, libre: true 
+[INFO] 19:19:45:200 MiRam/(22185:22219): base: 876, tam: 21, libre: false 
+[INFO] 19:19:45:200 MiRam/(22185:22219): base: 897, tam: 21, libre: true 
+[INFO] 19:19:45:201 MiRam/(22185:22219): base: 918, tam:  8, libre: false 
+[INFO] 19:19:45:201 MiRam/(22185:22219): base: 926, tam: 359, libre: false 
+[INFO] 19:19:45:202 MiRam/(22185:22219): base: 1285, tam: 21, libre: false 
+[INFO] 19:19:45:202 MiRam/(22185:22219): base: 1306, tam: 21, libre: false 
+[INFO] 19:19:45:203 MiRam/(22185:22219): base: 1327, tam: 21, libre: false 
+[INFO] 19:19:45:203 MiRam/(22185:22219): base: 1348, tam:  8, libre: true 
+[INFO] 19:19:45:204 MiRam/(22185:22219): base: 1356, tam: 145, libre: true 
+[INFO] 19:19:45:204 MiRam/(22185:22219): base: 1501, tam: 21, libre: true 
+[INFO] 19:19:45:205 MiRam/(22185:22219): base: 1522, tam: 21, libre: true 
+[INFO] 19:19:45:205 MiRam/(22185:22219): base: 1543, tam: 21, libre: true 
+[INFO] 19:19:45:210 MiRam/(22185:22219): base: 1564, tam: 14820, libre: true 
+[INFO] 19:19:45:211 MiRam/(22185:22219): ----------------------------------------
+[INFO] 19:19:45:211 MiRam/(22185:22219): Tabla de segmentos correspondiente a patota 2
+[INFO] 19:19:45:212 MiRam/(22185:22219): Base 308   Tamanio 8
+[INFO] 19:19:45:212 MiRam/(22185:22219): Base 316   Tamanio 131
+[INFO] 19:19:45:213 MiRam/(22185:22219): Base 489   Tamanio 21
+[INFO] 19:19:45:215 MiRam/(22185:22219): ---------------------------------------
+[WARNING] 19:19:45:219 MiRam/(22185:22219): el cliente se desconecto.
+[INFO] 19:19:50:206 MiRam/(22185:22221): no hay mas tareas
+[INFO] 19:19:50:214 MiRam/(22185:22221): Se expulso segmento 4
+[INFO] 19:19:50:225 MiRam/(22185:22221): ---------  MEMORIA  --------------------
+[INFO] 19:19:50:226 MiRam/(22185:22221): base:   0, tam:  8, libre: true 
+[INFO] 19:19:50:227 MiRam/(22185:22221): base:   8, tam: 237, libre: true 
+[INFO] 19:19:50:228 MiRam/(22185:22221): base: 245, tam: 21, libre: true 
+[INFO] 19:19:50:228 MiRam/(22185:22221): base: 266, tam: 21, libre: true 
+[INFO] 19:19:50:229 MiRam/(22185:22221): base: 287, tam: 21, libre: true 
+[INFO] 19:19:50:229 MiRam/(22185:22221): base: 308, tam:  8, libre: true 
+[INFO] 19:19:50:229 MiRam/(22185:22221): base: 316, tam: 131, libre: true 
+[INFO] 19:19:50:230 MiRam/(22185:22221): base: 447, tam: 21, libre: true 
+[INFO] 19:19:50:231 MiRam/(22185:22221): base: 468, tam: 21, libre: true 
+[INFO] 19:19:50:232 MiRam/(22185:22221): base: 489, tam: 21, libre: true 
+[INFO] 19:19:50:232 MiRam/(22185:22221): base: 510, tam:  8, libre: false 
+[INFO] 19:19:50:233 MiRam/(22185:22221): base: 518, tam: 337, libre: false 
+[INFO] 19:19:50:233 MiRam/(22185:22221): base: 855, tam: 21, libre: true 
+[INFO] 19:19:50:242 MiRam/(22185:22221): base: 876, tam: 21, libre: false 
+[INFO] 19:19:50:242 MiRam/(22185:22221): base: 897, tam: 21, libre: true 
+[INFO] 19:19:50:243 MiRam/(22185:22221): base: 918, tam:  8, libre: false 
+[INFO] 19:19:50:243 MiRam/(22185:22221): base: 926, tam: 359, libre: false 
+[INFO] 19:19:50:244 MiRam/(22185:22221): base: 1285, tam: 21, libre: false 
+[INFO] 19:19:50:244 MiRam/(22185:22221): base: 1306, tam: 21, libre: false 
+[INFO] 19:19:50:244 MiRam/(22185:22221): base: 1327, tam: 21, libre: false 
+[INFO] 19:19:50:245 MiRam/(22185:22221): base: 1348, tam:  8, libre: true 
+[INFO] 19:19:50:245 MiRam/(22185:22221): base: 1356, tam: 145, libre: true 
+[INFO] 19:19:50:246 MiRam/(22185:22221): base: 1501, tam: 21, libre: true 
+[INFO] 19:19:50:246 MiRam/(22185:22221): base: 1522, tam: 21, libre: true 
+[INFO] 19:19:50:246 MiRam/(22185:22221): base: 1543, tam: 21, libre: true 
+[INFO] 19:19:50:247 MiRam/(22185:22221): base: 1564, tam: 14820, libre: true 
+[INFO] 19:19:50:247 MiRam/(22185:22221): ----------------------------------------
+[INFO] 19:19:50:248 MiRam/(22185:22221): Tabla de segmentos de patota ya no existe
+[WARNING] 19:19:50:248 MiRam/(22185:22221): el cliente se desconecto.
+[INFO] 19:19:52:230 MiRam/(22185:22225): no hay mas tareas
+[INFO] 19:19:52:232 MiRam/(22185:22225): Se expulso segmento 3
+[INFO] 19:19:52:241 MiRam/(22185:22225): ---------  MEMORIA  --------------------
+[INFO] 19:19:52:244 MiRam/(22185:22225): base:   0, tam:  8, libre: true 
+[INFO] 19:19:52:244 MiRam/(22185:22225): base:   8, tam: 237, libre: true 
+[INFO] 19:19:52:245 MiRam/(22185:22225): base: 245, tam: 21, libre: true 
+[INFO] 19:19:52:245 MiRam/(22185:22225): base: 266, tam: 21, libre: true 
+[INFO] 19:19:52:245 MiRam/(22185:22225): base: 287, tam: 21, libre: true 
+[INFO] 19:19:52:246 MiRam/(22185:22225): base: 308, tam:  8, libre: true 
+[INFO] 19:19:52:246 MiRam/(22185:22225): base: 316, tam: 131, libre: true 
+[INFO] 19:19:52:246 MiRam/(22185:22225): base: 447, tam: 21, libre: true 
+[INFO] 19:19:52:247 MiRam/(22185:22225): base: 468, tam: 21, libre: true 
+[INFO] 19:19:52:247 MiRam/(22185:22225): base: 489, tam: 21, libre: true 
+[INFO] 19:19:52:247 MiRam/(22185:22225): base: 510, tam:  8, libre: true 
+[INFO] 19:19:52:248 MiRam/(22185:22225): base: 518, tam: 337, libre: true 
+[INFO] 19:19:52:248 MiRam/(22185:22225): base: 855, tam: 21, libre: true 
+[INFO] 19:19:52:248 MiRam/(22185:22225): base: 876, tam: 21, libre: true 
+[INFO] 19:19:52:249 MiRam/(22185:22225): base: 897, tam: 21, libre: true 
+[INFO] 19:19:52:249 MiRam/(22185:22225): base: 918, tam:  8, libre: false 
+[INFO] 19:19:52:249 MiRam/(22185:22225): base: 926, tam: 359, libre: false 
+[INFO] 19:19:52:249 MiRam/(22185:22225): base: 1285, tam: 21, libre: false 
+[INFO] 19:19:52:250 MiRam/(22185:22225): base: 1306, tam: 21, libre: false 
+[INFO] 19:19:52:250 MiRam/(22185:22225): base: 1327, tam: 21, libre: false 
+[INFO] 19:19:52:250 MiRam/(22185:22225): base: 1348, tam:  8, libre: true 
+[INFO] 19:19:52:251 MiRam/(22185:22225): base: 1356, tam: 145, libre: true 
+[INFO] 19:19:52:251 MiRam/(22185:22225): base: 1501, tam: 21, libre: true 
+[INFO] 19:19:52:251 MiRam/(22185:22225): base: 1522, tam: 21, libre: true 
+[INFO] 19:19:52:252 MiRam/(22185:22225): base: 1543, tam: 21, libre: true 
+[INFO] 19:19:52:252 MiRam/(22185:22225): base: 1564, tam: 14820, libre: true 
+[INFO] 19:19:52:252 MiRam/(22185:22225): ----------------------------------------
+[INFO] 19:19:52:253 MiRam/(22185:22225): Tabla de segmentos de patota ya no existe
+[WARNING] 19:19:52:253 MiRam/(22185:22225): el cliente se desconecto.
+[INFO] 19:20:57:520 MiRam/(22185:22231): no hay mas tareas
+[INFO] 19:20:57:524 MiRam/(22185:22231): Se expulso segmento 3
+[INFO] 19:20:57:527 MiRam/(22185:22229): no hay mas tareas
+[INFO] 19:20:57:530 MiRam/(22185:22229): Se expulso segmento 2
+[INFO] 19:20:57:531 MiRam/(22185:22229): ---------  MEMORIA  --------------------
+[INFO] 19:20:57:533 MiRam/(22185:22229): base:   0, tam:  8, libre: true 
+[INFO] 19:20:57:534 MiRam/(22185:22229): base:   8, tam: 237, libre: true 
+[INFO] 19:20:57:534 MiRam/(22185:22229): base: 245, tam: 21, libre: true 
+[INFO] 19:20:57:534 MiRam/(22185:22229): base: 266, tam: 21, libre: true 
+[INFO] 19:20:57:535 MiRam/(22185:22229): base: 287, tam: 21, libre: true 
+[INFO] 19:20:57:535 MiRam/(22185:22229): base: 308, tam:  8, libre: true 
+[INFO] 19:20:57:535 MiRam/(22185:22229): base: 316, tam: 131, libre: true 
+[INFO] 19:20:57:536 MiRam/(22185:22229): base: 447, tam: 21, libre: true 
+[INFO] 19:20:57:536 MiRam/(22185:22229): base: 468, tam: 21, libre: true 
+[INFO] 19:20:57:536 MiRam/(22185:22229): base: 489, tam: 21, libre: true 
+[INFO] 19:20:57:537 MiRam/(22185:22229): base: 510, tam:  8, libre: true 
+[INFO] 19:20:57:538 MiRam/(22185:22229): base: 518, tam: 337, libre: true 
+[INFO] 19:20:57:539 MiRam/(22185:22229): base: 855, tam: 21, libre: true 
+[INFO] 19:20:57:539 MiRam/(22185:22229): base: 876, tam: 21, libre: true 
+[INFO] 19:20:57:540 MiRam/(22185:22229): base: 897, tam: 21, libre: true 
+[INFO] 19:20:57:540 MiRam/(22185:22229): base: 918, tam:  8, libre: false 
+[INFO] 19:20:57:540 MiRam/(22185:22229): base: 926, tam: 359, libre: false 
+[INFO] 19:20:57:541 MiRam/(22185:22229): base: 1285, tam: 21, libre: true 
+[INFO] 19:20:57:541 MiRam/(22185:22229): base: 1306, tam: 21, libre: true 
+[INFO] 19:20:57:541 MiRam/(22185:22229): base: 1327, tam: 21, libre: false 
+[INFO] 19:20:57:542 MiRam/(22185:22229): base: 1348, tam:  8, libre: true 
+[INFO] 19:20:57:542 MiRam/(22185:22229): base: 1356, tam: 145, libre: true 
+[INFO] 19:20:57:542 MiRam/(22185:22229): base: 1501, tam: 21, libre: true 
+[INFO] 19:20:57:543 MiRam/(22185:22229): base: 1522, tam: 21, libre: true 
+[INFO] 19:20:57:543 MiRam/(22185:22229): base: 1543, tam: 21, libre: true 
+[INFO] 19:20:57:544 MiRam/(22185:22229): base: 1564, tam: 14820, libre: true 
+[INFO] 19:20:57:544 MiRam/(22185:22231): ---------  MEMORIA  --------------------
+[INFO] 19:20:57:545 MiRam/(22185:22231): base:   0, tam:  8, libre: true 
+[INFO] 19:20:57:545 MiRam/(22185:22231): base:   8, tam: 237, libre: true 
+[INFO] 19:20:57:546 MiRam/(22185:22231): base: 245, tam: 21, libre: true 
+[INFO] 19:20:57:546 MiRam/(22185:22231): base: 266, tam: 21, libre: true 
+[INFO] 19:20:57:546 MiRam/(22185:22231): base: 287, tam: 21, libre: true 
+[INFO] 19:20:57:550 MiRam/(22185:22231): base: 308, tam:  8, libre: true 
+[INFO] 19:20:57:551 MiRam/(22185:22231): base: 316, tam: 131, libre: true 
+[INFO] 19:20:57:551 MiRam/(22185:22231): base: 447, tam: 21, libre: true 
+[INFO] 19:20:57:551 MiRam/(22185:22231): base: 468, tam: 21, libre: true 
+[INFO] 19:20:57:552 MiRam/(22185:22229): ----------------------------------------
+[INFO] 19:20:57:554 MiRam/(22185:22231): base: 489, tam: 21, libre: true 
+[INFO] 19:20:57:555 MiRam/(22185:22231): base: 510, tam:  8, libre: true 
+[INFO] 19:20:57:555 MiRam/(22185:22231): base: 518, tam: 337, libre: true 
+[INFO] 19:20:57:555 MiRam/(22185:22229): Tabla de segmentos correspondiente a patota 4
+[INFO] 19:20:57:556 MiRam/(22185:22229): Base 918   Tamanio 8
+[INFO] 19:20:57:556 MiRam/(22185:22229): Base 926   Tamanio 359
+[INFO] 19:20:57:557 MiRam/(22185:22229): Base 1327   Tamanio 21
+[INFO] 19:20:57:557 MiRam/(22185:22229): ---------------------------------------
+[WARNING] 19:20:57:558 MiRam/(22185:22229): el cliente se desconecto.
+[INFO] 19:20:57:559 MiRam/(22185:22231): base: 855, tam: 21, libre: true 
+[INFO] 19:20:57:559 MiRam/(22185:22231): base: 876, tam: 21, libre: true 
+[INFO] 19:20:57:560 MiRam/(22185:22231): base: 897, tam: 21, libre: true 
+[INFO] 19:20:57:560 MiRam/(22185:22231): base: 918, tam:  8, libre: false 
+[INFO] 19:20:57:560 MiRam/(22185:22231): base: 926, tam: 359, libre: false 
+[INFO] 19:20:57:561 MiRam/(22185:22231): base: 1285, tam: 21, libre: true 
+[INFO] 19:20:57:561 MiRam/(22185:22231): base: 1306, tam: 21, libre: true 
+[INFO] 19:20:57:561 MiRam/(22185:22231): base: 1327, tam: 21, libre: false 
+[INFO] 19:20:57:562 MiRam/(22185:22231): base: 1348, tam:  8, libre: true 
+[INFO] 19:20:57:562 MiRam/(22185:22231): base: 1356, tam: 145, libre: true 
+[INFO] 19:20:57:563 MiRam/(22185:22231): base: 1501, tam: 21, libre: true 
+[INFO] 19:20:57:563 MiRam/(22185:22231): base: 1522, tam: 21, libre: true 
+[INFO] 19:20:57:563 MiRam/(22185:22231): base: 1543, tam: 21, libre: true 
+[INFO] 19:20:57:564 MiRam/(22185:22231): base: 1564, tam: 14820, libre: true 
+[INFO] 19:20:57:564 MiRam/(22185:22231): ----------------------------------------
+[INFO] 19:20:57:564 MiRam/(22185:22231): Tabla de segmentos correspondiente a patota 4
+[INFO] 19:20:57:565 MiRam/(22185:22231): Base 918   Tamanio 8
+[INFO] 19:20:57:565 MiRam/(22185:22231): Base 926   Tamanio 359
+[INFO] 19:20:57:565 MiRam/(22185:22231): Base 1327   Tamanio 21
+[INFO] 19:20:57:566 MiRam/(22185:22231): ---------------------------------------
+[WARNING] 19:20:57:566 MiRam/(22185:22231): el cliente se desconecto.
+[INFO] 19:20:58:525 MiRam/(22185:22233): no hay mas tareas
+[INFO] 19:20:58:525 MiRam/(22185:22233): Se expulso segmento 4
+[INFO] 19:20:58:529 MiRam/(22185:22233): ---------  MEMORIA  --------------------
+[INFO] 19:20:58:532 MiRam/(22185:22233): base:   0, tam:  8, libre: true 
+[INFO] 19:20:58:532 MiRam/(22185:22233): base:   8, tam: 237, libre: true 
+[INFO] 19:20:58:533 MiRam/(22185:22233): base: 245, tam: 21, libre: true 
+[INFO] 19:20:58:533 MiRam/(22185:22233): base: 266, tam: 21, libre: true 
+[INFO] 19:20:58:534 MiRam/(22185:22233): base: 287, tam: 21, libre: true 
+[INFO] 19:20:58:534 MiRam/(22185:22233): base: 308, tam:  8, libre: true 
+[INFO] 19:20:58:534 MiRam/(22185:22233): base: 316, tam: 131, libre: true 
+[INFO] 19:20:58:535 MiRam/(22185:22233): base: 447, tam: 21, libre: true 
+[INFO] 19:20:58:535 MiRam/(22185:22233): base: 468, tam: 21, libre: true 
+[INFO] 19:20:58:537 MiRam/(22185:22233): base: 489, tam: 21, libre: true 
+[INFO] 19:20:58:538 MiRam/(22185:22233): base: 510, tam:  8, libre: true 
+[INFO] 19:20:58:539 MiRam/(22185:22233): base: 518, tam: 337, libre: true 
+[INFO] 19:20:58:539 MiRam/(22185:22233): base: 855, tam: 21, libre: true 
+[INFO] 19:20:58:539 MiRam/(22185:22233): base: 876, tam: 21, libre: true 
+[INFO] 19:20:58:540 MiRam/(22185:22233): base: 897, tam: 21, libre: true 
+[INFO] 19:20:58:540 MiRam/(22185:22233): base: 918, tam:  8, libre: true 
+[INFO] 19:20:58:540 MiRam/(22185:22233): base: 926, tam: 359, libre: true 
+[INFO] 19:20:58:541 MiRam/(22185:22233): base: 1285, tam: 21, libre: true 
+[INFO] 19:20:58:541 MiRam/(22185:22233): base: 1306, tam: 21, libre: true 
+[INFO] 19:20:58:541 MiRam/(22185:22233): base: 1327, tam: 21, libre: true 
+[INFO] 19:20:58:542 MiRam/(22185:22233): base: 1348, tam:  8, libre: true 
+[INFO] 19:20:58:542 MiRam/(22185:22233): base: 1356, tam: 145, libre: true 
+[INFO] 19:20:58:542 MiRam/(22185:22233): base: 1501, tam: 21, libre: true 
+[INFO] 19:20:58:543 MiRam/(22185:22233): base: 1522, tam: 21, libre: true 
+[INFO] 19:20:58:543 MiRam/(22185:22233): base: 1543, tam: 21, libre: true 
+[INFO] 19:20:58:544 MiRam/(22185:22233): base: 1564, tam: 14820, libre: true 
+[INFO] 19:20:58:544 MiRam/(22185:22233): ----------------------------------------
+[INFO] 19:20:58:544 MiRam/(22185:22233): Tabla de segmentos de patota ya no existe
+[WARNING] 19:20:58:545 MiRam/(22185:22233): el cliente se desconecto.

@@ -1,166 +1,292 @@
-[DEBUG] 11:43:46:603 mongostore/(10936:10936): LOGGER OK
-[INFO] 11:43:46:605 mongostore/(10936:10936): Configuracion leida y almacenada en "configuracion"
-[DEBUG] 11:43:46:605 mongostore/(10936:10936): Testeo config, la IP es: 127.0.0.1
-[DEBUG] 11:43:46:608 mongostore/(10936:10936): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
-[DEBUG] 11:43:46:608 mongostore/(10936:10936): O-Superbloque levantado desde archivo
-[DEBUG] 11:43:48:509 mongostore/(10936:10936): O-Blocks mapeado del archivo a la memoria
-[DEBUG] 11:43:48:510 mongostore/(10936:10936): O-Existencia de Blocks validada
-[DEBUG] 11:43:48:510 mongostore/(10936:10936): Valores default seteados en memoria: SIZE 0 BLOCK_COUNT 0 BLOCKS [] y MD5_ARCHIVO d41d8cd98f00b204e9800998ecf8427e
-[DEBUG] 11:43:48:510 mongostore/(10936:10936): Existencia de metadata para el recurso OXIGENO validada. Valor fijo CARACTER_LLENADO O
-[INFO] 11:43:48:510 mongostore/(10936:10936): ggggggggg
-[DEBUG] 11:43:48:511 mongostore/(10936:10936): Valores variables levantados SIZE 40 BLOCK_COUNT 2 BLOCKS [0,1] y MD5_ARCHIVO 3fa2598ebe72c8fbf70c672d32745933
-[INFO] 11:43:48:511 mongostore/(10936:10936): hhhhhhh
-[DEBUG] 11:43:48:511 mongostore/(10936:10936): Existencia de metadata para el recurso COMIDA validada. Valor fijo CARACTER_LLENADO C
-[DEBUG] 11:43:48:511 mongostore/(10936:10936): Valores default seteados en memoria: SIZE 0 BLOCK_COUNT 0 BLOCKS [] y MD5_ARCHIVO d41d8cd98f00b204e9800998ecf8427e
-[DEBUG] 11:43:48:511 mongostore/(10936:10936): Existencia de metadata para el recurso BASURA validada. Valor fijo CARACTER_LLENADO B
-[DEBUG] 11:43:48:511 mongostore/(10936:10936): Salgo de recursos_validar_existencia_metadatas()
-[DEBUG] 11:43:48:511 mongostore/(10936:10936): Directorios del File System confirmados
-[DEBUG] 11:43:48:511 mongostore/(10936:10936): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
-[DEBUG] 11:43:48:512 mongostore/(10936:10936): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
-[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [2,3,4,5,6]
-[DEBUG] 11:43:48:512 mongostore/(10936:10936): en bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados() antes de borrar lista de bitacoras
-[DEBUG] 11:43:48:512 mongostore/(10936:10936): Los bloques ocupados por el total de las bitacoras son [2,3,4,5,6]
-[INFO] 11:43:48:512 mongostore/(10936:10936): aaaaaaa
-[INFO] 11:43:48:512 mongostore/(10936:10936): antes mutex
-[INFO] 11:43:48:512 mongostore/(10936:10936): en for
-[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 2 eliminado del bitmap del superbloque
-[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 2 eliminado de la copia de blocks - version rapida//version lenta
-[INFO] 11:43:48:512 mongostore/(10936:10936): en for
-[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 3 eliminado del bitmap del superbloque
-[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 3 eliminado de la copia de blocks - version rapida//version lenta
-[INFO] 11:43:48:512 mongostore/(10936:10936): en for
-[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 4 eliminado del bitmap del superbloque
-[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 4 eliminado de la copia de blocks - version rapida//version lenta
-[INFO] 11:43:48:512 mongostore/(10936:10936): en for
-[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 5 eliminado del bitmap del superbloque
-[DEBUG] 11:43:48:513 mongostore/(10936:10936): Bloque 5 eliminado de la copia de blocks - version rapida//version lenta
-[INFO] 11:43:48:513 mongostore/(10936:10936): en for
-[DEBUG] 11:43:48:513 mongostore/(10936:10936): Bloque 6 eliminado del bitmap del superbloque
-[DEBUG] 11:43:48:513 mongostore/(10936:10936): Bloque 6 eliminado de la copia de blocks - version rapida//version lenta
-[DEBUG] 11:43:48:513 mongostore/(10936:10936): Los bloques [2,3,4,5,6] fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims
-[INFO] 11:43:48:513 mongostore/(10936:10936): bbbbbbbb
-[INFO] 11:43:48:517 mongostore/(10936:10936): File System iniciado
-[DEBUG] 11:43:48:517 mongostore/(10936:10936): Se entra a blocks_abrir_hilo
-[INFO] 11:43:48:517 mongostore/(10936:10936): pid 10936  
+[DEBUG] 19:09:33:921 mongostore/(22177:22177): LOGGER OK
+[INFO] 19:09:33:921 mongostore/(22177:22177): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 19:09:33:921 mongostore/(22177:22177): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 19:09:33:922 mongostore/(22177:22177): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 19:09:33:922 mongostore/(22177:22177): O-Superbloque levantado desde archivo
+[INFO] 19:09:35:193 mongostore/(22177:22177): Se eliminan archivos previos
+[DEBUG] 19:09:39:696 mongostore/(22177:22177): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 4096
+[DEBUG] 19:09:39:696 mongostore/(22177:22177): Se ingreso por block_size 256 y blocks 32768. Ademas se genero el bitmap vacio
+[DEBUG] 19:09:39:697 mongostore/(22177:22177): O-Archivo SuperBloque.ims cargado
+[DEBUG] 19:09:39:697 mongostore/(22177:22177): O-Blocks mapeado del archivo a la memoria
+[DEBUG] 19:09:39:697 mongostore/(22177:22177): O-Existencia de Blocks validada
+[DEBUG] 19:09:39:697 mongostore/(22177:22177): Salgo de recursos_validar_existencia_metadatas()
+[DEBUG] 19:09:39:697 mongostore/(22177:22177): Directorios del File System confirmados
+[DEBUG] 19:09:39:697 mongostore/(22177:22177): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
+[DEBUG] 19:09:39:697 mongostore/(22177:22177): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
+[DEBUG] 19:09:39:697 mongostore/(22177:22177): Los bloques ocupados por el total de las bitacoras son []
+[DEBUG] 19:09:39:697 mongostore/(22177:22177): Los bloques [] fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims
+[INFO] 19:09:39:699 mongostore/(22177:22177): File System iniciado
+[DEBUG] 19:09:39:699 mongostore/(22177:22177): Se entra a blocks_abrir_hilo
+[INFO] 19:09:39:699 mongostore/(22177:22177): pid 22177  
 
-[INFO] 11:43:48:517 mongostore/(10936:10941): Servidor iniciando 2
-[INFO] 11:43:48:517 mongostore/(10936:10941): Servidor Mongo2 encendido
-[INFO] 11:43:48:517 mongostore/(10936:10940): Servidor iniciando
-[INFO] 11:43:48:517 mongostore/(10936:10940): Servidor Mongo encendido
-[INFO] 11:44:02:761 mongostore/(10936:10940): post socket_cliente
-[INFO] 11:44:02:763 mongostore/(10936:10940): Estableciendo conexión desde 34986
-[INFO] 11:44:02:763 mongostore/(10936:10940): Creando hilo
-[DEBUG] 11:44:02:768 mongostore/(10936:11125): Se ingresa a funcion_cliente
-[INFO] 11:44:02:768 mongostore/(10936:11125): Se conecto el socket 8
-[INFO] 11:44:05:435 mongostore/(10936:10940): post socket_cliente
-[INFO] 11:44:05:435 mongostore/(10936:10940): Estableciendo conexión desde 36522
-[INFO] 11:44:05:435 mongostore/(10936:10940): Creando hilo
-[DEBUG] 11:44:05:437 mongostore/(10936:11134): Se ingresa a funcion_cliente
-[INFO] 11:44:05:437 mongostore/(10936:11134): Se conecto el socket 9
-[INFO] 11:44:05:438 mongostore/(10936:10940): post socket_cliente
-[INFO] 11:44:05:438 mongostore/(10936:10940): Estableciendo conexión desde 37546
-[INFO] 11:44:05:438 mongostore/(10936:10940): Creando hilo
-[DEBUG] 11:44:05:438 mongostore/(10936:11134): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 11:44:05:439 mongostore/(10936:11134): Se recibe al tripulante 1 y el mensaje "Comienza ejecucion de tarea ARREGLAR_REACTOR"
-[DEBUG] 11:44:05:439 mongostore/(10936:11136): Se ingresa a funcion_cliente
-[INFO] 11:44:05:439 mongostore/(10936:11136): Se conecto el socket 10
-[INFO] 11:44:05:440 mongostore/(10936:10940): post socket_cliente
-[INFO] 11:44:05:440 mongostore/(10936:10940): Estableciendo conexión desde 38570
-[INFO] 11:44:05:440 mongostore/(10936:10940): Creando hilo
-[DEBUG] 11:44:05:440 mongostore/(10936:11138): Se ingresa a funcion_cliente
-[INFO] 11:44:05:441 mongostore/(10936:11138): Se conecto el socket 11
-[DEBUG] 11:44:05:441 mongostore/(10936:11134): Metadata de tripulante 1 default cargada en memoria (size = 0 y blocks = [])
-[INFO] 11:44:05:441 mongostore/(10936:11134): Comienza ejecucion de tarea ARREGLAR_REACTOR
-[DEBUG] 11:44:05:441 mongostore/(10936:11134): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 0, BLOCKS [] y superbloque.block_size 32 (1 SI, 0 NO): 0
-[DEBUG] 11:44:05:441 mongostore/(10936:11134): O-Bloque libre obtenido 2
-[DEBUG] 11:44:05:441 mongostore/(10936:11134): Posicion_en_bloque 0, posicion_inicio_bloque 64 posicion block_addres 0xb7271000 posicion absoluta 0xb7271040
-[INFO] 11:44:05:442 mongostore/(10936:10940): post socket_cliente
-[INFO] 11:44:05:442 mongostore/(10936:10940): Estableciendo conexión desde 39594
-[INFO] 11:44:05:442 mongostore/(10936:10940): Creando hilo
-[DEBUG] 11:44:05:442 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 64 posicion block_addres 0xb7271000 posicion absoluta 0xb7271060 proximo caracter a escribir en codigo ascii 71
-[DEBUG] 11:44:05:443 mongostore/(10936:11134): O-Bloque libre obtenido 3
-[DEBUG] 11:44:05:443 mongostore/(10936:11134): Posicion_en_bloque 0, posicion_inicio_bloque 96 posicion block_addres 0xb7271000 posicion absoluta 0xb7271060
-[DEBUG] 11:44:05:443 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 13, posicion_inicio_bloque 96 posicion block_addres 0xb7271000 posicion absoluta 0xb727106d proximo caracter a escribir en codigo ascii 0
-[DEBUG] 11:44:05:449 mongostore/(10936:11134): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 11:44:05:452 mongostore/(10936:11134): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims"
-[DEBUG] 11:44:05:454 mongostore/(10936:11134): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[DEBUG] 11:44:05:455 mongostore/(10936:11134): Ya cargue la bitacora el tripulante 1 con el mensaje "Comienza ejecucion de tarea ARREGLAR_REACTOR" no genera cambios en el File System
-[DEBUG] 11:44:05:457 mongostore/(10936:11139): Se ingresa a funcion_cliente
-[INFO] 11:44:05:458 mongostore/(10936:11139): Se conecto el socket 12
-[INFO] 11:44:29:777 mongostore/(10936:10936): SIGUSR1
-
-[DEBUG] 11:44:29:778 mongostore/(10936:11134): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 11:44:29:778 mongostore/(10936:11134): Se recibe al tripulante 1 y el mensaje "Se corre en panico hacia 1|1"
-[DEBUG] 11:44:29:778 mongostore/(10936:11134): Metadata de tripulante 1 levantada en memoria con size = 45 y blocks = [2,3]
-[INFO] 11:44:29:778 mongostore/(10936:11134): Se corre en panico hacia 1|1
-[DEBUG] 11:44:29:778 mongostore/(10936:11134): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 45, BLOCKS [2,3] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 11:44:29:779 mongostore/(10936:11134): Posicion_en_bloque 13, posicion_inicio_bloque 96 posicion block_addres 0xb7271000 posicion absoluta 0xb727106d
-[DEBUG] 11:44:29:779 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 96 posicion block_addres 0xb7271000 posicion absoluta 0xb7271080 proximo caracter a escribir en codigo ascii 104
-[DEBUG] 11:44:29:779 mongostore/(10936:11134): O-Bloque libre obtenido 4
-[DEBUG] 11:44:29:779 mongostore/(10936:11134): Posicion_en_bloque 0, posicion_inicio_bloque 128 posicion block_addres 0xb7271000 posicion absoluta 0xb7271080
-[DEBUG] 11:44:29:779 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 10, posicion_inicio_bloque 128 posicion block_addres 0xb7271000 posicion absoluta 0xb727108a proximo caracter a escribir en codigo ascii 0
-[DEBUG] 11:44:29:779 mongostore/(10936:11134): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 11:44:29:787 mongostore/(10936:11134): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[DEBUG] 11:44:29:787 mongostore/(10936:11134): Ya cargue la bitacora el tripulante 1 con el mensaje "Se corre en panico hacia 1|1" no genera cambios en el File System
-[DEBUG] 11:44:29:787 mongostore/(10936:11134): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 11:44:29:789 mongostore/(10936:11134): Se recibe al tripulante 1 y el mensaje "Se mueve de 0|0 a 1|0"
-[DEBUG] 11:44:29:790 mongostore/(10936:11134): Metadata de tripulante 1 levantada en memoria con size = 74 y blocks = [2,3,4]
-[INFO] 11:44:29:790 mongostore/(10936:11134): Se mueve de 0|0 a 1|0
-[DEBUG] 11:44:29:790 mongostore/(10936:11134): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 74, BLOCKS [2,3,4] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 11:44:29:790 mongostore/(10936:11134): Posicion_en_bloque 10, posicion_inicio_bloque 128 posicion block_addres 0xb7271000 posicion absoluta 0xb727108a
-[DEBUG] 11:44:29:790 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 128 posicion block_addres 0xb7271000 posicion absoluta 0xb72710a0 proximo caracter a escribir en codigo ascii 0
-[DEBUG] 11:44:29:790 mongostore/(10936:11134): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 11:44:29:792 mongostore/(10936:11134): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[DEBUG] 11:44:29:796 mongostore/(10936:11134): Ya cargue la bitacora el tripulante 1 con el mensaje "Se mueve de 0|0 a 1|0" no genera cambios en el File System
-[DEBUG] 11:44:30:797 mongostore/(10936:11134): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 11:44:30:797 mongostore/(10936:11134): Se recibe al tripulante 1 y el mensaje "Se mueve de 1|0 a 1|1"
-[DEBUG] 11:44:30:798 mongostore/(10936:11134): Metadata de tripulante 1 levantada en memoria con size = 96 y blocks = [2,3,4]
-[INFO] 11:44:30:798 mongostore/(10936:11134): Se mueve de 1|0 a 1|1
-[DEBUG] 11:44:30:798 mongostore/(10936:11134): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 96, BLOCKS [2,3,4] y superbloque.block_size 32 (1 SI, 0 NO): 0
-[DEBUG] 11:44:30:798 mongostore/(10936:11134): O-Bloque libre obtenido 5
-[DEBUG] 11:44:30:798 mongostore/(10936:11134): Posicion_en_bloque 0, posicion_inicio_bloque 160 posicion block_addres 0xb7271000 posicion absoluta 0xb72710a0
-[DEBUG] 11:44:30:798 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 22, posicion_inicio_bloque 160 posicion block_addres 0xb7271000 posicion absoluta 0xb72710b6 proximo caracter a escribir en codigo ascii 0
-[DEBUG] 11:44:30:798 mongostore/(10936:11134): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 11:44:30:805 mongostore/(10936:11134): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[DEBUG] 11:44:30:805 mongostore/(10936:11134): Ya cargue la bitacora el tripulante 1 con el mensaje "Se mueve de 1|0 a 1|1" no genera cambios en el File System
-[DEBUG] 11:44:41:807 mongostore/(10936:11134): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 11:44:41:807 mongostore/(10936:11134): Se recibe al tripulante 1 y el mensaje "Se resuelve el sabotaje"
-[DEBUG] 11:44:41:807 mongostore/(10936:11134): Metadata de tripulante 1 levantada en memoria con size = 118 y blocks = [2,3,4,5]
-[INFO] 11:44:41:807 mongostore/(10936:11134): Se resuelve el sabotaje
-[DEBUG] 11:44:41:807 mongostore/(10936:11134): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 118, BLOCKS [2,3,4,5] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 11:44:41:807 mongostore/(10936:11134): Posicion_en_bloque 22, posicion_inicio_bloque 160 posicion block_addres 0xb7271000 posicion absoluta 0xb72710b6
-[DEBUG] 11:44:41:807 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 160 posicion block_addres 0xb7271000 posicion absoluta 0xb72710c0 proximo caracter a escribir en codigo ascii 101
-[DEBUG] 11:44:41:808 mongostore/(10936:11134): O-Bloque libre obtenido 6
-[DEBUG] 11:44:41:808 mongostore/(10936:11134): Posicion_en_bloque 0, posicion_inicio_bloque 192 posicion block_addres 0xb7271000 posicion absoluta 0xb72710c0
-[DEBUG] 11:44:41:808 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 14, posicion_inicio_bloque 192 posicion block_addres 0xb7271000 posicion absoluta 0xb72710ce proximo caracter a escribir en codigo ascii 0
-[DEBUG] 11:44:41:808 mongostore/(10936:11134): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 11:44:41:812 mongostore/(10936:11134): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[DEBUG] 11:44:41:812 mongostore/(10936:11134): Ya cargue la bitacora el tripulante 1 con el mensaje "Se resuelve el sabotaje" no genera cambios en el File System
-[DEBUG] 11:44:41:813 mongostore/(10936:11134): Codigo de operacion recibido: cod_op = 14
-[DEBUG] 11:44:41:813 mongostore/(10936:11134): Se inicia fsck
-[DEBUG] 11:44:41:814 mongostore/(10936:11134): Blocks.ims actualizado
-[DEBUG] 11:44:41:814 mongostore/(10936:11134): Se inicia fsck_chequeo_de_sabotajes_en_superbloque()
-[DEBUG] 11:44:41:814 mongostore/(10936:11134): Se inicia superbloque_validar_integridad_cantidad_de_bloques()
-[INFO] 11:44:41:814 mongostore/(10936:11134): Parece que esta vez nadie se animo a sabotear la cantidad de bloques en el SuperBloque.ims
-[DEBUG] 11:44:41:815 mongostore/(10936:11134): Se finaliza superbloque_validar_integridad_cantidad_de_bloques()
-[DEBUG] 11:45:07:799 mongostore/(10936:11134): Info-Se ingresa a superbloque_validar_integridad_bitmap
-[DEBUG] 11:45:07:799 mongostore/(10936:11134): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
-[DEBUG] 11:45:07:799 mongostore/(10936:11134): O-Superbloque levantado desde archivo
-[DEBUG] 11:45:07:799 mongostore/(10936:11134): Se ingresa a files_obtener_cadena_con_bloques_ocupados
-[DEBUG] 11:45:07:799 mongostore/(10936:11134): Se ingresa a recursos_obtener_cadena_con_el_total_de_bloques_ocupados
-[DEBUG] 11:45:07:799 mongostore/(10936:11134): No existe el archivo "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims"
-[DEBUG] 11:45:07:800 mongostore/(10936:11134): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims": [0,1]
-[DEBUG] 11:45:07:800 mongostore/(10936:11134): No existe el archivo "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims"
-[DEBUG] 11:45:07:800 mongostore/(10936:11134): Los bloques ocupados por el total de recursos son [0,1]
-[DEBUG] 11:45:07:800 mongostore/(10936:11134): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
-[DEBUG] 11:45:07:800 mongostore/(10936:11134): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
-[DEBUG] 11:45:07:800 mongostore/(10936:11134): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [2,3,4,5,6]
-[DEBUG] 11:45:07:801 mongostore/(10936:11134): en bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados() antes de borrar lista de bitacoras
-[DEBUG] 11:45:07:801 mongostore/(10936:11134): Los bloques ocupados por el total de las bitacoras son [2,3,4,5,6]
-[DEBUG] 11:45:07:801 mongostore/(10936:11134): El total de bloques ocupados es [0,1,2,3,4,5,6]
-[INFO] 11:45:07:802 mongostore/(10936:11134): bitmap_real_md5: 36272b82e8cd79be73a3489f3036f578
-[INFO] 11:45:07:802 mongostore/(10936:11134): bitmap_actual_md5: 195364b8f8c7cee3e782baccaba2cccc
-[INFO] 11:45:18:830 mongostore/(10936:11134): Alguien saboteo el bitmap en el SuperBloque.ims
-[INFO] 11:45:18:830 mongostore/(10936:11134): El bitmap correcto ya fue persistido
-[INFO] 11:45:18:836 mongostore/(10936:11134): bitmap_real_md5: 36272b82e8cd79be73a3489f3036f578
-[INFO] 11:45:18:836 mongostore/(10936:11134): bitmap_actual_md5: 195364b8f8c7cee3e782baccaba2cccc
+[INFO] 19:09:39:699 mongostore/(22177:22184): Servidor iniciando 2
+[INFO] 19:09:39:699 mongostore/(22177:22184): Servidor Mongo2 encendido
+[INFO] 19:09:39:699 mongostore/(22177:22183): Servidor iniciando
+[INFO] 19:09:39:699 mongostore/(22177:22183): Servidor Mongo encendido
+[INFO] 19:09:46:549 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:46:549 mongostore/(22177:22183): Estableciendo conexión desde 18613
+[INFO] 19:09:46:549 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:46:554 mongostore/(22177:22189): Se ingresa a funcion_cliente
+[INFO] 19:09:46:554 mongostore/(22177:22189): Se conecto el socket 8
+[INFO] 19:09:48:412 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:412 mongostore/(22177:22183): Estableciendo conexión desde 20149
+[INFO] 19:09:48:412 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:421 mongostore/(22177:22210): Se ingresa a funcion_cliente
+[INFO] 19:09:48:421 mongostore/(22177:22210): Se conecto el socket 9
+[INFO] 19:09:48:437 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:437 mongostore/(22177:22183): Estableciendo conexión desde 21173
+[INFO] 19:09:48:437 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:443 mongostore/(22177:22212): Se ingresa a funcion_cliente
+[INFO] 19:09:48:444 mongostore/(22177:22212): Se conecto el socket 10
+[INFO] 19:09:48:463 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:463 mongostore/(22177:22183): Estableciendo conexión desde 22197
+[INFO] 19:09:48:463 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:468 mongostore/(22177:22214): Se ingresa a funcion_cliente
+[INFO] 19:09:48:468 mongostore/(22177:22214): Se conecto el socket 11
+[INFO] 19:09:48:472 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:472 mongostore/(22177:22183): Estableciendo conexión desde 23221
+[INFO] 19:09:48:472 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:485 mongostore/(22177:22216): Se ingresa a funcion_cliente
+[INFO] 19:09:48:485 mongostore/(22177:22216): Se conecto el socket 12
+[INFO] 19:09:48:495 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:495 mongostore/(22177:22183): Estableciendo conexión desde 24245
+[INFO] 19:09:48:495 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:497 mongostore/(22177:22218): Se ingresa a funcion_cliente
+[INFO] 19:09:48:497 mongostore/(22177:22218): Se conecto el socket 13
+[INFO] 19:09:48:500 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:500 mongostore/(22177:22183): Estableciendo conexión desde 25269
+[INFO] 19:09:48:500 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:502 mongostore/(22177:22220): Se ingresa a funcion_cliente
+[INFO] 19:09:48:502 mongostore/(22177:22220): Se conecto el socket 14
+[INFO] 19:09:48:509 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:509 mongostore/(22177:22183): Estableciendo conexión desde 26293
+[INFO] 19:09:48:510 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:515 mongostore/(22177:22222): Se ingresa a funcion_cliente
+[INFO] 19:09:48:515 mongostore/(22177:22222): Se conecto el socket 15
+[INFO] 19:09:48:518 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:518 mongostore/(22177:22183): Estableciendo conexión desde 27317
+[INFO] 19:09:48:518 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:520 mongostore/(22177:22224): Se ingresa a funcion_cliente
+[INFO] 19:09:48:520 mongostore/(22177:22224): Se conecto el socket 16
+[INFO] 19:09:48:522 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:523 mongostore/(22177:22183): Estableciendo conexión desde 28341
+[INFO] 19:09:48:523 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:525 mongostore/(22177:22226): Se ingresa a funcion_cliente
+[INFO] 19:09:48:525 mongostore/(22177:22226): Se conecto el socket 17
+[INFO] 19:09:48:528 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:528 mongostore/(22177:22183): Estableciendo conexión desde 29365
+[INFO] 19:09:48:528 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:530 mongostore/(22177:22228): Se ingresa a funcion_cliente
+[INFO] 19:09:48:530 mongostore/(22177:22228): Se conecto el socket 18
+[INFO] 19:09:48:533 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:533 mongostore/(22177:22183): Estableciendo conexión desde 30389
+[INFO] 19:09:48:533 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:541 mongostore/(22177:22230): Se ingresa a funcion_cliente
+[INFO] 19:09:48:541 mongostore/(22177:22230): Se conecto el socket 19
+[INFO] 19:09:48:547 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:547 mongostore/(22177:22183): Estableciendo conexión desde 31413
+[INFO] 19:09:48:547 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:550 mongostore/(22177:22232): Se ingresa a funcion_cliente
+[INFO] 19:09:48:550 mongostore/(22177:22232): Se conecto el socket 20
+[INFO] 19:09:48:553 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:553 mongostore/(22177:22183): Estableciendo conexión desde 32437
+[INFO] 19:09:48:553 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:555 mongostore/(22177:22234): Se ingresa a funcion_cliente
+[INFO] 19:09:48:555 mongostore/(22177:22234): Se conecto el socket 21
+[INFO] 19:09:48:558 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:558 mongostore/(22177:22183): Estableciendo conexión desde 33461
+[INFO] 19:09:48:558 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:560 mongostore/(22177:22236): Se ingresa a funcion_cliente
+[INFO] 19:09:48:560 mongostore/(22177:22236): Se conecto el socket 22
+[INFO] 19:09:48:562 mongostore/(22177:22183): post socket_cliente
+[INFO] 19:09:48:563 mongostore/(22177:22183): Estableciendo conexión desde 34485
+[INFO] 19:09:48:563 mongostore/(22177:22183): Creando hilo
+[DEBUG] 19:09:48:565 mongostore/(22177:22238): Se ingresa a funcion_cliente
+[INFO] 19:09:48:565 mongostore/(22177:22238): Se conecto el socket 23
+[DEBUG] 19:12:23:179 mongostore/(22177:22234): Se asigno el caracter de llenado O en el recien creado archivo Oxigeno.ims
+[DEBUG] 19:12:23:179 mongostore/(22177:22234): Bloque 36 agregado a blocks quedando BLOCK_COUNT 1 y BLOCKS [36]
+[DEBUG] 19:12:23:179 mongostore/(22177:22234): Posicion_en_bloque 0, posicion_inicio_bloque 9216 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9d400
+[DEBUG] 19:12:23:179 mongostore/(22177:22234): Se cargo en bloque 36 con caracter O quedando por cargar 0 recurso(s)
+[DEBUG] 19:12:23:179 mongostore/(22177:22234): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL O, SIZE 100, BLOCKS [36] y el MD5 de620f174aab7828b8b4017c0bb1392a
+[DEBUG] 19:12:23:180 mongostore/(22177:22234): Valores persistidos: SIZE 100  B_C 1  BS [36]  C_LL O MD5 de620f174aab7828b8b4017c0bb1392a
+[INFO] 19:12:23:180 mongostore/(22177:22234): Se actualizo metadata de OXIGENO de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims
+[INFO] 19:12:23:180 mongostore/(22177:22234): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_OXIGENO 100"
+[DEBUG] 19:13:10:375 mongostore/(22177:22238): Valores variables levantados SIZE 100 BLOCK_COUNT 1 BLOCKS [36] y MD5_ARCHIVO de620f174aab7828b8b4017c0bb1392a
+[DEBUG] 19:13:10:375 mongostore/(22177:22238): Posicion_en_bloque 100, posicion_inicio_bloque 9216 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9d464
+[DEBUG] 19:13:10:375 mongostore/(22177:22238): Se cargo en bloque 36 con caracter O quedando por cargar 0 recurso(s)
+[DEBUG] 19:13:10:375 mongostore/(22177:22238): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL O, SIZE 200, BLOCKS [36] y el MD5 aca13e68a55759c4a66e7213355ca786
+[DEBUG] 19:13:10:375 mongostore/(22177:22238): Valores persistidos: SIZE 200  B_C 1  BS [36]  C_LL O MD5 aca13e68a55759c4a66e7213355ca786
+[INFO] 19:13:10:376 mongostore/(22177:22238): Se actualizo metadata de OXIGENO de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims
+[INFO] 19:13:10:376 mongostore/(22177:22238): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_OXIGENO 100"
+[DEBUG] 19:13:47:535 mongostore/(22177:22214): Valores variables levantados SIZE 200 BLOCK_COUNT 1 BLOCKS [36] y MD5_ARCHIVO aca13e68a55759c4a66e7213355ca786
+[DEBUG] 19:13:47:535 mongostore/(22177:22214): Posicion_en_bloque 200, posicion_inicio_bloque 9216 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9d4c8
+[DEBUG] 19:13:47:535 mongostore/(22177:22214): Se cargo en bloque 36 con caracter O quedando por cargar 0 recurso(s)
+[DEBUG] 19:13:47:535 mongostore/(22177:22214): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL O, SIZE 212, BLOCKS [36] y el MD5 260fd22bf0ab9a726e0d59fcfd11c91b
+[DEBUG] 19:13:47:535 mongostore/(22177:22214): Valores persistidos: SIZE 212  B_C 1  BS [36]  C_LL O MD5 260fd22bf0ab9a726e0d59fcfd11c91b
+[INFO] 19:13:47:535 mongostore/(22177:22214): Se actualizo metadata de OXIGENO de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims
+[INFO] 19:13:47:535 mongostore/(22177:22214): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_OXIGENO 12"
+[DEBUG] 19:14:01:592 mongostore/(22177:22236): Valores variables levantados SIZE 212 BLOCK_COUNT 1 BLOCKS [36] y MD5_ARCHIVO 260fd22bf0ab9a726e0d59fcfd11c91b
+[DEBUG] 19:14:01:592 mongostore/(22177:22236): Posicion_en_bloque 212, posicion_inicio_bloque 9216 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9d4d4
+[DEBUG] 19:14:01:593 mongostore/(22177:22236): Se cargo en bloque 36 con caracter O quedando por cargar 56 recurso(s)
+[DEBUG] 19:14:01:593 mongostore/(22177:22236): Bloque 51 agregado a blocks quedando BLOCK_COUNT 2 y BLOCKS [36,51]
+[DEBUG] 19:14:01:593 mongostore/(22177:22236): Posicion_en_bloque 0, posicion_inicio_bloque 13056 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9e300
+[DEBUG] 19:14:01:593 mongostore/(22177:22236): Se cargo en bloque 51 con caracter O quedando por cargar 0 recurso(s)
+[DEBUG] 19:14:01:593 mongostore/(22177:22236): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL O, SIZE 312, BLOCKS [36,51] y el MD5 a5eadd14e6865e5a3f2ebe390ca56c43
+[DEBUG] 19:14:01:593 mongostore/(22177:22236): Valores persistidos: SIZE 312  B_C 2  BS [36,51]  C_LL O MD5 a5eadd14e6865e5a3f2ebe390ca56c43
+[INFO] 19:14:01:593 mongostore/(22177:22236): Se actualizo metadata de OXIGENO de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims
+[INFO] 19:14:01:593 mongostore/(22177:22236): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_OXIGENO 100"
+[DEBUG] 19:14:09:627 mongostore/(22177:22234): Valores variables levantados SIZE 312 BLOCK_COUNT 2 BLOCKS [36,51] y MD5_ARCHIVO a5eadd14e6865e5a3f2ebe390ca56c43
+[DEBUG] 19:14:09:627 mongostore/(22177:22234): Entro a metadata_consumir_cantidad con C_LL O y cantidad 20
+[DEBUG] 19:14:09:627 mongostore/(22177:22234): Valores de metadata antes de consumir recursos: SIZE 312, BLOCK_COUNT 2, BLOCKS [36,51] y MD5 a5eadd14e6865e5a3f2ebe390ca56c43
+[DEBUG] 19:14:09:627 mongostore/(22177:22234): Ultimo_bloque 51, posicion_a_consumir_en_bloque 36, posicion_inicio_bloque 13056 posicion absoluta 0xb6b9e324
+[DEBUG] 19:14:09:627 mongostore/(22177:22234): Se consumio en ultimo bloque el caracter O quedando por consumir 20 recurso(s) -- variante rapida
+[INFO] 19:14:09:627 mongostore/(22177:22234): Se consumio la cantidad solicitada teniendo finalmente el recurso con C_LL O, SIZE 292, BLOCKS [36,51] y el MD5 eaa08d65021f9232fffd62baa81238b9
+[DEBUG] 19:14:09:627 mongostore/(22177:22234): Valores persistidos: SIZE 292  B_C 2  BS [36,51]  C_LL O MD5 eaa08d65021f9232fffd62baa81238b9
+[INFO] 19:14:09:627 mongostore/(22177:22234): Se actualizo metadata de OXIGENO de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims
+[DEBUG] 19:14:09:627 mongostore/(22177:22234): Finaliza recurso_consumir_cantidad(OXIGENO, 20)
+[INFO] 19:14:09:627 mongostore/(22177:22234): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "CONSUMIR_OXIGENO 20"
+[DEBUG] 19:14:16:657 mongostore/(22177:22210): Valores variables levantados SIZE 292 BLOCK_COUNT 2 BLOCKS [36,51] y MD5_ARCHIVO eaa08d65021f9232fffd62baa81238b9
+[DEBUG] 19:14:16:657 mongostore/(22177:22210): Posicion_en_bloque 36, posicion_inicio_bloque 13056 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9e324
+[DEBUG] 19:14:16:657 mongostore/(22177:22210): Se cargo en bloque 51 con caracter O quedando por cargar 0 recurso(s)
+[DEBUG] 19:14:16:657 mongostore/(22177:22210): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL O, SIZE 304, BLOCKS [36,51] y el MD5 956809d0e93eea54b67fce383e9e7cdb
+[DEBUG] 19:14:16:657 mongostore/(22177:22210): Valores persistidos: SIZE 304  B_C 2  BS [36,51]  C_LL O MD5 956809d0e93eea54b67fce383e9e7cdb
+[INFO] 19:14:16:658 mongostore/(22177:22210): Se actualizo metadata de OXIGENO de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims
+[INFO] 19:14:16:658 mongostore/(22177:22210): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_OXIGENO 12"
+[DEBUG] 19:14:18:664 mongostore/(22177:22212): Valores variables levantados SIZE 304 BLOCK_COUNT 2 BLOCKS [36,51] y MD5_ARCHIVO 956809d0e93eea54b67fce383e9e7cdb
+[DEBUG] 19:14:18:664 mongostore/(22177:22212): Posicion_en_bloque 48, posicion_inicio_bloque 13056 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9e330
+[DEBUG] 19:14:18:664 mongostore/(22177:22212): Se cargo en bloque 51 con caracter O quedando por cargar 0 recurso(s)
+[DEBUG] 19:14:18:664 mongostore/(22177:22212): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL O, SIZE 316, BLOCKS [36,51] y el MD5 200455624c67b4815961b5c312efadc3
+[DEBUG] 19:14:18:665 mongostore/(22177:22212): Valores persistidos: SIZE 316  B_C 2  BS [36,51]  C_LL O MD5 200455624c67b4815961b5c312efadc3
+[INFO] 19:14:18:665 mongostore/(22177:22212): Se actualizo metadata de OXIGENO de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims
+[INFO] 19:14:18:665 mongostore/(22177:22212): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_OXIGENO 12"
+[DEBUG] 19:14:52:819 mongostore/(22177:22238): Valores variables levantados SIZE 316 BLOCK_COUNT 2 BLOCKS [36,51] y MD5_ARCHIVO 200455624c67b4815961b5c312efadc3
+[DEBUG] 19:14:52:819 mongostore/(22177:22238): Entro a metadata_consumir_cantidad con C_LL O y cantidad 20
+[DEBUG] 19:14:52:819 mongostore/(22177:22238): Valores de metadata antes de consumir recursos: SIZE 316, BLOCK_COUNT 2, BLOCKS [36,51] y MD5 200455624c67b4815961b5c312efadc3
+[DEBUG] 19:14:52:820 mongostore/(22177:22238): Ultimo_bloque 51, posicion_a_consumir_en_bloque 40, posicion_inicio_bloque 13056 posicion absoluta 0xb6b9e328
+[DEBUG] 19:14:52:820 mongostore/(22177:22238): Se consumio en ultimo bloque el caracter O quedando por consumir 20 recurso(s) -- variante rapida
+[INFO] 19:14:52:820 mongostore/(22177:22238): Se consumio la cantidad solicitada teniendo finalmente el recurso con C_LL O, SIZE 296, BLOCKS [36,51] y el MD5 e47975b35a875a409f8fd08b2210d2e3
+[DEBUG] 19:14:52:820 mongostore/(22177:22238): Valores persistidos: SIZE 296  B_C 2  BS [36,51]  C_LL O MD5 e47975b35a875a409f8fd08b2210d2e3
+[INFO] 19:14:52:822 mongostore/(22177:22238): Se actualizo metadata de OXIGENO de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims
+[DEBUG] 19:14:52:822 mongostore/(22177:22238): Finaliza recurso_consumir_cantidad(OXIGENO, 20)
+[INFO] 19:14:52:822 mongostore/(22177:22238): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "CONSUMIR_OXIGENO 20"
+[DEBUG] 19:14:56:842 mongostore/(22177:22214): Se asigno el caracter de llenado C en el recien creado archivo Comida.ims
+[DEBUG] 19:14:56:843 mongostore/(22177:22214): Bloque 62 agregado a blocks quedando BLOCK_COUNT 1 y BLOCKS [62]
+[DEBUG] 19:14:56:843 mongostore/(22177:22214): Posicion_en_bloque 0, posicion_inicio_bloque 15872 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9ee00
+[DEBUG] 19:14:56:843 mongostore/(22177:22214): Se cargo en bloque 62 con caracter C quedando por cargar 0 recurso(s)
+[DEBUG] 19:14:56:843 mongostore/(22177:22214): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL C, SIZE 12, BLOCKS [62] y el MD5 42b1b7320f7929acb590ba8254085d4d
+[DEBUG] 19:14:56:843 mongostore/(22177:22214): Valores persistidos: SIZE 12  B_C 1  BS [62]  C_LL C MD5 42b1b7320f7929acb590ba8254085d4d
+[INFO] 19:14:56:843 mongostore/(22177:22214): Se actualizo metadata de COMIDA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims
+[INFO] 19:14:56:843 mongostore/(22177:22214): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_COMIDA 12"
+[DEBUG] 19:15:32:993 mongostore/(22177:22210): Valores variables levantados SIZE 12 BLOCK_COUNT 1 BLOCKS [62] y MD5_ARCHIVO 42b1b7320f7929acb590ba8254085d4d
+[DEBUG] 19:15:32:993 mongostore/(22177:22210): Posicion_en_bloque 12, posicion_inicio_bloque 15872 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9ee0c
+[DEBUG] 19:15:32:993 mongostore/(22177:22210): Se cargo en bloque 62 con caracter C quedando por cargar 0 recurso(s)
+[DEBUG] 19:15:32:993 mongostore/(22177:22210): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL C, SIZE 24, BLOCKS [62] y el MD5 d2404493352e61292d755579bf790d58
+[DEBUG] 19:15:32:994 mongostore/(22177:22210): Valores persistidos: SIZE 24  B_C 1  BS [62]  C_LL C MD5 d2404493352e61292d755579bf790d58
+[INFO] 19:15:32:994 mongostore/(22177:22210): Se actualizo metadata de COMIDA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims
+[INFO] 19:15:32:994 mongostore/(22177:22210): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_COMIDA 12"
+[DEBUG] 19:15:37:013 mongostore/(22177:22212): Valores variables levantados SIZE 24 BLOCK_COUNT 1 BLOCKS [62] y MD5_ARCHIVO d2404493352e61292d755579bf790d58
+[DEBUG] 19:15:37:013 mongostore/(22177:22212): Posicion_en_bloque 24, posicion_inicio_bloque 15872 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9ee18
+[DEBUG] 19:15:37:013 mongostore/(22177:22212): Se cargo en bloque 62 con caracter C quedando por cargar 0 recurso(s)
+[DEBUG] 19:15:37:013 mongostore/(22177:22212): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL C, SIZE 36, BLOCKS [62] y el MD5 969f855aa9954a13b224c7a9370691e8
+[DEBUG] 19:15:37:014 mongostore/(22177:22212): Valores persistidos: SIZE 36  B_C 1  BS [62]  C_LL C MD5 969f855aa9954a13b224c7a9370691e8
+[INFO] 19:15:37:014 mongostore/(22177:22212): Se actualizo metadata de COMIDA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims
+[INFO] 19:15:37:014 mongostore/(22177:22212): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_COMIDA 12"
+[DEBUG] 19:15:43:037 mongostore/(22177:22236): Valores variables levantados SIZE 296 BLOCK_COUNT 2 BLOCKS [36,51] y MD5_ARCHIVO e47975b35a875a409f8fd08b2210d2e3
+[DEBUG] 19:15:43:038 mongostore/(22177:22236): Entro a metadata_consumir_cantidad con C_LL O y cantidad 20
+[DEBUG] 19:15:43:038 mongostore/(22177:22236): Valores de metadata antes de consumir recursos: SIZE 296, BLOCK_COUNT 2, BLOCKS [36,51] y MD5 e47975b35a875a409f8fd08b2210d2e3
+[DEBUG] 19:15:43:038 mongostore/(22177:22236): Ultimo_bloque 51, posicion_a_consumir_en_bloque 20, posicion_inicio_bloque 13056 posicion absoluta 0xb6b9e314
+[DEBUG] 19:15:43:039 mongostore/(22177:22236): Se consumio en ultimo bloque el caracter O quedando por consumir 20 recurso(s) -- variante rapida
+[INFO] 19:15:43:039 mongostore/(22177:22236): Se consumio la cantidad solicitada teniendo finalmente el recurso con C_LL O, SIZE 276, BLOCKS [36,51] y el MD5 29a7c40125e8ba4730863831db26bbaa
+[DEBUG] 19:15:43:040 mongostore/(22177:22236): Valores persistidos: SIZE 276  B_C 2  BS [36,51]  C_LL O MD5 29a7c40125e8ba4730863831db26bbaa
+[INFO] 19:15:43:042 mongostore/(22177:22236): Se actualizo metadata de OXIGENO de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims
+[DEBUG] 19:15:43:042 mongostore/(22177:22236): Finaliza recurso_consumir_cantidad(OXIGENO, 20)
+[INFO] 19:15:43:042 mongostore/(22177:22236): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "CONSUMIR_OXIGENO 20"
+[DEBUG] 19:16:13:164 mongostore/(22177:22214): Valores variables levantados SIZE 36 BLOCK_COUNT 1 BLOCKS [62] y MD5_ARCHIVO 969f855aa9954a13b224c7a9370691e8
+[DEBUG] 19:16:13:164 mongostore/(22177:22214): Entro a metadata_consumir_cantidad con C_LL C y cantidad 10
+[DEBUG] 19:16:13:164 mongostore/(22177:22214): Valores de metadata antes de consumir recursos: SIZE 36, BLOCK_COUNT 1, BLOCKS [62] y MD5 969f855aa9954a13b224c7a9370691e8
+[DEBUG] 19:16:13:164 mongostore/(22177:22214): Ultimo_bloque 62, posicion_a_consumir_en_bloque 26, posicion_inicio_bloque 15872 posicion absoluta 0xb6b9ee1a
+[DEBUG] 19:16:13:165 mongostore/(22177:22214): Se consumio en ultimo bloque el caracter C quedando por consumir 10 recurso(s) -- variante rapida
+[INFO] 19:16:13:165 mongostore/(22177:22214): Se consumio la cantidad solicitada teniendo finalmente el recurso con C_LL C, SIZE 26, BLOCKS [62] y el MD5 03876f0cd0cd916ae56269c60fb2cdda
+[DEBUG] 19:16:13:165 mongostore/(22177:22214): Valores persistidos: SIZE 26  B_C 1  BS [62]  C_LL C MD5 03876f0cd0cd916ae56269c60fb2cdda
+[INFO] 19:16:13:165 mongostore/(22177:22214): Se actualizo metadata de COMIDA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims
+[DEBUG] 19:16:13:165 mongostore/(22177:22214): Finaliza recurso_consumir_cantidad(COMIDA, 10)
+[INFO] 19:16:13:165 mongostore/(22177:22214): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "CONSUMIR_COMIDA 10"
+[DEBUG] 19:16:33:241 mongostore/(22177:22214): Se asigno el caracter de llenado B en el recien creado archivo Basura.ims
+[DEBUG] 19:16:33:242 mongostore/(22177:22214): Bloque 79 agregado a blocks quedando BLOCK_COUNT 1 y BLOCKS [79]
+[DEBUG] 19:16:33:242 mongostore/(22177:22214): Posicion_en_bloque 0, posicion_inicio_bloque 20224 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9ff00
+[DEBUG] 19:16:33:242 mongostore/(22177:22214): Se cargo en bloque 79 con caracter B quedando por cargar 0 recurso(s)
+[DEBUG] 19:16:33:242 mongostore/(22177:22214): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL B, SIZE 30, BLOCKS [79] y el MD5 e10a2feca83a99f351c8cfb06d9068d2
+[DEBUG] 19:16:33:242 mongostore/(22177:22214): Valores persistidos: SIZE 30  B_C 1  BS [79]  C_LL B MD5 e10a2feca83a99f351c8cfb06d9068d2
+[INFO] 19:16:33:243 mongostore/(22177:22214): Se actualizo metadata de BASURA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims
+[INFO] 19:16:33:243 mongostore/(22177:22214): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_BASURA 30"
+[DEBUG] 19:16:43:284 mongostore/(22177:22210): Valores variables levantados SIZE 26 BLOCK_COUNT 1 BLOCKS [62] y MD5_ARCHIVO 03876f0cd0cd916ae56269c60fb2cdda
+[DEBUG] 19:16:43:285 mongostore/(22177:22210): Entro a metadata_consumir_cantidad con C_LL C y cantidad 10
+[DEBUG] 19:16:43:285 mongostore/(22177:22210): Valores de metadata antes de consumir recursos: SIZE 26, BLOCK_COUNT 1, BLOCKS [62] y MD5 03876f0cd0cd916ae56269c60fb2cdda
+[DEBUG] 19:16:43:285 mongostore/(22177:22210): Ultimo_bloque 62, posicion_a_consumir_en_bloque 16, posicion_inicio_bloque 15872 posicion absoluta 0xb6b9ee10
+[DEBUG] 19:16:43:285 mongostore/(22177:22210): Se consumio en ultimo bloque el caracter C quedando por consumir 10 recurso(s) -- variante rapida
+[INFO] 19:16:43:285 mongostore/(22177:22210): Se consumio la cantidad solicitada teniendo finalmente el recurso con C_LL C, SIZE 16, BLOCKS [62] y el MD5 80fda7545b1fc3f70af956e7cbdf33bf
+[DEBUG] 19:16:43:285 mongostore/(22177:22210): Valores persistidos: SIZE 16  B_C 1  BS [62]  C_LL C MD5 80fda7545b1fc3f70af956e7cbdf33bf
+[INFO] 19:16:43:285 mongostore/(22177:22210): Se actualizo metadata de COMIDA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims
+[DEBUG] 19:16:43:285 mongostore/(22177:22210): Finaliza recurso_consumir_cantidad(COMIDA, 10)
+[INFO] 19:16:43:285 mongostore/(22177:22210): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "CONSUMIR_COMIDA 10"
+[DEBUG] 19:16:49:310 mongostore/(22177:22212): Valores variables levantados SIZE 16 BLOCK_COUNT 1 BLOCKS [62] y MD5_ARCHIVO 80fda7545b1fc3f70af956e7cbdf33bf
+[DEBUG] 19:16:49:310 mongostore/(22177:22212): Entro a metadata_consumir_cantidad con C_LL C y cantidad 10
+[DEBUG] 19:16:49:310 mongostore/(22177:22212): Valores de metadata antes de consumir recursos: SIZE 16, BLOCK_COUNT 1, BLOCKS [62] y MD5 80fda7545b1fc3f70af956e7cbdf33bf
+[DEBUG] 19:16:49:310 mongostore/(22177:22212): Ultimo_bloque 62, posicion_a_consumir_en_bloque 6, posicion_inicio_bloque 15872 posicion absoluta 0xb6b9ee06
+[DEBUG] 19:16:49:310 mongostore/(22177:22212): Se consumio en ultimo bloque el caracter C quedando por consumir 10 recurso(s) -- variante rapida
+[INFO] 19:16:49:310 mongostore/(22177:22212): Se consumio la cantidad solicitada teniendo finalmente el recurso con C_LL C, SIZE 6, BLOCKS [62] y el MD5 cba81d13b8fe4dc120a844ff5fb37321
+[DEBUG] 19:16:49:310 mongostore/(22177:22212): Valores persistidos: SIZE 6  B_C 1  BS [62]  C_LL C MD5 cba81d13b8fe4dc120a844ff5fb37321
+[INFO] 19:16:49:311 mongostore/(22177:22212): Se actualizo metadata de COMIDA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims
+[DEBUG] 19:16:49:313 mongostore/(22177:22212): Finaliza recurso_consumir_cantidad(COMIDA, 10)
+[INFO] 19:16:49:313 mongostore/(22177:22212): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "CONSUMIR_COMIDA 10"
+[DEBUG] 19:17:02:369 mongostore/(22177:22210): Valores variables levantados SIZE 30 BLOCK_COUNT 1 BLOCKS [79] y MD5_ARCHIVO e10a2feca83a99f351c8cfb06d9068d2
+[DEBUG] 19:17:02:370 mongostore/(22177:22210): Posicion_en_bloque 30, posicion_inicio_bloque 20224 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9ff1e
+[DEBUG] 19:17:02:370 mongostore/(22177:22210): Se cargo en bloque 79 con caracter B quedando por cargar 0 recurso(s)
+[DEBUG] 19:17:02:370 mongostore/(22177:22210): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL B, SIZE 60, BLOCKS [79] y el MD5 a7fb1584361efae4ca1daf6ac6314004
+[DEBUG] 19:17:02:370 mongostore/(22177:22210): Valores persistidos: SIZE 60  B_C 1  BS [79]  C_LL B MD5 a7fb1584361efae4ca1daf6ac6314004
+[INFO] 19:17:02:370 mongostore/(22177:22210): Se actualizo metadata de BASURA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims
+[INFO] 19:17:02:371 mongostore/(22177:22210): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_BASURA 30"
+[DEBUG] 19:17:07:394 mongostore/(22177:22212): Valores variables levantados SIZE 60 BLOCK_COUNT 1 BLOCKS [79] y MD5_ARCHIVO a7fb1584361efae4ca1daf6ac6314004
+[DEBUG] 19:17:07:395 mongostore/(22177:22212): Posicion_en_bloque 60, posicion_inicio_bloque 20224 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9ff3c
+[DEBUG] 19:17:07:395 mongostore/(22177:22212): Se cargo en bloque 79 con caracter B quedando por cargar 0 recurso(s)
+[DEBUG] 19:17:07:395 mongostore/(22177:22212): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL B, SIZE 90, BLOCKS [79] y el MD5 d8838bfc1d2bdff2b84b11391097dc49
+[DEBUG] 19:17:07:395 mongostore/(22177:22212): Valores persistidos: SIZE 90  B_C 1  BS [79]  C_LL B MD5 d8838bfc1d2bdff2b84b11391097dc49
+[INFO] 19:17:07:395 mongostore/(22177:22212): Se actualizo metadata de BASURA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims
+[INFO] 19:17:07:395 mongostore/(22177:22212): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_BASURA 30"
+[DEBUG] 19:17:46:552 mongostore/(22177:22216): Valores variables levantados SIZE 90 BLOCK_COUNT 1 BLOCKS [79] y MD5_ARCHIVO d8838bfc1d2bdff2b84b11391097dc49
+[DEBUG] 19:17:46:553 mongostore/(22177:22216): Posicion_en_bloque 90, posicion_inicio_bloque 20224 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9ff5a
+[DEBUG] 19:17:46:554 mongostore/(22177:22216): Se cargo en bloque 79 con caracter B quedando por cargar 0 recurso(s)
+[DEBUG] 19:17:46:554 mongostore/(22177:22216): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL B, SIZE 91, BLOCKS [79] y el MD5 f105b6156cae8a264b33475b51d3d92f
+[DEBUG] 19:17:46:554 mongostore/(22177:22216): Valores persistidos: SIZE 91  B_C 1  BS [79]  C_LL B MD5 f105b6156cae8a264b33475b51d3d92f
+[INFO] 19:17:46:555 mongostore/(22177:22216): Se actualizo metadata de BASURA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims
+[INFO] 19:17:46:555 mongostore/(22177:22216): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_BASURA 1"
+[DEBUG] 19:17:59:607 mongostore/(22177:22218): Valores variables levantados SIZE 91 BLOCK_COUNT 1 BLOCKS [79] y MD5_ARCHIVO f105b6156cae8a264b33475b51d3d92f
+[DEBUG] 19:17:59:607 mongostore/(22177:22218): Posicion_en_bloque 91, posicion_inicio_bloque 20224 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6b9ff5b
+[DEBUG] 19:17:59:607 mongostore/(22177:22218): Se cargo en bloque 79 con caracter B quedando por cargar 0 recurso(s)
+[DEBUG] 19:17:59:607 mongostore/(22177:22218): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL B, SIZE 92, BLOCKS [79] y el MD5 ffc996ee8158a4cad79e0abeb452c6bf
+[DEBUG] 19:17:59:607 mongostore/(22177:22218): Valores persistidos: SIZE 92  B_C 1  BS [79]  C_LL B MD5 ffc996ee8158a4cad79e0abeb452c6bf
+[INFO] 19:17:59:607 mongostore/(22177:22218): Se actualizo metadata de BASURA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims
+[INFO] 19:17:59:608 mongostore/(22177:22218): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_BASURA 1"
+[DEBUG] 19:18:04:624 mongostore/(22177:22214): Valores variables levantados SIZE 92 BLOCK_COUNT 1 BLOCKS [79] y MD5_ARCHIVO ffc996ee8158a4cad79e0abeb452c6bf
+[DEBUG] 19:18:04:624 mongostore/(22177:22214): Los bloques [79] fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims
+[DEBUG] 19:18:04:624 mongostore/(22177:22214): Se descartaron los caracteres "B" que existian
+[DEBUG] 19:18:04:624 mongostore/(22177:22214): Se seteo a los valores default la metadata en memoria del recurso BASURA
+[INFO] 19:18:04:624 mongostore/(22177:22214): Se elimino el archivo de la metadata del recurso BASURA
+[INFO] 19:18:04:624 mongostore/(22177:22214): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "DESCARTAR_BASURA 0"
+[DEBUG] 19:18:11:652 mongostore/(22177:22220): Se asigno el caracter de llenado B en el recien creado archivo Basura.ims
+[DEBUG] 19:18:11:652 mongostore/(22177:22220): Bloque 94 agregado a blocks quedando BLOCK_COUNT 1 y BLOCKS [94]
+[DEBUG] 19:18:11:652 mongostore/(22177:22220): Posicion_en_bloque 0, posicion_inicio_bloque 24064 posicion block_addres 0xb6b9b000 posicion absoluta 0xb6ba0e00
+[DEBUG] 19:18:11:652 mongostore/(22177:22220): Se cargo en bloque 94 con caracter B quedando por cargar 0 recurso(s)
+[DEBUG] 19:18:11:652 mongostore/(22177:22220): Se genero la cantidad solicitada teniendo finalmente el recurso con C_LL B, SIZE 1, BLOCKS [94] y el MD5 9d5ed678fe57bcca610140957afab571
+[DEBUG] 19:18:11:652 mongostore/(22177:22220): Valores persistidos: SIZE 1  B_C 1  BS [94]  C_LL B MD5 9d5ed678fe57bcca610140957afab571
+[INFO] 19:18:11:653 mongostore/(22177:22220): Se actualizo metadata de BASURA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims
+[INFO] 19:18:11:653 mongostore/(22177:22220): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "GENERAR_BASURA 1"
+[DEBUG] 19:18:30:719 mongostore/(22177:22210): Valores variables levantados SIZE 1 BLOCK_COUNT 1 BLOCKS [94] y MD5_ARCHIVO 9d5ed678fe57bcca610140957afab571
+[DEBUG] 19:18:30:719 mongostore/(22177:22210): Los bloques [94] fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims
+[DEBUG] 19:18:30:719 mongostore/(22177:22210): Se descartaron los caracteres "B" que existian
+[DEBUG] 19:18:30:719 mongostore/(22177:22210): Se seteo a los valores default la metadata en memoria del recurso BASURA
+[INFO] 19:18:30:719 mongostore/(22177:22210): Se elimino el archivo de la metadata del recurso BASURA
+[INFO] 19:18:30:719 mongostore/(22177:22210): Se actualizaron los archivos de superbloque y blocks debido a la realizacion de "DESCARTAR_BASURA 0"
+[INFO] 19:18:31:736 mongostore/(22177:22212): No existe el archivo Basura.ims como para descartarse
+[DEBUG] 19:18:31:737 mongostore/(22177:22212): Saliendo de recurso_descartar(BASURA, 0)
+[DEBUG] 19:18:31:737 mongostore/(22177:22212): La tarea "DESCARTAR_BASURA 0" no precisa actualizar ni Blocks.ims ni SuperBloque.ims

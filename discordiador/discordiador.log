@@ -1,25 +1,229 @@
-[INFO] 11:44:02:768 discordiador/(11117:11123): in funcion_sabotaje
-[INFO] 11:44:02:768 discordiador/(11117:11122): in menu_discordiador
-[INFO] 11:44:04:250 discordiador/(11117:11122): Memoria asignada
-[INFO] 11:44:04:252 discordiador/(11117:11122): Memoria asignada
-[INFO] 11:44:04:256 discordiador/(11117:11122): Memoria asignada
-[INFO] 11:44:04:258 discordiador/(11117:11122): Memoria asignada
-[INFO] 11:44:05:437 discordiador/(11117:11129): TRIPU 1  tarea recibida: ARREGLAR_REACTOR;0;0;600
-[INFO] 11:44:05:440 discordiador/(11117:11130): TRIPU 2  tarea recibida: EMPALMANDO_CABLES;8;0;600
-[INFO] 11:44:05:442 discordiador/(11117:11131): TRIPU 3  tarea recibida: ROMPIENDO_ASTEROIDES;8;8;600
-[INFO] 11:44:05:459 discordiador/(11117:11132): TRIPU 4  tarea recibida: CEBANDO_MATES;0;8;600
-[INFO] 11:44:29:777 discordiador/(11117:11123): posicion_sabotaje_char 1|1
-[INFO] 11:44:29:778 discordiador/(11117:11123): lista bloq emergencia
-[INFO] 11:44:29:778 discordiador/(11117:11123): tid 1  posx 0  posy 0
-[INFO] 11:44:29:778 discordiador/(11117:11123): tid 2  posx 8  posy 0
-[INFO] 11:44:29:778 discordiador/(11117:11123): tid 3  posx 8  posy 8
-[INFO] 11:44:29:778 discordiador/(11117:11123): tid 4  posx 0  posy 8
-[INFO] 11:44:29:778 discordiador/(11117:11123): Tripu elegido: tid 1  posx 0  posy 0
-[INFO] 11:44:29:787 discordiador/(11117:11123): lista bloq emergencia actualizada
-[INFO] 11:44:29:787 discordiador/(11117:11123): tid 2  posx 8  posy 0
-[INFO] 11:44:29:787 discordiador/(11117:11123): tid 3  posx 8  posy 8
-[INFO] 11:44:29:787 discordiador/(11117:11123): tid 4  posx 0  posy 8
-[INFO] 11:44:29:787 discordiador/(11117:11123): tid 1  posx 0  posy 0
-[INFO] 11:44:31:806 discordiador/(11117:11123): comienza tiempo sabotaje
-[INFO] 11:44:41:806 discordiador/(11117:11123): finaliza tiempo sabotaje
-[INFO] 11:59:24:735 discordiador/(11117:11123): posicion_sabotaje_char x@¶@
+[INFO] 19:09:46:584 discordiador/(22187:22191): in funcion_sabotaje
+[INFO] 19:09:46:575 discordiador/(22187:22190): in menu_discordiador
+[INFO] 19:09:48:204 discordiador/(22187:22190): Memoria asignada
+[INFO] 19:09:48:258 discordiador/(22187:22190): Memoria asignada
+[INFO] 19:09:48:305 discordiador/(22187:22190): Memoria asignada
+[INFO] 19:09:48:348 discordiador/(22187:22190): Memoria asignada
+[INFO] 19:09:48:398 discordiador/(22187:22190): Memoria asignada
+[INFO] 19:09:48:431 discordiador/(22187:22195): TRIPU 1  tarea recibida: ARREGLAR_REACTOR;7;2;4
+[INFO] 19:09:48:461 discordiador/(22187:22196): TRIPU 2  tarea recibida: ARREGLAR_REACTOR;7;2;4
+[INFO] 19:09:48:470 discordiador/(22187:22197): TRIPU 3  tarea recibida: ARREGLAR_REACTOR;7;2;4
+[INFO] 19:09:48:492 discordiador/(22187:22198): TRIPU 4  tarea recibida: COMPRAR_FACTURAS;1;1;5
+[INFO] 19:09:48:499 discordiador/(22187:22199): TRIPU 5  tarea recibida: COMPRAR_FACTURAS;1;1;5
+[INFO] 19:09:48:504 discordiador/(22187:22200): TRIPU 6  tarea recibida: COMPRAR_FACTURAS;1;1;5
+[INFO] 19:09:48:517 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;0;0;1
+[INFO] 19:09:48:521 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;0;0;1
+[INFO] 19:09:48:527 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;0;0;1
+[INFO] 19:09:48:532 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;0;0;2
+[INFO] 19:09:48:543 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;0;0;2
+[INFO] 19:09:48:552 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;0;0;2
+[INFO] 19:09:48:557 discordiador/(22187:22207): TRIPU 13  tarea recibida: REALIZAR_PRIMER_COMMIT;0;0;10
+[INFO] 19:09:48:561 discordiador/(22187:22208): TRIPU 14  tarea recibida: REALIZAR_PRIMER_COMMIT;0;0;10
+[INFO] 19:09:48:567 discordiador/(22187:22209): TRIPU 15  tarea recibida: REALIZAR_PRIMER_COMMIT;0;0;10
+[INFO] 19:10:29:690 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;0;1;2
+[INFO] 19:10:50:772 discordiador/(22187:22197): TRIPU 3  tarea recibida: BARRER;7;7;4
+[INFO] 19:10:50:775 discordiador/(22187:22198): TRIPU 4  tarea recibida: HACER_EJERCICIO;7;3;10
+[INFO] 19:10:52:783 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;0;2;3
+[INFO] 19:10:52:785 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;0;1;2
+[INFO] 19:11:02:825 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;1;0;2
+[INFO] 19:11:06:837 discordiador/(22187:22199): TRIPU 5  tarea recibida: HACER_EJERCICIO;7;3;10
+[INFO] 19:11:08:843 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;1;0;2
+[INFO] 19:11:09:848 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;1;0;2
+[INFO] 19:11:15:872 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;0;2;3
+[INFO] 19:11:16:882 discordiador/(22187:22207): TRIPU 13  tarea recibida: GENERAR_OXIGENO 100;4;4;10
+[INFO] 19:11:19:894 discordiador/(22187:22196): TRIPU 2  tarea recibida: BARRER;7;7;4
+[INFO] 19:11:19:897 discordiador/(22187:22195): TRIPU 1  tarea recibida: BARRER;7;7;4
+[INFO] 19:11:20:903 discordiador/(22187:22200): TRIPU 6  tarea recibida: HACER_EJERCICIO;7;3;10
+[INFO] 19:11:22:910 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;0;3;4
+[INFO] 19:11:25:926 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;2;0;2
+[INFO] 19:11:30:955 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;0;1;2
+[INFO] 19:11:31:956 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;2;0;2
+[INFO] 19:11:32:961 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;2;0;2
+[INFO] 19:11:45:020 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;0;3;4
+[INFO] 19:11:49:035 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;3;0;2
+[INFO] 19:11:54:061 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;0;2;3
+[INFO] 19:11:54:062 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;3;0;2
+[INFO] 19:11:55:071 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;3;0;2
+[INFO] 19:11:58:082 discordiador/(22187:22197): TRIPU 3  tarea recibida: GENERAR_OXIGENO 12;0;0;5
+[INFO] 19:12:00:090 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;0;4;5
+[INFO] 19:12:03:101 discordiador/(22187:22209): TRIPU 15  tarea recibida: GENERAR_OXIGENO 100;4;4;10
+[INFO] 19:12:11:128 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;4;0;3
+[INFO] 19:12:17:150 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;4;0;3
+[INFO] 19:12:18:152 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;4;0;3
+[INFO] 19:12:23:174 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;0;4;5
+[INFO] 19:12:24:178 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;0;3;4
+[INFO] 19:12:27:194 discordiador/(22187:22196): TRIPU 2  tarea recibida: GENERAR_OXIGENO 12;0;0;5
+[INFO] 19:12:28:193 discordiador/(22187:22195): TRIPU 1  tarea recibida: GENERAR_OXIGENO 12;0;0;5
+[INFO] 19:12:34:193 discordiador/(22187:22194): TRIPU 13  tarea recibida: HACER_EJERCICIO;5;5;10
+[INFO] 19:12:40:234 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;5;0;3
+[INFO] 19:12:45:260 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;0;5;4
+[INFO] 19:12:46:266 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;5;0;3
+[INFO] 19:12:47:270 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;5;0;3
+[INFO] 19:12:55:311 discordiador/(22187:22208): TRIPU 14  tarea recibida: GENERAR_OXIGENO 100;4;4;10
+[INFO] 19:13:00:330 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;0;4;5
+[INFO] 19:13:07:359 discordiador/(22187:22198): TRIPU 4  tarea recibida: SUBIR_FOTOS_A_IG;7;3;8
+[INFO] 19:13:07:360 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;0;5;4
+[INFO] 19:13:10:370 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;6;0;3
+[INFO] 19:13:16:397 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;6;0;3
+[INFO] 19:13:17:407 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;6;0;3
+[INFO] 19:13:21:385 discordiador/(22187:22194): TRIPU 15  tarea recibida: HACER_EJERCICIO;5;5;10
+[INFO] 19:13:21:418 discordiador/(22187:22199): TRIPU 5  tarea recibida: SUBIR_FOTOS_A_IG;7;3;8
+[INFO] 19:13:23:431 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;0;6;3
+[INFO] 19:13:34:475 discordiador/(22187:22200): TRIPU 6  tarea recibida: SUBIR_FOTOS_A_IG;7;3;8
+[INFO] 19:13:39:495 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;7;0;3
+[INFO] 19:13:44:513 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;0;5;4
+[INFO] 19:13:45:518 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;0;6;3
+[INFO] 19:13:45:519 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;7;0;3
+[INFO] 19:13:46:526 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;7;0;3
+[INFO] 19:13:53:542 discordiador/(22187:22194): TRIPU 3  tarea recibida: CAMINAR;2;2;1
+[INFO] 19:13:53:555 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;0;7;2
+[INFO] 19:14:03:596 discordiador/(22187:22207): TRIPU 13  tarea recibida: CONSUMIR_OXIGENO 20;5;5;10
+[INFO] 19:14:06:609 discordiador/(22187:22198): TRIPU 4  tarea recibida: ARREGLAR_CABLEADOS;1;8;10
+[INFO] 19:14:09:623 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;8;0;4
+[INFO] 19:14:12:604 discordiador/(22187:22194): TRIPU 14  tarea recibida: HACER_EJERCICIO;5;5;10
+[INFO] 19:14:14:640 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;0;7;2
+[INFO] 19:14:15:647 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;0;8;1
+[INFO] 19:14:15:649 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;8;0;4
+[INFO] 19:14:16:652 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;8;0;4
+[INFO] 19:14:19:669 discordiador/(22187:22199): TRIPU 5  tarea recibida: ARREGLAR_CABLEADOS;1;8;10
+[INFO] 19:14:20:670 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;0;6;3
+[INFO] 19:14:22:613 discordiador/(22187:22194): TRIPU 13  tarea recibida: CAMBIARSE_DE_NAVE;9;9;12
+[INFO] 19:14:27:619 discordiador/(22187:22194): TRIPU 1  tarea recibida: CAMINAR;2;2;1
+[INFO] 19:14:27:705 discordiador/(22187:22197): TRIPU 3  tarea recibida: GENERAR_COMIDA 12;3;4;5
+[INFO] 19:14:28:711 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;0;9;2
+[INFO] 19:14:30:718 discordiador/(22187:22200): TRIPU 6  tarea recibida: ARREGLAR_CABLEADOS;1;8;10
+[INFO] 19:14:32:624 discordiador/(22187:22194): TRIPU 2  tarea recibida: CAMINAR;2;2;1
+[INFO] 19:14:34:728 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;0;8;1
+[INFO] 19:14:44:779 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;9;0;4
+[INFO] 19:14:45:786 discordiador/(22187:22209): TRIPU 15  tarea recibida: CONSUMIR_OXIGENO 20;5;5;10
+[INFO] 19:14:47:793 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;0;7;2
+[INFO] 19:14:48:798 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;0;9;2
+[INFO] 19:14:49:803 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;1;9;3
+[INFO] 19:14:51:808 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;9;0;4
+[INFO] 19:14:51:812 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;9;0;4
+[INFO] 19:15:03:834 discordiador/(22187:22194): TRIPU 15  tarea recibida: CAMBIARSE_DE_NAVE;9;9;12
+[INFO] 19:15:03:871 discordiador/(22187:22195): TRIPU 1  tarea recibida: GENERAR_COMIDA 12;3;4;5
+[INFO] 19:15:07:884 discordiador/(22187:22196): TRIPU 2  tarea recibida: GENERAR_COMIDA 12;3;4;5
+[INFO] 19:15:08:840 discordiador/(22187:22194): TRIPU 3  tarea recibida: COMER;5;5;5
+[INFO] 19:15:08:888 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;0;8;1
+[INFO] 19:15:10:893 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;1;9;3
+[INFO] 19:15:18:928 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;2;9;4
+[INFO] 19:15:20:940 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;9;1;4
+[INFO] 19:15:23:953 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;0;9;2
+[INFO] 19:15:27:967 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;9;1;4
+[INFO] 19:15:27:969 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;9;1;4
+[INFO] 19:15:37:009 discordiador/(22187:22208): TRIPU 14  tarea recibida: CONSUMIR_OXIGENO 20;5;5;10
+[INFO] 19:15:39:002 discordiador/(22187:22194): TRIPU 1  tarea recibida: COMER;5;5;5
+[INFO] 19:15:40:026 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;2;9;4
+[INFO] 19:15:44:007 discordiador/(22187:22194): TRIPU 2  tarea recibida: COMER;5;5;5
+[INFO] 19:15:47:050 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;1;9;3
+[INFO] 19:15:54:054 discordiador/(22187:22194): TRIPU 14  tarea recibida: CAMBIARSE_DE_NAVE;9;9;12
+[INFO] 19:15:55:086 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;3;9;5
+[INFO] 19:15:57:090 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;9;2;4
+[INFO] 19:16:04:121 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;9;2;4
+[INFO] 19:16:05:129 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;9;2;4
+[INFO] 19:16:06:133 discordiador/(22187:22197): TRIPU 3  tarea recibida: CONSUMIR_COMIDA 10;5;5;5
+[INFO] 19:16:16:173 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;3;9;5
+[INFO] 19:16:17:176 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;2;9;4
+[INFO] 19:16:19:175 discordiador/(22187:22194): TRIPU 3  tarea recibida: TIRAR_TODO_AL_PISO;5;5;1
+[INFO] 19:16:26:214 discordiador/(22187:22197): TRIPU 3  tarea recibida: GENERAR_BASURA 30;5;5;1
+[INFO] 19:16:34:247 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;9;3;5
+[INFO] 19:16:35:249 discordiador/(22187:22194): TRIPU 3  tarea recibida: BARRER;6;6;10
+[INFO] 19:16:36:254 discordiador/(22187:22195): TRIPU 1  tarea recibida: CONSUMIR_COMIDA 10;5;5;5
+[INFO] 19:16:37:253 discordiador/(22187:22198): TRIPU 4  tarea recibida: GENERAR_BASURA 1;0;0;5
+[INFO] 19:16:40:268 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;4;9;6
+[INFO] 19:16:41:271 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;9;3;5
+[INFO] 19:16:42:277 discordiador/(22187:22196): TRIPU 2  tarea recibida: CONSUMIR_COMIDA 10;5;5;5
+[INFO] 19:16:43:281 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;9;3;5
+[INFO] 19:16:47:300 discordiador/(22187:22207): TRIPU 13  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:16:49:295 discordiador/(22187:22194): TRIPU 1  tarea recibida: TIRAR_TODO_AL_PISO;5;5;1
+[INFO] 19:16:52:320 discordiador/(22187:22199): TRIPU 5  tarea recibida: GENERAR_BASURA 1;0;0;5
+[INFO] 19:16:53:327 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;3;9;5
+[INFO] 19:16:54:330 discordiador/(22187:22207): TRIPU 13  tarea recibida: no hay mas tareas
+[INFO] 19:16:54:339 discordiador/(22187:22207): tripu_misma_patota_exit 1
+[INFO] 19:16:55:322 discordiador/(22187:22194): TRIPU 2  tarea recibida: TIRAR_TODO_AL_PISO;5;5;1
+[INFO] 19:16:56:341 discordiador/(22187:22195): TRIPU 1  tarea recibida: GENERAR_BASURA 30;5;5;1
+[INFO] 19:16:59:351 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;4;9;6
+[INFO] 19:17:01:363 discordiador/(22187:22196): TRIPU 2  tarea recibida: GENERAR_BASURA 30;5;5;1
+[INFO] 19:17:04:378 discordiador/(22187:22194): TRIPU 1  tarea recibida: BARRER;6;6;10
+[INFO] 19:17:05:382 discordiador/(22187:22200): TRIPU 6  tarea recibida: GENERAR_BASURA 1;0;0;5
+[INFO] 19:17:09:401 discordiador/(22187:22194): TRIPU 2  tarea recibida: BARRER;6;6;10
+[INFO] 19:17:17:428 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;9;4;5
+[INFO] 19:17:23:450 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;9;4;5
+[INFO] 19:17:25:455 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;9;4;5
+[INFO] 19:17:28:468 discordiador/(22187:22209): TRIPU 15  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:17:29:472 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;5;9;5
+[INFO] 19:17:35:495 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;4;9;6
+[INFO] 19:17:35:499 discordiador/(22187:22209): TRIPU 15  tarea recibida: no hay mas tareas
+[INFO] 19:17:35:502 discordiador/(22187:22209): tripu_misma_patota_exit 2
+[INFO] 19:17:47:558 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;5;9;5
+[INFO] 19:17:52:564 discordiador/(22187:22194): TRIPU 4  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:17:57:595 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;9;5;10
+[INFO] 19:17:58:602 discordiador/(22187:22197): TRIPU 3  tarea recibida: DESCARTAR_BASURA 0;6;6;1
+[INFO] 19:18:03:617 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;9;5;10
+[INFO] 19:18:03:621 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;9;5;10
+[INFO] 19:18:05:614 discordiador/(22187:22194): TRIPU 5  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:18:06:633 discordiador/(22187:22194): TRIPU 3  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:18:08:637 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;6;9;4
+[INFO] 19:18:13:658 discordiador/(22187:22208): TRIPU 14  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:18:17:660 discordiador/(22187:22194): TRIPU 6  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:18:19:682 discordiador/(22187:22208): TRIPU 14  tarea recibida: no hay mas tareas
+[INFO] 19:18:19:684 discordiador/(22187:22208): tripu_misma_patota_exit 3
+[INFO] 19:18:19:689 discordiador/(22187:22208): size exit 0
+[INFO] 19:18:20:683 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;5;9;5
+[INFO] 19:18:24:710 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;6;9;4
+[INFO] 19:18:25:699 discordiador/(22187:22195): TRIPU 1  tarea recibida: DESCARTAR_BASURA 0;6;6;1
+[INFO] 19:18:26:717 discordiador/(22187:22196): TRIPU 2  tarea recibida: DESCARTAR_BASURA 0;6;6;1
+[INFO] 19:18:32:727 discordiador/(22187:22194): TRIPU 1  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:18:33:745 discordiador/(22187:22194): TRIPU 2  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:18:38:756 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;7;9;3
+[INFO] 19:18:49:779 discordiador/(22187:22197): TRIPU 3  tarea recibida: no hay mas tareas
+[INFO] 19:18:49:783 discordiador/(22187:22197): tripu_misma_patota_exit 1
+[INFO] 19:18:54:812 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;7;9;3
+[INFO] 19:18:55:805 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;6;9;4
+[INFO] 19:19:01:842 discordiador/(22187:22201): TRIPU 7  tarea recibida: CEBAR_MATES;8;9;2
+[INFO] 19:19:03:853 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;9;6;10
+[INFO] 19:19:07:877 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;9;6;10
+[INFO] 19:19:08:883 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;9;6;10
+[INFO] 19:19:12:879 discordiador/(22187:22195): TRIPU 1  tarea recibida: no hay mas tareas
+[INFO] 19:19:12:881 discordiador/(22187:22195): tripu_misma_patota_exit 2
+[INFO] 19:19:13:922 discordiador/(22187:22196): TRIPU 2  tarea recibida: no hay mas tareas
+[INFO] 19:19:13:924 discordiador/(22187:22196): tripu_misma_patota_exit 3
+[INFO] 19:19:13:930 discordiador/(22187:22196): size exit 0
+[INFO] 19:19:16:942 discordiador/(22187:22203): TRIPU 9  tarea recibida: CEBAR_MATES;8;9;2
+[INFO] 19:19:17:949 discordiador/(22187:22201): TRIPU 7  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:19:21:976 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;7;9;3
+[INFO] 19:19:27:003 discordiador/(22187:22201): TRIPU 7  tarea recibida: no hay mas tareas
+[INFO] 19:19:27:006 discordiador/(22187:22201): tripu_misma_patota_exit 1
+[INFO] 19:19:30:975 discordiador/(22187:22203): TRIPU 9  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:19:38:008 discordiador/(22187:22198): TRIPU 4  tarea recibida: no hay mas tareas
+[INFO] 19:19:38:010 discordiador/(22187:22198): tripu_misma_patota_exit 1
+[INFO] 19:19:39:046 discordiador/(22187:22203): TRIPU 9  tarea recibida: no hay mas tareas
+[INFO] 19:19:39:095 discordiador/(22187:22203): tripu_misma_patota_exit 2
+[INFO] 19:19:39:136 discordiador/(22187:22202): TRIPU 8  tarea recibida: CEBAR_MATES;8;9;2
+[INFO] 19:19:45:182 discordiador/(22187:22199): TRIPU 5  tarea recibida: no hay mas tareas
+[INFO] 19:19:45:185 discordiador/(22187:22199): tripu_misma_patota_exit 2
+[INFO] 19:19:48:194 discordiador/(22187:22202): TRIPU 8  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:19:49:204 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;9;7;20
+[INFO] 19:19:50:208 discordiador/(22187:22200): TRIPU 6  tarea recibida: no hay mas tareas
+[INFO] 19:19:50:214 discordiador/(22187:22200): tripu_misma_patota_exit 3
+[INFO] 19:19:50:224 discordiador/(22187:22200): size exit 2
+[INFO] 19:19:51:216 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;9;7;20
+[INFO] 19:19:51:218 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;9;7;20
+[INFO] 19:19:52:232 discordiador/(22187:22202): TRIPU 8  tarea recibida: no hay mas tareas
+[INFO] 19:19:52:234 discordiador/(22187:22202): tripu_misma_patota_exit 3
+[INFO] 19:19:52:237 discordiador/(22187:22202): size exit 0
+[INFO] 19:20:22:384 discordiador/(22187:22205): TRIPU 11  tarea recibida: CODEAR_EL_TP;9;8;20
+[INFO] 19:20:23:387 discordiador/(22187:22204): TRIPU 10  tarea recibida: CODEAR_EL_TP;9;8;20
+[INFO] 19:20:23:389 discordiador/(22187:22206): TRIPU 12  tarea recibida: CODEAR_EL_TP;9;8;20
+[INFO] 19:20:54:502 discordiador/(22187:22205): TRIPU 11  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:20:54:506 discordiador/(22187:22204): TRIPU 10  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:20:55:508 discordiador/(22187:22206): TRIPU 12  tarea recibida: SALUDAR;9;9;1
+[INFO] 19:20:57:522 discordiador/(22187:22205): TRIPU 11  tarea recibida: no hay mas tareas
+[INFO] 19:20:57:524 discordiador/(22187:22205): tripu_misma_patota_exit 1
+[INFO] 19:20:57:527 discordiador/(22187:22204): TRIPU 10  tarea recibida: no hay mas tareas
+[INFO] 19:20:57:528 discordiador/(22187:22204): tripu_misma_patota_exit 2
+[INFO] 19:20:58:526 discordiador/(22187:22206): TRIPU 12  tarea recibida: no hay mas tareas
+[INFO] 19:20:58:527 discordiador/(22187:22206): tripu_misma_patota_exit 3
+[INFO] 19:20:58:531 discordiador/(22187:22206): size exit 0
+[INFO] 19:21:07:386 discordiador/(22187:22191): posicion_sabotaje_char 
