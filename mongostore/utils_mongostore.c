@@ -2223,7 +2223,7 @@ int recurso_obtener_block_count_real(t_recurso_data* recurso_data)
 void recurso_validar_blocks(t_recurso_data* recurso_data)
 {
 	t_recurso_md* recurso_md = recurso_data->metadata;
-	free(recurso_md->blocks);
+	free(recurso_md->blocks);//OK?
 	recurso_levantar_de_archivo_a_memoria_valores_variables(recurso_data);
 
 	//char md5_segun_blocks_actual[33];
@@ -2231,6 +2231,8 @@ void recurso_validar_blocks(t_recurso_data* recurso_data)
 	if(recurso_md->size > 0)
 	{
 		char* concatenado_segun_blocks_actual = blocks_obtener_concatenado_de_recurso(recurso_data->metadata);
+		log_info(logger, "concatenado_segun_blocks_actual %s", concatenado_segun_blocks_actual);
+		log_info(logger, "recurso_md->blocks %s", recurso_md->blocks);
 		cadena_calcular_md5(concatenado_segun_blocks_actual, recurso_data->metadata->size, md5_segun_blocks_actual);
 		free(concatenado_segun_blocks_actual);
 	}
@@ -2238,7 +2240,8 @@ void recurso_validar_blocks(t_recurso_data* recurso_data)
 	{
 		strcpy(md5_segun_blocks_actual, "d41d8cd98f00b204e9800998ecf8427e");
 	}
-
+	log_info(logger, "recurso_md->md5_archivo %s", recurso_md->md5_archivo);
+	log_info(logger, "md5_segun_blocks_actual %s", md5_segun_blocks_actual);
 	if(strcmp(recurso_md->md5_archivo, md5_segun_blocks_actual) != 0)
 	{
 		log_info(logger, "El recurso %s tiene su blocks saboteado, pero no te preocupes, ya lo arreglaremos restaurando los bloques en Blocks.ims",
@@ -2247,6 +2250,7 @@ void recurso_validar_blocks(t_recurso_data* recurso_data)
 		strcpy(recurso_md->md5_archivo, md5_segun_blocks_actual);
 		recurso_actualizar_archivo(recurso_data);
 		log_info(logger, "Listo, ya podes confiar en el blocks \"%s\" para el recurso %s", recurso_data->metadata->blocks, recurso_data->nombre);
+		log_info(logger, "recurso_md->blocks %s  recurso_md->size %d  recurso_md->md5_archivo %s", recurso_md->blocks, recurso_md->size, recurso_md->md5_archivo);
 	}
 	else
 	{

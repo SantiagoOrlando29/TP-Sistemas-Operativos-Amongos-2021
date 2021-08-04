@@ -1,52 +1,39 @@
-[INFO] 20:19:37:360 discordiador/(12872:12880): in funcion_sabotaje
-[INFO] 20:19:37:361 discordiador/(12872:12879): in menu_discordiador
-[INFO] 20:19:43:599 discordiador/(12872:12879): Memoria asignada
-[INFO] 20:19:43:601 discordiador/(12872:12879): Memoria asignada
-[INFO] 20:19:43:616 discordiador/(12872:12886): TRIPU 1  tarea recibida: A00;1;1;5
-[INFO] 20:19:43:623 discordiador/(12872:12887): TRIPU 2  tarea recibida: A00;1;1;5
-[INFO] 20:19:43:630 discordiador/(12872:12888): TRIPU 3  tarea recibida: A00;1;1;5
-[INFO] 20:19:43:635 discordiador/(12872:12889): TRIPU 4  tarea recibida: A00;1;1;5
-[INFO] 20:19:43:637 discordiador/(12872:12890): TRIPU 5  tarea recibida: C00;1;1;1
-[INFO] 20:20:01:646 discordiador/(12872:12890): TRIPU 5  tarea recibida: no hay mas tareas
-[INFO] 20:20:01:647 discordiador/(12872:12890): tripu_misma_patota_exit 1
-[INFO] 20:20:01:647 discordiador/(12872:12890): size exit 0
-[INFO] 20:20:05:494 discordiador/(12872:12879): tripu expulsado: 1 
-[INFO] 20:20:05:494 discordiador/(12872:12879): tripu_misma_patota_exit 1
-[INFO] 20:20:05:495 discordiador/(12872:12879): tripu expulsado: 3 
-[INFO] 20:20:05:495 discordiador/(12872:12879): tripu_misma_patota_exit 2
-[INFO] 20:20:05:536 discordiador/(12872:12879): Memoria asignada
-[INFO] 20:20:05:537 discordiador/(12872:12901): TRIPU 6  tarea recibida: B00;3;3;5
-[INFO] 20:20:05:538 discordiador/(12872:12902): TRIPU 7  tarea recibida: B00;3;3;5
-[INFO] 20:20:15:653 discordiador/(12872:12887): TRIPU 2  tarea recibida: A01;1;1;5
-[INFO] 20:20:15:654 discordiador/(12872:12889): TRIPU 4  tarea recibida: A01;1;1;5
-[INFO] 20:20:31:666 discordiador/(12872:12889): TRIPU 4  tarea recibida: A02;1;1;5
-[INFO] 20:20:31:667 discordiador/(12872:12887): TRIPU 2  tarea recibida: A02;1;1;5
-[INFO] 20:20:47:676 discordiador/(12872:12902): TRIPU 7  tarea recibida: B01;3;3;5
-[INFO] 20:20:47:677 discordiador/(12872:12901): TRIPU 6  tarea recibida: B01;3;3;5
-[INFO] 20:20:53:682 discordiador/(12872:12889): TRIPU 4  tarea recibida: A03;1;1;5
-[INFO] 20:20:53:682 discordiador/(12872:12887): TRIPU 2  tarea recibida: A03;1;1;5
-[INFO] 20:21:09:689 discordiador/(12872:12901): TRIPU 6  tarea recibida: B02;3;3;5
-[INFO] 20:21:09:690 discordiador/(12872:12902): TRIPU 7  tarea recibida: B02;3;3;5
-[INFO] 20:21:15:694 discordiador/(12872:12887): TRIPU 2  tarea recibida: A04;1;1;5
-[INFO] 20:21:15:695 discordiador/(12872:12889): TRIPU 4  tarea recibida: A04;1;1;5
-[INFO] 20:21:25:701 discordiador/(12872:12902): TRIPU 7  tarea recibida: no hay mas tareas
-[INFO] 20:21:25:701 discordiador/(12872:12902): tripu_misma_patota_exit 1
-[INFO] 20:21:25:703 discordiador/(12872:12901): TRIPU 6  tarea recibida: no hay mas tareas
-[INFO] 20:21:25:703 discordiador/(12872:12901): tripu_misma_patota_exit 2
-[INFO] 20:21:25:703 discordiador/(12872:12901): size exit 2
-[INFO] 20:21:31:705 discordiador/(12872:12889): TRIPU 4  tarea recibida: A05;1;1;5
-[INFO] 20:21:31:706 discordiador/(12872:12887): TRIPU 2  tarea recibida: A05;1;1;5
-[INFO] 20:21:41:711 discordiador/(12872:12889): TRIPU 4  tarea recibida: A06;1;1;5
-[INFO] 20:21:41:712 discordiador/(12872:12887): TRIPU 2  tarea recibida: A06;1;1;5
-[INFO] 20:21:51:717 discordiador/(12872:12887): TRIPU 2  tarea recibida: A07;1;1;5
-[INFO] 20:21:51:718 discordiador/(12872:12889): TRIPU 4  tarea recibida: A07;1;1;5
-[INFO] 20:22:01:724 discordiador/(12872:12887): TRIPU 2  tarea recibida: A08;1;1;5
-[INFO] 20:22:01:725 discordiador/(12872:12889): TRIPU 4  tarea recibida: A08;1;1;5
-[INFO] 20:22:11:729 discordiador/(12872:12889): TRIPU 4  tarea recibida: A09;1;1;5
-[INFO] 20:22:11:730 discordiador/(12872:12887): TRIPU 2  tarea recibida: A09;1;1;5
-[INFO] 20:22:21:736 discordiador/(12872:12887): TRIPU 2  tarea recibida: no hay mas tareas
-[INFO] 20:22:21:736 discordiador/(12872:12887): tripu_misma_patota_exit 3
-[INFO] 20:22:21:738 discordiador/(12872:12889): TRIPU 4  tarea recibida: no hay mas tareas
-[INFO] 20:22:21:738 discordiador/(12872:12889): tripu_misma_patota_exit 4
-[INFO] 20:22:21:738 discordiador/(12872:12889): size exit 0
-[INFO] 20:23:54:650 discordiador/(12872:12880): posicion_sabotaje_char (null)
+[INFO] 23:16:29:541 discordiador/(5824:5832): in funcion_sabotaje
+[INFO] 23:16:29:542 discordiador/(5824:5831): in menu_discordiador
+[INFO] 23:16:31:157 discordiador/(5824:5831): Memoria asignada
+[INFO] 23:16:31:162 discordiador/(5824:5831): Memoria asignada
+[INFO] 23:16:31:168 discordiador/(5824:5831): Memoria asignada
+[INFO] 23:16:31:171 discordiador/(5824:5831): Memoria asignada
+[INFO] 23:16:32:419 discordiador/(5824:5836): TRIPU 1  tarea recibida: ARREGLAR_REACTOR;0;0;600
+[INFO] 23:16:32:434 discordiador/(5824:5837): TRIPU 2  tarea recibida: EMPALMANDO_CABLES;8;0;600
+[INFO] 23:16:32:437 discordiador/(5824:5838): TRIPU 3  tarea recibida: ROMPIENDO_ASTEROIDES;8;8;600
+[INFO] 23:16:32:443 discordiador/(5824:5839): TRIPU 4  tarea recibida: CEBANDO_MATES;0;8;600
+[INFO] 23:16:48:956 discordiador/(5824:5832): posicion_sabotaje_char 1|1
+[INFO] 23:16:48:956 discordiador/(5824:5832): lista bloq emergencia
+[INFO] 23:16:48:956 discordiador/(5824:5832): tid 1  posx 0  posy 0
+[INFO] 23:16:48:956 discordiador/(5824:5832): tid 2  posx 8  posy 0
+[INFO] 23:16:48:956 discordiador/(5824:5832): tid 3  posx 8  posy 8
+[INFO] 23:16:48:956 discordiador/(5824:5832): tid 4  posx 0  posy 8
+[INFO] 23:16:48:957 discordiador/(5824:5832): Tripu elegido: tid 1  posx 0  posy 0
+[INFO] 23:16:48:958 discordiador/(5824:5832): lista bloq emergencia actualizada
+[INFO] 23:16:48:959 discordiador/(5824:5832): tid 2  posx 8  posy 0
+[INFO] 23:16:48:959 discordiador/(5824:5832): tid 3  posx 8  posy 8
+[INFO] 23:16:48:961 discordiador/(5824:5832): tid 4  posx 0  posy 8
+[INFO] 23:16:48:961 discordiador/(5824:5832): tid 1  posx 0  posy 0
+[INFO] 23:16:50:972 discordiador/(5824:5832): comienza tiempo sabotaje
+[INFO] 23:17:00:973 discordiador/(5824:5832): finaliza tiempo sabotaje
+[INFO] 23:17:06:247 discordiador/(5824:5832): posicion_sabotaje_char 7|1
+[INFO] 23:17:06:247 discordiador/(5824:5832): lista bloq emergencia
+[INFO] 23:17:06:247 discordiador/(5824:5832): tid 2  posx 8  posy 0
+[INFO] 23:17:06:248 discordiador/(5824:5832): tid 1  posx 1  posy 1
+[INFO] 23:17:06:248 discordiador/(5824:5832): tid 3  posx 8  posy 8
+[INFO] 23:17:06:249 discordiador/(5824:5832): tid 4  posx 0  posy 8
+[INFO] 23:17:06:250 discordiador/(5824:5832): Tripu elegido: tid 2  posx 8  posy 0
+[INFO] 23:17:06:252 discordiador/(5824:5832): lista bloq emergencia actualizada
+[INFO] 23:17:06:252 discordiador/(5824:5832): tid 1  posx 1  posy 1
+[INFO] 23:17:06:252 discordiador/(5824:5832): tid 3  posx 8  posy 8
+[INFO] 23:17:06:252 discordiador/(5824:5832): tid 4  posx 0  posy 8
+[INFO] 23:17:06:253 discordiador/(5824:5832): tid 2  posx 8  posy 0
+[INFO] 23:17:08:258 discordiador/(5824:5832): comienza tiempo sabotaje
+[INFO] 23:17:18:259 discordiador/(5824:5832): finaliza tiempo sabotaje
+[INFO] 23:17:29:167 discordiador/(5824:5832): posicion_sabotaje_char x@¶@
