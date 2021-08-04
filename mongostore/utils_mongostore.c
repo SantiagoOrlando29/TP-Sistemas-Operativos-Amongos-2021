@@ -1806,6 +1806,7 @@ void fsck_chequeo_de_sabotajes_en_superbloque()
 {
 	log_debug(logger, "Se inicia fsck_chequeo_de_sabotajes_en_superbloque()");
 	superbloque_validar_integridad_cantidad_de_bloques();
+	//utils_esperar_a_usuario();
 	superbloque_validar_integridad_bitmap();
 	log_debug(logger, "Se a fsck_chequeo_de_sabotajes_en_superbloque()");
 }
@@ -1863,6 +1864,9 @@ void superbloque_validar_integridad_bitmap()
 
 	char bitmap_actual_md5[33];
 	cadena_calcular_md5(superbloque.bitmap, bitmap_size, bitmap_actual_md5);
+log_info(logger, "bitmap_real_md5: %s", bitmap_real_md5);
+log_info(logger, "bitmap_actual_md5: %s", bitmap_actual_md5);
+//utils_esperar_a_usuario();
 
 	if(strcmp(bitmap_actual_md5, bitmap_real_md5))
 	{
@@ -1882,6 +1886,10 @@ void superbloque_validar_integridad_bitmap()
 	{
 		log_info(logger, "Parece que esta vez nadie se animo a sabotear el bitmap");
 	}
+
+	log_info(logger, "bitmap_real_md5: %s", bitmap_real_md5);
+	log_info(logger, "bitmap_actual_md5: %s", bitmap_actual_md5);
+	//utils_esperar_a_usuario();
 
 	free(bitmap_real);
 	log_debug(logger, "Se finaliza superbloque_validar_integridad_bitmap()");
@@ -2220,7 +2228,7 @@ int recurso_obtener_block_count_real(t_recurso_data* recurso_data)
 }
 
 //FIXME Si encuentra una diferencia entre los md5 de los concatenados restaura el archivo en blocks con los blocks del archivo metadata
-void recurso_validar_blocks(t_recurso_data* recurso_data)
+/*void recurso_validar_blocks(t_recurso_data* recurso_data)
 {
 	t_recurso_md* recurso_md = recurso_data->metadata;
 	free(recurso_md->blocks);//OK?
@@ -2257,6 +2265,45 @@ void recurso_validar_blocks(t_recurso_data* recurso_data)
 		log_info(logger, "Por lo menos el blocks del recurso %s no fue alterado, enhorabuena!!!", recurso_data->nombre);
 	}
 	free(md5_segun_blocks_actual);
+}*/
+
+//VERSION FINAL (SIN PROBARLA)
+void recurso_validar_blocks(t_recurso_data* recurso_data)
+{
+    t_recurso_md* recurso_md = recurso_data->metadata;
+    free(recurso_md->blocks);//OK?
+    recurso_levantar_de_archivo_a_memoria_valores_variables(recurso_data);
+
+    char md5_segun_blocks_actual[33];
+    //char* md5_segun_blocks_actual = malloc(33);
+    if(recurso_md->size > 0)
+    {
+        char* concatenado_segun_blocks_actual = blocks_obtener_concatenado_de_recurso(recurso_data->metadata);
+        cadena_calcular_md5(concatenado_segun_blocks_actual, recurso_data->metadata->size, md5_segun_blocks_actual);
+        free(concatenado_segun_blocks_actual);
+    }
+    else
+    {
+        strcpy(md5_segun_blocks_actual, "d41d8cd98f00b204e9800998ecf8427e");
+    }
+
+    if(strcmp(recurso_md->md5_archivo, md5_segun_blocks_actual) != 0)
+    {
+
+        log_info(logger, "El recurso %s tiene su blocks saboteado, pero no te preocupes, ya lo arreglaremos restaurando los bloques en Blocks.ims",
+                recurso_data->nombre);
+
+        metadata_restaurar_en_blocks(recurso_data->metadata);
+        //no haría falta recalcular el md5 ni setearlo nuevamente ya que nunca fue modificado ni tendría que modificarse
+        //recurso_actualizar_archivo(recurso_data);
+        log_info(logger, "Listo, ya podes confiar en el blocks \"%s\" para el recurso %s", recurso_data->metadata->blocks, recurso_data->nombre);
+    }
+    else
+    {
+        log_info(logger, "Por lo menos el blocks del recurso %s no fue alterado, enhorabuena!!!", recurso_data->nombre);
+    }
+
+    //free(md5_segun_blocks_actual);
 }
 
 

@@ -1,383 +1,166 @@
-[DEBUG] 23:16:13:294 mongostore/(5809:5809): LOGGER OK
-[INFO] 23:16:13:294 mongostore/(5809:5809): Configuracion leida y almacenada en "configuracion"
-[DEBUG] 23:16:13:295 mongostore/(5809:5809): Testeo config, la IP es: 127.0.0.1
-[DEBUG] 23:16:13:295 mongostore/(5809:5809): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
-[DEBUG] 23:16:13:295 mongostore/(5809:5809): O-Superbloque levantado desde archivo
-[DEBUG] 23:16:14:410 mongostore/(5809:5809): O-Blocks mapeado del archivo a la memoria
-[DEBUG] 23:16:14:410 mongostore/(5809:5809): O-Existencia de Blocks validada
-[INFO] 23:16:14:410 mongostore/(5809:5809): ggggggggg
-[DEBUG] 23:16:14:410 mongostore/(5809:5809): Valores variables levantados SIZE 120 BLOCK_COUNT 4 BLOCKS [0,1,2,57] y MD5_ARCHIVO 1c6d35680750b61d498448704ce18d4f
-[INFO] 23:16:14:410 mongostore/(5809:5809): hhhhhhh
-[DEBUG] 23:16:14:410 mongostore/(5809:5809): Existencia de metadata para el recurso OXIGENO validada. Valor fijo CARACTER_LLENADO O
-[INFO] 23:16:14:410 mongostore/(5809:5809): ggggggggg
-[DEBUG] 23:16:14:410 mongostore/(5809:5809): Valores variables levantados SIZE 120 BLOCK_COUNT 4 BLOCKS [71,70,74,82] y MD5_ARCHIVO 6a622871b53c3cdd4ec7adb550ee7577
-[INFO] 23:16:14:410 mongostore/(5809:5809): hhhhhhh
-[DEBUG] 23:16:14:411 mongostore/(5809:5809): Existencia de metadata para el recurso COMIDA validada. Valor fijo CARACTER_LLENADO C
-[INFO] 23:16:14:411 mongostore/(5809:5809): ggggggggg
-[DEBUG] 23:16:14:411 mongostore/(5809:5809): Valores variables levantados SIZE 120 BLOCK_COUNT 4 BLOCKS [117,95,106,100] y MD5_ARCHIVO 3bb9f6d07ed99b08f9ce627be07c3a10
-[INFO] 23:16:14:411 mongostore/(5809:5809): hhhhhhh
-[DEBUG] 23:16:14:412 mongostore/(5809:5809): Existencia de metadata para el recurso BASURA validada. Valor fijo CARACTER_LLENADO B
-[DEBUG] 23:16:14:412 mongostore/(5809:5809): Salgo de recursos_validar_existencia_metadatas()
-[DEBUG] 23:16:14:412 mongostore/(5809:5809): Directorios del File System confirmados
-[DEBUG] 23:16:14:412 mongostore/(5809:5809): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
-[DEBUG] 23:16:14:412 mongostore/(5809:5809): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
-[DEBUG] 23:16:14:412 mongostore/(5809:5809): en bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados() antes de borrar lista de bitacoras
-[DEBUG] 23:16:14:412 mongostore/(5809:5809): Los bloques ocupados por el total de las bitacoras son []
-[INFO] 23:16:14:412 mongostore/(5809:5809): aaaaaaa
-[INFO] 23:16:14:412 mongostore/(5809:5809): antes mutex
-[DEBUG] 23:16:14:413 mongostore/(5809:5809): Los bloques [] fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims
-[INFO] 23:16:14:413 mongostore/(5809:5809): bbbbbbbb
-[INFO] 23:16:14:443 mongostore/(5809:5809): File System iniciado
-[DEBUG] 23:16:14:444 mongostore/(5809:5809): Se entra a blocks_abrir_hilo
-[INFO] 23:16:14:444 mongostore/(5809:5809): pid 5809  
+[DEBUG] 11:43:46:603 mongostore/(10936:10936): LOGGER OK
+[INFO] 11:43:46:605 mongostore/(10936:10936): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 11:43:46:605 mongostore/(10936:10936): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 11:43:46:608 mongostore/(10936:10936): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
+[DEBUG] 11:43:46:608 mongostore/(10936:10936): O-Superbloque levantado desde archivo
+[DEBUG] 11:43:48:509 mongostore/(10936:10936): O-Blocks mapeado del archivo a la memoria
+[DEBUG] 11:43:48:510 mongostore/(10936:10936): O-Existencia de Blocks validada
+[DEBUG] 11:43:48:510 mongostore/(10936:10936): Valores default seteados en memoria: SIZE 0 BLOCK_COUNT 0 BLOCKS [] y MD5_ARCHIVO d41d8cd98f00b204e9800998ecf8427e
+[DEBUG] 11:43:48:510 mongostore/(10936:10936): Existencia de metadata para el recurso OXIGENO validada. Valor fijo CARACTER_LLENADO O
+[INFO] 11:43:48:510 mongostore/(10936:10936): ggggggggg
+[DEBUG] 11:43:48:511 mongostore/(10936:10936): Valores variables levantados SIZE 40 BLOCK_COUNT 2 BLOCKS [0,1] y MD5_ARCHIVO 3fa2598ebe72c8fbf70c672d32745933
+[INFO] 11:43:48:511 mongostore/(10936:10936): hhhhhhh
+[DEBUG] 11:43:48:511 mongostore/(10936:10936): Existencia de metadata para el recurso COMIDA validada. Valor fijo CARACTER_LLENADO C
+[DEBUG] 11:43:48:511 mongostore/(10936:10936): Valores default seteados en memoria: SIZE 0 BLOCK_COUNT 0 BLOCKS [] y MD5_ARCHIVO d41d8cd98f00b204e9800998ecf8427e
+[DEBUG] 11:43:48:511 mongostore/(10936:10936): Existencia de metadata para el recurso BASURA validada. Valor fijo CARACTER_LLENADO B
+[DEBUG] 11:43:48:511 mongostore/(10936:10936): Salgo de recursos_validar_existencia_metadatas()
+[DEBUG] 11:43:48:511 mongostore/(10936:10936): Directorios del File System confirmados
+[DEBUG] 11:43:48:511 mongostore/(10936:10936): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
+[DEBUG] 11:43:48:512 mongostore/(10936:10936): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
+[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [2,3,4,5,6]
+[DEBUG] 11:43:48:512 mongostore/(10936:10936): en bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados() antes de borrar lista de bitacoras
+[DEBUG] 11:43:48:512 mongostore/(10936:10936): Los bloques ocupados por el total de las bitacoras son [2,3,4,5,6]
+[INFO] 11:43:48:512 mongostore/(10936:10936): aaaaaaa
+[INFO] 11:43:48:512 mongostore/(10936:10936): antes mutex
+[INFO] 11:43:48:512 mongostore/(10936:10936): en for
+[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 2 eliminado del bitmap del superbloque
+[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 2 eliminado de la copia de blocks - version rapida//version lenta
+[INFO] 11:43:48:512 mongostore/(10936:10936): en for
+[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 3 eliminado del bitmap del superbloque
+[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 3 eliminado de la copia de blocks - version rapida//version lenta
+[INFO] 11:43:48:512 mongostore/(10936:10936): en for
+[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 4 eliminado del bitmap del superbloque
+[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 4 eliminado de la copia de blocks - version rapida//version lenta
+[INFO] 11:43:48:512 mongostore/(10936:10936): en for
+[DEBUG] 11:43:48:512 mongostore/(10936:10936): Bloque 5 eliminado del bitmap del superbloque
+[DEBUG] 11:43:48:513 mongostore/(10936:10936): Bloque 5 eliminado de la copia de blocks - version rapida//version lenta
+[INFO] 11:43:48:513 mongostore/(10936:10936): en for
+[DEBUG] 11:43:48:513 mongostore/(10936:10936): Bloque 6 eliminado del bitmap del superbloque
+[DEBUG] 11:43:48:513 mongostore/(10936:10936): Bloque 6 eliminado de la copia de blocks - version rapida//version lenta
+[DEBUG] 11:43:48:513 mongostore/(10936:10936): Los bloques [2,3,4,5,6] fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims
+[INFO] 11:43:48:513 mongostore/(10936:10936): bbbbbbbb
+[INFO] 11:43:48:517 mongostore/(10936:10936): File System iniciado
+[DEBUG] 11:43:48:517 mongostore/(10936:10936): Se entra a blocks_abrir_hilo
+[INFO] 11:43:48:517 mongostore/(10936:10936): pid 10936  
 
-[INFO] 23:16:14:446 mongostore/(5809:5814): Servidor iniciando 2
-[INFO] 23:16:14:446 mongostore/(5809:5813): Servidor iniciando
-[INFO] 23:16:14:447 mongostore/(5809:5814): Servidor Mongo2 encendido
-[INFO] 23:16:14:447 mongostore/(5809:5813): Servidor Mongo encendido
-[INFO] 23:16:29:535 mongostore/(5809:5813): post socket_cliente
-[INFO] 23:16:29:535 mongostore/(5809:5813): Estableciendo conexión desde 8361
-[INFO] 23:16:29:536 mongostore/(5809:5813): Creando hilo
-[DEBUG] 23:16:29:541 mongostore/(5809:5830): Se ingresa a funcion_cliente
-[INFO] 23:16:29:541 mongostore/(5809:5830): Se conecto el socket 8
-[INFO] 23:16:32:414 mongostore/(5809:5813): post socket_cliente
-[INFO] 23:16:32:414 mongostore/(5809:5813): Estableciendo conexión desde 9897
-[INFO] 23:16:32:414 mongostore/(5809:5813): Creando hilo
-[DEBUG] 23:16:32:416 mongostore/(5809:5841): Se ingresa a funcion_cliente
-[INFO] 23:16:32:418 mongostore/(5809:5841): Se conecto el socket 9
-[INFO] 23:16:32:420 mongostore/(5809:5813): post socket_cliente
-[INFO] 23:16:32:421 mongostore/(5809:5813): Estableciendo conexión desde 10921
-[INFO] 23:16:32:421 mongostore/(5809:5813): Creando hilo
-[DEBUG] 23:16:32:431 mongostore/(5809:5841): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:16:32:431 mongostore/(5809:5841): Se recibe al tripulante 1 y el mensaje "Comienza ejecucion de tarea ARREGLAR_REACTOR"
-[DEBUG] 23:16:32:431 mongostore/(5809:5841): Metadata de tripulante 1 default cargada en memoria (size = 0 y blocks = [])
-[INFO] 23:16:32:431 mongostore/(5809:5841): Comienza ejecucion de tarea ARREGLAR_REACTOR
-[DEBUG] 23:16:32:431 mongostore/(5809:5841): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 0, BLOCKS [] y superbloque.block_size 32 (1 SI, 0 NO): 0
-[DEBUG] 23:16:32:432 mongostore/(5809:5841): O-Bloque libre obtenido 16
-[DEBUG] 23:16:32:432 mongostore/(5809:5841): Posicion_en_bloque 0, posicion_inicio_bloque 512 posicion block_addres 0xb7369000 posicion absoluta 0xb7369200
-[DEBUG] 23:16:32:432 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 512 posicion block_addres 0xb7369000 posicion absoluta 0xb7369220 proximo caracter a escribir en codigo ascii 71
-[DEBUG] 23:16:32:432 mongostore/(5809:5841): O-Bloque libre obtenido 17
-[DEBUG] 23:16:32:432 mongostore/(5809:5841): Posicion_en_bloque 0, posicion_inicio_bloque 544 posicion block_addres 0xb7369000 posicion absoluta 0xb7369220
-[DEBUG] 23:16:32:432 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 13, posicion_inicio_bloque 544 posicion block_addres 0xb7369000 posicion absoluta 0xb736922d proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:16:32:433 mongostore/(5809:5841): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:16:32:433 mongostore/(5809:5843): Se ingresa a funcion_cliente
-[DEBUG] 23:16:32:433 mongostore/(5809:5841): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims"
-[DEBUG] 23:16:32:434 mongostore/(5809:5841): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[INFO] 23:16:32:436 mongostore/(5809:5813): post socket_cliente
-[INFO] 23:16:32:436 mongostore/(5809:5813): Estableciendo conexión desde 11945
-[INFO] 23:16:32:436 mongostore/(5809:5813): Creando hilo
-[INFO] 23:16:32:437 mongostore/(5809:5843): Se conecto el socket 10
-[DEBUG] 23:16:32:437 mongostore/(5809:5841): Ya cargue la bitacora el tripulante 1 con el mensaje "Comienza ejecucion de tarea ARREGLAR_REACTOR" no genera cambios en el File System
-[INFO] 23:16:32:438 mongostore/(5809:5813): post socket_cliente
-[INFO] 23:16:32:438 mongostore/(5809:5813): Estableciendo conexión desde 12969
-[INFO] 23:16:32:438 mongostore/(5809:5813): Creando hilo
-[DEBUG] 23:16:32:438 mongostore/(5809:5845): Se ingresa a funcion_cliente
-[INFO] 23:16:32:438 mongostore/(5809:5845): Se conecto el socket 11
-[DEBUG] 23:16:32:442 mongostore/(5809:5846): Se ingresa a funcion_cliente
-[INFO] 23:16:32:446 mongostore/(5809:5846): Se conecto el socket 12
-[INFO] 23:16:48:955 mongostore/(5809:5809): SIGUSR1
+[INFO] 11:43:48:517 mongostore/(10936:10941): Servidor iniciando 2
+[INFO] 11:43:48:517 mongostore/(10936:10941): Servidor Mongo2 encendido
+[INFO] 11:43:48:517 mongostore/(10936:10940): Servidor iniciando
+[INFO] 11:43:48:517 mongostore/(10936:10940): Servidor Mongo encendido
+[INFO] 11:44:02:761 mongostore/(10936:10940): post socket_cliente
+[INFO] 11:44:02:763 mongostore/(10936:10940): Estableciendo conexión desde 34986
+[INFO] 11:44:02:763 mongostore/(10936:10940): Creando hilo
+[DEBUG] 11:44:02:768 mongostore/(10936:11125): Se ingresa a funcion_cliente
+[INFO] 11:44:02:768 mongostore/(10936:11125): Se conecto el socket 8
+[INFO] 11:44:05:435 mongostore/(10936:10940): post socket_cliente
+[INFO] 11:44:05:435 mongostore/(10936:10940): Estableciendo conexión desde 36522
+[INFO] 11:44:05:435 mongostore/(10936:10940): Creando hilo
+[DEBUG] 11:44:05:437 mongostore/(10936:11134): Se ingresa a funcion_cliente
+[INFO] 11:44:05:437 mongostore/(10936:11134): Se conecto el socket 9
+[INFO] 11:44:05:438 mongostore/(10936:10940): post socket_cliente
+[INFO] 11:44:05:438 mongostore/(10936:10940): Estableciendo conexión desde 37546
+[INFO] 11:44:05:438 mongostore/(10936:10940): Creando hilo
+[DEBUG] 11:44:05:438 mongostore/(10936:11134): Codigo de operacion recibido: cod_op = 12
+[DEBUG] 11:44:05:439 mongostore/(10936:11134): Se recibe al tripulante 1 y el mensaje "Comienza ejecucion de tarea ARREGLAR_REACTOR"
+[DEBUG] 11:44:05:439 mongostore/(10936:11136): Se ingresa a funcion_cliente
+[INFO] 11:44:05:439 mongostore/(10936:11136): Se conecto el socket 10
+[INFO] 11:44:05:440 mongostore/(10936:10940): post socket_cliente
+[INFO] 11:44:05:440 mongostore/(10936:10940): Estableciendo conexión desde 38570
+[INFO] 11:44:05:440 mongostore/(10936:10940): Creando hilo
+[DEBUG] 11:44:05:440 mongostore/(10936:11138): Se ingresa a funcion_cliente
+[INFO] 11:44:05:441 mongostore/(10936:11138): Se conecto el socket 11
+[DEBUG] 11:44:05:441 mongostore/(10936:11134): Metadata de tripulante 1 default cargada en memoria (size = 0 y blocks = [])
+[INFO] 11:44:05:441 mongostore/(10936:11134): Comienza ejecucion de tarea ARREGLAR_REACTOR
+[DEBUG] 11:44:05:441 mongostore/(10936:11134): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 0, BLOCKS [] y superbloque.block_size 32 (1 SI, 0 NO): 0
+[DEBUG] 11:44:05:441 mongostore/(10936:11134): O-Bloque libre obtenido 2
+[DEBUG] 11:44:05:441 mongostore/(10936:11134): Posicion_en_bloque 0, posicion_inicio_bloque 64 posicion block_addres 0xb7271000 posicion absoluta 0xb7271040
+[INFO] 11:44:05:442 mongostore/(10936:10940): post socket_cliente
+[INFO] 11:44:05:442 mongostore/(10936:10940): Estableciendo conexión desde 39594
+[INFO] 11:44:05:442 mongostore/(10936:10940): Creando hilo
+[DEBUG] 11:44:05:442 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 64 posicion block_addres 0xb7271000 posicion absoluta 0xb7271060 proximo caracter a escribir en codigo ascii 71
+[DEBUG] 11:44:05:443 mongostore/(10936:11134): O-Bloque libre obtenido 3
+[DEBUG] 11:44:05:443 mongostore/(10936:11134): Posicion_en_bloque 0, posicion_inicio_bloque 96 posicion block_addres 0xb7271000 posicion absoluta 0xb7271060
+[DEBUG] 11:44:05:443 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 13, posicion_inicio_bloque 96 posicion block_addres 0xb7271000 posicion absoluta 0xb727106d proximo caracter a escribir en codigo ascii 0
+[DEBUG] 11:44:05:449 mongostore/(10936:11134): SuperBloque.ims actualizado (BITMAP)
+[DEBUG] 11:44:05:452 mongostore/(10936:11134): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims"
+[DEBUG] 11:44:05:454 mongostore/(10936:11134): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
+[DEBUG] 11:44:05:455 mongostore/(10936:11134): Ya cargue la bitacora el tripulante 1 con el mensaje "Comienza ejecucion de tarea ARREGLAR_REACTOR" no genera cambios en el File System
+[DEBUG] 11:44:05:457 mongostore/(10936:11139): Se ingresa a funcion_cliente
+[INFO] 11:44:05:458 mongostore/(10936:11139): Se conecto el socket 12
+[INFO] 11:44:29:777 mongostore/(10936:10936): SIGUSR1
 
-[DEBUG] 23:16:48:957 mongostore/(5809:5841): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:16:48:957 mongostore/(5809:5841): Se recibe al tripulante 1 y el mensaje "Se corre en panico hacia 1|1"
-[DEBUG] 23:16:48:957 mongostore/(5809:5841): Metadata de tripulante 1 levantada en memoria con size = 45 y blocks = [16,17]
-[INFO] 23:16:48:957 mongostore/(5809:5841): Se corre en panico hacia 1|1
-[DEBUG] 23:16:48:957 mongostore/(5809:5841): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 45, BLOCKS [16,17] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 23:16:48:957 mongostore/(5809:5841): Posicion_en_bloque 13, posicion_inicio_bloque 544 posicion block_addres 0xb7369000 posicion absoluta 0xb736922d
-[DEBUG] 23:16:48:957 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 544 posicion block_addres 0xb7369000 posicion absoluta 0xb7369240 proximo caracter a escribir en codigo ascii 104
-[DEBUG] 23:16:48:957 mongostore/(5809:5841): O-Bloque libre obtenido 18
-[DEBUG] 23:16:48:957 mongostore/(5809:5841): Posicion_en_bloque 0, posicion_inicio_bloque 576 posicion block_addres 0xb7369000 posicion absoluta 0xb7369240
-[DEBUG] 23:16:48:958 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 10, posicion_inicio_bloque 576 posicion block_addres 0xb7369000 posicion absoluta 0xb736924a proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:16:48:958 mongostore/(5809:5841): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:16:48:958 mongostore/(5809:5841): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[DEBUG] 23:16:48:958 mongostore/(5809:5841): Ya cargue la bitacora el tripulante 1 con el mensaje "Se corre en panico hacia 1|1" no genera cambios en el File System
-[DEBUG] 23:16:48:961 mongostore/(5809:5841): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:16:48:961 mongostore/(5809:5841): Se recibe al tripulante 1 y el mensaje "Se mueve de 0|0 a 1|0"
-[DEBUG] 23:16:48:962 mongostore/(5809:5841): Metadata de tripulante 1 levantada en memoria con size = 74 y blocks = [16,17,18]
-[INFO] 23:16:48:962 mongostore/(5809:5841): Se mueve de 0|0 a 1|0
-[DEBUG] 23:16:48:962 mongostore/(5809:5841): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 74, BLOCKS [16,17,18] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 23:16:48:962 mongostore/(5809:5841): Posicion_en_bloque 10, posicion_inicio_bloque 576 posicion block_addres 0xb7369000 posicion absoluta 0xb736924a
-[DEBUG] 23:16:48:962 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 576 posicion block_addres 0xb7369000 posicion absoluta 0xb7369260 proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:16:48:962 mongostore/(5809:5841): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:16:48:962 mongostore/(5809:5841): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[DEBUG] 23:16:48:964 mongostore/(5809:5841): Ya cargue la bitacora el tripulante 1 con el mensaje "Se mueve de 0|0 a 1|0" no genera cambios en el File System
-[DEBUG] 23:16:49:970 mongostore/(5809:5841): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:16:49:971 mongostore/(5809:5841): Se recibe al tripulante 1 y el mensaje "Se mueve de 1|0 a 1|1"
-[DEBUG] 23:16:49:971 mongostore/(5809:5841): Metadata de tripulante 1 levantada en memoria con size = 96 y blocks = [16,17,18]
-[INFO] 23:16:49:971 mongostore/(5809:5841): Se mueve de 1|0 a 1|1
-[DEBUG] 23:16:49:971 mongostore/(5809:5841): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 96, BLOCKS [16,17,18] y superbloque.block_size 32 (1 SI, 0 NO): 0
-[DEBUG] 23:16:49:971 mongostore/(5809:5841): O-Bloque libre obtenido 19
-[DEBUG] 23:16:49:971 mongostore/(5809:5841): Posicion_en_bloque 0, posicion_inicio_bloque 608 posicion block_addres 0xb7369000 posicion absoluta 0xb7369260
-[DEBUG] 23:16:49:971 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 22, posicion_inicio_bloque 608 posicion block_addres 0xb7369000 posicion absoluta 0xb7369276 proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:16:49:971 mongostore/(5809:5841): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:16:49:972 mongostore/(5809:5841): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[DEBUG] 23:16:49:972 mongostore/(5809:5841): Ya cargue la bitacora el tripulante 1 con el mensaje "Se mueve de 1|0 a 1|1" no genera cambios en el File System
-[DEBUG] 23:17:00:974 mongostore/(5809:5841): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:17:00:975 mongostore/(5809:5841): Se recibe al tripulante 1 y el mensaje "Se resuelve el sabotaje"
-[DEBUG] 23:17:00:975 mongostore/(5809:5841): Metadata de tripulante 1 levantada en memoria con size = 118 y blocks = [16,17,18,19]
-[INFO] 23:17:00:975 mongostore/(5809:5841): Se resuelve el sabotaje
-[DEBUG] 23:17:00:975 mongostore/(5809:5841): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 118, BLOCKS [16,17,18,19] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 23:17:00:975 mongostore/(5809:5841): Posicion_en_bloque 22, posicion_inicio_bloque 608 posicion block_addres 0xb7369000 posicion absoluta 0xb7369276
-[DEBUG] 23:17:00:976 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 608 posicion block_addres 0xb7369000 posicion absoluta 0xb7369280 proximo caracter a escribir en codigo ascii 101
-[DEBUG] 23:17:00:977 mongostore/(5809:5841): O-Bloque libre obtenido 20
-[DEBUG] 23:17:00:977 mongostore/(5809:5841): Posicion_en_bloque 0, posicion_inicio_bloque 640 posicion block_addres 0xb7369000 posicion absoluta 0xb7369280
-[DEBUG] 23:17:00:978 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 14, posicion_inicio_bloque 640 posicion block_addres 0xb7369000 posicion absoluta 0xb736928e proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:17:00:978 mongostore/(5809:5841): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:17:00:979 mongostore/(5809:5841): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[DEBUG] 23:17:00:980 mongostore/(5809:5841): Ya cargue la bitacora el tripulante 1 con el mensaje "Se resuelve el sabotaje" no genera cambios en el File System
-[DEBUG] 23:17:00:980 mongostore/(5809:5841): Codigo de operacion recibido: cod_op = 14
-[DEBUG] 23:17:00:981 mongostore/(5809:5841): Se inicia fsck
-[DEBUG] 23:17:00:982 mongostore/(5809:5841): Blocks.ims actualizado
-[DEBUG] 23:17:00:982 mongostore/(5809:5841): Se inicia fsck_chequeo_de_sabotajes_en_superbloque()
-[DEBUG] 23:17:00:982 mongostore/(5809:5841): Se inicia superbloque_validar_integridad_cantidad_de_bloques()
-[INFO] 23:17:00:983 mongostore/(5809:5841): Parece que esta vez nadie se animo a sabotear la cantidad de bloques en el SuperBloque.ims
-[DEBUG] 23:17:00:983 mongostore/(5809:5841): Se finaliza superbloque_validar_integridad_cantidad_de_bloques()
-[DEBUG] 23:17:00:983 mongostore/(5809:5841): Info-Se ingresa a superbloque_validar_integridad_bitmap
-[DEBUG] 23:17:00:983 mongostore/(5809:5841): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
-[DEBUG] 23:17:00:983 mongostore/(5809:5841): O-Superbloque levantado desde archivo
-[DEBUG] 23:17:00:983 mongostore/(5809:5841): Se ingresa a files_obtener_cadena_con_bloques_ocupados
-[DEBUG] 23:17:00:983 mongostore/(5809:5841): Se ingresa a recursos_obtener_cadena_con_el_total_de_bloques_ocupados
-[DEBUG] 23:17:00:984 mongostore/(5809:5841): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims": [0,1,2,57]
-[DEBUG] 23:17:00:984 mongostore/(5809:5841): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims": [71,70,74,82]
-[DEBUG] 23:17:00:984 mongostore/(5809:5841): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims": [95,106,100,117]
-[DEBUG] 23:17:00:984 mongostore/(5809:5841): Los bloques ocupados por el total de recursos son [0,1,2,57,71,70,74,82,95,106,100,117]
-[DEBUG] 23:17:00:984 mongostore/(5809:5841): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
-[DEBUG] 23:17:00:984 mongostore/(5809:5841): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
-[DEBUG] 23:17:00:984 mongostore/(5809:5841): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [16,17,18,19,20]
-[DEBUG] 23:17:00:984 mongostore/(5809:5841): en bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados() antes de borrar lista de bitacoras
-[DEBUG] 23:17:00:984 mongostore/(5809:5841): Los bloques ocupados por el total de las bitacoras son [16,17,18,19,20]
-[DEBUG] 23:17:00:984 mongostore/(5809:5841): El total de bloques ocupados es [0,1,2,57,71,70,74,82,95,106,100,117,16,17,18,19,20]
-[INFO] 23:17:00:984 mongostore/(5809:5841): Alguien saboteo el bitmap en el SuperBloque.ims
-[INFO] 23:17:00:985 mongostore/(5809:5841): El bitmap correcto ya fue persistido
-[DEBUG] 23:17:00:985 mongostore/(5809:5841): Se finaliza superbloque_validar_integridad_bitmap()
-[DEBUG] 23:17:00:985 mongostore/(5809:5841): Se a fsck_chequeo_de_sabotajes_en_superbloque()
-[INFO] 23:17:00:985 mongostore/(5809:5841): bloque 57 NO esta lleno
-[INFO] 23:17:00:985 mongostore/(5809:5841): cantidad_en_bloque_incompleto 24 
-[INFO] 23:17:00:985 mongostore/(5809:5841): Por lo menos el size del recurso OXIGENO no fue alterado, enhorabuena!!!
-[INFO] 23:17:00:985 mongostore/(5809:5841): Por lo menos el block_count del recurso OXIGENO no fue alterado, enhorabuena!!!
-[DEBUG] 23:17:00:985 mongostore/(5809:5841): Valores variables levantados SIZE 120 BLOCK_COUNT 4 BLOCKS [0,1,2,57] y MD5_ARCHIVO 1c6d35680750b61d498448704ce18d4f
-[DEBUG] 23:17:00:985 mongostore/(5809:5841): Total de caracteres del recurso concatenado en direccion de memoria 0x88f6c20
-[INFO] 23:17:00:985 mongostore/(5809:5841): concatenado_segun_blocks_actual OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO�
-[INFO] 23:17:00:985 mongostore/(5809:5841): recurso_md->blocks [0,1,2,57]
-[INFO] 23:17:00:985 mongostore/(5809:5841): recurso_md->md5_archivo 1c6d35680750b61d498448704ce18d4f
-[INFO] 23:17:00:985 mongostore/(5809:5841): md5_segun_blocks_actual 1c6d35680750b61d498448704ce18d4f
-[INFO] 23:17:00:985 mongostore/(5809:5841): Por lo menos el blocks del recurso OXIGENO no fue alterado, enhorabuena!!!
-[INFO] 23:17:00:985 mongostore/(5809:5841): bloque 82 NO esta lleno
-[INFO] 23:17:00:985 mongostore/(5809:5841): cantidad_en_bloque_incompleto 24 
-[INFO] 23:17:00:985 mongostore/(5809:5841): Por lo menos el size del recurso COMIDA no fue alterado, enhorabuena!!!
-[INFO] 23:17:00:985 mongostore/(5809:5841): Por lo menos el block_count del recurso COMIDA no fue alterado, enhorabuena!!!
-[DEBUG] 23:17:00:985 mongostore/(5809:5841): Valores variables levantados SIZE 120 BLOCK_COUNT 4 BLOCKS [71,70,74,82] y MD5_ARCHIVO 6a622871b53c3cdd4ec7adb550ee7577
-[DEBUG] 23:17:00:985 mongostore/(5809:5841): Total de caracteres del recurso concatenado en direccion de memoria 0x88f6bf0
-[INFO] 23:17:00:985 mongostore/(5809:5841): concatenado_segun_blocks_actual CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC�
-[INFO] 23:17:00:985 mongostore/(5809:5841): recurso_md->blocks [71,70,74,82]
-[INFO] 23:17:00:985 mongostore/(5809:5841): recurso_md->md5_archivo 6a622871b53c3cdd4ec7adb550ee7577
-[INFO] 23:17:00:985 mongostore/(5809:5841): md5_segun_blocks_actual 6a622871b53c3cdd4ec7adb550ee7577
-[INFO] 23:17:00:985 mongostore/(5809:5841): Por lo menos el blocks del recurso COMIDA no fue alterado, enhorabuena!!!
-[INFO] 23:17:00:985 mongostore/(5809:5841): bloque 100 NO esta lleno
-[INFO] 23:17:00:985 mongostore/(5809:5841): cantidad_en_bloque_incompleto 24 
-[INFO] 23:17:00:986 mongostore/(5809:5841): Por lo menos el size del recurso BASURA no fue alterado, enhorabuena!!!
-[INFO] 23:17:00:986 mongostore/(5809:5841): Por lo menos el block_count del recurso BASURA no fue alterado, enhorabuena!!!
-[DEBUG] 23:17:00:986 mongostore/(5809:5841): Valores variables levantados SIZE 120 BLOCK_COUNT 4 BLOCKS [95,106,100,117] y MD5_ARCHIVO 3bb9f6d07ed99b08f9ce627be07c3a10
-[DEBUG] 23:17:00:990 mongostore/(5809:5841): Total de caracteres del recurso concatenado en direccion de memoria 0x88f6ca8
-[INFO] 23:17:00:990 mongostore/(5809:5841): concatenado_segun_blocks_actual BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-[INFO] 23:17:00:990 mongostore/(5809:5841): recurso_md->blocks [95,106,100,117]
-[INFO] 23:17:00:990 mongostore/(5809:5841): recurso_md->md5_archivo 3bb9f6d07ed99b08f9ce627be07c3a10
-[INFO] 23:17:00:990 mongostore/(5809:5841): md5_segun_blocks_actual 4a7ab2300f8c4edada5bf161902734f0
-[INFO] 23:17:00:990 mongostore/(5809:5841): El recurso BASURA tiene su blocks saboteado, pero no te preocupes, ya lo arreglaremos restaurando los bloques en Blocks.ims
-[DEBUG] 23:17:00:990 mongostore/(5809:5841): Posicion_inicio_bloque 3040 posicion absoluta 0xb7369be0 o -1221157920
-[DEBUG] 23:17:00:990 mongostore/(5809:5841): O-Se cargo el bloque completo 95 con caracter B
-[DEBUG] 23:17:00:990 mongostore/(5809:5841): Posicion_inicio_bloque 3392 posicion absoluta 0xb7369d40 o -1221157568
-[DEBUG] 23:17:00:990 mongostore/(5809:5841): O-Se cargo el bloque completo 106 con caracter B
-[DEBUG] 23:17:00:990 mongostore/(5809:5841): Posicion_inicio_bloque 3200 posicion absoluta 0xb7369c80 o -1221157760
-[DEBUG] 23:17:00:990 mongostore/(5809:5841): O-Se cargo el bloque completo 100 con caracter B
-[DEBUG] 23:17:00:990 mongostore/(5809:5841): I-Se ingresa a metadata_cargar_parcialmente_en_bloque con caracter B, cantidad 24 y bloque 117
-[DEBUG] 23:17:00:990 mongostore/(5809:5841): Posicion_en_bloque 0, posicion_inicio_bloque 3744 posicion block_addres 0xb7369000 posicion absoluta 0xb7369ea0
-[DEBUG] 23:17:00:990 mongostore/(5809:5841): Se cargo en bloque 117 con caracter B quedando por cargar 0 recurso(s)
-[DEBUG] 23:17:00:990 mongostore/(5809:5841): Saliendo de metadata_restaurar_en_blocks
-[DEBUG] 23:17:00:991 mongostore/(5809:5841): Se ingresa a recurso_actualizar_archivo de recurso BASURA
-[DEBUG] 23:17:00:991 mongostore/(5809:5841): Valores persistidos: SIZE 120  B_C 4  BS [95,106,100,117]  C_LL B MD5 4a7ab2300f8c4edada5bf161902734f0
-[INFO] 23:17:00:991 mongostore/(5809:5841): Se actualizo metadata de BASURA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims
-[INFO] 23:17:00:992 mongostore/(5809:5841): Listo, ya podes confiar en el blocks "[95,106,100,117]" para el recurso BASURA
-[INFO] 23:17:00:992 mongostore/(5809:5841): recurso_md->blocks [95,106,100,117]  recurso_md->size 120  recurso_md->md5_archivo 4a7ab2300f8c4edada5bf161902734f0
-[DEBUG] 23:17:00:992 mongostore/(5809:5841): Se finaliza fsck
-[DEBUG] 23:17:00:992 mongostore/(5809:5841): Ya ejecute las instrucciones del fsck
-[DEBUG] 23:17:00:992 mongostore/(5809:5843): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:17:00:992 mongostore/(5809:5843): Se recibe al tripulante 2 y el mensaje "Comienza ejecucion de tarea EMPALMANDO_CABLES"
-[DEBUG] 23:17:00:992 mongostore/(5809:5843): Metadata de tripulante 2 default cargada en memoria (size = 0 y blocks = [])
-[INFO] 23:17:00:992 mongostore/(5809:5843): Comienza ejecucion de tarea EMPALMANDO_CABLES
-[DEBUG] 23:17:00:992 mongostore/(5809:5843): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 0, BLOCKS [] y superbloque.block_size 32 (1 SI, 0 NO): 0
-[DEBUG] 23:17:00:992 mongostore/(5809:5843): O-Bloque libre obtenido 3
-[DEBUG] 23:17:00:992 mongostore/(5809:5843): Posicion_en_bloque 0, posicion_inicio_bloque 96 posicion block_addres 0xb7369000 posicion absoluta 0xb7369060
-[DEBUG] 23:17:00:993 mongostore/(5809:5843): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 96 posicion block_addres 0xb7369000 posicion absoluta 0xb7369080 proximo caracter a escribir en codigo ascii 76
-[DEBUG] 23:17:00:993 mongostore/(5809:5843): O-Bloque libre obtenido 4
-[DEBUG] 23:17:00:993 mongostore/(5809:5843): Posicion_en_bloque 0, posicion_inicio_bloque 128 posicion block_addres 0xb7369000 posicion absoluta 0xb7369080
-[DEBUG] 23:17:00:993 mongostore/(5809:5843): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 14, posicion_inicio_bloque 128 posicion block_addres 0xb7369000 posicion absoluta 0xb736908e proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:17:00:993 mongostore/(5809:5843): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:17:00:993 mongostore/(5809:5843): IO-Se creo el archivo dado por la ruta completa "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims"
-[DEBUG] 23:17:00:993 mongostore/(5809:5843): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims actualizado para tripulante 2
-[DEBUG] 23:17:00:993 mongostore/(5809:5843): Ya cargue la bitacora el tripulante 2 con el mensaje "Comienza ejecucion de tarea EMPALMANDO_CABLES" no genera cambios en el File System
-[INFO] 23:17:06:246 mongostore/(5809:5809): SIGUSR1
-
-[DEBUG] 23:17:06:250 mongostore/(5809:5843): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:17:06:250 mongostore/(5809:5843): Se recibe al tripulante 2 y el mensaje "Se corre en panico hacia 7|1"
-[DEBUG] 23:17:06:250 mongostore/(5809:5843): Metadata de tripulante 2 levantada en memoria con size = 46 y blocks = [3,4]
-[INFO] 23:17:06:250 mongostore/(5809:5843): Se corre en panico hacia 7|1
-[DEBUG] 23:17:06:250 mongostore/(5809:5843): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 46, BLOCKS [3,4] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 23:17:06:250 mongostore/(5809:5843): Posicion_en_bloque 14, posicion_inicio_bloque 128 posicion block_addres 0xb7369000 posicion absoluta 0xb736908e
-[DEBUG] 23:17:06:250 mongostore/(5809:5843): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 128 posicion block_addres 0xb7369000 posicion absoluta 0xb73690a0 proximo caracter a escribir en codigo ascii 32
-[DEBUG] 23:17:06:251 mongostore/(5809:5843): O-Bloque libre obtenido 5
-[DEBUG] 23:17:06:251 mongostore/(5809:5843): Posicion_en_bloque 0, posicion_inicio_bloque 160 posicion block_addres 0xb7369000 posicion absoluta 0xb73690a0
-[DEBUG] 23:17:06:251 mongostore/(5809:5843): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 11, posicion_inicio_bloque 160 posicion block_addres 0xb7369000 posicion absoluta 0xb73690ab proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:17:06:251 mongostore/(5809:5843): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:17:06:251 mongostore/(5809:5843): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims actualizado para tripulante 2
-[DEBUG] 23:17:06:252 mongostore/(5809:5843): Ya cargue la bitacora el tripulante 2 con el mensaje "Se corre en panico hacia 7|1" no genera cambios en el File System
-[DEBUG] 23:17:06:253 mongostore/(5809:5843): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:17:06:253 mongostore/(5809:5843): Se recibe al tripulante 2 y el mensaje "Se mueve de 8|0 a 7|0"
-[DEBUG] 23:17:06:253 mongostore/(5809:5843): Metadata de tripulante 2 levantada en memoria con size = 75 y blocks = [3,4,5]
-[INFO] 23:17:06:254 mongostore/(5809:5843): Se mueve de 8|0 a 7|0
-[DEBUG] 23:17:06:254 mongostore/(5809:5843): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 75, BLOCKS [3,4,5] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 23:17:06:254 mongostore/(5809:5843): Posicion_en_bloque 11, posicion_inicio_bloque 160 posicion block_addres 0xb7369000 posicion absoluta 0xb73690ab
-[DEBUG] 23:17:06:254 mongostore/(5809:5843): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 160 posicion block_addres 0xb7369000 posicion absoluta 0xb73690c0 proximo caracter a escribir en codigo ascii 10
-[DEBUG] 23:17:06:254 mongostore/(5809:5843): O-Bloque libre obtenido 6
-[DEBUG] 23:17:06:254 mongostore/(5809:5843): Posicion_en_bloque 0, posicion_inicio_bloque 192 posicion block_addres 0xb7369000 posicion absoluta 0xb73690c0
-[DEBUG] 23:17:06:254 mongostore/(5809:5843): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 1, posicion_inicio_bloque 192 posicion block_addres 0xb7369000 posicion absoluta 0xb73690c1 proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:17:06:254 mongostore/(5809:5843): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:17:06:254 mongostore/(5809:5843): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims actualizado para tripulante 2
-[DEBUG] 23:17:06:255 mongostore/(5809:5843): Ya cargue la bitacora el tripulante 2 con el mensaje "Se mueve de 8|0 a 7|0" no genera cambios en el File System
-[DEBUG] 23:17:07:256 mongostore/(5809:5843): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:17:07:256 mongostore/(5809:5843): Se recibe al tripulante 2 y el mensaje "Se mueve de 7|0 a 7|1"
-[DEBUG] 23:17:07:256 mongostore/(5809:5843): Metadata de tripulante 2 levantada en memoria con size = 97 y blocks = [3,4,5,6]
-[INFO] 23:17:07:256 mongostore/(5809:5843): Se mueve de 7|0 a 7|1
-[DEBUG] 23:17:07:256 mongostore/(5809:5843): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 97, BLOCKS [3,4,5,6] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 23:17:07:256 mongostore/(5809:5843): Posicion_en_bloque 1, posicion_inicio_bloque 192 posicion block_addres 0xb7369000 posicion absoluta 0xb73690c1
-[DEBUG] 23:17:07:256 mongostore/(5809:5843): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 23, posicion_inicio_bloque 192 posicion block_addres 0xb7369000 posicion absoluta 0xb73690d7 proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:17:07:256 mongostore/(5809:5843): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:17:07:257 mongostore/(5809:5843): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims actualizado para tripulante 2
-[DEBUG] 23:17:07:257 mongostore/(5809:5843): Ya cargue la bitacora el tripulante 2 con el mensaje "Se mueve de 7|0 a 7|1" no genera cambios en el File System
-[DEBUG] 23:17:18:259 mongostore/(5809:5843): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:17:18:260 mongostore/(5809:5843): Se recibe al tripulante 2 y el mensaje "Se resuelve el sabotaje"
-[DEBUG] 23:17:18:260 mongostore/(5809:5843): Metadata de tripulante 2 levantada en memoria con size = 119 y blocks = [3,4,5,6]
-[INFO] 23:17:18:260 mongostore/(5809:5843): Se resuelve el sabotaje
-[DEBUG] 23:17:18:260 mongostore/(5809:5843): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 119, BLOCKS [3,4,5,6] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 23:17:18:260 mongostore/(5809:5843): Posicion_en_bloque 23, posicion_inicio_bloque 192 posicion block_addres 0xb7369000 posicion absoluta 0xb73690d7
-[DEBUG] 23:17:18:260 mongostore/(5809:5843): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 192 posicion block_addres 0xb7369000 posicion absoluta 0xb73690e0 proximo caracter a escribir en codigo ascii 118
-[DEBUG] 23:17:18:260 mongostore/(5809:5843): O-Bloque libre obtenido 7
-[DEBUG] 23:17:18:260 mongostore/(5809:5843): Posicion_en_bloque 0, posicion_inicio_bloque 224 posicion block_addres 0xb7369000 posicion absoluta 0xb73690e0
-[DEBUG] 23:17:18:260 mongostore/(5809:5843): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 15, posicion_inicio_bloque 224 posicion block_addres 0xb7369000 posicion absoluta 0xb73690ef proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:17:18:260 mongostore/(5809:5843): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:17:18:261 mongostore/(5809:5843): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims actualizado para tripulante 2
-[DEBUG] 23:17:18:261 mongostore/(5809:5843): Ya cargue la bitacora el tripulante 2 con el mensaje "Se resuelve el sabotaje" no genera cambios en el File System
-[DEBUG] 23:17:18:261 mongostore/(5809:5843): Codigo de operacion recibido: cod_op = 14
-[DEBUG] 23:17:18:262 mongostore/(5809:5843): Se inicia fsck
-[DEBUG] 23:17:18:267 mongostore/(5809:5843): Blocks.ims actualizado
-[DEBUG] 23:17:18:268 mongostore/(5809:5843): Se inicia fsck_chequeo_de_sabotajes_en_superbloque()
-[DEBUG] 23:17:18:269 mongostore/(5809:5843): Se inicia superbloque_validar_integridad_cantidad_de_bloques()
-[INFO] 23:17:18:269 mongostore/(5809:5843): Parece que esta vez nadie se animo a sabotear la cantidad de bloques en el SuperBloque.ims
-[DEBUG] 23:17:18:269 mongostore/(5809:5843): Se finaliza superbloque_validar_integridad_cantidad_de_bloques()
-[DEBUG] 23:17:18:269 mongostore/(5809:5843): Info-Se ingresa a superbloque_validar_integridad_bitmap
-[DEBUG] 23:17:18:269 mongostore/(5809:5843): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
-[DEBUG] 23:17:18:269 mongostore/(5809:5843): O-Superbloque levantado desde archivo
-[DEBUG] 23:17:18:269 mongostore/(5809:5843): Se ingresa a files_obtener_cadena_con_bloques_ocupados
-[DEBUG] 23:17:18:275 mongostore/(5809:5843): Se ingresa a recursos_obtener_cadena_con_el_total_de_bloques_ocupados
-[DEBUG] 23:17:18:275 mongostore/(5809:5843): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims": [0,1,2,57]
-[DEBUG] 23:17:18:275 mongostore/(5809:5843): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims": [71,70,74,82]
-[DEBUG] 23:17:18:275 mongostore/(5809:5843): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims": [95,106,100,117]
-[DEBUG] 23:17:18:275 mongostore/(5809:5843): Los bloques ocupados por el total de recursos son [0,1,2,57,71,70,74,82,95,106,100,117]
-[DEBUG] 23:17:18:275 mongostore/(5809:5843): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
-[DEBUG] 23:17:18:276 mongostore/(5809:5843): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
-[DEBUG] 23:17:18:276 mongostore/(5809:5843): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims": [3,4,5,6,7]
-[DEBUG] 23:17:18:276 mongostore/(5809:5843): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [16,17,18,19,20]
-[DEBUG] 23:17:18:276 mongostore/(5809:5843): en bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados() antes de borrar lista de bitacoras
-[DEBUG] 23:17:18:276 mongostore/(5809:5843): Los bloques ocupados por el total de las bitacoras son [3,4,5,6,7,16,17,18,19,20]
-[DEBUG] 23:17:18:276 mongostore/(5809:5843): El total de bloques ocupados es [0,1,2,57,71,70,74,82,95,106,100,117,3,4,5,6,7,16,17,18,19,20]
-[INFO] 23:17:18:276 mongostore/(5809:5843): Parece que esta vez nadie se animo a sabotear el bitmap
-[DEBUG] 23:17:18:276 mongostore/(5809:5843): Se finaliza superbloque_validar_integridad_bitmap()
-[DEBUG] 23:17:18:276 mongostore/(5809:5843): Se a fsck_chequeo_de_sabotajes_en_superbloque()
-[INFO] 23:17:18:276 mongostore/(5809:5843): bloque 57 NO esta lleno
-[INFO] 23:17:18:276 mongostore/(5809:5843): cantidad_en_bloque_incompleto 24 
-[INFO] 23:17:18:276 mongostore/(5809:5843): Por lo menos el size del recurso OXIGENO no fue alterado, enhorabuena!!!
-[INFO] 23:17:18:277 mongostore/(5809:5843): Por lo menos el block_count del recurso OXIGENO no fue alterado, enhorabuena!!!
-[DEBUG] 23:17:18:277 mongostore/(5809:5843): Valores variables levantados SIZE 120 BLOCK_COUNT 4 BLOCKS [0,1,2,57] y MD5_ARCHIVO 1c6d35680750b61d498448704ce18d4f
-[DEBUG] 23:17:18:277 mongostore/(5809:5843): Total de caracteres del recurso concatenado en direccion de memoria 0xb5801128
-[INFO] 23:17:18:277 mongostore/(5809:5843): concatenado_segun_blocks_actual OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO�
-[INFO] 23:17:18:277 mongostore/(5809:5843): recurso_md->blocks [0,1,2,57]
-[INFO] 23:17:18:277 mongostore/(5809:5843): recurso_md->md5_archivo 1c6d35680750b61d498448704ce18d4f
-[INFO] 23:17:18:277 mongostore/(5809:5843): md5_segun_blocks_actual 1c6d35680750b61d498448704ce18d4f
-[INFO] 23:17:18:277 mongostore/(5809:5843): Por lo menos el blocks del recurso OXIGENO no fue alterado, enhorabuena!!!
-[INFO] 23:17:18:277 mongostore/(5809:5843): bloque 82 NO esta lleno
-[INFO] 23:17:18:277 mongostore/(5809:5843): cantidad_en_bloque_incompleto 24 
-[INFO] 23:17:18:277 mongostore/(5809:5843): Por lo menos el size del recurso COMIDA no fue alterado, enhorabuena!!!
-[INFO] 23:17:18:277 mongostore/(5809:5843): Por lo menos el block_count del recurso COMIDA no fue alterado, enhorabuena!!!
-[DEBUG] 23:17:18:277 mongostore/(5809:5843): Valores variables levantados SIZE 120 BLOCK_COUNT 4 BLOCKS [71,70,74,82] y MD5_ARCHIVO 6a622871b53c3cdd4ec7adb550ee7577
-[DEBUG] 23:17:18:277 mongostore/(5809:5843): Total de caracteres del recurso concatenado en direccion de memoria 0xb58013b8
-[INFO] 23:17:18:277 mongostore/(5809:5843): concatenado_segun_blocks_actual CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC��
-[INFO] 23:17:18:278 mongostore/(5809:5843): recurso_md->blocks [71,70,74,82]
-[INFO] 23:17:18:278 mongostore/(5809:5843): recurso_md->md5_archivo 6a622871b53c3cdd4ec7adb550ee7577
-[INFO] 23:17:18:278 mongostore/(5809:5843): md5_segun_blocks_actual 6a622871b53c3cdd4ec7adb550ee7577
-[INFO] 23:17:18:278 mongostore/(5809:5843): Por lo menos el blocks del recurso COMIDA no fue alterado, enhorabuena!!!
-[INFO] 23:17:18:278 mongostore/(5809:5843): bloque 117 NO esta lleno
-[INFO] 23:17:18:278 mongostore/(5809:5843): cantidad_en_bloque_incompleto 24 
-[INFO] 23:17:18:278 mongostore/(5809:5843): Por lo menos el size del recurso BASURA no fue alterado, enhorabuena!!!
-[INFO] 23:17:18:278 mongostore/(5809:5843): Por lo menos el block_count del recurso BASURA no fue alterado, enhorabuena!!!
-[DEBUG] 23:17:18:278 mongostore/(5809:5843): Valores variables levantados SIZE 120 BLOCK_COUNT 4 BLOCKS [95,106,100,117] y MD5_ARCHIVO 4a7ab2300f8c4edada5bf161902734f0
-[DEBUG] 23:17:18:278 mongostore/(5809:5843): Total de caracteres del recurso concatenado en direccion de memoria 0xb5801128
-[INFO] 23:17:18:278 mongostore/(5809:5843): concatenado_segun_blocks_actual BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBf0
-[INFO] 23:17:18:278 mongostore/(5809:5843): recurso_md->blocks [95,106,100,117]
-[INFO] 23:17:18:278 mongostore/(5809:5843): recurso_md->md5_archivo 4a7ab2300f8c4edada5bf161902734f0
-[INFO] 23:17:18:278 mongostore/(5809:5843): md5_segun_blocks_actual 3bb9f6d07ed99b08f9ce627be07c3a10
-[INFO] 23:17:18:279 mongostore/(5809:5843): El recurso BASURA tiene su blocks saboteado, pero no te preocupes, ya lo arreglaremos restaurando los bloques en Blocks.ims
-[DEBUG] 23:17:18:279 mongostore/(5809:5843): Posicion_inicio_bloque 3040 posicion absoluta 0xb7369be0 o -1221157920
-[DEBUG] 23:17:18:279 mongostore/(5809:5843): O-Se cargo el bloque completo 95 con caracter B
-[DEBUG] 23:17:18:279 mongostore/(5809:5843): Posicion_inicio_bloque 3392 posicion absoluta 0xb7369d40 o -1221157568
-[DEBUG] 23:17:18:279 mongostore/(5809:5843): O-Se cargo el bloque completo 106 con caracter B
-[DEBUG] 23:17:18:279 mongostore/(5809:5843): Posicion_inicio_bloque 3200 posicion absoluta 0xb7369c80 o -1221157760
-[DEBUG] 23:17:18:279 mongostore/(5809:5843): O-Se cargo el bloque completo 100 con caracter B
-[DEBUG] 23:17:18:279 mongostore/(5809:5843): I-Se ingresa a metadata_cargar_parcialmente_en_bloque con caracter B, cantidad 24 y bloque 117
-[DEBUG] 23:17:18:279 mongostore/(5809:5843): Posicion_en_bloque 0, posicion_inicio_bloque 3744 posicion block_addres 0xb7369000 posicion absoluta 0xb7369ea0
-[DEBUG] 23:17:18:279 mongostore/(5809:5843): Se cargo en bloque 117 con caracter B quedando por cargar 0 recurso(s)
-[DEBUG] 23:17:18:279 mongostore/(5809:5843): Saliendo de metadata_restaurar_en_blocks
-[DEBUG] 23:17:18:279 mongostore/(5809:5843): Se ingresa a recurso_actualizar_archivo de recurso BASURA
-[DEBUG] 23:17:18:281 mongostore/(5809:5843): Valores persistidos: SIZE 120  B_C 4  BS [95,106,100,117]  C_LL B MD5 3bb9f6d07ed99b08f9ce627be07c3a10
-[INFO] 23:17:18:281 mongostore/(5809:5843): Se actualizo metadata de BASURA de memoria a archivo /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims
-[INFO] 23:17:18:281 mongostore/(5809:5843): Listo, ya podes confiar en el blocks "[95,106,100,117]" para el recurso BASURA
-[INFO] 23:17:18:282 mongostore/(5809:5843): recurso_md->blocks [95,106,100,117]  recurso_md->size 120  recurso_md->md5_archivo 3bb9f6d07ed99b08f9ce627be07c3a10
-[DEBUG] 23:17:18:282 mongostore/(5809:5843): Se finaliza fsck
-[DEBUG] 23:17:18:282 mongostore/(5809:5843): Ya ejecute las instrucciones del fsck
-[DEBUG] 23:17:18:283 mongostore/(5809:5841): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:17:18:283 mongostore/(5809:5841): Se recibe al tripulante 1 y el mensaje "Se mueve de 1|1 a 0|1"
-[DEBUG] 23:17:18:283 mongostore/(5809:5841): Metadata de tripulante 1 levantada en memoria con size = 142 y blocks = [16,17,18,19,20]
-[INFO] 23:17:18:284 mongostore/(5809:5841): Se mueve de 1|1 a 0|1
-[DEBUG] 23:17:18:284 mongostore/(5809:5841): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 142, BLOCKS [16,17,18,19,20] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 23:17:18:284 mongostore/(5809:5841): Posicion_en_bloque 14, posicion_inicio_bloque 640 posicion block_addres 0xb7369000 posicion absoluta 0xb736928e
-[DEBUG] 23:17:18:284 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 640 posicion block_addres 0xb7369000 posicion absoluta 0xb73692a0 proximo caracter a escribir en codigo ascii 48
-[DEBUG] 23:17:18:284 mongostore/(5809:5841): O-Bloque libre obtenido 8
-[DEBUG] 23:17:18:284 mongostore/(5809:5841): Posicion_en_bloque 0, posicion_inicio_bloque 256 posicion block_addres 0xb7369000 posicion absoluta 0xb7369100
-[DEBUG] 23:17:18:284 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 4, posicion_inicio_bloque 256 posicion block_addres 0xb7369000 posicion absoluta 0xb7369104 proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:17:18:284 mongostore/(5809:5841): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:17:18:284 mongostore/(5809:5841): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[DEBUG] 23:17:18:285 mongostore/(5809:5841): Ya cargue la bitacora el tripulante 1 con el mensaje "Se mueve de 1|1 a 0|1" no genera cambios en el File System
-[DEBUG] 23:17:19:285 mongostore/(5809:5841): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:17:19:287 mongostore/(5809:5841): Se recibe al tripulante 1 y el mensaje "Se mueve de 0|1 a 0|0"
-[DEBUG] 23:17:19:287 mongostore/(5809:5841): Metadata de tripulante 1 levantada en memoria con size = 164 y blocks = [16,17,18,19,20,8]
-[INFO] 23:17:19:287 mongostore/(5809:5841): Se mueve de 0|1 a 0|0
-[DEBUG] 23:17:19:287 mongostore/(5809:5841): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 164, BLOCKS [16,17,18,19,20,8] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 23:17:19:287 mongostore/(5809:5841): Posicion_en_bloque 4, posicion_inicio_bloque 256 posicion block_addres 0xb7369000 posicion absoluta 0xb7369104
-[DEBUG] 23:17:19:288 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 26, posicion_inicio_bloque 256 posicion block_addres 0xb7369000 posicion absoluta 0xb736911a proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:17:19:288 mongostore/(5809:5841): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:17:19:288 mongostore/(5809:5841): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[DEBUG] 23:17:19:288 mongostore/(5809:5841): Ya cargue la bitacora el tripulante 1 con el mensaje "Se mueve de 0|1 a 0|0" no genera cambios en el File System
-[DEBUG] 23:17:20:289 mongostore/(5809:5841): Codigo de operacion recibido: cod_op = 12
-[DEBUG] 23:17:20:290 mongostore/(5809:5841): Se recibe al tripulante 1 y el mensaje "Comienza ejecucion de tarea ARREGLAR_REACTOR"
-[DEBUG] 23:17:20:290 mongostore/(5809:5841): Metadata de tripulante 1 levantada en memoria con size = 186 y blocks = [16,17,18,19,20,8]
-[INFO] 23:17:20:290 mongostore/(5809:5841): Comienza ejecucion de tarea ARREGLAR_REACTOR
-[DEBUG] 23:17:20:290 mongostore/(5809:5841): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 186, BLOCKS [16,17,18,19,20,8] y superbloque.block_size 32 (1 SI, 0 NO): 1
-[DEBUG] 23:17:20:290 mongostore/(5809:5841): Posicion_en_bloque 26, posicion_inicio_bloque 256 posicion block_addres 0xb7369000 posicion absoluta 0xb736911a
-[DEBUG] 23:17:20:290 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 256 posicion block_addres 0xb7369000 posicion absoluta 0xb7369120 proximo caracter a escribir en codigo ascii 122
-[DEBUG] 23:17:20:290 mongostore/(5809:5841): O-Bloque libre obtenido 9
-[DEBUG] 23:17:20:290 mongostore/(5809:5841): Posicion_en_bloque 0, posicion_inicio_bloque 288 posicion block_addres 0xb7369000 posicion absoluta 0xb7369120
-[DEBUG] 23:17:20:291 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 288 posicion block_addres 0xb7369000 posicion absoluta 0xb7369140 proximo caracter a escribir en codigo ascii 69
-[DEBUG] 23:17:20:291 mongostore/(5809:5841): O-Bloque libre obtenido 10
-[DEBUG] 23:17:20:291 mongostore/(5809:5841): Posicion_en_bloque 0, posicion_inicio_bloque 320 posicion block_addres 0xb7369000 posicion absoluta 0xb7369140
-[DEBUG] 23:17:20:291 mongostore/(5809:5841): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 7, posicion_inicio_bloque 320 posicion block_addres 0xb7369000 posicion absoluta 0xb7369147 proximo caracter a escribir en codigo ascii 0
-[DEBUG] 23:17:20:291 mongostore/(5809:5841): SuperBloque.ims actualizado (BITMAP)
-[DEBUG] 23:17:20:291 mongostore/(5809:5841): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
-[DEBUG] 23:17:20:291 mongostore/(5809:5841): Ya cargue la bitacora el tripulante 1 con el mensaje "Comienza ejecucion de tarea ARREGLAR_REACTOR" no genera cambios en el File System
+[DEBUG] 11:44:29:778 mongostore/(10936:11134): Codigo de operacion recibido: cod_op = 12
+[DEBUG] 11:44:29:778 mongostore/(10936:11134): Se recibe al tripulante 1 y el mensaje "Se corre en panico hacia 1|1"
+[DEBUG] 11:44:29:778 mongostore/(10936:11134): Metadata de tripulante 1 levantada en memoria con size = 45 y blocks = [2,3]
+[INFO] 11:44:29:778 mongostore/(10936:11134): Se corre en panico hacia 1|1
+[DEBUG] 11:44:29:778 mongostore/(10936:11134): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 45, BLOCKS [2,3] y superbloque.block_size 32 (1 SI, 0 NO): 1
+[DEBUG] 11:44:29:779 mongostore/(10936:11134): Posicion_en_bloque 13, posicion_inicio_bloque 96 posicion block_addres 0xb7271000 posicion absoluta 0xb727106d
+[DEBUG] 11:44:29:779 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 96 posicion block_addres 0xb7271000 posicion absoluta 0xb7271080 proximo caracter a escribir en codigo ascii 104
+[DEBUG] 11:44:29:779 mongostore/(10936:11134): O-Bloque libre obtenido 4
+[DEBUG] 11:44:29:779 mongostore/(10936:11134): Posicion_en_bloque 0, posicion_inicio_bloque 128 posicion block_addres 0xb7271000 posicion absoluta 0xb7271080
+[DEBUG] 11:44:29:779 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 10, posicion_inicio_bloque 128 posicion block_addres 0xb7271000 posicion absoluta 0xb727108a proximo caracter a escribir en codigo ascii 0
+[DEBUG] 11:44:29:779 mongostore/(10936:11134): SuperBloque.ims actualizado (BITMAP)
+[DEBUG] 11:44:29:787 mongostore/(10936:11134): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
+[DEBUG] 11:44:29:787 mongostore/(10936:11134): Ya cargue la bitacora el tripulante 1 con el mensaje "Se corre en panico hacia 1|1" no genera cambios en el File System
+[DEBUG] 11:44:29:787 mongostore/(10936:11134): Codigo de operacion recibido: cod_op = 12
+[DEBUG] 11:44:29:789 mongostore/(10936:11134): Se recibe al tripulante 1 y el mensaje "Se mueve de 0|0 a 1|0"
+[DEBUG] 11:44:29:790 mongostore/(10936:11134): Metadata de tripulante 1 levantada en memoria con size = 74 y blocks = [2,3,4]
+[INFO] 11:44:29:790 mongostore/(10936:11134): Se mueve de 0|0 a 1|0
+[DEBUG] 11:44:29:790 mongostore/(10936:11134): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 74, BLOCKS [2,3,4] y superbloque.block_size 32 (1 SI, 0 NO): 1
+[DEBUG] 11:44:29:790 mongostore/(10936:11134): Posicion_en_bloque 10, posicion_inicio_bloque 128 posicion block_addres 0xb7271000 posicion absoluta 0xb727108a
+[DEBUG] 11:44:29:790 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 128 posicion block_addres 0xb7271000 posicion absoluta 0xb72710a0 proximo caracter a escribir en codigo ascii 0
+[DEBUG] 11:44:29:790 mongostore/(10936:11134): SuperBloque.ims actualizado (BITMAP)
+[DEBUG] 11:44:29:792 mongostore/(10936:11134): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
+[DEBUG] 11:44:29:796 mongostore/(10936:11134): Ya cargue la bitacora el tripulante 1 con el mensaje "Se mueve de 0|0 a 1|0" no genera cambios en el File System
+[DEBUG] 11:44:30:797 mongostore/(10936:11134): Codigo de operacion recibido: cod_op = 12
+[DEBUG] 11:44:30:797 mongostore/(10936:11134): Se recibe al tripulante 1 y el mensaje "Se mueve de 1|0 a 1|1"
+[DEBUG] 11:44:30:798 mongostore/(10936:11134): Metadata de tripulante 1 levantada en memoria con size = 96 y blocks = [2,3,4]
+[INFO] 11:44:30:798 mongostore/(10936:11134): Se mueve de 1|0 a 1|1
+[DEBUG] 11:44:30:798 mongostore/(10936:11134): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 96, BLOCKS [2,3,4] y superbloque.block_size 32 (1 SI, 0 NO): 0
+[DEBUG] 11:44:30:798 mongostore/(10936:11134): O-Bloque libre obtenido 5
+[DEBUG] 11:44:30:798 mongostore/(10936:11134): Posicion_en_bloque 0, posicion_inicio_bloque 160 posicion block_addres 0xb7271000 posicion absoluta 0xb72710a0
+[DEBUG] 11:44:30:798 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 22, posicion_inicio_bloque 160 posicion block_addres 0xb7271000 posicion absoluta 0xb72710b6 proximo caracter a escribir en codigo ascii 0
+[DEBUG] 11:44:30:798 mongostore/(10936:11134): SuperBloque.ims actualizado (BITMAP)
+[DEBUG] 11:44:30:805 mongostore/(10936:11134): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
+[DEBUG] 11:44:30:805 mongostore/(10936:11134): Ya cargue la bitacora el tripulante 1 con el mensaje "Se mueve de 1|0 a 1|1" no genera cambios en el File System
+[DEBUG] 11:44:41:807 mongostore/(10936:11134): Codigo de operacion recibido: cod_op = 12
+[DEBUG] 11:44:41:807 mongostore/(10936:11134): Se recibe al tripulante 1 y el mensaje "Se resuelve el sabotaje"
+[DEBUG] 11:44:41:807 mongostore/(10936:11134): Metadata de tripulante 1 levantada en memoria con size = 118 y blocks = [2,3,4,5]
+[INFO] 11:44:41:807 mongostore/(10936:11134): Se resuelve el sabotaje
+[DEBUG] 11:44:41:807 mongostore/(10936:11134): En bitacora_tiene_espacio_en_ultimo_bloque con SIZE 118, BLOCKS [2,3,4,5] y superbloque.block_size 32 (1 SI, 0 NO): 1
+[DEBUG] 11:44:41:807 mongostore/(10936:11134): Posicion_en_bloque 22, posicion_inicio_bloque 160 posicion block_addres 0xb7271000 posicion absoluta 0xb72710b6
+[DEBUG] 11:44:41:807 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 32, posicion_inicio_bloque 160 posicion block_addres 0xb7271000 posicion absoluta 0xb72710c0 proximo caracter a escribir en codigo ascii 101
+[DEBUG] 11:44:41:808 mongostore/(10936:11134): O-Bloque libre obtenido 6
+[DEBUG] 11:44:41:808 mongostore/(10936:11134): Posicion_en_bloque 0, posicion_inicio_bloque 192 posicion block_addres 0xb7271000 posicion absoluta 0xb72710c0
+[DEBUG] 11:44:41:808 mongostore/(10936:11134): Al salir de bitacora_escribir_en_bloque posicion_en_bloque 14, posicion_inicio_bloque 192 posicion block_addres 0xb7271000 posicion absoluta 0xb72710ce proximo caracter a escribir en codigo ascii 0
+[DEBUG] 11:44:41:808 mongostore/(10936:11134): SuperBloque.ims actualizado (BITMAP)
+[DEBUG] 11:44:41:812 mongostore/(10936:11134): /home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims actualizado para tripulante 1
+[DEBUG] 11:44:41:812 mongostore/(10936:11134): Ya cargue la bitacora el tripulante 1 con el mensaje "Se resuelve el sabotaje" no genera cambios en el File System
+[DEBUG] 11:44:41:813 mongostore/(10936:11134): Codigo de operacion recibido: cod_op = 14
+[DEBUG] 11:44:41:813 mongostore/(10936:11134): Se inicia fsck
+[DEBUG] 11:44:41:814 mongostore/(10936:11134): Blocks.ims actualizado
+[DEBUG] 11:44:41:814 mongostore/(10936:11134): Se inicia fsck_chequeo_de_sabotajes_en_superbloque()
+[DEBUG] 11:44:41:814 mongostore/(10936:11134): Se inicia superbloque_validar_integridad_cantidad_de_bloques()
+[INFO] 11:44:41:814 mongostore/(10936:11134): Parece que esta vez nadie se animo a sabotear la cantidad de bloques en el SuperBloque.ims
+[DEBUG] 11:44:41:815 mongostore/(10936:11134): Se finaliza superbloque_validar_integridad_cantidad_de_bloques()
+[DEBUG] 11:45:07:799 mongostore/(10936:11134): Info-Se ingresa a superbloque_validar_integridad_bitmap
+[DEBUG] 11:45:07:799 mongostore/(10936:11134): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
+[DEBUG] 11:45:07:799 mongostore/(10936:11134): O-Superbloque levantado desde archivo
+[DEBUG] 11:45:07:799 mongostore/(10936:11134): Se ingresa a files_obtener_cadena_con_bloques_ocupados
+[DEBUG] 11:45:07:799 mongostore/(10936:11134): Se ingresa a recursos_obtener_cadena_con_el_total_de_bloques_ocupados
+[DEBUG] 11:45:07:799 mongostore/(10936:11134): No existe el archivo "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims"
+[DEBUG] 11:45:07:800 mongostore/(10936:11134): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims": [0,1]
+[DEBUG] 11:45:07:800 mongostore/(10936:11134): No existe el archivo "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims"
+[DEBUG] 11:45:07:800 mongostore/(10936:11134): Los bloques ocupados por el total de recursos son [0,1]
+[DEBUG] 11:45:07:800 mongostore/(10936:11134): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
+[DEBUG] 11:45:07:800 mongostore/(10936:11134): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
+[DEBUG] 11:45:07:800 mongostore/(10936:11134): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [2,3,4,5,6]
+[DEBUG] 11:45:07:801 mongostore/(10936:11134): en bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados() antes de borrar lista de bitacoras
+[DEBUG] 11:45:07:801 mongostore/(10936:11134): Los bloques ocupados por el total de las bitacoras son [2,3,4,5,6]
+[DEBUG] 11:45:07:801 mongostore/(10936:11134): El total de bloques ocupados es [0,1,2,3,4,5,6]
+[INFO] 11:45:07:802 mongostore/(10936:11134): bitmap_real_md5: 36272b82e8cd79be73a3489f3036f578
+[INFO] 11:45:07:802 mongostore/(10936:11134): bitmap_actual_md5: 195364b8f8c7cee3e782baccaba2cccc
+[INFO] 11:45:18:830 mongostore/(10936:11134): Alguien saboteo el bitmap en el SuperBloque.ims
+[INFO] 11:45:18:830 mongostore/(10936:11134): El bitmap correcto ya fue persistido
+[INFO] 11:45:18:836 mongostore/(10936:11134): bitmap_real_md5: 36272b82e8cd79be73a3489f3036f578
+[INFO] 11:45:18:836 mongostore/(10936:11134): bitmap_actual_md5: 195364b8f8c7cee3e782baccaba2cccc
