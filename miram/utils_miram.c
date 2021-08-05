@@ -1464,7 +1464,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 				int patota_id3 = (int)atoi(pid_char1);
 
 
-				log_info(logger, "Se solicita expulsar a Tripulante tid %d  Patota pid %d", tripulante_id3, patota_id3);
+				log_info(logger, "Se solicita expulsar a Tripulante tid %d  Patota pid %d", posicion_vector(tripulante_id3-1), patota_id3);
 
 				//Descomentar mapa
 				/*
@@ -1475,18 +1475,25 @@ int funcion_cliente_paginacion(int socket_cliente){
 				item_borrar(nivel, letra1 + tripulante_id3);
 
 				*/
-				tcbTripulante* tripulante = obtener_tripulante(patota_id3, tripulante_id3, &configuracion);
-				tripulante->prox_instruccion=0;
-				actualizar_tripulante(tripulante,patota_id3,&configuracion);
-				free(tripulante);
+
+				//tcbTripulante* tripulante = obtener_tripulante(patota_id3, tripulante_id3, &configuracion);
+				//tripulante->prox_instruccion=0;
+				//actualizar_tripulante(tripulante,patota_id3,&configuracion);
+				//free(tripulante);
 
 				log_info(logger,"Eliminando tripulante %d",tripulante_id3);
 
 				//Revisar para el caso de Patotas con mas de 1 tripulante
+				sem_wait(&MUTEX_MEM_PRINCIPAL);
 				tabla_paginacion* una_tabla= (tabla_paginacion*)list_get(tabla_paginacion_ppal, posicion_patota(patota_id3, tabla_paginacion_ppal));
+				una_tabla->cant_tripulantes--;
+				if(una_tabla->cant_tripulantes == 0){
 
-				list_remove_and_destroy_element(tabla_paginacion_ppal, posicion_patota(patota_id3, tabla_paginacion_ppal),(void*)destruir_tabla );
-
+					list_remove_and_destroy_element(tabla_paginacion_ppal, posicion_patota(patota_id3, tabla_paginacion_ppal),(void*)destruir_tabla );
+					log_info(logger,"Se expulso ultimo tripulante de la patota, se elimina Patota");
+					//free(una_tabla);
+				sem_post(&MUTEX_MEM_PRINCIPAL);
+				}
 				list_destroy_and_destroy_elements(lista, (void*)destruir_lista_paquete);
 
 
@@ -1653,18 +1660,6 @@ int funcion_cliente_paginacion(int socket_cliente){
 				*/
 
 				list_destroy_and_destroy_elements(tabla_paginacion_ppal, (void*)destruir_tabla);
-					if(list_size(tabla_paginacion_ppal) > 1){ //todavia tiene algun espacio de memoria ocupado
-					//list_destroy_and_destroy_elements(tabla_espacios_de_memoria, (void*)destruir_espacio_memoria);
-						for(int i=0; i < list_size(tabla_paginacion_ppal); i++){
-							tabla_paginacion* tabla_borrar = (tabla_paginacion*)list_remove(tabla_paginacion_ppal, i);
-								destruir_tabla(tabla_borrar);
-
-								}
-								}else{ //solo tiene el espacio entero de la memoria total
-									tabla_paginacion* tabla_borrar = (tabla_paginacion*)list_remove(tabla_paginacion_ppal, 0);
-									destruir_tabla(tabla_borrar);
-								}
-
 				shutdown(socket_servidor, SHUT_RD);
 				close(socket_cliente);
 				return EXIT_FAILURE;
@@ -1691,6 +1686,7 @@ int incrementar_lru(){
 }
 
 tcbTripulante* obtener_tripulante(int patota_id,int tripulante_id, config_struct* config_servidor){
+
 
 	tcbTripulante* un_tripu= malloc(sizeof(tcbTripulante));
 	tabla_paginacion* una_tabla = list_get(tabla_paginacion_ppal,posicion_patota(patota_id, tabla_paginacion_ppal));
@@ -3075,6 +3071,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 	marco* marcos =  (marco*)list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS ");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3094,6 +3091,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
 	marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3111,6 +3109,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3128,6 +3127,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3144,6 +3144,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3162,6 +3163,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos = (marco*)list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3182,6 +3184,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3199,6 +3202,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3216,6 +3220,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3232,6 +3237,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3247,6 +3253,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3264,6 +3271,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3281,6 +3289,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3297,6 +3306,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3314,6 +3324,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3331,6 +3342,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3347,6 +3359,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3363,6 +3376,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3380,6 +3394,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3397,6 +3412,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3414,6 +3430,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3430,6 +3447,7 @@ void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_stru
     marcos =(marco*) list_get(auxiliar->lista_marcos,indice_marco);
 	if(marcos->ubicacion==MEM_SECUNDARIA){
 		log_info(logger,"ENTRE EN MS");
+		log_info(logger,"Recuperando pagina para actualizar tripulante de patota %d", id_patota);
 		int numBloque=marcos->id_marco;
 		marcos->id_marco=swap_a_memoria(numBloque);
 		marcos->ubicacion=MEM_PRINCIPAL;
@@ -3475,6 +3493,8 @@ char* obtener_tarea(int id_patota, tcbTripulante* tripulante){
 
 		marco* otro_marco=(marco*)list_get(una_tabla->lista_marcos,indice_marco);
 		if(otro_marco->ubicacion == MEM_SECUNDARIA){
+			log_info(logger,"ENTRE EN MS");
+			log_info(logger,"Recuperando pagina para obtener tarea para tripulante de patota %d", id_patota);
 			int nuevo_marco = swap_a_memoria(otro_marco->id_marco);
 			otro_marco->ubicacion=MEM_PRINCIPAL;
 			otro_marco->id_marco=nuevo_marco;

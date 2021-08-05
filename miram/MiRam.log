@@ -1,123 +1,312 @@
-[INFO] 11:42:54:990 MiRam/(14587:14587): pid 14587  
+[INFO] 23:47:29:403 MiRam/(24356:24356): pid 24356  
 
-[INFO] 11:42:54:990 MiRam/(14587:14587): Inicializo el archivo swap
-[INFO] 11:42:54:990 MiRam/(14587:14587): 
+[INFO] 23:47:29:403 MiRam/(24356:24356): Inicializo el archivo swap
+[INFO] 23:47:29:403 MiRam/(24356:24356): 
 El numero de marcos en MP es: 4
-[INFO] 11:42:54:990 MiRam/(14587:14587): 
+[INFO] 23:47:29:403 MiRam/(24356:24356): 
 El numero de marcos en MS es: 512
-[INFO] 11:42:54:992 MiRam/(14587:14588): Servidor iniciando
-[INFO] 11:42:54:992 MiRam/(14587:14588): Servidor MiRam encendido
-[INFO] 11:42:54:992 MiRam/(14587:14588): socket_servidor 4
-[INFO] 11:42:57:716 MiRam/(14587:14588): socket_cliente 5
-[INFO] 11:42:57:716 MiRam/(14587:14588): Estableciendo conexión desde 25299
-[INFO] 11:42:57:716 MiRam/(14587:14588): Creando hilo
-[INFO] 11:42:57:718 MiRam/(14587:14590): Se conecto este socket a mi 5
+[INFO] 23:47:29:404 MiRam/(24356:24357): Servidor iniciando
+[INFO] 23:47:29:404 MiRam/(24356:24357): Servidor MiRam encendido
+[INFO] 23:47:29:404 MiRam/(24356:24357): socket_servidor 4
+[INFO] 23:47:32:402 MiRam/(24356:24357): socket_cliente 5
+[INFO] 23:47:32:402 MiRam/(24356:24357): Estableciendo conexión desde 58582
+[INFO] 23:47:32:402 MiRam/(24356:24357): Creando hilo
+[INFO] 23:47:32:404 MiRam/(24356:24359): Se conecto este socket a mi 5
 
-[INFO] 11:43:05:192 MiRam/(14587:14590): Ingresa nueva patota, Patota ID 1, necesito 2 marcos
-[INFO] 11:43:05:193 MiRam/(14587:14590): Guardando info
-[INFO] 11:43:05:193 MiRam/(14587:14590): Se asigna marco 0 de MP
-[INFO] 11:43:05:193 MiRam/(14587:14590): Se asigna marco 1 de MP
-[INFO] 11:43:05:193 MiRam/(14587:14590): Se asignaron los marcos la patota 1
-[INFO] 11:43:05:194 MiRam/(14587:14590): Ingresa nueva patota, Patota ID 2, necesito 2 marcos
-[INFO] 11:43:05:195 MiRam/(14587:14590): Guardando info
-[INFO] 11:43:05:195 MiRam/(14587:14590): Se asigna marco 2 de MP
-[INFO] 11:43:05:195 MiRam/(14587:14590): Se asigna marco 3 de MP
-[INFO] 11:43:05:196 MiRam/(14587:14590): Se asignaron los marcos la patota 2
-[INFO] 11:43:05:196 MiRam/(14587:14590): Ingresa nueva patota, Patota ID 3, necesito 4 marcos
-[INFO] 11:43:05:197 MiRam/(14587:14590): Guardando info
-[INFO] 11:43:05:197 MiRam/(14587:14590): LRU: Se elije marco 0 de MP, se envía a bloque 0 de MS
-[INFO] 11:43:05:198 MiRam/(14587:14590): LRU: Se elije marco 1 de MP, se envía a bloque 1 de MS
-[INFO] 11:43:05:198 MiRam/(14587:14590): LRU: Se elije marco 2 de MP, se envía a bloque 2 de MS
-[INFO] 11:43:05:198 MiRam/(14587:14590): LRU: Se elije marco 3 de MP, se envía a bloque 3 de MS
-[INFO] 11:43:05:198 MiRam/(14587:14590): Se asignaron los marcos la patota 3
-[INFO] 11:43:05:895 MiRam/(14587:14588): socket_cliente 6
-[INFO] 11:43:05:895 MiRam/(14587:14588): Estableciendo conexión desde 26835
-[INFO] 11:43:05:895 MiRam/(14587:14588): Creando hilo
-[INFO] 11:43:05:895 MiRam/(14587:14601): Se conecto este socket a mi 6
+[INFO] 23:47:34:284 MiRam/(24356:24359): Ingresa nueva patota, Patota ID 1, necesito 2 marcos
+[INFO] 23:47:34:285 MiRam/(24356:24359): Guardando info
+[INFO] 23:47:34:285 MiRam/(24356:24359): Se asigna marco 0 de MP
+[INFO] 23:47:34:285 MiRam/(24356:24359): Se asigna marco 1 de MP
+[INFO] 23:47:34:285 MiRam/(24356:24359): Se asignaron los marcos la patota 1
+[INFO] 23:47:34:286 MiRam/(24356:24359): Ingresa nueva patota, Patota ID 2, necesito 2 marcos
+[INFO] 23:47:34:287 MiRam/(24356:24359): Guardando info
+[INFO] 23:47:34:287 MiRam/(24356:24359): Se asigna marco 2 de MP
+[INFO] 23:47:34:287 MiRam/(24356:24359): Se asigna marco 3 de MP
+[INFO] 23:47:34:288 MiRam/(24356:24359): Se asignaron los marcos la patota 2
+[INFO] 23:47:34:288 MiRam/(24356:24359): Ingresa nueva patota, Patota ID 3, necesito 4 marcos
+[INFO] 23:47:34:289 MiRam/(24356:24359): Guardando info
+[INFO] 23:47:34:289 MiRam/(24356:24359): LRU: Se elije marco 0 de MP, se envía a bloque 0 de MS
+[INFO] 23:47:34:289 MiRam/(24356:24359): LRU: Se elije marco 1 de MP, se envía a bloque 1 de MS
+[INFO] 23:47:34:290 MiRam/(24356:24359): LRU: Se elije marco 2 de MP, se envía a bloque 2 de MS
+[INFO] 23:47:34:290 MiRam/(24356:24359): LRU: Se elije marco 3 de MP, se envía a bloque 3 de MS
+[INFO] 23:47:34:290 MiRam/(24356:24359): Se asignaron los marcos la patota 3
+[INFO] 23:47:35:268 MiRam/(24356:24357): socket_cliente 6
+[INFO] 23:47:35:268 MiRam/(24356:24357): Estableciendo conexión desde 60118
+[INFO] 23:47:35:268 MiRam/(24356:24357): Creando hilo
+[INFO] 23:47:35:268 MiRam/(24356:24370): Se conecto este socket a mi 6
 
-[INFO] 11:43:05:896 MiRam/(14587:14601): ENTRE EN MS
-[INFO] 11:43:05:896 MiRam/(14587:14601): LRU: Se elije marco 0 de MP, se envía a bloque 4 de MS
-[INFO] 11:43:05:896 MiRam/(14587:14601): Recupero el bloque 0 de MS
-[INFO] 11:43:05:896 MiRam/(14587:14601): El tripulante 1 solicita nueva tarea
-[INFO] 11:43:05:896 MiRam/(14587:14601): LRU: Se elije marco 1 de MP, se envía a bloque 0 de MS
-[INFO] 11:43:05:896 MiRam/(14587:14601): Recupero el bloque 1 de MS
-[INFO] 11:43:05:896 MiRam/(14587:14588): socket_cliente 7
-[INFO] 11:43:05:896 MiRam/(14587:14588): Estableciendo conexión desde 27859
-[INFO] 11:43:05:896 MiRam/(14587:14588): Creando hilo
-[INFO] 11:43:05:896 MiRam/(14587:14601): El tripulante 1 recibe la tarea solicitada
-[INFO] 11:43:05:896 MiRam/(14587:14601): --------MP--------
-[INFO] 11:43:05:896 MiRam/(14587:14601): M: 0 E:O P: 1 Pag: 0
-[INFO] 11:43:05:896 MiRam/(14587:14601): M: 1 E:O P: 1 Pag: 1
-[INFO] 11:43:05:897 MiRam/(14587:14601): M: 2 E:O P: 3 Pag: 2
-[INFO] 11:43:05:897 MiRam/(14587:14601): M: 3 E:O P: 3 Pag: 3
-[INFO] 11:43:05:897 MiRam/(14587:14601): ------FIN MP------
-[INFO] 11:43:05:897 MiRam/(14587:14601): Tripulante 1 cambiando de estado
-[INFO] 11:43:05:900 MiRam/(14587:14603): Se conecto este socket a mi 7
+[INFO] 23:47:35:269 MiRam/(24356:24370): ENTRE EN MS
+[INFO] 23:47:35:269 MiRam/(24356:24370): LRU: Se elije marco 0 de MP, se envía a bloque 4 de MS
+[INFO] 23:47:35:269 MiRam/(24356:24370): Recupero el bloque 0 de MS
+[INFO] 23:47:35:269 MiRam/(24356:24370): El tripulante 1 solicita nueva tarea
+[INFO] 23:47:35:269 MiRam/(24356:24370): ENTRE EN MS
+[INFO] 23:47:35:269 MiRam/(24356:24370): Recuperando pagina para obtener tarea para tripulante de patota 1
+[INFO] 23:47:35:269 MiRam/(24356:24370): LRU: Se elije marco 1 de MP, se envía a bloque 0 de MS
+[INFO] 23:47:35:269 MiRam/(24356:24370): Recupero el bloque 1 de MS
+[INFO] 23:47:35:269 MiRam/(24356:24357): socket_cliente 7
+[INFO] 23:47:35:270 MiRam/(24356:24357): Estableciendo conexión desde 61142
+[INFO] 23:47:35:270 MiRam/(24356:24357): Creando hilo
+[INFO] 23:47:35:270 MiRam/(24356:24370): El tripulante 1 recibe la tarea solicitada
+[INFO] 23:47:35:270 MiRam/(24356:24370): --------MP--------
+[INFO] 23:47:35:270 MiRam/(24356:24370): M: 0 E:O P: 1 Pag: 0
+[INFO] 23:47:35:270 MiRam/(24356:24370): M: 1 E:O P: 1 Pag: 1
+[INFO] 23:47:35:270 MiRam/(24356:24370): M: 2 E:O P: 3 Pag: 2
+[INFO] 23:47:35:270 MiRam/(24356:24370): M: 3 E:O P: 3 Pag: 3
+[INFO] 23:47:35:270 MiRam/(24356:24370): ------FIN MP------
+[INFO] 23:47:35:270 MiRam/(24356:24370): Tripulante 1 cambiando de estado
+[INFO] 23:47:35:273 MiRam/(24356:24372): Se conecto este socket a mi 7
 
-[INFO] 11:43:05:900 MiRam/(14587:14603): ENTRE EN MS
-[INFO] 11:43:05:900 MiRam/(14587:14603): LRU: Se elije marco 2 de MP, se envía a bloque 1 de MS
-[INFO] 11:43:05:900 MiRam/(14587:14603): Recupero el bloque 2 de MS
-[INFO] 11:43:05:900 MiRam/(14587:14603): El tripulante 2 solicita nueva tarea
-[INFO] 11:43:05:900 MiRam/(14587:14603): LRU: Se elije marco 3 de MP, se envía a bloque 2 de MS
-[INFO] 11:43:05:900 MiRam/(14587:14603): Recupero el bloque 3 de MS
-[INFO] 11:43:05:901 MiRam/(14587:14588): socket_cliente 8
-[INFO] 11:43:05:901 MiRam/(14587:14588): Estableciendo conexión desde 28883
-[INFO] 11:43:05:901 MiRam/(14587:14588): Creando hilo
-[INFO] 11:43:05:901 MiRam/(14587:14603): El tripulante 2 recibe la tarea solicitada
-[INFO] 11:43:05:901 MiRam/(14587:14603): --------MP--------
-[INFO] 11:43:05:901 MiRam/(14587:14603): M: 0 E:O P: 1 Pag: 0
-[INFO] 11:43:05:901 MiRam/(14587:14603): M: 1 E:O P: 1 Pag: 1
-[INFO] 11:43:05:901 MiRam/(14587:14603): M: 2 E:O P: 2 Pag: 0
-[INFO] 11:43:05:901 MiRam/(14587:14603): M: 3 E:O P: 2 Pag: 1
-[INFO] 11:43:05:901 MiRam/(14587:14603): ------FIN MP------
-[INFO] 11:43:05:901 MiRam/(14587:14603): Tripulante 2 cambiando de estado
-[INFO] 11:43:05:902 MiRam/(14587:14603): Tripulante 2 cambiando de posicion
-[INFO] 11:43:05:904 MiRam/(14587:14605): Se conecto este socket a mi 8
+[INFO] 23:47:35:274 MiRam/(24356:24372): ENTRE EN MS
+[INFO] 23:47:35:274 MiRam/(24356:24372): LRU: Se elije marco 2 de MP, se envía a bloque 1 de MS
+[INFO] 23:47:35:274 MiRam/(24356:24372): Recupero el bloque 2 de MS
+[INFO] 23:47:35:275 MiRam/(24356:24372): El tripulante 2 solicita nueva tarea
+[INFO] 23:47:35:275 MiRam/(24356:24372): ENTRE EN MS
+[INFO] 23:47:35:275 MiRam/(24356:24372): Recuperando pagina para obtener tarea para tripulante de patota 2
+[INFO] 23:47:35:275 MiRam/(24356:24372): LRU: Se elije marco 3 de MP, se envía a bloque 2 de MS
+[INFO] 23:47:35:275 MiRam/(24356:24372): Recupero el bloque 3 de MS
+[INFO] 23:47:35:275 MiRam/(24356:24357): socket_cliente 8
+[INFO] 23:47:35:275 MiRam/(24356:24357): Estableciendo conexión desde 62166
+[INFO] 23:47:35:275 MiRam/(24356:24357): Creando hilo
+[INFO] 23:47:35:275 MiRam/(24356:24372): El tripulante 2 recibe la tarea solicitada
+[INFO] 23:47:35:275 MiRam/(24356:24372): --------MP--------
+[INFO] 23:47:35:276 MiRam/(24356:24372): M: 0 E:O P: 1 Pag: 0
+[INFO] 23:47:35:276 MiRam/(24356:24372): M: 1 E:O P: 1 Pag: 1
+[INFO] 23:47:35:276 MiRam/(24356:24372): M: 2 E:O P: 2 Pag: 0
+[INFO] 23:47:35:276 MiRam/(24356:24372): M: 3 E:O P: 2 Pag: 1
+[INFO] 23:47:35:276 MiRam/(24356:24372): ------FIN MP------
+[INFO] 23:47:35:276 MiRam/(24356:24372): Tripulante 2 cambiando de estado
+[INFO] 23:47:35:276 MiRam/(24356:24372): Tripulante 2 cambiando de posicion
+[INFO] 23:47:35:281 MiRam/(24356:24374): Se conecto este socket a mi 8
 
-[INFO] 11:43:05:904 MiRam/(14587:14605): ENTRE EN MS
-[INFO] 11:43:05:904 MiRam/(14587:14605): LRU: Se elije marco 1 de MP, se envía a bloque 3 de MS
-[INFO] 11:43:05:904 MiRam/(14587:14605): Recupero el bloque 4 de MS
-[INFO] 11:43:05:904 MiRam/(14587:14605): El tripulante 3 solicita nueva tarea
-[INFO] 11:43:05:904 MiRam/(14587:14605): LRU: Se elije marco 0 de MP, se envía a bloque 4 de MS
-[INFO] 11:43:05:904 MiRam/(14587:14605): Recupero el bloque 0 de MS
-[INFO] 11:43:05:904 MiRam/(14587:14605): El tripulante 3 recibe la tarea solicitada
-[INFO] 11:43:05:905 MiRam/(14587:14605): --------MP--------
-[INFO] 11:43:05:905 MiRam/(14587:14605): M: 0 E:O P: 3 Pag: 1
-[INFO] 11:43:05:905 MiRam/(14587:14605): M: 1 E:O P: 3 Pag: 0
-[INFO] 11:43:05:905 MiRam/(14587:14605): M: 2 E:O P: 2 Pag: 0
-[INFO] 11:43:05:905 MiRam/(14587:14605): M: 3 E:O P: 2 Pag: 1
-[INFO] 11:43:05:905 MiRam/(14587:14605): ------FIN MP------
-[INFO] 11:43:07:912 MiRam/(14587:14603): Tripulante 2 cambiando de posicion
-[INFO] 11:43:11:911 MiRam/(14587:14601): ENTRE EN MS
-[INFO] 11:43:11:911 MiRam/(14587:14601): LRU: Se elije marco 3 de MP, se envía a bloque 0 de MS
-[INFO] 11:43:11:911 MiRam/(14587:14601): Recupero el bloque 4 de MS
-[INFO] 11:43:11:912 MiRam/(14587:14601): Tripulante 1 cambiando de estado
-[INFO] 11:43:11:912 MiRam/(14587:14605): Tripulante 3 cambiando de estado
-[INFO] 11:43:11:912 MiRam/(14587:14605): Tripulante 3 cambiando de posicion
-[INFO] 11:43:11:924 MiRam/(14587:14603): Tripulante 2 cambiando de estado
-[INFO] 11:43:11:924 MiRam/(14587:14601): Tripulante 1 cambiando de estado
-[INFO] 11:43:13:920 MiRam/(14587:14605): Tripulante 3 cambiando de posicion
-[INFO] 11:43:15:926 MiRam/(14587:14605): Tripulante 3 cambiando de posicion
-[INFO] 11:43:15:932 MiRam/(14587:14601): El tripulante 1 solicita nueva tarea
-[INFO] 11:43:15:932 MiRam/(14587:14601): LRU: Se elije marco 0 de MP, se envía a bloque 4 de MS
-[INFO] 11:43:15:932 MiRam/(14587:14601): Recupero el bloque 3 de MS
-[INFO] 11:43:15:932 MiRam/(14587:14601): El tripulante 1 recibe la tarea solicitada
-[INFO] 11:43:15:932 MiRam/(14587:14601): --------MP--------
-[INFO] 11:43:15:932 MiRam/(14587:14601): M: 0 E:O P: 1 Pag: 1
-[INFO] 11:43:15:932 MiRam/(14587:14601): M: 1 E:O P: 3 Pag: 0
-[INFO] 11:43:15:932 MiRam/(14587:14601): M: 2 E:O P: 2 Pag: 0
-[INFO] 11:43:15:932 MiRam/(14587:14601): M: 3 E:O P: 1 Pag: 0
-[INFO] 11:43:15:932 MiRam/(14587:14601): ------FIN MP------
-[INFO] 11:43:17:936 MiRam/(14587:14605): Tripulante 3 cambiando de estado
-[INFO] 11:43:17:936 MiRam/(14587:14603): Tripulante 2 cambiando de estado
-[INFO] 11:43:17:939 MiRam/(14587:14601): Tripulante 1 cambiando de estado
-[INFO] 11:43:17:939 MiRam/(14587:14605): Tripulante 3 cambiando de estado
-[INFO] 11:43:17:939 MiRam/(14587:14605): Tripulante 3 cambiando de posicion
-[INFO] 11:46:43:287 MiRam/(14587:14587): SIGUSR1
-
-[ERROR] 11:47:17:539 MiRam/(14587:14601): el cliente se desconecto. Terminando servidor
-[INFO] 11:47:17:540 MiRam/(14587:14590): Se solicita expulsar a Tripulante tid 1  Patota pid 1
-[INFO] 11:47:17:540 MiRam/(14587:14590): Eliminando tripulante 1
-[INFO] 11:47:25:271 MiRam/(14587:14587): SIGUSR1
-
-[ERROR] 11:47:58:445 MiRam/(14587:14590): el discordiador finalizo el programa. Terminando servidor
+[INFO] 23:47:35:282 MiRam/(24356:24374): ENTRE EN MS
+[INFO] 23:47:35:282 MiRam/(24356:24374): LRU: Se elije marco 1 de MP, se envía a bloque 3 de MS
+[INFO] 23:47:35:282 MiRam/(24356:24374): Recupero el bloque 4 de MS
+[INFO] 23:47:35:282 MiRam/(24356:24374): El tripulante 3 solicita nueva tarea
+[INFO] 23:47:35:282 MiRam/(24356:24374): ENTRE EN MS
+[INFO] 23:47:35:282 MiRam/(24356:24374): Recuperando pagina para obtener tarea para tripulante de patota 3
+[INFO] 23:47:35:282 MiRam/(24356:24374): LRU: Se elije marco 0 de MP, se envía a bloque 4 de MS
+[INFO] 23:47:35:282 MiRam/(24356:24374): Recupero el bloque 0 de MS
+[INFO] 23:47:35:282 MiRam/(24356:24374): El tripulante 3 recibe la tarea solicitada
+[INFO] 23:47:35:282 MiRam/(24356:24374): --------MP--------
+[INFO] 23:47:35:282 MiRam/(24356:24374): M: 0 E:O P: 3 Pag: 1
+[INFO] 23:47:35:282 MiRam/(24356:24374): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:47:35:282 MiRam/(24356:24374): M: 2 E:O P: 2 Pag: 0
+[INFO] 23:47:35:282 MiRam/(24356:24374): M: 3 E:O P: 2 Pag: 1
+[INFO] 23:47:35:283 MiRam/(24356:24374): ------FIN MP------
+[INFO] 23:47:37:283 MiRam/(24356:24372): Tripulante 2 cambiando de posicion
+[INFO] 23:47:41:275 MiRam/(24356:24370): ENTRE EN MS
+[INFO] 23:47:41:275 MiRam/(24356:24370): LRU: Se elije marco 3 de MP, se envía a bloque 0 de MS
+[INFO] 23:47:41:275 MiRam/(24356:24370): Recupero el bloque 4 de MS
+[INFO] 23:47:41:275 MiRam/(24356:24370): Tripulante 1 cambiando de estado
+[INFO] 23:47:41:275 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:47:41:275 MiRam/(24356:24374): Tripulante 3 cambiando de posicion
+[INFO] 23:47:41:295 MiRam/(24356:24372): Tripulante 2 cambiando de estado
+[INFO] 23:47:41:295 MiRam/(24356:24370): Tripulante 1 cambiando de estado
+[INFO] 23:47:43:280 MiRam/(24356:24374): Tripulante 3 cambiando de posicion
+[INFO] 23:47:45:285 MiRam/(24356:24374): Tripulante 3 cambiando de posicion
+[INFO] 23:47:45:299 MiRam/(24356:24370): El tripulante 1 solicita nueva tarea
+[INFO] 23:47:45:299 MiRam/(24356:24370): ENTRE EN MS
+[INFO] 23:47:45:299 MiRam/(24356:24370): Recuperando pagina para obtener tarea para tripulante de patota 1
+[INFO] 23:47:45:299 MiRam/(24356:24370): LRU: Se elije marco 0 de MP, se envía a bloque 4 de MS
+[INFO] 23:47:45:299 MiRam/(24356:24370): Recupero el bloque 3 de MS
+[INFO] 23:47:45:299 MiRam/(24356:24370): El tripulante 1 recibe la tarea solicitada
+[INFO] 23:47:45:299 MiRam/(24356:24370): --------MP--------
+[INFO] 23:47:45:299 MiRam/(24356:24370): M: 0 E:O P: 1 Pag: 1
+[INFO] 23:47:45:299 MiRam/(24356:24370): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:47:45:299 MiRam/(24356:24370): M: 2 E:O P: 2 Pag: 0
+[INFO] 23:47:45:299 MiRam/(24356:24370): M: 3 E:O P: 1 Pag: 0
+[INFO] 23:47:45:300 MiRam/(24356:24370): ------FIN MP------
+[INFO] 23:47:47:290 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:47:47:290 MiRam/(24356:24372): Tripulante 2 cambiando de estado
+[INFO] 23:47:47:304 MiRam/(24356:24370): Tripulante 1 cambiando de estado
+[INFO] 23:47:47:304 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:47:47:304 MiRam/(24356:24374): Tripulante 3 cambiando de posicion
+[INFO] 23:47:53:292 MiRam/(24356:24372): Tripulante 2 cambiando de estado
+[INFO] 23:47:53:292 MiRam/(24356:24370): Tripulante 1 cambiando de estado
+[INFO] 23:47:53:333 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:47:53:333 MiRam/(24356:24372): Tripulante 2 cambiando de estado
+[INFO] 23:47:55:346 MiRam/(24356:24372): El tripulante 2 solicita nueva tarea
+[INFO] 23:47:55:346 MiRam/(24356:24372): ENTRE EN MS
+[INFO] 23:47:55:346 MiRam/(24356:24372): Recuperando pagina para obtener tarea para tripulante de patota 2
+[INFO] 23:47:55:346 MiRam/(24356:24372): LRU: Se elije marco 0 de MP, se envía a bloque 3 de MS
+[INFO] 23:47:55:346 MiRam/(24356:24372): Recupero el bloque 0 de MS
+[INFO] 23:47:55:346 MiRam/(24356:24372): El tripulante 2 recibe la tarea solicitada
+[INFO] 23:47:55:346 MiRam/(24356:24372): --------MP--------
+[INFO] 23:47:55:346 MiRam/(24356:24372): M: 0 E:O P: 2 Pag: 1
+[INFO] 23:47:55:346 MiRam/(24356:24372): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:47:55:346 MiRam/(24356:24372): M: 2 E:O P: 2 Pag: 0
+[INFO] 23:47:55:346 MiRam/(24356:24372): M: 3 E:O P: 1 Pag: 0
+[INFO] 23:47:55:346 MiRam/(24356:24372): ------FIN MP------
+[INFO] 23:47:59:294 MiRam/(24356:24370): Tripulante 1 cambiando de estado
+[INFO] 23:47:59:294 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:47:59:354 MiRam/(24356:24372): Tripulante 2 cambiando de estado
+[INFO] 23:47:59:354 MiRam/(24356:24370): Tripulante 1 cambiando de estado
+[INFO] 23:48:01:357 MiRam/(24356:24370): El tripulante 1 solicita nueva tarea
+[INFO] 23:48:01:357 MiRam/(24356:24370): ENTRE EN MS
+[INFO] 23:48:01:357 MiRam/(24356:24370): Recuperando pagina para obtener tarea para tripulante de patota 1
+[INFO] 23:48:01:357 MiRam/(24356:24370): LRU: Se elije marco 0 de MP, se envía a bloque 0 de MS
+[INFO] 23:48:01:357 MiRam/(24356:24370): Recupero el bloque 3 de MS
+[INFO] 23:48:01:357 MiRam/(24356:24370): El tripulante 1 recibe la tarea solicitada
+[INFO] 23:48:01:357 MiRam/(24356:24370): --------MP--------
+[INFO] 23:48:01:358 MiRam/(24356:24370): M: 0 E:O P: 1 Pag: 1
+[INFO] 23:48:01:358 MiRam/(24356:24370): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:48:01:358 MiRam/(24356:24370): M: 2 E:O P: 2 Pag: 0
+[INFO] 23:48:01:358 MiRam/(24356:24370): M: 3 E:O P: 1 Pag: 0
+[INFO] 23:48:01:358 MiRam/(24356:24370): ------FIN MP------
+[INFO] 23:48:05:298 MiRam/(24356:24374): El tripulante 3 solicita nueva tarea
+[INFO] 23:48:05:298 MiRam/(24356:24374): ENTRE EN MS
+[INFO] 23:48:05:298 MiRam/(24356:24374): Recuperando pagina para obtener tarea para tripulante de patota 3
+[INFO] 23:48:05:298 MiRam/(24356:24374): LRU: Se elije marco 2 de MP, se envía a bloque 3 de MS
+[INFO] 23:48:05:298 MiRam/(24356:24374): Recupero el bloque 4 de MS
+[INFO] 23:48:05:298 MiRam/(24356:24374): El tripulante 3 recibe la tarea solicitada
+[INFO] 23:48:05:298 MiRam/(24356:24374): --------MP--------
+[INFO] 23:48:05:298 MiRam/(24356:24374): M: 0 E:O P: 1 Pag: 1
+[INFO] 23:48:05:298 MiRam/(24356:24374): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:48:05:298 MiRam/(24356:24374): M: 2 E:O P: 3 Pag: 1
+[INFO] 23:48:05:298 MiRam/(24356:24374): M: 3 E:O P: 1 Pag: 0
+[INFO] 23:48:05:299 MiRam/(24356:24374): ------FIN MP------
+[INFO] 23:48:05:299 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:05:299 MiRam/(24356:24372): ENTRE EN MS
+[INFO] 23:48:05:299 MiRam/(24356:24372): LRU: Se elije marco 0 de MP, se envía a bloque 4 de MS
+[INFO] 23:48:05:299 MiRam/(24356:24372): Recupero el bloque 3 de MS
+[INFO] 23:48:05:299 MiRam/(24356:24372): Tripulante 2 cambiando de estado
+[INFO] 23:48:05:361 MiRam/(24356:24370): Tripulante 1 cambiando de estado
+[INFO] 23:48:05:362 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:11:303 MiRam/(24356:24372): El tripulante 2 solicita nueva tarea
+[INFO] 23:48:11:303 MiRam/(24356:24372): ENTRE EN MS
+[INFO] 23:48:11:303 MiRam/(24356:24372): Recuperando pagina para obtener tarea para tripulante de patota 2
+[INFO] 23:48:11:304 MiRam/(24356:24372): LRU: Se elije marco 2 de MP, se envía a bloque 3 de MS
+[INFO] 23:48:11:304 MiRam/(24356:24372): Recupero el bloque 0 de MS
+[INFO] 23:48:11:304 MiRam/(24356:24372): El tripulante 2 recibe la tarea solicitada
+[INFO] 23:48:11:304 MiRam/(24356:24372): --------MP--------
+[INFO] 23:48:11:304 MiRam/(24356:24372): M: 0 E:O P: 2 Pag: 0
+[INFO] 23:48:11:304 MiRam/(24356:24372): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:48:11:304 MiRam/(24356:24372): M: 2 E:O P: 2 Pag: 1
+[INFO] 23:48:11:304 MiRam/(24356:24372): M: 3 E:O P: 1 Pag: 0
+[INFO] 23:48:11:304 MiRam/(24356:24372): ------FIN MP------
+[INFO] 23:48:11:304 MiRam/(24356:24372): Tripulante 2 cambiando de estado
+[INFO] 23:48:11:304 MiRam/(24356:24370): Tripulante 1 cambiando de estado
+[INFO] 23:48:11:372 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:11:373 MiRam/(24356:24372): Tripulante 2 cambiando de estado
+[INFO] 23:48:17:320 MiRam/(24356:24370): El tripulante 1 solicita nueva tarea
+[INFO] 23:48:17:320 MiRam/(24356:24370): Ya no hay mas tareas para el tripulante 1
+[INFO] 23:48:17:321 MiRam/(24356:24370): --------MP--------
+[INFO] 23:48:17:321 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:17:321 MiRam/(24356:24370): M: 0 E:O P: 2 Pag: 0
+[INFO] 23:48:17:322 MiRam/(24356:24370): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:48:17:322 MiRam/(24356:24370): M: 2 E:O P: 2 Pag: 1
+[INFO] 23:48:17:322 MiRam/(24356:24370): M: 3 E:L P:- Pag:-
+[INFO] 23:48:17:322 MiRam/(24356:24370): ------FIN MP------
+[ERROR] 23:48:17:322 MiRam/(24356:24370): el cliente se desconecto. Terminando servidor
+[INFO] 23:48:17:377 MiRam/(24356:24372): Tripulante 2 cambiando de estado
+[INFO] 23:48:17:378 MiRam/(24356:24372): Tripulante 2 cambiando de estado
+[INFO] 23:48:21:333 MiRam/(24356:24374): El tripulante 3 solicita nueva tarea
+[INFO] 23:48:21:333 MiRam/(24356:24374): ENTRE EN MS
+[INFO] 23:48:21:334 MiRam/(24356:24374): Recuperando pagina para obtener tarea para tripulante de patota 3
+[INFO] 23:48:21:334 MiRam/(24356:24374): Se asigna marco 3 de MP
+[INFO] 23:48:21:334 MiRam/(24356:24374): Recupero el bloque 3 de MS
+[INFO] 23:48:21:335 MiRam/(24356:24374): El tripulante 3 recibe la tarea solicitada
+[INFO] 23:48:21:335 MiRam/(24356:24374): --------MP--------
+[INFO] 23:48:21:335 MiRam/(24356:24374): M: 0 E:O P: 2 Pag: 0
+[INFO] 23:48:21:335 MiRam/(24356:24374): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:48:21:337 MiRam/(24356:24374): M: 2 E:O P: 2 Pag: 1
+[INFO] 23:48:21:337 MiRam/(24356:24374): M: 3 E:O P: 3 Pag: 1
+[INFO] 23:48:21:337 MiRam/(24356:24374): ------FIN MP------
+[INFO] 23:48:21:382 MiRam/(24356:24372): El tripulante 2 solicita nueva tarea
+[INFO] 23:48:21:382 MiRam/(24356:24372): Ya no hay mas tareas para el tripulante 2
+[INFO] 23:48:21:382 MiRam/(24356:24372): --------MP--------
+[INFO] 23:48:21:382 MiRam/(24356:24372): M: 0 E:L P:- Pag:-
+[INFO] 23:48:21:382 MiRam/(24356:24372): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:48:21:382 MiRam/(24356:24372): M: 2 E:L P:- Pag:-
+[INFO] 23:48:21:382 MiRam/(24356:24372): M: 3 E:O P: 3 Pag: 1
+[INFO] 23:48:21:383 MiRam/(24356:24372): ------FIN MP------
+[ERROR] 23:48:21:383 MiRam/(24356:24372): el cliente se desconecto. Terminando servidor
+[INFO] 23:48:23:362 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:23:362 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:29:364 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:29:365 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:31:375 MiRam/(24356:24374): El tripulante 3 solicita nueva tarea
+[INFO] 23:48:31:375 MiRam/(24356:24374): ENTRE EN MS
+[INFO] 23:48:31:375 MiRam/(24356:24374): Recuperando pagina para obtener tarea para tripulante de patota 3
+[INFO] 23:48:31:375 MiRam/(24356:24374): Se asigna marco 0 de MP
+[INFO] 23:48:31:375 MiRam/(24356:24374): Recupero el bloque 1 de MS
+[INFO] 23:48:31:376 MiRam/(24356:24374): El tripulante 3 recibe la tarea solicitada
+[INFO] 23:48:31:376 MiRam/(24356:24374): --------MP--------
+[INFO] 23:48:31:376 MiRam/(24356:24374): M: 0 E:O P: 3 Pag: 2
+[INFO] 23:48:31:376 MiRam/(24356:24374): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:48:31:376 MiRam/(24356:24374): M: 2 E:L P:- Pag:-
+[INFO] 23:48:31:377 MiRam/(24356:24374): M: 3 E:O P: 3 Pag: 1
+[INFO] 23:48:31:377 MiRam/(24356:24374): ------FIN MP------
+[INFO] 23:48:35:393 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:35:394 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:41:402 MiRam/(24356:24374): El tripulante 3 solicita nueva tarea
+[INFO] 23:48:41:403 MiRam/(24356:24374): El tripulante 3 recibe la tarea solicitada
+[INFO] 23:48:41:403 MiRam/(24356:24374): --------MP--------
+[INFO] 23:48:41:403 MiRam/(24356:24374): M: 0 E:O P: 3 Pag: 2
+[INFO] 23:48:41:404 MiRam/(24356:24374): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:48:41:404 MiRam/(24356:24374): M: 2 E:L P:- Pag:-
+[INFO] 23:48:41:404 MiRam/(24356:24374): M: 3 E:O P: 3 Pag: 1
+[INFO] 23:48:41:404 MiRam/(24356:24374): ------FIN MP------
+[INFO] 23:48:41:404 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:41:404 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:47:419 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:47:419 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:51:427 MiRam/(24356:24374): El tripulante 3 solicita nueva tarea
+[INFO] 23:48:51:427 MiRam/(24356:24374): El tripulante 3 recibe la tarea solicitada
+[INFO] 23:48:51:428 MiRam/(24356:24374): --------MP--------
+[INFO] 23:48:51:428 MiRam/(24356:24374): M: 0 E:O P: 3 Pag: 2
+[INFO] 23:48:51:428 MiRam/(24356:24374): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:48:51:428 MiRam/(24356:24374): M: 2 E:L P:- Pag:-
+[INFO] 23:48:51:428 MiRam/(24356:24374): M: 3 E:O P: 3 Pag: 1
+[INFO] 23:48:51:429 MiRam/(24356:24374): ------FIN MP------
+[INFO] 23:48:53:443 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:53:443 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:59:446 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:48:59:446 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:49:01:454 MiRam/(24356:24374): El tripulante 3 solicita nueva tarea
+[INFO] 23:49:01:454 MiRam/(24356:24374): ENTRE EN MS
+[INFO] 23:49:01:454 MiRam/(24356:24374): Recuperando pagina para obtener tarea para tripulante de patota 3
+[INFO] 23:49:01:454 MiRam/(24356:24374): Se asigna marco 2 de MP
+[INFO] 23:49:01:454 MiRam/(24356:24374): Recupero el bloque 2 de MS
+[INFO] 23:49:01:455 MiRam/(24356:24374): El tripulante 3 recibe la tarea solicitada
+[INFO] 23:49:01:455 MiRam/(24356:24374): --------MP--------
+[INFO] 23:49:01:455 MiRam/(24356:24374): M: 0 E:O P: 3 Pag: 2
+[INFO] 23:49:01:455 MiRam/(24356:24374): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:49:01:455 MiRam/(24356:24374): M: 2 E:O P: 3 Pag: 3
+[INFO] 23:49:01:455 MiRam/(24356:24374): M: 3 E:O P: 3 Pag: 1
+[INFO] 23:49:01:455 MiRam/(24356:24374): ------FIN MP------
+[INFO] 23:49:05:470 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:49:05:471 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:49:11:476 MiRam/(24356:24374): El tripulante 3 solicita nueva tarea
+[INFO] 23:49:11:476 MiRam/(24356:24374): El tripulante 3 recibe la tarea solicitada
+[INFO] 23:49:11:476 MiRam/(24356:24374): --------MP--------
+[INFO] 23:49:11:476 MiRam/(24356:24374): M: 0 E:O P: 3 Pag: 2
+[INFO] 23:49:11:476 MiRam/(24356:24374): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:49:11:476 MiRam/(24356:24374): M: 2 E:O P: 3 Pag: 3
+[INFO] 23:49:11:476 MiRam/(24356:24374): M: 3 E:O P: 3 Pag: 1
+[INFO] 23:49:11:476 MiRam/(24356:24374): ------FIN MP------
+[INFO] 23:49:11:477 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:49:11:477 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:49:17:482 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:49:17:482 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:49:21:491 MiRam/(24356:24374): El tripulante 3 solicita nueva tarea
+[INFO] 23:49:21:492 MiRam/(24356:24374): El tripulante 3 recibe la tarea solicitada
+[INFO] 23:49:21:492 MiRam/(24356:24374): --------MP--------
+[INFO] 23:49:21:493 MiRam/(24356:24374): M: 0 E:O P: 3 Pag: 2
+[INFO] 23:49:21:493 MiRam/(24356:24374): M: 1 E:O P: 3 Pag: 0
+[INFO] 23:49:21:493 MiRam/(24356:24374): M: 2 E:O P: 3 Pag: 3
+[INFO] 23:49:21:493 MiRam/(24356:24374): M: 3 E:O P: 3 Pag: 1
+[INFO] 23:49:21:493 MiRam/(24356:24374): ------FIN MP------
+[INFO] 23:49:23:508 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:49:23:509 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:49:29:511 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:49:29:512 MiRam/(24356:24374): Tripulante 3 cambiando de estado
+[INFO] 23:49:31:516 MiRam/(24356:24374): El tripulante 3 solicita nueva tarea
+[INFO] 23:49:31:516 MiRam/(24356:24374): Ya no hay mas tareas para el tripulante 3
+[INFO] 23:49:31:516 MiRam/(24356:24374): --------MP--------
+[INFO] 23:49:31:516 MiRam/(24356:24374): M: 0 E:L P:- Pag:-
+[INFO] 23:49:31:516 MiRam/(24356:24374): M: 1 E:L P:- Pag:-
+[INFO] 23:49:31:516 MiRam/(24356:24374): M: 2 E:L P:- Pag:-
+[INFO] 23:49:31:516 MiRam/(24356:24374): M: 3 E:L P:- Pag:-
+[INFO] 23:49:31:516 MiRam/(24356:24374): ------FIN MP------
+[ERROR] 23:49:31:516 MiRam/(24356:24374): el cliente se desconecto. Terminando servidor
