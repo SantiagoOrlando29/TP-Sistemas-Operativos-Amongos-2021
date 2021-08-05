@@ -193,6 +193,8 @@ void tripulante_hilo (tcbTripulante* tripulante){
 				mongo_tarea(tripulante);
 				sleep(configuracion.retardo_cpu); //sleep para eso de iniciar tarea E/S (simula peticion al SO)
 
+				planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);
+
 				if(tripulante->fui_expulsado == true){
 					free(tripulante->tarea_posta->tarea);
 					free(tripulante->tarea_posta);
@@ -264,6 +266,8 @@ void tripulante_hilo (tcbTripulante* tripulante){
 						flag_no_esta_en_posicion = 1;
 					}
 				}
+
+				planificacion_pausada_o_no_exec(tripulante, &quantums_ejecutados);
 
 				if(tripulante->fui_expulsado == true){
 					tripulante->estado = 'X';
@@ -432,6 +436,8 @@ void bloqueado_ready() {
 
 				ciclos_consumidos++;
 			}
+
+			planificacion_pausada_o_no();
 
 			if(tripulante->fui_expulsado == true){
 				tripulante->estado = 'X';
