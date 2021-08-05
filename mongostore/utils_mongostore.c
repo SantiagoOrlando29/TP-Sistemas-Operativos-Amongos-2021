@@ -372,8 +372,8 @@ void recurso_validar_existencia_metadata_en_memoria(t_recurso_data* recurso_data
 		//free(recurso_data->metadata->blocks);//OK? SANTI
 		metadata_setear_con_valores_default_en_memoria(recurso_data->metadata);
 	}
-	//log_debug(logger, "Existencia de metadata para el recurso %s validada. Valor fijo CARACTER_LLENADO %s",
-			//recurso_data->nombre, recurso_data->metadata->caracter_llenado);
+	log_debug(logger, "Existencia de metadata para el recurso %s validada. Valor fijo CARACTER_LLENADO %s",
+			recurso_data->nombre, recurso_data->metadata->caracter_llenado);
 }
 
 //Levanta a la estructura metadata en memoria los valores variables contenidos en el archivo de metadata correspondiente
@@ -381,7 +381,8 @@ void recurso_levantar_de_archivo_a_memoria_valores_variables(t_recurso_data* rec
 {
 	t_config* recurso_config = config_create(recurso_data->ruta_completa);
 	t_recurso_md* recurso_md = recurso_data->metadata;
-	free(recurso_md->blocks);//CHEQUEAR
+
+	//free(recurso_md->blocks);//CHEQUEAR
 
 	recurso_md->size = config_get_int_value(recurso_config, "SIZE");
 	recurso_md->block_count = config_get_int_value(recurso_config, "BLOCK_COUNT");
@@ -1808,8 +1809,10 @@ int fsck_iniciar()
 
 	blocks_actualizar_archivo();
 	sem_wait(&MUTEX_BLOCKS);
-	fsck_chequeo_de_sabotajes_en_superbloque();
+	//fsck_chequeo_de_sabotajes_en_superbloque();
+	superbloque_validar_integridad_cantidad_de_bloques();
 	fsck_chequeo_de_sabotajes_en_files();
+	superbloque_validar_integridad_bitmap();
 
 	sem_post(&MUTEX_BLOCKS);
 	log_debug(logger, "Se finaliza fsck");
@@ -1823,7 +1826,7 @@ void fsck_chequeo_de_sabotajes_en_superbloque()
 	superbloque_validar_integridad_cantidad_de_bloques();
 	//utils_esperar_a_usuario();
 	superbloque_validar_integridad_bitmap();
-	log_debug(logger, "Se a fsck_chequeo_de_sabotajes_en_superbloque()");
+	log_debug(logger, "Se finaliza fsck_chequeo_de_sabotajes_en_superbloque()");
 }
 
 //Valida que la cantidad de bloques en el archivo Superbloque.ims se corresponda con la cantidad real en el recurso fisico de Blocks.ims
@@ -2128,9 +2131,11 @@ void fsck_chequeo_de_sabotajes_en_files()
 		t_recurso_data* recurso_data = &lista_recursos[i];
 		if(utils_existe_en_disco(recurso_data->ruta_completa))
 		{
+			recurso_validar_blocks_bloque_mayor_a_fs(recurso_data);
+			recurso_validar_blocks_bloque_ocupado(recurso_data);
 			recurso_validar_size(recurso_data);
 			recurso_validar_block_count(recurso_data);
-			recurso_validar_blocks(recurso_data);
+			recurso_validar_blocks_orden_bloques(recurso_data);
 		}
 		else
 		{
@@ -2138,6 +2143,114 @@ void fsck_chequeo_de_sabotajes_en_files()
 		}
 	}
 }
+
+void recurso_validar_blocks_bloque_mayor_a_fs(t_recurso_data* recurso_data)
+{
+	log_debug(logger, "Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()");
+
+	t_config* recurso_config = config_create(recurso_data->ruta_completa);
+	char* blocks_actual = string_duplicate(config_get_string_value(recurso_config, "BLOCKS"));
+
+	char* lista_blocks_con_numeros_validos = string_duplicate("[]");
+
+	char** blocks_actual_array = string_get_string_as_array(blocks_actual);
+
+	int cantidad_bloques_actual = cadena_cantidad_elementos_en_lista(blocks_actual);
+	int bloque_maximo = superbloque.blocks -1;
+
+	for(int i=0; i < cantidad_bloques_actual; i++){
+		int bloque = atoi(blocks_actual_array[i]);
+		if(bloque <= bloque_maximo){
+			cadena_agregar_entero_a_lista_de_enteros(&lista_blocks_con_numeros_validos, bloque);
+		}
+	}
+
+	if(strcmp(lista_blocks_con_numeros_validos, blocks_actual) != 0)
+	{
+	    log_info(logger, "El recurso %s tiene su blocks saboteado (se agrego un bloque mayor a la cantidad de bloques del FS), "
+	    		"pero no te preocupes, ya lo arreglaremos", recurso_data->nombre);
+	    config_set_value(recurso_config, "BLOCKS", lista_blocks_con_numeros_validos);
+	    config_save(recurso_config);
+	    log_info(logger, "Listo, ya podes confiar que los bloques no son incoherentes (no son mayores al maximo) en el blocks \"%s\" para el recurso %s",
+	    		recurso_data->metadata->blocks, recurso_data->nombre);
+	}
+	else
+	{
+		log_info(logger, "Por lo menos al blocks del recurso %s no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!",
+				recurso_data->nombre);
+	}
+
+	log_debug(logger, "Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()");
+
+	free(blocks_actual);
+	free(lista_blocks_con_numeros_validos);
+	cadena_eliminar_array_de_cadenas(&blocks_actual_array, cantidad_bloques_actual);
+	config_destroy(recurso_config);
+}
+
+void recurso_validar_blocks_bloque_ocupado(t_recurso_data* recurso_data)
+{
+	log_debug(logger, "Se ingresa a recurso_validar_blocks_bloque_vacio()");
+
+	t_config* recurso_config = config_create(recurso_data->ruta_completa);
+	char* blocks_actual = string_duplicate(config_get_string_value(recurso_config, "BLOCKS"));
+
+	char* lista_blocks_con_bloques_ocupados = string_duplicate("[]");
+
+	char** blocks_actual_array = string_get_string_as_array(blocks_actual);
+
+	int cantidad_bloques_actual = cadena_cantidad_elementos_en_lista(blocks_actual);
+	//int bloque_maximo = superbloque.blocks -1;
+
+	int superbloque_fd = utils_abrir_archivo_para_lectura_escritura(superbloque_path);
+	int desplazamiento = 2 * sizeof(uint32_t);
+
+	lseek(superbloque_fd, desplazamiento, SEEK_SET);
+
+	//free(superbloque.bitmap);
+	read(superbloque_fd, superbloque.bitmap, bitmap_size);
+
+	close(superbloque_fd);
+
+
+	t_bitarray* bitmap = bitarray_create_with_mode(superbloque.bitmap, bitmap_size, LSB_FIRST);
+
+	for(int i=0; i < cantidad_bloques_actual; i++){
+		int bloque = atoi(blocks_actual_array[i]);
+		if(bitarray_test_bit(bitmap, bloque))
+		{
+			cadena_agregar_entero_a_lista_de_enteros(&lista_blocks_con_bloques_ocupados, bloque);
+		}
+	}
+
+	bitarray_destroy(bitmap);
+
+	if(strcmp(lista_blocks_con_bloques_ocupados, blocks_actual) != 0)
+	{
+	    log_info(logger, "El recurso %s tiene su blocks saboteado (se agrego al menos un bloque vacio), "
+	    		"pero no te preocupes, ya lo arreglaremos", recurso_data->nombre);
+	    config_set_value(recurso_config, "BLOCKS", lista_blocks_con_bloques_ocupados);
+	    config_save(recurso_config);
+	    log_info(logger, "Listo, ya podes confiar que no hay ningun bloque vacio en el blocks \"%s\" para el recurso %s",
+	    		recurso_data->metadata->blocks, recurso_data->nombre);
+	}
+	else
+	{
+		log_info(logger, "Por lo menos al blocks del recurso %s no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!",
+				recurso_data->nombre);
+	}
+
+	log_debug(logger, "Se finaliza recurso_validar_blocks_bloque_ocupado()");
+
+	free(blocks_actual);
+	free(lista_blocks_con_bloques_ocupados);
+	cadena_eliminar_array_de_cadenas(&blocks_actual_array, cantidad_bloques_actual);
+	config_destroy(recurso_config);
+}
+
+//Antes de sabotear tengo: blocks=[0,1,2,3]  size=350 (suponiendo que los bloques son de 100 bytes)
+//[1,1,1,1,1]
+//[0,1,2,3]
 
 //Verifica el valor size del recurso dado por recurso_data respecto del valor que tendria que tener y lo reemplaze si difiere
 void recurso_validar_size(t_recurso_data* recurso_data)
@@ -2283,7 +2396,7 @@ int recurso_obtener_block_count_real(t_recurso_data* recurso_data)
 }
 
 //FIXME Si encuentra una diferencia entre los md5 de los concatenados restaura el archivo en blocks con los blocks del archivo metadata
-void recurso_validar_blocks(t_recurso_data* recurso_data)
+void recurso_validar_blocks_orden_bloques(t_recurso_data* recurso_data)
 {
     t_recurso_md* recurso_md = recurso_data->metadata;
     free(recurso_md->blocks);//OK?

@@ -297,7 +297,9 @@ int blocks_esta_lleno_bloque(int bloque);
 int metadata_cantidad_del_caracter_en_bloque(char caracter, int bloque);
 void recurso_validar_block_count(t_recurso_data* recurso_data);
 int recurso_obtener_block_count_real(t_recurso_data* recurso_data);
-void recurso_validar_blocks(t_recurso_data* recurso_data);
+void recurso_validar_blocks_bloque_mayor_a_fs(t_recurso_data* recurso_data);
+void recurso_validar_blocks_bloque_ocupado(t_recurso_data* recurso_data);
+void recurso_validar_blocks_orden_bloques(t_recurso_data* recurso_data);
 void metadata_restaurar_en_blocks(t_recurso_md* recurso_md);
 
 /////////////////////////////////////FIN DE FUNCIONES NECESARIAS PARA FSCK/////////////////////////////////////////////////////////
