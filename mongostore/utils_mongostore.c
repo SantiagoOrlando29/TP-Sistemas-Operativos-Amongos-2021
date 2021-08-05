@@ -631,6 +631,12 @@ int funcion_cliente(int socket_cliente)
 				}
 				break;
 
+			case FIN_HILO_TRIPULANTE:
+				log_info(logger, "fin de hilo tripulante");
+				close(socket_cliente);
+				return 0;
+				break;
+
 			case FIN:
 				log_error(logger, "CASE FIN --- El discordiador finalizo el programa. Terminando servidor");
 				variable_servidor = 0;
@@ -647,7 +653,7 @@ int funcion_cliente(int socket_cliente)
 				close(socket_cliente);
 				return EXIT_FAILURE;
 			default:
-				log_error(logger, "A esa operacion no la tengo ---NO DEBERIA HABER LLEGADO ACA!!!");
+				log_error(logger, "A esa operacion %d no la tengo ---NO DEBERIA HABER LLEGADO ACA!!!", codigo_operacion);
 		}
 	}
 }

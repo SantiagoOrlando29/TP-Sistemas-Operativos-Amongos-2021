@@ -99,7 +99,8 @@ typedef enum {
 	REALIZAR_TAREA = 13,
 	INICIAR_FSCK = 14,
 	SALIR = 15,
-	SABOTAJE = 16
+	SABOTAJE = 16,
+	FIN_HILO_TRIPULANTE = 17
 } op_code;
 
 typedef struct {

@@ -348,6 +348,7 @@ void tripulante_hilo (tcbTripulante* tripulante){
 		log_info(logger, "size exit %d", list_size(lista_tripulantes_exit));
 		sem_post(&MUTEX_LISTA_EXIT);
 	}
+	enviar_header(FIN_HILO_TRIPULANTE, tripulante->socket_mongo);
 }
 
 void ready_exec() {

@@ -49,7 +49,8 @@ typedef enum
 	INFORMAR_BITACORA,
 	TAREA_MONGO,
 	FSCK,
-	SALIR_MONGO
+	SALIR_MONGO,
+	FIN_HILO_TRIPULANTE=17
 }tipoMensaje;
 
 typedef enum
