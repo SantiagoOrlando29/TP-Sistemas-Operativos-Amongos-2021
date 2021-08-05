@@ -426,8 +426,44 @@ void sig_handler(int signum)
 {
     if(signum == SIGUSR1){
         log_info(logger, "SIGUSR1");
+        calcular_md5_bitmaps_actuales();
         notificar_sabotaje();
     }
+}
+
+//[1,1,1,1] antes sabotaje. md5 viejo
+//[1,1,1,1,1,1] sabotaje. md5 sabotaje.
+//[1,1,1,1,1] con bitacoras nuevas
+/*
+1. [1,1,1,1] antes sabotaje. bitmap_memoria. Oxigeno:Blocks=[0,1]  Bitacora_tripu1:blocks=[2,3]. [1,1,1,1] bitmap_disco
+2. despues de saboteo: [1,1,1,1] antes sabotaje. bitmap_memoria (superbloque.bitmap). Oxigeno:Blocks=[0,1]  Bitacora_tripu1:blocks=[2,3].
+    [1,1,1,1,1,1] bitmap_disco
+3. tiro signal->dentro de signal calculo: md5_global_viejo_real (con superbloque.bitmap). calculo: md5_global_saboteado_actual_de disco: con [1,1,1,1,1,1]
+4. carga bitacoras: superbloque.bitmap queda [1,1,1,1,1,1].  Oxigeno:Blocks=[0,1]  Bitacora_tripu1:blocks=[2,3,4,5]
+5. cuando llega a la funcion delm sabotaje de bitmap: compara los md5.
+6.A. Si dan distinto->hubo sabotaje: log_info
+6.B. Si dan igual-> no hubo sabotaje: log_info.
+ */
+
+void calcular_md5_bitmaps_actuales()
+{
+	cadena_calcular_md5(superbloque.bitmap, bitmap_size, md5_bitmap_real_inicial);
+	char* bitmap_actual = superbloque_obtener_bitmap_de_archivo();
+	cadena_calcular_md5(bitmap_actual, bitmap_size, md5_bitmap_actual);
+}
+//0x9b35c98
+
+char* superbloque_obtener_bitmap_de_archivo()
+{
+	int superbloque_fd = utils_abrir_archivo_para_lectura_escritura(superbloque_path);
+	int desplazamiento = 2 * sizeof(uint32_t);
+	char* bitmap_obtenido = malloc(bitmap_size);
+
+	lseek(superbloque_fd, desplazamiento, SEEK_SET);
+	read(superbloque_fd, bitmap_obtenido, bitmap_size);
+
+	close(superbloque_fd);
+	return bitmap_obtenido;
 }
 
 //Envia al Discordiador a traves del socket abierto socket_cliente_sabotaje la posicion del sabotaje que debe ser atendida
@@ -1874,7 +1910,8 @@ void superbloque_validar_integridad_cantidad_de_bloques()
 void superbloque_validar_integridad_bitmap()
 {
 	log_debug(logger, "Info-Se ingresa a superbloque_validar_integridad_bitmap");
-	superbloque_levantar_estructura_desde_archivo();
+
+	/*superbloque_levantar_estructura_desde_archivo();
 
 	char* bitmap_real = superbloque_obtener_bitmap_correcto_segun_bloques_ocupados();
 	char bitmap_real_md5[33];
@@ -1883,13 +1920,14 @@ void superbloque_validar_integridad_bitmap()
 	char bitmap_actual_md5[33];
 	cadena_calcular_md5(superbloque.bitmap, bitmap_size, bitmap_actual_md5);
 log_info(logger, "bitmap_real_md5: %s", bitmap_real_md5);
-log_info(logger, "bitmap_actual_md5: %s", bitmap_actual_md5);
+log_info(logger, "bitmap_actual_md5: %s", bitmap_actual_md5);*/
 //utils_esperar_a_usuario();
 
-	if(strcmp(bitmap_actual_md5, bitmap_real_md5))
+	if(strcmp(md5_bitmap_real_inicial, md5_bitmap_actual))
+	//if(strcmp(bitmap_actual_md5, bitmap_real_md5))
 	{
 		log_info(logger, "Alguien saboteo el bitmap en el SuperBloque.ims");
-		memcpy(superbloque.bitmap, bitmap_real, bitmap_size);
+		/*memcpy(superbloque.bitmap, bitmap_real, bitmap_size);
 
 		int superbloque_fd = utils_abrir_archivo_para_lectura_escritura(superbloque_path);
 
@@ -1897,7 +1935,7 @@ log_info(logger, "bitmap_actual_md5: %s", bitmap_actual_md5);
 		lseek(superbloque_fd, desplazamiento, SEEK_SET);
 		write(superbloque_fd, superbloque.bitmap, bitmap_size);
 
-		close(superbloque_fd);
+		close(superbloque_fd);*/
 		log_info(logger, "El bitmap correcto ya fue persistido");
 	}
 	else
@@ -1905,11 +1943,11 @@ log_info(logger, "bitmap_actual_md5: %s", bitmap_actual_md5);
 		log_info(logger, "Parece que esta vez nadie se animo a sabotear el bitmap");
 	}
 
-	log_info(logger, "bitmap_real_md5: %s", bitmap_real_md5);
-	log_info(logger, "bitmap_actual_md5: %s", bitmap_actual_md5);
+	//log_info(logger, "bitmap_real_md5: %s", bitmap_real_md5);
+	//log_info(logger, "bitmap_actual_md5: %s", bitmap_actual_md5);
 	//utils_esperar_a_usuario();
 
-	free(bitmap_real);
+	//free(bitmap_real);
 	log_debug(logger, "Se finaliza superbloque_validar_integridad_bitmap()");
 }
 /* nueva de edu:
@@ -1917,38 +1955,30 @@ void superbloque_validar_integridad_bitmap()
 {
     log_debug(logger, "Info-Se ingresa a superbloque_validar_integridad_bitmap");
     superbloque_levantar_estructura_desde_archivo();
-
     char* bitmap_real = superbloque_obtener_bitmap_correcto_segun_bloques_ocupados();
     char md5_bitmap_real[33];
     cadena_calcular_md5(bitmap_real, bitmap_size, md5_bitmap_real);
-
     char md5_bitmap_actual[33];
     int desplazamiento = 2 * sizeof(uint32_t);
     char* bitmap_actual = malloc(bitmap_size);
-
     int superbloque_fd = utils_abrir_archivo_para_lectura_escritura(superbloque_path);
     lseek(superbloque_fd, desplazamiento, SEEK_SET);
     read(superbloque_fd, bitmap_actual, bitmap_size);
     close(superbloque_fd);
-
     cadena_calcular_md5(bitmap_actual, bitmap_size, md5_bitmap_actual);
-
     if(strcmp(md5_bitmap_actual, md5_bitmap_real))
     {
         log_info(logger, "Alguien saboteo el bitmap en el SuperBloque.ims");
-
         int superbloque_fd = utils_abrir_archivo_para_lectura_escritura(superbloque_path);
         lseek(superbloque_fd, desplazamiento, SEEK_SET);
         write(superbloque_fd, bitmap_real, bitmap_size);
         close(superbloque_fd);
-
         log_info(logger, "El bitmap correcto ya fue persistido");
     }
     else
     {
         log_info(logger, "Parece que esta vez nadie se animo a sabotear el bitmap");
     }
-
     free(bitmap_real);
     log_debug(logger, "Se finaliza superbloque_validar_integridad_bitmap()");
 }
@@ -2845,4 +2875,3 @@ char* blocks_obtener_concatenado_de_bloques_segun_tamanio(char* bloques, size_t 
 
 	return concatenado;
 }
-

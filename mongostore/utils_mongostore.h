@@ -131,6 +131,8 @@ char* files_path;
 char* bitacoras_path;
 char* superbloque_path;
 char* blocks_path;
+char md5_bitmap_real_inicial[33];
+char md5_bitmap_actual[33];
 
 size_t bitmap_size;
 size_t blocks_size;
@@ -193,7 +195,9 @@ void bitacoras_eliminar_si_existen();
 ////////////////////////////FUNCIONES NECESARIAS PARA ATENDER LA SEÑAL SIGUSR1////////////////////
 
 void sig_handler(int signum);
+void calcular_md5_bitmaps_actuales();
 void notificar_sabotaje();
+char* superbloque_obtener_bitmap_de_archivo();
 
 ////////////////////////////FIN DE FUNCIONES NECESARIAS PARA ATENDER LA SEÑAL SIGUSR1////////////////////
 

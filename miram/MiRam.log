@@ -1,8 +1,134 @@
-[INFO] 16:09:25:264 MiRam/(4702:4702): pid 4702  
+[INFO] 18:14:53:828 MiRam/(8521:8521): pid 8521  
 
-[INFO] 16:09:25:269 MiRam/(4702:4702): ---------  MEMORIA  --------------------
-[INFO] 16:09:25:269 MiRam/(4702:4702): base:   0, tam: 2048, libre: true 
-[INFO] 16:09:25:269 MiRam/(4702:4702): ----------------------------------------
-[INFO] 16:09:25:270 MiRam/(4702:4703): Servidor iniciando
-[INFO] 16:09:25:270 MiRam/(4702:4703): Servidor MiRam encendido
-[INFO] 16:09:25:270 MiRam/(4702:4703): socket_servidor 4
+[INFO] 18:14:53:828 MiRam/(8521:8521): ---------  MEMORIA  --------------------
+[INFO] 18:14:53:828 MiRam/(8521:8521): base:   0, tam: 2048, libre: true 
+[INFO] 18:14:53:829 MiRam/(8521:8521): ----------------------------------------
+[INFO] 18:14:53:829 MiRam/(8521:8522): Servidor iniciando
+[INFO] 18:14:53:829 MiRam/(8521:8522): Servidor MiRam encendido
+[INFO] 18:14:53:829 MiRam/(8521:8522): socket_servidor 4
+[INFO] 18:15:08:228 MiRam/(8521:8522): socket_cliente 5
+[INFO] 18:15:08:228 MiRam/(8521:8522): Estableciendo conexión desde 36046
+[INFO] 18:15:08:228 MiRam/(8521:8522): Creando hilo
+[INFO] 18:15:08:233 MiRam/(8521:8524): Se conecto este socket a mi 5
+[INFO] 18:15:13:274 MiRam/(8521:8524): 
+El numero de la patota recibida es 1
+[INFO] 18:15:13:275 MiRam/(8521:8524): ID 1 
+[INFO] 18:15:13:275 MiRam/(8521:8524): posicion x: 0 
+[INFO] 18:15:13:275 MiRam/(8521:8524): posicion y: 0 
+[INFO] 18:15:13:275 MiRam/(8521:8524): Status: N 
+[INFO] 18:15:13:275 MiRam/(8521:8524): n patota: 1 
+
+[INFO] 18:15:13:275 MiRam/(8521:8524): espacio tareas todo ok
+[INFO] 18:15:13:275 MiRam/(8521:8524): ---------  MEMORIA  --------------------
+[INFO] 18:15:13:275 MiRam/(8521:8524): base:   0, tam:  8, libre: false 
+[INFO] 18:15:13:275 MiRam/(8521:8524): base:   8, tam: 24, libre: false 
+[INFO] 18:15:13:275 MiRam/(8521:8524): base:  32, tam: 21, libre: false 
+[INFO] 18:15:13:275 MiRam/(8521:8524): base:  53, tam: 1995, libre: true 
+[INFO] 18:15:13:275 MiRam/(8521:8524): ----------------------------------------
+[INFO] 18:15:13:275 MiRam/(8521:8524): Tabla de segmentos correspondiente a patota 1
+[INFO] 18:15:13:275 MiRam/(8521:8524): Base 0   Tamanio 8
+[INFO] 18:15:13:275 MiRam/(8521:8524): Base 8   Tamanio 24
+[INFO] 18:15:13:276 MiRam/(8521:8524): Base 32   Tamanio 21
+[INFO] 18:15:13:276 MiRam/(8521:8524): ---------------------------------------
+[INFO] 18:15:13:276 MiRam/(8521:8524): Se asigno espacio de memoria a todo 
+
+[INFO] 18:15:13:277 MiRam/(8521:8524): 
+El numero de la patota recibida es 2
+[INFO] 18:15:13:277 MiRam/(8521:8524): ID 2 
+[INFO] 18:15:13:277 MiRam/(8521:8524): posicion x: 8 
+[INFO] 18:15:13:277 MiRam/(8521:8524): posicion y: 0 
+[INFO] 18:15:13:277 MiRam/(8521:8524): Status: N 
+[INFO] 18:15:13:277 MiRam/(8521:8524): n patota: 2 
+
+[INFO] 18:15:13:277 MiRam/(8521:8524): espacio tareas todo ok
+[INFO] 18:15:13:277 MiRam/(8521:8524): ---------  MEMORIA  --------------------
+[INFO] 18:15:13:277 MiRam/(8521:8524): base:   0, tam:  8, libre: false 
+[INFO] 18:15:13:277 MiRam/(8521:8524): base:   8, tam: 24, libre: false 
+[INFO] 18:15:13:277 MiRam/(8521:8524): base:  32, tam: 21, libre: false 
+[INFO] 18:15:13:277 MiRam/(8521:8524): base:  53, tam:  8, libre: false 
+[INFO] 18:15:13:277 MiRam/(8521:8524): base:  61, tam: 25, libre: false 
+[INFO] 18:15:13:278 MiRam/(8521:8524): base:  86, tam: 21, libre: false 
+[INFO] 18:15:13:278 MiRam/(8521:8524): base: 107, tam: 1941, libre: true 
+[INFO] 18:15:13:278 MiRam/(8521:8524): ----------------------------------------
+[INFO] 18:15:13:278 MiRam/(8521:8524): Tabla de segmentos correspondiente a patota 2
+[INFO] 18:15:13:278 MiRam/(8521:8524): Base 53   Tamanio 8
+[INFO] 18:15:13:278 MiRam/(8521:8524): Base 61   Tamanio 25
+[INFO] 18:15:13:278 MiRam/(8521:8524): Base 86   Tamanio 21
+[INFO] 18:15:13:278 MiRam/(8521:8524): ---------------------------------------
+[INFO] 18:15:13:278 MiRam/(8521:8524): Se asigno espacio de memoria a todo 
+
+[INFO] 18:15:13:279 MiRam/(8521:8524): 
+El numero de la patota recibida es 3
+[INFO] 18:15:13:279 MiRam/(8521:8524): ID 3 
+[INFO] 18:15:13:280 MiRam/(8521:8524): posicion x: 8 
+[INFO] 18:15:13:280 MiRam/(8521:8524): posicion y: 8 
+[INFO] 18:15:13:280 MiRam/(8521:8524): Status: N 
+[INFO] 18:15:13:280 MiRam/(8521:8524): n patota: 3 
+
+[INFO] 18:15:13:280 MiRam/(8521:8524): espacio tareas todo ok
+[INFO] 18:15:13:280 MiRam/(8521:8524): ---------  MEMORIA  --------------------
+[INFO] 18:15:13:280 MiRam/(8521:8524): base:   0, tam:  8, libre: false 
+[INFO] 18:15:13:280 MiRam/(8521:8524): base:   8, tam: 24, libre: false 
+[INFO] 18:15:13:280 MiRam/(8521:8524): base:  32, tam: 21, libre: false 
+[INFO] 18:15:13:280 MiRam/(8521:8524): base:  53, tam:  8, libre: false 
+[INFO] 18:15:13:280 MiRam/(8521:8524): base:  61, tam: 25, libre: false 
+[INFO] 18:15:13:280 MiRam/(8521:8524): base:  86, tam: 21, libre: false 
+[INFO] 18:15:13:280 MiRam/(8521:8524): base: 107, tam:  8, libre: false 
+[INFO] 18:15:13:280 MiRam/(8521:8524): base: 115, tam: 28, libre: false 
+[INFO] 18:15:13:280 MiRam/(8521:8524): base: 143, tam: 21, libre: false 
+[INFO] 18:15:13:280 MiRam/(8521:8524): base: 164, tam: 1884, libre: true 
+[INFO] 18:15:13:280 MiRam/(8521:8524): ----------------------------------------
+[INFO] 18:15:13:280 MiRam/(8521:8524): Tabla de segmentos correspondiente a patota 3
+[INFO] 18:15:13:280 MiRam/(8521:8524): Base 107   Tamanio 8
+[INFO] 18:15:13:280 MiRam/(8521:8524): Base 115   Tamanio 28
+[INFO] 18:15:13:280 MiRam/(8521:8524): Base 143   Tamanio 21
+[INFO] 18:15:13:280 MiRam/(8521:8524): ---------------------------------------
+[INFO] 18:15:13:280 MiRam/(8521:8524): Se asigno espacio de memoria a todo 
+
+[INFO] 18:15:13:282 MiRam/(8521:8524): 
+El numero de la patota recibida es 4
+[INFO] 18:15:13:282 MiRam/(8521:8524): ID 4 
+[INFO] 18:15:13:282 MiRam/(8521:8524): posicion x: 0 
+[INFO] 18:15:13:282 MiRam/(8521:8524): posicion y: 8 
+[INFO] 18:15:13:283 MiRam/(8521:8524): Status: N 
+[INFO] 18:15:13:283 MiRam/(8521:8524): n patota: 4 
+
+[INFO] 18:15:13:283 MiRam/(8521:8524): espacio tareas todo ok
+[INFO] 18:15:13:283 MiRam/(8521:8524): ---------  MEMORIA  --------------------
+[INFO] 18:15:13:283 MiRam/(8521:8524): base:   0, tam:  8, libre: false 
+[INFO] 18:15:13:283 MiRam/(8521:8524): base:   8, tam: 24, libre: false 
+[INFO] 18:15:13:283 MiRam/(8521:8524): base:  32, tam: 21, libre: false 
+[INFO] 18:15:13:283 MiRam/(8521:8524): base:  53, tam:  8, libre: false 
+[INFO] 18:15:13:283 MiRam/(8521:8524): base:  61, tam: 25, libre: false 
+[INFO] 18:15:13:283 MiRam/(8521:8524): base:  86, tam: 21, libre: false 
+[INFO] 18:15:13:283 MiRam/(8521:8524): base: 107, tam:  8, libre: false 
+[INFO] 18:15:13:283 MiRam/(8521:8524): base: 115, tam: 28, libre: false 
+[INFO] 18:15:13:283 MiRam/(8521:8524): base: 143, tam: 21, libre: false 
+[INFO] 18:15:13:283 MiRam/(8521:8524): base: 164, tam:  8, libre: false 
+[INFO] 18:15:13:283 MiRam/(8521:8524): base: 172, tam: 21, libre: false 
+[INFO] 18:15:13:283 MiRam/(8521:8524): base: 193, tam: 21, libre: false 
+[INFO] 18:15:13:283 MiRam/(8521:8524): base: 214, tam: 1834, libre: true 
+[INFO] 18:15:13:283 MiRam/(8521:8524): ----------------------------------------
+[INFO] 18:15:13:283 MiRam/(8521:8524): Tabla de segmentos correspondiente a patota 4
+[INFO] 18:15:13:283 MiRam/(8521:8524): Base 164   Tamanio 8
+[INFO] 18:15:13:283 MiRam/(8521:8524): Base 172   Tamanio 21
+[INFO] 18:15:13:283 MiRam/(8521:8524): Base 193   Tamanio 21
+[INFO] 18:15:13:283 MiRam/(8521:8524): ---------------------------------------
+[INFO] 18:15:13:283 MiRam/(8521:8524): Se asigno espacio de memoria a todo 
+
+[INFO] 18:15:14:382 MiRam/(8521:8522): socket_cliente 7
+[INFO] 18:15:14:382 MiRam/(8521:8522): Estableciendo conexión desde 37582
+[INFO] 18:15:14:382 MiRam/(8521:8522): Creando hilo
+[INFO] 18:15:14:384 MiRam/(8521:8535): Se conecto este socket a mi 7
+[INFO] 18:15:14:384 MiRam/(8521:8522): socket_cliente 8
+[INFO] 18:15:14:384 MiRam/(8521:8522): Estableciendo conexión desde 38606
+[INFO] 18:15:14:385 MiRam/(8521:8522): Creando hilo
+[INFO] 18:15:14:387 MiRam/(8521:8537): Se conecto este socket a mi 8
+[INFO] 18:15:14:387 MiRam/(8521:8522): socket_cliente 9
+[INFO] 18:15:14:387 MiRam/(8521:8522): Estableciendo conexión desde 39630
+[INFO] 18:15:14:387 MiRam/(8521:8522): Creando hilo
+[INFO] 18:15:14:388 MiRam/(8521:8540): Se conecto este socket a mi 9
+[INFO] 18:15:14:388 MiRam/(8521:8522): socket_cliente 10
+[INFO] 18:15:14:388 MiRam/(8521:8522): Estableciendo conexión desde 40654
+[INFO] 18:15:14:388 MiRam/(8521:8522): Creando hilo
+[INFO] 18:15:14:389 MiRam/(8521:8542): Se conecto este socket a mi 10

@@ -1,337 +1,106 @@
-[DEBUG] 16:00:56:011 mongostore/(4492:4492): LOGGER OK
-[INFO] 16:00:56:012 mongostore/(4492:4492): Configuracion leida y almacenada en "configuracion"
-[DEBUG] 16:00:56:012 mongostore/(4492:4492): Testeo config, la IP es: 127.0.0.1
-[DEBUG] 16:00:56:013 mongostore/(4492:4492): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
-[DEBUG] 16:00:56:013 mongostore/(4492:4492): O-Superbloque levantado desde archivo
-[DEBUG] 16:00:57:328 mongostore/(4492:4492): O-Blocks mapeado del archivo a la memoria
-[DEBUG] 16:00:57:328 mongostore/(4492:4492): O-Existencia de Blocks validada
-[DEBUG] 16:00:57:329 mongostore/(4492:4492): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [0,1] y MD5_ARCHIVO ea2d206202dea7a01a415457e40cd1c3
-[DEBUG] 16:00:57:329 mongostore/(4492:4492): Existencia de metadata para el recurso OXIGENO validada. Valor fijo CARACTER_LLENADO O
-[DEBUG] 16:00:57:330 mongostore/(4492:4492): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [70,71] y MD5_ARCHIVO 0ea4d81ac970d3f4fdbbe46acd91a041
-[DEBUG] 16:00:57:331 mongostore/(4492:4492): Existencia de metadata para el recurso COMIDA validada. Valor fijo CARACTER_LLENADO C
-[DEBUG] 16:00:57:332 mongostore/(4492:4492): Valores variables levantados SIZE 64 BLOCK_COUNT 2 BLOCKS [95,106] y MD5_ARCHIVO a7fb1584361efae4ca1daf6ac6314004
-[DEBUG] 16:00:57:332 mongostore/(4492:4492): Existencia de metadata para el recurso BASURA validada. Valor fijo CARACTER_LLENADO B
-[DEBUG] 16:00:57:332 mongostore/(4492:4492): Salgo de recursos_validar_existencia_metadatas()
-[DEBUG] 16:00:57:332 mongostore/(4492:4492): Directorios del File System confirmados
-[DEBUG] 16:00:57:332 mongostore/(4492:4492): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
-[DEBUG] 16:00:57:334 mongostore/(4492:4492): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
-[DEBUG] 16:00:57:334 mongostore/(4492:4492): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims": [2,3,4,5,6]
-[DEBUG] 16:00:57:335 mongostore/(4492:4492): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante3.ims": [10,11,12,13]
-[DEBUG] 16:00:57:336 mongostore/(4492:4492): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [153,154,155,156,157,7,8,9]
-[DEBUG] 16:00:57:336 mongostore/(4492:4492): Los bloques ocupados por el total de las bitacoras son [2,3,4,5,6,10,11,12,13,153,154,155,156,157,7,8,9]
-[DEBUG] 16:00:57:337 mongostore/(4492:4492): Los bloques [2,3,4,5,6,10,11,12,13,153,154,155,156,157,7,8,9] fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims
-[INFO] 16:00:57:343 mongostore/(4492:4492): File System iniciado
-[DEBUG] 16:00:57:344 mongostore/(4492:4492): Se entra a blocks_abrir_hilo
-[INFO] 16:00:57:344 mongostore/(4492:4492): pid 4492  
+[DEBUG] 18:14:49:748 mongostore/(8515:8515): LOGGER OK
+[INFO] 18:14:49:751 mongostore/(8515:8515): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 18:14:49:752 mongostore/(8515:8515): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 18:14:49:752 mongostore/(8515:8515): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
+[DEBUG] 18:14:49:753 mongostore/(8515:8515): O-Superbloque levantado desde archivo
+[DEBUG] 18:14:51:398 mongostore/(8515:8515): O-Blocks mapeado del archivo a la memoria
+[DEBUG] 18:14:51:398 mongostore/(8515:8515): O-Existencia de Blocks validada
+[DEBUG] 18:14:51:399 mongostore/(8515:8515): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [0,1] y MD5_ARCHIVO ea2d206202dea7a01a415457e40cd1c3
+[DEBUG] 18:14:51:400 mongostore/(8515:8515): Existencia de metadata para el recurso OXIGENO validada. Valor fijo CARACTER_LLENADO O
+[DEBUG] 18:14:51:400 mongostore/(8515:8515): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [70,71] y MD5_ARCHIVO 0ea4d81ac970d3f4fdbbe46acd91a041
+[DEBUG] 18:14:51:400 mongostore/(8515:8515): Existencia de metadata para el recurso COMIDA validada. Valor fijo CARACTER_LLENADO C
+[DEBUG] 18:14:51:401 mongostore/(8515:8515): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [95,106] y MD5_ARCHIVO a7fb1584361efae4ca1daf6ac6314004
+[DEBUG] 18:14:51:401 mongostore/(8515:8515): Existencia de metadata para el recurso BASURA validada. Valor fijo CARACTER_LLENADO B
+[DEBUG] 18:14:51:401 mongostore/(8515:8515): Salgo de recursos_validar_existencia_metadatas()
+[DEBUG] 18:14:51:401 mongostore/(8515:8515): Directorios del File System confirmados
+[DEBUG] 18:14:51:401 mongostore/(8515:8515): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
+[DEBUG] 18:14:51:402 mongostore/(8515:8515): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
+[DEBUG] 18:14:51:403 mongostore/(8515:8515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante5.ims": [5,7,10,13,19,22,25,32,36,37,40,44,47,52,53,65,66,73,74,82,83,102,107,109,110,116,137,144,146,147,148]
+[DEBUG] 18:14:51:403 mongostore/(8515:8515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims": [2,3,16,58,59,69,81,84,86,87,94,113,117,118,119,126,127,128]
+[DEBUG] 18:14:51:403 mongostore/(8515:8515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante3.ims": [17,18,28,60,61,67,93,96,97,98,105,123,129,131,132,140,141,143]
+[DEBUG] 18:14:51:404 mongostore/(8515:8515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [29,30,43,62,63,68,85,90,91,92,100,120,122,124,125,133,134,135]
+[DEBUG] 18:14:51:405 mongostore/(8515:8515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante6.ims": [6,8,11,14,21,23,26,31,34,38,41,45,49,51,54,75,76,79,80,88,89,108,112,114,115,121,145,149,150,151,152]
+[DEBUG] 18:14:51:406 mongostore/(8515:8515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante4.ims": [4,9,12,15,20,24,27,33,35,39,42,46,48,50,55,56,57,64,72,77,78,99,101,103,104,111,130,136,138,139,142]
+[DEBUG] 18:14:51:406 mongostore/(8515:8515): Los bloques ocupados por el total de las bitacoras son [5,7,10,13,19,22,25,32,36,37,40,44,47,52,53,65,66,73,74,82,83,102,107,109,110,116,137,144,146,147,148,2,3,16,58,59,69,81,84,86,87,94,113,117,118,119,126,127,128,17,18,28,60,61,67,93,96,97,98,105,123,129,131,132,140,141,143,29,30,43,62,63,68,85,90,91,92,100,120,122,124,125,133,134,135,6,8,11,14,21,23,26,31,34,38,41,45,49,51,54,75,76,79,80,88,89,108,112,114,115,121,145,149,150,151,152,4,9,12,15,20,24,27,33,35,39,42,46,48,50,55,56,57,64,72,77,78,99,101,103,104,111,130,136,138,139,142]
+[DEBUG] 18:14:51:407 mongostore/(8515:8515): Los bloques [5,7,10,13,19,22,25,32,36,37,40,44,47,52,53,65,66,73,74,82,83,102,107,109,110,116,137,144,146,147,148,2,3,16,58,59,69,81,84,86,87,94,113,117,118,119,126,127,128,17,18,28,60,61,67,93,96,97,98,105,123,129,131,132,140,141,143,29,30,43,62,63,68,85,90,91,92,100,120,122,124,125,133,134,135,6,8,11,14,21,23,26,31,34,38,41,45,49,51,54,75,76,79,80,88,89,108,112,114,115,121,145,149,150,151,152,4,9,12,15,20,24,27,33,35,39,42,46,48,50,55,56,57,64,72,77,78,99,101,103,104,111,130,136,138,139,142] fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims
+[INFO] 18:14:51:418 mongostore/(8515:8515): File System iniciado
+[DEBUG] 18:14:51:418 mongostore/(8515:8515): Se entra a blocks_abrir_hilo
+[INFO] 18:14:51:418 mongostore/(8515:8515): pid 8515  
 
-[INFO] 16:00:57:344 mongostore/(4492:4497): Servidor iniciando 2
-[INFO] 16:00:57:344 mongostore/(4492:4497): Servidor Mongo2 encendido
-[INFO] 16:00:57:344 mongostore/(4492:4496): Servidor iniciando
-[INFO] 16:00:57:345 mongostore/(4492:4496): Servidor Mongo encendido
-[INFO] 16:01:12:720 mongostore/(4492:4496): post socket_cliente
-[INFO] 16:01:12:720 mongostore/(4492:4496): Estableciendo conexión desde 43194
-[INFO] 16:01:12:720 mongostore/(4492:4496): Creando hilo
-[DEBUG] 16:01:12:721 mongostore/(4492:4502): Se ingresa a funcion_cliente
-[INFO] 16:01:12:721 mongostore/(4492:4502): Se conecto el socket 8
-[INFO] 16:01:17:558 mongostore/(4492:4496): post socket_cliente
-[INFO] 16:01:17:559 mongostore/(4492:4496): Estableciendo conexión desde 44730
-[INFO] 16:01:17:559 mongostore/(4492:4496): Creando hilo
-[DEBUG] 16:01:17:559 mongostore/(4492:4513): Se ingresa a funcion_cliente
-[INFO] 16:01:17:559 mongostore/(4492:4513): Se conecto el socket 9
-[INFO] 16:01:17:560 mongostore/(4492:4496): post socket_cliente
-[INFO] 16:01:17:560 mongostore/(4492:4496): Estableciendo conexión desde 45754
-[INFO] 16:01:17:561 mongostore/(4492:4496): Creando hilo
-[DEBUG] 16:01:17:561 mongostore/(4492:4515): Se ingresa a funcion_cliente
-[INFO] 16:01:17:562 mongostore/(4492:4515): Se conecto el socket 10
-[INFO] 16:01:17:563 mongostore/(4492:4496): post socket_cliente
-[INFO] 16:01:17:563 mongostore/(4492:4496): Estableciendo conexión desde 46778
-[INFO] 16:01:17:564 mongostore/(4492:4496): Creando hilo
-[INFO] 16:01:17:567 mongostore/(4492:4496): post socket_cliente
-[INFO] 16:01:17:567 mongostore/(4492:4496): Estableciendo conexión desde 47802
-[INFO] 16:01:17:567 mongostore/(4492:4496): Creando hilo
-[DEBUG] 16:01:17:567 mongostore/(4492:4517): Se ingresa a funcion_cliente
-[INFO] 16:01:17:568 mongostore/(4492:4517): Se conecto el socket 11
-[DEBUG] 16:01:17:568 mongostore/(4492:4519): Se ingresa a funcion_cliente
-[INFO] 16:01:17:572 mongostore/(4492:4519): Se conecto el socket 12
-[INFO] 16:01:38:231 mongostore/(4492:4492): SIGUSR1
-[DEBUG] 16:01:50:238 mongostore/(4492:4513): Se inicia fsck
-[DEBUG] 16:01:50:240 mongostore/(4492:4513): Blocks.ims actualizado
-[DEBUG] 16:01:50:240 mongostore/(4492:4513): Se inicia superbloque_validar_integridad_cantidad_de_bloques()
-[INFO] 16:01:50:240 mongostore/(4492:4513): Parece que esta vez nadie se animo a sabotear la cantidad de bloques en el SuperBloque.ims
-[DEBUG] 16:01:50:241 mongostore/(4492:4513): Se finaliza superbloque_validar_integridad_cantidad_de_bloques()
-[DEBUG] 16:01:50:241 mongostore/(4492:4513): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 16:01:50:241 mongostore/(4492:4513): Por lo menos al blocks del recurso OXIGENO no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:01:50:242 mongostore/(4492:4513): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 16:01:50:242 mongostore/(4492:4513): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 16:01:50:242 mongostore/(4492:4513): Por lo menos al blocks del recurso OXIGENO no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:01:50:242 mongostore/(4492:4513): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 16:01:50:242 mongostore/(4492:4513): bloque 1 NO esta lleno
-[INFO] 16:01:50:242 mongostore/(4492:4513): cantidad_en_bloque_incompleto 28 
-[INFO] 16:01:50:243 mongostore/(4492:4513): Por lo menos el size del recurso OXIGENO no fue alterado, enhorabuena!!!
-[INFO] 16:01:50:243 mongostore/(4492:4513): Por lo menos el block_count del recurso OXIGENO no fue alterado, enhorabuena!!!
-[DEBUG] 16:01:50:243 mongostore/(4492:4513): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [0,1] y MD5_ARCHIVO ea2d206202dea7a01a415457e40cd1c3
-[INFO] 16:01:50:243 mongostore/(4492:4513): Por lo menos el blocks del recurso OXIGENO no fue alterado, enhorabuena!!!
-[DEBUG] 16:01:50:243 mongostore/(4492:4513): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 16:01:50:244 mongostore/(4492:4513): El recurso COMIDA tiene su blocks saboteado (se agrego un bloque mayor a la cantidad de bloques del FS), pero no te preocupes, ya lo arreglaremos
-[INFO] 16:01:50:245 mongostore/(4492:4513): Listo, ya podes confiar que los bloques no son incoherentes (no son mayores al maximo) en el blocks "[70,71]" para el recurso COMIDA
-[DEBUG] 16:01:50:245 mongostore/(4492:4513): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 16:01:50:245 mongostore/(4492:4513): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 16:01:50:246 mongostore/(4492:4513): El recurso COMIDA tiene su blocks saboteado (se agrego al menos un bloque vacio), pero no te preocupes, ya lo arreglaremos
-[INFO] 16:01:50:249 mongostore/(4492:4513): Listo, ya podes confiar que no hay ningun bloque vacio en el blocks "[70,71]" para el recurso COMIDA
-[DEBUG] 16:01:50:251 mongostore/(4492:4513): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 16:01:50:251 mongostore/(4492:4513): bloque 71 NO esta lleno
-[INFO] 16:01:50:251 mongostore/(4492:4513): cantidad_en_bloque_incompleto 28 
-[INFO] 16:01:50:251 mongostore/(4492:4513): Por lo menos el size del recurso COMIDA no fue alterado, enhorabuena!!!
-[INFO] 16:01:50:251 mongostore/(4492:4513): Por lo menos el block_count del recurso COMIDA no fue alterado, enhorabuena!!!
-[DEBUG] 16:01:50:251 mongostore/(4492:4513): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [70,71] y MD5_ARCHIVO 0ea4d81ac970d3f4fdbbe46acd91a041
-[INFO] 16:01:50:251 mongostore/(4492:4513): Por lo menos el blocks del recurso COMIDA no fue alterado, enhorabuena!!!
-[DEBUG] 16:01:50:252 mongostore/(4492:4513): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 16:01:50:252 mongostore/(4492:4513): Por lo menos al blocks del recurso BASURA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:01:50:252 mongostore/(4492:4513): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 16:01:50:252 mongostore/(4492:4513): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 16:01:50:253 mongostore/(4492:4513): Por lo menos al blocks del recurso BASURA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:01:50:253 mongostore/(4492:4513): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 16:01:50:253 mongostore/(4492:4513): Por lo menos el size del recurso BASURA no fue alterado, enhorabuena!!!
-[INFO] 16:01:50:253 mongostore/(4492:4513): Por lo menos el block_count del recurso BASURA no fue alterado, enhorabuena!!!
-[DEBUG] 16:01:50:253 mongostore/(4492:4513): Valores variables levantados SIZE 64 BLOCK_COUNT 2 BLOCKS [95,106] y MD5_ARCHIVO a7fb1584361efae4ca1daf6ac6314004
-[INFO] 16:01:50:253 mongostore/(4492:4513): El recurso BASURA tiene su blocks saboteado, pero no te preocupes, ya lo arreglaremos restaurando los bloques en Blocks.ims
-[DEBUG] 16:01:50:253 mongostore/(4492:4513): Posicion_inicio_bloque 3040 posicion absoluta 0xb72edbe0 o -1221665824
-[DEBUG] 16:01:50:253 mongostore/(4492:4513): O-Se cargo el bloque completo 95 con caracter B
-[DEBUG] 16:01:50:253 mongostore/(4492:4513): Posicion_inicio_bloque 3392 posicion absoluta 0xb72edd40 o -1221665472
-[DEBUG] 16:01:50:253 mongostore/(4492:4513): O-Se cargo el bloque completo 106 con caracter B
-[DEBUG] 16:01:50:253 mongostore/(4492:4513): Saliendo de metadata_restaurar_en_blocks
-[INFO] 16:01:50:253 mongostore/(4492:4513): Listo, ya podes confiar en el blocks "[95,106]" para el recurso BASURA
-[DEBUG] 16:01:50:254 mongostore/(4492:4513): Info-Se ingresa a superbloque_validar_integridad_bitmap
-[DEBUG] 16:01:50:254 mongostore/(4492:4513): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
-[DEBUG] 16:01:50:254 mongostore/(4492:4513): O-Superbloque levantado desde archivo
-[DEBUG] 16:01:50:254 mongostore/(4492:4513): Se ingresa a files_obtener_cadena_con_bloques_ocupados
-[DEBUG] 16:01:50:254 mongostore/(4492:4513): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims": [0,1]
-[DEBUG] 16:01:50:254 mongostore/(4492:4513): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims": [70,71]
-[DEBUG] 16:01:50:254 mongostore/(4492:4513): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims": [95,106]
-[DEBUG] 16:01:50:259 mongostore/(4492:4513): Los bloques ocupados por el total de recursos son [0,1,70,71,95,106]
-[DEBUG] 16:01:50:259 mongostore/(4492:4513): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
-[DEBUG] 16:01:50:259 mongostore/(4492:4513): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
-[DEBUG] 16:01:50:259 mongostore/(4492:4513): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [2,3,4,5,6]
-[DEBUG] 16:01:50:259 mongostore/(4492:4513): Los bloques ocupados por el total de las bitacoras son [2,3,4,5,6]
-[DEBUG] 16:01:50:259 mongostore/(4492:4513): El total de bloques ocupados es [0,1,70,71,95,106,2,3,4,5,6]
-[INFO] 16:01:50:259 mongostore/(4492:4513): bitmap_real_md5: 2e2a19b5a1f9c27394449fa899277445
-[INFO] 16:01:50:259 mongostore/(4492:4513): bitmap_actual_md5: 2e2a19b5a1f9c27394449fa899277445
-[INFO] 16:01:50:259 mongostore/(4492:4513): Parece que esta vez nadie se animo a sabotear el bitmap
-[INFO] 16:01:50:259 mongostore/(4492:4513): bitmap_real_md5: 2e2a19b5a1f9c27394449fa899277445
-[INFO] 16:01:50:259 mongostore/(4492:4513): bitmap_actual_md5: 2e2a19b5a1f9c27394449fa899277445
-[DEBUG] 16:01:50:260 mongostore/(4492:4513): Se finaliza superbloque_validar_integridad_bitmap()
-[DEBUG] 16:01:50:260 mongostore/(4492:4513): Se finaliza fsck
-[DEBUG] 16:01:50:260 mongostore/(4492:4513): Ya ejecute las instrucciones del fsck
-[INFO] 16:02:20:248 mongostore/(4492:4492): SIGUSR1
-[DEBUG] 16:02:32:259 mongostore/(4492:4515): Se inicia fsck
-[DEBUG] 16:02:32:262 mongostore/(4492:4515): Blocks.ims actualizado
-[DEBUG] 16:02:32:262 mongostore/(4492:4515): Se inicia superbloque_validar_integridad_cantidad_de_bloques()
-[INFO] 16:02:32:262 mongostore/(4492:4515): Parece que esta vez nadie se animo a sabotear la cantidad de bloques en el SuperBloque.ims
-[DEBUG] 16:02:32:262 mongostore/(4492:4515): Se finaliza superbloque_validar_integridad_cantidad_de_bloques()
-[DEBUG] 16:02:32:263 mongostore/(4492:4515): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 16:02:32:263 mongostore/(4492:4515): Por lo menos al blocks del recurso OXIGENO no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:02:32:263 mongostore/(4492:4515): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 16:02:32:263 mongostore/(4492:4515): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 16:02:32:263 mongostore/(4492:4515): Por lo menos al blocks del recurso OXIGENO no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:02:32:263 mongostore/(4492:4515): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 16:02:32:263 mongostore/(4492:4515): bloque 1 NO esta lleno
-[INFO] 16:02:32:263 mongostore/(4492:4515): cantidad_en_bloque_incompleto 28 
-[INFO] 16:02:32:263 mongostore/(4492:4515): Por lo menos el size del recurso OXIGENO no fue alterado, enhorabuena!!!
-[INFO] 16:02:32:264 mongostore/(4492:4515): Por lo menos el block_count del recurso OXIGENO no fue alterado, enhorabuena!!!
-[DEBUG] 16:02:32:264 mongostore/(4492:4515): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [0,1] y MD5_ARCHIVO ea2d206202dea7a01a415457e40cd1c3
-[INFO] 16:02:32:264 mongostore/(4492:4515): Por lo menos el blocks del recurso OXIGENO no fue alterado, enhorabuena!!!
-[DEBUG] 16:02:32:264 mongostore/(4492:4515): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 16:02:32:264 mongostore/(4492:4515): Por lo menos al blocks del recurso COMIDA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:02:32:264 mongostore/(4492:4515): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 16:02:32:264 mongostore/(4492:4515): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 16:02:32:264 mongostore/(4492:4515): Por lo menos al blocks del recurso COMIDA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:02:32:264 mongostore/(4492:4515): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 16:02:32:264 mongostore/(4492:4515): bloque 71 NO esta lleno
-[INFO] 16:02:32:265 mongostore/(4492:4515): cantidad_en_bloque_incompleto 28 
-[INFO] 16:02:32:265 mongostore/(4492:4515): El recurso COMIDA tiene su size saboteado, pero no te preocupes, ya lo arreglaremos
-[DEBUG] 16:02:32:265 mongostore/(4492:4515): Size actual 20 size real 60
-[INFO] 16:02:32:265 mongostore/(4492:4515): Listo, ya podes confiar en el size del recurso COMIDA
-[INFO] 16:02:32:265 mongostore/(4492:4515): Por lo menos el block_count del recurso COMIDA no fue alterado, enhorabuena!!!
-[DEBUG] 16:02:32:266 mongostore/(4492:4515): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [70,71] y MD5_ARCHIVO 0ea4d81ac970d3f4fdbbe46acd91a041
-[INFO] 16:02:32:266 mongostore/(4492:4515): Por lo menos el blocks del recurso COMIDA no fue alterado, enhorabuena!!!
-[DEBUG] 16:02:32:266 mongostore/(4492:4515): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 16:02:32:266 mongostore/(4492:4515): Por lo menos al blocks del recurso BASURA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:02:32:266 mongostore/(4492:4515): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 16:02:32:266 mongostore/(4492:4515): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 16:02:32:266 mongostore/(4492:4515): Por lo menos al blocks del recurso BASURA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:02:32:266 mongostore/(4492:4515): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 16:02:32:266 mongostore/(4492:4515): Por lo menos el size del recurso BASURA no fue alterado, enhorabuena!!!
-[INFO] 16:02:32:266 mongostore/(4492:4515): Por lo menos el block_count del recurso BASURA no fue alterado, enhorabuena!!!
-[DEBUG] 16:02:32:266 mongostore/(4492:4515): Valores variables levantados SIZE 64 BLOCK_COUNT 2 BLOCKS [95,106] y MD5_ARCHIVO a7fb1584361efae4ca1daf6ac6314004
-[INFO] 16:02:32:266 mongostore/(4492:4515): El recurso BASURA tiene su blocks saboteado, pero no te preocupes, ya lo arreglaremos restaurando los bloques en Blocks.ims
-[DEBUG] 16:02:32:266 mongostore/(4492:4515): Posicion_inicio_bloque 3040 posicion absoluta 0xb72edbe0 o -1221665824
-[DEBUG] 16:02:32:266 mongostore/(4492:4515): O-Se cargo el bloque completo 95 con caracter B
-[DEBUG] 16:02:32:266 mongostore/(4492:4515): Posicion_inicio_bloque 3392 posicion absoluta 0xb72edd40 o -1221665472
-[DEBUG] 16:02:32:266 mongostore/(4492:4515): O-Se cargo el bloque completo 106 con caracter B
-[DEBUG] 16:02:32:266 mongostore/(4492:4515): Saliendo de metadata_restaurar_en_blocks
-[INFO] 16:02:32:266 mongostore/(4492:4515): Listo, ya podes confiar en el blocks "[95,106]" para el recurso BASURA
-[DEBUG] 16:02:32:266 mongostore/(4492:4515): Info-Se ingresa a superbloque_validar_integridad_bitmap
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): O-Superbloque levantado desde archivo
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): Se ingresa a files_obtener_cadena_con_bloques_ocupados
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims": [0,1]
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims": [70,71]
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims": [95,106]
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): Los bloques ocupados por el total de recursos son [0,1,70,71,95,106]
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims": [7,8,9,10,11]
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [2,3,4,5,6]
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): Los bloques ocupados por el total de las bitacoras son [7,8,9,10,11,2,3,4,5,6]
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): El total de bloques ocupados es [0,1,70,71,95,106,7,8,9,10,11,2,3,4,5,6]
-[INFO] 16:02:32:267 mongostore/(4492:4515): bitmap_real_md5: 5ac5a20cad9500c20b8c8528079edd89
-[INFO] 16:02:32:267 mongostore/(4492:4515): bitmap_actual_md5: 5ac5a20cad9500c20b8c8528079edd89
-[INFO] 16:02:32:267 mongostore/(4492:4515): Parece que esta vez nadie se animo a sabotear el bitmap
-[INFO] 16:02:32:267 mongostore/(4492:4515): bitmap_real_md5: 5ac5a20cad9500c20b8c8528079edd89
-[INFO] 16:02:32:267 mongostore/(4492:4515): bitmap_actual_md5: 5ac5a20cad9500c20b8c8528079edd89
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): Se finaliza superbloque_validar_integridad_bitmap()
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): Se finaliza fsck
-[DEBUG] 16:02:32:267 mongostore/(4492:4515): Ya ejecute las instrucciones del fsck
-[INFO] 16:02:45:790 mongostore/(4492:4492): SIGUSR1
-[DEBUG] 16:02:57:798 mongostore/(4492:4517): Se inicia fsck
-[DEBUG] 16:02:57:800 mongostore/(4492:4517): Blocks.ims actualizado
-[DEBUG] 16:02:57:801 mongostore/(4492:4517): Se inicia superbloque_validar_integridad_cantidad_de_bloques()
-[INFO] 16:02:57:801 mongostore/(4492:4517): Parece que esta vez nadie se animo a sabotear la cantidad de bloques en el SuperBloque.ims
-[DEBUG] 16:02:57:801 mongostore/(4492:4517): Se finaliza superbloque_validar_integridad_cantidad_de_bloques()
-[DEBUG] 16:02:57:801 mongostore/(4492:4517): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 16:02:57:801 mongostore/(4492:4517): Por lo menos al blocks del recurso OXIGENO no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:02:57:801 mongostore/(4492:4517): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 16:02:57:801 mongostore/(4492:4517): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 16:02:57:801 mongostore/(4492:4517): Por lo menos al blocks del recurso OXIGENO no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:02:57:802 mongostore/(4492:4517): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 16:02:57:802 mongostore/(4492:4517): bloque 1 NO esta lleno
-[INFO] 16:02:57:802 mongostore/(4492:4517): cantidad_en_bloque_incompleto 28 
-[INFO] 16:02:57:802 mongostore/(4492:4517): Por lo menos el size del recurso OXIGENO no fue alterado, enhorabuena!!!
-[INFO] 16:02:57:802 mongostore/(4492:4517): Por lo menos el block_count del recurso OXIGENO no fue alterado, enhorabuena!!!
-[DEBUG] 16:02:57:802 mongostore/(4492:4517): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [0,1] y MD5_ARCHIVO ea2d206202dea7a01a415457e40cd1c3
-[INFO] 16:02:57:802 mongostore/(4492:4517): Por lo menos el blocks del recurso OXIGENO no fue alterado, enhorabuena!!!
-[DEBUG] 16:02:57:802 mongostore/(4492:4517): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 16:02:57:802 mongostore/(4492:4517): Por lo menos al blocks del recurso COMIDA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:02:57:802 mongostore/(4492:4517): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 16:02:57:802 mongostore/(4492:4517): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 16:02:57:803 mongostore/(4492:4517): Por lo menos al blocks del recurso COMIDA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:02:57:803 mongostore/(4492:4517): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 16:02:57:803 mongostore/(4492:4517): bloque 71 NO esta lleno
-[INFO] 16:02:57:803 mongostore/(4492:4517): cantidad_en_bloque_incompleto 28 
-[INFO] 16:02:57:803 mongostore/(4492:4517): El recurso COMIDA tiene su size saboteado, pero no te preocupes, ya lo arreglaremos
-[DEBUG] 16:02:57:803 mongostore/(4492:4517): Size actual 153 size real 60
-[INFO] 16:02:57:803 mongostore/(4492:4517): Listo, ya podes confiar en el size del recurso COMIDA
-[INFO] 16:02:57:804 mongostore/(4492:4517): Por lo menos el block_count del recurso COMIDA no fue alterado, enhorabuena!!!
-[DEBUG] 16:02:57:804 mongostore/(4492:4517): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [70,71] y MD5_ARCHIVO 0ea4d81ac970d3f4fdbbe46acd91a041
-[INFO] 16:02:57:804 mongostore/(4492:4517): Por lo menos el blocks del recurso COMIDA no fue alterado, enhorabuena!!!
-[DEBUG] 16:02:57:804 mongostore/(4492:4517): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 16:02:57:804 mongostore/(4492:4517): Por lo menos al blocks del recurso BASURA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:02:57:804 mongostore/(4492:4517): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 16:02:57:804 mongostore/(4492:4517): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 16:02:57:804 mongostore/(4492:4517): Por lo menos al blocks del recurso BASURA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:02:57:804 mongostore/(4492:4517): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 16:02:57:805 mongostore/(4492:4517): Por lo menos el size del recurso BASURA no fue alterado, enhorabuena!!!
-[INFO] 16:02:57:805 mongostore/(4492:4517): Por lo menos el block_count del recurso BASURA no fue alterado, enhorabuena!!!
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): Valores variables levantados SIZE 64 BLOCK_COUNT 2 BLOCKS [95,106] y MD5_ARCHIVO a7fb1584361efae4ca1daf6ac6314004
-[INFO] 16:02:57:805 mongostore/(4492:4517): El recurso BASURA tiene su blocks saboteado, pero no te preocupes, ya lo arreglaremos restaurando los bloques en Blocks.ims
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): Posicion_inicio_bloque 3040 posicion absoluta 0xb72edbe0 o -1221665824
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): O-Se cargo el bloque completo 95 con caracter B
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): Posicion_inicio_bloque 3392 posicion absoluta 0xb72edd40 o -1221665472
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): O-Se cargo el bloque completo 106 con caracter B
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): Saliendo de metadata_restaurar_en_blocks
-[INFO] 16:02:57:805 mongostore/(4492:4517): Listo, ya podes confiar en el blocks "[95,106]" para el recurso BASURA
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): Info-Se ingresa a superbloque_validar_integridad_bitmap
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): O-Superbloque levantado desde archivo
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): Se ingresa a files_obtener_cadena_con_bloques_ocupados
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims": [0,1]
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims": [70,71]
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims": [95,106]
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): Los bloques ocupados por el total de recursos son [0,1,70,71,95,106]
-[DEBUG] 16:02:57:805 mongostore/(4492:4517): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
-[DEBUG] 16:02:57:806 mongostore/(4492:4517): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
-[DEBUG] 16:02:57:806 mongostore/(4492:4517): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims": [7,8,9,10,11]
-[DEBUG] 16:02:57:806 mongostore/(4492:4517): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante3.ims": [15,16,17,18]
-[DEBUG] 16:02:57:806 mongostore/(4492:4517): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [2,3,4,5,6,12,13,14]
-[DEBUG] 16:02:57:806 mongostore/(4492:4517): Los bloques ocupados por el total de las bitacoras son [7,8,9,10,11,15,16,17,18,2,3,4,5,6,12,13,14]
-[DEBUG] 16:02:57:806 mongostore/(4492:4517): El total de bloques ocupados es [0,1,70,71,95,106,7,8,9,10,11,15,16,17,18,2,3,4,5,6,12,13,14]
-[INFO] 16:02:57:806 mongostore/(4492:4517): bitmap_real_md5: d6c5bffb540adfba8cbc5e875f7839e4
-[INFO] 16:02:57:806 mongostore/(4492:4517): bitmap_actual_md5: d6c5bffb540adfba8cbc5e875f7839e4
-[INFO] 16:02:57:806 mongostore/(4492:4517): Parece que esta vez nadie se animo a sabotear el bitmap
-[INFO] 16:02:57:806 mongostore/(4492:4517): bitmap_real_md5: d6c5bffb540adfba8cbc5e875f7839e4
-[INFO] 16:02:57:806 mongostore/(4492:4517): bitmap_actual_md5: d6c5bffb540adfba8cbc5e875f7839e4
-[DEBUG] 16:02:57:806 mongostore/(4492:4517): Se finaliza superbloque_validar_integridad_bitmap()
-[DEBUG] 16:02:57:806 mongostore/(4492:4517): Se finaliza fsck
-[DEBUG] 16:02:57:806 mongostore/(4492:4517): Ya ejecute las instrucciones del fsck
-[INFO] 16:03:20:040 mongostore/(4492:4492): SIGUSR1
-[DEBUG] 16:03:32:049 mongostore/(4492:4519): Se inicia fsck
-[DEBUG] 16:03:32:050 mongostore/(4492:4519): Blocks.ims actualizado
-[DEBUG] 16:03:32:050 mongostore/(4492:4519): Se inicia superbloque_validar_integridad_cantidad_de_bloques()
-[INFO] 16:03:32:050 mongostore/(4492:4519): Parece que esta vez nadie se animo a sabotear la cantidad de bloques en el SuperBloque.ims
-[DEBUG] 16:03:32:050 mongostore/(4492:4519): Se finaliza superbloque_validar_integridad_cantidad_de_bloques()
-[DEBUG] 16:03:32:051 mongostore/(4492:4519): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 16:03:32:051 mongostore/(4492:4519): Por lo menos al blocks del recurso OXIGENO no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:03:32:051 mongostore/(4492:4519): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 16:03:32:051 mongostore/(4492:4519): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 16:03:32:051 mongostore/(4492:4519): Por lo menos al blocks del recurso OXIGENO no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:03:32:051 mongostore/(4492:4519): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 16:03:32:051 mongostore/(4492:4519): bloque 1 NO esta lleno
-[INFO] 16:03:32:052 mongostore/(4492:4519): cantidad_en_bloque_incompleto 28 
-[INFO] 16:03:32:052 mongostore/(4492:4519): Por lo menos el size del recurso OXIGENO no fue alterado, enhorabuena!!!
-[INFO] 16:03:32:052 mongostore/(4492:4519): Por lo menos el block_count del recurso OXIGENO no fue alterado, enhorabuena!!!
-[DEBUG] 16:03:32:052 mongostore/(4492:4519): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [0,1] y MD5_ARCHIVO ea2d206202dea7a01a415457e40cd1c3
-[INFO] 16:03:32:052 mongostore/(4492:4519): Por lo menos el blocks del recurso OXIGENO no fue alterado, enhorabuena!!!
-[DEBUG] 16:03:32:052 mongostore/(4492:4519): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 16:03:32:052 mongostore/(4492:4519): Por lo menos al blocks del recurso COMIDA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:03:32:052 mongostore/(4492:4519): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 16:03:32:052 mongostore/(4492:4519): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 16:03:32:053 mongostore/(4492:4519): Por lo menos al blocks del recurso COMIDA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:03:32:053 mongostore/(4492:4519): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 16:03:32:053 mongostore/(4492:4519): bloque 71 NO esta lleno
-[INFO] 16:03:32:053 mongostore/(4492:4519): cantidad_en_bloque_incompleto 28 
-[INFO] 16:03:32:053 mongostore/(4492:4519): El recurso COMIDA tiene su size saboteado, pero no te preocupes, ya lo arreglaremos
-[DEBUG] 16:03:32:053 mongostore/(4492:4519): Size actual 64 size real 60
-[INFO] 16:03:32:053 mongostore/(4492:4519): Listo, ya podes confiar en el size del recurso COMIDA
-[INFO] 16:03:32:054 mongostore/(4492:4519): Por lo menos el block_count del recurso COMIDA no fue alterado, enhorabuena!!!
-[DEBUG] 16:03:32:054 mongostore/(4492:4519): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [70,71] y MD5_ARCHIVO 0ea4d81ac970d3f4fdbbe46acd91a041
-[INFO] 16:03:32:054 mongostore/(4492:4519): Por lo menos el blocks del recurso COMIDA no fue alterado, enhorabuena!!!
-[DEBUG] 16:03:32:054 mongostore/(4492:4519): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 16:03:32:054 mongostore/(4492:4519): Por lo menos al blocks del recurso BASURA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:03:32:054 mongostore/(4492:4519): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 16:03:32:054 mongostore/(4492:4519): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 16:03:32:055 mongostore/(4492:4519): Por lo menos al blocks del recurso BASURA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 16:03:32:055 mongostore/(4492:4519): Por lo menos el size del recurso BASURA no fue alterado, enhorabuena!!!
-[INFO] 16:03:32:055 mongostore/(4492:4519): Por lo menos el block_count del recurso BASURA no fue alterado, enhorabuena!!!
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): Valores variables levantados SIZE 64 BLOCK_COUNT 2 BLOCKS [95,106] y MD5_ARCHIVO a7fb1584361efae4ca1daf6ac6314004
-[INFO] 16:03:32:055 mongostore/(4492:4519): El recurso BASURA tiene su blocks saboteado, pero no te preocupes, ya lo arreglaremos restaurando los bloques en Blocks.ims
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): Posicion_inicio_bloque 3040 posicion absoluta 0xb72edbe0 o -1221665824
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): O-Se cargo el bloque completo 95 con caracter B
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): Posicion_inicio_bloque 3392 posicion absoluta 0xb72edd40 o -1221665472
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): O-Se cargo el bloque completo 106 con caracter B
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): Saliendo de metadata_restaurar_en_blocks
-[INFO] 16:03:32:055 mongostore/(4492:4519): Listo, ya podes confiar en el blocks "[95,106]" para el recurso BASURA
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): Info-Se ingresa a superbloque_validar_integridad_bitmap
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): O-Superbloque levantado desde archivo
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): Se ingresa a files_obtener_cadena_con_bloques_ocupados
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Oxigeno.ims": [0,1]
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Comida.ims": [70,71]
-[DEBUG] 16:03:32:055 mongostore/(4492:4519): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Basura.ims": [95,106]
-[DEBUG] 16:03:32:056 mongostore/(4492:4519): Los bloques ocupados por el total de recursos son [0,1,70,71,95,106]
-[DEBUG] 16:03:32:056 mongostore/(4492:4519): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
-[DEBUG] 16:03:32:056 mongostore/(4492:4519): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
-[DEBUG] 16:03:32:056 mongostore/(4492:4519): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims": [7,8,9,10,11]
-[DEBUG] 16:03:32:056 mongostore/(4492:4519): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante3.ims": [15,16,17,18]
-[DEBUG] 16:03:32:056 mongostore/(4492:4519): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [2,3,4,5,6,12,13,14]
-[DEBUG] 16:03:32:056 mongostore/(4492:4519): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante4.ims": [19,20,21,22]
-[DEBUG] 16:03:32:056 mongostore/(4492:4519): Los bloques ocupados por el total de las bitacoras son [7,8,9,10,11,15,16,17,18,2,3,4,5,6,12,13,14,19,20,21,22]
-[DEBUG] 16:03:32:056 mongostore/(4492:4519): El total de bloques ocupados es [0,1,70,71,95,106,7,8,9,10,11,15,16,17,18,2,3,4,5,6,12,13,14,19,20,21,22]
-[INFO] 16:03:32:056 mongostore/(4492:4519): bitmap_real_md5: 088932786c8a89204e0efd32fa0e62a1
-[INFO] 16:03:32:056 mongostore/(4492:4519): bitmap_actual_md5: 088932786c8a89204e0efd32fa0e62a1
-[INFO] 16:03:32:056 mongostore/(4492:4519): Parece que esta vez nadie se animo a sabotear el bitmap
-[INFO] 16:03:32:056 mongostore/(4492:4519): bitmap_real_md5: 088932786c8a89204e0efd32fa0e62a1
-[INFO] 16:03:32:056 mongostore/(4492:4519): bitmap_actual_md5: 088932786c8a89204e0efd32fa0e62a1
-[DEBUG] 16:03:32:056 mongostore/(4492:4519): Se finaliza superbloque_validar_integridad_bitmap()
-[DEBUG] 16:03:32:057 mongostore/(4492:4519): Se finaliza fsck
-[DEBUG] 16:03:32:057 mongostore/(4492:4519): Ya ejecute las instrucciones del fsck
+[INFO] 18:14:51:418 mongostore/(8515:8520): Servidor iniciando 2
+[INFO] 18:14:51:418 mongostore/(8515:8520): Servidor Mongo2 encendido
+[INFO] 18:14:51:419 mongostore/(8515:8519): Servidor iniciando
+[INFO] 18:14:51:419 mongostore/(8515:8519): Servidor Mongo encendido
+[INFO] 18:15:08:228 mongostore/(8515:8519): post socket_cliente
+[INFO] 18:15:08:228 mongostore/(8515:8519): Estableciendo conexión desde 49340
+[INFO] 18:15:08:228 mongostore/(8515:8519): Creando hilo
+[DEBUG] 18:15:08:229 mongostore/(8515:8525): Se ingresa a funcion_cliente
+[INFO] 18:15:08:229 mongostore/(8515:8525): Se conecto el socket 8
+[INFO] 18:15:14:382 mongostore/(8515:8519): post socket_cliente
+[INFO] 18:15:14:382 mongostore/(8515:8519): Estableciendo conexión desde 50876
+[INFO] 18:15:14:382 mongostore/(8515:8519): Creando hilo
+[DEBUG] 18:15:14:383 mongostore/(8515:8536): Se ingresa a funcion_cliente
+[INFO] 18:15:14:384 mongostore/(8515:8536): Se conecto el socket 9
+[INFO] 18:15:14:385 mongostore/(8515:8519): post socket_cliente
+[INFO] 18:15:14:385 mongostore/(8515:8519): Estableciendo conexión desde 51900
+[INFO] 18:15:14:385 mongostore/(8515:8519): Creando hilo
+[DEBUG] 18:15:14:386 mongostore/(8515:8538): Se ingresa a funcion_cliente
+[INFO] 18:15:14:386 mongostore/(8515:8538): Se conecto el socket 10
+[INFO] 18:15:14:387 mongostore/(8515:8519): post socket_cliente
+[INFO] 18:15:14:387 mongostore/(8515:8519): Estableciendo conexión desde 52924
+[INFO] 18:15:14:388 mongostore/(8515:8519): Creando hilo
+[INFO] 18:15:14:388 mongostore/(8515:8519): post socket_cliente
+[INFO] 18:15:14:388 mongostore/(8515:8519): Estableciendo conexión desde 53948
+[INFO] 18:15:14:388 mongostore/(8515:8519): Creando hilo
+[DEBUG] 18:15:14:389 mongostore/(8515:8541): Se ingresa a funcion_cliente
+[INFO] 18:15:14:389 mongostore/(8515:8541): Se conecto el socket 11
+[DEBUG] 18:15:14:389 mongostore/(8515:8543): Se ingresa a funcion_cliente
+[INFO] 18:15:14:389 mongostore/(8515:8543): Se conecto el socket 12
+[INFO] 18:16:25:828 mongostore/(8515:8515): SIGUSR1
+[DEBUG] 18:16:37:847 mongostore/(8515:8536): Se inicia fsck
+[DEBUG] 18:16:37:848 mongostore/(8515:8536): Blocks.ims actualizado
+[DEBUG] 18:16:37:848 mongostore/(8515:8536): Se inicia superbloque_validar_integridad_cantidad_de_bloques()
+[INFO] 18:16:37:848 mongostore/(8515:8536): Parece que esta vez nadie se animo a sabotear la cantidad de bloques en el SuperBloque.ims
+[DEBUG] 18:16:37:848 mongostore/(8515:8536): Se finaliza superbloque_validar_integridad_cantidad_de_bloques()
+[DEBUG] 18:16:37:848 mongostore/(8515:8536): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
+[INFO] 18:16:37:848 mongostore/(8515:8536): Por lo menos al blocks del recurso OXIGENO no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
+[DEBUG] 18:16:37:849 mongostore/(8515:8536): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
+[DEBUG] 18:16:37:849 mongostore/(8515:8536): Se ingresa a recurso_validar_blocks_bloque_vacio()
+[INFO] 18:16:37:849 mongostore/(8515:8536): Por lo menos al blocks del recurso OXIGENO no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
+[DEBUG] 18:16:37:849 mongostore/(8515:8536): Se finaliza recurso_validar_blocks_bloque_ocupado()
+[INFO] 18:16:37:849 mongostore/(8515:8536): bloque 1 NO esta lleno
+[INFO] 18:16:37:849 mongostore/(8515:8536): cantidad_en_bloque_incompleto 28 
+[INFO] 18:16:37:850 mongostore/(8515:8536): Por lo menos el size del recurso OXIGENO no fue alterado, enhorabuena!!!
+[INFO] 18:16:37:850 mongostore/(8515:8536): Por lo menos el block_count del recurso OXIGENO no fue alterado, enhorabuena!!!
+[DEBUG] 18:16:37:850 mongostore/(8515:8536): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [0,1] y MD5_ARCHIVO ea2d206202dea7a01a415457e40cd1c3
+[INFO] 18:16:37:850 mongostore/(8515:8536): Por lo menos el blocks del recurso OXIGENO no fue alterado, enhorabuena!!!
+[DEBUG] 18:16:37:851 mongostore/(8515:8536): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
+[INFO] 18:16:37:851 mongostore/(8515:8536): Por lo menos al blocks del recurso COMIDA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
+[DEBUG] 18:16:37:852 mongostore/(8515:8536): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
+[DEBUG] 18:16:37:852 mongostore/(8515:8536): Se ingresa a recurso_validar_blocks_bloque_vacio()
+[INFO] 18:16:37:852 mongostore/(8515:8536): Por lo menos al blocks del recurso COMIDA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
+[DEBUG] 18:16:37:852 mongostore/(8515:8536): Se finaliza recurso_validar_blocks_bloque_ocupado()
+[INFO] 18:16:37:852 mongostore/(8515:8536): bloque 71 NO esta lleno
+[INFO] 18:16:37:852 mongostore/(8515:8536): cantidad_en_bloque_incompleto 28 
+[INFO] 18:16:37:852 mongostore/(8515:8536): Por lo menos el size del recurso COMIDA no fue alterado, enhorabuena!!!
+[INFO] 18:16:37:852 mongostore/(8515:8536): Por lo menos el block_count del recurso COMIDA no fue alterado, enhorabuena!!!
+[DEBUG] 18:16:37:852 mongostore/(8515:8536): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [70,71] y MD5_ARCHIVO 0ea4d81ac970d3f4fdbbe46acd91a041
+[INFO] 18:16:37:852 mongostore/(8515:8536): Por lo menos el blocks del recurso COMIDA no fue alterado, enhorabuena!!!
+[DEBUG] 18:16:37:852 mongostore/(8515:8536): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
+[INFO] 18:16:37:853 mongostore/(8515:8536): Por lo menos al blocks del recurso BASURA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
+[DEBUG] 18:16:37:854 mongostore/(8515:8536): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
+[DEBUG] 18:16:37:854 mongostore/(8515:8536): Se ingresa a recurso_validar_blocks_bloque_vacio()
+[INFO] 18:16:37:854 mongostore/(8515:8536): Por lo menos al blocks del recurso BASURA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
+[DEBUG] 18:16:37:854 mongostore/(8515:8536): Se finaliza recurso_validar_blocks_bloque_ocupado()
+[INFO] 18:16:37:854 mongostore/(8515:8536): bloque 106 NO esta lleno
+[INFO] 18:16:37:854 mongostore/(8515:8536): cantidad_en_bloque_incompleto 28 
+[INFO] 18:16:37:854 mongostore/(8515:8536): Por lo menos el size del recurso BASURA no fue alterado, enhorabuena!!!
+[INFO] 18:16:37:854 mongostore/(8515:8536): Por lo menos el block_count del recurso BASURA no fue alterado, enhorabuena!!!
+[DEBUG] 18:16:37:854 mongostore/(8515:8536): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [95,106] y MD5_ARCHIVO a7fb1584361efae4ca1daf6ac6314004
+[INFO] 18:16:37:857 mongostore/(8515:8536): Por lo menos el blocks del recurso BASURA no fue alterado, enhorabuena!!!
+[DEBUG] 18:16:37:857 mongostore/(8515:8536): Info-Se ingresa a superbloque_validar_integridad_bitmap
+[INFO] 18:16:37:857 mongostore/(8515:8536): Alguien saboteo el bitmap en el SuperBloque.ims
+[INFO] 18:16:37:859 mongostore/(8515:8536): El bitmap correcto ya fue persistido
+[DEBUG] 18:16:37:860 mongostore/(8515:8536): Se finaliza superbloque_validar_integridad_bitmap()
+[DEBUG] 18:16:37:860 mongostore/(8515:8536): Se finaliza fsck
+[DEBUG] 18:16:37:860 mongostore/(8515:8536): Ya ejecute las instrucciones del fsck

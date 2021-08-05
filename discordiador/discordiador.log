@@ -1,67 +1,25 @@
-[INFO] 16:01:12:721 discordiador/(4500:4504): in funcion_sabotaje
-[INFO] 16:01:12:724 discordiador/(4500:4503): in menu_discordiador
-[INFO] 16:01:16:748 discordiador/(4500:4503): Memoria asignada
-[INFO] 16:01:16:750 discordiador/(4500:4503): Memoria asignada
-[INFO] 16:01:16:753 discordiador/(4500:4503): Memoria asignada
-[INFO] 16:01:16:755 discordiador/(4500:4503): Memoria asignada
-[INFO] 16:01:17:560 discordiador/(4500:4508): TRIPU 1  tarea recibida: ARREGLAR_REACTOR;0;0;600
-[INFO] 16:01:17:562 discordiador/(4500:4509): TRIPU 2  tarea recibida: EMPALMANDO_CABLES;8;0;600
-[INFO] 16:01:17:566 discordiador/(4500:4510): TRIPU 3  tarea recibida: ROMPIENDO_ASTEROIDES;8;8;600
-[INFO] 16:01:17:568 discordiador/(4500:4511): TRIPU 4  tarea recibida: CEBANDO_MATES;0;8;600
-[INFO] 16:01:38:232 discordiador/(4500:4504): posicion_sabotaje_char 1|1
-[INFO] 16:01:38:232 discordiador/(4500:4504): lista bloq emergencia
-[INFO] 16:01:38:232 discordiador/(4500:4504): tid 1  posx 0  posy 0
-[INFO] 16:01:38:232 discordiador/(4500:4504): tid 2  posx 8  posy 0
-[INFO] 16:01:38:232 discordiador/(4500:4504): tid 3  posx 8  posy 8
-[INFO] 16:01:38:232 discordiador/(4500:4504): tid 4  posx 0  posy 8
-[INFO] 16:01:38:232 discordiador/(4500:4504): Tripu elegido: tid 1  posx 0  posy 0
-[INFO] 16:01:38:233 discordiador/(4500:4504): lista bloq emergencia actualizada
-[INFO] 16:01:38:233 discordiador/(4500:4504): tid 2  posx 8  posy 0
-[INFO] 16:01:38:233 discordiador/(4500:4504): tid 3  posx 8  posy 8
-[INFO] 16:01:38:234 discordiador/(4500:4504): tid 4  posx 0  posy 8
-[INFO] 16:01:38:234 discordiador/(4500:4504): tid 1  posx 0  posy 0
-[INFO] 16:01:40:235 discordiador/(4500:4504): comienza tiempo sabotaje
-[INFO] 16:01:50:237 discordiador/(4500:4504): finaliza tiempo sabotaje
-[INFO] 16:02:20:249 discordiador/(4500:4504): posicion_sabotaje_char 7|1
-[INFO] 16:02:20:249 discordiador/(4500:4504): lista bloq emergencia
-[INFO] 16:02:20:249 discordiador/(4500:4504): tid 2  posx 8  posy 0
-[INFO] 16:02:20:250 discordiador/(4500:4504): tid 1  posx 1  posy 1
-[INFO] 16:02:20:250 discordiador/(4500:4504): tid 3  posx 8  posy 8
-[INFO] 16:02:20:251 discordiador/(4500:4504): tid 4  posx 0  posy 8
-[INFO] 16:02:20:251 discordiador/(4500:4504): Tripu elegido: tid 2  posx 8  posy 0
-[INFO] 16:02:20:252 discordiador/(4500:4504): lista bloq emergencia actualizada
-[INFO] 16:02:20:253 discordiador/(4500:4504): tid 1  posx 1  posy 1
-[INFO] 16:02:20:253 discordiador/(4500:4504): tid 3  posx 8  posy 8
-[INFO] 16:02:20:253 discordiador/(4500:4504): tid 4  posx 0  posy 8
-[INFO] 16:02:20:253 discordiador/(4500:4504): tid 2  posx 8  posy 0
-[INFO] 16:02:22:256 discordiador/(4500:4504): comienza tiempo sabotaje
-[INFO] 16:02:32:257 discordiador/(4500:4504): finaliza tiempo sabotaje
-[INFO] 16:02:45:790 discordiador/(4500:4504): posicion_sabotaje_char 7|7
-[INFO] 16:02:45:790 discordiador/(4500:4504): lista bloq emergencia
-[INFO] 16:02:45:790 discordiador/(4500:4504): tid 1  posx 0  posy 0
-[INFO] 16:02:45:790 discordiador/(4500:4504): tid 2  posx 7  posy 1
-[INFO] 16:02:45:790 discordiador/(4500:4504): tid 3  posx 8  posy 8
-[INFO] 16:02:45:791 discordiador/(4500:4504): tid 4  posx 0  posy 8
-[INFO] 16:02:45:791 discordiador/(4500:4504): Tripu elegido: tid 3  posx 8  posy 8
-[INFO] 16:02:45:792 discordiador/(4500:4504): lista bloq emergencia actualizada
-[INFO] 16:02:45:792 discordiador/(4500:4504): tid 1  posx 0  posy 0
-[INFO] 16:02:45:792 discordiador/(4500:4504): tid 2  posx 7  posy 1
-[INFO] 16:02:45:792 discordiador/(4500:4504): tid 4  posx 0  posy 8
-[INFO] 16:02:45:792 discordiador/(4500:4504): tid 3  posx 8  posy 8
-[INFO] 16:02:47:797 discordiador/(4500:4504): comienza tiempo sabotaje
-[INFO] 16:02:57:797 discordiador/(4500:4504): finaliza tiempo sabotaje
-[INFO] 16:03:20:040 discordiador/(4500:4504): posicion_sabotaje_char 1|7
-[INFO] 16:03:20:040 discordiador/(4500:4504): lista bloq emergencia
-[INFO] 16:03:20:040 discordiador/(4500:4504): tid 1  posx 0  posy 0
-[INFO] 16:03:20:040 discordiador/(4500:4504): tid 2  posx 7  posy 1
-[INFO] 16:03:20:040 discordiador/(4500:4504): tid 3  posx 7  posy 7
-[INFO] 16:03:20:040 discordiador/(4500:4504): tid 4  posx 0  posy 8
-[INFO] 16:03:20:041 discordiador/(4500:4504): Tripu elegido: tid 4  posx 0  posy 8
-[INFO] 16:03:20:042 discordiador/(4500:4504): lista bloq emergencia actualizada
-[INFO] 16:03:20:042 discordiador/(4500:4504): tid 1  posx 0  posy 0
-[INFO] 16:03:20:042 discordiador/(4500:4504): tid 2  posx 7  posy 1
-[INFO] 16:03:20:042 discordiador/(4500:4504): tid 3  posx 7  posy 7
-[INFO] 16:03:20:042 discordiador/(4500:4504): tid 4  posx 0  posy 8
-[INFO] 16:03:22:046 discordiador/(4500:4504): comienza tiempo sabotaje
-[INFO] 16:03:32:046 discordiador/(4500:4504): finaliza tiempo sabotaje
-[INFO] 16:03:47:743 discordiador/(4500:4504): posicion_sabotaje_char P0¶@
+[INFO] 18:15:08:229 discordiador/(8523:8527): in funcion_sabotaje
+[INFO] 18:15:08:233 discordiador/(8523:8526): in menu_discordiador
+[INFO] 18:15:13:276 discordiador/(8523:8526): Memoria asignada
+[INFO] 18:15:13:278 discordiador/(8523:8526): Memoria asignada
+[INFO] 18:15:13:280 discordiador/(8523:8526): Memoria asignada
+[INFO] 18:15:13:283 discordiador/(8523:8526): Memoria asignada
+[INFO] 18:15:14:384 discordiador/(8523:8531): TRIPU 1  tarea recibida: ARREGLAR_REACTOR;0;0;600
+[INFO] 18:15:14:387 discordiador/(8523:8532): TRIPU 2  tarea recibida: EMPALMANDO_CABLES;8;0;600
+[INFO] 18:15:14:388 discordiador/(8523:8533): TRIPU 3  tarea recibida: ROMPIENDO_ASTEROIDES;8;8;600
+[INFO] 18:15:14:389 discordiador/(8523:8534): TRIPU 4  tarea recibida: CEBANDO_MATES;0;8;600
+[INFO] 18:16:25:829 discordiador/(8523:8527): posicion_sabotaje_char 1|1
+[INFO] 18:16:25:830 discordiador/(8523:8527): lista bloq emergencia
+[INFO] 18:16:25:830 discordiador/(8523:8527): tid 1  posx 0  posy 0
+[INFO] 18:16:25:830 discordiador/(8523:8527): tid 2  posx 8  posy 0
+[INFO] 18:16:25:830 discordiador/(8523:8527): tid 3  posx 8  posy 8
+[INFO] 18:16:25:830 discordiador/(8523:8527): tid 4  posx 0  posy 8
+[INFO] 18:16:25:831 discordiador/(8523:8527): Tripu elegido: tid 1  posx 0  posy 0
+[INFO] 18:16:25:834 discordiador/(8523:8527): lista bloq emergencia actualizada
+[INFO] 18:16:25:837 discordiador/(8523:8527): tid 2  posx 8  posy 0
+[INFO] 18:16:25:837 discordiador/(8523:8527): tid 3  posx 8  posy 8
+[INFO] 18:16:25:837 discordiador/(8523:8527): tid 4  posx 0  posy 8
+[INFO] 18:16:25:837 discordiador/(8523:8527): tid 1  posx 0  posy 0
+[INFO] 18:16:27:843 discordiador/(8523:8527): comienza tiempo sabotaje
+[INFO] 18:16:37:844 discordiador/(8523:8527): finaliza tiempo sabotaje
+[INFO] 18:19:11:426 discordiador/(8523:8527): posicion_sabotaje_char x@¶@
