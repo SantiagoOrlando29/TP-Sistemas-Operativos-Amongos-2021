@@ -7,7 +7,7 @@ int main(void)
 	logger = log_create("MiRam.log","MiRam",0,LOG_LEVEL_INFO);
 
 	int piddd = getpid();
-	log_info(logger, "pid %d  \n", piddd);
+	printf("pid %d  \n", piddd);
 	signal(SIGUSR2, sig_handler);
 	signal(SIGUSR1, sig_handler);
 
