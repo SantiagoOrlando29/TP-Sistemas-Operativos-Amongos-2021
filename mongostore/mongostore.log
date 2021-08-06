@@ -1,106 +1,70 @@
-[DEBUG] 18:14:49:748 mongostore/(8515:8515): LOGGER OK
-[INFO] 18:14:49:751 mongostore/(8515:8515): Configuracion leida y almacenada en "configuracion"
-[DEBUG] 18:14:49:752 mongostore/(8515:8515): Testeo config, la IP es: 127.0.0.1
-[DEBUG] 18:14:49:752 mongostore/(8515:8515): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
-[DEBUG] 18:14:49:753 mongostore/(8515:8515): O-Superbloque levantado desde archivo
-[DEBUG] 18:14:51:398 mongostore/(8515:8515): O-Blocks mapeado del archivo a la memoria
-[DEBUG] 18:14:51:398 mongostore/(8515:8515): O-Existencia de Blocks validada
-[DEBUG] 18:14:51:399 mongostore/(8515:8515): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [0,1] y MD5_ARCHIVO ea2d206202dea7a01a415457e40cd1c3
-[DEBUG] 18:14:51:400 mongostore/(8515:8515): Existencia de metadata para el recurso OXIGENO validada. Valor fijo CARACTER_LLENADO O
-[DEBUG] 18:14:51:400 mongostore/(8515:8515): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [70,71] y MD5_ARCHIVO 0ea4d81ac970d3f4fdbbe46acd91a041
-[DEBUG] 18:14:51:400 mongostore/(8515:8515): Existencia de metadata para el recurso COMIDA validada. Valor fijo CARACTER_LLENADO C
-[DEBUG] 18:14:51:401 mongostore/(8515:8515): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [95,106] y MD5_ARCHIVO a7fb1584361efae4ca1daf6ac6314004
-[DEBUG] 18:14:51:401 mongostore/(8515:8515): Existencia de metadata para el recurso BASURA validada. Valor fijo CARACTER_LLENADO B
-[DEBUG] 18:14:51:401 mongostore/(8515:8515): Salgo de recursos_validar_existencia_metadatas()
-[DEBUG] 18:14:51:401 mongostore/(8515:8515): Directorios del File System confirmados
-[DEBUG] 18:14:51:401 mongostore/(8515:8515): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
-[DEBUG] 18:14:51:402 mongostore/(8515:8515): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
-[DEBUG] 18:14:51:403 mongostore/(8515:8515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante5.ims": [5,7,10,13,19,22,25,32,36,37,40,44,47,52,53,65,66,73,74,82,83,102,107,109,110,116,137,144,146,147,148]
-[DEBUG] 18:14:51:403 mongostore/(8515:8515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante2.ims": [2,3,16,58,59,69,81,84,86,87,94,113,117,118,119,126,127,128]
-[DEBUG] 18:14:51:403 mongostore/(8515:8515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante3.ims": [17,18,28,60,61,67,93,96,97,98,105,123,129,131,132,140,141,143]
-[DEBUG] 18:14:51:404 mongostore/(8515:8515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante1.ims": [29,30,43,62,63,68,85,90,91,92,100,120,122,124,125,133,134,135]
-[DEBUG] 18:14:51:405 mongostore/(8515:8515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante6.ims": [6,8,11,14,21,23,26,31,34,38,41,45,49,51,54,75,76,79,80,88,89,108,112,114,115,121,145,149,150,151,152]
-[DEBUG] 18:14:51:406 mongostore/(8515:8515): Bloques en "/home/utnso/tp-2021-1c-INTratables/mongostore/file_system/Files/Bitacoras/Tripulante4.ims": [4,9,12,15,20,24,27,33,35,39,42,46,48,50,55,56,57,64,72,77,78,99,101,103,104,111,130,136,138,139,142]
-[DEBUG] 18:14:51:406 mongostore/(8515:8515): Los bloques ocupados por el total de las bitacoras son [5,7,10,13,19,22,25,32,36,37,40,44,47,52,53,65,66,73,74,82,83,102,107,109,110,116,137,144,146,147,148,2,3,16,58,59,69,81,84,86,87,94,113,117,118,119,126,127,128,17,18,28,60,61,67,93,96,97,98,105,123,129,131,132,140,141,143,29,30,43,62,63,68,85,90,91,92,100,120,122,124,125,133,134,135,6,8,11,14,21,23,26,31,34,38,41,45,49,51,54,75,76,79,80,88,89,108,112,114,115,121,145,149,150,151,152,4,9,12,15,20,24,27,33,35,39,42,46,48,50,55,56,57,64,72,77,78,99,101,103,104,111,130,136,138,139,142]
-[DEBUG] 18:14:51:407 mongostore/(8515:8515): Los bloques [5,7,10,13,19,22,25,32,36,37,40,44,47,52,53,65,66,73,74,82,83,102,107,109,110,116,137,144,146,147,148,2,3,16,58,59,69,81,84,86,87,94,113,117,118,119,126,127,128,17,18,28,60,61,67,93,96,97,98,105,123,129,131,132,140,141,143,29,30,43,62,63,68,85,90,91,92,100,120,122,124,125,133,134,135,6,8,11,14,21,23,26,31,34,38,41,45,49,51,54,75,76,79,80,88,89,108,112,114,115,121,145,149,150,151,152,4,9,12,15,20,24,27,33,35,39,42,46,48,50,55,56,57,64,72,77,78,99,101,103,104,111,130,136,138,139,142] fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims
-[INFO] 18:14:51:418 mongostore/(8515:8515): File System iniciado
-[DEBUG] 18:14:51:418 mongostore/(8515:8515): Se entra a blocks_abrir_hilo
-[INFO] 18:14:51:418 mongostore/(8515:8515): pid 8515  
+[DEBUG] 10:19:56:287 mongostore/(11046:11046): LOGGER OK
+[INFO] 10:19:56:290 mongostore/(11046:11046): Configuracion leida y almacenada en "configuracion"
+[DEBUG] 10:19:56:290 mongostore/(11046:11046): Testeo config, la IP es: 127.0.0.1
+[DEBUG] 10:19:56:291 mongostore/(11046:11046): IO-Al salir de superbloque_asignar_memoria_a_bitmap se tiene bitmap_size 2048
+[DEBUG] 10:19:56:291 mongostore/(11046:11046): O-Superbloque levantado desde archivo
+[DEBUG] 10:19:57:471 mongostore/(11046:11046): O-Blocks mapeado del archivo a la memoria
+[DEBUG] 10:19:57:471 mongostore/(11046:11046): O-Existencia de Blocks validada
+[DEBUG] 10:19:57:472 mongostore/(11046:11046): Existencia de metadata para el recurso OXIGENO validada. Valor fijo CARACTER_LLENADO O
+[DEBUG] 10:19:57:472 mongostore/(11046:11046): Existencia de metadata para el recurso COMIDA validada. Valor fijo CARACTER_LLENADO C
+[DEBUG] 10:19:57:472 mongostore/(11046:11046): Existencia de metadata para el recurso BASURA validada. Valor fijo CARACTER_LLENADO B
+[DEBUG] 10:19:57:472 mongostore/(11046:11046): Salgo de recursos_validar_existencia_metadatas()
+[DEBUG] 10:19:57:472 mongostore/(11046:11046): Directorios del File System confirmados
+[DEBUG] 10:19:57:472 mongostore/(11046:11046): Se ingresa a bitacoras_obtener_cadena_con_el_total_de_bloques_ocupados()
+[DEBUG] 10:19:57:473 mongostore/(11046:11046): salgo de t_list* bitacoras_obtener_lista_con_rutas_completas()
+[DEBUG] 10:19:57:473 mongostore/(11046:11046): Los bloques ocupados por el total de las bitacoras son []
+[DEBUG] 10:19:57:473 mongostore/(11046:11046): Los bloques [] fueron liberados en el bitmap del superbloque y en la copia de Blocks.ims
+[INFO] 10:19:57:587 mongostore/(11046:11046): File System iniciado
+[DEBUG] 10:19:57:587 mongostore/(11046:11046): Se entra a blocks_abrir_hilo
+[INFO] 10:19:57:587 mongostore/(11046:11046): pid 11046  
 
-[INFO] 18:14:51:418 mongostore/(8515:8520): Servidor iniciando 2
-[INFO] 18:14:51:418 mongostore/(8515:8520): Servidor Mongo2 encendido
-[INFO] 18:14:51:419 mongostore/(8515:8519): Servidor iniciando
-[INFO] 18:14:51:419 mongostore/(8515:8519): Servidor Mongo encendido
-[INFO] 18:15:08:228 mongostore/(8515:8519): post socket_cliente
-[INFO] 18:15:08:228 mongostore/(8515:8519): Estableciendo conexión desde 49340
-[INFO] 18:15:08:228 mongostore/(8515:8519): Creando hilo
-[DEBUG] 18:15:08:229 mongostore/(8515:8525): Se ingresa a funcion_cliente
-[INFO] 18:15:08:229 mongostore/(8515:8525): Se conecto el socket 8
-[INFO] 18:15:14:382 mongostore/(8515:8519): post socket_cliente
-[INFO] 18:15:14:382 mongostore/(8515:8519): Estableciendo conexión desde 50876
-[INFO] 18:15:14:382 mongostore/(8515:8519): Creando hilo
-[DEBUG] 18:15:14:383 mongostore/(8515:8536): Se ingresa a funcion_cliente
-[INFO] 18:15:14:384 mongostore/(8515:8536): Se conecto el socket 9
-[INFO] 18:15:14:385 mongostore/(8515:8519): post socket_cliente
-[INFO] 18:15:14:385 mongostore/(8515:8519): Estableciendo conexión desde 51900
-[INFO] 18:15:14:385 mongostore/(8515:8519): Creando hilo
-[DEBUG] 18:15:14:386 mongostore/(8515:8538): Se ingresa a funcion_cliente
-[INFO] 18:15:14:386 mongostore/(8515:8538): Se conecto el socket 10
-[INFO] 18:15:14:387 mongostore/(8515:8519): post socket_cliente
-[INFO] 18:15:14:387 mongostore/(8515:8519): Estableciendo conexión desde 52924
-[INFO] 18:15:14:388 mongostore/(8515:8519): Creando hilo
-[INFO] 18:15:14:388 mongostore/(8515:8519): post socket_cliente
-[INFO] 18:15:14:388 mongostore/(8515:8519): Estableciendo conexión desde 53948
-[INFO] 18:15:14:388 mongostore/(8515:8519): Creando hilo
-[DEBUG] 18:15:14:389 mongostore/(8515:8541): Se ingresa a funcion_cliente
-[INFO] 18:15:14:389 mongostore/(8515:8541): Se conecto el socket 11
-[DEBUG] 18:15:14:389 mongostore/(8515:8543): Se ingresa a funcion_cliente
-[INFO] 18:15:14:389 mongostore/(8515:8543): Se conecto el socket 12
-[INFO] 18:16:25:828 mongostore/(8515:8515): SIGUSR1
-[DEBUG] 18:16:37:847 mongostore/(8515:8536): Se inicia fsck
-[DEBUG] 18:16:37:848 mongostore/(8515:8536): Blocks.ims actualizado
-[DEBUG] 18:16:37:848 mongostore/(8515:8536): Se inicia superbloque_validar_integridad_cantidad_de_bloques()
-[INFO] 18:16:37:848 mongostore/(8515:8536): Parece que esta vez nadie se animo a sabotear la cantidad de bloques en el SuperBloque.ims
-[DEBUG] 18:16:37:848 mongostore/(8515:8536): Se finaliza superbloque_validar_integridad_cantidad_de_bloques()
-[DEBUG] 18:16:37:848 mongostore/(8515:8536): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 18:16:37:848 mongostore/(8515:8536): Por lo menos al blocks del recurso OXIGENO no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 18:16:37:849 mongostore/(8515:8536): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 18:16:37:849 mongostore/(8515:8536): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 18:16:37:849 mongostore/(8515:8536): Por lo menos al blocks del recurso OXIGENO no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 18:16:37:849 mongostore/(8515:8536): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 18:16:37:849 mongostore/(8515:8536): bloque 1 NO esta lleno
-[INFO] 18:16:37:849 mongostore/(8515:8536): cantidad_en_bloque_incompleto 28 
-[INFO] 18:16:37:850 mongostore/(8515:8536): Por lo menos el size del recurso OXIGENO no fue alterado, enhorabuena!!!
-[INFO] 18:16:37:850 mongostore/(8515:8536): Por lo menos el block_count del recurso OXIGENO no fue alterado, enhorabuena!!!
-[DEBUG] 18:16:37:850 mongostore/(8515:8536): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [0,1] y MD5_ARCHIVO ea2d206202dea7a01a415457e40cd1c3
-[INFO] 18:16:37:850 mongostore/(8515:8536): Por lo menos el blocks del recurso OXIGENO no fue alterado, enhorabuena!!!
-[DEBUG] 18:16:37:851 mongostore/(8515:8536): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 18:16:37:851 mongostore/(8515:8536): Por lo menos al blocks del recurso COMIDA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 18:16:37:852 mongostore/(8515:8536): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 18:16:37:852 mongostore/(8515:8536): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 18:16:37:852 mongostore/(8515:8536): Por lo menos al blocks del recurso COMIDA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 18:16:37:852 mongostore/(8515:8536): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 18:16:37:852 mongostore/(8515:8536): bloque 71 NO esta lleno
-[INFO] 18:16:37:852 mongostore/(8515:8536): cantidad_en_bloque_incompleto 28 
-[INFO] 18:16:37:852 mongostore/(8515:8536): Por lo menos el size del recurso COMIDA no fue alterado, enhorabuena!!!
-[INFO] 18:16:37:852 mongostore/(8515:8536): Por lo menos el block_count del recurso COMIDA no fue alterado, enhorabuena!!!
-[DEBUG] 18:16:37:852 mongostore/(8515:8536): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [70,71] y MD5_ARCHIVO 0ea4d81ac970d3f4fdbbe46acd91a041
-[INFO] 18:16:37:852 mongostore/(8515:8536): Por lo menos el blocks del recurso COMIDA no fue alterado, enhorabuena!!!
-[DEBUG] 18:16:37:852 mongostore/(8515:8536): Se ingresa a recurso_validar_blocks_bloque_mayor_a_fs()
-[INFO] 18:16:37:853 mongostore/(8515:8536): Por lo menos al blocks del recurso BASURA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 18:16:37:854 mongostore/(8515:8536): Se finaliza recurso_validar_blocks_bloque_mayor_a_fs()
-[DEBUG] 18:16:37:854 mongostore/(8515:8536): Se ingresa a recurso_validar_blocks_bloque_vacio()
-[INFO] 18:16:37:854 mongostore/(8515:8536): Por lo menos al blocks del recurso BASURA no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!
-[DEBUG] 18:16:37:854 mongostore/(8515:8536): Se finaliza recurso_validar_blocks_bloque_ocupado()
-[INFO] 18:16:37:854 mongostore/(8515:8536): bloque 106 NO esta lleno
-[INFO] 18:16:37:854 mongostore/(8515:8536): cantidad_en_bloque_incompleto 28 
-[INFO] 18:16:37:854 mongostore/(8515:8536): Por lo menos el size del recurso BASURA no fue alterado, enhorabuena!!!
-[INFO] 18:16:37:854 mongostore/(8515:8536): Por lo menos el block_count del recurso BASURA no fue alterado, enhorabuena!!!
-[DEBUG] 18:16:37:854 mongostore/(8515:8536): Valores variables levantados SIZE 60 BLOCK_COUNT 2 BLOCKS [95,106] y MD5_ARCHIVO a7fb1584361efae4ca1daf6ac6314004
-[INFO] 18:16:37:857 mongostore/(8515:8536): Por lo menos el blocks del recurso BASURA no fue alterado, enhorabuena!!!
-[DEBUG] 18:16:37:857 mongostore/(8515:8536): Info-Se ingresa a superbloque_validar_integridad_bitmap
-[INFO] 18:16:37:857 mongostore/(8515:8536): Alguien saboteo el bitmap en el SuperBloque.ims
-[INFO] 18:16:37:859 mongostore/(8515:8536): El bitmap correcto ya fue persistido
-[DEBUG] 18:16:37:860 mongostore/(8515:8536): Se finaliza superbloque_validar_integridad_bitmap()
-[DEBUG] 18:16:37:860 mongostore/(8515:8536): Se finaliza fsck
-[DEBUG] 18:16:37:860 mongostore/(8515:8536): Ya ejecute las instrucciones del fsck
+[INFO] 10:19:57:587 mongostore/(11046:11058): Servidor iniciando 2
+[INFO] 10:19:57:587 mongostore/(11046:11058): Servidor Mongo2 encendido
+[INFO] 10:19:57:587 mongostore/(11046:11057): Servidor iniciando
+[INFO] 10:19:57:587 mongostore/(11046:11057): Servidor Mongo encendido
+[INFO] 10:20:01:823 mongostore/(11046:11057): post socket_cliente
+[INFO] 10:20:01:824 mongostore/(11046:11057): Estableciendo conexión desde 19133
+[INFO] 10:20:01:824 mongostore/(11046:11057): Creando hilo
+[DEBUG] 10:20:01:824 mongostore/(11046:11063): Se ingresa a funcion_cliente
+[INFO] 10:20:01:824 mongostore/(11046:11063): Se conecto el socket 8
+[INFO] 10:20:10:703 mongostore/(11046:11057): post socket_cliente
+[INFO] 10:20:10:704 mongostore/(11046:11057): Estableciendo conexión desde 20669
+[INFO] 10:20:10:704 mongostore/(11046:11057): Creando hilo
+[DEBUG] 10:20:10:707 mongostore/(11046:11075): Se ingresa a funcion_cliente
+[INFO] 10:20:10:707 mongostore/(11046:11075): Se conecto el socket 9
+[INFO] 10:20:10:708 mongostore/(11046:11057): post socket_cliente
+[INFO] 10:20:10:708 mongostore/(11046:11057): Estableciendo conexión desde 21693
+[INFO] 10:20:10:709 mongostore/(11046:11057): Creando hilo
+[DEBUG] 10:20:10:709 mongostore/(11046:11077): Se ingresa a funcion_cliente
+[INFO] 10:20:10:709 mongostore/(11046:11077): Se conecto el socket 10
+[INFO] 10:20:10:710 mongostore/(11046:11057): post socket_cliente
+[INFO] 10:20:10:710 mongostore/(11046:11057): Estableciendo conexión desde 22717
+[INFO] 10:20:10:710 mongostore/(11046:11057): Creando hilo
+[INFO] 10:20:10:711 mongostore/(11046:11057): post socket_cliente
+[INFO] 10:20:10:712 mongostore/(11046:11057): Estableciendo conexión desde 23741
+[INFO] 10:20:10:712 mongostore/(11046:11057): Creando hilo
+[DEBUG] 10:20:10:712 mongostore/(11046:11079): Se ingresa a funcion_cliente
+[INFO] 10:20:10:712 mongostore/(11046:11079): Se conecto el socket 11
+[DEBUG] 10:20:10:712 mongostore/(11046:11081): Se ingresa a funcion_cliente
+[INFO] 10:20:10:713 mongostore/(11046:11081): Se conecto el socket 12
+[INFO] 10:20:10:716 mongostore/(11046:11057): post socket_cliente
+[INFO] 10:20:10:716 mongostore/(11046:11057): Estableciendo conexión desde 24765
+[INFO] 10:20:10:716 mongostore/(11046:11057): Creando hilo
+[DEBUG] 10:20:10:717 mongostore/(11046:11082): Se ingresa a funcion_cliente
+[INFO] 10:20:10:717 mongostore/(11046:11082): Se conecto el socket 13
+[INFO] 10:20:39:934 mongostore/(11046:11057): post socket_cliente
+[INFO] 10:20:39:934 mongostore/(11046:11057): Estableciendo conexión desde 25789
+[INFO] 10:20:39:934 mongostore/(11046:11057): Creando hilo
+[DEBUG] 10:20:39:934 mongostore/(11046:11112): Se ingresa a funcion_cliente
+[INFO] 10:20:39:934 mongostore/(11046:11112): Se conecto el socket 14
+[INFO] 10:20:39:935 mongostore/(11046:11057): post socket_cliente
+[INFO] 10:20:39:935 mongostore/(11046:11057): Estableciendo conexión desde 26813
+[INFO] 10:20:39:935 mongostore/(11046:11057): Creando hilo
+[DEBUG] 10:20:39:935 mongostore/(11046:11114): Se ingresa a funcion_cliente
+[INFO] 10:20:39:935 mongostore/(11046:11114): Se conecto el socket 15
+[INFO] 10:20:40:734 mongostore/(11046:11075): fin de hilo tripulante
+[INFO] 10:21:05:752 mongostore/(11046:11077): fin de hilo tripulante
+[INFO] 10:21:10:756 mongostore/(11046:11082): fin de hilo tripulante
+[INFO] 10:21:34:774 mongostore/(11046:11081): fin de hilo tripulante
+[INFO] 10:21:37:776 mongostore/(11046:11112): fin de hilo tripulante
+[INFO] 10:22:01:793 mongostore/(11046:11114): fin de hilo tripulante

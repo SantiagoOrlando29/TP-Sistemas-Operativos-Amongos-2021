@@ -64,11 +64,11 @@ void iniciar_servidor(config_struct* config_servidor)
 	log_info(logger, "socket_servidor %d", socket_servidor);
 
 	//se crea mapa
-	/*nivel_gui_inicializar();
+	nivel_gui_inicializar();
 
 	nivel_gui_get_area_nivel(&cols, &rows);
 
-	nivel = nivel_crear("AMong-OS");*/
+	nivel = nivel_crear("AMong-OS");
 
 	int hilo;
 	while(variable_servidor != 0){
@@ -987,11 +987,11 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 			tabla_segmentos_patota->ultimo_tripulante = tripulante->tid;
 		}
 
-		/*if(tripulante->tid > 9){ //desde el 10 el mapa tira ":" sino
+		if(tripulante->tid > 9){ //desde el 10 el mapa tira ":" sino
 			letra = 55;
 		}
 		err = personaje_crear(nivel, letra+tripulante->tid, (int)tripulante->posicionX, (int)tripulante->posicionY);
-		ASSERT_CREATE(nivel, letra, err);*/
+		ASSERT_CREATE(nivel, letra, err);
 	}
 
 	imprimir_tabla_espacios_de_memoria();
@@ -1046,11 +1046,11 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 						list_remove_and_destroy_element(lista_tablas_segmentos, i, (void*)destruir_una_tabla_seg);*/
 					}
 
-					/*if(tripulante_id > 9){ //desde el 10 el mapa tira ":" sino
+					if(tripulante_id > 9){ //desde el 10 el mapa tira ":" sino
 						letra = 55;
 					}
 					log_info(logger, "letra + tid: %c", letra + tripulante_id);
-					item_borrar(nivel, letra + tripulante_id);*/
+					item_borrar(nivel, letra + tripulante_id);
 
 					sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 
@@ -1286,11 +1286,11 @@ bool cambiar_posicion(int tid, int posx, int posy, int pid){
 
 				espacio->contenido = tripulante;
 
-				/*if(tid > 9){ //desde el 10 el mapa tira ":" sino
+				if(tid > 9){ //desde el 10 el mapa tira ":" sino
 					letra = 55;
 				}
 			    item_desplazar(nivel, letra+ tid, difx, dify);
-			    sleep(1);*/
+			    sleep(1);
 
 				sem_post(&MUTEX_CAMBIAR_POSICION);
 				return true;
@@ -1583,10 +1583,10 @@ int funcion_cliente_paginacion(int socket_cliente){
 			case FIN:
 				log_error(logger, "el discordiador finalizo el programa. Terminando servidor");
 				variable_servidor = 0;
-				//nivel_destruir(nivel);
-				//nivel_gui_terminar();
+				nivel_destruir(nivel);
+				nivel_gui_terminar();
 
-				//numero_mapa=1;
+				numero_mapa=1;
 				shutdown(socket_servidor, SHUT_RD);
 				close(socket_cliente);
 				return EXIT_FAILURE;
@@ -3738,3 +3738,18 @@ bool enviar_tarea_paginacion(int socket_cliente, int numero_patota, tcbTripulant
 	sem_post(&MUTEX_PEDIR_TAREA);
 	return true;
 }
+
+
+void* crear_mapa(){
+    while (numero_mapa!=1) {
+        nivel_gui_dibujar(nivel);
+        fflush(stdout);
+        sleep(1);
+    if(err){
+        log_error(logger,"WARN: %s\n", nivel_gui_string_error(err));
+    }
+
+    }
+    log_info(logger,"\n Termino");
+}
+

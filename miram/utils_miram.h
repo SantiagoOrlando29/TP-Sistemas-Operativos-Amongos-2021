@@ -118,14 +118,6 @@ typedef struct
 	t_buffer* buffer;
 }t_paquete;
 
-/*
-typedef enum{
-	N,  // NEW
-	R,	// READY
-	E,	// EXEC
-	B	// BREAK interrumpido
-}estado;
-*/
 typedef struct{
 	uint32_t pid;  // ID PATOTA
 	uint32_t tareas; // DIR. LOGICA INCIO DE TAREAS
