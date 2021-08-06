@@ -1,782 +1,245 @@
-[INFO] 11:44:28:981 MiRam/(12592:12592): pid 12592  
+[INFO] 13:19:35:754 MiRam/(14377:14377): pid 14377  
 
-[INFO] 11:44:28:990 MiRam/(12592:12592): ---------  MEMORIA  --------------------
-[INFO] 11:44:28:990 MiRam/(12592:12592): base:   0, tam: 16384, libre: true 
-[INFO] 11:44:28:990 MiRam/(12592:12592): ----------------------------------------
-[INFO] 11:44:28:990 MiRam/(12592:12593): Servidor iniciando
-[INFO] 11:44:28:990 MiRam/(12592:12593): Servidor MiRam encendido
-[INFO] 11:44:28:990 MiRam/(12592:12593): socket_servidor 4
-[INFO] 11:44:38:555 MiRam/(12592:12593): socket_cliente 5
-[INFO] 11:44:38:555 MiRam/(12592:12593): Estableciendo conexión desde 32464
-[INFO] 11:44:38:555 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:38:559 MiRam/(12592:12603): Se conecto este socket a mi 5
-[INFO] 11:44:45:047 MiRam/(12592:12603): 
-El numero de la patota recibida es 1
-[INFO] 11:44:45:047 MiRam/(12592:12603): ID 1 
-[INFO] 11:44:45:047 MiRam/(12592:12603): posicion x: 9 
-[INFO] 11:44:45:047 MiRam/(12592:12603): posicion y: 9 
-[INFO] 11:44:45:047 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:047 MiRam/(12592:12603): n patota: 1 
+[INFO] 13:19:35:754 MiRam/(14377:14377): Inicializo el archivo swap
+[INFO] 13:19:35:754 MiRam/(14377:14377): 
+Numero de marco es: 4 nro_marcos
 
-[INFO] 11:44:45:047 MiRam/(12592:12603): ID 2 
-[INFO] 11:44:45:047 MiRam/(12592:12603): posicion x: 0 
-[INFO] 11:44:45:047 MiRam/(12592:12603): posicion y: 0 
-[INFO] 11:44:45:047 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:047 MiRam/(12592:12603): n patota: 1 
+[INFO] 13:19:35:760 MiRam/(14377:14381): Servidor iniciando
+[INFO] 13:19:35:760 MiRam/(14377:14381): Servidor MiRam encendido
+[INFO] 13:19:35:760 MiRam/(14377:14381): socket_servidor 4
+[INFO] 13:19:50:833 MiRam/(14377:14381): socket_cliente 5
+[INFO] 13:19:50:833 MiRam/(14377:14381): Estableciendo conexión desde 46242
+[INFO] 13:19:50:833 MiRam/(14377:14381): Creando hilo
+[INFO] 13:19:50:834 MiRam/(14377:14393): Se conecto este socket a mi 5
 
-[INFO] 11:44:45:047 MiRam/(12592:12603): ID 3 
-[INFO] 11:44:45:047 MiRam/(12592:12603): posicion x: 5 
-[INFO] 11:44:45:047 MiRam/(12592:12603): posicion y: 5 
-[INFO] 11:44:45:047 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:047 MiRam/(12592:12603): n patota: 1 
+[INFO] 13:20:05:236 MiRam/(14377:14393): Ingresa nueva patota, Patota ID 1, necesito 2 marcos
+[INFO] 13:20:05:238 MiRam/(14377:14393): Guardando info
+[INFO] 13:20:05:239 MiRam/(14377:14393): Se asignaron los marcos la patota 1
+[INFO] 13:20:05:240 MiRam/(14377:14393): Ingresa nueva patota, Patota ID 2, necesito 2 marcos
+[INFO] 13:20:05:243 MiRam/(14377:14393): Guardando info
+[INFO] 13:20:05:245 MiRam/(14377:14393): Se asignaron los marcos la patota 2
+[INFO] 13:20:06:023 MiRam/(14377:14393): Ingresa nueva patota, Patota ID 3, necesito 4 marcos
+[INFO] 13:20:06:024 MiRam/(14377:14393): Guardando info
+[INFO] 13:20:06:025 MiRam/(14377:14393): Se asignaron los marcos la patota 3
+[INFO] 13:20:20:602 MiRam/(14377:14381): socket_cliente 6
+[INFO] 13:20:20:602 MiRam/(14377:14381): Estableciendo conexión desde 47778
+[INFO] 13:20:20:602 MiRam/(14377:14381): Creando hilo
+[INFO] 13:20:20:602 MiRam/(14377:14412): Se conecto este socket a mi 6
 
-[INFO] 11:44:45:047 MiRam/(12592:12603): espacio tareas todo ok
-[INFO] 11:44:45:047 MiRam/(12592:12603): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:047 MiRam/(12592:12603): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:047 MiRam/(12592:12603): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:047 MiRam/(12592:12603): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:047 MiRam/(12592:12603): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:047 MiRam/(12592:12603): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:047 MiRam/(12592:12603): base: 308, tam: 16076, libre: true 
-[INFO] 11:44:45:047 MiRam/(12592:12603): ----------------------------------------
-[INFO] 11:44:45:047 MiRam/(12592:12603): Tabla de segmentos correspondiente a patota 1
-[INFO] 11:44:45:047 MiRam/(12592:12603): Base 0   Tamanio 8
-[INFO] 11:44:45:047 MiRam/(12592:12603): Base 8   Tamanio 237
-[INFO] 11:44:45:047 MiRam/(12592:12603): Base 245   Tamanio 21
-[INFO] 11:44:45:047 MiRam/(12592:12603): Base 266   Tamanio 21
-[INFO] 11:44:45:047 MiRam/(12592:12603): Base 287   Tamanio 21
-[INFO] 11:44:45:047 MiRam/(12592:12603): ---------------------------------------
-[INFO] 11:44:45:047 MiRam/(12592:12603): Se asigno espacio de memoria a todo 
+[INFO] 13:20:20:602 MiRam/(14377:14412): Carga inicial de patota 1
+[INFO] 13:20:20:602 MiRam/(14377:14412): Se asigna marco 0 de MP
+[INFO] 13:20:20:602 MiRam/(14377:14412): Recupero el bloque 0 de MS
+[INFO] 13:20:20:602 MiRam/(14377:14412): Se asigna marco 1 de MP
+[INFO] 13:20:20:602 MiRam/(14377:14412): Recupero el bloque 1 de MS
+[INFO] 13:20:20:602 MiRam/(14377:14412): El tripulante 1 solicita nueva tarea
+[INFO] 13:20:20:602 MiRam/(14377:14381): socket_cliente 7
+[INFO] 13:20:20:602 MiRam/(14377:14381): Estableciendo conexión desde 48802
+[INFO] 13:20:20:602 MiRam/(14377:14381): Creando hilo
+[INFO] 13:20:20:602 MiRam/(14377:14412): El tripulante 1 recibe la tarea solicitada
+[INFO] 13:20:20:602 MiRam/(14377:14412): --------MP--------
+[INFO] 13:20:20:602 MiRam/(14377:14412): M: 0 E:O P: 1 Pag: 0
+[INFO] 13:20:20:602 MiRam/(14377:14412): M: 1 E:O P: 1 Pag: 1
+[INFO] 13:20:20:603 MiRam/(14377:14412): M: 2 E:L P:- Pag:-
+[INFO] 13:20:20:603 MiRam/(14377:14412): M: 3 E:L P:- Pag:-
+[INFO] 13:20:20:603 MiRam/(14377:14412): ------FIN MP------
+[INFO] 13:20:20:603 MiRam/(14377:14412): Tripulante 1 cambiando de estado
+[INFO] 13:20:20:603 MiRam/(14377:14414): Se conecto este socket a mi 7
 
-[INFO] 11:44:45:049 MiRam/(12592:12603): 
-El numero de la patota recibida es 2
-[INFO] 11:44:45:049 MiRam/(12592:12603): ID 4 
-[INFO] 11:44:45:049 MiRam/(12592:12603): posicion x: 4 
-[INFO] 11:44:45:049 MiRam/(12592:12603): posicion y: 0 
-[INFO] 11:44:45:049 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:049 MiRam/(12592:12603): n patota: 2 
+[INFO] 13:20:20:603 MiRam/(14377:14414): Carga inicial de patota 2
+[INFO] 13:20:20:603 MiRam/(14377:14414): Se asigna marco 2 de MP
+[INFO] 13:20:20:603 MiRam/(14377:14414): Recupero el bloque 2 de MS
+[INFO] 13:20:20:603 MiRam/(14377:14414): Se asigna marco 3 de MP
+[INFO] 13:20:20:603 MiRam/(14377:14414): Recupero el bloque 3 de MS
+[INFO] 13:20:20:603 MiRam/(14377:14414): El tripulante 2 solicita nueva tarea
+[INFO] 13:20:20:603 MiRam/(14377:14381): socket_cliente 8
+[INFO] 13:20:20:603 MiRam/(14377:14381): Estableciendo conexión desde 49826
+[INFO] 13:20:20:603 MiRam/(14377:14381): Creando hilo
+[INFO] 13:20:20:603 MiRam/(14377:14414): El tripulante 2 recibe la tarea solicitada
+[INFO] 13:20:20:603 MiRam/(14377:14414): --------MP--------
+[INFO] 13:20:20:603 MiRam/(14377:14414): M: 0 E:O P: 1 Pag: 0
+[INFO] 13:20:20:603 MiRam/(14377:14414): M: 1 E:O P: 1 Pag: 1
+[INFO] 13:20:20:603 MiRam/(14377:14414): M: 2 E:O P: 2 Pag: 0
+[INFO] 13:20:20:603 MiRam/(14377:14414): M: 3 E:O P: 2 Pag: 1
+[INFO] 13:20:20:603 MiRam/(14377:14414): ------FIN MP------
+[INFO] 13:20:20:604 MiRam/(14377:14414): Tripulante 2 cambiando de estado
+[INFO] 13:20:20:604 MiRam/(14377:14414): Tripulante 2 cambiando de posicion
+[INFO] 13:20:20:604 MiRam/(14377:14416): Se conecto este socket a mi 8
 
-[INFO] 11:44:45:049 MiRam/(12592:12603): ID 5 
-[INFO] 11:44:45:049 MiRam/(12592:12603): posicion x: 2 
-[INFO] 11:44:45:049 MiRam/(12592:12603): posicion y: 6 
-[INFO] 11:44:45:049 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:049 MiRam/(12592:12603): n patota: 2 
-
-[INFO] 11:44:45:049 MiRam/(12592:12603): ID 6 
-[INFO] 11:44:45:049 MiRam/(12592:12603): posicion x: 8 
-[INFO] 11:44:45:049 MiRam/(12592:12603): posicion y: 2 
-[INFO] 11:44:45:049 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:049 MiRam/(12592:12603): n patota: 2 
-
-[INFO] 11:44:45:049 MiRam/(12592:12603): espacio tareas todo ok
-[INFO] 11:44:45:049 MiRam/(12592:12603): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:049 MiRam/(12592:12603): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:049 MiRam/(12592:12603): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:049 MiRam/(12592:12603): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:049 MiRam/(12592:12603): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:049 MiRam/(12592:12603): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:049 MiRam/(12592:12603): base: 308, tam:  8, libre: false 
-[INFO] 11:44:45:049 MiRam/(12592:12603): base: 316, tam: 131, libre: false 
-[INFO] 11:44:45:049 MiRam/(12592:12603): base: 447, tam: 21, libre: false 
-[INFO] 11:44:45:049 MiRam/(12592:12603): base: 468, tam: 21, libre: false 
-[INFO] 11:44:45:049 MiRam/(12592:12603): base: 489, tam: 21, libre: false 
-[INFO] 11:44:45:049 MiRam/(12592:12603): base: 510, tam: 15874, libre: true 
-[INFO] 11:44:45:049 MiRam/(12592:12603): ----------------------------------------
-[INFO] 11:44:45:049 MiRam/(12592:12603): Tabla de segmentos correspondiente a patota 2
-[INFO] 11:44:45:049 MiRam/(12592:12603): Base 308   Tamanio 8
-[INFO] 11:44:45:049 MiRam/(12592:12603): Base 316   Tamanio 131
-[INFO] 11:44:45:049 MiRam/(12592:12603): Base 447   Tamanio 21
-[INFO] 11:44:45:049 MiRam/(12592:12603): Base 468   Tamanio 21
-[INFO] 11:44:45:049 MiRam/(12592:12603): Base 489   Tamanio 21
-[INFO] 11:44:45:049 MiRam/(12592:12603): ---------------------------------------
-[INFO] 11:44:45:049 MiRam/(12592:12603): Se asigno espacio de memoria a todo 
-
-[INFO] 11:44:45:050 MiRam/(12592:12603): 
-El numero de la patota recibida es 3
-[INFO] 11:44:45:050 MiRam/(12592:12603): ID 7 
-[INFO] 11:44:45:050 MiRam/(12592:12603): posicion x: 2 
-[INFO] 11:44:45:050 MiRam/(12592:12603): posicion y: 3 
-[INFO] 11:44:45:050 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:050 MiRam/(12592:12603): n patota: 3 
-
-[INFO] 11:44:45:050 MiRam/(12592:12603): ID 8 
-[INFO] 11:44:45:050 MiRam/(12592:12603): posicion x: 5 
-[INFO] 11:44:45:050 MiRam/(12592:12603): posicion y: 8 
-[INFO] 11:44:45:050 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:050 MiRam/(12592:12603): n patota: 3 
-
-[INFO] 11:44:45:050 MiRam/(12592:12603): ID 9 
-[INFO] 11:44:45:050 MiRam/(12592:12603): posicion x: 5 
-[INFO] 11:44:45:050 MiRam/(12592:12603): posicion y: 3 
-[INFO] 11:44:45:050 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:050 MiRam/(12592:12603): n patota: 3 
-
-[INFO] 11:44:45:050 MiRam/(12592:12603): espacio tareas todo ok
-[INFO] 11:44:45:050 MiRam/(12592:12603): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:050 MiRam/(12592:12603): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 308, tam:  8, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 316, tam: 131, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 447, tam: 21, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 468, tam: 21, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 489, tam: 21, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 510, tam:  8, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 518, tam: 337, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 855, tam: 21, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 876, tam: 21, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 897, tam: 21, libre: false 
-[INFO] 11:44:45:050 MiRam/(12592:12603): base: 918, tam: 15466, libre: true 
-[INFO] 11:44:45:050 MiRam/(12592:12603): ----------------------------------------
-[INFO] 11:44:45:050 MiRam/(12592:12603): Tabla de segmentos correspondiente a patota 3
-[INFO] 11:44:45:050 MiRam/(12592:12603): Base 510   Tamanio 8
-[INFO] 11:44:45:050 MiRam/(12592:12603): Base 518   Tamanio 337
-[INFO] 11:44:45:051 MiRam/(12592:12603): Base 855   Tamanio 21
-[INFO] 11:44:45:051 MiRam/(12592:12603): Base 876   Tamanio 21
-[INFO] 11:44:45:051 MiRam/(12592:12603): Base 897   Tamanio 21
-[INFO] 11:44:45:051 MiRam/(12592:12603): ---------------------------------------
-[INFO] 11:44:45:051 MiRam/(12592:12603): Se asigno espacio de memoria a todo 
-
-[INFO] 11:44:45:053 MiRam/(12592:12603): 
-El numero de la patota recibida es 4
-[INFO] 11:44:45:053 MiRam/(12592:12603): ID 10 
-[INFO] 11:44:45:053 MiRam/(12592:12603): posicion x: 0 
-[INFO] 11:44:45:053 MiRam/(12592:12603): posicion y: 9 
-[INFO] 11:44:45:053 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:053 MiRam/(12592:12603): n patota: 4 
-
-[INFO] 11:44:45:053 MiRam/(12592:12603): ID 11 
-[INFO] 11:44:45:053 MiRam/(12592:12603): posicion x: 4 
-[INFO] 11:44:45:053 MiRam/(12592:12603): posicion y: 4 
-[INFO] 11:44:45:053 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:053 MiRam/(12592:12603): n patota: 4 
-
-[INFO] 11:44:45:053 MiRam/(12592:12603): ID 12 
-[INFO] 11:44:45:053 MiRam/(12592:12603): posicion x: 9 
-[INFO] 11:44:45:053 MiRam/(12592:12603): posicion y: 0 
-[INFO] 11:44:45:053 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:053 MiRam/(12592:12603): n patota: 4 
-
-[INFO] 11:44:45:053 MiRam/(12592:12603): espacio tareas todo ok
-[INFO] 11:44:45:053 MiRam/(12592:12603): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:053 MiRam/(12592:12603): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 308, tam:  8, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 316, tam: 131, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 447, tam: 21, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 468, tam: 21, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 489, tam: 21, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 510, tam:  8, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 518, tam: 337, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 855, tam: 21, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 876, tam: 21, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 897, tam: 21, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 918, tam:  8, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 926, tam: 359, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 1285, tam: 21, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 1306, tam: 21, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 1327, tam: 21, libre: false 
-[INFO] 11:44:45:053 MiRam/(12592:12603): base: 1348, tam: 15036, libre: true 
-[INFO] 11:44:45:053 MiRam/(12592:12603): ----------------------------------------
-[INFO] 11:44:45:053 MiRam/(12592:12603): Tabla de segmentos correspondiente a patota 4
-[INFO] 11:44:45:053 MiRam/(12592:12603): Base 918   Tamanio 8
-[INFO] 11:44:45:053 MiRam/(12592:12603): Base 926   Tamanio 359
-[INFO] 11:44:45:053 MiRam/(12592:12603): Base 1285   Tamanio 21
-[INFO] 11:44:45:053 MiRam/(12592:12603): Base 1306   Tamanio 21
-[INFO] 11:44:45:053 MiRam/(12592:12603): Base 1327   Tamanio 21
-[INFO] 11:44:45:053 MiRam/(12592:12603): ---------------------------------------
-[INFO] 11:44:45:053 MiRam/(12592:12603): Se asigno espacio de memoria a todo 
-
-[INFO] 11:44:45:054 MiRam/(12592:12603): 
-El numero de la patota recibida es 5
-[INFO] 11:44:45:054 MiRam/(12592:12603): ID 13 
-[INFO] 11:44:45:054 MiRam/(12592:12603): posicion x: 0 
-[INFO] 11:44:45:054 MiRam/(12592:12603): posicion y: 2 
-[INFO] 11:44:45:054 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:054 MiRam/(12592:12603): n patota: 5 
-
-[INFO] 11:44:45:054 MiRam/(12592:12603): ID 14 
-[INFO] 11:44:45:055 MiRam/(12592:12603): posicion x: 9 
-[INFO] 11:44:45:055 MiRam/(12592:12603): posicion y: 6 
-[INFO] 11:44:45:055 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:055 MiRam/(12592:12603): n patota: 5 
-
-[INFO] 11:44:45:055 MiRam/(12592:12603): ID 15 
-[INFO] 11:44:45:055 MiRam/(12592:12603): posicion x: 3 
-[INFO] 11:44:45:055 MiRam/(12592:12603): posicion y: 5 
-[INFO] 11:44:45:055 MiRam/(12592:12603): Status: N 
-[INFO] 11:44:45:055 MiRam/(12592:12603): n patota: 5 
-
-[INFO] 11:44:45:055 MiRam/(12592:12603): espacio tareas todo ok
-[INFO] 11:44:45:055 MiRam/(12592:12603): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:055 MiRam/(12592:12603): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 308, tam:  8, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 316, tam: 131, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 447, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 468, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 489, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 510, tam:  8, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 518, tam: 337, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 855, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 876, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 897, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 918, tam:  8, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 926, tam: 359, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 1285, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 1306, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 1327, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 1348, tam:  8, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 1356, tam: 145, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 1501, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 1522, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 1543, tam: 21, libre: false 
-[INFO] 11:44:45:055 MiRam/(12592:12603): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:055 MiRam/(12592:12603): ----------------------------------------
-[INFO] 11:44:45:055 MiRam/(12592:12603): Tabla de segmentos correspondiente a patota 5
-[INFO] 11:44:45:055 MiRam/(12592:12603): Base 1348   Tamanio 8
-[INFO] 11:44:45:055 MiRam/(12592:12603): Base 1356   Tamanio 145
-[INFO] 11:44:45:055 MiRam/(12592:12603): Base 1501   Tamanio 21
-[INFO] 11:44:45:055 MiRam/(12592:12603): Base 1522   Tamanio 21
-[INFO] 11:44:45:055 MiRam/(12592:12603): Base 1543   Tamanio 21
-[INFO] 11:44:45:055 MiRam/(12592:12603): ---------------------------------------
-[INFO] 11:44:45:055 MiRam/(12592:12603): Se asigno espacio de memoria a todo 
-
-[INFO] 11:44:45:056 MiRam/(12592:12593): socket_cliente 7
-[INFO] 11:44:45:056 MiRam/(12592:12593): Estableciendo conexión desde 34000
-[INFO] 11:44:45:056 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:057 MiRam/(12592:12625): Se conecto este socket a mi 7
-[INFO] 11:44:45:057 MiRam/(12592:12593): socket_cliente 8
-[INFO] 11:44:45:057 MiRam/(12592:12593): Estableciendo conexión desde 35024
-[INFO] 11:44:45:057 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:058 MiRam/(12592:12627): Se conecto este socket a mi 8
-[INFO] 11:44:45:059 MiRam/(12592:12593): socket_cliente 9
-[INFO] 11:44:45:059 MiRam/(12592:12593): Estableciendo conexión desde 36048
-[INFO] 11:44:45:059 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:063 MiRam/(12592:12629): Se conecto este socket a mi 9
-[INFO] 11:44:45:063 MiRam/(12592:12593): socket_cliente 10
-[INFO] 11:44:45:063 MiRam/(12592:12593): Estableciendo conexión desde 37072
-[INFO] 11:44:45:063 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:072 MiRam/(12592:12631): Se conecto este socket a mi 10
-[INFO] 11:44:45:072 MiRam/(12592:12593): socket_cliente 11
-[INFO] 11:44:45:072 MiRam/(12592:12593): Estableciendo conexión desde 38096
-[INFO] 11:44:45:072 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:073 MiRam/(12592:12633): Se conecto este socket a mi 11
-[INFO] 11:44:45:073 MiRam/(12592:12593): socket_cliente 12
-[INFO] 11:44:45:073 MiRam/(12592:12593): Estableciendo conexión desde 39120
-[INFO] 11:44:45:073 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:078 MiRam/(12592:12635): Se conecto este socket a mi 12
-[INFO] 11:44:45:083 MiRam/(12592:12593): socket_cliente 13
-[INFO] 11:44:45:083 MiRam/(12592:12593): Estableciendo conexión desde 40144
-[INFO] 11:44:45:083 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:092 MiRam/(12592:12637): Se conecto este socket a mi 13
-[INFO] 11:44:45:093 MiRam/(12592:12593): socket_cliente 14
-[INFO] 11:44:45:093 MiRam/(12592:12593): Estableciendo conexión desde 41168
-[INFO] 11:44:45:093 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:097 MiRam/(12592:12639): Se conecto este socket a mi 14
-[INFO] 11:44:45:098 MiRam/(12592:12593): socket_cliente 15
-[INFO] 11:44:45:098 MiRam/(12592:12593): Estableciendo conexión desde 42192
-[INFO] 11:44:45:098 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:117 MiRam/(12592:12641): Se conecto este socket a mi 15
-[INFO] 11:44:45:118 MiRam/(12592:12593): socket_cliente 16
-[INFO] 11:44:45:118 MiRam/(12592:12593): Estableciendo conexión desde 43216
-[INFO] 11:44:45:118 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:125 MiRam/(12592:12643): Se conecto este socket a mi 16
-[INFO] 11:44:45:127 MiRam/(12592:12593): socket_cliente 17
-[INFO] 11:44:45:128 MiRam/(12592:12593): Estableciendo conexión desde 44240
-[INFO] 11:44:45:128 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:138 MiRam/(12592:12645): Se conecto este socket a mi 17
-[INFO] 11:44:45:139 MiRam/(12592:12593): socket_cliente 18
-[INFO] 11:44:45:139 MiRam/(12592:12593): Estableciendo conexión desde 45264
-[INFO] 11:44:45:139 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:141 MiRam/(12592:12647): Se conecto este socket a mi 18
-[INFO] 11:44:45:146 MiRam/(12592:12593): socket_cliente 19
-[INFO] 11:44:45:146 MiRam/(12592:12593): Estableciendo conexión desde 46288
-[INFO] 11:44:45:147 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:151 MiRam/(12592:12649): Se conecto este socket a mi 19
-[INFO] 11:44:45:152 MiRam/(12592:12593): socket_cliente 20
-[INFO] 11:44:45:152 MiRam/(12592:12593): Estableciendo conexión desde 47312
-[INFO] 11:44:45:152 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:156 MiRam/(12592:12651): Se conecto este socket a mi 20
-[INFO] 11:44:45:156 MiRam/(12592:12593): socket_cliente 21
-[INFO] 11:44:45:156 MiRam/(12592:12593): Estableciendo conexión desde 48336
-[INFO] 11:44:45:156 MiRam/(12592:12593): Creando hilo
-[INFO] 11:44:45:162 MiRam/(12592:12653): Se conecto este socket a mi 21
-[INFO] 11:44:45:290 MiRam/(12592:12637): no hay mas tareas
-[INFO] 11:44:45:290 MiRam/(12592:12637): Se expulso segmento 2
-[INFO] 11:44:45:290 MiRam/(12592:12637): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:290 MiRam/(12592:12637): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 308, tam:  8, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 316, tam: 131, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 447, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 468, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 489, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 510, tam:  8, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 518, tam: 337, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 876, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 897, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 918, tam:  8, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 926, tam: 359, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 1285, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 1306, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 1327, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 1348, tam:  8, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 1356, tam: 145, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 1501, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 1522, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 1543, tam: 21, libre: false 
-[INFO] 11:44:45:290 MiRam/(12592:12637): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:290 MiRam/(12592:12637): ----------------------------------------
-[WARNING] 11:44:45:291 MiRam/(12592:12637): el cliente se desconecto.
-[INFO] 11:44:45:330 MiRam/(12592:12639): no hay mas tareas
-[INFO] 11:44:45:330 MiRam/(12592:12639): Se expulso segmento 3
-[INFO] 11:44:45:330 MiRam/(12592:12639): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:330 MiRam/(12592:12639): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 308, tam:  8, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 316, tam: 131, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 447, tam: 21, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 468, tam: 21, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 489, tam: 21, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 510, tam:  8, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 518, tam: 337, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 897, tam: 21, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 918, tam:  8, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 926, tam: 359, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 1285, tam: 21, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 1306, tam: 21, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 1327, tam: 21, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 1348, tam:  8, libre: false 
-[INFO] 11:44:45:330 MiRam/(12592:12639): base: 1356, tam: 145, libre: false 
-[INFO] 11:44:45:331 MiRam/(12592:12639): base: 1501, tam: 21, libre: false 
-[INFO] 11:44:45:331 MiRam/(12592:12639): base: 1522, tam: 21, libre: false 
-[INFO] 11:44:45:331 MiRam/(12592:12639): base: 1543, tam: 21, libre: false 
-[INFO] 11:44:45:331 MiRam/(12592:12639): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:331 MiRam/(12592:12639): ----------------------------------------
-[WARNING] 11:44:45:331 MiRam/(12592:12639): el cliente se desconecto.
-[INFO] 11:44:45:344 MiRam/(12592:12641): no hay mas tareas
-[INFO] 11:44:45:344 MiRam/(12592:12641): Se expulso segmento 4
-[INFO] 11:44:45:344 MiRam/(12592:12641): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:344 MiRam/(12592:12641): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 308, tam:  8, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 316, tam: 131, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 447, tam: 21, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 468, tam: 21, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 489, tam: 21, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 918, tam:  8, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 926, tam: 359, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 1285, tam: 21, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 1306, tam: 21, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 1327, tam: 21, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 1348, tam:  8, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 1356, tam: 145, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 1501, tam: 21, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 1522, tam: 21, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 1543, tam: 21, libre: false 
-[INFO] 11:44:45:344 MiRam/(12592:12641): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:344 MiRam/(12592:12641): ----------------------------------------
-[INFO] 11:44:45:344 MiRam/(12592:12641): Tabla de segmentos de patota ya no existe
-[WARNING] 11:44:45:345 MiRam/(12592:12641): el cliente se desconecto.
-[INFO] 11:44:45:394 MiRam/(12592:12645): no hay mas tareas
-[INFO] 11:44:45:394 MiRam/(12592:12645): Se expulso segmento 3
-[INFO] 11:44:45:394 MiRam/(12592:12645): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:394 MiRam/(12592:12645): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 308, tam:  8, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 316, tam: 131, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 447, tam: 21, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 468, tam: 21, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 489, tam: 21, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 918, tam:  8, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 926, tam: 359, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 1285, tam: 21, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 1306, tam: 21, libre: true 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 1327, tam: 21, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 1348, tam:  8, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 1356, tam: 145, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 1501, tam: 21, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 1522, tam: 21, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 1543, tam: 21, libre: false 
-[INFO] 11:44:45:394 MiRam/(12592:12645): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:394 MiRam/(12592:12645): ----------------------------------------
-[WARNING] 11:44:45:394 MiRam/(12592:12645): el cliente se desconecto.
-[INFO] 11:44:45:410 MiRam/(12592:12643): no hay mas tareas
-[INFO] 11:44:45:410 MiRam/(12592:12643): Se expulso segmento 2
-[INFO] 11:44:45:411 MiRam/(12592:12643): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:411 MiRam/(12592:12643): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 308, tam:  8, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 316, tam: 131, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 447, tam: 21, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 468, tam: 21, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 489, tam: 21, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 918, tam:  8, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 926, tam: 359, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 1285, tam: 21, libre: true 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 1306, tam: 21, libre: true 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 1327, tam: 21, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 1348, tam:  8, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 1356, tam: 145, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 1501, tam: 21, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 1522, tam: 21, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 1543, tam: 21, libre: false 
-[INFO] 11:44:45:411 MiRam/(12592:12643): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:411 MiRam/(12592:12643): ----------------------------------------
-[WARNING] 11:44:45:411 MiRam/(12592:12643): el cliente se desconecto.
-[INFO] 11:44:45:494 MiRam/(12592:12631): no hay mas tareas
-[INFO] 11:44:45:494 MiRam/(12592:12631): Se expulso segmento 2
-[INFO] 11:44:45:494 MiRam/(12592:12631): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:494 MiRam/(12592:12631): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 308, tam:  8, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 316, tam: 131, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 447, tam: 21, libre: true 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 468, tam: 21, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 489, tam: 21, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 918, tam:  8, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 926, tam: 359, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 1285, tam: 21, libre: true 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 1306, tam: 21, libre: true 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 1327, tam: 21, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 1348, tam:  8, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 1356, tam: 145, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 1501, tam: 21, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 1522, tam: 21, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 1543, tam: 21, libre: false 
-[INFO] 11:44:45:494 MiRam/(12592:12631): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:494 MiRam/(12592:12631): ----------------------------------------
-[WARNING] 11:44:45:495 MiRam/(12592:12631): el cliente se desconecto.
-[INFO] 11:44:45:504 MiRam/(12592:12633): no hay mas tareas
-[INFO] 11:44:45:504 MiRam/(12592:12633): Se expulso segmento 3
-[INFO] 11:44:45:504 MiRam/(12592:12633): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:504 MiRam/(12592:12633): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 308, tam:  8, libre: false 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 316, tam: 131, libre: false 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 447, tam: 21, libre: true 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 468, tam: 21, libre: true 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 489, tam: 21, libre: false 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:504 MiRam/(12592:12633): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:505 MiRam/(12592:12633): base: 918, tam:  8, libre: false 
-[INFO] 11:44:45:505 MiRam/(12592:12633): base: 926, tam: 359, libre: false 
-[INFO] 11:44:45:505 MiRam/(12592:12633): base: 1285, tam: 21, libre: true 
-[INFO] 11:44:45:505 MiRam/(12592:12633): base: 1306, tam: 21, libre: true 
-[INFO] 11:44:45:505 MiRam/(12592:12633): base: 1327, tam: 21, libre: false 
-[INFO] 11:44:45:505 MiRam/(12592:12633): base: 1348, tam:  8, libre: false 
-[INFO] 11:44:45:505 MiRam/(12592:12633): base: 1356, tam: 145, libre: false 
-[INFO] 11:44:45:505 MiRam/(12592:12633): base: 1501, tam: 21, libre: false 
-[INFO] 11:44:45:505 MiRam/(12592:12633): base: 1522, tam: 21, libre: false 
-[INFO] 11:44:45:505 MiRam/(12592:12633): base: 1543, tam: 21, libre: false 
-[INFO] 11:44:45:505 MiRam/(12592:12633): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:505 MiRam/(12592:12633): ----------------------------------------
-[WARNING] 11:44:45:505 MiRam/(12592:12633): el cliente se desconecto.
-[INFO] 11:44:45:509 MiRam/(12592:12647): no hay mas tareas
-[INFO] 11:44:45:509 MiRam/(12592:12647): Se expulso segmento 4
-[INFO] 11:44:45:509 MiRam/(12592:12647): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:509 MiRam/(12592:12647): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 308, tam:  8, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 316, tam: 131, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 447, tam: 21, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 468, tam: 21, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 489, tam: 21, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 918, tam:  8, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 926, tam: 359, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 1285, tam: 21, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 1306, tam: 21, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 1327, tam: 21, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 1348, tam:  8, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 1356, tam: 145, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 1501, tam: 21, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 1522, tam: 21, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 1543, tam: 21, libre: false 
-[INFO] 11:44:45:509 MiRam/(12592:12647): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:509 MiRam/(12592:12647): ----------------------------------------
-[INFO] 11:44:45:509 MiRam/(12592:12647): Tabla de segmentos de patota ya no existe
-[WARNING] 11:44:45:510 MiRam/(12592:12647): el cliente se desconecto.
-[INFO] 11:44:45:515 MiRam/(12592:12635): no hay mas tareas
-[INFO] 11:44:45:515 MiRam/(12592:12635): Se expulso segmento 4
-[INFO] 11:44:45:515 MiRam/(12592:12635): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:515 MiRam/(12592:12635): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 308, tam:  8, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 316, tam: 131, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 447, tam: 21, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 468, tam: 21, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 489, tam: 21, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 918, tam:  8, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 926, tam: 359, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 1285, tam: 21, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 1306, tam: 21, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 1327, tam: 21, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 1348, tam:  8, libre: false 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 1356, tam: 145, libre: false 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 1501, tam: 21, libre: false 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 1522, tam: 21, libre: false 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 1543, tam: 21, libre: false 
-[INFO] 11:44:45:515 MiRam/(12592:12635): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:515 MiRam/(12592:12635): ----------------------------------------
-[INFO] 11:44:45:515 MiRam/(12592:12635): Tabla de segmentos de patota ya no existe
-[WARNING] 11:44:45:516 MiRam/(12592:12635): el cliente se desconecto.
-[INFO] 11:44:45:547 MiRam/(12592:12651): no hay mas tareas
-[INFO] 11:44:45:547 MiRam/(12592:12651): Se expulso segmento 3
-[INFO] 11:44:45:547 MiRam/(12592:12651): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:547 MiRam/(12592:12651): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 308, tam:  8, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 316, tam: 131, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 447, tam: 21, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 468, tam: 21, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 489, tam: 21, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 918, tam:  8, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 926, tam: 359, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 1285, tam: 21, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 1306, tam: 21, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 1327, tam: 21, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 1348, tam:  8, libre: false 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 1356, tam: 145, libre: false 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 1501, tam: 21, libre: false 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 1522, tam: 21, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 1543, tam: 21, libre: false 
-[INFO] 11:44:45:547 MiRam/(12592:12651): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:547 MiRam/(12592:12651): ----------------------------------------
-[WARNING] 11:44:45:547 MiRam/(12592:12651): el cliente se desconecto.
-[INFO] 11:44:45:548 MiRam/(12592:12649): no hay mas tareas
-[INFO] 11:44:45:548 MiRam/(12592:12649): Se expulso segmento 2
-[INFO] 11:44:45:548 MiRam/(12592:12649): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:548 MiRam/(12592:12649): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 308, tam:  8, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 316, tam: 131, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 447, tam: 21, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 468, tam: 21, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 489, tam: 21, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 918, tam:  8, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 926, tam: 359, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 1285, tam: 21, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 1306, tam: 21, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 1327, tam: 21, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 1348, tam:  8, libre: false 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 1356, tam: 145, libre: false 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 1501, tam: 21, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 1522, tam: 21, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 1543, tam: 21, libre: false 
-[INFO] 11:44:45:548 MiRam/(12592:12649): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:548 MiRam/(12592:12649): ----------------------------------------
-[WARNING] 11:44:45:549 MiRam/(12592:12649): el cliente se desconecto.
-[INFO] 11:44:45:560 MiRam/(12592:12653): no hay mas tareas
-[INFO] 11:44:45:560 MiRam/(12592:12653): Se expulso segmento 4
-[INFO] 11:44:45:560 MiRam/(12592:12653): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:560 MiRam/(12592:12653): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 245, tam: 21, libre: false 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 308, tam:  8, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 316, tam: 131, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 447, tam: 21, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 468, tam: 21, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 489, tam: 21, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 918, tam:  8, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 926, tam: 359, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 1285, tam: 21, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 1306, tam: 21, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 1327, tam: 21, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 1348, tam:  8, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 1356, tam: 145, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 1501, tam: 21, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 1522, tam: 21, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 1543, tam: 21, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:560 MiRam/(12592:12653): ----------------------------------------
-[INFO] 11:44:45:560 MiRam/(12592:12653): Tabla de segmentos de patota ya no existe
-[WARNING] 11:44:45:560 MiRam/(12592:12653): el cliente se desconecto.
-[INFO] 11:44:45:567 MiRam/(12592:12625): no hay mas tareas
-[INFO] 11:44:45:567 MiRam/(12592:12625): Se expulso segmento 2
-[INFO] 11:44:45:567 MiRam/(12592:12625): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:567 MiRam/(12592:12625): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 245, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 266, tam: 21, libre: false 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 308, tam:  8, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 316, tam: 131, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 447, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 468, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 489, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 918, tam:  8, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 926, tam: 359, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 1285, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 1306, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 1327, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 1348, tam:  8, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 1356, tam: 145, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 1501, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 1522, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 1543, tam: 21, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:567 MiRam/(12592:12625): ----------------------------------------
-[WARNING] 11:44:45:567 MiRam/(12592:12625): el cliente se desconecto.
-[INFO] 11:44:45:570 MiRam/(12592:12627): no hay mas tareas
-[INFO] 11:44:45:570 MiRam/(12592:12627): Se expulso segmento 3
-[INFO] 11:44:45:570 MiRam/(12592:12627): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:570 MiRam/(12592:12627): base:   0, tam:  8, libre: false 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base:   8, tam: 237, libre: false 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 245, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 266, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 287, tam: 21, libre: false 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 308, tam:  8, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 316, tam: 131, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 447, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 468, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 489, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 918, tam:  8, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 926, tam: 359, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 1285, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 1306, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 1327, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 1348, tam:  8, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 1356, tam: 145, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 1501, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 1522, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 1543, tam: 21, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:570 MiRam/(12592:12627): ----------------------------------------
-[WARNING] 11:44:45:570 MiRam/(12592:12627): el cliente se desconecto.
-[INFO] 11:44:45:572 MiRam/(12592:12629): no hay mas tareas
-[INFO] 11:44:45:572 MiRam/(12592:12629): Se expulso segmento 4
-[INFO] 11:44:45:572 MiRam/(12592:12629): ---------  MEMORIA  --------------------
-[INFO] 11:44:45:572 MiRam/(12592:12629): base:   0, tam:  8, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base:   8, tam: 237, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 245, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 266, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 287, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 308, tam:  8, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 316, tam: 131, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 447, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 468, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 489, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 510, tam:  8, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 518, tam: 337, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 855, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 876, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 897, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 918, tam:  8, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 926, tam: 359, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 1285, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 1306, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 1327, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 1348, tam:  8, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 1356, tam: 145, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 1501, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 1522, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 1543, tam: 21, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): base: 1564, tam: 14820, libre: true 
-[INFO] 11:44:45:572 MiRam/(12592:12629): ----------------------------------------
-[INFO] 11:44:45:572 MiRam/(12592:12629): Tabla de segmentos de patota ya no existe
-[WARNING] 11:44:45:572 MiRam/(12592:12629): el cliente se desconecto.
+[INFO] 13:20:20:604 MiRam/(14377:14416): Carga inicial de patota 3
+[INFO] 13:20:20:604 MiRam/(14377:14416): Entro en LRU
+[INFO] 13:20:20:604 MiRam/(14377:14416): LRU: Se elije marco 1 de MP, se envía a bloque 0 de MS
+[INFO] 13:20:20:604 MiRam/(14377:14416): Recupero el bloque 4 de MS
+[INFO] 13:20:20:604 MiRam/(14377:14416): Entro en LRU
+[INFO] 13:20:20:604 MiRam/(14377:14416): LRU: Se elije marco 0 de MP, se envía a bloque 1 de MS
+[INFO] 13:20:20:604 MiRam/(14377:14416): Recupero el bloque 5 de MS
+[INFO] 13:20:20:604 MiRam/(14377:14416): Entro en LRU
+[INFO] 13:20:20:604 MiRam/(14377:14416): LRU: Se elije marco 3 de MP, se envía a bloque 2 de MS
+[INFO] 13:20:20:604 MiRam/(14377:14416): Recupero el bloque 6 de MS
+[INFO] 13:20:20:604 MiRam/(14377:14416): Entro en LRU
+[INFO] 13:20:20:604 MiRam/(14377:14416): LRU: Se elije marco 2 de MP, se envía a bloque 3 de MS
+[INFO] 13:20:20:604 MiRam/(14377:14416): Recupero el bloque 7 de MS
+[INFO] 13:20:20:604 MiRam/(14377:14416): El tripulante 3 solicita nueva tarea
+[INFO] 13:20:20:604 MiRam/(14377:14416): El tripulante 3 recibe la tarea solicitada
+[INFO] 13:20:20:604 MiRam/(14377:14416): --------MP--------
+[INFO] 13:20:20:604 MiRam/(14377:14416): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:20:604 MiRam/(14377:14416): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:20:604 MiRam/(14377:14416): M: 2 E:O P: 3 Pag: 3
+[INFO] 13:20:20:604 MiRam/(14377:14416): M: 3 E:O P: 3 Pag: 2
+[INFO] 13:20:20:604 MiRam/(14377:14416): ------FIN MP------
+[INFO] 13:20:20:605 MiRam/(14377:14412): ENTRE EN MS
+[INFO] 13:20:20:605 MiRam/(14377:14412): Entro en LRU
+[INFO] 13:20:20:605 MiRam/(14377:14412): LRU: Se elije marco 3 de MP, se envía a bloque 4 de MS
+[INFO] 13:20:20:605 MiRam/(14377:14412): Recupero el bloque 1 de MS
+[INFO] 13:20:20:605 MiRam/(14377:14412): El tripulante 1 solicita nueva tarea
+[INFO] 13:20:20:605 MiRam/(14377:14412): ENTRE EN MS
+[INFO] 13:20:20:605 MiRam/(14377:14412): Recuperando pagina para obtener tarea para tripulante de patota 1
+[INFO] 13:20:20:605 MiRam/(14377:14412): Entro en LRU
+[INFO] 13:20:20:605 MiRam/(14377:14412): LRU: Se elije marco 2 de MP, se envía a bloque 1 de MS
+[INFO] 13:20:20:605 MiRam/(14377:14412): Recupero el bloque 0 de MS
+[INFO] 13:20:20:605 MiRam/(14377:14412): El tripulante 1 recibe la tarea solicitada
+[INFO] 13:20:20:605 MiRam/(14377:14412): --------MP--------
+[INFO] 13:20:20:606 MiRam/(14377:14412): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:20:606 MiRam/(14377:14412): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:20:606 MiRam/(14377:14412): M: 2 E:O P: 1 Pag: 1
+[INFO] 13:20:20:606 MiRam/(14377:14412): M: 3 E:O P: 1 Pag: 0
+[INFO] 13:20:20:606 MiRam/(14377:14412): ------FIN MP------
+[INFO] 13:20:20:606 MiRam/(14377:14412): El tripulante 1 solicita nueva tarea
+[INFO] 13:20:20:606 MiRam/(14377:14412): El tripulante 1 recibe la tarea solicitada
+[INFO] 13:20:20:606 MiRam/(14377:14412): --------MP--------
+[INFO] 13:20:20:606 MiRam/(14377:14412): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:20:606 MiRam/(14377:14412): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:20:606 MiRam/(14377:14412): M: 2 E:O P: 1 Pag: 1
+[INFO] 13:20:20:607 MiRam/(14377:14412): M: 3 E:O P: 1 Pag: 0
+[INFO] 13:20:20:607 MiRam/(14377:14412): ------FIN MP------
+[INFO] 13:20:20:607 MiRam/(14377:14412): El tripulante 1 solicita nueva tarea
+[INFO] 13:20:20:608 MiRam/(14377:14412): Ya no hay mas tareas para el tripulante 1
+[INFO] 13:20:20:608 MiRam/(14377:14412): letra + tid: 1
+[INFO] 13:20:20:608 MiRam/(14377:14412): --------MP--------
+[INFO] 13:20:20:608 MiRam/(14377:14412): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:20:608 MiRam/(14377:14412): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:20:608 MiRam/(14377:14412): M: 2 E:L P:- Pag:-
+[INFO] 13:20:20:608 MiRam/(14377:14412): M: 3 E:L P:- Pag:-
+[INFO] 13:20:20:608 MiRam/(14377:14412): ------FIN MP------
+[ERROR] 13:20:20:608 MiRam/(14377:14412): el cliente se desconecto. Terminando servidor
+[INFO] 13:20:20:608 MiRam/(14377:14416): Tripulante 3 cambiando de estado
+[INFO] 13:20:20:608 MiRam/(14377:14416): Tripulante 3 cambiando de posicion
+[INFO] 13:20:21:605 MiRam/(14377:14414): ENTRE EN MS
+[INFO] 13:20:21:605 MiRam/(14377:14414): Se asigna marco 2 de MP
+[INFO] 13:20:21:605 MiRam/(14377:14414): Recupero el bloque 3 de MS
+[INFO] 13:20:21:605 MiRam/(14377:14414): Tripulante 2 cambiando de posicion
+[INFO] 13:20:21:609 MiRam/(14377:14416): Tripulante 3 cambiando de posicion
+[INFO] 13:20:22:606 MiRam/(14377:14414): El tripulante 2 solicita nueva tarea
+[INFO] 13:20:22:606 MiRam/(14377:14414): ENTRE EN MS
+[INFO] 13:20:22:606 MiRam/(14377:14414): Recuperando pagina para obtener tarea para tripulante de patota 2
+[INFO] 13:20:22:606 MiRam/(14377:14414): Se asigna marco 3 de MP
+[INFO] 13:20:22:606 MiRam/(14377:14414): Recupero el bloque 2 de MS
+[INFO] 13:20:22:606 MiRam/(14377:14414): El tripulante 2 recibe la tarea solicitada
+[INFO] 13:20:22:606 MiRam/(14377:14414): --------MP--------
+[INFO] 13:20:22:606 MiRam/(14377:14414): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:22:606 MiRam/(14377:14414): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:22:606 MiRam/(14377:14414): M: 2 E:O P: 2 Pag: 0
+[INFO] 13:20:22:606 MiRam/(14377:14414): M: 3 E:O P: 2 Pag: 1
+[INFO] 13:20:22:606 MiRam/(14377:14414): ------FIN MP------
+[INFO] 13:20:22:607 MiRam/(14377:14414): El tripulante 2 solicita nueva tarea
+[INFO] 13:20:22:607 MiRam/(14377:14414): El tripulante 2 recibe la tarea solicitada
+[INFO] 13:20:22:607 MiRam/(14377:14414): --------MP--------
+[INFO] 13:20:22:607 MiRam/(14377:14414): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:22:607 MiRam/(14377:14414): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:22:607 MiRam/(14377:14414): M: 2 E:O P: 2 Pag: 0
+[INFO] 13:20:22:607 MiRam/(14377:14414): M: 3 E:O P: 2 Pag: 1
+[INFO] 13:20:22:607 MiRam/(14377:14414): ------FIN MP------
+[INFO] 13:20:22:610 MiRam/(14377:14414): El tripulante 2 solicita nueva tarea
+[INFO] 13:20:22:610 MiRam/(14377:14414): Ya no hay mas tareas para el tripulante 2
+[INFO] 13:20:22:610 MiRam/(14377:14414): letra + tid: 2
+[INFO] 13:20:22:610 MiRam/(14377:14414): --------MP--------
+[INFO] 13:20:22:610 MiRam/(14377:14414): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:22:610 MiRam/(14377:14414): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:22:610 MiRam/(14377:14414): M: 2 E:L P:- Pag:-
+[INFO] 13:20:22:610 MiRam/(14377:14414): M: 3 E:L P:- Pag:-
+[INFO] 13:20:22:610 MiRam/(14377:14414): ------FIN MP------
+[ERROR] 13:20:22:610 MiRam/(14377:14414): el cliente se desconecto. Terminando servidor
+[INFO] 13:20:22:611 MiRam/(14377:14416): Tripulante 3 cambiando de posicion
+[INFO] 13:20:23:611 MiRam/(14377:14416): Tripulante 3 cambiando de posicion
+[INFO] 13:20:24:613 MiRam/(14377:14416): El tripulante 3 solicita nueva tarea
+[INFO] 13:20:24:613 MiRam/(14377:14416): El tripulante 3 recibe la tarea solicitada
+[INFO] 13:20:24:613 MiRam/(14377:14416): --------MP--------
+[INFO] 13:20:24:613 MiRam/(14377:14416): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:24:613 MiRam/(14377:14416): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:24:613 MiRam/(14377:14416): M: 2 E:L P:- Pag:-
+[INFO] 13:20:24:613 MiRam/(14377:14416): M: 3 E:L P:- Pag:-
+[INFO] 13:20:24:613 MiRam/(14377:14416): ------FIN MP------
+[INFO] 13:20:24:614 MiRam/(14377:14416): El tripulante 3 solicita nueva tarea
+[INFO] 13:20:24:614 MiRam/(14377:14416): El tripulante 3 recibe la tarea solicitada
+[INFO] 13:20:24:614 MiRam/(14377:14416): --------MP--------
+[INFO] 13:20:24:614 MiRam/(14377:14416): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:24:614 MiRam/(14377:14416): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:24:614 MiRam/(14377:14416): M: 2 E:L P:- Pag:-
+[INFO] 13:20:24:614 MiRam/(14377:14416): M: 3 E:L P:- Pag:-
+[INFO] 13:20:24:614 MiRam/(14377:14416): ------FIN MP------
+[INFO] 13:20:24:615 MiRam/(14377:14416): El tripulante 3 solicita nueva tarea
+[INFO] 13:20:24:615 MiRam/(14377:14416): ENTRE EN MS
+[INFO] 13:20:24:615 MiRam/(14377:14416): Recuperando pagina para obtener tarea para tripulante de patota 3
+[INFO] 13:20:24:615 MiRam/(14377:14416): Se asigna marco 2 de MP
+[INFO] 13:20:24:615 MiRam/(14377:14416): Recupero el bloque 4 de MS
+[INFO] 13:20:24:615 MiRam/(14377:14416): El tripulante 3 recibe la tarea solicitada
+[INFO] 13:20:24:615 MiRam/(14377:14416): --------MP--------
+[INFO] 13:20:24:615 MiRam/(14377:14416): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:24:615 MiRam/(14377:14416): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:24:615 MiRam/(14377:14416): M: 2 E:O P: 3 Pag: 2
+[INFO] 13:20:24:615 MiRam/(14377:14416): M: 3 E:L P:- Pag:-
+[INFO] 13:20:24:615 MiRam/(14377:14416): ------FIN MP------
+[INFO] 13:20:24:621 MiRam/(14377:14416): El tripulante 3 solicita nueva tarea
+[INFO] 13:20:24:621 MiRam/(14377:14416): El tripulante 3 recibe la tarea solicitada
+[INFO] 13:20:24:621 MiRam/(14377:14416): --------MP--------
+[INFO] 13:20:24:621 MiRam/(14377:14416): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:24:621 MiRam/(14377:14416): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:24:621 MiRam/(14377:14416): M: 2 E:O P: 3 Pag: 2
+[INFO] 13:20:24:621 MiRam/(14377:14416): M: 3 E:L P:- Pag:-
+[INFO] 13:20:24:621 MiRam/(14377:14416): ------FIN MP------
+[INFO] 13:20:24:622 MiRam/(14377:14416): El tripulante 3 solicita nueva tarea
+[INFO] 13:20:24:622 MiRam/(14377:14416): El tripulante 3 recibe la tarea solicitada
+[INFO] 13:20:24:622 MiRam/(14377:14416): --------MP--------
+[INFO] 13:20:24:622 MiRam/(14377:14416): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:24:622 MiRam/(14377:14416): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:24:622 MiRam/(14377:14416): M: 2 E:O P: 3 Pag: 2
+[INFO] 13:20:24:622 MiRam/(14377:14416): M: 3 E:L P:- Pag:-
+[INFO] 13:20:24:622 MiRam/(14377:14416): ------FIN MP------
+[INFO] 13:20:24:622 MiRam/(14377:14416): El tripulante 3 solicita nueva tarea
+[INFO] 13:20:24:622 MiRam/(14377:14416): ENTRE EN MS
+[INFO] 13:20:24:622 MiRam/(14377:14416): Recuperando pagina para obtener tarea para tripulante de patota 3
+[INFO] 13:20:24:622 MiRam/(14377:14416): Se asigna marco 3 de MP
+[INFO] 13:20:24:622 MiRam/(14377:14416): Recupero el bloque 1 de MS
+[INFO] 13:20:24:623 MiRam/(14377:14416): El tripulante 3 recibe la tarea solicitada
+[INFO] 13:20:24:623 MiRam/(14377:14416): --------MP--------
+[INFO] 13:20:24:623 MiRam/(14377:14416): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:24:623 MiRam/(14377:14416): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:24:623 MiRam/(14377:14416): M: 2 E:O P: 3 Pag: 2
+[INFO] 13:20:24:623 MiRam/(14377:14416): M: 3 E:O P: 3 Pag: 3
+[INFO] 13:20:24:623 MiRam/(14377:14416): ------FIN MP------
+[INFO] 13:20:24:624 MiRam/(14377:14416): El tripulante 3 solicita nueva tarea
+[INFO] 13:20:24:624 MiRam/(14377:14416): El tripulante 3 recibe la tarea solicitada
+[INFO] 13:20:24:624 MiRam/(14377:14416): --------MP--------
+[INFO] 13:20:24:624 MiRam/(14377:14416): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:24:624 MiRam/(14377:14416): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:24:624 MiRam/(14377:14416): M: 2 E:O P: 3 Pag: 2
+[INFO] 13:20:24:624 MiRam/(14377:14416): M: 3 E:O P: 3 Pag: 3
+[INFO] 13:20:24:624 MiRam/(14377:14416): ------FIN MP------
+[INFO] 13:20:24:625 MiRam/(14377:14416): El tripulante 3 solicita nueva tarea
+[INFO] 13:20:24:625 MiRam/(14377:14416): El tripulante 3 recibe la tarea solicitada
+[INFO] 13:20:24:625 MiRam/(14377:14416): --------MP--------
+[INFO] 13:20:24:625 MiRam/(14377:14416): M: 0 E:O P: 3 Pag: 1
+[INFO] 13:20:24:625 MiRam/(14377:14416): M: 1 E:O P: 3 Pag: 0
+[INFO] 13:20:24:625 MiRam/(14377:14416): M: 2 E:O P: 3 Pag: 2
+[INFO] 13:20:24:625 MiRam/(14377:14416): M: 3 E:O P: 3 Pag: 3
+[INFO] 13:20:24:625 MiRam/(14377:14416): ------FIN MP------
+[INFO] 13:20:24:626 MiRam/(14377:14416): El tripulante 3 solicita nueva tarea
+[INFO] 13:20:24:626 MiRam/(14377:14416): Ya no hay mas tareas para el tripulante 3
+[INFO] 13:20:24:626 MiRam/(14377:14416): letra + tid: 3
+[INFO] 13:20:24:626 MiRam/(14377:14416): --------MP--------
+[INFO] 13:20:24:626 MiRam/(14377:14416): M: 0 E:L P:- Pag:-
+[INFO] 13:20:24:626 MiRam/(14377:14416): M: 1 E:L P:- Pag:-
+[INFO] 13:20:24:626 MiRam/(14377:14416): M: 2 E:L P:- Pag:-
+[INFO] 13:20:24:626 MiRam/(14377:14416): M: 3 E:L P:- Pag:-
+[INFO] 13:20:24:626 MiRam/(14377:14416): ------FIN MP------
+[ERROR] 13:20:24:626 MiRam/(14377:14416): el cliente se desconecto. Terminando servidor
+[ERROR] 13:20:53:258 MiRam/(14377:14393): el cliente se desconecto. Terminando servidor

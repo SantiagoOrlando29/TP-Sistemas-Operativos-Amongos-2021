@@ -53,6 +53,7 @@ sem_t MUTEX_SWAP;
 sem_t MUTEX_CASE;
 sem_t MUTEX_FILE;
 sem_t MUTEX_CLOCK;
+sem_t MUTEX_LRU;
 
 typedef struct{
 	int patota_id;
@@ -258,12 +259,14 @@ int funcion_cliente_paginacion(int);
 
 
 //PAGINACION
+//PAGINACION
 int marco_tarea(int posicion_patota, t_list* tabla_aux, int nro_marco);
 void agregar_tripulante_marco(tcbTripulante* tripulante, int id_patota, t_list* tabla_aux, config_struct* configuracion);
 int cuantos_marcos(int cuantos_tripulantes, int longitud_tarea);
 void mostrar_tripulante(tcbTripulante* tripulante,pcbPatota* patota);
 int cuantos_marcos_libres(config_struct* config_servidor);
-void almacenar_informacion(t_list* lista, config_struct* config_servidor);
+bool almacenar_informacion(t_list* lista, config_struct* config_servidor);
+void cargar_patota(int patota_id);
 void reservar_marco(int cantidad_marcos, config_struct* configuracion, t_list* tabla_aux, int pid );
 void eliminar_estructura_memoria(t_list* tabla_aux);
 void leer_informacion(config_struct* config_servidor, t_list* lista, int patota_id);
@@ -274,6 +277,12 @@ int escribir_atributo(uint32_t dato, int offset, int nro_marco, config_struct* c
 void imprimir_marcos_ms();
 void imprimir_marcos_mp();
 
+int escribir_atributo_cero_swap(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
+int escribir_atributo_uno_swap(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
+int escribir_atributo_dos_swap(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
+int escribir_atributo_tres_swap(uint32_t dato, int offset, int nro_marco, config_struct* config_s);
+int escribir_atributo_char_swap(tcbTripulante* tripulante, int offset, int nro_marco, config_struct* config_s);
+int escribir_char_tarea_swap(char caracter, int offset, int nro_marco, config_struct* config_s);
 
 
 int posicion_vector(int tripulante_id);
@@ -286,6 +295,30 @@ void leer_atributo_uno(void* dato,int offset, int nro_marco, config_struct* conf
 void leer_atributo_dos(void* dato,int offset, int nro_marco, config_struct* config_s);
 void leer_atributo_tres(void* dato,int offset, int nro_marco, config_struct* config_s);
 void swap_pagina_iniciar();
+
+
+int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct* config_s);
+void buscar_marco_ms(int id_marco,int * estado,int* proceso, int *pagina);
+void buscar_marco(int id_marco,int * estado,int* proceso, int *pagina);
+int lugar_swap_libre();
+int alcanza_espacio(int* offset,int tamanio_marco, int tipo_dato);
+void actualizar_lru(marco* un_marco);
+int reemplazo_clock();
+marco* buscar_pagina(int num_pag);
+void actualizar_tripulante(tcbTripulante* tripulante, int id_patota, config_struct* config_servidor);
+int espacios_swap_libres(config_struct* config_servidor);
+void imprimir_tabla_paginacion();
+void swap_pagina(void* contenidoAEscribir,int numDeBloque);
+int swap_a_memoria(int numBloque);
+void* recuperar_pag_swap(int numDeBloque);
+void limpiar_bloque_swap(int numDeBloque);
+void dump_memoria_paginacion();
+int reemplazo_lru();
+char* obtener_tarea(int id_patota, tcbTripulante* tripulante);
+tcbTripulante* obtener_tripulante(int patota_id,int tripulante_id, config_struct* config_servidor);
+bool enviar_tarea_paginacion(int socket_cliente, int numero_patota, tcbTripulante* tripulante);
+
+
 
 
 int escribir_char_tarea(char caracter, int offset, int nro_marco, config_struct* config_s);
