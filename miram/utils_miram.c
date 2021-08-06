@@ -1290,7 +1290,7 @@ bool cambiar_posicion(int tid, int posx, int posy, int pid){
 					letra = 55;
 				}
 			    item_desplazar(nivel, letra+ tid, difx, dify);
-			    sleep(1);
+			    //sleep(1);
 
 				sem_post(&MUTEX_CAMBIAR_POSICION);
 				return true;
@@ -3744,7 +3744,7 @@ void* crear_mapa(){
     while (numero_mapa!=1) {
         nivel_gui_dibujar(nivel);
         fflush(stdout);
-        sleep(1);
+        //sleep(1);
     if(err){
         log_error(logger,"WARN: %s\n", nivel_gui_string_error(err));
     }
