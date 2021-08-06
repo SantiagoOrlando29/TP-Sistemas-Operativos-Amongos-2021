@@ -1057,7 +1057,7 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 					//unir_espacios_contiguos_libres();
 					imprimir_tabla_espacios_de_memoria();
 					if(se_elimina_toda_la_tabla == false){
-						imprimir_tabla_segmentos_patota(tabla_segmentos);
+						//imprimir_tabla_segmentos_patota(tabla_segmentos);
 					}else{
 						log_info(logger, "Tabla de segmentos de patota ya no existe");
 					}
