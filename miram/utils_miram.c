@@ -1379,6 +1379,10 @@ void destruir_marcos(marco* marcos){
 		list_replace(configuracion.marcos_libres, marcos->id_marco, (void*)0);
 	}else{
 		list_replace(configuracion.swap_libre, marcos->id_marco, (void*)0);
+		void* limpiador = calloc(configuracion.tamanio_pag,1);
+		memcpy(swap_address + marcos->id_marco*configuracion.tamanio_pag, limpiador ,configuracion.tamanio_pag);
+		free(limpiador);
+
 	}
 	free(marcos);
 	sem_post(&MUTEX_SWAP);
