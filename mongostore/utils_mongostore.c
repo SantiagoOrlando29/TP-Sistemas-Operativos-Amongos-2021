@@ -2266,7 +2266,7 @@ void recurso_validar_blocks_bloque_ocupado(t_recurso_data* recurso_data)
 	}
 	else
 	{
-		log_info(logger, "Por lo menos al blocks del recurso %s no se le agregaron un bloque mayor a la cantidad de bloques del FS, enhorabuena!!!",
+		log_info(logger, "Por lo menos al blocks del recurso %s no se le agrego ningun bloque vacio, enhorabuena!!!",
 				recurso_data->nombre);
 	}
 
@@ -2332,7 +2332,7 @@ int recurso_obtener_size_real(t_recurso_data* recurso_data)
 
 			if(esta_lleno == 0)
 			{
-				log_info(logger, "bloque %d NO esta lleno", bloque);
+				log_debug(logger, "bloque %d NO esta lleno", bloque);
 				i = cantidad_bloques;
 			}
 		}
@@ -2340,7 +2340,7 @@ int recurso_obtener_size_real(t_recurso_data* recurso_data)
 		if(esta_lleno == 0)
 		{
 			int cantidad_en_bloque_incompleto = metadata_cantidad_del_caracter_en_bloque(recurso_data->caracter_llenado, bloque);
-			log_info(logger, "cantidad_en_bloque_incompleto %d ", cantidad_en_bloque_incompleto);
+			log_debug(logger, "cantidad_en_bloque_incompleto %d ", cantidad_en_bloque_incompleto);
 			int cantidad_restante_de_bloques = cantidad_bloques -  1;
 			size_real += cantidad_en_bloque_incompleto + cantidad_restante_de_bloques * superbloque.block_size;
 		}
@@ -2457,7 +2457,7 @@ void recurso_validar_blocks_orden_bloques(t_recurso_data* recurso_data)
     }
     else
     {
-        log_info(logger, "Por lo menos el blocks del recurso %s no fue alterado, enhorabuena!!!", recurso_data->nombre);
+        log_info(logger, "Por lo menos el orden del blocks del recurso %s no fue alterado, enhorabuena!!!", recurso_data->nombre);
     }
 }
 
