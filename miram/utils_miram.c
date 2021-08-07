@@ -994,6 +994,7 @@ bool patota_segmentacion(int pid, uint32_t cantidad_tripulantes, char* tarea, t_
 		}
 		err = personaje_crear(nivel, letra+tripulante->tid, (int)tripulante->posicionX, (int)tripulante->posicionY);
 		ASSERT_CREATE(nivel, letra, err);
+		sem_post(&SEM_MAPA);
 	}
 
 	imprimir_tabla_espacios_de_memoria();
@@ -1053,7 +1054,7 @@ bool funcion_expulsar_tripulante(int tripulante_id){
 					}
 					log_info(logger, "letra + tid: %c", letra + tripulante_id);
 					item_borrar(nivel, letra + tripulante_id);
-
+					sem_post(&SEM_MAPA);
 					sem_post(&MUTEX_LISTA_TABLAS_SEGMENTOS);
 
 					//unir_espacios_contiguos_libres();
@@ -1292,6 +1293,7 @@ bool cambiar_posicion(int tid, int posx, int posy, int pid){
 					letra = 55;
 				}
 			    item_desplazar(nivel, letra+ tid, difx, dify);
+			    sem_post(&SEM_MAPA);
 			    //sleep(1);
 
 				sem_post(&MUTEX_CAMBIAR_POSICION);
@@ -1483,7 +1485,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 				}
 				log_info(logger, "letra + tid: %c", letra1 + tripulante_id3);
 				item_borrar(nivel, letra1 + tripulante_id3);
-
+				sem_post(&SEM_MAPA);
 
 
 				//tcbTripulante* tripulante = obtener_tripulante(patota_id3, tripulante_id3, &configuracion);
@@ -1534,6 +1536,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 				}
 				err = personaje_crear(nivel, letra2+tripulante_id, (int)tripulante1->posicionX, (int)tripulante1->posicionY);
 				ASSERT_CREATE(nivel, letra2, err);
+				sem_post(&SEM_MAPA);
 				carga_inicial[patota_id]=1;
 				}
 
@@ -1556,6 +1559,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 						}
 						log_info(logger, "letra + tid: %c", letra2 + tripulante_id);
 						item_borrar(nivel, letra2 + tripulante_id);
+						sem_post(&SEM_MAPA);
 
 						list_remove_and_destroy_element(tabla_paginacion_ppal, posicion_patota(patota_id, tabla_paginacion_ppal),(void*)destruir_tabla );
 						}
@@ -1631,6 +1635,7 @@ int funcion_cliente_paginacion(int socket_cliente){
 					letra = 55;
 				}
 			    item_desplazar(nivel, letra+tripulante_id, difx, dify);
+			    sem_post(&SEM_MAPA);
 			    //sleep(1);
 
 
@@ -3576,6 +3581,7 @@ bool enviar_tarea_paginacion(int socket_cliente, int numero_patota, tcbTripulant
 
 void* crear_mapa(){
 	while (numero_mapa!=1) {
+		sem_wait(&SEM_MAPA);
 		nivel_gui_dibujar(nivel);
 		fflush(stdout);
 		//sleep(1);

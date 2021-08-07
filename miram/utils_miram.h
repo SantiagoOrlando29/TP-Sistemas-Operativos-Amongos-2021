@@ -54,6 +54,7 @@ sem_t MUTEX_CASE;
 sem_t MUTEX_FILE;
 sem_t MUTEX_CLOCK;
 sem_t MUTEX_LRU;
+sem_t SEM_MAPA;
 
 typedef struct{
 	int patota_id;
